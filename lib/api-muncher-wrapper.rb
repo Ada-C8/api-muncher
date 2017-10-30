@@ -3,26 +3,33 @@ require 'httparty'
 class ApiMuncherWrapper
   # Your code here!
   BASE_URL = "https://api.edamam.com/search"
-  ID = ENV["APP_ID"]
-  KEY = ENV["APP_KEY"]
+  APP_ID = ENV["APP_ID"]
+  APP_KEY = ENV["APP_KEY"]
 
-  # def self.list_channels
-  #   url = BASE_URL + "channels.list?token=#{TOKEN}&exclude_archived=1"
-  #   data = HTTParty.get(url)
-  #   if data["channels"]
-  #     my_channels = data["channels"].map do |channel_hash|
-  #       Channel.new(channel_hash["name"], channel_hash["id"],
-  #       purpose: channel_hash["purpose"],
-  #       is_archived: channel_hash["is_archived"],
-  #       is_general: channel_hash["is_general"],
-  #       members: channel_hash["members"])
-  #     end
-  #     return my_channels
-  #   else
-  #     return []
-  #   end
-  # end
-  #
+  def self.search_recipes(name)
+    url = BASE_URL + "?q=#{no_space(name)}&app_id=#{APP_ID}&app_key=#{APP_KEY}"
+    data = HTTParty.get(url)
+    if data["hits"]
+      recipes = data["hits"].map do |hash|
+        recipe = hash["recipe"]
+        Recipe.new(recipe["label"],
+        recipe["uri"],
+        image: recipe["label"],
+        source: recipe["source"],
+        url: recipe["url"],
+        yield: recipe["yield"],
+        calories: recipe["calories"],
+        labels: recipe["healthLabels"],
+        diets: recipe["dietLabels"],
+        ingredients: recipe["ingredientLines"],
+        dietary: recipe["digest"])
+      end
+      return recipes
+    else
+      return []
+    end
+  end
+
   # def self.send_msg(channel, msg)
   #   p "Sending #{msg} to channel: #{channel}"
   #
@@ -37,4 +44,8 @@ class ApiMuncherWrapper
   #   return response.success?
   # end
 
+  private
+  def no_space(name)
+    return name.gsub ' ', '+'
+  end
 end
