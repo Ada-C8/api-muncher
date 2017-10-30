@@ -1,3 +1,8 @@
-class FoodApiWrapper
+require "httparty"
 
-end 
+class FoodApiWrapper
+  BASE_URL = "https://api.edamam.com/search"
+  TOKEN = ENV["FOOD_TOKEN"]
+
+
+end
