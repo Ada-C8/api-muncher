@@ -2,21 +2,21 @@ require 'httparty'
 
 class AdamamApiWrapper
   BASE_URL = "https://api.edamam.com/search"
-  # TOKEN = ENV["SLACK_TOKEN"]
+  END_URL = "&app_id=$#{ENV["APP_ID"]}&app_key=#{ENV["APP_KEY"]}"
 
-  # def self.list_channels
-  # url = BASE_URL + "channels.list?" + "token=#{TOKEN}" + "&exclude_archived=1"
-  # data = HTTParty.get(url)
-  # channel_list = []
-  # if data["channels"]
-  #   data["channels"].each do |channel_data|
-  #     channel_list << create_channel(channel_data)
-  #   end
-  # else
-  #   return []
-  # end
-  # return channel_list
-  # end
+  def self.search_recipes(search)
+  url = BASE_URL + "#{search}" + END_URL
+  recipes = HTTParty.get(url)
+  channel_list = []
+  if data["channels"]
+    data["channels"].each do |channel_data|
+      channel_list << create_channel(channel_data)
+    end
+  else
+    return []
+  end
+  return channel_list
+  end
 
   # def self.list_channels
   # url = BASE_URL + "channels.list?" + "token=#{TOKEN}" + "&exclude_archived=1"
