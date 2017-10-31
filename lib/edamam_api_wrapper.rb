@@ -14,10 +14,21 @@ class EdamamApiWrapper
   end
 
   private
-  def self.create_recipe(api_params)
-    return Recipe.new(
+  def self.create_recipe(response)
+    response = self.search(params[:q])
 
-    )
+    results = response.hits.map do |result|
+      result[:recipe][:label], # name
+      result[:recipe][:image], # image
+      result[:recipe][:source], # original source
+      result[:recipe][:url], # link to original
+      result[:recipe][:yield], # servings
+      result[:recipe][:dietLabels], # low-fat, etc
+      result[:recipe][:healthLabels], # vegetarian, etc
+      result[:recipe][:ingredientLines], # ingredients as an array
+      result[:recipe][:calories] # calories
+    end
+    return results
   end
 
   def self.check_status(response)
