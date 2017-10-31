@@ -9,7 +9,7 @@ class Recipe
 
    @name = name
    @id = id
-   @photo = options[:image]
+   @photo = options[:photo]
    @url = options[:url]
    # TODO: format ingredients into a more readable format in the initialize
    @ingredients = options[:ingredients]

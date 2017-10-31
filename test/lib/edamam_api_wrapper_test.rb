@@ -6,6 +6,7 @@ describe EdamamApiWrapper do
         result = EdamamApiWrapper.get_recipies("bread")
         result.must_be_kind_of Array
         result.each do |recipe|
+          puts "phot url: #{recipe.photo}"
           recipe.must_be_kind_of Recipe
         end # .each
         result.length.must_be :>, 0

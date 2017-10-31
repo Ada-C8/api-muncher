@@ -1,4 +1,6 @@
 <% @recipies.each do |recipe| %>
-  <%= recipe.photo %>
+  <% if recipe.photo %>
+    <%= image_tag recipe.photo, alt: "Image of recipe" %>
+  <% end %>
   <%= recipe.name %>
 <% end %>
