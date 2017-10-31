@@ -1,5 +1,14 @@
-class ChatController < ApplicationController
+class RecipeController < ApplicationController
   def index
-    # @recipe = EdamamApiWrapper.search(q)
+    response = EdamamWrapper.search(params[:q])
+
+    response.hits.map do |result|
+      result[:recipe][:label]
+      result[:]
+    end
+  end
+
+  def show
+
   end
 end
