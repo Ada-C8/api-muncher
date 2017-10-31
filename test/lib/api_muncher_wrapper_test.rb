@@ -13,13 +13,25 @@ describe ApiMuncherWrapper do
         end
       end
     end
-  end
 
-  it "will return [] for a broken request" do
-    VCR.use_cassette("recipes") do
-      recipes = ApiMuncherWrapper.search_recipes("")
-      recipes.must_be_instance_of Array
-      recipes.must_equal []
+    it "can search recipes will multiple words" do
+      VCR.use_cassette("recipes") do
+        recipes = ApiMuncherWrapper.search_recipes("quinoa salad")
+        recipes.must_be_instance_of Array
+        recipes.length.must_be :>, 0
+        recipes.each do |recipe|
+          recipe.must_be_instance_of Recipe
+        end
+      end
+    end
+
+
+    it "will return [] for a broken request" do
+      VCR.use_cassette("recipes") do
+        recipes = ApiMuncherWrapper.search_recipes("")
+        recipes.must_be_instance_of Array
+        recipes.must_equal []
+      end
     end
   end
 
