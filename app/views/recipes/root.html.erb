@@ -2,3 +2,10 @@
 <p>
   root page
 </p>
+
+<%= form_tag recipes_path, method: :get do %>
+
+<%= text_field_tag :query, "" %>
+
+<%= submit_tag "Search", class: "button" %>
+<% end %>

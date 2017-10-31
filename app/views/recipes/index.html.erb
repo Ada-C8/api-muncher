@@ -1,4 +1,8 @@
-<h2>Showing results for:</h2>
-<p>
-  index
-</p>
+<h2>Showing results for: <%= @query %> </h2>
+<ul>
+  <% @recipes.each do |recipe| %>
+    <li>
+      <%= link_to recipe["recipe"]["label"], recipe_path(recipe["recipe"]["label"])%>
+    </li>
+  <% end %>
+</ul>
