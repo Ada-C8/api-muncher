@@ -14,14 +14,14 @@ class EdamamApiWrapper
     puts "About to send request for list of channels"
     data = HTTParty.get(url)
 
-    puts "Got response with status: #{data.code}: #{data.message}"
-    puts "Parsed response is: #{data.parsed_response}"
-    puts "Keys are: #{data.parsed_response.keys}"
+    # puts "Got response with status: #{data.code}: #{data.message}"
+    # puts "Parsed response is: #{data.parsed_response}"
+    # puts "Keys are: #{data.parsed_response.keys}"
 
     recipe_list = []
     if data["hits"]
       data["hits"].each do |recipe_data|
-        recipes << self.create_recipe(recipe_data)
+        recipe_list << create_recipe(recipe_data["recipe"])
       end
     end
     return recipe_list

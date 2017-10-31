@@ -1,1 +1,15 @@
-<h3>Index page for searched recipes</h3>
+<section>
+  <h3><%= @search %> RECIPES</h3>
+
+  <section class="row">
+    <% @recipes.each do |recipe| %>
+      <div class="small-12 large-4 columns">
+        <%= recipe.label %>
+        <%= image_tag("#{recipe.image}", alt:"#{recipe.label}") %>
+      </div>
+    <% end %>
+
+  </section>
+
+
+</section>
