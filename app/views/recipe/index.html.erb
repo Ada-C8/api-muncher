@@ -1,4 +1,3 @@
-<h1> recipe index page </h1>
 
 <h2>Results for <%=@query%> </h2>
 <ul>
@@ -8,16 +7,22 @@
       <img src="<%=recipe.image%>"/>
       <figcaption>
       <li>
-        name: <%= recipe.label %>
+        <%=link_to recipe.label, recipe_path(recipe.uri)%>
       </li>
       <li>
-        ingredients: <%= recipe.ingredients %>
+        ingredients: <%=recipe.ingredients %>
       </li>
       <li>
-       link to original recipe <%= recipe.recipe_url%>
+       link to original recipe <%=recipe.recipe_url%>
       </li>
       <li>
-        dietary: <%= recipe.dietary%>
+        dietary: <%=recipe.dietary%>
+      </li>
+      <li>
+        source: <%=recipe.source%>
+      </li>
+      <li>
+        uri: <%=recipe.uri%>
       </li>
       </figcaption>
       </figure>

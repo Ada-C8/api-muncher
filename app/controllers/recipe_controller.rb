@@ -9,6 +9,7 @@ class RecipeController < ApplicationController
   end
 
   def show
+    @recipe = EdemamApiWrapper.find_a_recipe(params [:uri])
   end
 
 

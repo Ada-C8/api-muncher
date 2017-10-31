@@ -9,6 +9,20 @@
   </head>
 
   <body>
+    <header>
+ <h1>Muncher</h1>
+    </header>
+    <% if flash[:status] %>
+   <section class="row status <%= flash[:status] %>">
+     <h3>
+       <%= flash[:message] %>
+     </h3>
+     <%end%>
     <%= yield %>
+    <footer>
+      <p>
+        Powered by <a href="https://www.edamam.com/">Edamam</a>
+      </p>
+    </footer>
   </body>
 </html>

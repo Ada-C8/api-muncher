@@ -21,6 +21,14 @@ class EdemamApiWrapper
     return recipe_list
   end
 
+  def self.find_a_recipe(uri)
+    #uri = the end of the long uri?
+    url = BASE_URL + "r=" + uri
+    response = HTTParty.post(url)
+    hit = response.parsed_response["hits"]
+    return create_recipe(hit)
+  end
+
 
   private
 
@@ -30,7 +38,9 @@ class EdemamApiWrapper
     ingredients = api_params["recipe"]["ingredientLines"]
     dietary = api_params["recipe"]["healthLabels"]
     image = api_params["recipe"]["image"]
-    return Recipe.new(label, recipe_url, ingredients, dietary, image)
+    source = api_params["recipe"]["source"]
+    uri = api_params["recipe"]["uri"]
+    return Recipe.new(label, recipe_url, ingredients, dietary, image, source, uri)
   end
 
 end

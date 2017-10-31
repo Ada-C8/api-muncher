@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   root 'recipe#root'
 
   get 'recipes', to: 'recipe#index'
-  get 'recipies/:label', to: 'recipe#show'
+  get 'recipies/:label', to: 'recipe#show', as: "recipe"
 
   # get recipes/:uri or label is show
 
