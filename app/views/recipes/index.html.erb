@@ -1,9 +1,35 @@
-<h1>MUNCHER</h1>
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-<h2>Find your flavor...</h2>
+    <title><%= content_for?(:title) ? yield(:title) : "API Muncher" %></title>
 
-<%# form_tag(recipes_search_path(:query), method: :get, id: "main-search") do %>
-<form action="<%= recipes_search_path %>" method="get">
-  <%= text_field_tag :query, params[:query] %>
-  <%= submit_tag 'Search', name: nil %>
-</form>
+    <%= stylesheet_link_tag    "application" %>
+    <%= javascript_include_tag "application", 'data-turbolinks-track' => true %>
+    <%= csrf_meta_tags %>
+    <script src="https://developer.edamam.com/attribution/badge.js"></script>
+  </head>
+  <body>
+    <main class="main-main">
+      <h1 class="main-title">
+        MUNCHER
+      </h1>
+      <h2 class="main-sub">
+        Find your flavor...
+      </h2>
+
+      <form action="<%= recipes_search_path %>" method="get" class="main-search">
+        <%= text_field_tag :query %>
+        <%= submit_tag 'Search', name: nil %>
+      </form>
+    </main>
+
+    <footer class='footer'>
+      <p>Copyright &copy; 2017 Kee Nam</p>
+      <div id="edamam-badge" data-color="dark"></div>
+    </footer>
+
+  </body>
+</html>

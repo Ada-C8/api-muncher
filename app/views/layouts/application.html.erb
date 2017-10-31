@@ -13,10 +13,20 @@
   </head>
 
   <body>
+    <header class='header'>
+      <h2><%= link_to "MUNCHER", root_path %></h2>
+      <form action="<%= recipes_search_path %>" method="get">
+        <%= text_field_tag :query %>
+        <%= submit_tag 'Search', name: nil %>
+      </form>
+    </header>
 
-    <%= yield %>
+    <main class='main'>
+      <%= yield %>
+    </main>
 
     <footer class='footer'>
+      <p>Copyright &copy; 2017 Kee Nam</p>
       <div id="edamam-badge" data-color="dark"></div>
     </footer>
 

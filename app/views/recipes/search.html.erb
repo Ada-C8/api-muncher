@@ -1,16 +1,25 @@
-<h1>Search Results</h1>
+<h1 class="page-title">
+  Search Results
+</h1>
 
-<h2>Results for <%= @query %></h2>
-<% @results.each do |hit| %>
-  <article class="search-result">
-    <% params[:uri] = hit['recipe']['uri'][/recipe_\w*/] %>
-    <%= link_to recipe_path(params[:uri]) do %>
-      <span class="result-image">
-        <img src="<%= hit['recipe']['image'] %>">
-      </span>
-      <span class="result-label">
-        <%= hit['recipe']['label'] %>
-      </span>
-    <% end %>
-  </article>
-<% end %>
+<h2 class="page-sub">
+  Results for <%= @query %>
+</h2>
+
+<section class="search-results">
+  <% @results.each do |hit| %>
+
+    <article class="search-result">
+      <% params[:uri] = hit['recipe']['uri'][/recipe_\w*/] %>
+      <%= link_to recipe_path(params[:uri]) do %>
+        <span class="result-image">
+          <img src="<%= hit['recipe']['image']%>" alt="<%= hit['recipe']['label']%> image">
+        </span>
+        <span class="result-label">
+          <%= hit['recipe']['label'] %>
+        </span>
+      <% end %>
+    </article>
+
+  <% end %>
+</section>

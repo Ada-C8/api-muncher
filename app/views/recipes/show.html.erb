@@ -1,22 +1,21 @@
 <h1 class="recipe-label">
-  <%= @recipe[0]['label'] %>
+  <%= @recipe['label'] %>
 </h1>
 
 <h2 class="recipe-source">
-  By <%= @recipe[0]['source'] %>
+  By <%= @recipe['source'] %>
 </h2>
 
 <section class="recipe-info">
-
   <div class="recipe-main">
     <figure>
-      <img class="recipe-image" src="<%= @recipe[0]['image'] %>" alt="picture of <%= @recipe[0]['label'] %>">
+      <img class="recipe-image" src="<%= @recipe['image'] %>" alt="picture of <%= @recipe['label'] %>">
     </figure>
 
     <article class="recipe-ingred">
       <h3>Ingredients</h3>
       <ul>
-        <% @recipe[0]['ingredientLines'].each do |ingredient|%>
+        <% @recipe['ingredientLines'].each do |ingredient|%>
           <li><%= ingredient %></li>
         <% end %>
       </ul>
@@ -25,11 +24,11 @@
 
   <article class="recipe-diet">
     <h3>Dietary Labels</h3>
-    <% if @recipe[0]['dietLabels'].length < 1 %>
+    <% if @recipe['dietLabels'].length < 1 %>
       <p>No dietary labels</p>
     <% else %>
     <ul>
-      <% @recipe[0]['dietLabels'].each do |label|%>
+      <% @recipe['dietLabels'].each do |label|%>
         <li><%= label %></li>
       <% end %>
     </ul>
