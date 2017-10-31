@@ -10,5 +10,14 @@
 
   <body>
     <%= yield %>
+    <% if session[:recent_searches] %>
+      <ul>
+        <%session[:recent_searches].each do |search, image| %>
+        <li>
+          <%= link_to search, recipes_path(search: search)%>
+        </li>
+        <%end%>
+      </ul>
+      <%end%>
   </body>
 </html>
