@@ -1,5 +1,13 @@
 <h1>Search Results</h1>
 
+<h2>Results for <%= @query %></h2>
 <% @results.each do |hit| %>
-  <p><%= hit['recipe']['label'] %></p>
+  <article>
+    <figure>
+      <img src="<%= hit['recipe']['image'] %>">
+      <figcaption>
+        <%= hit['recipe']['label'] %>
+      </figcaption>
+    </figure>
+  </article>
 <% end %>
