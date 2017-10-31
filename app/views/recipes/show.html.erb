@@ -17,7 +17,26 @@
   </li>
   <% end %>
 </ul>
+<%= link_to "Instructions", @recipe.url, class:'button'%>
+
+<table>
+  <tbody>
+    <% @recipe.dietary_info.each do |info| %>
+    <tr>
+      <td>
+        <%= info["label"]%>
+      </td>
+      <td>
+        <%= "#{info["total"].round(1)}#{info["unit"]}" %>
+      </td>
+      <td>
+        <%= info["daily"].round(2) %>%
+      </td>
+    </tr>
+    <% end %>
+  </tbody>
+</table>
 
 <% @recipe.health_labels.each do |label| %>
-  <%= label %>
+<%= label %>
 <% end %>
