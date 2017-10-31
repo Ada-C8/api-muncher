@@ -11,6 +11,7 @@ class Recipe
     @recipe_url = args[:recipe_url]
     @source = args[:source]
     @ingredients = args[:ingredients]
+    @id = @name.gsub(/\W/){} + ("%010i" % rand(10 ** 10))
 
     @dietary_info = args[:dietary_info] if args[:dietary_info]
     @diet_labels = args[:diet_labels] if args[:diet_labels]
