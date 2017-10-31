@@ -29,7 +29,8 @@ class EdemamApiWrapper
     recipe_url = api_params["recipe"]["shareAs"]
     ingredients = api_params["recipe"]["ingredientLines"]
     dietary = api_params["recipe"]["healthLabels"]
-    return Recipe.new(label, recipe_url, ingredients, dietary)
+    image = api_params["recipe"]["image"]
+    return Recipe.new(label, recipe_url, ingredients, dietary, image)
   end
 
 end

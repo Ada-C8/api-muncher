@@ -1,20 +1,26 @@
 <h1> recipe index page </h1>
 
-<ol>
+<h2>Results for <%=@query%> </h2>
+<ul>
 <% @recipes.each do |recipe| %>
-<li>
-  name: <%= recipe.label %>
-</li>
-<li>
-  ingredients: <%= recipe.ingredients %>
-</li>
-<li>
-  url: <%= recipe.recipe_url%>
-</li>
-<li>
-  dietary: <%= recipe.dietary%>
-</li>
-
-
-</ol>
+  <li>
+    <figure>
+      <img src="<%=recipe.image%>"/>
+      <figcaption>
+      <li>
+        name: <%= recipe.label %>
+      </li>
+      <li>
+        ingredients: <%= recipe.ingredients %>
+      </li>
+      <li>
+       link to original recipe <%= recipe.recipe_url%>
+      </li>
+      <li>
+        dietary: <%= recipe.dietary%>
+      </li>
+      </figcaption>
+      </figure>
+  </li>
+</ul>
 <%end %>
