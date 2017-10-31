@@ -1,0 +1,13 @@
+<h1> recipe index page </h1>
+
+<ol>
+<% @recipes.each do |recipe| %>
+<li>
+  uri: <%= recipe["hits"][0]["recipe"]["uri"] %>
+</li>
+<li>
+  name: <%= recipe["hits"][0]["recipe"]["label"] %>
+</li>
+
+</ol>
+<%end %>
