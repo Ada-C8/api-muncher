@@ -20,6 +20,10 @@ group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
   gem 'capybara', '~> 2.13'
   gem 'selenium-webdriver'
+  gem 'minitest-vcr'
+  gem 'webmock'
+  gem 'simplecov'
+  gem 'dotenv-rails'
 end
 
 group :development do
@@ -30,6 +34,9 @@ group :development do
   gem "better_errors"
   gem "binding_of_caller"
   gem 'dotenv-rails'
+  gem 'minitest-vcr'
+  gem 'webmock'
+  gem 'simplecov'
 end
 
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]

@@ -25,7 +25,13 @@ class EdamamApiWrapper
   def self.get_recipe(id)
     url = BASE_URL + "?r=#{ERB::Util.u(id)}" + "&app_id=#{APP_ID}&app_key=#{APP_KEY}"
     data = HTTParty.get(url).parsed_response
-    Recipe.new data.first["label"], data.first["uri"]
+    Recipe.new data.first["label"],
+     data.first["uri"],
+    data.first["image"],
+    data.first["dietLabels"],
+    data.first["ingredientLines"],
+    data.first["source"],
+    data.first["url"]
   end
 
 end

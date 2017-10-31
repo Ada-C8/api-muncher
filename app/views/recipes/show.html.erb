@@ -1,2 +1,15 @@
-Recipe
+
 <h1><%= @recipe.title %></h1>
+by <%= @recipe.provider %>
+<p><%= link_to "Go to Recipe", @recipe.link %></p>
+
+<%= image_tag  @recipe.image %>
+
+Dietary Information:
+<p><%= @recipe.dietlabels %></p>
+
+Ingredients:
+
+<% @recipe.ingredients.each do |ingredient| %>
+<p><%= ingredient%> </p>
+<%end%>
