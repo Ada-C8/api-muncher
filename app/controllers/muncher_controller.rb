@@ -1,4 +1,5 @@
 class MuncherController < ApplicationController
+  # QUESTION: Why isn't the controller name plural ?
 
   def root
   end # root
@@ -7,6 +8,6 @@ class MuncherController < ApplicationController
   end # index
 
   def show
-  end # show 
+  end # show
 
 end
