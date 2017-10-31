@@ -5,9 +5,14 @@ class EdamamApiWrapper
   APP_ID = ENV["APP_ID"]
   APP_KEY = ENV["APP_KEY"]
 
-  def self.list_recipes(search)
+  def self.list_recipes(search, app_id = nil, app_key = nil)
     #takes in search as a string, uses whitespace to seperate
-    url = BASE_URL + "search?q=#{search}" + "&app_id=#{APP_ID}" + "&app_key=#{APP_KEY}"
+    #need to pass in optional app keys and ids so I can test bogus tokens etc.
+
+    app_id ||= APP_ID
+    app_key ||= APP_KEY
+
+    url = BASE_URL + "search?q=#{search}" + "&app_id=#{app_id}" + "&app_key=#{app_key}"
 
     data = HTTParty.get(url)
 
