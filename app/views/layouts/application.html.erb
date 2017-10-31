@@ -13,6 +13,17 @@
 </head>
 
 <body>
+  <% unless current_page?(root_path) %>
+  <header>
+    <h1>Muncher</h1>
+    <h3>Find your flavor . . .</h3>
+    <%= form_tag( '/recipes') do %>
+    <%= text_field_tag :search %>
+    <%= submit_tag "Search" %>
+    <% end %>
+
+  </header>
+  <% end %>
 
   <%= yield %>
 

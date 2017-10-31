@@ -1,4 +1,4 @@
-require "test_helper"
+require 'test_helper'
 
 describe RecipeSearch do
   describe 'self.search' do
@@ -7,7 +7,7 @@ describe RecipeSearch do
         result = RecipeSearch.search('artichoke')
 
         result.must_be_kind_of Array
-        result.each {|r| r.must_be_kind_of Recipe}
+        result.each { |r| r.must_be_kind_of Recipe }
       end
     end
 
@@ -19,12 +19,11 @@ describe RecipeSearch do
       end
     end
 
-    it 'breaks with bad id' do
+    it 'raises APIError without authentication' do
       VCR.use_cassette('not_authed') do
-        result = RecipeSearch.search('cookies')
-
-        result.must_be_kind_of Array
-        result.each {|r| r.must_be_kind_of Recipe}
+        proc {
+          RecipeSearch.search('cookies')
+        }.must_raise RecipeSearch::APIError
       end
     end
   end
