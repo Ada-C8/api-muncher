@@ -20,6 +20,6 @@ class Recipe
   end
 
   def uri_id
-    return self.uri[/(?<=_)[0-9]+/]
+    return self.uri[/(?<=_)[a-zA-Z0-9]+/]
   end
 end
