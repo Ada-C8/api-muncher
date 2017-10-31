@@ -1,0 +1,13 @@
+<h1>Recipes</h1>
+
+<%= form_tag recipes_path, method: :get do %>
+  <%= label_tag(:term, "Enter term to search for") %>
+  <%= text_field_tag(:term) %>
+  <%= submit_tag("Send") %>
+<% end %>
+
+
+<% @recipes.each do |recipe| %>
+<h3><%= recipe.label %></h3>
+<img src = "<%= recipe.image %>", alt = "<%=recipe.label %>"/>
+<% end %>
