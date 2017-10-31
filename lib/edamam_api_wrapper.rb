@@ -8,11 +8,15 @@ class EdamamApiWrapper
   def self.search_recipes(search)
     url = BASE_URL + "#{search}" + "&app_id=#{ID}" + "&app_key=#{KEY}"
     response = HTTParty.get(url)
-    if response.present?
-      return response
+    recipes = []
+    if response["hits"]
+      response["hits"].each do |recipe_data|
+        recipes << create_recipe(recipe_data)
+      end
     else
       return []
     end
+    return recipes
   end
 
   # def self.list_channels
@@ -47,17 +51,25 @@ class EdamamApiWrapper
   #
   private
 
-  def self.create_channel(api_params)
-      return Channel.new(
-        api_params["name"],
-        api_params["id"],
-        {
-          purpose: api_params["purpose"],
-          is_archived: api_params["is_archived"],
-          members: api_params["members"]
-        }
-      )
-  end
+  # def self.create_channel(api_params)
+  #     return Channel.new(
+  #       api_params["name"],
+  #       api_params["id"],
+  #       {
+  #         purpose: api_params["purpose"],
+  #         is_archived: api_params["is_archived"],
+  #         members: api_params["members"]
+  #       }
+  #     )
+  # end
 
-  
+  def create_recipe(api_params)
+    return Recipe.new(
+      api_params["recipe"]["label"],
+      api_params["recipe"]["url"],
+      api_params["recipe"]["image"],
+      api_params["recipe"]["ingredientLines"],
+      api_params["recipe"]["healthLabels"]
+    )
+  end
 end

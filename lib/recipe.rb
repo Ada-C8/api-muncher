@@ -1,11 +1,11 @@
 class Recipe
-  attr_reader :id, :name, :image, :ingredients, :healthLabels
+  attr_reader :name, :link, :image, :ingredients, :healthLabels
 
-  def initialize(id, name, image, ingredients)
+  def initialize(name, link, image, ingredients)
     raise ArgumentError if !valid_input?
 
-    @id = id
     @name = name
+    @link = link
     @image = image
     @ingredients = ingredients
     @healthLabels = healthLabels
@@ -13,6 +13,6 @@ class Recipe
     private
 
     def valid_input?
-      return name == nil || name = "" || id == nil || id == "" || image == nil || image == "" || ingredients == nil || ingredients == "" || healthLabels == nil || healthLabels == ""
+      return name == nil || name = "" || link == nil || link == "" || image == nil || image == "" || ingredients == nil || ingredients == "" || healthLabels == nil || healthLabels == ""
     end
 end
