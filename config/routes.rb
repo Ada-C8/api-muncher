@@ -3,13 +3,6 @@ Rails.application.routes.draw do
 
   root 'recipes#index'
 
-  # resources :recipes
-
-  get '/recipes/search/:query', to:'recipes#search', as: 'recipes_search'
+  get '/recipes/search', to:'recipes#search', as: 'recipes_search'
   get '/recipes/:uri', to: 'recipes#show', as: 'recipe'
-
-  # get ':recipes/new-search', to: 'recipes#new', as: 'recipes_new_search'
-
-  # get ':channel/new', to: 'chat#new', as: 'chat_new'
-  # post ':channel', to: 'chat#create', as: 'chat_create'
 end
