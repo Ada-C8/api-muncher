@@ -1,7 +1,9 @@
 require 'test_helper'
 
 describe "EdamamApiWrapper" do
-  it "this test will fail" do
-    false.must_equal true
+  it "can get a search" do
+    VCR.use_casset("yaml name") do
+      result = EdamamApiWrapper.search(query)
+    end
   end
 end
