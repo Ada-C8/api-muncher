@@ -11,7 +11,7 @@
   <ul>
     <% @recipes.each do |recipe| %>
       <li>
-        <%= link_to recipe.title %>
+        <%= link_to recipe.title, recipe_path(:r => recipe.id)  %>
       </li>
     <% end %>
   </ul>
