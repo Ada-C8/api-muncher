@@ -2,7 +2,8 @@
 <ul>
   <% @recipes.each do |recipe| %>
     <li>
-      <%= link_to recipe["recipe"]["label"], recipe_path(recipe["recipe"]["label"])%>
+      <img src="<%= recipe.image %>", alt="<%= recipe.name %>"/>
+      <%= link_to recipe.name, recipe_path(recipe.name, recipe_id: recipe.id)%>
     </li>
   <% end %>
 </ul>
