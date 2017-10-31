@@ -10,8 +10,31 @@ class EdamamApiWrapper
 
   def self.search(q)
     url = BASE_URL + "/search" + "?q=#{q}" + "&app_id=#{APP_ID}" + "&app_key=#{APP_KEY}"
-    binding.pry
+
+    puts "About to send request for list of channels"
     data = HTTParty.get(url)
-    puts url
+
+    puts "Got response with status: #{data.code}: #{data.message}"
+    puts "Parsed response is: #{data.parsed_response}"
+    puts "Keys are: #{data.parsed_response.keys}"
+
+    recipe_list = []
+    if data["hits"]
+      data["hits"].each do |recipe_data|
+        recipes << self.create_recipe(recipe_data)
+      end
+    end
+    return recipe_list
+  end
+
+  private
+
+  def self.create_recipe(api_params)
+    return Recipe.new(
+      api_params["label"],
+      api_params["url"],
+      api_params["image"],
+      api_params["ingredients"]
+    )
   end
 end
