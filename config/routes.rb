@@ -5,7 +5,8 @@ Rails.application.routes.draw do
 
   # resources :recipes
 
-  get '/search', to:'recipes#search', as: 'recipes_search'
+  get '/recipes/search/:query', to:'recipes#search', as: 'recipes_search'
+  get '/recipes/:uri', to: 'recipes#show', as: 'recipe'
 
   # get ':recipes/new-search', to: 'recipes#new', as: 'recipes_new_search'
 

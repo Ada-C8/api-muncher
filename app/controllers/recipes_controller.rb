@@ -10,13 +10,15 @@ class RecipesController < ApplicationController
   # end
 
   def show
-    # @recipe = params[:recipe]
+    @recipe_uri = params[:uri]
+    @recipe = EdamamApiWrapper.show_recipe(@recipe_uri)
   end
 
   def search
     @query = params[:query]
     @results = EdamamApiWrapper.search_recipes(@query)
     return @results
+    # check if the query is valid
     # if query
     #   @results = EdamamApiWrapper.search_recipes(query)
     #   return @results
