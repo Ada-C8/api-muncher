@@ -6,9 +6,23 @@ class EdamamApiWrapper
 
   def self.search(q)
     url = BASE_URL + "?q=#{q}" + "&app_id=#{APP_ID}" + "&app_key=#{APP_KEY}"
+    # + "&from=0" + "&to=1000"
+    data = HTTParty.get(url)
+    #
+    matched_recipes = []
+    if data["hits"]
+      data["hits"].each do |hit_data|
+        matched_recipes << create_recipe(hit_data)
+      end
+    end
+    return matched_recipes
+  end
+# response.parsed_response["hits"]
 
-    response = HTTParty.get(url)
-    return response
+  private
+
+  def self.create_recipe(api_params)
+    return Channel.new()
   end
 end
 
