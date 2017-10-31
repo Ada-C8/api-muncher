@@ -1,33 +1,41 @@
 require 'test_helper'
 
 describe "Recipe" do
+  before do
+    @name = "name"
+    @image = "image"
+    @url = "url"
+    @ingredients = ["ingredients"]
+    @recipe = Recipe.new(@name, @image, @url, @ingredients)
+  end
   it "can be instantiated" do
-    Recipe.new("name", "id")
+    @recipe.must_be_kind_of Recipe
   end
 
-  it "Requires a name and an ID" do
+  it "Requires a name, image, url, and ingredients" do
     proc {
       Recipe.new()
     }.must_raise ArgumentError
 
     proc {
-      Recipe.new("name")
-    }.must_raise ArgumentError
-
-    proc {
-      Recipe.new("", "")
+      Recipe.new("name", "image", "url")
     }.must_raise ArgumentError
   end
 
-  it "keeps track of name and ID" do
-    name = "name"
-    id = "id"
-    recipe = Recipe.new(name, id)
-    recipe.name.must_equal name
-    recipe.id.must_equal id
+  it "keeps track of instance variables" do
+    @recipe.name.must_equal @name
+    @recipe.url.must_equal @url
+    @recipe.ingredients.must_equal @ingredients
   end
 
   it "tracks optionals" do
-    
+    options = {
+      diet_labels: ["diet_labels"],
+      health_labels: ["health_labels"]
+    }
+    recipe = Recipe.new(@name, @image, @url, @ingredients, options)
+
+    recipe.diet_labels.must_equal options[:diet_labels]
+    recipe.health_labels.must_equal options[:health_labels]
   end
 end

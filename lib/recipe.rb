@@ -1,15 +1,16 @@
 class Recipe
-  attr_reader :name, :id, :purpose, :is_archived, :members
+  attr_reader :name, :image, :url, :ingredients, :diet_labels, :health_labels
 
-  def initialize(name, id, options = {} )
-    raise ArgumentError if name == nil || name == "" || id == nil || id == ""
+  def initialize(name, image, url, ingredients, options = {} )
+    # raise ArgumentError if name == "" -- neccessary?
 
     @name = name
-    @id = id
+    @image = image
+    @url = url
+    @ingredients = ingredients
+    # this is an array of strings
 
-    @purpose = options[:purpose]
-    @is_archived = options[:is_archived]
-    @is_general = options[:is_archived]
-    @members = options[:members]
+    @diet_labels = options[:diet_labels]
+    @health_labels = options[:health_labels]
   end
 end
