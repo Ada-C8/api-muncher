@@ -7,6 +7,7 @@ class RecipesController < ApplicationController
 
   def show
     @recipe = ApiMuncherWrapper.find_recipes(params[:uri])
+    render_404 unless @recipe
   end
 
   def root
