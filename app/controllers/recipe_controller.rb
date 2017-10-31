@@ -1,4 +1,4 @@
-class SearchController < ApplicationController
+class RecipeController < ApplicationController
   def home # This will give a search bar to find all recipes
   end
 

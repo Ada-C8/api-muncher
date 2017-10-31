@@ -20,4 +20,7 @@ describe Recipe do
     }.must_raise ArgumentError
   end
 
+  it "tracks optional arguments" do
+  end
+
 end

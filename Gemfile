@@ -41,6 +41,8 @@ group :development, :test do
   gem 'capybara', '~> 2.13'
   gem 'selenium-webdriver'
   gem 'awesome_print'
+  gem 'minitest-vcr'
+  gem 'webmock'
 end
 
 group :development do
