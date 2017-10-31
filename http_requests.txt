@@ -4,6 +4,7 @@ https://api.edamam.com/search?q=chicken&app_id=<ID>&app_key=<key>
 
 # I think this is how you would access the uri, which is what I'll use as an id:
 response["hits"][0]["recipe"]["uri"]
+
 # to access the recipe name
 response["hits"][0]["recipe"]["label"]
 ....
