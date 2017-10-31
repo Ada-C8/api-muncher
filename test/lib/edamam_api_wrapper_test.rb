@@ -1,5 +1,4 @@
 require 'test_helper'
-
 describe EdamamApiWrapper do
   describe "get_recipies" do
     it "can return a list of recipies" do
