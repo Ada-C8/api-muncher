@@ -1,4 +1,14 @@
 class RecipesController < ApplicationController
-# uri.sub(/[#]{1}/, '%')
+  def root
+    # I don't think this needs anything currently.
+  end
 
+  def index
+    
+  end
+
+  def show
+    # https://api.edamam.com/search?r=http://www.edamam.com/ontologies/edamam.owl%23recipe_637913ec61d9da69eb451818c3293df2
+    # uri.sub(/[#]{1}/, '%') this regex will replace # with %
+  end
 end
