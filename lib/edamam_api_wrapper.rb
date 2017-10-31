@@ -3,6 +3,7 @@ require 'pry'
 
 class EdamamApiWrapper
   BASE_URL = "https://api.edamam.com/"
+  BASE_URI = "?r=http://www.edamam.com/ontologies/edamam.owl%23recipe_"
   APP_ID = ENV["APP_ID"]
   APP_KEY = ENV["APP_KEY"]
 
@@ -27,12 +28,11 @@ class EdamamApiWrapper
     return recipe_list
   end
 
-  def self.find_recipe(r)
-    url = BASE_URL + "/search" + "?r=#{r}" + "&app_id=#{APP_ID}" + "&app_key=#{APP_KEY}"
+  def self.find_recipe(id)
+    url = BASE_URL + "/search" + BASE_URI + "#{id}" + "&app_id=#{APP_ID}" + "&app_key=#{APP_KEY}"
 
     puts "About to send request for one recipe"
     data = HTTParty.get(url)
-
     # puts "Got response with status: #{data.code}: #{data.message}"
     # puts "Parsed response is: #{data.parsed_response}"
     # puts "Keys are: #{data.parsed_response.keys}"

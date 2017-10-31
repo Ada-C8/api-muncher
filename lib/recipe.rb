@@ -11,11 +11,15 @@ class Recipe
     @ingredients = ingredients
   end
 
-  def ingredients_formatted
+  def ingredients_text
     ingredients_list = []
     @ingredients.each do |ingred|
       ingredients_list << ingred["text"]
     end
     return ingredients_list
+  end
+
+  def uri_id
+    return self.uri[/(?<=_)[0-9]+/]
   end
 end

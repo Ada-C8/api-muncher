@@ -6,7 +6,9 @@
       <div class="small-12 medium-6 large-4 columns">
         <%# uri_initial = "#{recipe.uri}" %>
         <%# uri = uri_initial.gsub(/%2F/, "/") %>
-        <%= link_to recipe.label, recipe_path(id: uri) %>
+        <% uri_id = recipe.uri_id %>
+        <%# uri_id = recipe.ingredients_text %>
+        <%= link_to recipe.label, recipe_path(uri_id) %>
         <%= image_tag(recipe.image, alt:recipe.label) %>
       </div>
     <% end %>
@@ -16,6 +18,4 @@
           <%# end %>
 
   </section>
-
-
 </section>
