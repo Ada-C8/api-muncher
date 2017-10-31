@@ -3,11 +3,17 @@
 
   <section class="row">
     <% @recipes.each do |recipe| %>
-      <div class="small-12 large-4 columns">
-        <%= recipe.label %>
-        <%= image_tag("#{recipe.image}", alt:"#{recipe.label}") %>
+      <div class="small-12 medium-6 large-4 columns">
+        <%# uri_initial = "#{recipe.uri}" %>
+        <%# uri = uri_initial.gsub(/%2F/, "/") %>
+        <%= link_to recipe.label, recipe_path(id: uri) %>
+        <%= image_tag(recipe.image, alt:recipe.label) %>
       </div>
     <% end %>
+
+    <%#=link_to product_path(product.id) do %>
+            <%#= image_tag product.photo_url %>
+          <%# end %>
 
   </section>
 

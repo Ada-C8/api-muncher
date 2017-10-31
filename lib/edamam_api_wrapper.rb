@@ -27,12 +27,29 @@ class EdamamApiWrapper
     return recipe_list
   end
 
+  def self.find_recipe(r)
+    url = BASE_URL + "/search" + "?r=#{r}" + "&app_id=#{APP_ID}" + "&app_key=#{APP_KEY}"
+
+    puts "About to send request for one recipe"
+    data = HTTParty.get(url)
+
+    # puts "Got response with status: #{data.code}: #{data.message}"
+    # puts "Parsed response is: #{data.parsed_response}"
+    # puts "Keys are: #{data.parsed_response.keys}"
+    recipe = nil
+    if data.any?
+      recipe = create_recipe(data[0])
+    end
+    return recipe
+  end
+
   private
 
   def self.create_recipe(api_params)
     return Recipe.new(
       api_params["label"],
       api_params["url"],
+      api_params["uri"],
       api_params["image"],
       api_params["ingredients"]
     )
