@@ -2,11 +2,12 @@ class SearchController < ApplicationController
   def home # This will give a search bar to find all recipes
   end
 
+  #TODO: Rename this search controller to recipe controller
   def index # This will show all the results of the search
-
-    # I need to get instances of each of the search results and call that here in the method so that I can access them
+    @recipes = EdamamApiWrapper.search(params[:something_goes_here_from_the_form])
   end
 
   def show
+    @recipe = params[:passinanidofsomesorthere]
   end
 end

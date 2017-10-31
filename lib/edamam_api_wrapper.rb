@@ -20,7 +20,7 @@ class EdamamApiWrapper
 # response.parsed_response["hits"]
 
   private
-
+  # TODO: Continue to create new instance of a recipe
   def self.create_recipe(api_params)
     return Channel.new()
   end
