@@ -1,7 +1,8 @@
 # to get all recipies for 'chicked'
 https://api.edamam.com/search?q=chicken&app_id=<ID>&app_key=<key>
 
-
+# to get the results for a specific recipe
+https://api.edamam.com/search?r=http://www.edamam.com/ontologies/edamam.owl%23recipe_637913ec61d9da69eb451818c3293df2&app_id=<ID>&app_key=<key>
 # I think this is how you would access the uri, which is what I'll use as an id:
 response["hits"][0]["recipe"]["uri"]
 
@@ -57,3 +58,20 @@ response.response
 
 # QUESTION: could I use the "more" or "count" keys to determine if there were any search results instead of the status code? When there are results they have the following values:
 > {"q"=>"chicken", "from"=>0, "to"=>10, "params"=>{"sane"=>[], "q"=>["chicken"], "app_key"=>["5e2753dc1cca131a7850f3ab9335984d"], "app_id"=>["1657f821"]}, "more"=>true, "count"=>88393, "hits"=>[{"recipe"=>{"uri"=>"http:/
+
+################## single recipe ######################
+# to get the results for a specific recipe
+https://api.edamam.com/search?r=http://www.edamam.com/ontologies/edamam.owl%23recipe_637913ec61d9da69eb451818c3293df2&app_id=<ID>&app_key=<key>
+# I think this is how you would access the uri, which is what I'll use as an id:
+response["hits"][0]["recipe"]["uri"]
+
+# to get the label
+r[0]["label"] (where r is the response)
+
+# r[0]["image"]
+
+#  r[0]["uri"]
+
+....
+ect
+....

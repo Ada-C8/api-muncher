@@ -36,7 +36,34 @@ class EdamamApiWrapper
     return recipies_returned
   end # get_recipies
 
+  def self.show_recipe(uri, key=KEY)
+    # encode the uri from the show controller
+    encoded_uri = URI.encode(uri)
+    url = BASE_URL + encoded_uri + "&app_id=" + ID + "&app_key=" + key
+
+    # make the request
+    response = HTTParty.get(url)
+
+    # create an instance of Recipe from the api response
+    # return this instance
+    create_single_recipe(response)
+
+  end # show_recipe
 private
+
+def self.create_single_recipe(response)
+  return Recipe.new(
+  api_hits[0]["label"],
+  api_hits[0]["uri"],
+  {
+    photo: api_hits[0]["image"],
+    url: api_hits[0]["url"],
+    ingredients: api_hits[0]["ingredients"],
+    diet_labels: api_hits[0]["dietLabels"],
+    uri: api_hits[0]["uri"]
+  }
+  )
+end # create_singe_recipe
 
 def self.create_recipe(api_hits)
   return Recipe.new(
@@ -46,7 +73,8 @@ def self.create_recipe(api_hits)
     photo: api_hits["recipe"]["image"],
     url: api_hits["recipe"]["url"],
     ingredients: api_hits["recipe"]["ingredients"],
-    diet_labels: api_hits["recipe"]["dietLabels"]
+    diet_labels: api_hits["recipe"]["dietLabels"],
+    uri: api_hits["recipe"]["uri"]
   }
   )
 end # self.create_recipe

@@ -7,5 +7,8 @@ class RecipiesController < ApplicationController
   end # index
 
   def show
+    # use the uri to do a search for a specific recipe from the api
+    # have to encode the uri to get rid of some weird characters in it
+    # will have to make another method in EdamamApiWrapper to call here! 
   end # show
 end

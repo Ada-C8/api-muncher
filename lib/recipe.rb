@@ -3,7 +3,7 @@ require "httparty"
 require 'pry'
 
 class Recipe
-  attr_reader :name, :id, :photo, :ingredients, :diet_labels
+  attr_reader :name, :id, :photo, :ingredients, :diet_labels, :uri
  def initialize(name, id, options = {})
    raise ArgumentError if name == nil || name == "" || id == nil || id == ""
 
@@ -14,5 +14,6 @@ class Recipe
    # TODO: format ingredients into a more readable format in the initialize
    @ingredients = options[:ingredients]
    @diet_labels = options[:diet_labels]
+   @uri = options[:uri]
  end # initialize
 end
