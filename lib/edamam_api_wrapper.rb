@@ -1,47 +1,25 @@
 require 'httparty'
 
-class SlackApiWrapper
+class EdamamApiWrapper
 
-  BASE_URL = "https://slack.com/api/"
-  TOKEN = ENV["SLACK_TOKEN"]
+  BASE_URL = "https://api.edamam.com/search"
+  APP_ID = ENV["APP_ID"]
+  APP_KEY = ENV["APP_KEY"]
 
 
-  def self.list_channels
-    url = BASE_URL + "channels.list?token=#{TOKEN}" +
-    "&exclude_archived=1"
-
+  def self.list_recipes(query)
+    url = BASE_URL + "?q=#{query}" + "&app_id=#{APP_ID}&app_key=#{APP_KEY}"
+    ap url
     data = HTTParty.get(url)
-    if data["channels"]
-      my_channels = data["channels"].map do |channel_hash|
-        ap channel_hash
-        Channel.new channel_hash["name"],
-        channel_hash["id"], purpose:
-        channel_hash["purpose"], is_archived:
-        channel_hash["is_archived"], is_general:
-        channel_hash["is_general"], members:
-        channel_hash["members"]
+
+    if data["hits"]
+      my_recipes = data["hits"].map do |recipe_hash|
+        ap recipe_hash
+        Recipe.new recipe_hash["recipe"]["label"]
       end
-      return my_channels
+      return my_recipes
     else
       return []
     end
-  end
-
-
-  def self.send_message(channel, msg)
-    p "Sending to #{msg} to channel #{channel}"
-    url = BASE_URL + "chat.postMessage?" + "token=#{TOKEN}"
-
-    response = HTTParty.post(url,
-    body: {
-      "text" => "#{msg}",
-      "channel" => "#{channel}",
-      "username" => "TanjaBOT",
-      "icon_emoji" => ":sleep:",
-      "as_user" => "false"
-    },
-    :headers => {'Content-Type' => "application/x-www-form-urlencoded"}
-    )
-    return response.success?
   end
 end

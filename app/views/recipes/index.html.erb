@@ -1,9 +1,17 @@
-<section class="homepage">
-  <h1>Search</h1>
+<h1>Search<span class="search"> </span> </h1>
+
+<%= form_tag root_path, method: "get" do %>
+  <%= label_tag(:q, "Search recipe") %>
+  <%= text_field_tag(:q) %>
+  <%= submit_tag("Search") %>
+<% end %>
+
+<section class="recipes-list">
+  <h1>Recipes</h1>
   <ul>
-    <% @channels.each do |channel| %>
+    <% @recipes.each do |recipe| %>
       <li>
-        <%= link_to channel.name, chat_new_path(channel.id) %>
+        <%= link_to recipe.title %>
       </li>
     <% end %>
   </ul>

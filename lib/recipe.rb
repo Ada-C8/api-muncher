@@ -1,16 +1,11 @@
-class Channel
-  attr_reader :name, :id, :purpose, :is_archived, :is_general
+class Recipe
+  attr_reader :title
 
 
-  def initialize(name, id, options = {})
-    raise ArgumentError if name == nil || name == "" || id == nil || id == ""
+  def initialize(title)
+    raise ArgumentError if title == nil || title == ""
 
-    @name = name
-    @id = id
+    @title = title
 
-    @purpose = options[:purpose]
-    @is_archived = options[:is_archived]
-    @is_general = options[:is_general]
-    @memebers = options[:members]
   end
 end
