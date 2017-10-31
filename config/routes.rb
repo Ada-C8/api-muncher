@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'homepage/index'
+
   get 'recipes/index'
 
   get 'recipes/new'
