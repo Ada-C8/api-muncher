@@ -33,21 +33,24 @@ class ApiMuncherWrapper
   end
 
   def self.find_recipes(uri)
-
     url = BASE_URL +
     "?r=http://www.edamam.com/ontologies/edamam.owl%23recipe_#{uri}&app_id=#{APP_ID}&app_key=#{APP_KEY}"
     recipe = HTTParty.get(url).parsed_response[0]
-    return Recipe.new(recipe["label"],
-        recipe["uri"],
-        image: recipe["image"],
-        source: recipe["source"],
-        url: recipe["url"],
-        yield: recipe["yield"],
-        calories: recipe["calories"],
-        labels: recipe["healthLabels"],
-        diets: recipe["dietLabels"],
-        ingredients: recipe["ingredientLines"],
-        dietary: recipe["digest"])
+    if recipe.nil?
+      return nil
+    else
+      return Recipe.new(recipe["label"],
+      recipe["uri"],
+      image: recipe["image"],
+      source: recipe["source"],
+      url: recipe["url"],
+      yield: recipe["yield"],
+      calories: recipe["calories"],
+      labels: recipe["healthLabels"],
+      diets: recipe["dietLabels"],
+      ingredients: recipe["ingredientLines"],
+      dietary: recipe["digest"])
+    end
   end
   # def self.send_msg(channel, msg)
   #   p "Sending #{msg} to channel: #{channel}"
