@@ -1,2 +1,6 @@
-<h1>Recipes#root</h1>
-<p>Find me in app/views/recipes/root.html.erb</p>
+<h1>MUNCHIES</h1>
+
+<%= form_tag(recipes_path, :method => "get", id: "search-form") do %>
+    <%= text_field_tag :search, params[:search], placeholder: "Search Recipes" %>
+    <%= submit_tag "Search", :name => nil %>
+<% end %>

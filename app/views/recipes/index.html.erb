@@ -1,2 +1,9 @@
-<h1>Recipes#index</h1>
-<p>Find me in app/views/recipes/index.html.erb</p>
+<h1>Search / <%=params[:search] %></h1>
+
+<ul>
+  <% @recipes.each do |recipe| %>
+  <li>
+    <%= recipe.label %>
+  </li>
+  <% end %>
+</ul>

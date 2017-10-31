@@ -7,7 +7,7 @@ class ApiMuncherWrapper
   APP_KEY = ENV["APP_KEY"]
 
   def self.search_recipes(name)
-    url = BASE_URL + "?q=#{no_space(name)}&app_id=#{APP_ID}&app_key=#{APP_KEY}"
+    url = BASE_URL + "?q=#{name.gsub(' ', '+')}&app_id=#{APP_ID}&app_key=#{APP_KEY}"
     data = HTTParty.get(url)
     if data["hits"]
       recipes = data["hits"].map do |hash|
@@ -43,9 +43,4 @@ class ApiMuncherWrapper
   #
   #   return response.success?
   # end
-
-  private
-  def no_space(name)
-    return name.gsub ' ', '+'
-  end
 end

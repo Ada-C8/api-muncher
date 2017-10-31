@@ -1,9 +1,9 @@
 Rails.application.routes.draw do
   root 'recipes#root'
 
-  post ':search', to: 'recipes#index', as: 'index'
+  get '/recipes/', to: 'recipes#index', as: 'recipes'
 
-  get 'recipes/show'
+  get 'recipes/:id', to: 'recipes#show', as: 'recipe'
 
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
