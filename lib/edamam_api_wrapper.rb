@@ -9,15 +9,14 @@ class EdamamApiWrapper
 
   def self.search(q)
     url = BASE_URL + "q=#{q}" + "&app_id=#{APP_ID}" + "&app_key=#{APP_KEY}"
-    response = HTTParty.get(url)
+    check_status(url)
+    return HTTParty.get(url)
   end
-
 
   private
   def self.create_recipe(api_params)
     return Recipe.new(
-      # api_params["name"],
-      # api_params["id"]
+
     )
   end
 
