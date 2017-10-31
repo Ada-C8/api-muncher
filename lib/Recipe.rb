@@ -6,7 +6,6 @@ class Recipe
     @label = label
     @url = url
   end
-
   # init
   # input
   # output
