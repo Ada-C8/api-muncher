@@ -18,5 +18,14 @@ describe RecipeSearch do
         result.must_equal []
       end
     end
+
+    it 'breaks with bad id' do
+      VCR.use_cassette('not_authed') do
+        result = RecipeSearch.search('cookies')
+
+        result.must_be_kind_of Array
+        result.each {|r| r.must_be_kind_of Recipe}
+      end
+    end
   end
 end
