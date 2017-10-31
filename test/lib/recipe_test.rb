@@ -10,7 +10,7 @@ describe "Recipe" do
     @recipe = Recipe.new(@name, @id, @image, @url, @ingredients)
   end
 
-  describe "initialize" do    
+  describe "initialize" do
     it "can be instantiated" do
       @recipe.must_be_kind_of Recipe
     end
