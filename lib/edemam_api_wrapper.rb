@@ -12,18 +12,24 @@ class EdemamApiWrapper
     url = BASE_URL + "q=" + search_term
     response = HTTParty.post(url)
     hits = response.parsed_response["hits"]
-    return hits
-    puts "hits #{hits}"
-    puts "hits.length #{hits.length}"
+    recipe_list = []
     if hits
       hits.each do |hit|
-        label = hit["recipe"]["label"]
-        share_url = hit["recipe"]["shareAs"]
-        ingredients = hit["recipe"]["ingredientLines"]
-        dietary = hit["recipe"]["healthLabels"]
-  #next make a recipe object!
+        recipe_list << create_recipe(hit)
       end
     end
-    return hits
+    return recipe_list
   end
+
+
+  private
+
+  def self.create_recipe(api_params)
+    label = api_params["recipe"]["label"]
+    recipe_url = api_params["recipe"]["shareAs"]
+    ingredients = api_params["recipe"]["ingredientLines"]
+    dietary = api_params["recipe"]["healthLabels"]
+    return Recipe.new(label, recipe_url, ingredients, dietary)
+  end
+
 end
