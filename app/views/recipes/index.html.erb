@@ -1,9 +1,13 @@
 <h1>Search / <%=params[:search] %></h1>
 
-<ul>
+
   <% @recipes.each do |recipe| %>
-  <li>
-    <%= recipe.label %>
-  </li>
+    <%= link_to recipe_path(format_uri(recipe.uri)) do %>
+    <article class="recipe">
+      <%= image_tag recipe.image, alt:"#{recipe.label}" %>
+      <p><%= recipe.label.titleize %></p>
+    </article>
+    <% end %>
   <% end %>
-</ul>
+
+<%= will_paginate(@recipes) %>
