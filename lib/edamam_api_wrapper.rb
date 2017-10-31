@@ -6,7 +6,7 @@ class EdamamApiWrapper
   KEY = ENV["APP_KEY"]
 
   def self.search_recipes(search)
-    url = BASE_URL + "#{search}" + "&app_id=$#{ID}" + "&app_key=$#{KEY}"
+    url = BASE_URL + "#{search}" + "&app_id=#{ID}" + "&app_key=#{KEY}"
     response = HTTParty.get(url)
     if response.present?
       return response
@@ -45,17 +45,19 @@ class EdamamApiWrapper
   #   return response.success?
   # end
   #
-  # private
-  #
-  # def self.create_channel(api_params)
-  #     return Channel.new(
-  #       api_params["name"],
-  #       api_params["id"],
-  #       {
-  #         purpose: api_params["purpose"],
-  #         is_archived: api_params["is_archived"],
-  #         members: api_params["members"]
-  #       }
-  #     )
-  # end
+  private
+
+  def self.create_channel(api_params)
+      return Channel.new(
+        api_params["name"],
+        api_params["id"],
+        {
+          purpose: api_params["purpose"],
+          is_archived: api_params["is_archived"],
+          members: api_params["members"]
+        }
+      )
+  end
+
+  
 end
