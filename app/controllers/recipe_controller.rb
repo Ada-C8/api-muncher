@@ -1,10 +1,17 @@
 class RecipeController < ApplicationController
 
-def root
-
-end
+   def root
+   end
 
   def index
-    @recipies = EdemamApiWrapper.list_recipes
+    puts "I am in index"
+    puts "these are my params #{params}"
+    @recipes = EdemamApiWrapper.list_recipes(params[:query])
+    #redirect_to :index
   end
+
+  def show
+  end
+
+
 end

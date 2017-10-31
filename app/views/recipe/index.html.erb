@@ -3,11 +3,18 @@
 <ol>
 <% @recipes.each do |recipe| %>
 <li>
-  uri: <%= recipe["hits"][0]["recipe"]["uri"] %>
+  name: <%= recipe.label %>
 </li>
 <li>
-  name: <%= recipe["hits"][0]["recipe"]["label"] %>
+  ingredients: <%= recipe.ingredients %>
 </li>
+<li>
+  url: <%= recipe.recipe_url%>
+</li>
+<li>
+  dietary: <%= recipe.dietary%>
+</li>
+
 
 </ol>
 <%end %>
