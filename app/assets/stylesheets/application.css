@@ -37,6 +37,7 @@
 
 footer {
   background-color: var(--grey);
+  text-align: center;
 }
 
 footer > p {
