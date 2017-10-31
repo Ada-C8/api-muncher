@@ -1,9 +1,10 @@
 class RecipesController < ApplicationController
   def home
 
-  end 
+  end
 
   def index
+    @recipes = EdamamApiWrapper.query(params[:search])
   end
 
   def show
