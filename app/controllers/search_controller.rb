@@ -2,18 +2,23 @@ class SearchController < ApplicationController
 
   def index
 
+
   end
 
   def new
     # @search = Search.new
   end
 
-  def create
+  def create #list
     @search = EdamamApiWrapper.find_recipes(params['ingredients'])
-    redirect_to search_path(@search)
+
+    @all_recipes = []
+    @search.hits.each do |recipe|
+      @all_recipes << Recipe.new(recipe)
+    end
   end
 
   def show
-    @search = params['search']
+    @recipe
   end
 end
