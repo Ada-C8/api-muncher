@@ -21,10 +21,10 @@ describe RecipeSearch do
 
     it 'breaks with bad id' do
       VCR.use_cassette('not_authed') do
-        result = RecipeSearch.search('cookies')
+        proc {
+          result = RecipeSearch.search('cookies')
+        }.must_raise RecipeSearch::APIError
 
-        result.must_be_kind_of Array
-        result.each {|r| r.must_be_kind_of Recipe}
       end
     end
   end

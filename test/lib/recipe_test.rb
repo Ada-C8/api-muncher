@@ -14,12 +14,16 @@ describe Recipe do
 
   it 'can be instantiated' do
     recipe = Recipe.new(recipe_params)
+
     recipe.must_be_kind_of Recipe
   end
 
   it 'raises ArgumentError if missing attribute' do
     recipe_params.delete(:source)
-    recipe = Recipe.new(recipe_params)
+
+    proc {
+      recipe = Recipe.new(recipe_params)
+    }.must_raise ArgumentError
   end
 
   describe 'attributes' do

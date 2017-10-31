@@ -1,23 +1,22 @@
 class RecipeSearch
-  # ID = ENV["RECIPE_ID"]
-  # KEY = ENV["RECIPE_KEY"]
-
-  ID = nil
-  KEY = nil
+  ID = ENV["RECIPE_ID"]
+  KEY = ENV["RECIPE_KEY"]
 
   BASE_URL = "https://api.edamam.com/"
 
   def self.search(query)
     url = BASE_URL + "search?app_id=#{ID}&app_key=#{KEY}&q=#{query}"
     response = HTTParty.get(url)
-    # binding.pry
+
     unless response.code == 200
-      puts "OH NO"
+      raise(APIError, response.message)
     end
+
     recipes = []
     response['hits'].each do |recipe|
       recipes << new_recipe(recipe['recipe'])
     end
+
     return recipes
   end
 
@@ -27,7 +26,7 @@ class RecipeSearch
       {
         name: params['label'],
         image_url: params['image'],
-        params_url: params['url'],
+        recipe_url: params['url'],
         source: params['source'],
         ingredients: params['ingredientLines'],
         dietary_info: params['totalNutrients'],
@@ -35,4 +34,6 @@ class RecipeSearch
       }
     )
   end
+
+  class APIError < Exception; end
 end
