@@ -8,7 +8,6 @@ describe MuncherController do
     end # success
   end # root
 
-
   describe "index" do
     it "will return success when there are recipies to display" do
       get muncher_path
