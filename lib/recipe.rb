@@ -1,4 +1,5 @@
 class Recipe
+  attr_reader :title, :ingredients, :calories, :health_labels, :diet_labels, :image, :link
 
   def initialize(response)
     @title = response['recipe']['label']
