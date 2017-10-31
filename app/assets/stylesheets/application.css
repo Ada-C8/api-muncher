@@ -26,6 +26,33 @@
 }
 
 
+/********/
+/* MAIN */
+/********/
+
+h2, h3, h4, h5, h6, p {
+  font-family: "Raleway", sans-serif;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  color: var(--grey);
+}
+
+h1 {
+  color: var(--coral);
+  font-family: "Cabin Sketch", sans-serif;
+  font-size: 3rem;
+  line-height: 0.75;
+}
+
+.hero h1 {
+  font-size: 7rem;
+}
+
+[type="submit"] {
+  float: right;
+}
+
 /**********/
 /* HEADER */
 /**********/
