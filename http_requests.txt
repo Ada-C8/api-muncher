@@ -1,5 +1,5 @@
 # to get all recipies for 'chicked'
-https://api.edamam.com/search?q=chicken&app_id=1657f821&app_key=5e2753dc1cca131a7850f3ab9335984d
+https://api.edamam.com/search?q=chicken&app_id=<ID>&app_key=<key>
 
 
 # to access the recipe name
