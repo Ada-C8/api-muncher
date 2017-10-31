@@ -1,0 +1,11 @@
+<% if @recipes %>
+  <ul>
+    <% @recipes.each do |recipe| %>
+    <li>
+      <%= recipe.name %>
+    </li>
+    <% end %>
+  </ul>
+<% else %>
+  <h4>Search for something tasty!</h4>
+<% end %>

@@ -217,7 +217,7 @@ DEPENDENCIES
   byebug
   capybara (~> 2.13)
   dotenv-rails
-  foundation-rails (= 6.4.1.2)
+  foundation-rails
   httparty
   jbuilder (~> 2.5)
   jquery-turbolinks
