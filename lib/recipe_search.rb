@@ -1,4 +1,4 @@
-class RecipeSearchWrapper
+class RecipeSearch
   ID = ENV["RECIPE_ID"]
   KEY = ENV["RECIPE_KEY"]
   BASE_URL = "https://api.edamam.com/"
