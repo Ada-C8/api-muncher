@@ -9,21 +9,23 @@ class EdamamApiWrapper
     app_id ||= EDAMAM_ID
     app_key ||= EDAMAM_KEY
 
-    url = BASE_URL + "?q=" + search_string + "&app_id=$#{app_id}" + "&app_key=$#{app_key }"
+    url = BASE_URL + "?q=" + search_string + "&app_id=#{app_id}" + "&app_key=#{app_key }"
 
     data = HTTParty.get(url)
 
-    if data["channels"]
-      my_channels = data["channels"].map do |channel_hash|
-        Channel.new channel_hash["name"],
-        channel_hash["id"], purpose:
-        channel_hash["purpose"], is_archived:
-        channel_hash["is_archived"], is_general:
-        channel_hash["is_general"], members:
-        channel_hash["members"]
+    if data["hits"]
+      my_recipes = data["hits"].map do |hit|
+        Recipe.new
+          hit["recipe"]["uri"],
+          hit["recipe"]["label"],
+          hit["recipe"]["url"],
+          hit["recipe"]["ingredientLines"],
+          hit["recipe"]["dietLabels"],
+          image: hit["recipe"]["image"],
+          source: hit["recipe"]["source"]
+        
       end
-      # return data["channels"]
-      return my_channels
+      return my_recipes
     else
       return []
     end
