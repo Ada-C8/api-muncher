@@ -13,7 +13,7 @@
 <body>
   <header>
     <% if session[:user_id] %>
-    <%= link_to "Favorites",root_path, class: 'button' %>
+    <%= link_to "Favorites",user_path(session[:user_id]), class: 'button' %>
     <% else %>
     <%= link_to "Log In",'/auth/google_oauth2', class: 'button' %>
     <% end %>

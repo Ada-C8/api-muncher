@@ -1,6 +1,7 @@
 <section class="row">
 <h1><%= @recipe.label %></h1>
 <%= image_tag @recipe.image, alt:"#{@recipe.label}" %>
+<%= link_to "favorite recipe", favorite_path(format_uri(@recipe.uri)), class:'button'%>
 </section>
 <section class="row">
 <dl>
