@@ -1,15 +1,12 @@
 class Recipe
-attr_reader :name, :id, :purpose, :is_archived, :is_general
-def initialize(name, id, options = {})
-  raise ArgumentError if name == nil || name == "" || id == nil || id == ""
+attr_reader :uri, :label, :image
+def initialize(uri, label, image)
+  raise ArgumentError if uri == nil || uri == "" 
 
-  @name = name
-  @id = id
-#optional variables
-  @purpose = options[:purpose]
-  @is_archived = options[:is_archived]
-  @is_general = options[:is_general]
-  @members = options[:members]
+  @uri = uri
+  @label = label
+  @image = image
+
 end
 
 end

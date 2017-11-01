@@ -6,16 +6,16 @@ class EdamamApiWrapper
   APP_KEY_TOKEN = ENV["APP_KEY_TOKEN"]
 
   def self.search_recipes(search)
-    app_id = APP_ID_TOKEN
-    app_key = APP_KEY_TOKEN
+    encoded_search = URI.encode("#{search}")
+    url = BASE_URL + "?q=#{encoded_search}&app_id=#{APP_ID_TOKEN}&app_key=#{APP_KEY_TOKEN}"
 
-    url = BASE_URL + "?q=#{search}&app_id=#{app_id}&app_key=#{app_key}"
+
 
     data = HTTParty.get(url)
 
-    if data["recipe"]
-      my_recipes = data["recipe"].map do |recipe_hash|
-        Recipe.new recipe_hash["uri"], recipe_hash["label"], recipe_hash["image"]
+    if data["hits"]
+      my_recipes = data["hits"].map do |recipes_hash|
+        Recipe.new(recipes_hash["recipe"]["uri"], recipes_hash["recipe"]["label"], recipes_hash["recipe"]["image"])
       end
 
       return my_recipes
@@ -28,7 +28,7 @@ class EdamamApiWrapper
     app_id = APP_ID_TOKEN
     app_key = APP_KEY_TOKEN
     # uri = @recipe.uri
-    # what data structure is uri stored as? class object param... 
+    # what data structure is uri stored as? class object param...
 
     url = BASE_URL + "?q=#{search}&app_id=#{app_id}&app_key=#{app_key}"
 
