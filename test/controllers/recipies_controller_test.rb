@@ -22,6 +22,15 @@ describe RecipiesController do
 
     it "will return not_found when there are no recipies returned to display" do
       # TODO: make a call with a bad search term that won't return any recipies. Need to figure out in my controller how to redirect to the root page if the request was bad... maybe check 'if @response' ?
+      VCR.use_cassette("recipes") do
+        test_params = {
+          search_term: "bread#"
+        }
+
+        get recipies_path, params: test_params
+        must_respond_with :not_found
+      end # VCR
+
     end # sucess with no recipies
   end # index
 
@@ -33,7 +42,7 @@ describe RecipiesController do
           uri: "http://www.edamam.com/ontologies/edamam.owl#recipe_7bf4a371c6884d809682a72808da7dc2"
         }
         name = "name"
-      
+
         get recipy_path(name), params: test_params
         must_respond_with :success
       end # VCR
