@@ -1,20 +1,19 @@
 require 'httparty'
 
 class EdamamApiWrapper
-  BASE_URL = "https://api.edamam.com/search"
+  BASE_URL = "https://api.edamam.com/"
   APP_ID = ENV["EDAMAM_ID"]
   APP_KEY = ENV["EDAMAM_KEY"]
 
   def self.search_recipe_results(search_term)
   # if q
-    q_url = BASE_URL + "search?q=#{search_term}" + "&app_id= #{APP_ID}" + "&app_key=#{APP_KEY}"
+  #TODO: search terms with spaces
+    q_url = BASE_URL + "search?q=#{search_term}" + "&app_id=#{APP_ID}" + "&app_key=#{APP_KEY}"
 
-  # if r
-    r_url = BASE_URL + "search?r=#{@uri}" + "&app_id= #{APP_ID}" + "&app_key=#{APP_KEY}"
-    #use URI
+    p q_url
 
+    # encoded_uri = URI.encode(q_url)
     response = HTTParty.get(q_url)
-    response = HTTParty.get(r_url)
 
     recipe_results = []
 
@@ -22,9 +21,9 @@ class EdamamApiWrapper
       response["hits"].each do |recipe|
         recipe_results << create_recipe(recipe)
       end
-    else
-      return []
     end
+
+    return recipe_results
 
   end
 
@@ -42,12 +41,24 @@ class EdamamApiWrapper
         {
           health_labels: api_params["recipe"]["healthLabels"],
           cautions: api_params["recipe"]["cautions"],
-          calories: api_params["recipes"]["calories"],
-          total_nutrients: api_params["recipes"]["totalNutrients"],
-          total_daily: api_params["recipes"]["totalDaily"],
-          digest: api_params["recipes"]["digest"]
+          calories: api_params["recipe"]["calories"],
+          total_nutrients: api_params["recipe"]["totalNutrients"],
+          total_daily: api_params["recipe"]["totalDaily"],
+          digest: api_params["recipe"]["digest"]
         }
     )
+
+  end
+
+  def self.find_recipe(recipe)
+    r_url = BASE_URL + "search?r=#{recipe.uri}" + "&app_id= #{APP_ID}" + "&app_key=#{APP_KEY}"
+    #use URI
+    response = HTTParty.get(r_url)
+    if response["hits"]
+      # return the recipe
+    else
+      # return []
+    end
 
   end
 

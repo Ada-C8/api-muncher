@@ -1,4 +1,4 @@
-class RecipeController < ApplicationController
+class Recipe
 
   attr_reader :name, :image_url, :url, :uri, :ingredients, :diet_labels, :health_labels, :cautions, :calories, :total_nutrients, :total_daily, :diet_label
 
@@ -19,9 +19,6 @@ class RecipeController < ApplicationController
     @diet_label = options[:digest]
 
   end
-
-
-
 
 
 end

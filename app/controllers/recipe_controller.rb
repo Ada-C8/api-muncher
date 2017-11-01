@@ -1,19 +1,20 @@
 class RecipeController < ApplicationController
   def home
-    # @recipes = Recipe.all
+
   end
 
   def index
     # @recipes = Recipe.all
-    # if params[:search]
-    #   @recipes = Recipe.search(params[:search]).order("created_at DESC")
-    # else
-    #   @recipes = Recipe.all.order("created_at DESC")
-    # end
+    if params[:search]
+      @recipes = EdamamApiWrapper.search_recipe_results(params[:search])
+    else
+      flash[:failure] = "No search term entered"
+      redirect_to root_path
+    end
   end
 
   def show
-
+    @recipe = EdamamaApiWrapper.show_recipe(params["recipe"])
   end
 
 end

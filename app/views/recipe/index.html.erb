@@ -1,16 +1,21 @@
 
 <section class = "results">
 <% if @recipes.empty?%>
-<h4>Sorry, there are no recipes matching your search</h4>
+  <h4>Sorry, there are no recipes matching your search</h4>
 <% else %>
   <!-- TODO: PAGINATE -->
-  <% recipes.each do |recipe|%>
-    <article>
-      <% #show the recipe's image%>
-      <p>
-        <% recipe.name %>
-      </p>
-    </article>
-  <% end %>
+  <ul>
+    <% @recipes.each do |recipe|%>
+    <li>
+      <article>
+        <%= image_tag recipe.image_url, alt: "Picture of #{recipe.name}"%>
+        <p>
+          <%=recipe.name %>
+        </p>
+      </article>
+    <% end %>
+    </li>
+  </ul>
+
 <% end %>
 </section>
