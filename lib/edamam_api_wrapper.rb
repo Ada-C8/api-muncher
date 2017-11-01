@@ -1,4 +1,5 @@
 require "HTTParty"
+require 'recipe' # ask why this didn't happen automatically
 class ApiError < StandardError
 end
 
@@ -16,24 +17,26 @@ class EdamamApiWrapper
 
   def self.get_results_from_response(response)
     return response["hits"].map do |result|
-      {
-        name: result["recipe"]["label"], # name
-        # image: result["recipe"]["image"], # image
-        # source: result["recipe"]["source"], # original source
-        # url: result["recipe"]["url"], # link to original
-        # servings: result["recipe"]["yield"], # servings
-        # diet: result["recipe"]["dietLabels"], # low-fat, etc
-        # health: result["recipe"]["healthLabels"], # vegetarian, etc
-        # ingredients: result["recipe"]["ingredientLines"], # ingredients as an array
-        # calories: result["recipe"]["calories"] # calories
-      }
+      Recipe.new(
+        result["recipe"]["label"], # name
+        result["recipe"]["image"], # image
+        result["recipe"]["source"], # original source
+        result["recipe"]["url"], # link to original
+        {
+          servings: result["recipe"]["yield"], # servings
+          diet: result["recipe"]["dietLabels"], # low-fat, etc
+          health: result["recipe"]["healthLabels"], # vegetarian, etc
+          ingredients: result["recipe"]["ingredientLines"], # ingredients as an array
+          calories: result["recipe"]["calories"] # calories
+        }
+      )
+      end
     end
-  end
 
-  private
-  def self.check_status(response)
-    unless response.code == 200
-      raise ApiError.new("API call to Edamam failed: #{response.code}")
+    private
+    def self.check_status(response)
+      unless response.code == 200
+        raise ApiError.new("API call to Edamam failed: #{response.code}")
+      end
     end
   end
-end
