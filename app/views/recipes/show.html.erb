@@ -1,2 +1,40 @@
-<h1>Recipes#show</h1>
-<p><%= @recipe.name %></p>
+<main>
+
+  <div class="small-12 columns">
+    <h3><%= @recipe.name %></h3>
+  </div>
+
+  <section class="small-3 medium-3 columns recipe-image">
+    <%= image_tag @recipe.image, alt: "image of recipe called #{@recipe.name}"%>
+  </section>
+
+  <section class="small-12 medium-9 columns recipe-details">
+    <section >
+      <p><% if @recipe.dietLabels.empty? == false %>
+        <%= "#{@recipe.name} is compliant with the following dietary regimes:" %>
+        <%= "#{list_print(@recipe.dietLabels)}" %>
+        <!-- <% @recipe.dietLabels.each do |label| %>
+        <%= "#{label}" %>
+        <% end %> -->
+        <% end %>
+      </p>
+      <% if @recipe.healthLabels.empty? == false %>
+      <p><%= "#{@recipe.name} has the following health benefits:" %>
+        <%= "#{list_print(@recipe.healthLabels)}" %>
+        <!-- <% @recipe.healthLabels.each do |label| %>
+        <%= "#{label}" %>
+        <% end %> -->
+        <% end %>
+      </p>
+      <h6>Calories <%= @recipe.calories.round(2) %></h6>
+      <h4>Ingredients:</h4>
+      <ul>
+        <%= @recipe.ingredients.each do |ingredient| %>
+        <li><%= "#{ingredient}" %></li>
+        <% end %>
+      </ul>
+      <p><%= link_to "See Full Recipe", @recipe.link, alt: "link to full recipe on original site"%></p>
+    </section>
+  </section>
+
+</main>
