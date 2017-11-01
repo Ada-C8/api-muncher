@@ -1,0 +1,131 @@
+/*
+* This is a manifest file that'll be compiled into application.css, which will include all the files
+* listed below.
+*
+* Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
+* vendor/assets/stylesheets directory can be referenced here using a relative path.
+*
+* You're free to add application-wide styles to this file and they'll appear at the bottom of the
+* compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+* files in this directory. Styles in this file should be added after the last require_* statement.
+* It is generally better to create a new file per style scope.
+*
+*= require_tree .
+*= require_self
+*= require foundation_and_overrides
+
+*/
+
+/*= require foundation */
+
+/*///////////////////////////////
+GENERAL
+/////////////////////////*/
+
+ul {
+  list-style-type: none;
+}
+
+body {
+  // background-color: #F6F7D3;
+  background-image: url('bowl');
+  margin:0;
+  padding:0;
+  height:100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+  position: relative;
+  margin: 0;
+  padding-bottom: 6rem;
+  min-height: 100%;
+}
+
+.main {
+  padding: 0 0 100px;
+  position: relative;
+}
+
+.pagination {
+  text-align: right;
+
+}
+
+.search-box {
+  // box-sizing: content-box;
+  width: 900px;
+  max-width: 70%;
+  justify-content: center;
+  background-color: white;
+  opacity: 0.8;
+  padding: 3%;
+  margin: 10% 15% 5% 15%;
+
+
+  input {
+    max-width: 150px;
+    opacity: 1;
+    align-content: center;
+  }
+
+  input#search {
+    display: inline-block;
+    max-width: 50%;
+    float: left;
+    margin-right: 2%;
+  }
+
+  button {
+    display: inline-block;
+    float: right;
+  }
+}
+
+img {
+  border-radius: 3%;
+}
+
+
+
+/*///////////////////////////////
+HERO
+/////////////////////////*/
+
+// .hero {
+//   /*background-image: url('https://grist.files.wordpress.com/2017/06/vegetables.jpg?w=640');
+//   background-repeat: no-repeat;
+//   background-size: cover;*/
+//   height: 300px;
+//   max-width: 100%;
+//   margin: 0;
+//   color: white;
+//   box-sizing: content-box;
+//   padding: 1% 5% 2% 5%;
+//   /*background-position: bottom;*/
+//   /*width: 100%;*/
+// }
+
+.hero a {
+  color: white;
+  font-weight: bold;
+}
+
+
+/*///////////////////////////////
+FOOTER
+/////////////////////////*/
+
+footer {
+  background-color: white;
+  /*margin-top: 95%;
+  height: 5%;*/
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  padding: 1rem;
+  text-align: center;
+  color: #74B555;
+  font-weight: bold;
+}

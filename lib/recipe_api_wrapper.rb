@@ -1,19 +1,20 @@
 require 'httparty'
 require 'uri'
 
+class ApiError < StandardError
+end
+
 
 class RecipeApiWrapper  #THIS IS THE DATA
   BASE_URL = "https://api.edamam.com/search"
   APP_ID = ENV["APP_ID"]
   APP_KEY = ENV["APP_KEY"]
-  # https://api.edamam.com/search
-  # ?q=chicken&app_id=814cafb4&app_key=01b4e2f096435f1272ff0588763e9be2
 
   def self.search(food, from)
     url = BASE_URL + "?q=(#{food})" + "&from=#{from}" "&app_id=#{APP_ID}" + "&app_key=#{APP_KEY}"
 
     response = HTTParty.get(url)
-  
+
     # check_status(response)
 
     recipe_list = []
@@ -23,6 +24,20 @@ class RecipeApiWrapper  #THIS IS THE DATA
       end
     end
     return recipe_list
+  end
+
+  def self.find(id)
+
+    url = BASE_URL + "?r=#{URI.encode(id)}" + "&app_id=#{APP_ID}" + "&app_key=#{APP_KEY}"
+    response = HTTParty.get(url)
+
+    recipe = nil
+
+    if response
+      recipe = self.create_recipe(response[0])
+    end
+
+    return recipe
   end
 
 
@@ -54,17 +69,4 @@ class RecipeApiWrapper  #THIS IS THE DATA
     )
   end
 
-  def self.find(id)
-
-    url = BASE_URL + "?r=#{URI.encode(id)}" + "&app_id=#{APP_ID}" + "&app_key=#{APP_KEY}"
-    response = HTTParty.get(url)
-
-    recipe = nil
-
-    if response
-      recipe = self.create_recipe(response[0])
-    end
-
-    return recipe
-  end
 end

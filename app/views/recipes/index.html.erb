@@ -1,12 +1,12 @@
 
 
-
-Welcome to Recipe Monster!  Type in a food item to search recipes:
+<div class="search-box">
+<h4> Welcome to Recipe Monster!  Type in a food item to search recipes: </h4>
 <%= form_tag(root_path, method: "get", id: "search-form") do %>
   <%= text_field_tag :search, @search, placeholder: "Search Recipes" %>
-  <%= submit_tag "Search" %>
+  <%= submit_tag "Search", class: "button" %>
 <%end%>
-
+</div>
 
 <% if @recipes != nil %>
   <div class="list-products row small-up-1 medium-up-2 large-up-4">
@@ -24,10 +24,10 @@ Welcome to Recipe Monster!  Type in a food item to search recipes:
 
     <div class="pagination">
       <% if @previous_from >= 0 %>
-      <%= link_to "Previous Page", root_path(search: @search, from: @previous_from) %>
+      <%= link_to "Previous Page", root_path(search: @search, from: @previous_from), class: "button" %>
       <%end%>
 
-      <%= link_to "Next Page", root_path(search: @search, from: @from) %>
+      <%= link_to "Next Page", root_path(search: @search, from: @from), class: "button" %>
     </div>
 
 </div>
