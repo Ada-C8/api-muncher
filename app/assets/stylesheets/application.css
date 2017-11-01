@@ -25,20 +25,7 @@
 
 body, html {
   height: 100%;
-  /*position: relative;*/
-  /*margin: 0;*/
-  /*padding-bottom: 1rem;*/
 }
-
-/*footer {
-  position: absolute;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  padding: 1rem;
-  background-color: #efefef;
-  text-align: center;
-}*/
 
 h1 {
   font-family: 'Cabin Sketch', cursive;
@@ -100,4 +87,24 @@ header .input-button input.field {
   float: left;
   margin: 0 1rem;
   clear: both;
+}
+
+/****************/
+/*FOOTER*/
+/****************/
+
+footer {
+  text-align: right;
+  /*background-color: grey;*/
+}
+footer img {
+  max-height: 40px;
+}
+
+footer.root_foot {
+  text-align: left;
+}
+
+.good_bye_foot {
+  height: 90%
 }

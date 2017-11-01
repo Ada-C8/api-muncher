@@ -20,6 +20,7 @@
       <%= render 'layouts/search' %>
       <% end %>
     </header>
+    <div class='<%= 'root' if current_page?(root_path) %>'>
     <% if flash[:message] %>
       <section class="row status <%= flash[:status] %>">
         <h3><%= flash[:status] == :failure ? "A problem occurred: " : "" %><%= flash[:message] %></h3>
@@ -29,8 +30,11 @@
 
     <%= yield %>
 
-    <!-- <footer>
-      this is a footer
-    </footer> -->
+    <footer class="column small-12 <%= 'root_foot' if current_page?(root_path) %>">
+      <p>
+        Powered by <%= image_tag "https://corehealth.global/images/default-source/meetwilo-screenshots/edamam-logo.png?sfvrsn=10" %>
+      </p>
+    </footer>
+    </div>
   </body>
 </html>
