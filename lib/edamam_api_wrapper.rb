@@ -21,14 +21,15 @@ class EdamamApiWrapper
     recipes_array = []
     if response["hits"]
       response["hits"].each do |result|
-        recipes_array << self.create_recipe(result)
+        recipes_array << self.get_recipe(result)
       end
     end
     return recipes_array
   end
 
   def self.create_recipe(uri)
-    url = BASE_URL + BASE_URI + uri + "&app_id=#{APP_ID}" + "&app_key=#{APP_KEY}"
+    encoded_uri = URI.encode(uri)
+    url = BASE_URL + uri + "&app_id=#{APP_ID}" + "&app_key=#{APP_KEY}"
     response = HTTParty.get(url)
     # Recipe.new(
     #   result[0]["uri"], # uri
@@ -55,7 +56,7 @@ class EdamamApiWrapper
     end
   end
 
-  def self.create_recipe(result)
+  def self.get_recipe(result)
     result_params = result["recipe"]
     return Recipe.new(
       result_params["uri"],
