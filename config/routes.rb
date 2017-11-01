@@ -9,6 +9,6 @@ Rails.application.routes.draw do
   get '/recipes/*id/page/:page_id', to: 'recipes#index', as: 'recipe_results_page'
   get '/recipes/*id', to: 'recipes#index', as: 'recipe_results'
   post '/recipes', to: 'recipes#search', as: 'search'
-  get '/recipes/show/*id', to: 'recipes#show', as: 'recipe'
+  get '/recipe/*id', to: 'recipes#show', as: 'recipe'
 
 end
