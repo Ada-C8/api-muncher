@@ -25,7 +25,14 @@ class EdamamApiWrapper
   end
 
   def self.show_recipe
+    app_id = APP_ID_TOKEN
+    app_key = APP_KEY_TOKEN
+    # uri = @recipe.uri
+    # what data structure is uri stored as? class object param... 
 
+    url = BASE_URL + "?q=#{search}&app_id=#{app_id}&app_key=#{app_key}"
+
+    response = HTTParty.get(url)
   end
 
 
