@@ -2,6 +2,7 @@
      <%= label_tag(:q, "Find Your Flavor...") %>
      <br/>
      <%= text_field_tag(:q) %>
+     <%= hidden_field_tag(name = "from", value = 0)%>
      <br />
      <%= submit_tag("Search") %>
 <% end %>

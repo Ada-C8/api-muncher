@@ -5,7 +5,7 @@ class RecipesController < ApplicationController
   end
 
   def results
-    @results = RecipeApiWrapper.recipe_query(params[:q])
+      @results = RecipeApiWrapper.recipe_query(params[:q], params[:from])
   end
 
   def show

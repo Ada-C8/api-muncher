@@ -6,8 +6,13 @@ class RecipeApiWrapper
   APP_ID = ENV["APP_ID"]
   APP_KEY = ENV["APP_KEY"]
 
-  def self.recipe_query(query)
-    url = BASE_URL + "?app_id=#{APP_ID}"+ "&app_key=#{APP_KEY}" + "&q=#{query}"
+  def self.recipe_query(query, from)
+    url = BASE_URL +
+          "?app_id=#{APP_ID}"+
+          "&app_key=#{APP_KEY}" +
+          "&q=#{query}"+
+          "&from=#{from}"
+
     data = HTTParty.get(url)
     if data["hits"]
       result = []
