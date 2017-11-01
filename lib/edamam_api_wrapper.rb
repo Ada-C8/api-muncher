@@ -1,6 +1,5 @@
 
 class EdamamApiWrapper
-  include Confirmation
 
   BASE_URL = "https://api.edamam.com/search?"
   ID = ENV["EDAMAM_ID"]
@@ -20,8 +19,8 @@ class EdamamApiWrapper
 
   def self.get_recipies(search_term, key=KEY)
     # check that the search term only contains letters and spaces before requesting info from the API
-    Confirmation.empty_search_term(search_term)
-    Confirmation.contain_symbols(search_term)
+    empty_search_term(search_term)
+    contain_symbols(search_term)
 
     # define the request url
     url = BASE_URL + "q=" + search_term + "&app_id=" + ID + "&app_key=" + key
@@ -77,17 +76,17 @@ class EdamamApiWrapper
 
   private
 
-  # def self.empty_search_term(search_term)
-  #   if search_term == ""
-  #     raise BlankSearchError.new("You entered a blank search term .... let's try that agine)")
-  #   end
-  # end
-  #
-  # def self.contain_symbols(search_term)
-  #   if !(search_term.match(/\A[[:alpha:][:blank:]]+\z/))
-  #     raise BadSearchTermError.new("Sorry, your search term cannot contain numbers or symbols: #{search_term}")
-  #   end # if
-  # end
+  def self.empty_search_term(search_term)
+    if search_term == ""
+      raise BlankSearchError.new("You entered a blank search term .... let's try that agine)")
+    end
+  end
+
+  def self.contain_symbols(search_term)
+    if !(search_term.match(/\A[[:alpha:][:blank:]]+\z/))
+      raise BadSearchTermError.new("Sorry, your search term cannot contain numbers or symbols: #{search_term}")
+    end # if
+  end
 
   def self.create_single_recipe(response)
     return Recipe.new(
