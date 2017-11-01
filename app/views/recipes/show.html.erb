@@ -9,3 +9,15 @@
   </li>
   <% end %>
 </ul>
+
+<% if @recipe.diet_labels %>
+<ul>
+  <% @recipe.diet_labels.each do |diet| %>
+  <li>
+    <%= diet %>
+  </li>
+  <% end %>
+</ul>
+<% end %>
+
+<%= link_to "See Recipe", @recipe.url %>
