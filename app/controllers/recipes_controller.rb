@@ -1,7 +1,8 @@
 class RecipesController < ApplicationController
   def index
     if params["search"]
-      @recipes = RecipeSearch.search(params["search"])      
+      @query = params["search"]
+      @recipes = RecipeSearch.search(@query)   
     end
   end
 end

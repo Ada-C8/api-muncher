@@ -1,3 +1,48 @@
 // Place all the styles related to the recipes controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+// Palette
+
+$coral: #ED6A5A;
+$yellow: #F4F1BB;
+$grey: #59656F;
+$teal: #9BC1BC;
+$putty: #E6EBE0;
+
+///////////
+// INDEX //
+///////////
+
+.recipe-index > div {
+
+}
+
+.recipe-card {
+  background-color: $teal;
+  border-radius: 1rem;
+  display: inline-block;
+  height: 18rem;
+  margin-bottom: 1rem;
+  width: 100%;
+}
+
+.recipe-card h6 {
+  margin: 0 1rem;
+}
+
+.recipe-image {
+  background-size: cover;
+  background-position: center center;
+  border: 3px solid $putty;
+  border-radius: .5rem;
+  height: 12rem;
+  margin: 1rem auto;
+  width: 50%;
+}
+
+@media print, screen and (min-width: 40em) {
+  .recipe-image {
+    width: 90%;
+  }
+}
