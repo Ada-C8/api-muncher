@@ -12,7 +12,7 @@ class RecipesController < ApplicationController
   end
 
   def show
-    @recipe = RecipeSearch.find(url_from_params)
+    @recipe = RecipeSearch.find(params["id"])
   end
 
   def search
@@ -28,9 +28,5 @@ class RecipesController < ApplicationController
     @less = @page > 1
     @more = recipes.length > PAGE_ITEMS
     @recipes = recipes[0...PAGE_ITEMS]
-  end
-
-  def url_from_params
-    # params["id"].gsub(/http:\/www/, "http://www") + "." + URI.encode(params["format"])
   end
 end

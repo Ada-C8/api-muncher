@@ -3,28 +3,27 @@ class RecipeSearch
   ID = ENV['RECIPE_ID']
   KEY = ENV['RECIPE_KEY']
 
-  BASE_URL = 'https://api.edamam.com/'
+  BASE_URL = 'https://api.edamam.com/search?'
+  AUTH_URL = "app_id=#{ID}&app_key=#{KEY}"
+  FIND_URL = "http://www.edamam.com/ontologies/edamam.owl%23recipe_"
 
   def self.search(query, page = 0, count = 10, more = false)
     from = page * count
-
     to = more ? (from + count + 1) : (from + count)
+    url = BASE_URL + AUTH_URL + "&q=#{query}&from=#{from}&to=#{to}"
 
-    url = BASE_URL + "search?app_id=#{ID}&app_key=#{KEY}&q=#{query}&from=#{from}&to=#{to}"
     response = HTTParty.get(url)
-
     raise(APIError, response.message) unless response.code == 200
 
     recipes = []
     response['hits'].each do |recipe|
       recipes << new_recipe(recipe['recipe'])
     end
-
     recipes
   end
 
-  def self.find(uri)
-    url = BASE_URL + "search?app_id=#{ID}&app_key=#{KEY}&r=#{uri}"
+  def self.find(id)
+    url = BASE_URL + AUTH_URL +  "&r=" + FIND_URL + id
     response = HTTParty.get(url)
 
     begin
@@ -41,7 +40,7 @@ class RecipeSearch
       name: params['label'],
       image_url: params['image'],
       recipe_url: params['url'],
-      recipe_uri: params['uri'],
+      recipe_uri: params['uri'][-32..-1],
       source: params['source'],
       ingredients: params['ingredientLines'],
       nutrition: params['totalNutrients'],
