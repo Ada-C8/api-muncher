@@ -2,7 +2,13 @@ require 'test_helper'
 
 describe "Recipe" do
   before do
-    @test_recipe = Recipe.new("label", "url", "uri", "image", [{"text" => "some ingredients", "weight" => 23}])
+    @label = "test_label"
+    @url = "www.testurl.com"
+    @uri = "www.testuri_asdf1234"
+    @image = "www.testimage.jpg"
+    @ingredients = [{"text" => "some ingredients", "weight" => 23}]
+
+    @test_recipe = Recipe.new(@label, @url, @uri, @image, @ingredients)
   end
 
   describe "initialize" do
@@ -20,18 +26,18 @@ describe "Recipe" do
     end
 
     it "should track label, url, uri, image" do
-      label = "test_label"
-      url = "www.testurl.com"
-      uri = "www.testuri.com"
-      image = "www.testimage.jpg"
-      ingredients = [{"text" => "some ingredients", "weight" => 23}]
+      # label = "test_label"
+      # url = "www.testurl.com"
+      # uri = "www.testuri.com"
+      # image = "www.testimage.jpg"
+      # ingredients = [{"text" => "some ingredients", "weight" => 23}]
+      #
+      # recipe = Recipe.new(label, url, uri, image, ingredients)
 
-      recipe = Recipe.new(label, url, uri, image, ingredients)
-
-      recipe.label.must_equal label
-      recipe.url.must_equal url
-      recipe.uri.must_equal uri
-      recipe.image.must_equal image
+      @test_recipe.label.must_equal @label
+      @test_recipe.url.must_equal @url
+      @test_recipe.uri.must_equal @uri
+      @test_recipe.image.must_equal @image
 
       #does track ingredients - I think this is the right decision?
     end
@@ -52,8 +58,16 @@ describe "Recipe" do
   end
 
   describe "uri_id" do
-    it "text" do
+    it "should be able to be called" do
+      @test_recipe.must_respond_to :uri_id
+    end
 
+    it "should return a String" do
+      @test_recipe.uri_id.must_be_instance_of String
+    end
+
+    it "should return all the characters following the '_'" do
+      @test_recipe.uri_id.must_equal "asdf1234"
     end
   end
 
