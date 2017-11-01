@@ -5,5 +5,9 @@ Rails.application.routes.draw do
 
   root 'recipes#index'
 
-  resources :recipes
+  get ':/recipes/new', to: 'recipes#new', as: 'new_recipe'
+
+  post '/recipes', to: 'recipes#create', as: 'recipes_create'
+
+  # resources :recipes
 end
