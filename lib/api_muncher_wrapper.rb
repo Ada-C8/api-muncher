@@ -52,17 +52,5 @@ class ApiMuncherWrapper
       dietary: recipe["digest"])
     end
   end
-  # def self.send_msg(channel, msg)
-  #   p "Sending #{msg} to channel: #{channel}"
-  #
-  #   url = BASE_URL + "chat.postMessage?token=#{TOKEN}"
-  #
-  #   response = HTTParty.post(url,
-  #   body: {"text"=> "#{msg}", "channel"=>"#{channel}",
-  #   "username"=> "KHALEESI", "icon_emoji"=>":khaleesi:",
-  #   "as_user" => "false"},
-  #   :headers => { 'Content-Type' => 'application/x-www-form-urlencoded'})
-  #
-  #   return response.success?
-  # end
+
 end
