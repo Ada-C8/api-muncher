@@ -53,6 +53,10 @@ h1 {
   /*line-height: 0.75;*/
 }
 
+h1 a {
+  color: inherit;
+}
+
 .right {
   float: right !important;
 }
