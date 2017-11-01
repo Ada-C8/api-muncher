@@ -1,6 +1,6 @@
 class RecipesController < ApplicationController
   def index
-    @recipes = ApiMuncherWrapper.list_recipes("chicken")
+    @recipes = EdamamWrapper.list_recipes("chicken")
   end
 
   # def new

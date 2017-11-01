@@ -4,4 +4,6 @@ Rails.application.routes.draw do
   # get 'recipes', to: 'home#'
 
   root 'recipes#index'
+
+  resources :recipes
 end
