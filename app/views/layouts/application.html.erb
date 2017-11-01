@@ -4,7 +4,7 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <title><%= content_for?(:title) ? yield(:title) : "Muncher" %></title>
+  <title><%= content_for?(:title) ? yield(:title) : "muncher" %></title>
 
   <%= favicon_link_tag 'groceries.ico' %>
   <%= stylesheet_link_tag    "application" %>
@@ -16,7 +16,7 @@
 <body>
   <% unless current_page?(root_path) %>
   <header>
-    <h1 class="small-12 medium-12 large-4 columns">muncher</h1>
+    <h1 class="small-12 medium-12 large-4 columns"><%= link_to "muncher", root_path %></h1>
     <nav class="small-12 medium-12 large-4 columns">
       <%= form_tag( '/recipes') do %>
         <%= text_field_tag :search, "", class: "small-12 medium-8 columns header-field" %>
