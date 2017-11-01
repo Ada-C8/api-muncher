@@ -29,7 +29,6 @@ class RecipeApiWrapper
   def self.find(id)
     url = BASE_URL + "?r=#{URI.encode(id)}" + "&app_id=#{APP_ID}" + "&app_key=#{APP_KEY}"
     response = HTTParty.get(url)
-    p url
     recipe = nil
     if response
       recipe = self.create_recipe(response[0])

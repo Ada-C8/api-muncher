@@ -11,10 +11,19 @@
     <%= csrf_meta_tags %>
   </head>
 
+<header>
+
+</header>
+
   <body>
 
 
     <%= yield %>
     <%= javascript_include_tag "application" %>
+<footer>
+  <script src="https://developer.edamam.com/attribution/badge.js"></script>
+  <div id="edamam-badge" data-color="light"></div>
+</footer>
   </body>
+
 </html>

@@ -2,7 +2,7 @@ require 'test_helper'
 
 describe RecipeApiWrapper do
 
-  describe "search" do
+  describe "#search" do
     #success case
     it "Can acquire a list of recipes" do
       VCR.use_cassette("recipes") do
@@ -49,6 +49,16 @@ describe RecipeApiWrapper do
 
 
   end # describe search
+
+  desribe "#find" do
+    #success -- it is able to find the recipe -- numst return instance of recipe
+
+
+    #failure -- it is not able to find recipe (wrong id) -- must return nil
+
+
+
+  end
 
 
 
