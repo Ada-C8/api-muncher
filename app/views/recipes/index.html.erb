@@ -1,7 +1,7 @@
 <section class="row">
   <h1>Search / <%=params[:search] %></h1>
 </section>
-<section class="row">
+<section class="row all-recipes">
   <% @recipes.each do |recipe| %>
   <%= link_to recipe_path(format_uri(recipe.uri)) do %>
   <article class="recipe-card">

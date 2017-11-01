@@ -15,7 +15,7 @@
     <% if session[:recent_searches] %>
     <section class="row recent-searches">
     <h3>Recent Searches</h3>
-    <%session[:recent_searches].each do |search, image| %>
+    <%session[:recent_searches].first(5).each do |search, image| %>
     <%= link_to recipes_path(search: search) do %>
     <article class="recipe-card">
       <figure>
@@ -28,5 +28,11 @@
 
     <%end%>
   </section>
+
+  <footer>
+    <p>
+      <%= fa_icon "plug" %> by <%=link_to "edamam", "https://www.edamam.com/" %> <%= fa_icon "bolt" %>
+    </p>
+  </footer>
 </body>
 </html>

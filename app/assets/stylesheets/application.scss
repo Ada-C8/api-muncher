@@ -37,11 +37,12 @@ h1 {
 
 .front-page {
   text-align: center;
-  margin: 2em auto 3.5em auto;
+  margin: 4em auto 12em auto;
 }
 
 .front-page h1 {
   font-size: 10rem;
+  margin-bottom: 0.1em;
 }
 
 .front-page h1:hover {
@@ -71,7 +72,15 @@ input#search{
   font-size: 2.5em;
 }
 
+a {
+  color: #1e70a5;
+}
+
 //---------- RECIPE --------------------
+.all-recipes {
+  text-align: center;
+}
+
 .recipe-card {
   text-align: left;
   display: inline-block;
@@ -111,20 +120,16 @@ figure {
 .recipe-card p {
   position: absolute;
   bottom: 8px;
-  //left: 16px;
   background-color: $gray;
   width: 80%;
   padding: 0.5em;
-}
-
-.recipe-card p {
   color: $blue;
   font-family: 'Rozha One';
   font-size: 1.5em;
 }
 
-a:hover {
-  color: $light-blue;
+.recipe-card:hover p {
+  color: #1e70a5;
 }
 // .recipe-card p {
 //   margin: 0;
@@ -198,6 +203,23 @@ a:hover {
   //   width: 80%;
   //   padding: 0.5em;
   // }
+}
+//---------- FOOTER ----------------
+footer {
+  background-color: $dark-blue;
+  opacity: 0.9;
+  max-width: 100%;
+  padding: 10px;
+  text-align: center;
+}
+
+footer p {
+  margin: 0.5em auto;
+  color: $gray;
+}
+
+.fa-plug {
+  transform: rotate(-100deg);
 }
 
 //---------- SMALL SCREEN --------------
