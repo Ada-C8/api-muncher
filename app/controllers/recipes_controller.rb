@@ -1,6 +1,10 @@
 class RecipesController < ApplicationController
   def index
-    @channels = EdamamApiWrapper.list_channels(search_string)
+    if params[:search]
+      return @recipes = EdamamApiWrapper.list_recipes(search_string)
+    else
+      return nil
+    end
   end
 
   def search

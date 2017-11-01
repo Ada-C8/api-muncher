@@ -20,7 +20,7 @@ describe Recipe do
   it "Must initialize with 5 required parameters (uri, label, url, ingredientLines, dietLabels) and optional variables (image, source)" do
     recipe = Recipe.new(@uri, @label, @url, @ingredientLines, @dietLabels, options = {image: @image, source: @source})
 
-    recipe.uri.must_equal @uri
+    recipe.id.must_equal @uri
     recipe.label.must_equal @label
     recipe.url.must_equal @url
     recipe.ingredientLines.must_equal @ingredientLines

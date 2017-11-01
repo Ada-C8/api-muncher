@@ -1,10 +1,10 @@
 class Recipe
-  attr_reader :uri, :label, :url, :ingredientLines, :dietLabels, :image, :source
+  attr_reader :id, :label, :url, :ingredientLines, :dietLabels, :image, :source
 
   def initialize(uri, label, url, ingredientLines, dietLabels, options = {})
     raise ArgumentError if uri.blank? || label.blank? || url.blank? || ingredientLines.blank? || dietLabels.blank?
 
-    @uri = uri
+    @id = uri
     @label = label
     @url = url
     @ingredientLines = ingredientLines
