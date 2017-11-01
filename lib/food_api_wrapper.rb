@@ -25,8 +25,5 @@ class FoodApiWrapper
     end
   end
 
-
-
-
-
+  
 end

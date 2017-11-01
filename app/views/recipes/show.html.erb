@@ -9,9 +9,9 @@
   <li>
     Ingredients
     <ul>
-      <% @recipe.ingredients.each do |line|
+      <% @recipe.ingredients.each do |line| %>
         <li>
-          line
+          <%= line %>
         </li>
       <%end%>
     </ul>
