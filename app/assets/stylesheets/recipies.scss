@@ -1,3 +1,37 @@
 // Place all the styles related to the Recipies controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+/*********************/
+/**** Main on root ***/
+/*********************/
+
+/* QUESTION:
+1. how to get form_for to respond to styling
+2. how to get footer to move down (if the form_for was responding to styling then maybe it would fix this too?)
+*/
+
+.root {
+  padding: 300px;
+  width: 90%;
+}
+
+.title {
+  padding: 50px;
+  text-align: center;
+  margin: 50px auto;
+  font-size: 300%;
+  width: 90%
+}
+
+.search {
+  width: 100%;
+  width: 400px;
+  margin-bottom: 50px;
+  padding: 5%;
+}
+
+
+/*********************/
+/**** index page   ***/
+/*********************/
