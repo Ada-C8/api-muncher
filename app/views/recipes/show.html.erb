@@ -10,11 +10,16 @@
   <% end %>
 </ul>
 
-<% if @recipe.diet_labels %>
+<% if @recipe.diet_labels || @recipe.health_labels %>
 <ul>
   <% @recipe.diet_labels.each do |diet| %>
   <li>
     <%= diet %>
+  </li>
+  <% end %>
+  <% @recipe.health_labels.each do |health| %>
+  <li>
+    <%= health %>
   </li>
   <% end %>
 </ul>

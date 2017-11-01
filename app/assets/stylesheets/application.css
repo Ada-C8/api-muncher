@@ -15,3 +15,8 @@
  *= require foundation_and_overrides
 
  */
+
+ body {
+   background-image: url("https://gatherr.ca/wp-content/uploads/2016/05/Food-Tips-Front-Page.jpg");
+   background-size: cover;
+ }
