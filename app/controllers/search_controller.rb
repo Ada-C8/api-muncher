@@ -15,11 +15,12 @@ class SearchController < ApplicationController
 
     @all_recipes = []
     @search.hits.each do |recipe|
-      @all_recipes << Recipe.new(recipe)
+      @all_recipes << Recipe.new(recipe['recipe'])
     end
   end
 
   def show
-    raise 
+    response = EdamamApiWrapper.show_recipe(params['uri'])
+    @recipe = Recipe.new(response[0])
   end
 end

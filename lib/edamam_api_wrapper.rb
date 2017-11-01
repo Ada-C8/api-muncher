@@ -20,9 +20,6 @@ class EdamamApiWrapper
 
   def self.show_recipe(uri)
 
-    uri = uri.gsub(%r{/search/}, "")
-    uri.gsub('%2F', "/")
-
     url = BASE_URL + 'r=' + "#{uri}" + "&app_id=#{ID}" + "&app_key=#{KEY}"
 
     response = HTTParty.get(url)
