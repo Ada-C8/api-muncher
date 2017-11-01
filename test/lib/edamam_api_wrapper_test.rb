@@ -30,21 +30,20 @@ describe "EdamamApiWrapper" do
         end
       end
 
-      it "should raise an ApiError if recipe id is invalid" do
-
+      it "should return nil if recipe is not found" do
+        VCR.use_cassette("bad recipe") do
+        result = EdamamApiWrapper.find_recipe("nope nope nope")
+        result.must_equal nil
       end
+    end
 
-      it "should raise an ArgumentError if id is not given" do
-
+      it "should return nil if id is not given" do
+        VCR.use_cassette("no recipe") do
+        result = EdamamApiWrapper.find_recipe("")
+        result.must_equal nil
+        end
       end
     end
 
   end
-
-
-
-
-
-
-
 end
