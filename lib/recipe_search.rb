@@ -44,8 +44,9 @@ class RecipeSearch
       recipe_uri: params['uri'],
       source: params['source'],
       ingredients: params['ingredientLines'],
-      dietary_info: params['totalNutrients'],
-      diet_labels: params['healthLabels']
+      nutrition: params['totalNutrients'],
+      diet_labels: params['healthLabels'],
+      servings: params['yield']
     )
   end
 

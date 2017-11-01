@@ -9,33 +9,19 @@ describe Recipe do
       recipe_url: "https://food52.com/recipes/11227-coffee-syrup",
       recipe_uri: "http://www.edamam.com/ontologies/edamam.owl#recipe_17b2813eff91356288deeb23c835a402",
       source: "Food52",
-      ingredients: [ "1 1/2 cup espresso or strong coffee", "1 1/2 to 2 cup turbinado sugar" ]
-    }
-  }
-  let(:optional_params) {
-    {
-      dietary_info: {
+      ingredients: [ "1 1/2 cup espresso or strong coffee", "1 1/2 to 2 cup turbinado sugar" ],
+      nutrition: {
         "ENERC_KCAL": {
           "label": "Energy",
           "quantity": 1414.0200000000002,
           "unit": "kcal"
-        },
-        "FAT": {
-          "label": "Fat",
-          "quantity": 0.07110000000000001,
-          "unit": "g"
-        },
-        "CHOCDF": {
-          "label": "Carbs",
-          "quantity": 352.793,
-          "unit": "g"
-        },
-        "PROCNT": {
-          "label": "Protein",
-          "quantity": 0.4266,
-          "unit": "g"
         }
       },
+      servings: 4
+    }
+  }
+  let(:optional_params) {
+    {
       diet_labels: [
         "Vegan",
         "Vegetarian",
@@ -82,7 +68,7 @@ describe Recipe do
       recipe_params.merge(optional_params)
       recipe = Recipe.new(recipe_params)
 
-      recipe.must_respond_to :dietary_info
+      recipe.must_respond_to :nutrition
       recipe.must_respond_to :diet_labels
     end
   end

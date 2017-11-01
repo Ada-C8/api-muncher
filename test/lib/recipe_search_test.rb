@@ -10,7 +10,15 @@ describe RecipeSearch do
       recipe_url: "https://food52.com/recipes/11227-coffee-syrup",
       recipe_uri: "http://www.edamam.com/ontologies/edamam.owl%23recipe_17b2813eff91356288deeb23c835a402",
       source: "Food52",
-      ingredients: [ "1 1/2 cup espresso or strong coffee", "1 1/2 to 2 cup turbinado sugar" ]
+      ingredients: [ "1 1/2 cup espresso or strong coffee", "1 1/2 to 2 cup turbinado sugar" ],
+      nutrition: {
+        "ENERC_KCAL": {
+          "label": "Energy",
+          "quantity": 1414.0200000000002,
+          "unit": "kcal"
+        }
+      },
+      servings: 2
     )
   end
 

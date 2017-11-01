@@ -21,7 +21,7 @@
     <h3>Nutrition Facts</h3>
     <table>
       <tbody>
-        <% @recipe.dietary_info.values.each do |nutrient| %>
+        <% @recipe.nutrition.values.each do |nutrient| %>
           <tr>
             <td>
               <%= nutrient['label'] %>
