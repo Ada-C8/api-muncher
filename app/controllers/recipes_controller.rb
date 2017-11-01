@@ -9,7 +9,6 @@ class RecipesController < ApplicationController
   end
 
   def show
-    @uri = params[:uri] + "." + params[:format].gsub(/#/,'%23')
-    @recpie = RecipeApiWrapper.recipe_details(@uri)
+    @recipe = RecipeApiWrapper.recipe_details(params[:uri])
   end
 end

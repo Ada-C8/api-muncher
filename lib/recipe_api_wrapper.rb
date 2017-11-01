@@ -13,7 +13,7 @@ class RecipeApiWrapper
       result = []
       data["hits"].each do |item|
         label = item["recipe"]["label"]
-        uri = item["recipe"]["uri"]
+        uri = item["recipe"]["uri"].split("#")[1]
         image = item["recipe"]["image"]
         result.push(
           {
@@ -29,8 +29,8 @@ class RecipeApiWrapper
     end
   end
 
-  def self.recipe_details(url)
-    url = BASE_URL + "?app_id=#{APP_ID}"+ "&app_key=#{APP_KEY}" + "&r=#{uri}"
+  def self.recipe_details(uri)
+    url = BASE_URL + "?app_id=#{APP_ID}"+ "&app_key=#{APP_KEY}" + "&r=http://www.edamam.com/ontologies/edamam.owl%23#{uri}"
     @response = HTTParty.get(url)
   end
 end
