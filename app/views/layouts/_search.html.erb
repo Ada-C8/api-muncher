@@ -7,12 +7,13 @@
         Find your flavor...
       </p>
     <% end %>
+    <div class='input-button'>
+      <%= form_tag recipes_path, method: :get do %>
 
-    <%= form_tag recipes_path, method: :get do %>
+      <%= text_field_tag :query, "", class:'field' %>
 
-    <%= text_field_tag :query, "" %>
-
-    <%= submit_tag "Search", class: "button" %>
-    <% end %>
+      <%= submit_tag "Search", class: "button" %>
+      <% end %>
+    </div>
   </div>
 </div>
