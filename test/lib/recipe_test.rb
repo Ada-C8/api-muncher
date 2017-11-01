@@ -3,7 +3,7 @@ require 'test_helper'
 describe Recipe do
 
   it "Can be instantiated with required fields" do
-    Recipe.new("name", "image", "source", "url", "ingredients")
+    Recipe.new("uri", "name", "image", "source", "url", "ingredients")
   end
 
   it "Requires a name, image, source, url, and ingredients" do
@@ -21,15 +21,17 @@ describe Recipe do
     }.must_raise ArgumentError
   end
 
-  it "Tracks name, image, source, url, and ingredients" do
+  it "Tracks uri, name, image, source, url, and ingredients" do
+    uri = "test_uri"
     name = "test_name"
     image = "test_image"
     source = "test_source"
     url = "test_url"
     ingredients = "test_ingredients"
 
-    recipe = Recipe.new(name, image, source, url, ingredients)
+    recipe = Recipe.new(uri, name, image, source, url, ingredients)
 
+    recipe.uri.must_equal uri
     recipe.name.must_equal name
     recipe.image.must_equal image
     recipe.source.must_equal source

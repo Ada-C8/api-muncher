@@ -18,6 +18,7 @@ class EdamamApiWrapper
   def self.get_results_from_response(response)
     return response["hits"].map do |result|
       Recipe.new(
+        result["recipe"]["uri"]
         result["recipe"]["label"], # name
         result["recipe"]["image"], # image
         result["recipe"]["source"], # original source
@@ -31,13 +32,15 @@ class EdamamApiWrapper
           calories: result["recipe"]["calories"] # calories
         }
       )
-      end
-    end
-
-    private
-    def self.check_status(response)
-      unless response.code == 200
-        raise ApiError.new("API call to Edamam failed: #{response.code}")
-      end
     end
   end
+
+  def self.get_id()
+
+  private
+  def self.check_status(response)
+    unless response.code == 200
+      raise ApiError.new("API call to Edamam failed: #{response.code}")
+    end
+  end
+end
