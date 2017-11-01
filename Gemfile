@@ -58,7 +58,7 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 gem 'jquery-turbolinks'
 gem 'foundation-rails', '6.4.1.2'
 group :development do
-  gem 'better_errors'
+  # gem 'better_errors'
   gem 'pry-rails'
   gem 'binding_of_caller'
 end

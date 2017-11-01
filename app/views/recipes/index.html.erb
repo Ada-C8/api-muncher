@@ -8,6 +8,7 @@
 
 
 <% @recipes.each do |recipe| %>
-<h3><%= recipe.label %></h3>
+<h3><%= link_to "#{recipe.label}", recipe_path(recipe.label, uri: recipe.uri ) %></h3>
 <img src = "<%= recipe.image %>", alt = "<%=recipe.label %>"/>
+<h2><%= recipe.uri %></h2>
 <% end %>
