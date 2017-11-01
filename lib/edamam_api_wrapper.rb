@@ -1,4 +1,3 @@
-require "HTTParty"
 require 'pry'
 
 class EdamamApiWrapper
@@ -28,14 +27,23 @@ class EdamamApiWrapper
   end
 
   def self.show_recipe(uri, key=APP_KEY, type=R)
-    binding.pry
+    # binding.pry
     uri = uri_regex(uri)
     url = build_url(uri, key, type)
     # url = BASE_URLR + uri_fix + "&app_id=" + APP_ID + "&app_key=" + key
 
     response = HTTParty.get(url)
     # binding.pry
-    return response
+
+    recipe = ''
+
+    if response.empty?
+      raise ApiError.new("Api call to Edaman to show a given failed.")
+    else
+      recipe = create_recipe(response[0])
+    end
+    binding.pry
+    return recipe
   end
 
 
@@ -63,7 +71,7 @@ private
         calories: api_params['calories'],
         ingredientLines: api_params["ingredientLines"],
         healthLabels: api_params["healthLabels"],
-        # totalDaily: api_params['totalDaily'],
+        totalDaily: api_params['totalDaily'],
         dietLabels: api_params["dietLabels"]
       }
     )

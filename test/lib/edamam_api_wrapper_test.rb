@@ -1,5 +1,4 @@
 require "test_helper"
-require "httparty"
 
 let(:uri){ "http://www.edamam.com/ontologies/edamam.owl#23recipe_637913ec61d9da69eb451818c3293df2"}
 
