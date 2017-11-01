@@ -12,8 +12,28 @@
   </head>
 
   <body>
-
+    <header>
+      <div class="page-header">
+        <div class="row">
+          <h1><%= link_to "MUNCHER", root_path %></h1>
+            <%= render partial: "search"%>
+        </div>
+      </div>
+      <main>
+        <main>
+        <section class="row flash">
+          <% if flash[:message].present? %>
+          <p><%= flash[:message] %></p>
+        </section>
+      <% end %>
     <%= yield %>
+  </main>
 
+    <footer>
+      <p>
+        Powered by Edamam
+      </p>
+    </footer>
   </body>
+
 </html>

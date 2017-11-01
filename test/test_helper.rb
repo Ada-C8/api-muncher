@@ -21,13 +21,13 @@ VCR.configure do |config|
     :record => :new_episodes,    # record new data when we don't have it yet
     :match_requests_on => [:method, :uri, :body] # The http method, URI and body of a request all need to match
   }
-  # Don't leave our Slack token lying around in a cassette file.
-  config.filter_sensitive_data("<APP_ID>") do
-    ENV['APP_ID']
-  end
+  # Don't leave our tokens lying around in a cassette file.
 
-  config.filter_sensitive_data("<APP_KEY>") do
-    ENV['APP_KEY']
+  VCR.configure do |c|
+    # c.hook_into :webmock
+    # c.cassette_library_dir = 'cassettes'
+    c.filter_sensitive_data("<APP_ID>") { ENV['APP_ID'] }
+    c.filter_sensitive_data("<APP_KEY>") { ENV['APP_KEY'] }
   end
 
 

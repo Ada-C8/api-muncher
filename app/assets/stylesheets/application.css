@@ -15,3 +15,23 @@
  *= require foundation_and_overrides
 
  */
+
+/*footer*/
+footer {
+  padding-top: 1%;
+  text-align: center;
+}
+
+
+/*header*/
+
+.page-header {
+  background-color: gray;
+  max-width: 100%;
+  text-align: center;
+
+}
+
+.page-header h1 a {
+  font-size: 200%;
+}

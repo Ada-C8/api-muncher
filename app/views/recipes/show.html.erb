@@ -1,6 +1,25 @@
-<p>
-  test
-   <%=@recipe.label%>
+<div id="recipe-info">
+   <h2><%=link_to @recipe.label, @recipe.url%></h2>
+   <h3>By: <%=@recipe.source%></h3>
+</div>
+<div class="row">
+  <!-- <section class="large-12 large-centered columns"> -->
+    <section class="large-6 columns" id="recipe-show-image">
    <%=image_tag("#{@recipe.image}", alt:"#{@recipe.label}") %>
-
-</p>
+   <h4>Dietary Labels</h4>
+   <ul>
+  <%@recipe.diet_labels.each do |label|%>
+    <li><%=label%></li>
+   <% end %>
+  </ul>
+ </section>
+   <section class="large-6 columns" id="ingredients">
+   <h4>Ingredients</h4>
+   <ul>
+  <%@recipe.ingredients.each do |ingredient|%>
+    <li><%=ingredient%></li>
+   <% end %>
+  </ul>
+  </section>
+  <!-- </section> -->
+</div>

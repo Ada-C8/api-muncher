@@ -46,7 +46,7 @@ group :development, :test do
   # Adds support for Capybara system testing and selenium driver
   gem 'capybara', '~> 2.13'
   gem 'selenium-webdriver'
-
+  gem 'dotenv-rails'
   gem 'minitest-vcr'
   gem 'webmock'
 end
@@ -71,7 +71,6 @@ end
 group :development do
   gem 'better_errors'
   gem 'binding_of_caller'
-  gem 'dotenv-rails'
 end
 
 group :test do

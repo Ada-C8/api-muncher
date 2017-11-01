@@ -1,3 +1,32 @@
 // Place all the styles related to the Recipes controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+// index page
+
+#recipe-title {
+  text-align: center;
+}
+
+#recipe-results {
+  text-align: center;
+  padding: 1%;
+}
+
+#recipe-result {
+  padding-bottom: 3%;
+}
+
+// show page
+
+#recipe-info {
+  text-align: center;
+}
+
+#recipe-show-image {
+  text-align: center;
+}
+
+// #ingredients h4 {
+//   text-align: center;
+// }
