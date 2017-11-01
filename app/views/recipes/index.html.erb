@@ -1,0 +1,14 @@
+
+<h1><%= "Results for #{params[:q]}" %></h1>
+<div class="row">
+<% @recipes.each do |recipe| %>
+  <section>
+    <div class = "large-3 medium-6 small-12 columns">
+    <%= link_to "#{recipe.label}", recipe_path("#{recipe.id}")%>
+    <% "#{recipe.url}" %>
+    <% "#{recipe.ingredients}"%>
+    <%=image_tag("#{recipe.image}", alt:"#{recipe.label}") %>
+  </div>
+  </section>
+<% end %>
+</div>
