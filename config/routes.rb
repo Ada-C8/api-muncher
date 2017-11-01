@@ -6,7 +6,7 @@ Rails.application.routes.draw do
 
   get "/auth/:provider/callback", to: "users#create"
 
-  get '/user/:id', to: 'user#show', as: 'user'
+  get '/users/:id', to: 'users#show', as: 'user'
 
   post '/recipes/:uri', to: 'user#favorite', as: 'favorite'
 
