@@ -1,5 +1,4 @@
 require 'test_helper'
-require "httparty"
 
 describe EdamamApiWrapper do
   describe "get_recipies" do
@@ -27,6 +26,52 @@ describe EdamamApiWrapper do
         proc {EdamamApiWrapper.get_recipies("xcd")}.must_raise EdamamApiWrapper::NoResultsError
       end # VCR
     end # bogus search term
+
+    it "willl raise an error if given a search term with symbols in it" do
+      VCR.use_cassette("recipies") do
+        proc {EdamamApiWrapper.get_recipies("chicken#")}.must_raise EdamamApiWrapper::BadSearchTermError
+        proc {EdamamApiWrapper.get_recipies("chicken1")}.must_raise EdamamApiWrapper::BadSearchTermError
+      end # VCR
+    end
+
+    it "will return a list of recipies if the search term has extra spaces on the end" do
+      VCR.use_cassette("recipes") do
+        result = EdamamApiWrapper.get_recipies("bread ")
+        result.must_be_kind_of Array
+        result.each do |recipe|
+          recipe.must_be_kind_of Recipe
+        end # .each
+        result.length.must_be :>, 0
+      end # VCR
+    end # extra spaces on the end
+
+    it "will return a list of recipies if the search term has extra spaces in the middle" do
+      VCR.use_cassette("recipes") do
+        result = EdamamApiWrapper.get_recipies("banana         bread")
+        result.must_be_kind_of Array
+        result.each do |recipe|
+          recipe.must_be_kind_of Recipe
+        end # .each
+        result.length.must_be :>, 0
+      end # VCR
+    end # extra spaces in the middle
+
+    it "will raise an expection if given an empty search term" do
+      VCR.use_cassette("recipies") do
+        proc {EdamamApiWrapper.get_recipies("")}.must_raise EdamamApiWrapper::BlankSearchError
+      end # VCR
+    end  # blank search term
+
+    it "will return search requests for nil" do
+      VCR.use_cassette("nil") do
+        result = EdamamApiWrapper.get_recipies("banana         bread")
+        result.must_be_kind_of Array
+        result.each do |recipe|
+          recipe.must_be_kind_of Recipe
+        end # .each
+        result.length.must_be :>, 0
+      end # VCR
+    end
   end # get_recipies
 
   describe "show_recipe" do

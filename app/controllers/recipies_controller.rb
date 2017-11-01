@@ -1,12 +1,14 @@
 require_dependency '../../lib/edamam_api_wrapper'
 require_dependency '../../lib/recipe'
 
+
 class RecipiesController < ApplicationController
   def root
   end # root
 
   def index
     @recipies = EdamamApiWrapper.get_recipies(params[:search_term])
+    
     @search_term = params[:search_term]
   end # index
 
