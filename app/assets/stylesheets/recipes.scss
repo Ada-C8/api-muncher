@@ -28,7 +28,9 @@ $putty: #E6EBE0;
 }
 
 .recipe-card h6 {
+  height: 4rem;
   margin: 0 1rem;
+  overflow-y: hidden;
 }
 
 .recipe-image {
@@ -45,4 +47,8 @@ $putty: #E6EBE0;
   .recipe-image {
     width: 90%;
   }
+}
+
+.page-buttons {
+  clear: both;
 }

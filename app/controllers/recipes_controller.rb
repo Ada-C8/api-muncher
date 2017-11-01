@@ -5,12 +5,11 @@ class RecipesController < ApplicationController
     if params["id"]
       @query = params["id"]
       @page = params["page_id"] || 1
+      @page = @page.to_i
       p @query, @page
 
-      recipes = RecipeSearch.search(params["id"], (@page.to_i - 1), (PAGE_ITEMS + 1))
-      @less = @page != 0
-      @more = recipes.length > PAGE_ITEMS
-      @recipes = recipes[0...PAGE_ITEMS]
+      recipes = RecipeSearch.search(params["id"], (@page - 1), PAGE_ITEMS, true)
+      build_pages(recipes)
     end
   end
 
@@ -19,5 +18,13 @@ class RecipesController < ApplicationController
       @query = params["search"]
       redirect_to recipe_results_path(@query)
     end
+  end
+
+  private
+
+  def build_pages(recipes)
+    @less = @page > 1
+    @more = recipes.length > PAGE_ITEMS
+    @recipes = recipes[0...PAGE_ITEMS]
   end
 end

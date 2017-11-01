@@ -5,10 +5,12 @@ class RecipeSearch
 
   BASE_URL = 'https://api.edamam.com/'
 
-  def self.search(query, page = 0, count = 10)
+  def self.search(query, page = 0, count = 10, more = false)
     from = page * count
 
-    url = BASE_URL + "search?app_id=#{ID}&app_key=#{KEY}&q=#{query}&from=#{from}&to=#{from + (count)}"
+    to = more ? (from + count + 1) : (from + count)
+
+    url = BASE_URL + "search?app_id=#{ID}&app_key=#{KEY}&q=#{query}&from=#{from}&to=#{to}"
     response = HTTParty.get(url)
 
     raise(APIError, response.message) unless response.code == 200

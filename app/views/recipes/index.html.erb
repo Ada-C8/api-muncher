@@ -13,14 +13,15 @@
         <% end %>
       </div>
     <% end %>
-    <% if @less %>
-      <p>
-        Prev Page
-      </p>
-    <% end %>
-    <% if @more %>
-      <%= link_to "Next Page", recipe_results_page_path(@query, (@page.to_i + 1)) %>
-    <% end %>
+    
+    <div class="page-buttons">
+      <% if @less %>
+        <%= link_to "Prev Page", recipe_results_page_path(@query, (@page - 1)), class: "page-btn last-page" %>
+      <% end %>
+      <% if @more %>
+        <%= link_to "Next Page", recipe_results_page_path(@query, (@page + 1)), class: "page-btn next-page" %>
+      <% end %>
+    </div>
 
   <% else %>
     <h4>Search for something tasty!</h4>
