@@ -1,5 +1,5 @@
 class Recipe
-  attr_reader :label, :uri, :image, :source, :url, :yield, :calories, :ingredients, :healthLabels, :dietLabels,
+  attr_reader :label, :uri, :image, :source, :url, :yield, :calories, :ingredientLines, :healthLabels, :dietLabels,
   :totalDaily
 
   def initialize(label, uri, options = {})
