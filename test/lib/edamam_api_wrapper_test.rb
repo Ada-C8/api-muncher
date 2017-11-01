@@ -13,13 +13,13 @@ describe EdamamApiWrapper do
       end
     end
 
-    # it "Raises and ApiError when the app_id is bogus" do
-    #   VCR.use_cassette("smoothie_recipes") do
-    #     proc {
-    #       EdamamApiWrapper.list_recipes("smoothie","bogus app id")
-    #     }.must_raise EdamamApiWrapper::ApiError
-    #   end
-    #
-    # end
+    it "Raises and ApiError when the app_id is bogus" do
+      VCR.use_cassette("smoothie_recipes") do
+        proc {
+          EdamamApiWrapper.list_recipes("smoothie","bogus app id")
+        }.must_raise EdamamApiWrapper::ApiError
+      end
+
+    end
   end
 end

@@ -1,0 +1,8 @@
+<h1>Recipes Index</h1>
+<ul>
+  <% @recipes.each do |recipe| %>
+    <li>
+      <%= link_to recipe.label, recipe_path(recipe.label, recipe_uri: recipe.uri)  %>
+    </li>
+  <% end %>
+</ul>

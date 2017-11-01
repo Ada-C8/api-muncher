@@ -9,8 +9,8 @@ class EdamamApiWrapper
   class ApiError < StandardError
   end
 
-  def self.list_recipes(search_term)
-    url = BASE_URL + "?q=" + search_term + "&app_id=" + APP_ID + "&app_key=" + APP_KEY
+  def self.list_recipes(search_term, key=APP_KEY)
+    url = BASE_URL + "?q=" + search_term + "&app_id=" + APP_ID + "&app_key=" + key
     puts "#{url}"
     response = HTTParty.get(url)
     # binding.pry

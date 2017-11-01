@@ -44,6 +44,8 @@ group :development, :test do
   gem 'pry-rails'
   gem 'minitest-vcr'
   gem 'webmock'
+  gem 'dotenv-rails'
+  gem 'better_errors'
 end
 
 group :development do
@@ -55,7 +57,7 @@ group :development do
   gem 'spring-watcher-listen', '~> 2.0.0'
   gem 'better_errors'
   gem 'binding_of_caller'
-  gem 'dotenv-rails'
+
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
@@ -69,4 +71,6 @@ gem 'awesome_print'
 group :test do
   gem 'minitest-rails'
   gem 'minitest-reporters'
+  gem 'minitest-spec-rails'
+  gem 'minitest-skip'
 end
