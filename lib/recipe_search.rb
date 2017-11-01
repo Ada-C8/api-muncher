@@ -20,7 +20,7 @@ class RecipeSearch
   end
 
   def self.find(uri)
-    url = BASE_URL + "search?app_id=#{ID}&app_key=#{KEY}&r=#{URI.encode(uri)}"
+    url = BASE_URL + "search?app_id=#{ID}&app_key=#{KEY}&r=#{uri}"
     response = HTTParty.get(url)
 
     raise(APIError, response.message) if response.empty?
@@ -33,6 +33,7 @@ class RecipeSearch
       name: params['label'],
       image_url: params['image'],
       recipe_url: params['url'],
+      recipe_uri: params['uri'],
       source: params['source'],
       ingredients: params['ingredientLines'],
       dietary_info: params['totalNutrients'],
