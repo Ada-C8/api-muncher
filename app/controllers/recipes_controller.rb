@@ -8,8 +8,9 @@ class RecipesController < ApplicationController
   end
 
   def show
-    @recipes = EdamamApiWrapper.list_recipes(params[:search])
-    @recipe = @recipes.select { |recipe| URI.encode(recipe.url) == params[:url]}
+    recipes = EdamamApiWrapper.list_recipes(params[:search])
+    recipe = recipes.select { |recipe| URI.encode(recipe.url) == params[:url]}
+    @recipe = recipe[0]
   end
 
 end
