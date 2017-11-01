@@ -3,22 +3,28 @@ class EdamamApiWrapper
   BASE_URI = "http://www.edamam.com/ontologies/edamam.owl%23recipe_"
   APP_ID = ENV["APP_ID"]
   APP_KEY = ENV["APP_KEY"]
-  #https://api.edamam.com/search?q=chicken&app_id=d2fbdaf7&app_key=6e7b5b6faead1b3deffb7fe4416542c2
 
-  def self.search(q)
-    url = BASE_URL + "?q=#{q}" + "&app_id=#{APP_ID}" + "&app_key=#{APP_KEY}"
+  class ApiError < StandardError
+  end
+
+  def self.search(q, app_id=APP_ID, app_key=APP_KEY)
+    url = BASE_URL + "?q=#{q}" + "&app_id=#{app_id}" + "&app_key=#{app_key}"
     # + "&from=0" + "&to=1000"
-    data = HTTParty.get(url)
+    response = HTTParty.get(url)
+
+    unless response.code == 200 # This is for the app id and app key
+      raise ApiError.new("Could not fulfill your request! #{response.message}")
+    end
 
     matched_recipes = []
-    if data["hits"]
-      data["hits"].each do |hit_data|
+    if response["hits"]
+      response["hits"].each do |hit_data|
         matched_recipes << create_recipe(hit_data["recipe"])
       end
     end
+
     return matched_recipes
   end
-# response.parsed_response["hits"]
 
 # %23 https://api.edamam.com/search?r=http://www.edamam.com/ontologies/edamam.owl%23recipe_637913ec61d9da69eb451818c3293df2&app_id=d2fbdaf7&app_key=6e7b5b6faead1b3deffb7fe4416542c2
 
@@ -28,10 +34,13 @@ class EdamamApiWrapper
     url = BASE_URL + "?r=" + BASE_URI + "#{uri_id}" + "&app_id=#{APP_ID}" + "&app_key=#{APP_KEY}"
 
     data = HTTParty.get(url)
-    if data.any?
+
+    if data.body == "[]"
+      raise ArgumentError.new("Recipe does not exist!")
+    else
       recipe = create_recipe(data[0])
+      return recipe
     end
-    return recipe
   end
 
 

@@ -2,14 +2,19 @@ class Recipe
   attr_reader :uri, :label, :image_url, :source, :source_url, :ingredient_lines
 
   def initialize(uri, label, image_url, source, source_url, ingredient_lines)
+    if uri == nil || label == nil || image_url == nil || source == nil || source_url == nil || ingredient_lines == nil
+      raise ArgumentError.new("Recipe was not created")
+    end
+    
     @uri = uri
     @label = label
     @image_url = image_url
     @source = source
     @source_url = source_url
+    @ingredient_lines = ingredient_lines # Array
+    # TODO: Add in the nutrient labels
     # @diet_labels = diet_labels # Array
     # @health_labels = health_labels # Array
-    @ingredient_lines = ingredient_lines # Array
     # @ingredients = ingredients # Array with hashes inside
     # @calories = calories
     # @total_weight = total_weight
@@ -18,7 +23,7 @@ class Recipe
     # @digest = digest #Hash Key with an Array of hashes
   end
 
-  def uri_id
+  def uri_id # This is called in the view
     return self.uri[/(?<=_)[a-zA-Z0-9]+/]
   end
 
