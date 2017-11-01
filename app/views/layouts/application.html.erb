@@ -11,6 +11,14 @@
 </head>
 
 <body>
+  <header>
+    <% if session[:user_id] %>
+    <%= link_to "Favorites",root_path, class: 'button' %>
+    <% else %>
+    <%= link_to "Log In",'/auth/google_oauth2', class: 'button' %>
+    <% end %>
+  </header>
+
   <%= yield %>
     <% if session[:recent_searches] %>
     <section class="row recent-searches">

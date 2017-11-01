@@ -22,9 +22,15 @@ $gold: #C08750;
 $gray: rgba(243, 243, 243, 0.8);
 $dark-gray: #2b303b;
 
+$green: #3b8545;
+$red: #ca2f32;
+$yellow:#e8a93f ;
+$blue-gray: #c9d2d2;
+
 body {
-  background-image: url('pattern2.png');
-  background-repeat: repeat;
+  // background-image: url('pattern2.png');
+  // background-repeat: repeat;
+  background-color: $blue-gray;
   color: $light-yellow;
   font-family: 'Rozha One',serif; //'Pathway Gothic One', sans-serif;
 }
