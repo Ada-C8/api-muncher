@@ -41,23 +41,23 @@ class EdamamApiWrapper
   end
 
   def self.find_recipe(uri)
-# need to use r instead of q to search. need to use uri instead of url
-url = BASE_URL + "r=#{uri}&app_id=#{APP_ID}&app_key=#{APP_KEY}"
-  result = HTTParty.get(url)
+    # need to use r instead of q to search. need to use uri instead of url
+    url = BASE_URL + "r=#{uri}&app_id=#{APP_ID}&app_key=#{APP_KEY}"
+    result = HTTParty.get(url)
 
-  recipe = Recipe.new(
-  result[0]["uri"],
-  result[0]["label"],
-  result[0]["image"],
-  result[0]["url"],
-  result[0]["ingredientLines"],
-  {
-    totalNutrients: result[0]["totalNutrients"],
-    calories: result[0]["calories"],
-    healthLabels: result[0]["healthLabels"],
-    dietLabels: result[0]["dietLabels"]
-  }
-  )
+    recipe = Recipe.new(
+    result[0]["uri"],
+    result[0]["label"],
+    result[0]["image"],
+    result[0]["url"],
+    result[0]["ingredientLines"],
+    {
+      totalNutrients: result[0]["totalNutrients"],
+      calories: result[0]["calories"],
+      healthLabels: result[0]["healthLabels"],
+      dietLabels: result[0]["dietLabels"]
+    }
+    )
   end
 
 end
