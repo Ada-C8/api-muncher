@@ -3,7 +3,9 @@ Rails.application.routes.draw do
 
   # root 'recipe#index' #not_implemented_yet
 
-  get ':recipe/', to: 'recipe#show', as: 'show_recipe'
+  root 'recipe#home'
+  get ':search/results', to: 'recipe#index', as: 'recipe_results' #recipe_results path
 
+  get ':recipe/', to: 'recipe#show', as: 'show_recipe'
 
 end
