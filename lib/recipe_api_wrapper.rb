@@ -7,8 +7,8 @@ class RecipeApiWrapper
   APP_ID = ENV["APP_ID"]
   APP_KEY = ENV["EDAMAM_APP_KEY"]
 
-  def self.search(food)
-    url = BASE_URL + "?q=(#{food})" + "&app_id=#{APP_ID}" + "&app_key=#{APP_KEY}"
+  def self.search(food, from)
+    url = BASE_URL + "?q=#{food}" + "&from=#{from}" + "&app_id=#{APP_ID}" + "&app_key=#{APP_KEY}"
     response = HTTParty.get(url)
 
     # check_status(response)

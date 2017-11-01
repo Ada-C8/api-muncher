@@ -1,7 +1,7 @@
 <h1>Welcome to Muncher</h1>
 
 <%= form_tag(root_path, :method => "get", id: "search-form") do %>
-  <%= text_field_tag :search, params[:search], placeholder: "Search Recipes" %>
+  <%= text_field_tag :search, @search, placeholder: "Search Recipes" %>
   <%= submit_tag "Search" %>
 <% end %>
 
@@ -15,5 +15,13 @@
         </ul>
       </div>
     <%end %>
+  </div>
+
+  <div class="pagination">
+    <% if @from > 10 %>
+      <%= link_to "Previous Page", root_path(search: @search, from: @previous_from), class: "button" %>
+    <% end %>
+    
+    <%= link_to "Next Page", root_path(search: @search, from: @from), class: "button" %>
   </div>
 <% end %>
