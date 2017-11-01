@@ -33,22 +33,45 @@ $putty: #E6EBE0;
   overflow-y: hidden;
 }
 
-.recipe-image {
-  background-size: cover;
-  background-position: center center;
-  border: 3px solid $putty;
-  border-radius: .5rem;
+.recipe-card .recipe-image {
+  // border: 3px solid $putty;
+  // border-radius: .5rem;
   height: 12rem;
   margin: 1rem auto;
   width: 50%;
 }
 
+.recipe-image {
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center center;
+}
+
 @media print, screen and (min-width: 40em) {
-  .recipe-image {
+  .recipe-card .recipe-image {
     width: 90%;
   }
 }
 
 .page-buttons {
   clear: both;
+}
+
+////////////
+// RECIPE //
+////////////
+
+.recipe .recipe-image {
+  height: 17rem;
+}
+
+
+@media print, screen and (min-width: 40em) {
+  .recipe .recipe-image {
+    height: 20rem;
+  }
+
+  .recipe .ingredients {
+    min-height: 20rem;
+  }
 }

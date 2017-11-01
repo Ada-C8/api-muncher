@@ -1,1 +1,23 @@
-<h2><%= @recipe.name %></h2>
+<section class="page-title">
+  <h2><%= @recipe.name %></h2>
+  <h5>by <%= link_to @recipe.source, @recipe_url %></h5>
+</section>
+<section class="row recipe">
+  <!-- <div class="recipe-image-container"> -->
+    <div class="recipe-image small-11 medium-6 columns"
+    style= "background-image: url('<%= @recipe.image_url %>');"> </div>
+  <!-- </div> -->
+  <div class="ingredients small-12 medium-6 columns">
+    <h3>Ingredients</h3>
+    <ul>
+      <% @recipe.ingredients.each do |ingredient| %>
+        <li>
+          <%= ingredient %>
+        </li>
+      <% end %>
+    </ul>
+  </div>
+  <div class="nutrition small-12 medium-6 columns end">
+    <h3>Nutrition Facts</h3>
+  </div>
+</section>
