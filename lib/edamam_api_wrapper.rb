@@ -5,8 +5,8 @@ class EdamamApiWrapper
   ID = ENV['EDAMAM_ID']
   BASE_URL = 'https://api.edamam.com/search?'
 
-  def self.find_recipes(search_terms, from=0, to=9)
-    url = BASE_URL + 'q=' + "#{search_terms}" + "&from=#{from}" + "&to=#{to}" + "&app_id=#{ID}" + "&app_key=#{KEY}"
+  def self.find_recipes(search_terms, from = 0, to = 9)
+    url = BASE_URL + 'q=' + "#{search_terms}" + "&app_id=#{ID}" + "&app_key=#{KEY}" + "&from=#{from}" + "&to=#{to}"
 
     response = HTTParty.get(url)
     if response.success?
@@ -14,6 +14,7 @@ class EdamamApiWrapper
     else
       return false
     end
+
   end
 
   def self.show_recipe(uri)

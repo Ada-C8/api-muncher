@@ -4,6 +4,7 @@ class Search
   def initialize(response)
     @query = response['q']
     @hits = response['hits']
+    @page = 1
   end
 
 
