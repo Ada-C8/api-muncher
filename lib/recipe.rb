@@ -7,13 +7,13 @@ class Recipe
     @label = label
     @uri = uri
 
-    @image = options["image"]
-    @url = options['url']
-    @source = options['source']
-    @yield = options['yield']
-    @calories = options['calories']
-    @ingredients = options['ingredients']
-    @healthLabels = options['healthLabels']
-    @totalDaily = options['totalDaily']
+    @image = options[:image]
+    @url = options[:url]
+    @source = options[:source]
+    @yield = options[:yield]
+    @calories = options[:calories]
+    @ingredients = options[:ingredients]
+    @healthLabels = options[:healthLabels]
+    @totalDaily = options[:totalDaily]
   end
 end
