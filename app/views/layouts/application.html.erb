@@ -1,23 +1,27 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>ApiMuncher</title>
-    <%= csrf_meta_tags %>
+<head>
+  <title>Muncher</title>
+  <%= csrf_meta_tags %>
 
-    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
-  </head>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  <link href="https://fonts.googleapis.com/css?family=Rozha+One|Damion" rel="stylesheet">
+  <%=favicon_link_tag 'cannabis.png', type: 'image/png'%>
+</head>
 
-  <body>
-    <%= yield %>
+<body>
+  <%= yield %>
+  <section class="row">
     <% if session[:recent_searches] %>
-      <ul>
-        <%session[:recent_searches].each do |search, image| %>
-        <li>
-          <%= link_to search, recipes_path(search: search)%>
-        </li>
-        <%end%>
-      </ul>
+    <ul>
+      <%session[:recent_searches].each do |search, image| %>
+      <li>
+        <%= link_to search, recipes_path(search: search)%>
+      </li>
       <%end%>
-  </body>
+    </ul>
+    <%end%>
+  </section>
+</body>
 </html>

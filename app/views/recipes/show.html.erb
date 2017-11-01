@@ -1,6 +1,8 @@
+<section class="row">
 <h1><%= @recipe.label %></h1>
 <%= image_tag @recipe.image, alt:"#{@recipe.label}" %>
-
+</section>
+<section class="row">
 <dl>
   <dt>Yield</dt>
   <dd><%= format_number(@recipe.yield) %></dd>
@@ -36,7 +38,9 @@
     <% end %>
   </tbody>
 </table>
-
+</section>
+<section class="row">
 <% @recipe.health_labels.each do |label| %>
 <%= label %>
 <% end %>
+</section>

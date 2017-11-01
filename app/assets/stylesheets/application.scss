@@ -1,19 +1,77 @@
 /*
- * This is a manifest file that'll be compiled into application.css, which will include all the files
- * listed below.
- *
- * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
- * vendor/assets/stylesheets directory can be referenced here using a relative path.
- *
- * You're free to add application-wide styles to this file and they'll appear at the bottom of the
- * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
- * files in this directory. Styles in this file should be added after the last require_* statement.
- * It is generally better to create a new file per style scope.
- *
- *= require_tree .
- *= require_self
- */
- $light-blue: #092232;
- $blue: #051c2a; //#031626
- $light-yellow: #FDAA5D;
- $gold: #C08750;
+* This is a manifest file that'll be compiled into application.css, which will include all the files
+* listed below.
+*
+* Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
+* vendor/assets/stylesheets directory can be referenced here using a relative path.
+*
+* You're free to add application-wide styles to this file and they'll appear at the bottom of the
+* compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+* files in this directory. Styles in this file should be added after the last require_* statement.
+* It is generally better to create a new file per style scope.
+*
+*= require_tree .
+*= require_self
+*= require font-awesome
+*/
+$light-blue: #092232;
+$blue: #051c2a; //#031626
+$light-yellow: #FDAA5D; //fead5e
+$gold: #C08750;
+
+body {
+  background-image: url('pattern2.png');
+  background-repeat: repeat;
+  color: $light-yellow;
+}
+
+h1 {
+  font-family: 'Rozha One', serif;
+}
+
+.front-page {
+  text-align: center;
+}
+
+.front-page .search {
+  margin: 0 auto;
+}
+
+h5 {
+  font-family: 'Damion',sans-serif;
+}
+
+input#search{
+  height: 3em;
+  background: #2b303b;
+  border: none;
+  color: #63717f;
+  opacity: 0.8;
+  padding: 1em;
+}
+
+.search h5{
+  text-align: right;
+}
+
+
+@media print, screen and (min-width: 40em){
+  .front-page h1 {
+    font-size: 10rem;
+    margin-top: 1em;
+  }
+
+  input#search{
+    // height: 7em;
+    font-size: 3em;
+  }
+
+  .front-page .search {
+    width: 75%;
+  }
+
+  .search h5{
+    font-size: 3em;
+  }
+
+}

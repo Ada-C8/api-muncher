@@ -1,6 +1,13 @@
-<h1>MUNCHIES</h1>
+<section class="row front-page">
+  <h1>MUNCHIES</h1>
+  <div class = "search">
 
-<%= form_tag(recipes_path, :method => "get", id: "search-form") do %>
-    <%= text_field_tag :search, params[:search], placeholder: "Search Recipes" %>
-    <%= submit_tag "Search", :name => nil %>
-<% end %>
+    <%= form_tag(recipes_path, :method => "get", id: "search") do %>
+    <%= text_field_tag :search, params[:search], placeholder: "🍽️    Search Recipes" %>
+    <%# submit_tag "Search", :name => nil %>
+    <% end %>
+    <h5>find your vice...</h5>
+
+  </div>
+
+</section>
