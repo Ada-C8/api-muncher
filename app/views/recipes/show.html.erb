@@ -1,0 +1,23 @@
+<section class="row info">
+  <h2><%= @recipe.name %></h2>
+  <small>By <%= link_to @recipe.source, @recipe.orig_url, target: "_blank" %></small>
+  <p>
+    <%= "Serves #{@recipe.servings.to_i}" %>
+  </p>
+  <p>
+    <%= "#{@recipe.calories.round} Calories total" %>
+  </p>
+  <%= image_tag(@recipe.image, alt: @recipe.name) %>
+</section>
+
+
+<section class="row ingredients">
+  <h3>Ingredients</h3>
+  <ul>
+    <% @recipe.ingredients.each do |ingredient| %>
+    <li>
+      <%= ingredient %>
+    </li>
+    <% end %>
+  </ul>
+</section>

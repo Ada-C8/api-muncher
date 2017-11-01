@@ -1,7 +1,7 @@
 require 'httparty'
 require 'awesome_print'
-require 'dotenv/load'
-require_relative 'recipe'
+# require 'dotenv/load'
+# require_relative 'recipe'
 
 class EdamamApiWrapper
 
@@ -14,7 +14,6 @@ class EdamamApiWrapper
   def self.list_recipes(ingredient, from: 0, to: 10, id: nil, key: nil)
 
     # get valid from to data
-
     data = self.request_recipes(ingredient, from: from, to: to, id: id, key: key)
 
     # return data
@@ -25,15 +24,20 @@ class EdamamApiWrapper
       data["hits"].each do |info|
       # data["hits"].length.times do |idx|
         # recipe = data["hits"][idx]["recipe"]
-        recipe = info["recipe"]
-        new_recipe = Recipe.new recipe["label"], recipe["url"], recipe["image"],
-                      source: recipe["source"],
-                      servings: recipe["yield"],
-                      diet_labels: recipe["dietLabels"],
-                      health_labels: recipe["healthLabels"],
-                      ingredients: recipe["ingredientLines"],
-                      calories: recipe["calories"],
-                      nutrition: recipe["totalNutrients"]
+        recipe_hash = info["recipe"]
+        new_recipe = self.create_recipe(recipe_hash)
+        # recipe = info["recipe"]
+        # new_recipe = Recipe.new recipe["label"],
+        #               URI.encode(recipe["uri"]),
+        #               recipe["image"],
+        #               URI.encode(recipe["url"]),
+        #               source: recipe["source"],
+        #               servings: recipe["yield"],
+        #               diet_labels: recipe["dietLabels"],
+        #               health_labels: recipe["healthLabels"],
+        #               ingredients: recipe["ingredientLines"],
+        #               calories: recipe["calories"],
+        #               nutrition: recipe["totalNutrients"]
         recipes << new_recipe
       end
     end
@@ -42,11 +46,40 @@ class EdamamApiWrapper
   end
 
   # what happens if their server is down? how to test?
+  # instance variable so accessible by any instance
   def self.num_recipes(ingredient, id: nil, key: nil)
     response = self.request_recipes(ingredient, id: id, key: key)
     return response["count"]
   end
 
+  def self.find_recipe(uri, id: nil, key: nil)
+    id ||= ID
+    key ||= KEY
+
+    url = BASE_URL + "r=#{uri}"
+
+    response = HTTParty.get(url)
+
+    if response
+      return self.create_recipe(response[0])
+    end
+  end
+
+  def self.create_recipe(recipe_hash)
+    # recipe = info["recipe"]
+    new_recipe = Recipe.new recipe_hash["label"],
+                  URI.encode(recipe_hash["uri"]),
+                  recipe_hash["image"],
+                  URI.encode(recipe_hash["url"]),
+                  source: recipe_hash["source"],
+                  servings: recipe_hash["yield"],
+                  diet_labels: recipe_hash["dietLabels"],
+                  health_labels: recipe_hash["healthLabels"],
+                  ingredients: recipe_hash["ingredientLines"],
+                  calories: recipe_hash["calories"],
+                  nutrition: recipe_hash["totalNutrients"]
+    return new_recipe
+  end
   # private
 
   def self.request_recipes(ingredient, from: 0, to: 10, id: nil, key: nil)
@@ -88,12 +121,13 @@ class EdamamApiWrapper
 
     # else return default 10 if to is neg or < from
     to = from + 10 if to < from
-    
+
     return { from: from, to: to }
   end
 end
 
+  # recipe = EdamamApiWrapper.find_recipe("http://www.edamam.com/ontologies/edamam.owl%23recipe_7bf4a371c6884d809682a72808da7dc2")
 # recipes = EdamamApiWrapper.list_recipes("chicken")
 # ap recipes
-# # puts response["count"]
+# puts response["count"]
 # puts EdamamApiWrapper.num_recipes("chicken")

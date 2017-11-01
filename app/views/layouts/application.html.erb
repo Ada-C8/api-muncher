@@ -4,7 +4,8 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <title><%= content_for?(:title) ? yield(:title) : "Untitled" %></title>
+    <title>Muncher
+      <%# content_for?(:title) ? yield(:title) : "Untitled" %></title>
 
     <%= stylesheet_link_tag    "application" %>
     <%= javascript_include_tag "application", 'data-turbolinks-track' => true %>
@@ -13,7 +14,18 @@
 
   <body>
 
-    <%= yield %>
+    <main class="row">
 
+      <%= yield %>
+
+    </main>
+
+    <section class="row debug">
+      <%= debug(params) if Rails.env.development? %>
+    </section>
+
+    <footer class="row footer">
+      <small>Powered by Edamam</small>
+    </footer>
   </body>
 </html>
