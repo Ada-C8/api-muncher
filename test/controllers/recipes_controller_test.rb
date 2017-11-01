@@ -20,6 +20,7 @@ describe RecipesController do
 
     end
   end
+
   describe "show" do
     it "must show a user the details for a recipe" do
       get recipe_path(something)
