@@ -4,7 +4,9 @@
 <h2> Results for "<%= params[:q] %>" </h2>
 <% @results.each do |result| %>
 <section>
-  <%= link_to(image_tag(result[:image], alt: "#{result[:label]}"), show_recipe_path(result[:uri])) %>
-  <p> <%= result[:label]%> </p>
+  <figure>
+    <%= link_to(image_tag(result[:image], alt: "#{result[:label]}"), show_recipe_path(result[:uri])) %>
+    <figcaption> <%= result[:label]%> </figcaption>
+  </figure>
 </section>
 <% end %>

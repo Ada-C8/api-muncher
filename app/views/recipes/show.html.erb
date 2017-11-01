@@ -3,7 +3,12 @@
 
 <h1> <%= @recipe[0]["label"] %> </h1>
 <h2> By: <%= @recipe[0]["source"]%></h2>
+
 <p> <%= link_to 'Original Recipe', @recipe[0]["url"]%> </p>
+
+<figure>
+  <img src= "<%= @recipe[0]["image"]%>" alt = "Picture of <%= @recipe[0]["label"] %>" />
+</figure>
 
 <h3> Ingredients </h3>
 <ul>
@@ -18,7 +23,3 @@
     <li> <%= item[1]["label"] + "  #{item[1]["quantity"]}"+item[1]["unit"] %> </li>
   <% end %>
 </ul>
-
-<p>
-  <img src= "<%= @recipe[0]["image"]%>" alt = "Picture of <%= @recipe[0]["label"] %>" />
-</p>
