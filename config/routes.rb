@@ -6,7 +6,7 @@ Rails.application.routes.draw do
   get '/attributions', to: 'main#attribution', as: 'attributions'
 
   resources :recipes, only: [:index]
-  get '/recipes/*id/pages/:page_id', to: 'recipes#index', as: 'recipe_results_page'
+  get '/recipes/*id/page/:page_id', to: 'recipes#index', as: 'recipe_results_page'
   get '/recipes/*id', to: 'recipes#index', as: 'recipe_results'
   post '/recipes', to: 'recipes#search', as: 'search'
   get '/recipes/show/*id', to: 'recipes#show', as: 'recipe'

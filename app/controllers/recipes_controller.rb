@@ -1,12 +1,16 @@
 class RecipesController < ApplicationController
+  PAGE_ITEMS = 12
+
   def index
     if params["id"]
-      if params["page_id"]
-        @page = params["page_id"]
-        @recipes = RecipeSearch.search(params["id"])
-      else
-        @recipes = RecipeSearch.search(params["id"])
-      end
+      @query = params["id"]
+      @page = params["page_id"] || 1
+      p @query, @page
+
+      recipes = RecipeSearch.search(params["id"], (@page.to_i - 1), (PAGE_ITEMS + 1))
+      @less = @page != 0
+      @more = recipes.length > PAGE_ITEMS
+      @recipes = recipes[0...PAGE_ITEMS]
     end
   end
 
