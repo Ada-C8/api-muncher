@@ -12,7 +12,7 @@ class EdamamApiWrapper
     if response.success?
       return Search.new(response)
     else
-      return false
+      return [ ]
     end
 
   end
@@ -24,7 +24,7 @@ class EdamamApiWrapper
     if response.success?
       return response
     else
-      return false
+      return [ ]
     end
   end
 

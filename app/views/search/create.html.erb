@@ -11,7 +11,7 @@
   <%= link_to "previous", search_index_path(:ingredients => @keywords, :page => @page - 1), method: :post %>
   <% end %>
   <%= link_to "New Search", root_path %>
-  <% if @all_recipes.length != 0 %>
+  <% if @all_recipes.count > 0 %>
   <%= link_to "next",  search_index_path(:ingredients => @keywords, :page => @page + 1), method: :post %>
   <% end %>
 </section>

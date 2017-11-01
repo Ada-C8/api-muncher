@@ -23,8 +23,10 @@ class SearchController < ApplicationController
     end
 
     @all_recipes = []
-    @search.hits.each do |recipe|
-      @all_recipes << Recipe.new(recipe['recipe'])
+    unless @search == [] || @search.hits.count < 9
+      @search.hits.each do |recipe|
+        @all_recipes << Recipe.new(recipe['recipe'])
+      end
     end
   end
 
