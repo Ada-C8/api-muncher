@@ -7,7 +7,9 @@ class UsersController < ApplicationController
       flash[:success] = "Welcome back #{@user.name}!"
     else
         @user = User.new(uid: @auth_hash['uid'],
-        provider: @auth_hash['provider'], name: @auth_hash['info']['name'], name: @auth_hash['info']['name'], email:@auth_hash['info']['email'])
+        provider: @auth_hash['provider'],
+        name: @auth_hash['info']['name'],
+        email:@auth_hash['info']['email'])
       if @user.save
         session[:user_id] = @user.id
         flash[:success] = "Welcome #{@user.name}!"
@@ -22,5 +24,21 @@ class UsersController < ApplicationController
     session[:user_id] = nil
     flash[:success] = "Successfully logged out"
     redirect_to root_path
+  end
+
+  def favorite
+    fav = Favorite.new(user_id: session[:user_id], uri: params[:uri])
+    if fav.save
+      flash[:success] = "Add to your favorites!"
+      redirect_to recipes_path(params[:uri])
+    else
+      flash[:failure] = "Unable to favorite recipe :("
+      redirect_to recipes_path(params[:uri])
+    end
+  end
+
+  def show
+    @user = User.find_by(id: session[:user_id])
+    @favorites = @user.favorites
   end
 end

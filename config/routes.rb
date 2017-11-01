@@ -6,8 +6,12 @@ Rails.application.routes.draw do
 
   get "/auth/:provider/callback", to: "users#create"
 
-  get '/recipes/', to: 'recipes#index', as: 'recipes'
+  get '/user/:id', to: 'user#show', as: 'user'
 
-  get 'recipes/:uri', to: 'recipes#show', as: 'recipe'
+  post '/recipes/:uri', to: 'user#favorite', as: 'favorite'
+
+  get '/recipes/:uri', to: 'recipes#show', as: 'recipe'
+
+  get '/recipes/', to: 'recipes#index', as: 'recipes'
 
 end
