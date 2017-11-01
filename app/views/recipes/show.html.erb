@@ -1,7 +1,14 @@
 <h1>Recipe show page</h1>
-<ul>
-  <li>Title: <%= @recipe.label%></li>
-  <li><%= image_tag "#{@recipe.image}"%></li>
-  <li>Source: <%= @recipe.source%></li>
-  <li>Calories: <%= @recipe.calories%></li>
-</ul>
+<section>
+  <h3><%= @recipe.label%></h3>
+  <h4>By: <%= link_to "#{@recipe.source}", @recipe.url%></h4>
+</section>
+<%= image_tag "#{@recipe.image}"%>
+
+<%= render partial: "list", locals: {
+  list_obj: @recipe.ingredientLines, list_title: "Ingredients"
+} %>
+
+<%= render partial: "list", locals: {
+  list_obj: @recipe.dietLabels, list_title: "Dietary Labels"
+} %>
