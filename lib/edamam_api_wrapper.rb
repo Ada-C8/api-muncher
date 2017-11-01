@@ -12,7 +12,7 @@ class EdamamApiWrapper
     app_id ||= APP_ID
     app_key ||= APP_KEY
 
-    url = BASE_URL + "search?q=#{search}" + "&app_id=#{app_id}" + "&app_key=#{app_key}"
+    url = BASE_URL + "search?q=#{search}" + "&app_id=#{app_id}" + "&app_key=#{app_key}" + "&from=0" + "&to=100"
 
     data = HTTParty.get(url)
 
@@ -28,7 +28,7 @@ class EdamamApiWrapper
 
   def self.show_recipe(search, url, app_id = nil, app_key = nil)
     recipes = self.list_recipes(search)
-    
+
     recipe_array = recipes.select { |recipe| URI.encode(recipe.url) == url}
 
     recipe = recipe_array[0]

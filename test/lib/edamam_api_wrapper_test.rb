@@ -51,7 +51,7 @@ describe EdamamApiWrapper do
         recipe.must_be_nil
       end
     end
-    it 'returns nil for a url not found inside the recipes array' do
+    it 'returns nil for a url not found inside the non-empty recipes array' do
       VCR.use_cassette("recipes") do
         recipe = EdamamApiWrapper.show_recipe("pizza", "oh-look-its-a-fake-url")
 

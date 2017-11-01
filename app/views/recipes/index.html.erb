@@ -1,19 +1,9 @@
-<h1>Index</h1>
-<%= params %>
-
+<h1>Results for <%=params[:search]%></h1>
 <ul>
   <% @recipes.each do |recipe| %>
   <li>
-    <h3><%=link_to recipe.label, recipe_path() + "?search=#{params[:search]}" + "&url=#{URI.encode(recipe.url)}" %></h3>
-    <ul>
-      <li>
-        <%=recipe.url%>
-      </li>
-      <li>
-        <%=recipe.ingredients%>
-      </li>
-    </ul>
-
+    <h2><%=link_to recipe.label, recipe_path() + "?search=#{params[:search]}" + "&url=#{URI.encode(recipe.url)}" %></h2>
+    <img src="<%=recipe.image%>" alt="<%=recipe.label%>"
   </li>
   <% end %>
 </ul>
