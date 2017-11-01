@@ -9,31 +9,31 @@ class EdamamApiWrapper
 
   def self.search(q)
     url = BASE_URL + "q=#{q}" + "&app_id=#{APP_ID}" + "&app_key=#{APP_KEY}"
-    check_status(url)
-    return HTTParty.get(url)
+    response = HTTParty.get(url)
+    check_status(response)
+    return response
+  end
+
+  def self.get_results_from_response(response)
+    return response["hits"].map do |result|
+      {
+        name: result["recipe"]["label"], # name
+        # image: result["recipe"]["image"], # image
+        # source: result["recipe"]["source"], # original source
+        # url: result["recipe"]["url"], # link to original
+        # servings: result["recipe"]["yield"], # servings
+        # diet: result["recipe"]["dietLabels"], # low-fat, etc
+        # health: result["recipe"]["healthLabels"], # vegetarian, etc
+        # ingredients: result["recipe"]["ingredientLines"], # ingredients as an array
+        # calories: result["recipe"]["calories"] # calories
+      }
+    end
   end
 
   private
-  def self.create_recipe(response)
-    response = self.search(params[:q])
-
-    results = response.hits.map do |result|
-      result[:recipe][:label], # name
-      result[:recipe][:image], # image
-      result[:recipe][:source], # original source
-      result[:recipe][:url], # link to original
-      result[:recipe][:yield], # servings
-      result[:recipe][:dietLabels], # low-fat, etc
-      result[:recipe][:healthLabels], # vegetarian, etc
-      result[:recipe][:ingredientLines], # ingredients as an array
-      result[:recipe][:calories] # calories
-    end
-    return results
-  end
-
   def self.check_status(response)
-    unless response["ok"]
-      raise ApiError.new("API call to Edamam failed: #{response["error"]}")
+    unless response.code == 200
+      raise ApiError.new("API call to Edamam failed: #{response.code}")
     end
   end
 end
