@@ -1,7 +1,7 @@
 
 
 class EdamamApiWrapper
-  BASE_URL = "https://api.edamam.com/search?q="
+  BASE_URL = "https://api.edamam.com/search?"
   ID = ENV["EDAMAM_ID"]
   KEY = ENV["EDAMAM_KEY"]
 
@@ -13,7 +13,7 @@ class EdamamApiWrapper
 
   def self.get_recipies(search_term, key=KEY)
     # define the request url
-    url = BASE_URL + search_term + "&app_id=" + ID + "&app_key=" + key
+    url = BASE_URL + "q=" + search_term + "&app_id=" + ID + "&app_key=" + key
 
     # send the request to the Edamam API
     response = HTTParty.get(url)
@@ -39,11 +39,11 @@ class EdamamApiWrapper
   def self.show_recipe(uri, key=KEY)
     # encode the uri from the show controller
     encoded_uri = URI.encode(uri)
-    url = BASE_URL + encoded_uri + "&app_id=" + ID + "&app_key=" + key
+    show_url = BASE_URL + "r=" + encoded_uri + "&app_id=" + ID + "&app_key=" + key
 
     # make the request
-    response = HTTParty.get(url)
-
+    response = HTTParty.get(show_url)
+    binding.pry
     # create an instance of Recipe from the api response
     # return this instance
     create_single_recipe(response)
@@ -53,14 +53,14 @@ private
 
 def self.create_single_recipe(response)
   return Recipe.new(
-  api_hits[0]["label"],
-  api_hits[0]["uri"],
+  response[0]["label"],
+  response[0]["uri"],
   {
-    photo: api_hits[0]["image"],
-    url: api_hits[0]["url"],
-    ingredients: api_hits[0]["ingredients"],
-    diet_labels: api_hits[0]["dietLabels"],
-    uri: api_hits[0]["uri"]
+    photo: response[0]["image"],
+    url: response[0]["url"],
+    ingredients: response[0]["ingredients"],
+    diet_labels: response[0]["dietLabels"],
+    uri: response[0]["uri"]
   }
   )
 end # create_singe_recipe

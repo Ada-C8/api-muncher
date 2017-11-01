@@ -2,5 +2,5 @@
   <% if recipe.photo %>
     <%= image_tag recipe.photo, alt: "Image of recipe" %>
   <% end %>
-  <%= link_to recipe.name, recipy_path(recipe) %>
+  <%= link_to recipe.name, recipy_path(recipe.uri) %>
 <% end %>
