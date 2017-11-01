@@ -1,0 +1,5 @@
+<%= form_tag("/recipes", method: "get") do %>
+  <%= label_tag :word %>
+  <%= text_field_tag :word, params[:word] %>
+  <%= submit_tag("Buscar") %>
+<% end %>
