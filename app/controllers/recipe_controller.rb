@@ -1,8 +1,9 @@
 class RecipeController < ApplicationController
-  def index
-    @recipes = EdamamApiWrapper.search("chocolate",3)
+  def show
+    @recipe = EdamamApiWrapper.find_recipe(params["recipe"])
   end
 
-  def show
+  def search
+    @recipes = EdamamApiWrapper.search(params["q"])
   end
 end

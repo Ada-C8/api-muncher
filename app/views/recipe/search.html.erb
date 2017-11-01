@@ -3,7 +3,7 @@
   <ul>
     <% @recipes.each do |recipe| %>
       <li>
-        <%= recipe.title %>
+        <%= link_to recipe.title, show_recipe_path(recipe.mini_uri) %>
       </li>
     <% end %>
   </ul>
