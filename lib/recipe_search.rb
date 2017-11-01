@@ -19,6 +19,15 @@ class RecipeSearch
     recipes
   end
 
+  def self.find(uri)
+    url = BASE_URL + "search?app_id=#{ID}&app_key=#{KEY}&r=#{URI.encode(uri)}"
+    response = HTTParty.get(url)
+
+    raise(APIError, response.message) if response.empty?
+
+    new_recipe(response[0])
+  end
+
   def self.new_recipe(params)
     Recipe.new(
       name: params['label'],
