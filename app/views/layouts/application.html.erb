@@ -6,9 +6,19 @@
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+
+      <link rel="icon" href="https://t3.ftcdn.net/jpg/01/67/21/46/500_F_167214679_uMWihNxfdKFk4Z0imTql7KYuW8r37i3r.jpg">
   </head>
 
   <body>
+
+    <section class="sidebar">
+      <%= link_to "New Search", root_path %>
+    </section>
     <%= yield %>
+
+    <footer class="footer">
+      <p>Powered by Edamam</p>
+    </footer>
   </body>
 </html>

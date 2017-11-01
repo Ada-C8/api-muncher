@@ -1,9 +1,9 @@
 <section="recipe-list">
-  <% @all_recipes.each do |recipe| %>
-    <%= link_to "#{recipe.title}", search_path(recipe.title, uri: recipe.uri) %>
-      <span class="one-recipe">
-      <span class= "search-image"> <%= image_tag(recipe.image) %> </span>
-      <span class= "index-title"><%= recipe.title %></span>
-    </span>
-    <% end %>
+<% @all_recipes.each do |recipe| %>
+    <span class="one-recipe">
+    <span class= "search-image"> <%= image_tag(recipe.image) %> </span>
+    <span class= "index-title"><%= link_to "#{recipe.title}", search_path(recipe.title, uri: recipe.uri) %></span>
+  </span>
+  <% end %>
+
 </section>

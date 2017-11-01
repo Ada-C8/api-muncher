@@ -14,13 +14,13 @@
 <section class="health-info">
 <span>Health & Dietary Details</span>
 <ul class="health-labels">
-  <% @recipe.health_labels.each do %>
+  <% @recipe.health_labels.each do |line| %>
   <li><%= line %></li>
   <% end %>
 </ul>
 
 <ul class="diet-labels">
-  <% @recipe.diet_labels.each do %>
+  <% @recipe.diet_labels.each do |line| %>
   <li><%= line %></li>
   <% end %>
 </ul>

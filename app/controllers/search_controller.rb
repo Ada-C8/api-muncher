@@ -6,12 +6,20 @@ class SearchController < ApplicationController
   end
 
   def new
-    # @search = Search.new
+
   end
 
   def create #list
 
-    @search = EdamamApiWrapper.find_recipes(params['ingredients'])
+    if (params[:page].to_i == 1)
+      @search = EdamamApiWrapper.find_recipes(params['ingredients'])
+      @page = 1
+    else
+      @page = params[:page].to_i
+      from = (@page * 10) - 10
+      to = from + 9
+      @search = EdamamApiWrapper.find_recipes(params['ingredients'], from, to)
+    end
 
     @all_recipes = []
     @search.hits.each do |recipe|
