@@ -1,4 +1,8 @@
 Rails.application.routes.draw do
+  get 'users/create'
+
+  get 'users/logout'
+
   root 'recipes#root'
 
   get '/recipes/', to: 'recipes#index', as: 'recipes'
