@@ -1,6 +1,13 @@
-<%= form_tag search_results_path, method: "get" do %>
-  <%= label_tag(:ingredients, "Enter Ingredients") %>
-  <%= text_field_tag(:ingredients) %>
-  <%= hidden_field_tag(:page, 1) %>
-  <%= submit_tag("Search") %>
-<% end %>
+<div id="background">
+  <p id="muncher-text">
+    muncher
+  </p>
+
+  <section id="search-form">
+  <%= form_tag search_results_path, method: "get" do %>
+    <%= text_field_tag(:ingredients) %>
+    <%= hidden_field_tag(:page, 1) %>
+    <%= submit_tag("Search") %>
+  <% end %>
+  </section>
+</div>

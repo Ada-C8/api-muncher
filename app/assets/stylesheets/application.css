@@ -1,21 +1,79 @@
 /*
- * This is a manifest file that'll be compiled into application.css, which will include all the files
- * listed below.
- *
- * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
- * vendor/assets/stylesheets directory can be referenced here using a relative path.
- *
- * You're free to add application-wide styles to this file and they'll appear at the bottom of the
- * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
- * files in this directory. Styles in this file should be added after the last require_* statement.
- * It is generally better to create a new file per style scope.
- *
- *= require_tree .
- *= require_self
- */
+* This is a manifest file that'll be compiled into application.css, which will include all the files
+* listed below.
+*
+* Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
+* vendor/assets/stylesheets directory can be referenced here using a relative path.
+*
+* You're free to add application-wide styles to this file and they'll appear at the bottom of the
+* compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+* files in this directory. Styles in this file should be added after the last require_* statement.
+* It is generally better to create a new file per style scope.
+*
+*= require_tree .
+*= require_self
+*/
 
 body {
-  width: 100%;
+  position: relative;
+  margin: 0;
+  padding-bottom: 6rem;
+  min-height: 100%;
+  min-width: 100%;
+  font-family: "Helvetica Neue", Arial, sans-serif;
+  background-color: #ffd0b6;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+html {
+  height: 100%;
+  box-sizing: border-box;
+}
+
+#background{
+    position:absolute;
+    z-index:0;
+    background:inherit;
+    min-height:40%;
+    min-width:100%;
+    top: 0; left: 0; bottom: 0; right: 0;
+    margin: auto;
+    display: flex;
+    align-items: center;
+}
+
+#search-form {
+    position:absolute;
+    z-index:1;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+
+#muncher-text {
+    color:#FFB6C1;
+    font-size:20rem;
+    font-family: 'Pacifico', cursive;
+    text-align: center;
+    top: 0; left: 0; bottom: 0; right: 0;
+    margin: auto;
+}
+
+input[type=text], input[type=text]:focus, textarea, textarea:focus {
+  background-color: transparent;
+  color: black;
+  margin: 10px;
+  padding: 20px;
+  border: 2px solid grey;
+  text-align: center;
+  font-weight: bolder;
+  overflow:hidden;
+  transition: .3s;
 }
 
 .recipe-list {
@@ -26,4 +84,15 @@ body {
 
 .one-recipe {
   flex: 0 1 auto;
+}
+
+.footer {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  padding: 1rem;
+  background-color: transparent;
+  text-align: center;
+  color: lightgrey;
 }
