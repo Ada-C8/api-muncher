@@ -48,7 +48,7 @@ describe RecipesController do
       VCR.use_cassette("find_recipe") do
         recipe = EdamamApiWrapper.find_recipe(@uri)
         recipe.must_be_kind_of Recipe
-        get recipe_path(recipe.name, recipe_id: @uri)
+        get recipe_path(recipe_id: @uri)
         must_respond_with :success
       end
     end
@@ -57,7 +57,7 @@ describe RecipesController do
       VCR.use_cassette("find_recipe") do
         recipe = EdamamApiWrapper.find_recipe(@uri + "lalala")
         recipe.must_equal nil
-        get recipe_path("name", recipe_id: @uri + "lalala")
+        get recipe_path(recipe_id: @uri + "lalala")
         must_respond_with :not_found
       end
     end
