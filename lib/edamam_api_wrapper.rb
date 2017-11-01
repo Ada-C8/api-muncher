@@ -7,7 +7,7 @@ class EdamamApiWrapper
 
   def self.search_recipes(token = nil)
     token ||= TOKEN
-    url = BASE_URL + "?q=" + "chicken" + "&app_id=#{ID}&app_key=#{token}"
+    url = BASE_URL + "?q=" + "search" + "&app_id=#{ID}&app_key=#{token}"
     data = HTTParty.get(url)
 
     if data["hits"]

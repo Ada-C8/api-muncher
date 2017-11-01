@@ -1,20 +1,16 @@
-<section class="recipes-list">
+<section class="recipes-main">
   <h1>Recipes</h1>
-  <ul>
-    <% @recipes.each do |recipe| %>
-      <li>
-        <%= recipe["recipe"]["label"] %>
-      </li>
+  <%# if @recipes == nil %>
+    <%= form_tag root_path, method: "get", id: "search-form" do %>
+      <%= text_field_tag :search, params[:search], placeholder: raw("&#9906;") %>
     <% end %>
-  </ul>
+  <%# else %>
+    <ul>
+      <%# @recipes.each do |recipe| %>
+        <li>
+          <%#= recipe["recipe"]["label"] %>
+        </li>
+      <%# end %>
+    </ul>
+  <%# end %>
 </section>
-
-<%# form_tag chat_create_path(@recipe), method: "post" do %>
-  <%# label_tag(:search, "Search") %>
-  <%# text_field_tag(:search) %>
-  <%# submit_tag("Send") %>
-<%# end %>
-
-<%# form_tag(products_path, :method => "get", id: "search-form") do %>
-  <%# text_field_tag :search, params[:search], placeholder: raw("&#9906;") %>
-<%# end %>
