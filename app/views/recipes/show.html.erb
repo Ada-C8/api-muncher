@@ -5,8 +5,6 @@
 
 <%= image_tag(@recipe.image, options = {alt: @recipe.label}) %>
 
-<%= link_to "View Original", @recipe.url, target: "_blank" %>
-
 <h3> Ingredients: </h3>
 <ul>
   <% @recipe.ingredients.each do |ingredient| %>
@@ -20,8 +18,14 @@
 <h3> Dietary Information: </h3>
 <ul>
   <% @recipe.total_nutrients.each do |info| %>
+    <%if info != nil%>
     <li>
     <%="#{info["label"]}: #{info["quantity"].round(0)}#{info["unit"]}" %>
     </li>
+    <%else%>
+    No information available.
+    <%end%>
   <%end%>
 </ul>
+
+<%= link_to "View Original", @recipe.url, target: "_blank" %>

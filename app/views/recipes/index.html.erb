@@ -1,7 +1,7 @@
 
 
-This is the root page and Recipe index page
 
+Welcome to Recipe Monster!  Type in a food item to search recipes:
 <%= form_tag(root_path, method: "get", id: "search-form") do %>
   <%= text_field_tag :search, @search, placeholder: "Search Recipes" %>
   <%= submit_tag "Search" %>
