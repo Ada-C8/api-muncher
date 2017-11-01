@@ -32,18 +32,17 @@ describe EdamamApiWrapper do
   describe "show_recipe" do
     it "will return an instance of recipe" do
       VCR.use_cassette("recipies") do
-        # TODO: figure out why the uri is being encoded incorrectly
-        # encoded_uri = URI.encode("http://www.edamam.com/ontologies/edamam.owl%23recipe_637913ec61d9da69eb451818c3293df2")
+        # pass in an unencoded uri (got this one from pulling it out of the API response to get_recipies)
         result = EdamamApiWrapper.show_recipe("http://www.edamam.com/ontologies/edamam.owl#recipe_7bf4a371c6884d809682a72808da7dc2")
         result.must_be_kind_of Recipe
       end # VCR
     end # return an instance
 
-    # it "will raise an error if given a bogus uri" do
-    #   VCR.use_cassette("recipies") do
-    #     encoded_uri = URI.encode("bogus")
-    #     proc {EdamamApiWrapper.show_recipe(encoded_uri)}.must_raise EdamamApiWrapper::ApiError
-    #   end # VCR
-    # end
+    it "will raise an error if given a bogus uri" do
+      # TODO: figure out how to test this! There is something going wrong before I get to the error?? 
+      VCR.use_cassette("recipies") do
+        proc {EdamamApiWrapper.show_recipe("bogus_uri")}.must_raise EdamamApiWrapper::ApiError
+      end # VCR
+    end
   end # show_recipe
 end # EdamamApiWrapper
