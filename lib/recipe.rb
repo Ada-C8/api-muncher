@@ -5,8 +5,8 @@ class Recipe
 
   attr_reader :uri, :label, :image, :source, :url, :dietLabels, :healthLabels, :ingredientLines
 
-  def initialize(api_response)
-    #raise ArgumentError if label == nil || label == "" || uri == nil || uri == ""
+  def initialize(response)
+    raise ArgumentError if label == nil || label == "" || uri == nil || uri == ""
 
     @uri = URI.escape(response['uri'])
     @label = response['label']

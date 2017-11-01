@@ -5,6 +5,11 @@ git_source(:github) do |repo_name|
   "https://github.com/#{repo_name}.git"
 end
 
+#Added by JULIA:
+gem 'httparty'
+gem 'awesome_print'
+gem 'foundation-rails'
+
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.1.4'
@@ -39,6 +44,13 @@ group :development, :test do
   # Adds support for Capybara system testing and selenium driver
   gem 'capybara', '~> 2.13'
   gem 'selenium-webdriver'
+  #ADDED BY JULIA:
+  gem 'minitest-vcr'
+  gem 'webmock'
+  gem 'dotenv-rails'
+  gem 'better_errors'
+  gem 'pry-rails'
+  gem 'binding_of_caller'
 end
 
 group :development do
@@ -55,6 +67,7 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 gem 'jquery-turbolinks'
 gem 'awesome_print'
+
 group :development do
   gem 'better_errors'
   gem 'pry-rails'
@@ -64,4 +77,5 @@ end
 group :test do
   gem 'minitest-rails'
   gem 'minitest-reporters'
+  gem 'minitest-vcr'
 end
