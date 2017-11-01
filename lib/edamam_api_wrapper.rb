@@ -11,17 +11,16 @@ class EdamamApiWrapper
   end
 
   def self.search(q, app_id=APP_ID, app_key=APP_KEY)
-    url = BASE_URL + "/search" + "?q=#{q}" + "&app_id=#{APP_ID}" + "&app_key=#{APP_KEY}"
+    # raise ArgumentError if q == nil || q == ""
+    url = BASE_URL + "/search" + "?q=#{q}" + "&app_id=#{app_id}" + "&app_key=#{app_key}"
 
-    # puts "About to send request for list of channels"
+    puts "About to send request for list of channels"
     data = HTTParty.get(url)
-    # puts "Got response with status: #{data.code}: #{data.message}"
+    puts "Got response with status: #{data.code}: #{data.message}"
     # puts "Parsed response is: #{data.parsed_response}"
     # puts "Keys are: #{data.parsed_response.keys}"
+    check_status(data)
 
-    unless data["ok"]
-      raise ApiError.new("API call to slack failed: #{data["error"]}")
-    end
 
     recipe_list = []
     if data["hits"]
@@ -33,7 +32,7 @@ class EdamamApiWrapper
   end
 
   def self.find_recipe(id, app_id=APP_ID, app_key=APP_KEY)
-    raise ArgumentError if id == nil || id == ""
+    # raise ArgumentError if id == nil || id == ""
 
     url = BASE_URL + "/search" + BASE_URI + "#{id}" + "&app_id=#{APP_ID}" + "&app_key=#{APP_KEY}"
 
@@ -42,6 +41,8 @@ class EdamamApiWrapper
     # puts "Got response with status: #{data.code}: #{data.message}"
     # puts "Parsed response is: #{data.parsed_response}"
     # puts "Keys are: #{data.parsed_response.keys}"
+    check_status(data)
+
     recipe = nil
     if data.any?
       recipe = create_recipe(data[0])
@@ -51,11 +52,11 @@ class EdamamApiWrapper
 
   private
 
-  # def self.check_status(response)
-  #   unless response["ok"]
-  #     raise ApiError.new("API call to slack failed: #{response["error"]}")
-  #   end
-  # end
+  def self.check_status(response)
+    unless response.code == 200
+      raise ApiError.new("API call to Edamam failed: #{response.code}: #{response.message}")
+    end
+  end
 
   def self.create_recipe(api_params)
     return Recipe.new(
@@ -63,7 +64,11 @@ class EdamamApiWrapper
       api_params["url"],
       api_params["uri"],
       api_params["image"],
-      api_params["ingredients"]
+      api_params["source"],
+      api_params["ingredients"],
+      {
+        health_labels: api_params["healthLabels"]
+      }
     )
   end
 end

@@ -14,7 +14,6 @@ describe "EdamamApiWrapper" do
       end
     end
 
-    #never a bad status??
     it "should raise an ApiError when the app_id and app_key are invalid" do
       VCR.use_cassette("apple") do
         proc {
@@ -25,7 +24,10 @@ describe "EdamamApiWrapper" do
 
     describe "#self.find_recipe" do
       it "should return a Recipe object" do
-
+        VCR.use_cassette("specific recipe") do
+          result = EdamamApiWrapper.find_recipe("b1957a6a4025b25f6da6aef1fad452d4")
+          result.must_be_instance_of Recipe
+        end
       end
 
       it "should raise an ApiError if recipe id is invalid" do

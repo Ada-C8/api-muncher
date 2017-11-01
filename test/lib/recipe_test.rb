@@ -6,9 +6,14 @@ describe "Recipe" do
     @url = "www.testurl.com"
     @uri = "www.testuri_asdf1234"
     @image = "www.testimage.jpg"
+    @source = "anders"
     @ingredients = [{"text" => "some ingredients", "weight" => 23}]
 
-    @test_recipe = Recipe.new(@label, @url, @uri, @image, @ingredients)
+    @options = {
+      health_labels: "health health health",
+    }
+
+    @test_recipe = Recipe.new(@label, @url, @uri, @image, @source, @ingredients, @options)
   end
 
   describe "initialize" do
@@ -18,10 +23,10 @@ describe "Recipe" do
 
     it "should require a label, url, uri, image and ingredients " do
       proc { Recipe.new() }.must_raise ArgumentError
-      proc { Recipe.new("label") }.must_raise ArgumentError
-      proc { Recipe.new("label", "url")}.must_raise ArgumentError
-      proc { Recipe.new("label", "url", "uri")}.must_raise ArgumentError
-      proc { Recipe.new("label", "url", "uri", "image", [])}.must_raise ArgumentError
+      proc { Recipe.new(@label) }.must_raise ArgumentError
+      proc { Recipe.new(@label, @url)}.must_raise ArgumentError
+      proc { Recipe.new(@label, @url, @url)}.must_raise ArgumentError
+      proc { Recipe.new(@label, @url, @uri, @image, @source, [])}.must_raise ArgumentError
       proc { Recipe.new("", "", "", "", [])}.must_raise ArgumentError
     end
 
@@ -30,7 +35,12 @@ describe "Recipe" do
       @test_recipe.url.must_equal @url
       @test_recipe.uri.must_equal @uri
       @test_recipe.image.must_equal @image
+      @test_recipe.source.must_equal @source
       #does not track ingredients - I think this is the right decision?
+    end
+
+    it "should track optional arguments" do
+      @test_recipe.health_labels.must_equal @options[:health_label]
     end
   end
 

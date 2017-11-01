@@ -1,4 +1,30 @@
-<%= @recipe.label %>
-<%= @recipe.image %>
-<%= @recipe.url %>
-<%= @recipe.ingredients_text %>
+<section>
+  <h3><%= @recipe.label %></h3>
+  <h5>By <%= @recipe.source %></h5>
+  <h6><%= link_to "Original Recipe", @recipe.url %> </h6>
+
+  <section class="row">
+    <div class="small-12 medium-2 large-2 columns">
+      <%= image_tag(@recipe.image, alt:@recipe.label) %>
+    </div>
+
+    <div class="small-12 medium-2 large-2 columns">
+      <h6><strong>Ingredients</strong></h6>
+      <ul>
+        <% @recipe.ingredients_text.each do |ingred| %>
+          <li><%= ingred %></li>
+        <% end %>
+      </ul>
+    </div>
+  </section>
+
+  <section>
+    <h6><strong>Health Labels</strong></h6>
+    <ul>
+      <% @recipe.health_labels.each do |labels| %>
+        <li><%= labels %></li>
+      <% end %>
+    </ul>
+  </section>
+  <%= link_to "Back to Search page", root_path %>
+</section>
