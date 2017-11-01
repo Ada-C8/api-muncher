@@ -1,5 +1,5 @@
 
-<%= form_tag({:action => 'index', :controller => "recipies"}, {:class => 'class="small-6 small-centered column search'})  do  %>
+<%= form_tag recipies_path, method: :get, class: "small-6 small-centered column search" do  %>
   <%= label_tag(:search_term, "Search for recipies including...") %>
   <%= text_field_tag(:search_term) %>
   <%= submit_tag "Search" %>
