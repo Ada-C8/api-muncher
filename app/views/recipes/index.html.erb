@@ -1,12 +1,20 @@
+
+
 <h1>Recipes#index</h1>
 <p>Find me in app/views/recipes/index.html.erb</p>
 
 <!-- <%= @recipes %> -->
 
 
+
 <ul>
 <% @recipes.each do |recipe| %>
-  <li><%= recipe.label %></li>
-  <li><%= recipe.ingredientLines %></li>
+  <!-- <li><%= link_to recipe.label, recipe_path(recipe.label) + ("?uri=#{recipe.uri}").encode %></li> -->
+
+  <li><%= link_to recipe.label, URI.encode("#{recipe_path(recipe.label)}?uri=#{recipe.uri.encode}") %></li>
+
+
+  <li><img src=<%=recipe.image%>></li>
+
 <% end %>
 </ul>
