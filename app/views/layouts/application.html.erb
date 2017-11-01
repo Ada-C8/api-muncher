@@ -15,7 +15,11 @@
   </head>
 
   <body>
-
+    <header>
+      <% unless current_page?(root_path) %>
+      <%= render 'layouts/search' %>
+      <% end %>
+    </header>
     <%= yield %>
 
   </body>

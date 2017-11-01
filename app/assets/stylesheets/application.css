@@ -14,9 +14,54 @@
  *= require_self
  *= require foundation_and_overrides
 
- */
+*/
 
- body {
-   background-image: url("https://gatherr.ca/wp-content/uploads/2016/05/Food-Tips-Front-Page.jpg");
-   background-size: cover;
- }
+@import url('https://fonts.googleapis.com/css?family=Cabin+Sketch');
+
+/****************/
+/*ROOT and HEADER*/
+/****************/
+
+body, html {
+  height: 100%
+}
+
+h1 {
+  font-family: 'Cabin Sketch', cursive;
+}
+
+h1 a {
+  color: white;
+}
+
+h1 a:hover {
+  color: rgb(247, 245, 236);
+}
+
+.root h1 {
+  font-family: 'Cabin Sketch', cursive;
+  font-size: 10rem;
+  text-align: center;
+  padding-top: 7rem;
+}
+
+.search {
+  background-image: url("https://gatherr.ca/wp-content/uploads/2016/05/Food-Tips-Front-Page.jpg");
+  background-size: cover;
+  margin: 0 auto;
+}
+
+.root {
+  background-image: url("https://gatherr.ca/wp-content/uploads/2016/05/Food-Tips-Front-Page.jpg");
+  background-size: cover;
+  height: 100%
+}
+
+.search p {
+  color: white;
+  font-size: 2rem;
+}
+
+#search_bar {
+  padding: 0 3rem;
+}
