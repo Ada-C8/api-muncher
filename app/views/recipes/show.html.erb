@@ -1,7 +1,7 @@
 <main class="recipe-page">
   <section class="page-title row">
     <h2><%= @recipe.name %></h2>
-    <h5>by <%= link_to @recipe.source, @recipe_url %></h5>
+    <h5>by <%= link_to @recipe.source, @recipe.recipe_url %></h5>
   </section>
   <section class="row recipe">
     <!-- <div class="recipe-image small-11 medium-6 columns"
@@ -10,7 +10,7 @@
       <div class="small-12 medium-6 columns image-holder">
         <img src=<%= @recipe.image_url %> alt=<%= @recipe.name %> class="recipe-page-image" >
       </div>
-      <div class="ingredients small-12 medium-6 columns end">
+      <div class="ingredients small-12 medium-6 columns">
         <h3>Ingredients</h3>
         <ul>
           <% @recipe.ingredients.each do |ingredient| %>
@@ -19,10 +19,10 @@
           </li>
           <% end %>
         </ul>
+        <h5><em>Makes <%= @recipe.servings.to_i %> servings</em></h5>
       </div>
     </div>
     <div class="row">
-
       <div class="nutrition small-12 medium-6 columns end table-holder">
         <table>
           <thead>

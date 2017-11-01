@@ -31,6 +31,6 @@ class RecipesController < ApplicationController
   end
 
   def url_from_params
-    params["id"].gsub(/http:\/www/, "http://www") + "." + URI.encode(params["format"])
+    # params["id"].gsub(/http:\/www/, "http://www") + "." + URI.encode(params["format"])
   end
 end

@@ -14,10 +14,6 @@ $putty: #E6EBE0;
 // INDEX //
 ///////////
 
-.recipe-index > div {
-
-}
-
 .recipe-card {
   background-color: $teal;
   border-radius: 1rem;
@@ -59,8 +55,13 @@ $putty: #E6EBE0;
 // RECIPE //
 ////////////
 
+.recipe row {
+  margin: auto;
+  width: 80%;
+}
+
 .recipe-page .row {
-  margin: 2rem auto;
+  margin: 1rem auto;
 }
 
 .page-title {
@@ -68,6 +69,7 @@ $putty: #E6EBE0;
 }
 
 .recipe-page-image {
+  margin-bottom: 1rem;
   width: 17rem;
 }
 
@@ -76,7 +78,7 @@ $putty: #E6EBE0;
 }
 
 .ingredients {
-  margin: 2rem;
+  margin: 0;
 }
 
 @media print, screen and (min-width: 40em) {
@@ -86,10 +88,6 @@ $putty: #E6EBE0;
 
   .recipe .ingredients {
     min-height: 20rem;
-  }
-
-  .ingredients {
-    margin: 0;
   }
 }
 
@@ -109,7 +107,7 @@ $putty: #E6EBE0;
 
 table {
   margin: auto;
-  width: 17rem;
+  max-width: 17rem;
 }
 
 @media print, screen and (min-width: 40em) {
