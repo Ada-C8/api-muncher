@@ -19,5 +19,19 @@
   </div>
   <div class="nutrition small-12 medium-6 columns end">
     <h3>Nutrition Facts</h3>
+    <table>
+      <tbody>
+        <% @recipe.dietary_info.values.each do |nutrient| %>
+          <tr>
+            <td>
+              <%= nutrient['label'] %>
+            </td>
+            <td>
+              <%= nutrient['quantity'].round(2) %> <%= nutrient['unit'] %>
+            </td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
   </div>
 </section>
