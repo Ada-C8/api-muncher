@@ -25,4 +25,13 @@ class EdamamApiWrapper
       return []
     end
   end
+
+  def self.show_recipe(search, url, app_id = nil, app_key = nil)
+    recipes = self.list_recipes(search)
+    
+    recipe_array = recipes.select { |recipe| URI.encode(recipe.url) == url}
+
+    recipe = recipe_array[0]
+    return recipe
+  end
 end

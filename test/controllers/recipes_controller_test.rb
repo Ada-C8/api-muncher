@@ -27,7 +27,7 @@ describe RecipesController do
     end
     it "renders 404 if recipe can't be found" do
       VCR.use_cassette("recipes") do
-        get recipe_path, params: { search: "pizza mushroom", url: "no-good-horrible-bad-url"}
+        get recipe_path, params: { search: "pizza mushroom", url: "no-good-horrible-very-bad-url"}
 
         must_respond_with :not_found
       end
