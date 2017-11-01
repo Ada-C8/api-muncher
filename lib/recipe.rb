@@ -1,3 +1,6 @@
+require 'httparty'
+require 'awesome_print'
+
 class Recipe
 
   attr_reader :uri, :label, :image, :source, :url, :dietLabels, :healthLabels, :ingredientLines

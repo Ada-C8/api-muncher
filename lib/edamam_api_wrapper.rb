@@ -1,4 +1,5 @@
 require 'httparty'
+require 'awesome_print'
 
 class EdamamApiWrapper
 
