@@ -1,1 +1,7 @@
 <h1>Recipe show page</h1>
+<ul>
+  <li>Title: <%= @recipe.label%></li>
+  <li><%= image_tag "#{@recipe.image}"%></li>
+  <li>Source: <%= @recipe.source%></li>
+  <li>Calories: <%= @recipe.calories%></li>
+</ul>

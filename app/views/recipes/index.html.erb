@@ -6,3 +6,7 @@
     </li>
   <% end %>
 </ul>
+
+def show
+  @recipe = EdamamApiWrapper.show_recipe(params[:recipe_uri])
+end

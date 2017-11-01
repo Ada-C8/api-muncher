@@ -6,8 +6,7 @@ class Recipe
     raise ArgumentError if label == nil || label == "" || uri == nil || uri == ""
 
     @label = label
-    @uri = uri
-
+    @uri = uri.split('_')[-1]
     @image = options[:image]
     @url = options[:url]
     @source = options[:source]

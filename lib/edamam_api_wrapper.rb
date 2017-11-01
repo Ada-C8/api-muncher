@@ -4,6 +4,7 @@ class EdamamApiWrapper
   BASE_URL = "https://api.edamam.com/search"
   APP_ID = ENV["EDAMAN_ID"]
   APP_KEY = ENV["EDAMAN_KEY"]
+  BASE_URI = "?r=http://www.edamam.com/ontologies/edamam.owl%23recipe_"
   Q = "?q="
   R = "?r="
 
@@ -27,13 +28,14 @@ class EdamamApiWrapper
   end
 
   def self.show_recipe(uri, key=APP_KEY, type=R)
-    uri = uri_regex(uri)
-    url = build_url(uri, key, type)
-
+    # binding.pry
+    # uri = uri_regex(uri)
+    # url = build_url(uri, key, type)
+    url = BASE_URL + BASE_URI + uri + "&app_id=" + APP_ID + "&app_key=" + key
     response = HTTParty.get(url)
 
     recipe = ''
-    
+
     if response.empty?
       raise ApiError.new("Api call to Edaman to show a given failed.")
     else
