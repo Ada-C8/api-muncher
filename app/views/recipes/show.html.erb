@@ -1,0 +1,24 @@
+<h1>THIS IS WHERE YOU SEE MORE DETAILS</h1>
+
+<section class="recipe_show">
+<h2><%=@recipe.name%></h2>
+<ul>
+  <li>
+    <%= image_tag @recipe.image, alt:"#{@recipe.name} image" %>
+  </li>
+  <li>
+    Ingredients
+    <ul>
+      <% @recipe.ingredients.each do |line|
+        <li>
+          line
+        </li>
+      <%end%>
+    </ul>
+  </li>
+  <li>
+    <%= link_to "More", recipe.link %>
+  </li>
+</ul>
+
+</section>

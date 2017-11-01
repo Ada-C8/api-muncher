@@ -1,0 +1,36 @@
+
+<section class="search_box">
+<%=form_tag(recipes_path, method: :get) %>
+<%=label_tag "Search For a Recipe" %>
+<%=text_field_tag :search %>
+<%=submit_tag 'Search' %>
+</section>
+
+
+<section class="results">
+<ol>
+  <% @recipes.each do |recipe| %>
+  <article class="list_result">
+  <li>
+    <ul>
+      <li>
+        <%= link_to recipe.name %>
+      </li>
+      <li>
+        <%= link_to "More", recipe.link %>
+      </li>
+      <li>
+        <%= image_tag recipe.image, alt:"#{recipe.name} image" %>
+      </li>
+      <li>
+        <%= recipe.ingredients %>
+      </li>
+      <li>
+        PARAMS: <%= params %>
+      </li>
+    </ul>
+    </article>
+    <% end %>
+  </li>
+</ol>
+</section>
