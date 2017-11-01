@@ -4,7 +4,7 @@
 <section class="small-12 columns">
 
 <h3>Search</h3>
-<%= form_tag(recipes_index_path, :method => "get", id: "search-form") do %>
+<%= form_tag(recipes_path, :method => "get", id: "search-form") do %>
 <%= text_field_tag :search, params[:search], placeholder: raw("Search") %>
 <% end %>
 

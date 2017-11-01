@@ -1,5 +1,17 @@
-<h1>Search Results</h1>
+<main>
 
-<% @recipes.each do |recipe| %>
-<%= recipe.name %>
-<% end %>
+  <section class="small-12 columns recipe-list">
+
+    <h1>Search Results</h1>
+
+    <ul class="small-up-1 medium-up-3 large-up-4">
+    <li class="column">
+
+    <% @recipes.each do |recipe| %>
+      <%= link_to recipe.name, recipes_show_path(recipe.name, uri: recipe.uri), alt: "link to a given recipe", class: "recipe-name" %>
+      <% end %>
+    </li>
+    </ul>
+
+  </section>
+</main>

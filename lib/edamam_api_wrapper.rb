@@ -14,7 +14,7 @@ class EdamamApiWrapper
     recipe_results = []
     if results["hits"]
       results["hits"].each do |recipe|
-        recipe_results = create_recipe(recipe)
+        recipe_results << create_recipe(recipe)
       end
     else
       return []
@@ -26,6 +26,7 @@ class EdamamApiWrapper
 
   def self.create_recipe(api_params)
     return Recipe.new(
+    api_params["recipe"]["uri"],
     api_params["recipe"]["label"],
     api_params["recipe"]["image"],
     api_params["recipe"]["url"],
@@ -37,6 +38,26 @@ class EdamamApiWrapper
       dietLabels: api_params["recipe"]["dietLabels"]
     }
     )
+  end
+
+  def self.find_recipe(uri)
+# need to use r instead of q to search. need to use uri instead of url
+url = BASE_URL + "r=#{uri}&app_id=#{APP_ID}&app_key=#{APP_KEY}"
+  result = HTTParty.get(url)
+
+  recipe = Recipe.new(
+  result[0]["uri"],
+  result[0]["label"],
+  result[0]["image"],
+  result[0]["url"],
+  result[0]["ingredientLines"],
+  {
+    totalNutrients: result[0]["totalNutrients"],
+    calories: result[0]["calories"],
+    healthLabels: result[0]["healthLabels"],
+    dietLabels: result[0]["dietLabels"]
+  }
+  )
   end
 
 end

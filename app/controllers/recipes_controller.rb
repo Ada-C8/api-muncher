@@ -8,6 +8,10 @@ class RecipesController < ApplicationController
   end
 
   def show
+    @recipe = EdamamApiWrapper.find_recipe(params[:uri])
+    # @recipe = @recipes.select.each do |recipe|
+    #   recipe.link == params[:link]
+    # end
   end
 
   def new

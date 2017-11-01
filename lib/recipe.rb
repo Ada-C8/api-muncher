@@ -1,8 +1,9 @@
 class Recipe
 
-  attr_reader :name, :image, :link, :ingredients, :totalNutrients, :dietLabels, :healthLabels, :calories
+  attr_reader :uri, :name, :image, :link, :ingredients, :totalNutrients, :dietLabels, :healthLabels, :calories
 
-  def initialize(label, image, url, ingredientLines, options = {})
+  def initialize(uri, label, image, url, ingredientLines, options = {})
+    @uri = URI.escape(uri)
     @name = label
     @image = image
     @link = url
