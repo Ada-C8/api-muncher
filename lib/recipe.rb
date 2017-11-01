@@ -1,15 +1,12 @@
 class Recipe
   attr_reader :title, :uri, :photo_uri, :external_url, :source, :ingredients
 
-  def initialize(title, uri, external_url, photo_uri, source, ingredients)
-    # TODO: Decide how to handle receiving information that may not be supplied by API.
-    # raise ArgumentError if title == nil || title == ""
-
+  def initialize( title, uri, photo_uri, ingredients, options = { } )
     @title = title
     @uri = uri
-    @external_url = external_url
     @photo_uri = photo_uri
-    @source = source
     @ingredients = ingredients
+    @external_url = options[:external_url]
+    @source = options[:source]
   end
 end
