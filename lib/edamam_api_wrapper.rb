@@ -5,6 +5,7 @@ end
 
 class EdamamApiWrapper
   BASE_URL = "https://api.edamam.com/search?"
+  BASE_URI = "http://www.edamam.com/ontologies/edamam.owl%23recipe_"
   APP_ID = ENV["APP_ID"]
   APP_KEY = ENV["APP_KEY"]
 
@@ -35,7 +36,12 @@ class EdamamApiWrapper
     end
   end
 
-  def self.get_id()
+# http://www.edamam.com/ontologies/edamam.owl%23recipe_637913ec61d9da69eb451818c3293df2
+  def self.get_id(r)
+    uri = BASE_URI + "#{r}" # + "&app_id=#{APP_ID}" + "&app_key=#{APP_KEY}"
+    id = HTTParty.get(uri)
+    return id
+  end
 
   private
   def self.check_status(response)
