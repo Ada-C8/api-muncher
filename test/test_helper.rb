@@ -3,6 +3,8 @@ require File.expand_path("../../config/environment", __FILE__)
 require "rails/test_help"
 require "minitest/rails"
 require "minitest/reporters"  # for Colorized output
+require 'vcr'
+require 'webmock/minitest'
 
 #  For colorful output!
 Minitest::Reporters.use!(
@@ -19,8 +21,33 @@ Minitest::Reporters.use!(
 # Uncomment for awesome colorful output
 # require "minitest/pride"
 
+VCR.config do |config|
+  config.cassette_library_dir = 'test/cassettes'
+  config.hook_into :webmock
+  config.default_cassette_options = {
+    :record => :new_episodes,
+    :match_requests_on => [:method, :uri, :body]
+  }
+  config.filter_sensitive_data("<FOOD_TOKEN>") do
+    ENV['FOOD_TOKEN']
+  end
+
+  config.filter_sensitive_data("<FOOD_ID>") do
+    ENV['FOOD_ID']
+  end
+end
+
 class ActiveSupport::TestCase
   # Setup all fixtures in test/fixtures/*.yml for all tests in alphabetical order.
   fixtures :all
+
+  require "minitest/reporters"  # for Colorized output
+
+  #  For colorful output!
+  Minitest::Reporters.use!(
+    Minitest::Reporters::SpecReporter.new,
+    ENV,
+    Minitest.backtrace_filter
+  )
   # Add more helper methods to be used by all tests here...
 end

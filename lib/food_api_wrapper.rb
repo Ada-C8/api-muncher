@@ -44,8 +44,6 @@ class FoodApiWrapper
     else
       return ["nope", "nothing"]
     end
-
   end
-
 
 end
