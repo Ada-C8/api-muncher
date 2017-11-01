@@ -2,6 +2,7 @@ require File.expand_path('../../config/environment', __FILE__)
 require 'rails/test_help'
 require 'vcr'
 require 'webmock/minitest'
+require "minitest/reporters"
 
 VCR.configure do |config|
   config.cassette_library_dir = 'test/cassettes' # folder where casettes will be located
@@ -19,6 +20,11 @@ VCR.configure do |config|
   end
 end
 
+Minitest::Reporters.use!(
+  Minitest::Reporters::SpecReporter.new,
+  ENV,
+  Minitest.backtrace_filter
+)
 
 class ActiveSupport::TestCase
   # Setup all fixtures in test/fixtures/*.yml for all tests in alphabetical order.

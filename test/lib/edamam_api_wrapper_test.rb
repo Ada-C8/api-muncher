@@ -3,7 +3,7 @@ require "httparty"
 describe EdamamApiWrapper do
   describe "list_recipes" do
     it "can generate a list of recipes for a search term" do
-      VCR.use_cassette("smoothie") do
+      VCR.use_cassette("yogurt") do
         result = EdamamApiWrapper.list_recipes("yogurt")
         result.length.must_be :>, 0
         result.must_be_kind_of Array
@@ -19,7 +19,6 @@ describe EdamamApiWrapper do
           EdamamApiWrapper.list_recipes("smoothie","bogus app id")
         }.must_raise EdamamApiWrapper::ApiError
       end
-
     end
   end
 end
