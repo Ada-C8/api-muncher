@@ -3,9 +3,10 @@
 This is the root page and Recipe index page
 
 <%= form_tag(root_path, method: "get", id: "search-form") do %>
-  <%= text_field_tag :search, params[:search], placeholder: "Search Recipes" %>
+  <%= text_field_tag :search, @search, placeholder: "Search Recipes" %>
   <%= submit_tag "Search" %>
 <%end%>
+
 
 <% if @recipes != nil %>
   <div class="list-products row small-up-1 medium-up-2 large-up-4">
@@ -13,13 +14,21 @@ This is the root page and Recipe index page
       <div class="column">
         <ul>
           <li>
-            <%= image_tag(recipe.image) %>
+            <%= image_tag(recipe.image, options = {alt: recipe.label}) %>
           </li>
           <li>
             <%= link_to recipe.label, recipes_path(id: recipe.id) %>
           </li>
       </div>
     <%end%>
-<%end%>
+
+    <div class="pagination">
+      <% if @previous_from >= 0 %>
+      <%= link_to "Previous Page", root_path(search: @search, from: @previous_from) %>
+      <%end%>
+
+      <%= link_to "Next Page", root_path(search: @search, from: @from) %>
+    </div>
 
 </div>
+<%end%>

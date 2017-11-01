@@ -9,8 +9,8 @@ class RecipeApiWrapper  #THIS IS THE DATA
   # https://api.edamam.com/search
   # ?q=chicken&app_id=814cafb4&app_key=01b4e2f096435f1272ff0588763e9be2
 
-  def self.search(food)
-    url = BASE_URL + "?q=(#{food})" + "&app_id=#{APP_ID}" + "&app_key=#{APP_KEY}"
+  def self.search(food, from)
+    url = BASE_URL + "?q=(#{food})" + "&from=#{from}" "&app_id=#{APP_ID}" + "&app_key=#{APP_KEY}"
 
     response = HTTParty.get(url)
 
@@ -42,7 +42,15 @@ class RecipeApiWrapper  #THIS IS THE DATA
       url: raw_recipe["url"],
       ingredients: raw_recipe["ingredientLines"],
       servings: raw_recipe["yield"],
-      total_nutrients: raw_recipe["totalNutrients"]
+      total_nutrients: [ raw_recipe["totalNutrients"]["ENERC_KCAL"],
+      raw_recipe["totalNutrients"]["FAT"],
+      raw_recipe["totalNutrients"]["CHOCDF"],
+      raw_recipe["totalNutrients"]["FIBTG"],
+      raw_recipe["totalNutrients"]["SUGAR"],
+      raw_recipe["totalNutrients"]["PROCNT"],
+      raw_recipe["totalNutrients"]["CHOLE"],
+      raw_recipe["totalNutrients"]["NA"]
+    ]
     )
   end
 
