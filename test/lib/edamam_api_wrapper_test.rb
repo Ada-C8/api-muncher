@@ -1,5 +1,8 @@
 require "test_helper"
 require "httparty"
+
+let(:uri){ "http://www.edamam.com/ontologies/edamam.owl#23recipe_637913ec61d9da69eb451818c3293df2"}
+
 describe EdamamApiWrapper do
   describe "list_recipes" do
     it "can generate a list of recipes for a search term" do
@@ -18,6 +21,14 @@ describe EdamamApiWrapper do
         proc {
           EdamamApiWrapper.list_recipes("smoothie","bogus app id")
         }.must_raise EdamamApiWrapper::ApiError
+      end
+    end
+  end
+
+  describe "show_recipe" do
+    it "return a single recipe" do
+      VCR.use_cassette("recipe_show") do
+        result = EdamamApiWrapper.show_recipe(uri)
       end
     end
   end

@@ -2,36 +2,41 @@ require "HTTParty"
 require 'pry'
 
 class EdamamApiWrapper
-  BASE_URLQ = "https://api.edamam.com/search?q="
-  BASE_URLR = "https://api.edamam.com/search?r="
+  BASE_URL = "https://api.edamam.com/search"
   APP_ID = ENV["EDAMAN_ID"]
   APP_KEY = ENV["EDAMAN_KEY"]
+  Q = "?q="
+  R = "?r="
 
   class ApiError < StandardError
   end
 
   def self.list_recipes(search_term, key=APP_KEY)
-    url = BASE_URLQ + search_term + "&app_id=" + APP_ID + "&app_key=" + key
-    # puts "#{url}"
+    url = build_url(search_term, key)
+
     response = HTTParty.get(url)
-    # binding.pry
+
     check_hits(response)
     recipies_array = []
 
-    response["hits"].each do |recipe_data|
+    response["hits"].each do |hit_data|
+      recipe_data = hit_data["recipe"]
       recipies_array << create_recipe(recipe_data)
     end
 
     return recipies_array
   end
-  #
-  # def self.show_recipe(uri, key=APP_KEY)
-  #   uri_fix = uri_regex(uri)
-  #   url = BASE_URLR + uri_fix + "&app_id=" + APP_ID + "&app_key=" + key
-  #
-  #   response = HTTParty.get(url)
-  #
-  # end
+
+  def self.show_recipe(uri, key=APP_KEY, type=R)
+    binding.pry
+    uri = uri_regex(uri)
+    url = build_url(uri, key, type)
+    # url = BASE_URLR + uri_fix + "&app_id=" + APP_ID + "&app_key=" + key
+
+    response = HTTParty.get(url)
+    # binding.pry
+    return response
+  end
 
 
 private
@@ -48,27 +53,27 @@ private
 
   def self.create_recipe(api_params)
     return Recipe.new(
-      api_params['recipe']["label"],
-      api_params['recipe']["uri"],
+      api_params["label"],
+      api_params["uri"],
       {
-        image: api_params['recipe']["image"],
-        source: api_params['recipe']["source"],
-        url: api_params['recipe']["url"],
-        yield: api_params['recipe']['yield'],
-        calories: api_params['recipe']['calories'],
-        ingredients: api_params['recipe']["ingredients"],
-        healthLabels: api_params['recipe']["healthLabels"],
-        totalDaily: api_params['recipe']['totalDaily']
+        image: api_params["image"],
+        source: api_params["source"],
+        url: api_params["url"],
+        yield: api_params['yield'],
+        calories: api_params['calories'],
+        ingredientLines: api_params["ingredientLines"],
+        healthLabels: api_params["healthLabels"],
+        # totalDaily: api_params['totalDaily'],
+        dietLabels: api_params["dietLabels"]
       }
     )
   end
 
+  def self.build_url(search_term, key, type=Q)
+    return BASE_URL + type + search_term + "&app_id=" + APP_ID + "&app_key=" + key
+  end
 
-  # def self.uri_regex(uri)
-  #   return uri.sub(/[#]{1}/, '%')
-  # end
-
-  # def build_url(search_term, key=APP_KEY)
-  #   return BASE_URL + "?q=" + search_term + "&app_id=" + APP_ID + "&app_key=" + key
-  # end
+  def self.uri_regex(uri)
+    return uri.sub(/[#]{1}/, '%')
+  end
 end
