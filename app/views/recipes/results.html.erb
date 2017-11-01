@@ -1,0 +1,7 @@
+<h1> Results </h1>
+
+<% @results.each do |result| %>
+
+  <%= link_to(image_tag(result[:image], alt: "#{result[:label]}"), show_recipe_path(:uri => result[:uri])) %>
+
+<% end %>
