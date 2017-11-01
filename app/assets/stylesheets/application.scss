@@ -13,15 +13,22 @@
  *= require_tree .
  *= require_self
  */
- *{
-   color:white;
+
+ @import url('https://fonts.googleapis.com/css?family=Poiret+One');
+ @import url('https://fonts.googleapis.com/css?family=Megrim');
+
+ * {
    margin:20px;
+   font-family: 'Poiret One', cursive;
  }
+* h2 {
+    font-family: 'Megrim', cursive;
+}
  html, body {
    margin:0;
    padding:0;
    height:100%;
-   background-image: image-url("muncher.jpeg");
+   background-image: image-url("avo.jpeg");
    background-position: center;
    background-repeat: no-repeat;
    background-size: cover;
@@ -29,7 +36,7 @@
  }
 
  #wrapper {
-   font-family: 'Raleway';
+   font-family: 'Megrim', cursive;
    text-align: center;
    /*background-color: #fafafa;*/
    min-height: 100%;
@@ -81,7 +88,7 @@
  }
 
  #logo {
-   font-family: 'Pacifico';
+   font-family: 'Megrim', cursive;
    float: left;
    padding: .4em;
    text-decoration: none;
@@ -162,7 +169,7 @@
  }
 
  h1 {
-   font-family: 'Pacifico';
+   font-family: 'Megrim', cursive;
    font-size: 2.5em;
    font-weight:bolder;
  }

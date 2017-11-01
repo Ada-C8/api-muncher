@@ -1,9 +1,9 @@
-<h1>Search<span class="search"> </span> </h1>
+<h1> RECIPE GNAWLER <span class="search"> </span> </h1>
 
 <%= form_tag root_path, method: "get" do %>
-  <%= label_tag(:q, "Search recipe") %>
+  <%= label_tag(:q, "What's Good?") %>
   <%= text_field_tag(:q) %>
-  <%= submit_tag("Search") %>
+  <%= submit_tag("Gnaw") %>
 <% end %>
 
 <section class="recipes-list">
@@ -16,3 +16,9 @@
     <% end %>
   </ul>
 </section>
+
+
+
+<footer>
+  <P> &#129299 By<%= link_to "Tanja Stroble", "https://github.com/misstonbon" %> &#x26A1 By Edamam </P>
+</footer>

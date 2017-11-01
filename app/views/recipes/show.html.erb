@@ -1,15 +1,27 @@
 
 <h1><%= @recipe.title %></h1>
-by <%= @recipe.provider %>
+ <strong>by <%= @recipe.provider %></strong>
 <p><%= link_to "Go to Recipe", @recipe.link %></p>
 
-<%= image_tag  @recipe.image %>
 
-Dietary Information:
-<p><%= @recipe.dietlabels %></p>
+<section class="image">
+  <%= image_tag  @recipe.image %>
+</section>
 
-Ingredients:
 
-<% @recipe.ingredients.each do |ingredient| %>
-<p><%= ingredient%> </p>
-<%end%>
+<section class="dietary">
+  <h2>Dietary Information:</h2>
+  <% @recipe.dietlabels.each do |info| %>
+  <p><%= info %> </p>
+  <%end%>
+</section>
+
+
+<section class="ingredients">
+  <ul>
+    <h2>Ingredients:</h2>
+    <% @recipe.ingredients.each do |ingredient| %>
+    <li><%= ingredient%> </li>
+    <%end%>
+  </ul>
+</section>
