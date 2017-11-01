@@ -23,7 +23,11 @@ class RecipeSearch
     url = BASE_URL + "search?app_id=#{ID}&app_key=#{KEY}&r=#{uri}"
     response = HTTParty.get(url)
 
-    raise(APIError, response.message) if response.empty?
+    begin
+      return nil if response.empty?
+    rescue
+      return nil
+    end
 
     new_recipe(response[0])
   end

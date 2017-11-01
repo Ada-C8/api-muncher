@@ -7,6 +7,7 @@ describe Recipe do
       name: "Coffee Syrup",
       image_url: "https://www.edamam.com/web-img/7f9/7f94bbfcc97998f7b11c928ee8488b70.JPG",
       recipe_url: "https://food52.com/recipes/11227-coffee-syrup",
+      recipe_uri: "http://www.edamam.com/ontologies/edamam.owl#recipe_17b2813eff91356288deeb23c835a402",
       source: "Food52",
       ingredients: [ "1 1/2 cup espresso or strong coffee", "1 1/2 to 2 cup turbinado sugar" ]
     }
