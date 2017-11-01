@@ -1,0 +1,27 @@
+.cool-transparent-bg {
+  background-color: rgba(0,0,0,0.7);
+  min-height: 100%;
+  width: 100%;
+}
+
+.display-table {
+  height: 600px;
+  width: 100%;
+}
+
+.search-bar {
+  width: 20em;
+}
+
+.va-align {
+    display: table-cell;
+    vertical-align: middle;
+    justify-content: center;
+}
+
+.main-page {
+  min-height: 700px;
+  color: #fff;
+  padding: 30px;
+  text-align: center;
+}
