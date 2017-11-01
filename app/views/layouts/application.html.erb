@@ -1,31 +1,39 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <script src="https://developer.edamam.com/attribution/badge.js"></script>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <%= javascript_include_tag "application", 'data-turbolinks-track' => 'reload' %>
 
-    <title><%= content_for?(:title) ? yield(:title) : "NomNom.com" %></title>
 
-    <%= stylesheet_link_tag    "application" %>
-    <%= javascript_include_tag "application", 'data-turbolinks-track' => true %>
-    <%= csrf_meta_tags %>
-  </head>
+  <title><%= content_for?(:title) ? yield(:title) : "NomNom.com" %></title>
 
-  <body>
-    <header class="page-header row">
-      <h1>NomNom.Com</h1>
-    </header>
-      <% if flash[:status] %>
-       <section class="row status <%= flash[:status] %>">
-         <h3>
-           <%= flash[:message] %>
-         </h3>
-       </section>
-      <% end %>
-      <%= yield %>
-      <footer class="footer">
-        <div id="edamam-badge"></div>
-      </footer>
-    </body>
+  <%= stylesheet_link_tag    "application" %>
+
+  <%= csrf_meta_tags %>
+</head>
+
+<body class="body">
+  <header class="page-header row">
+    <h1>NomNom.Com</h1>
+  </header>
+  <% if flash[:status] %>
+  <section class="row status <%= flash[:status] %>">
+    <h3>
+      <%= flash[:message] %>
+    </h3>
+  </section>
+  <% end %>
+
+  <main id="main-content">
+    <%= yield %>
+  </main>
+
+  <footer class="footer">
+    <div id="edamam-badge">
+      <%= image_tag("https://developer.edamam.com/images/transparent") %>
+    </div>
+  </footer>
+</body>
+  <script src="https://developer.edamam.com/attribution/badge.js"></script>
 </html>

@@ -16,6 +16,31 @@
 
  */
 
+ html {
+  height: 100%;
+  box-sizing: border-box;
+}
+
+body {
+  position: relative;
+  margin: 0;
+  padding-bottom: 6rem;
+  min-height: 100%;
+font-family: "Helvetica Neue", Arial, sans-serif;
+}
+
+main {
+  margin: 0 auto;
+  padding-top: 64px;
+  max-width: 640px;
+  width: 94%;
+  overflow: auto;
+}
+
+.clearfix {
+  clear: both;
+}
+
  /**
  * Footer Styles
  */
