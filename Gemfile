@@ -41,8 +41,10 @@ group :development, :test do
   gem 'selenium-webdriver'
   gem 'pry-rails'
   gem 'httparty'
+  gem 'awesome_print'
   gem 'minitest-vcr'
   gem 'webmock'
+  gem 'dotenv-rails'
 end
 
 group :development do
