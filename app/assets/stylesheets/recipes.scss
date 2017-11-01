@@ -112,7 +112,15 @@ table {
 
 @media print, screen and (min-width: 40em) {
   table {
+    width: 20em;
+    max-width: 20rem;
+  }
+}
+
+@media print, screen and (min-width: 64em) {
+  table {
     width: 25em;
+    max-width: 25rem;
   }
 }
 
