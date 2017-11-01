@@ -18,10 +18,16 @@ describe Recipe do
 
     it "can accept optional parametrs" do
 
-      
+
+    end
+  end
+
+  describe "attr_readers" do
+    it "can read a uri" do
+
     end
 
-
+    it "can read a "
   end
 
 
