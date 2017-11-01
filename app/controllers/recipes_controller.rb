@@ -1,3 +1,6 @@
+require_dependency '../../lib/edamam_api_wrapper'
+require_dependency '../../lib/recipe'
+
 class RecipesController < ApplicationController
 
   def index
@@ -7,11 +10,8 @@ class RecipesController < ApplicationController
   def search
     @query = params[:query]
     @results = EdamamApiWrapper.search_recipes(@query)
-    # @results = @results.limit(10).page(params[:page])
-    @results = Kaminari.paginate_array(@results.first(10)).page(params[:page])
+    @results = Kaminari.paginate_array(@results).page(params[:page]).per(10)
 
-    # @songs = Song.limit(10).page(params[:page])
-    # @songs = Kaminari.paginate_array(Song.first(10)).page(params[:page])
     return @results
   end
 
