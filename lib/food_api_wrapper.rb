@@ -21,7 +21,7 @@ class FoodApiWrapper
       end
       return found_recipes
     else
-      return ["nope", "nothing"]
+      return []
     end
   end
 
@@ -42,7 +42,7 @@ class FoodApiWrapper
       show_recipe["healthLabels"])
       return recipe
     else
-      return ["nope", "nothing"]
+      return []
     end
   end
 
