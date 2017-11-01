@@ -15,7 +15,8 @@ class EdamamApiWrapper
 
     if data["hits"]
       data["hits"].each do |result|
-        recipe_list << self.get_recipe(search_term)
+
+        recipe_list << self.parse_recipe(result["recipes"])
       end
     end
 
@@ -23,9 +24,17 @@ class EdamamApiWrapper
   end
 
   private
-  def self.get_recipe(api_params)
+  def self.parse_recipe(raw_recipe)
     return Recipe.new(
-      api_params["label"],
-      api_params["uri"])
+      name: raw_recipe["label"],
+      id: raw_recipe["uri"],
+      url: raw_recipe["url"],
+      ingredients: raw_recipe["ingredients"],
+      servings: raw_recipe["yield"],
+      calories: raw_recipe["calories"],
+      total_nutrients: raw_recipe["total_nutrients"],
+      health_labels: raw_recipe["health_labels"],
+      diet_labels: raw_recipe["diet_labels"]
+    )
   end
 end
