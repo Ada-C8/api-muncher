@@ -7,7 +7,7 @@ class EdamamApiWrapper
 
   def self.search_recipes(query)
     puts "Querying recipe"
-    url = BASE_URL + "q=#{query}" + "&app_id=#{APP_ID}" + "&app_key=#{APP_KEY}"
+    url = BASE_URL + "q=#{query}" + "&app_id=#{APP_ID}" + "&app_key=#{APP_KEY}&from=0&to=20"
     response = HTTParty.get(url)
 
     return response.parsed_response['hits']
