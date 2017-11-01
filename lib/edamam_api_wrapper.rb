@@ -19,7 +19,7 @@ class EdamamApiWrapper
   def self.get_results_from_response(response)
     return response["hits"].map do |result|
       Recipe.new(
-        result["recipe"]["uri"]
+        result["recipe"]["uri"],
         result["recipe"]["label"], # name
         result["recipe"]["image"], # image
         result["recipe"]["source"], # original source
