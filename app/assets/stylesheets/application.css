@@ -23,6 +23,7 @@
   --grey: #59656F;
   --teal: #9BC1BC;
   --putty: #E6EBE0;
+  --white: #FCFFF9;
 }
 
 * {
@@ -33,11 +34,15 @@
 /* MAIN */
 /********/
 
+body {
+  background-color: var(--white);
+}
+
 h2, h3, h4, h5, h6, p {
   font-family: "Raleway", sans-serif;
 }
 
-h1, h2, h3, h4, h5, h6 {
+h2, h3, h4, h5, h6 {
   color: var(--grey);
 }
 
