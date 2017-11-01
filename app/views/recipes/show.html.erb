@@ -1,3 +1,11 @@
 <h2><%= @recipe.label %></h2>
-<h3><%= @recipe.image %></h3>
-<img src="<%= @recipe.image %>", alt = "<%= @recipe.label %>"
+<img src="<%= @recipe.image %>", alt = "<%= @recipe.label %>">
+<h3><%= @recipe.ingredients %></h3>
+<h3><%= link_to @recipe.url %></h3>
+<h3>Calories: <%= @recipe.calories %></h3>
+<h3>Dietary Information: </h3>
+<p>
+  <% @recipe.totalNutrients.values.each do |hash|%>
+    <%= hash["label"] %> : <%= hash["quantity"] %> <%= hash["unit"] %>
+  <% end %>
+</p>
