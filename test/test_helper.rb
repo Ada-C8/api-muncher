@@ -11,9 +11,11 @@ VCR.configure do |config|
     :match_requests_on => [:method, :uri, :body] # The http method, URI and body of a request all need to match
   }
   # Don't leave our Slack token lying around in a cassette file.
-  config.filter_sensitive_data("<API_KEY_ID>") do
-    ENV['EDAMAN_ID']
-    ENV['EDAMAN_KEY']
+  config.filter_sensitive_data("<EDAMAM_KEY>") do
+    ENV['EDAMAM_KEY']
+  end
+  config.filter_sensitive_data("<EDAMAM_ID>") do
+    ENV['EDAMAM_ID']
   end
 end
 

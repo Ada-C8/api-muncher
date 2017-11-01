@@ -10,8 +10,8 @@ class EdamamApiWrapper
   end
 
   def self.list_recipes(search_term)
-    url = BASE_URL + "?q=" + search_term + "&app_id=#{APP_ID}" + "&app_key=#{APP_KEY}"
-
+    url = BASE_URL + "?q=" + search_term + "&app_id=" + APP_ID + "&app_key=" + APP_KEY
+    puts "#{url}"
     response = HTTParty.get(url)
     # binding.pry
     check_hits(response)
