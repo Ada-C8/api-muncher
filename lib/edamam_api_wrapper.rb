@@ -14,7 +14,12 @@ class EdamamApiWrapper
     if data["hits"]
       my_recipes = data["hits"].map do |recipe_hash|
         Recipe.new recipe_hash["recipe"]["label"],
-        recipe_hash["recipe"]["uri"]
+        recipe_hash["recipe"]["yield"],
+        recipe_hash["recipe"]["dietLabels"],
+        recipe_hash["recipe"]["healthLabels"],
+        recipe_hash["recipe"]["cautions"],
+        recipe_hash["recipe"]["calories"],
+        recipe_hash["recipe"]["image"]
       end
       return my_recipes
     else
@@ -26,7 +31,7 @@ class EdamamApiWrapper
     url = BASE_URL + "?r=#{ERB::Util.u(id)}" + "&app_id=#{APP_ID}&app_key=#{APP_KEY}"
     data = HTTParty.get(url).parsed_response
     Recipe.new data.first["label"],
-     data.first["uri"],
+    data.first["uri"],
     data.first["image"],
     data.first["dietLabels"],
     data.first["ingredientLines"],

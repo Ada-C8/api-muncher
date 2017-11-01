@@ -1,24 +1,27 @@
 <h1> RECIPE GNAWLER <span class="search"> </span> </h1>
 
-<%= form_tag root_path, method: "get" do %>
+<section>
+  <%= form_tag root_path, method: "get" do %>
   <%= label_tag(:q, "What's Good?") %>
   <%= text_field_tag(:q) %>
-  <%= submit_tag("Gnaw") %>
-<% end %>
+  <%= submit_tag("Search") %>
+  <% end %>
+</section>
+
 
 <section class="recipes-list">
   <h1>Recipes</h1>
   <ul>
     <% @recipes.each do |recipe| %>
-      <li>
-        <%= link_to recipe.title, recipe_path(:r => recipe.id)  %>
-      </li>
+    <li>
+      <%= link_to recipe.title, recipe_path(:r => recipe.id)  %>
+    </li>
     <% end %>
   </ul>
 </section>
 
 
 
-<footer>
+<footer class="footer">
   <P> &#129299 By<%= link_to "Tanja Stroble", "https://github.com/misstonbon" %> &#x26A1 By Edamam </P>
 </footer>
