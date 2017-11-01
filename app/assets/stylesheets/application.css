@@ -35,6 +35,11 @@ body {
   position: relative;
 }
 
+.pagination {
+  text-align: right;
+  
+}
+
 /*///////////////////////////////
 HERO
 /////////////////////////*/

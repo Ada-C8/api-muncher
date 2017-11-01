@@ -13,7 +13,7 @@ class RecipeApiWrapper  #THIS IS THE DATA
     url = BASE_URL + "?q=(#{food})" + "&from=#{from}" "&app_id=#{APP_ID}" + "&app_key=#{APP_KEY}"
 
     response = HTTParty.get(url)
-
+  
     # check_status(response)
 
     recipe_list = []
