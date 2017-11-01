@@ -2,17 +2,17 @@
 <% @all_recipes.each do |recipe| %>
 <span class="one-recipe">
   <span class= "search-image"> <%= image_tag(recipe.image) %> </span>
-  <span class= "index-title"><%= link_to "#{recipe.title}", search_path(recipe.title, uri: recipe.uri) %></span>
+  <span class= "index-title"><%= link_to "#{recipe.title}", show_recipe_path(recipe.title, uri: recipe.uri) %></span>
 </span>
 <% end %>
 
 <section class="pages">
   <% if @page != 1 %>
-  <%= link_to "previous", search_index_path(:ingredients => @keywords, :page => @page - 1), method: :post %>
+  <%= link_to "previous", search_results_path(:ingredients => @keywords, :page => @page - 1), method: :get %>
   <% end %>
   <%= link_to "New Search", root_path %>
   <% if @all_recipes.count > 0 %>
-  <%= link_to "next",  search_index_path(:ingredients => @keywords, :page => @page + 1), method: :post %>
+  <%= link_to "next",  search_results_path(:ingredients => @keywords, :page => @page + 1), method: :get %>
   <% end %>
 </section>
 

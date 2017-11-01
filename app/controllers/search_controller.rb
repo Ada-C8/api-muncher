@@ -5,10 +5,6 @@ class SearchController < ApplicationController
 
   end
 
-  def new
-  end
-
-
   def create
     @keywords = params['ingredients']
 

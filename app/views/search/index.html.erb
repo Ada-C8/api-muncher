@@ -1,7 +1,4 @@
-hey this is the index
-<%= params %>
-
-<%= form_tag search_results_path, method: :get do %>
+<%= form_tag search_results_path, method: "get" do %>
   <%= label_tag(:ingredients, "Enter Ingredients") %>
   <%= text_field_tag(:ingredients) %>
   <%= hidden_field_tag(:page, 1) %>
