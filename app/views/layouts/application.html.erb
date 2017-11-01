@@ -4,7 +4,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <title><%= content_for?(:title) ? yield(:title) : "foundation-rails" %></title>
+    <title><%= content_for?(:title) ? yield(:title) : "Muncher Recipe Search" %></title>
 
     <%= stylesheet_link_tag    "application" %>
     <%= javascript_include_tag "vendor/modernizr" %>
@@ -15,5 +15,13 @@
 
     <%= yield %>
     <%= javascript_include_tag "application" %>
+    <footer>
+      <p>
+        &copy 2017
+      </p>
+      <p>
+        Powered by <img src="Edamam_logo_full_RGB.png" alt="Edamam logo">
+      </p>
+    </footer>
   </body>
 </html>
