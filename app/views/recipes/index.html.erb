@@ -1,0 +1,29 @@
+<main>
+  <header>
+    <h1>MUNCHIES</h1>
+    <div>
+      <%= form_tag('/recipes', method: :get) do %>
+        <%= label_tag(:q, "Search for a recipe here!") %>
+        <%= text_field_tag(:q) %>
+        <%= submit_tag("Find My Recipes!") %>
+      <% end %>
+    </div>
+  </header>
+
+  <section>
+    <header>
+      <h1>RESULTS FOR: <%= @search_request %></h1>
+    </header>
+
+    <div class="row">
+      <% @recipes.each do |recipe| %>
+        <div class="small-12 large-3 columns end">
+          <%= link_to recipe_path(recipe.uri_id) do %>
+            <%= image_tag(recipe.image_url) %>
+          <% end %>
+          <%= recipe.label %>
+        </div>
+      <% end %>
+    </div>
+  </section>
+</main>

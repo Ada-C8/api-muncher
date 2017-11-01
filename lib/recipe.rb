@@ -1,26 +1,31 @@
 class Recipe
-# Recipe Name
-# Recipe Image URL
-# Company that wrote it
-# All ingredients
-# Nutrition Facts with quantities?
+  attr_reader :uri, :label, :image_url, :source, :source_url, :ingredient_lines
 
-  def initialize(label, image_url, source, source_url, diet_labels, health_labels, ingredient_lines, ingredients, calories, total_weight, total_nutrients, total_daily, digest)
+  def initialize(uri, label, image_url, source, source_url, ingredient_lines)
+    @uri = uri
     @label = label
     @image_url = image_url
     @source = source
     @source_url = source_url
-    @diet_labels = diet_labels # Array
-    @health_labels = health_labels # Array
+    # @diet_labels = diet_labels # Array
+    # @health_labels = health_labels # Array
     @ingredient_lines = ingredient_lines # Array
-    @ingredients = ingredients # Array with hashes inside
-    @calories = calories
-    @total_weight = total_weight
-    @total_nutrients = total_nutrients # Hash key with hashes as the values --> Another method to parse out each label
-    @total_daily = total_daily
-    @digest = digest #Hash Key with an Array of hashes
+    # @ingredients = ingredients # Array with hashes inside
+    # @calories = calories
+    # @total_weight = total_weight
+    # @total_nutrients = total_nutrients # Hash key with hashes as the values --> Another method to parse out each label
+    # @total_daily = total_daily
+    # @digest = digest #Hash Key with an Array of hashes
   end
+
+  def uri_id
+    return self.uri[/(?<=_)[a-zA-Z0-9]+/]
+  end
+
 end
+
+
+
 # response.parsed_response["hits"][0]["recipe"]["uri"]
 # ["image"]
 # ["url"]
