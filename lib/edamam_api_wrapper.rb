@@ -1,5 +1,4 @@
 
-
 class EdamamApiWrapper
   BASE_URL = "https://api.edamam.com/search?"
   ID = ENV["EDAMAM_ID"]
@@ -67,7 +66,8 @@ def self.create_single_recipe(response)
     url: response[0]["url"],
     ingredients: response[0]["ingredients"],
     diet_labels: response[0]["dietLabels"],
-    uri: response[0]["uri"]
+    uri: response[0]["uri"],
+    company: response[0]["source"]
   }
   )
 end # create_singe_recipe

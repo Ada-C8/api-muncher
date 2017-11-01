@@ -7,6 +7,7 @@ class RecipiesController < ApplicationController
 
   def index
     @recipies = EdamamApiWrapper.get_recipies(params[:search_term])
+    @search_term = params[:search_term]
   end # index
 
   def show
@@ -16,7 +17,4 @@ class RecipiesController < ApplicationController
     @recipe = EdamamApiWrapper.show_recipe(params[:uri])
   end # show
 
-  def single_recipe
-    @recipe = EdamamApiWrapper.show_recipe(params[:uri])
-  end # single_recipe
 end
