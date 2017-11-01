@@ -11,7 +11,8 @@ class Recipe
     @recipe_url = args[:recipe_url]
     @source = args[:source]
     @ingredients = args[:ingredients]
-    @id = URI.encode(args[:recipe_uri])
+    @id = args[:recipe_uri]
+    # @id = URI.encode(args[:recipe_uri])
 
     @dietary_info = args[:dietary_info] if args[:dietary_info]
     @diet_labels = args[:diet_labels] if args[:diet_labels]
