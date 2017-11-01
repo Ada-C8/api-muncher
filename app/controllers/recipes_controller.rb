@@ -4,9 +4,7 @@ class RecipesController < ApplicationController
   def index
     if params["id"]
       @query = params["id"]
-      @page = params["page_id"] || 1
-      @page = @page.to_i
-      p @query, @page
+      @page = (params["page"] || 1).to_i
 
       recipes = RecipeSearch.search(params["id"], (@page - 1), PAGE_ITEMS, true)
       build_pages(recipes)
