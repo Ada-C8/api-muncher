@@ -11,6 +11,10 @@ class RecipesController < ApplicationController
     end
   end
 
+  def show
+    @recipe = RecipeSearch.find(url_from_params)
+  end
+
   def search
     if params["search"]
       @query = params["search"]
@@ -24,5 +28,9 @@ class RecipesController < ApplicationController
     @less = @page > 1
     @more = recipes.length > PAGE_ITEMS
     @recipes = recipes[0...PAGE_ITEMS]
+  end
+
+  def url_from_params
+    params["id"].gsub(/http:\/www/, "http://www") + "." + URI.encode(params["format"])
   end
 end
