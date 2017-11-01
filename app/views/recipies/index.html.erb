@@ -1,9 +1,9 @@
-
+<%= render partial: "search_form" %>
 <% @recipies.each do |recipe| %>
 
     <%= image_tag recipe.photo, alt: "Image of recipe" %>
 
-  <%# in recipy_path(recipe.name, uri: recipe.uri) everything in the () are params passed to the show action. The first position (recipe.name) is assigned to the id: parameter automatically because it is in the first position. Then we can add more parameters, separated by commas, to be passed to the show action as well. We can't use recipe.uri as the id: because rails doesn't think an id should be formatted like the uri is. So we use recipe.name, which isn't servinf any purpose except to give us a valid rout format that can get us to the show controller action %> 
+  <%# in recipy_path(recipe.name, uri: recipe.uri) everything in the () are params passed to the show action. The first position (recipe.name) is assigned to the id: parameter automatically because it is in the first position. Then we can add more parameters, separated by commas, to be passed to the show action as well. We can't use recipe.uri as the id: because rails doesn't think an id should be formatted like the uri is. So we use recipe.name, which isn't servinf any purpose except to give us a valid rout format that can get us to the show controller action %>
   <%= link_to recipe.name, recipy_path(recipe.name, uri: recipe.uri) %>
   <%# use a view helper to reformat uri %>
 <% end %>

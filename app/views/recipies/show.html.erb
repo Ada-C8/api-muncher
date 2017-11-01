@@ -1,12 +1,23 @@
-<h1><%= @recipe.name %></h1>
+<%= render partial: "search_form" %>
+<h1><%= link_to @recipe.name, @recipe.url %></h1>
 <h3>By: <%=@recipe.company%> </h3>
 <article class="ingredients">
-<p>
-Ingredients
-</p>
-<ul>
-  <li>
-
-  </li>
-</ul>
+  <h3>Ingredients</h3>
+  <ul>
+    <% @recipe.ingredients.each do |ing| %>
+      <li>
+        <%= ing %>
+      </li>
+    <% end %>
+  </ul>
 </article>
+<article class="diet-labels">
+  <h3>Dietary Labels</h3>
+  <ul>
+    <% @recipe.diet_labels.each do |label| %>
+      <li>
+        <%= label %>
+      </li>
+    <% end %>
+  </ul>
+</ar
