@@ -6,7 +6,8 @@ Rails.application.routes.draw do
 
   # resources :recipes, only: [:index, :show]
   get '/recipes', to: 'recipes#index', as: 'recipes'
-  post '/recipes', to: 'recipes#index', as: 'search'
-  get '/recipes/*id', to: 'recipes#show', as: 'recipe'
+  get '/recipes/*id', to: 'recipes#index', as: 'recipe_results'
+  post '/recipes', to: 'recipes#search', as: 'search'
+  get '/recipes/show/*id', to: 'recipes#show', as: 'recipe'
 
 end

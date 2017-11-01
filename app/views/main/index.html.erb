@@ -3,7 +3,7 @@
     <h1>muncher</h1>
 
     <h3>Find your flavor . . .</h3>
-    <%= form_tag( '/recipes') do %>
+    <%= form_tag( search_path(:search) ) do %>
       <%= text_field_tag :search %>
 
       <%= submit_tag "Search" %>
