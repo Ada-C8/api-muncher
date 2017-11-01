@@ -3,13 +3,23 @@ require_dependency '../../lib/recipe'
 
 
 class RecipiesController < ApplicationController
+  include Confirmation
   def root
   end # root
 
   def index
-    @recipies = EdamamApiWrapper.get_recipies(params[:search_term])
-    
-    @search_term = params[:search_term]
+    if empty(params[:search_term])
+      flash[:status] = :failure
+      flash[:message] = "Sorry, your search term can't be blank!"
+      redirect_to root_path
+    elsif symbols(params[:search_term])
+      flash[:status] = :failure
+      flash[:message] = "Sorry, your search term can't contain numbers or letters!"
+      redirect_to root_path
+    else
+      @recipies = EdamamApiWrapper.get_recipies(params[:search_term])
+      @search_term = params[:search_term]
+    end
   end # index
 
   def show

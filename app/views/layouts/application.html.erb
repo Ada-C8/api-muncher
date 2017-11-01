@@ -15,6 +15,31 @@
     <header>
     </header>
     <main>
+      <% if flash[:message] %>
+          <section class="row flash">
+            <div>
+              <% if flash[:status] == :failure %>
+                <p class="error">
+              <% else %>
+                <p>
+              <% end %>
+                <%= flash[:message] %>
+              </p>
+              <% if flash[:details] %>
+              <ul>
+                <% flash[:details].each do |field, problems| %>
+                  <% problems.each do |problem| %>
+                  <li>
+                    <strong><%=field %>:</strong>
+                    <%= problem %>
+                  </li>
+                  <% end %>
+                <%end %>
+              </ul>
+              <% end %>
+            </div>
+          </section>
+          <% end %>
       <%= yield %>
     </main>
     <footer>
