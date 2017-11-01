@@ -33,24 +33,4 @@ class EdamamApiWrapper
       return []
     end
   end
-
-  # def self.send_msg(channel, msg)
-  #   ap "Sending #{msg} to channel #{channel}"
-  #
-  #   url = BASE_URL + "chat.postMessage?" + "token=#{TOKEN}"
-  #
-  #   response = HTTParty.post(url, body: {
-  #     "text" => "#{msg}",
-  #     "channel" => "#{channel}",
-  #     "username" => "AdaBot",
-  #     "icon_emoji" => ":cheezit:",
-  #     "as_user" => "false"
-  #     },
-  #     headers: { 'Content-Type' => "application/x-www-form-urlencoded"}
-  #   )
-  #
-  #   # return response.success?
-  #   return response["ok"]
-  #
-  # end
 end
