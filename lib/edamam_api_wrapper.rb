@@ -2,7 +2,8 @@ require "HTTParty"
 require 'pry'
 
 class EdamamApiWrapper
-  BASE_URL = "https://api.edamam.com/search"
+  BASE_URLQ = "https://api.edamam.com/search?q="
+  BASE_URLR = "https://api.edamam.com/search?r="
   APP_ID = ENV["EDAMAN_ID"]
   APP_KEY = ENV["EDAMAN_KEY"]
 
@@ -10,8 +11,8 @@ class EdamamApiWrapper
   end
 
   def self.list_recipes(search_term, key=APP_KEY)
-    url = BASE_URL + "?q=" + search_term + "&app_id=" + APP_ID + "&app_key=" + key
-    puts "#{url}"
+    url = BASE_URLQ + search_term + "&app_id=" + APP_ID + "&app_key=" + key
+    # puts "#{url}"
     response = HTTParty.get(url)
     # binding.pry
     check_hits(response)
@@ -23,6 +24,15 @@ class EdamamApiWrapper
 
     return recipies_array
   end
+  #
+  # def self.show_recipe(uri, key=APP_KEY)
+  #   uri_fix = uri_regex(uri)
+  #   url = BASE_URLR + uri_fix + "&app_id=" + APP_ID + "&app_key=" + key
+  #
+  #   response = HTTParty.get(url)
+  #
+  # end
+
 
 private
   # make sure status is 200 okay, and you have at least one search results, otherwise raise ApiError
@@ -52,4 +62,13 @@ private
       }
     )
   end
+
+
+  # def self.uri_regex(uri)
+  #   return uri.sub(/[#]{1}/, '%')
+  # end
+
+  # def build_url(search_term, key=APP_KEY)
+  #   return BASE_URL + "?q=" + search_term + "&app_id=" + APP_ID + "&app_key=" + key
+  # end
 end
