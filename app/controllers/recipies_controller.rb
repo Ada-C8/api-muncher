@@ -7,6 +7,7 @@ class RecipiesController < ApplicationController
 
   def index
     @recipies = EdamamApiWrapper.get_recipies(params[:search_term])
+    @search_term = params[:search_term]
   end # index
 
   def show
