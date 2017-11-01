@@ -27,6 +27,14 @@
   font-size: 4rem;
 }
 
+.hero input[type="text"]{
+  width: 100%;
+}
+
+.hero input[type="submit"]{
+  float: right;
+}
+
 @media print, screen and (min-width: 40em) {
   .hero h1 {
     font-size: 5rem;
