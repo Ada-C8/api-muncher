@@ -1,0 +1,20 @@
+<section class="recipes-list">
+  <h1>Recipes</h1>
+  <ul>
+    <% @recipes.each do |recipe| %>
+      <li>
+        <%= recipe["recipe"]["label"] %>
+      </li>
+    <% end %>
+  </ul>
+</section>
+
+<%# form_tag chat_create_path(@recipe), method: "post" do %>
+  <%# label_tag(:search, "Search") %>
+  <%# text_field_tag(:search) %>
+  <%# submit_tag("Send") %>
+<%# end %>
+
+<%# form_tag(products_path, :method => "get", id: "search-form") do %>
+  <%# text_field_tag :search, params[:search], placeholder: raw("&#9906;") %>
+<%# end %>
