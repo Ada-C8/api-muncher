@@ -1,2 +1,12 @@
 <h1>Recipes#index</h1>
 <p>Find me in app/views/recipes/index.html.erb</p>
+
+<!-- <%= @recipes %> -->
+
+
+<ul>
+<% @recipes.each do |recipe| %>
+  <li><%= recipe.label %></li>
+  <li><%= recipe.ingredientLines %></li>
+<% end %>
+</ul>
