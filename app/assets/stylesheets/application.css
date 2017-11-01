@@ -26,11 +26,44 @@ body {
   background-image: url("trees.jpg");
 }
 
+
+header {
+  height: 200px;
+}
+
+.nav-search-box {
+  max-width: 500px;
+  margin: auto;
+}
+
+.nav-search-box label {
+  color: white;
+  font-size: 16px;
+}
+
+/*TODO*/
+.button {
+  color: white;
+  float: right;
+}
+
+/*TODO*/
+.wrapper {
+  margin-width: 960px;
+}
+
+/***** ROOT PAGE *****/
+
 h1  {
   font-family: Courier;
   text-align: center;
   margin-top: 200px;
   margin-bottom: 50px;
+}
+
+header h2 {
+  font-family: Courier;
+  text-align: center;
 }
 
 .search-box {
@@ -41,4 +74,42 @@ h1  {
 .search-box label {
   color: white;
   font-size: 20px;
+}
+
+.flash {
+  color: white;
+  font-size: 20px;
+}
+
+/***** INDEX PAGE *****/
+/***** SHOW PAGE *****/
+
+
+.index-page {
+  background-color: white;
+  font-family: courier;
+  padding: 5% 10%;
+}
+
+.show-page {
+  background-color: white;
+  font-family: courier;
+  color: black;
+  padding: 5% 10%;
+}
+
+h3, h5, h6 {
+  font-family: courier;
+}
+
+h5 {
+  margin: 2% 0;
+}
+
+.health-labels {
+  margin-top: 5%;
+}
+
+.show-image {
+  padding: 0;
 }

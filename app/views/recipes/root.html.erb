@@ -1,9 +1,12 @@
 <h1>MUNCHER</h1>
-<div class="">
-  <% if flash[:status] == :failure %>
+
+<% if flash[:status] == :failure %>
+  <div class="flash">
     <%= flash[:message] %>
-  <% end %>
-</div>
+  </div>
+<% end %>
+
+
 <div class="search-box">
   <%= form_tag("/recipes", method: "get") do %>
     <%= label_tag(:q, "Search Recipes:") %>

@@ -11,9 +11,25 @@
     <%= csrf_meta_tags %>
   </head>
 
+  <header>
+    <h2>MUNCHER</h2>
+    <nav>
+      <div class="nav-search-box">
+        <%= form_tag("/recipes", method: "get") do %>
+          <%= label_tag(:q, "Search Recipes:") %>
+          <%= text_field_tag(:q) %>
+          <%= submit_tag("Search", class:"button")%>
+        <% end %>
+      </div>
+    </nav>
+  </header>
+
   <body>
 
     <%= yield %>
 
   </body>
+  <footer>
+    <h5>Powered by <%= link_to "Edamam", "https://www.edamam.com/" %></h5>
+  </footer>
 </html>
