@@ -7,7 +7,6 @@ class FoodApiWrapper
 
   def self.find_recipes(search, token = nil)
     token ||= TOKEN
-    # search = "?q=#{search_term}"
 
     url = BASE_URL + "q=#{search}" + "&app_id=#{APP_ID}&app_key=#{token}"
     data = HTTParty.get(url).parsed_response
@@ -17,7 +16,8 @@ class FoodApiWrapper
         Recipe.new(recipe_hash["recipe"]["label"], recipe_hash["recipe"]["url"],
         recipe_hash["recipe"]["image"],
         recipe_hash["recipe"]["ingredientLines"],
-        recipe_hash["recipe"]["uri"])
+        recipe_hash["recipe"]["uri"],
+        recipe_hash["recipe"]["healthLabels"])
       end
       return found_recipes
     else
@@ -25,5 +25,27 @@ class FoodApiWrapper
     end
   end
 
-  
+  def self.show_recipe(uri, token=nil)
+    token ||= TOKEN
+
+    uri["#"] = "%23"
+
+    url = BASE_URL + "r=#{uri}" + "&app_id=#{APP_ID}&app_key=#{token}"
+
+    data = HTTParty.get(url).parsed_response
+    if data.length > 0
+      show_recipe = data[0]
+      recipe = Recipe.new(show_recipe["label"], show_recipe["url"],
+      show_recipe["image"],
+      show_recipe["ingredientLines"],
+      show_recipe["uri"],
+      show_recipe["healthLabels"])
+      return recipe
+    else
+      return ["nope", "nothing"]
+    end
+
+  end
+
+
 end

@@ -14,19 +14,13 @@
   <li>
     <ul>
       <li>
-        <%= link_to recipe.name, recipe_path(recipe) %>
+        <%= link_to recipe.name, recipe_path(recipe.name, uri: recipe.uri) %>
       </li>
       <li>
         <%= link_to "More", recipe.link %>
       </li>
       <li>
         <%= image_tag recipe.image, alt:"#{recipe.name} image" %>
-      </li>
-      <li>
-        <%= recipe.ingredients %>
-      </li>
-      <li>
-        PARAMS: <%= params %>
       </li>
     </ul>
     </article>

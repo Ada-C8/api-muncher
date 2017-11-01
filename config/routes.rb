@@ -3,6 +3,6 @@ Rails.application.routes.draw do
   root "recipes#new"
   get 'search', to: 'recipes#search', as: 'search_recipe'
   get 'recipes', to:'recipes#index', as: 'recipes'
-  get 'recipe/:id/', to: 'recipes#show', as: 'recipe'
+  get 'recipe/:name', to: 'recipes#show', as: 'recipe'
 
 end
