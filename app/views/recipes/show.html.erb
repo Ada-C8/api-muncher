@@ -1,44 +1,54 @@
-<section class="page-title row">
-  <h2><%= @recipe.name %></h2>
-  <h5>by <%= link_to @recipe.source, @recipe_url %></h5>
-</section>
-<section class="row recipe small-10 columns">
-    <div class="recipe-image small-11 medium-6 large-4 columns"
-    style= "background-image: url('<%= @recipe.image_url %>');"> </div>
-  <div class="ingredients small-12 medium-6 columns">
-    <h3>Ingredients</h3>
-    <ul>
-      <% @recipe.ingredients.each do |ingredient| %>
-        <li>
-          <%= ingredient %>
-        </li>
-      <% end %>
-    </ul>
-  </div>
-  <div class="nutrition small-12 medium-6 large-4 columns end">
-    <table>
-      <thead>
-        <tr>
-          <th colspan="2">
-            <h3>Nutrition Facts</h3><br />
-            <p>
-              <em>For 1 Serving</em>
-            </p>
-          </th>
-        </tr>
-      </thead>
-      <tbody>
-        <% @recipe.basic_nutrition.each do |nutrient| %>
-          <tr>
-            <th>
-              <%= (["Trans", "Saturated", "Fiber", "Sugars"].include?nutrient[0]) ? ("<small>#{nutrient[0]}</small>".html_safe) : (nutrient[0]) %>
-            </th>
-            <td>
-              <%= nutrient[1] %>
-            </td>
-          </tr>
-        <% end %>
-      </tbody>
-    </table>
-  </div>
-</section>
+<main class="recipe-page">
+  <section class="page-title row">
+    <h2><%= @recipe.name %></h2>
+    <h5>by <%= link_to @recipe.source, @recipe_url %></h5>
+  </section>
+  <section class="row recipe">
+    <!-- <div class="recipe-image small-11 medium-6 columns"
+    style= "background-image: url('<%= @recipe.image_url %>');"> </div> -->
+    <div class="row">
+      <div class="small-12 medium-6 columns image-holder">
+        <img src=<%= @recipe.image_url %> alt=<%= @recipe.name %> class="recipe-page-image" >
+      </div>
+      <div class="ingredients small-12 medium-6 columns end">
+        <h3>Ingredients</h3>
+        <ul>
+          <% @recipe.ingredients.each do |ingredient| %>
+          <li>
+            <%= ingredient %>
+          </li>
+          <% end %>
+        </ul>
+      </div>
+    </div>
+    <div class="row">
+
+      <div class="nutrition small-12 medium-6 columns end table-holder">
+        <table>
+          <thead>
+            <tr>
+              <th colspan="2">
+                <h3>Nutrition Facts</h3><br />
+                <p>
+                  <em>For 1 Serving</em>
+                </p>
+              </th>
+            </tr>
+          </thead>
+          <tbody>
+            <% @recipe.basic_nutrition.each do |nutrient| %>
+            <tr>
+              <th>
+                <%= (["Trans", "Saturated", "Fiber", "Sugars"].include?nutrient[0]) ? ("<small>#{nutrient[0]}</small>".html_safe) : (nutrient[0]) %>
+              </th>
+              <td>
+                <%= nutrient[1] %>
+              </td>
+            </tr>
+            <% end %>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+</main>
