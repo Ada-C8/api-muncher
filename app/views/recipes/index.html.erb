@@ -4,12 +4,15 @@
 <section class="row">
   <% @recipes.each do |recipe| %>
   <%= link_to recipe_path(format_uri(recipe.uri)) do %>
-  <article class="recipe">
-    <%= image_tag recipe.image, alt:"#{recipe.label}" %>
+  <article class="recipe-card">
+    <figure>
+      <%= image_tag recipe.image, alt:"#{recipe.label}" %>
+    </figure>
     <p><%= recipe.label.titleize %></p>
   </article>
   <% end %>
   <% end %>
-
-  <%= will_paginate(@recipes) %>
+  <div class="paginate">
+    <%= will_paginate(@recipes) %>
+  </div>
 </section>
