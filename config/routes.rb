@@ -4,7 +4,9 @@ Rails.application.routes.draw do
   root 'main#index'
   get '/attributions', to: 'main#attribution', as: 'attributions'
 
-  resources :recipes, only: [:index, :show]
+  # resources :recipes, only: [:index, :show]
+  get '/recipes', to: 'recipes#index', as: 'recipes'
   post '/recipes', to: 'recipes#index', as: 'search'
+  get '/recipes/*id', to: 'recipes#show', as: 'recipe'
 
 end
