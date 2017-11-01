@@ -10,6 +10,7 @@ class SearchController < ApplicationController
   end
 
   def create #list
+
     @search = EdamamApiWrapper.find_recipes(params['ingredients'])
 
     @all_recipes = []
@@ -19,6 +20,6 @@ class SearchController < ApplicationController
   end
 
   def show
-    @recipe
+    raise 
   end
 end

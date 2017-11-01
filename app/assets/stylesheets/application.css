@@ -13,3 +13,17 @@
  *= require_tree .
  *= require_self
  */
+
+body {
+  width: 100%;
+}
+
+.recipe-list {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.one-recipe {
+  flex: 0 1 auto;
+}
