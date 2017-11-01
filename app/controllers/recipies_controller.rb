@@ -1,3 +1,6 @@
+require_dependency '../../lib/edamam_api_wrapper'
+require_dependency '../../lib/recipe'
+
 class RecipiesController < ApplicationController
   def root
   end # root
@@ -13,7 +16,4 @@ class RecipiesController < ApplicationController
     @recipe = EdamamApiWrapper.show_recipe(params[:uri])
   end # show
 
-  def single_recipe
-    @recipe = EdamamApiWrapper.show_recipe(params[:uri]) 
-  end # single_recipe
 end

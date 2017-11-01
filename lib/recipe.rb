@@ -3,7 +3,7 @@ require "httparty"
 require 'pry'
 
 class Recipe
-  attr_reader :name, :id, :photo, :ingredients, :diet_labels, :uri
+  attr_reader :name, :id, :photo, :ingredients, :diet_labels, :uri, :company
  def initialize(name, id, options = {})
    raise ArgumentError if name == nil || name == "" || id == nil || id == ""
    @name = name
