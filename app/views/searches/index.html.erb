@@ -1,0 +1,4 @@
+<h1>Search for Recipe </h1>
+
+
+<%= link_to @recipes.first["recipe"]["label"], search_path(label: @recipes.first["recipe"]["label"], uri: @recipes.first["recipe"]["uri"] ) %>

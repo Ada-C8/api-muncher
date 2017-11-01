@@ -1,0 +1,2 @@
+class MuncherApi < ApplicationRecord
+end
