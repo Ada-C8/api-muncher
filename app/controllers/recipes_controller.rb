@@ -10,23 +10,28 @@ class RecipesController < ApplicationController
     @query = params[:query]
     @recipes = EdamamApiWrapper.search(@query)
 
-    if @recipes.empty?
+    if @query[/[^A-Za-z0-9_ -]+/]
       flash[:status] = :failure
-      flash[:message] = "No recipes were found for that query."
+      flash[:message] = "Invalid input: please try again without symobls."
 
-      redirect_to root_path
+      redirect_back(fallback_location: root_path)
+    else
+      if @recipes.empty?
+        render :no_match, status: :bad_request
+      end
     end
   end
 
   def show
     @recipe = EdamamApiWrapper.find_recipe(params[:recipe_id])
 
-    if @recipe == ""
-      flash[:status] = :failure
-      flash[:message] = "No recipes were found for that query."
-
-      redirect_to root_path
+    unless @recipe
+      head :not_found
     end
+  end
+
+  def no_match
+
   end
 
 end

@@ -3,4 +3,6 @@ Rails.application.routes.draw do
   root 'recipes#root'
 
   resources :recipes, only: [:index, :show]
+
+  get '/no_match', to:'recipes#no_match', as: 'no_match'
 end

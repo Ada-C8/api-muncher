@@ -36,8 +36,7 @@ describe "EdamamApiWrapper" do
 
     it "returns empty string if uri is bad" do
       VCR.use_cassette("find_recipe") do
-        result = EdamamApiWrapper.find_recipe(@uri + "lalala")
-        result.must_equal ""
+        EdamamApiWrapper.find_recipe(@uri + "lalala").must_equal nil
       end
     end
   end

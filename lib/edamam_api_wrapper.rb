@@ -3,13 +3,15 @@ class EdamamApiWrapper
   ID_AND_KEY = "&app_id=#{ENV["EDAMAM_ID"]}&app_key=#{ENV["EDAMAM_KEY"]}"
 
   def self.search(query)
-    url = BASE_URL + "q=" + query + ID_AND_KEY
-    data = HTTParty.get(url)
     recipes = []
-    unless data["hits"].empty?
-      data["hits"].each do |hit_data|
-        api_data = hit_data["recipe"]
-        recipes << self.create_recipe(api_data)
+    unless query[/[^A-Za-z0-9_ -]+/]
+      url = BASE_URL + "q=" + query + ID_AND_KEY
+      data = HTTParty.get(url)
+      unless data["hits"].empty?
+        data["hits"].each do |hit_data|
+          api_data = hit_data["recipe"]
+          recipes << self.create_recipe(api_data)
+        end
       end
     end
     return recipes
@@ -18,11 +20,11 @@ class EdamamApiWrapper
   def self.find_recipe(id)
     url = BASE_URL + "r=" + id + ID_AND_KEY
     data = HTTParty.get(url)
-    recipe = ""
+    # recipe = ""
     unless data.empty? # probs not right
-      recipe = self.create_recipe(data[0])
+      return self.create_recipe(data[0])
     end
-    return recipe
+    return
   end
 
 
