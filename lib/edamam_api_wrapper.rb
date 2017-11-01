@@ -7,12 +7,15 @@ class EdamamApiWrapper
   APP_KEY = ENV["EDAMAM_KEY"]
   APP_ID = ENV["EDAMAM_ID"]
 
-  def self.search_recipes(query)
-    url = BASE_URL + "search?app_key=#{APP_KEY}" + "&app_id=#{APP_ID}" + "&q=#{query}" # 1 = true, 0 = false
+  def self.search_recipes(query, app_key = nil, app_id = nil)
+    app_key ||= APP_KEY
+    app_id ||= APP_ID
+    query = URI.encode(query)
+    url = BASE_URL + "search?app_key=#{app_key}" + "&app_id=#{app_id}" + "&q=#{query}" # 1 = true, 0 = false
 
     data = HTTParty.get(url)
 
-    if data["hits"].count > 0
+    if data["hits"] && data["hits"].count > 0
       recipes = data["hits"].map do |recipe_hash|
         Recipe.new(
           recipe_hash["recipe"]["label"],
