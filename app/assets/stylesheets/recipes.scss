@@ -34,8 +34,6 @@ $putty: #E6EBE0;
 }
 
 .recipe-card .recipe-image {
-  // border: 3px solid $putty;
-  // border-radius: .5rem;
   height: 12rem;
   margin: 1rem auto;
   width: 50%;
@@ -61,14 +59,43 @@ $putty: #E6EBE0;
 // RECIPE //
 ////////////
 
-.recipe .recipe-image {
-  height: 17rem;
+.recipe-page .row {
+  margin: 2rem auto;
 }
 
+.page-title {
+  text-align: center;
+}
+
+.recipe-page-image {
+  width: 17rem;
+}
+
+.image-holder {
+  text-align: center;
+}
+
+.ingredients {
+  margin: 2rem;
+}
 
 @media print, screen and (min-width: 40em) {
-  .recipe .recipe-image {
-    height: 20rem;
+  .recipe-page-image {
+    width: 20rem;
+  }
+
+  .recipe .ingredients {
+    min-height: 20rem;
+  }
+
+  .ingredients {
+    margin: 0;
+  }
+}
+
+@media print, screen and (min-width: 64em) {
+  .recipe-page-image {
+    width: 25rem;
   }
 
   .recipe .ingredients {
@@ -79,6 +106,17 @@ $putty: #E6EBE0;
 ///////////////
 // NUTRITION //
 ///////////////
+
+table {
+  margin: auto;
+  width: 17rem;
+}
+
+@media print, screen and (min-width: 40em) {
+  table {
+    width: 25em;
+  }
+}
 
 thead th {
   text-align: center;
