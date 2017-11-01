@@ -31,13 +31,26 @@ describe FoodApiWrapper do
   end
 
   describe "show_recipe" do
-    it "can find a recipe when given a valid URI" do
+    it "returns recipe when given a valid URI" do
+      VCR.use_cassette("productive_show") do
+        uris = ["http://www.edamam.com/ontologies/edamam.owl#recipe_7bf4a371c6884d809682a72808da7dc2"]
 
+        uris.each do |uri|
+          recipe = FoodApiWrapper.show_recipe(uri)
+            recipe.must_be_instance_of Recipe
+        end
+      end
     end
 
     it "returns an empty array when given an invalid URI" do
+      VCR.use_cassette("unproductive_show") do
+        uris = ["beepblopbloopthiswontworkhahahaha", ""]
 
+        uris.each do |uri|
+          recipes = FoodApiWrapper.show_recipe(uri)
+          recipes.must_equal nil
+        end
+      end
     end
-
   end
 end

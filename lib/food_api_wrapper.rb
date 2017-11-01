@@ -28,7 +28,11 @@ class FoodApiWrapper
   def self.show_recipe(uri, token=nil)
     token ||= TOKEN
 
-    uri["#"] = "%23"
+    if uri["#"]
+      uri["#"] = "%23"
+    else
+      return nil
+    end
 
     url = BASE_URL + "r=#{uri}" + "&app_id=#{APP_ID}&app_key=#{token}"
 
@@ -42,7 +46,7 @@ class FoodApiWrapper
       show_recipe["healthLabels"])
       return recipe
     else
-      return []
+      return nil
     end
   end
 
