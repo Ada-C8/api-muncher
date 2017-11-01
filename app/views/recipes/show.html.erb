@@ -1,3 +1,20 @@
-<h2>hello</h2>
+<h2><%= @recipe.name %></h2>
 
-<%= @recipe.name %>
+<%= image_tag("#{@recipe.image}", :alt => "#{@recipe.name} photo") %>
+
+<div>
+<%= link_to "Go to Original Recipe", @recipe.url, target: "_blank" %>
+</div>
+
+<div><%= "Servings per recipe: #{@recipe.servings}" %></div>
+
+<div>
+  <h3>Ingredients</h3>
+  <ul>
+    <% @recipe.ingredients.each do |ingredient| %>
+      <li><%= ingredient %></li>
+    <% end %>
+  </ul>
+</div>
+
+<!-- total_nutrients : dietary information  -->
