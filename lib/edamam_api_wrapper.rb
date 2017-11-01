@@ -91,7 +91,7 @@ class EdamamApiWrapper
     from = valid_req[:from]
     to = valid_req[:to]
 
-    ingredient = "q=#{ingredient}"
+    ingredient = "q=#{ingredient.gsub(" ", "+")}"
     auth = "app_id=#{ID}&app_key=#{KEY}"
     from = "from=#{from}"
     to = "to=#{to}"

@@ -4,13 +4,10 @@
   <p>
     <%= "#{number_with_delimiter(@count)} Results" %>
   </p>
-  <p>
-  <%= @recipes.length %>
-  </p>
 <% end %>
 
 <ul>
-  <%= @recipes.each do |recipe| %>
+  <% @recipes.each do |recipe| %>
   <li>
     <%= link_to image_tag(recipe.image, alt: recipe.name), recipe_path(recipe.name, uri: recipe.uri) %>
 

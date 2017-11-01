@@ -2,6 +2,24 @@ require 'test_helper'
 
 describe EdamamApiWrapper do
 
+  describe "self.create_recipe" do
+    let(:recipe_info) {
+      {
+        label: "Recipe Name",
+        uri: "http://www.edamam.com/ontologies/edamam.owl%23recipe_6289468ceb188ec8103d4a0c4adab6b8",
+        image: "https://www.edamam.com/web-img/676/676a9be0cb7bc68b41ccc0ca765969ed.jpg",
+        url: "http://leitesculinaria.com/97461/recipes-oven-roasted-chicken-thighs.html"
+      }
+    }
+
+    it "can create a recipe given a hash" do
+      recipe = EdamamApiWrapper.create_recipe(recipe_info)
+      recipe.must_be_instance_of Recipe
+      recipe.name.must_equal recipe_info["label"]
+    end
+  end
+
+
   describe "self.num_recipes" do
     it "Returns the total number of recipes matching given search term" do
       chicken = { name: "chicken", num: 88393 }
@@ -26,6 +44,13 @@ describe EdamamApiWrapper do
           num_recipes = EdamamApiWrapper.num_recipes(query)
           num_recipes.must_equal 0
         end
+      end
+    end
+
+    it "Returns nil for broken request" do
+      VCR.use_cassette("num_recipes") do
+        bad_auth = EdamamApiWrapper.num_recipes("pot roast", id: "bad", key: "bogus")
+        bad_auth.must_be_nil
       end
     end
 
