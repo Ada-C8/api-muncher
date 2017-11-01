@@ -2,7 +2,8 @@ Rails.application.routes.draw do
 
 root 'recipes#home'
 
-get 'index', to: 'recipes#index', as: 'index_recipes'
+get 'recipes', to: 'recipes#index', as: 'recipes'
 
-get ':recipe/show', to: 'recipes#show', as: 'show_recipe'
+get 'recipe', to: 'recipes#show', as: 'recipe'
+
 end
