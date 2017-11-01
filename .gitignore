@@ -20,3 +20,4 @@
 
 # ignore application id and key
 .env
+/test/cassettes/*

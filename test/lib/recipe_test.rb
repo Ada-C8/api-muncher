@@ -26,20 +26,11 @@ describe "Recipe" do
     end
 
     it "should track label, url, uri, image" do
-      # label = "test_label"
-      # url = "www.testurl.com"
-      # uri = "www.testuri.com"
-      # image = "www.testimage.jpg"
-      # ingredients = [{"text" => "some ingredients", "weight" => 23}]
-      #
-      # recipe = Recipe.new(label, url, uri, image, ingredients)
-
       @test_recipe.label.must_equal @label
       @test_recipe.url.must_equal @url
       @test_recipe.uri.must_equal @uri
       @test_recipe.image.must_equal @image
-
-      #does track ingredients - I think this is the right decision?
+      #does not track ingredients - I think this is the right decision?
     end
   end
 
