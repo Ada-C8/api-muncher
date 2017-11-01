@@ -9,6 +9,7 @@ class RecipiesController < ApplicationController
   def show
     # use the uri to do a search for a specific recipe from the api
     # have to encode the uri to get rid of some weird characters in it
-    # will have to make another method in EdamamApiWrapper to call here! 
+    # will have to make another method in EdamamApiWrapper to call here!
+    @recipe = EdamamApiWrapper.show_recipe(params[:id])
   end # show
 end

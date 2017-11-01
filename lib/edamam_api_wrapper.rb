@@ -45,9 +45,12 @@ class EdamamApiWrapper
     response = HTTParty.get(show_url)
     # create an instance of Recipe from the api response
     # return this instance
-
     if response.message == "OK"
-      create_single_recipe(response)
+      if response[0]
+        create_single_recipe(response)
+      else
+        raise ApiError.new("Could not get body for response")
+      end # if response[0]["label"]
     else
       raise ApiError.new("Call to Edamam API failed. Status was #{response.code} #{response.message}")
     end
