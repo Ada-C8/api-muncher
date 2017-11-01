@@ -7,11 +7,14 @@ class RecipeApiWrapper
   APP_ID = ENV["APP_ID"]
   APP_KEY = ENV["APP_KEY"]
 
-  def self.search(food, from)
+  class ApiError < StandardError
+  end
+
+  def self.search(food, from, app_id=APP_ID)
     url = BASE_URL + "?q=#{food}" + "&from=#{from}" + "&app_id=#{APP_ID}" + "&app_key=#{APP_KEY}"
     response = HTTParty.get(url)
 
-    # check_status(response)
+    check_status(response)
 
     recipe_list = []
     if response["hits"]
@@ -49,12 +52,10 @@ class RecipeApiWrapper
     )
   end
 
-end #class
+  def self.check_status(response)
+    unless response["ok"]
+      raise ApiError.new("API call to Edamam failed")
+    end
+  end
 
-
-
-# def self.check_status(response)
-#   unless response["ok"]
-#     raise ApiError.new("API call to Edamam failed: #{response["error"]}")
-#   end
-# end
+end
