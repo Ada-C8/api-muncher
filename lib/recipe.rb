@@ -11,7 +11,10 @@ class Recipe
    @photo = options[:photo]
    @url = options[:url]
    # TODO: format ingredients into a more readable format in the initialize
-   @ingredients = options[:ingredients]
+   @ingredients = []
+   options[:ingredients].each do |ing|
+     @ingredients << ing["text"]
+   end
    @diet_labels = options[:diet_labels]
    @uri = options[:uri]
    @company = options[:company]
