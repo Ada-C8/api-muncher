@@ -40,6 +40,7 @@ group :development, :test do
   gem 'better_errors'
   gem 'capybara', '~> 2.13'
   gem 'selenium-webdriver'
+  gem 'dotenv-rails'
 end
 
 group :development do
