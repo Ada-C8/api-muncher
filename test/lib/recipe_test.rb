@@ -40,7 +40,7 @@ describe "Recipe" do
     end
 
     it "should track optional arguments" do
-      @test_recipe.health_labels.must_equal @options[:health_label]
+      @test_recipe.health_labels.must_equal @options[:health_labels]
     end
   end
 
