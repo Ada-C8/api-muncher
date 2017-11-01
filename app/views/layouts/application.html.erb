@@ -3,6 +3,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://developer.edamam.com/attribution/badge.js"></script>
 
     <title><%= content_for?(:title) ? yield(:title) : "NomNom.com" %></title>
 
@@ -23,5 +24,8 @@
        </section>
       <% end %>
       <%= yield %>
+      <footer class="footer">
+        <div id="edamam-badge"></div>
+      </footer>
     </body>
 </html>
