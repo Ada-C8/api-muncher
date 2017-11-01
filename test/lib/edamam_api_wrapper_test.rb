@@ -39,9 +39,10 @@ describe EdamamApiWrapper do
     end # return an instance
 
     it "will raise an error if given a bogus uri" do
-      # TODO: figure out how to test this! There is something going wrong before I get to the error?? 
+      # TODO: figure out how to test this! There is something going wrong before I get to the error??
       VCR.use_cassette("recipies") do
         proc {EdamamApiWrapper.show_recipe("bogus_uri")}.must_raise EdamamApiWrapper::ApiError
+          # proc {EdamamApiWrapper.show_recipe("bogus_uri")}.must_raise JSON::ParserError
       end # VCR
     end
   end # show_recipe
