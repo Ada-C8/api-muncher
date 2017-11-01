@@ -15,3 +15,30 @@
  *= require foundation_and_overrides
 
  */
+
+.column:last-child:not(:first-child), .columns:last-child:not(:first-child) {
+  float: left;
+}
+
+body {
+  font-family: Courier;
+  color: white;
+  background-image: url("trees.jpg");
+}
+
+h1  {
+  font-family: Courier;
+  text-align: center;
+  margin-top: 200px;
+  margin-bottom: 50px;
+}
+
+.search-box {
+  max-width: 750px;
+  margin: auto;
+}
+
+.search-box label {
+  color: white;
+  font-size: 20px;
+}

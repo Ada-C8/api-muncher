@@ -8,6 +8,11 @@ class RecipesController < ApplicationController
   def index
     @recipes = EdamamApiWrapper.search(params[:q])
     @search = params[:q].upcase
+    if @recipes.empty?
+      flash[:status] = :failure
+      flash[:message] = "Your search for '#{@search}' didn't find anything. Please search again."
+      redirect_to root_path
+    end
   end
 
   def show
