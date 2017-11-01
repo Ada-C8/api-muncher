@@ -10,7 +10,8 @@
       <figcaption>
         <ul class="recipe_info">
       <li>
-        <strong><%=link_to recipe.label, recipe_path(recipe.uri)%></strong>
+        <%uri = recipe.uri[/\_.+/]%>
+        <strong><%=link_to recipe.label, recipe_path(uri)%></strong>
       </li>
       <li>
         <strong>Ingredients:</strong>
