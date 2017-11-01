@@ -37,20 +37,18 @@ describe Recipe do
     recipe.ingredients.must_equal ingredients
   end
 
-  # it "Tracks optional args" do
-  #   options = {
-  #     purpose: "test_purpose",
-  #     is_archived: "test_archived",
-  #     is_general: "test_general",
-  #     members: "test_members"
-  #   }
-  #   chan = Recipe.new("name", "id", options)
-  #
-  #   chan.purpose.must_equal options[:purpose]
-  #   chan.is_archived.must_equal options[:is_archived]
-  #   chan.is_general.must_equal options[:is_general]
-  #   chan.members.must_equal options[:members]
-  # end
+  it "Tracks optional args" do
+    options = {
+      servings: "test_servings",
+      diet: "test_diet",
+      health: "test_health",
+      calories: "test_calories"
+    }
+    recipe = Recipe.new("name", "image", "source", "url", "ingredients", options)
 
-
+    recipe.servings.must_equal options[:servings]
+    recipe.diet.must_equal options[:diet]
+    recipe.health.must_equal options[:health]
+    recipe.calories.must_equal options[:calories]
+  end
 end
