@@ -6,10 +6,10 @@ class SearchController < ApplicationController
   end
 
   def new
-
   end
 
-  def create #list
+
+  def create
     @keywords = params['ingredients']
 
     if (params[:page].to_i == 1 || params[:page].to_i == 0)
@@ -30,7 +30,7 @@ class SearchController < ApplicationController
     end
   end
 
-  def show
+  def show_recipe
     response = EdamamApiWrapper.show_recipe(params['uri'])
     @recipe = Recipe.new(response[0])
   end
