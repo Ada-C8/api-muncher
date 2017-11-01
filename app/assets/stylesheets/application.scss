@@ -22,8 +22,20 @@
 GENERAL
 /////////////////////////*/
 
+
+
+
 ul {
   list-style-type: none;
+  li a {
+    font-weight: bold;
+    color: black;
+    list-style: none;
+  }
+}
+
+li a:hover {
+  color: #74B555;
 }
 
 body {
@@ -37,8 +49,7 @@ body {
   background-size: cover;
   background-attachment: fixed;
   position: relative;
-  margin: 0;
-  padding-bottom: 6rem;
+  padding-bottom: 10rem;
   min-height: 100%;
 }
 
@@ -47,26 +58,25 @@ body {
   position: relative;
 }
 
-.pagination {
-  text-align: right;
-
-}
 
 .search-box {
   // box-sizing: content-box;
   width: 900px;
   max-width: 70%;
-  justify-content: center;
+  // justify-content: center;
   background-color: white;
-  opacity: 0.8;
-  padding: 3%;
+  opacity: 0.7;
+  padding: 2% 4%;
   margin: 10% 15% 5% 15%;
+  border-radius: 5em;
+  vertical-align: middle;
 
 
   input {
     max-width: 150px;
     opacity: 1;
     align-content: center;
+    // vertical-align: middle;
   }
 
   input#search {
@@ -76,9 +86,15 @@ body {
     margin-right: 2%;
   }
 
-  button {
+  input.button {
     display: inline-block;
-    float: right;
+    // float: right;
+    color: white;
+    font-weight: bold
+  }
+
+  input.button:hover {
+    color: white;
   }
 }
 
@@ -86,13 +102,39 @@ img {
   border-radius: 3%;
 }
 
+.button {
+  background-color: #74B555;
+}
+
+.pagination {
+  width: 150px;
+  max-width: 10%;
+  display: inline-block;
+
+  font-weight: bold;
+}
+
+.pagination a.button {
+  display: inline-block;
+  float: right;
+  color: white;
+  }
+
 
 
 /*///////////////////////////////
 HERO
 /////////////////////////*/
 
-// .hero {
+.hero {
+    font-family: Lucida;
+    font-weight: bold;
+    padding: 2%;
+    margin: 0;
+    max-height: 100px;
+    // background-color: white;
+    // opacity: 0.4;
+    // padding: 0;
 //   /*background-image: url('https://grist.files.wordpress.com/2017/06/vegetables.jpg?w=640');
 //   background-repeat: no-repeat;
 //   background-size: cover;*/
@@ -104,11 +146,17 @@ HERO
 //   padding: 1% 5% 2% 5%;
 //   /*background-position: bottom;*/
 //   /*width: 100%;*/
-// }
+  h1 {
+    font-size: 5em;
+  }
+ }
 
 .hero a {
-  color: white;
+  color: #74B555;
   font-weight: bold;
+  vertical-align: bottom;
+  // opacity: 1;
+
 }
 
 
@@ -118,8 +166,8 @@ FOOTER
 
 footer {
   background-color: white;
-  /*margin-top: 95%;
-  height: 5%;*/
+  // margin-top: 95%;
+  // height: 5%;
   position: absolute;
   right: 0;
   bottom: 0;

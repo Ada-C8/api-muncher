@@ -21,14 +21,17 @@
           </li>
       </div>
     <%end%>
+  </div>
 
-    <div class="pagination">
+    <div class="pagination row-button-group">
+      <div>
       <% if @previous_from >= 0 %>
       <%= link_to "Previous Page", root_path(search: @search, from: @previous_from), class: "button" %>
       <%end%>
-
+      </div>
+      <div>
       <%= link_to "Next Page", root_path(search: @search, from: @from), class: "button" %>
+      </div>
     </div>
 
-</div>
 <%end%>
