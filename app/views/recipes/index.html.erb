@@ -8,6 +8,7 @@
     <li class="column">
 
     <% @recipes.each do |recipe| %>
+      <%= image_tag recipe.image, class: "recipe-image" %>
       <%= link_to recipe.name, recipes_show_path(recipe.name, uri: recipe.uri), alt: "link to a given recipe", class: "recipe-name" %>
       <% end %>
     </li>
