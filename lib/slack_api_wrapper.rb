@@ -1,11 +1,11 @@
 require 'httparty'
 
 class SlackApiWrapper
-  BASE_URL = "https://slack.com/api"
+  BASE_URL = "https://api.edamam.com/search"
   TOKEN = ENV["SLACK_TOKEN"]
 
-  def self.list_channels
-    url = BASE_URL + "channels.list?" + "token=#{TOKEN}" + "&exclude_archived=1"
+  def self.recipe_query(query)
+    url = BASE_URL + "search?q=#{query}"
     data = HTTParty.get(url)
     if data["channels"]
       return data["channels"]
@@ -14,11 +14,10 @@ class SlackApiWrapper
     end
   end
 
-  def self.send_msg(channel, msg)
-  puts "Sending message to channel #{channel}: #{msg}"
+  def self.recipe_details(url)
 
-  url = BASE_URL + "chat.postMessage?" + "token=#{TOKEN}"
-  response = HTTParty.post(url,
+  url = BASE_URL + "search?" + "r=#{url}"
+  response = HTTParty.get(url,
   body:  {
     "text" => "#{msg}",
     "channel" => "#{channel}",
