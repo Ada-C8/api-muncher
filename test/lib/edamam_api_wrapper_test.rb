@@ -1,5 +1,4 @@
 require 'test_helper'
-require "httparty"
 
 describe EdamamApiWrapper do
   describe "get_recipies" do
