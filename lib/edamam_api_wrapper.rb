@@ -25,7 +25,7 @@ class EdamamApiWrapper
     return recipe
   end
 
-  def self.search(term = "thanksgiving")
+  def self.search(term="thanksgiving")
     url = BASE_URL + "q=#{term}" + "&app_id=#{APP_ID}" + "&app_key=#{APP_KEY}" + "&from=0" + "&to=5"
 
     data = HTTParty.get(url)

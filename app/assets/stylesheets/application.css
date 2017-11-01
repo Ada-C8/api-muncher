@@ -15,3 +15,9 @@
  *= require foundation_and_overrides
 
  */
+
+
+ .margin-3-col {
+   margin-left: 4.2%;
+   margin-right: 4.2%;
+ }
