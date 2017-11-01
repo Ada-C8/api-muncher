@@ -1,8 +1,8 @@
-<h1>Dis be da root page</h1>
 
-
+<section class="row">
 <%= form_tag "/recipes", method: "get" do%>
   <%= label_tag :query, "Find your Flavor" %>
   <%= text_field_tag :query %>
   <%= submit_tag "Search"%>
 <% end %>
+</section>

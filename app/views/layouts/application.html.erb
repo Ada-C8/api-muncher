@@ -10,7 +10,13 @@
 
   <body>
     <header>
- <h1>Muncher</h1>
+      <section class="page-header">
+        <section class="row logo">
+        <h1>
+         Muncher
+        </h1>
+        </section>
+      </section>
     </header>
     <% if flash[:status] %>
    <section class="row status <%= flash[:status] %>">
@@ -20,9 +26,11 @@
      <%end%>
     <%= yield %>
     <footer>
+      <section class="page-footer">
       <p>
         Powered by <a href="https://www.edamam.com/">Edamam</a>
       </p>
+      </section>
     </footer>
   </body>
 </html>

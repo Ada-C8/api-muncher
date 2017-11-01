@@ -1,31 +1,46 @@
+<section class="row centered">
+  <h2> Results for <%=@query%> </h2>
+</section>
 
-<h2>Results for <%=@query%> </h2>
-<ul>
+<section class="row small-up-1 medium-up-to-2 large-up-3">
 <% @recipes.each do |recipe| %>
-  <li>
+    <article class="column recipe">
     <figure>
       <img src="<%=recipe.image%>"/>
       <figcaption>
+        <ul class="recipe_info">
       <li>
-        <%=link_to recipe.label, recipe_path(recipe.uri)%>
+        <strong><%=link_to recipe.label, recipe_path(recipe.uri)%></strong>
       </li>
       <li>
-        ingredients: <%=recipe.ingredients %>
+        <strong>Ingredients:</strong>
+        <ul class="sublist">
+          <%recipe.ingredients.each do |ingredient|%>
+          <li>
+          <%=ingredient%>
+          </li>
+          <% end %>
+          </ul>
       </li>
       <li>
-       link to original recipe <%=recipe.recipe_url%>
+        <strong>Dietary Information:</strong>
+          <ul class="sublist">
+        <%recipe.dietary.each do |diet_info|%>
+        <li>
+          <%=diet_info%>
+        </li>
+        <% end %>
+        </ul>
       </li>
       <li>
-        dietary: <%=recipe.dietary%>
-      </li>
-      <li>
-        source: <%=recipe.source%>
+        <strong>Original recipe from <%=link_to recipe.source, recipe.recipe_url%></strong>
       </li>
       <li>
         uri: <%=recipe.uri%>
       </li>
+      </ul>
       </figcaption>
       </figure>
-  </li>
-</ul>
+      </article>
 <%end %>
+</section>
