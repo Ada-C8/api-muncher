@@ -1,9 +1,9 @@
 class Recipe
-  attr_reader :search_term
+  attr_reader :label
 
-  def initialize(search_term)
-    raise ArgumentError if search_term == nil
-    @search_term = search_term
+  def initialize(label)
+    raise ArgumentError if label == nil
+    @label = label
 
   end
 end
