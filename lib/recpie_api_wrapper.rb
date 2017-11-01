@@ -1,21 +1,21 @@
 require 'httparty'
 
 class RecpieApiWrapper
-  BASE_URL = "https://api.edamam.com/search"
+  BASE_URL = "https://api.edamam.com/search?"
   #TOKEN = ENV["SLACK_TOKEN"]
 
-  def self.recipe_query(query)
-    url = BASE_URL + "search?q=#{query}"
+  def self.recpie_query(query)
+    url = BASE_URL + "q=#{query}"
     data = HTTParty.get(url)
-    if data["channels"]
-      return data["channels"]
+    if data["hits"]
+      return data["hits"]
     else
       return []
     end
   end
 
-  def self.recipe_details(url)
-    url = BASE_URL + "search?" + "r=#{url}"
+  def self.recpie_details(url)
+    url = BASE_URL  + "r=#{url}"
     response = HTTParty.get(url)
 
     return response
