@@ -1,7 +1,10 @@
-<h1> Results </h1>
+<%= render partial: "layouts/search_bar" %>
 
+<h1> Recipes </h1>
+<h2> Results for "<%= params[:q] %>" </h2>
 <% @results.each do |result| %>
-
+<section>
   <%= link_to(image_tag(result[:image], alt: "#{result[:label]}"), show_recipe_path(result[:uri])) %>
-
+  <p> <%= result[:label]%> </p>
+</section>
 <% end %>

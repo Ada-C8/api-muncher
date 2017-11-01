@@ -1,9 +1,13 @@
-<h1> <%= @recipe[0]["label"] %> Recipe details </h1>
-<h2> <%= link_to 'Original Recipe', @recipe[0]["url"]%> </h2>
+
+<%= render partial: "layouts/search_bar" %>
+
+<h1> <%= @recipe[0]["label"] %> </h1>
+<h2> By: <%= @recipe[0]["source"]%></h2>
+<p> <%= link_to 'Original Recipe', @recipe[0]["url"]%> </p>
 
 <h3> Ingredients </h3>
 <ul>
-  <%= @recipe[0]["ingredientLines"].each do |item| %>
+  <% @recipe[0]["ingredientLines"].each do |item| %>
     <li> <%= item %> </li>
   <% end %>
 </ul>

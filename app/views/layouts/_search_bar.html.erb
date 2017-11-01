@@ -1,0 +1,7 @@
+<%= form_tag("/recipes/results", method: "get") do %>
+     <%= label_tag(:q, "Find Your Flavor...") %>
+     <br/>
+     <%= text_field_tag(:q) %>
+     <br />
+     <%= submit_tag("Search") %>
+<% end %>
