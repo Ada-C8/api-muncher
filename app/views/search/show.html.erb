@@ -1,3 +1,29 @@
-this is a show page.
-<%= params %>
-<%= @recipe.title %>
+<span class="recipe-title"><%= @recipe.title %></span>
+
+<span class="recipe-image"><%= image_tag(@recipe.image, alt: "#{@recipe.title}") %></span>
+
+<section class="ingredients">
+<ul class="ingredient-lines"
+  <% @recipe.ingredients.each do |line| %>
+  <li><%= line %></li>
+  <% end %>
+</ul>
+</section>
+
+
+<section class="health-info">
+<span>Health & Dietary Details</span>
+<ul class="health-labels">
+  <% @recipe.health_labels.each do %>
+  <li><%= line %></li>
+  <% end %>
+</ul>
+
+<ul class="diet-labels">
+  <% @recipe.diet_labels.each do %>
+  <li><%= line %></li>
+  <% end %>
+</ul>
+</section>
+
+<span class="recipe-link"><%= link_to "Full recipe instructions", @recipe.link, target: :_blank%></span>
