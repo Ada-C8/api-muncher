@@ -22,11 +22,12 @@ class EdamamApiWrapper
         result["recipe"]["image"], # image
         result["recipe"]["source"], # original source
         result["recipe"]["url"], # link to original
+        result["recipe"]["ingredientLines"], # ingredients as an array
         {
           servings: result["recipe"]["yield"], # servings
+          # nutritional info
           diet: result["recipe"]["dietLabels"], # low-fat, etc
           health: result["recipe"]["healthLabels"], # vegetarian, etc
-          ingredients: result["recipe"]["ingredientLines"], # ingredients as an array
           calories: result["recipe"]["calories"] # calories
         }
       )
