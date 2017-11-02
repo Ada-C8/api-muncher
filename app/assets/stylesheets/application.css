@@ -25,9 +25,15 @@
  }
 
  .search_bar {
-   margin-top: 20vw;
+   margin: 10;
    padding: 5vw;
    border: 1px solid black;
+   text-align: center;
+   font-family: cursive;
+ }
+
+ .search_bar h1 {
+   font-family: cursive;
  }
 
  footer {

@@ -1,7 +1,7 @@
-<section class="search_bar center column large-8 small-12">
-<h1 class="center">Find Your ReciPEACE</h1>
-<%= form_tag(recipes_path, method: :get) do %>
+<section class="search_bar column small-12">
+  <h1 class="center">Find Your ReciPEACE</h1>
+  <%= form_tag(recipes_path, method: :get) do %>
   <%=text_field_tag :search %>
   <%=submit_tag "Search", class:"button column small-12"%>
-<% end %>
+  <% end %>
 </section>
