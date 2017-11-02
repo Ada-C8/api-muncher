@@ -10,12 +10,13 @@ module ApiMuncher
   class Application < Rails::Application
 
     # Automatically load all code from <rails_root>/lib
+    config.eager_load_paths << Rails.root.join('lib') # loads in production
     config.autoload_paths << Rails.root.join('lib')
 
     config.generators do |g|
       # Force new test files to be generated in the minitest-spec style
       g.test_framework :minitest, spec: true
-      
+
       # Always use .js files, never .coffee
       g.javascript_engine :js
     end
