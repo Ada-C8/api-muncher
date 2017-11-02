@@ -60,8 +60,11 @@ $pink: #f9ceb5;
   display: inline-block;
 }
 
-input {
-
+.flash h3 {
+  font-style: italic;
+  font-size: 1em;
+  color: $dark-gray;
+  text-align: center;
 }
 
 a {
@@ -78,7 +81,7 @@ a:hover {
   background-repeat: no-repeat;
   background-size: cover;
   height: 400px;
-  background-position:bottom;
+  background-position: center;
   text-align: center;
 }
 
@@ -86,14 +89,15 @@ a:hover {
   font-family: 'Permanent Marker';
   font-size: 5em;
   color: $dark-gray;
-  // text-shadow: 2px 2px $blue-gray;
+
 }
 
 .front-page h4 {
   font-family: 'Permanent Marker';
   // font-size: 5em;
   color: $dark-gray;
-  // text-shadow: 2px 2px $blue-gray;
+  text-shadow: 2px 2px $blue-gray;
+  // text-shadow: 2px 2px $pink;
 }
 
 .front-page h2:first-child {
@@ -424,85 +428,22 @@ footer p{
   margin-top: 2em;
   padding-top: 1em;
 }
-//
-//   h3 {
-//     font-family: 'Pathway Gothic One';
-//   }
-//
-//   figure {
-//     width: 200px;
-//     height: 200px;
-//   }
-//
-//   /* Zoom Out #1 */
-//   // .recipe-card figure img {
-//   // 	-webkit-transform: scale(1.25);
-//   // 	transform: scale(1.25);
-//   // 	-webkit-transition: .3s ease-in-out;
-//   // 	transition: .3s ease-in-out;
-//   // }
-//   // .recipe-card figure:hover img {
-//   // 	-webkit-transform: scale(1);
-//   // 	transform: scale(1);
-//   // }
-//   //
-//   // .recipe-card p {
-//   //   position: absolute;
-//   //   bottom: 8px;
-//   //   //left: 16px;
-//   //   background-color: $gray;
-//   //   width: 80%;
-//   //   padding: 0.5em;
-//   // }
-// }
-// //---------- FOOTER ----------------
-// footer {
-//   background-color: $dark-blue;
-//   opacity: 0.9;
-//   max-width: 100%;
-//   padding: 10px;
-//   text-align: center;
-// }
-//
-// footer p {
-//   margin: 0.5em auto;
-//   color: $gray;
-// }
-//
-// .fa-plug {
-//   transform: rotate(-100deg);
-// }
-//
-// //---------- SMALL SCREEN --------------
-// @media print, screen and (max-width: 40em){
-//
-//
-// }
-//
-// //--------
-//
-//
-// .subtle {
-//   color: #aaa;
-// }
-//
-// .card-container {
-//   display: inline-block;
-//   margin: 5px;
-// }
-//
-// .card {
-//   display: flex;
-//   flex-direction: row;
-//   justify-content: center;
-//   background-color: #fff;
-//   // padding: 30px;
-//   position: relative;
-//   box-shadow: 0 0 5px rgba(75, 75, 75, .07);
-//   z-index: 1;
-//   box-shadow: 10px 10px 5px #888;
-// }
-//
+
+//---------- FOOTER ----------------
+
+.fa-plug {
+  transform: rotate(-100deg);
+}
+
+//---------- SMALL SCREEN --------------
+@media print, screen and (max-width: 40em){
+//alignment of recipe name on small
+
+}
+
+//--------
+
+
 .card{
   display: inline-block;
   width: 300px;
@@ -527,8 +468,9 @@ footer p{
   font-family: 'Oswald';
 }
 .card-body p {
-  //color: $blue;
+  color: $dark-gray;
   font-family: 'Pathway Gothic One';
+  text-transform: uppercase;
   //font-size: 1.5em;
 }
 
@@ -536,39 +478,3 @@ a:hover .card .card-body {
   display: block;
   background-color: rgba(249,206,181,0.56);
 }
-//
-//
-// .card-author {
-//   display: block;
-//   font-size: 20px;
-//   letter-spacing: .5px;
-//   margin-bottom: 15px;
-//   text-transform: uppercase;
-//   text-decoration: underline;
-//   font-family: 'Pathway Gothic One';
-// }
-//
-// .card-title {
-//   font-family: 'Rozha One', serif;
-//   font-size: 40px;
-//   // font-weight: 300;
-//   // letter-spacing: 0.1em;
-//   // line-height: -5px;
-//   margin: 0 10px;
-//
-// }
-//
-//
-// .card-shadow {
-//   background-color: #fff;
-//   box-shadow: 0 2px 25px 2px rgba(0, 0, 0, 1), 0 2px 50px 2px rgba(0, 0, 0, 1), 0 0 100px 3px rgba(0, 0, 0, .25);
-//   height: 1px;
-//   margin: -1px auto 0;
-//   width: 80%;
-//   z-index: -1;
-// }
-//
-// .card img {
-//   width: 200px;
-//   height: 200px;
-// }

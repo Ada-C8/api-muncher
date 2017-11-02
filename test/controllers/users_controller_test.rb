@@ -3,10 +3,10 @@ require "test_helper"
 describe UsersController do
   describe "log in" do
     it "should create new if not in database" do
-      new_user = User.new(provider: "google_oauth2", uid: "33321452032", name: "chris")
-
+      get logout_path
+        get logout_path
       proc {
-        login(new_user, "google_oauth2")
+        login(User.new(provider: "google_oauth2", uid: "33321452032", name: "chris"), "google_oauth2")
       }.must_change "User.count", 1
 
       must_redirect_to root_path
@@ -15,6 +15,7 @@ describe UsersController do
     end
 
     it "should find existing user" do
+      get logout_path
       proc {
         login(users(:averi), "google_oauth2")
       }.wont_change "User.count"
@@ -58,6 +59,14 @@ describe UsersController do
       login(users(:averi),:google_oauth2)
       get user_path(users(:kayla).id)
       must_respond_with :bad_request
+    end
+  end
+
+  describe "favorite" do
+    it "can favorite an item" do
+      login(users(:averi),:google_oauth2)
+      proc{ post favorite_path("recipe_1234abc123", label: 'test', source: 'me', image:'test.png')}.must_change 'Favorite.count', 1
+
     end
   end
 

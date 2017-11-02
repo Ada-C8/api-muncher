@@ -7,7 +7,7 @@
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   <link href="https://fonts.googleapis.com/css?family=Rozha+One|Oswald:300,400,600|Permanent+Marker" rel="stylesheet">
-  <%#favicon_link_tag 'cannabis.png', type: 'image/png'%>
+  <%=favicon_link_tag 'header.png', type: 'image/png'%>
 </head>
 
 <body>
@@ -40,7 +40,11 @@
 
     </section>
   </header>
-
+  <% if flash[:failure] or flash[:success] %>
+    <section class="row flash">
+      <h3><%= flash[:failure] %><%= flash[:success] %></h3>
+    </section>
+    <% end %>
   <%= yield %>
     <% if session[:recent_searches] %>
     <section class="row recent-searches">

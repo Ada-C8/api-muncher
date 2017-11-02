@@ -2,8 +2,12 @@
 
 one:
   user: averi
-  uri: ab1234
+  uri: recipe_ab123456789
+  label: pumpkin
+  source: martha
 
 two:
   user: averi
-  uri: cd56789
+  uri: recipe_cd567891245
+  label: ice cream
+  source: delish

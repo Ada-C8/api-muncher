@@ -1,12 +1,12 @@
 <section class="row">
   <section class="column large-4 small-12 recipe">
-    <%= image_tag @recipe.image, alt:"#{@recipe.label}" %>
+    <%= image_tag @recipe.image ? @recipe.image : 'restaurant-small.png', alt:"#{@recipe.label}" %>
   </section>
   <section class="column large-8 small-12  recipe">
     <div class = "name">
 
     <h1><%= @recipe.label %></h1>
-    <%= link_to favorite_path(format_uri(@recipe.uri)) do%>
+    <%= link_to favorite_path("recipe_#{format_uri(@recipe.uri)}", label: @recipe.label, image: @recipe.image, source: @recipe.source), method: :post do%>
     <i class="fa fa-heart fa-2x" aria-hidden="true"></i>
     <%end%>
     <ul>

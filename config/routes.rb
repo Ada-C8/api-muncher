@@ -8,7 +8,7 @@ Rails.application.routes.draw do
 
   get '/users/:id', to: 'users#show', as: 'user'
 
-  post '/recipes/:uri', to: 'user#favorite', as: 'favorite'
+  post '/recipes/:uri', to: 'users#favorite', as: 'favorite'
 
   get '/recipes/:uri', to: 'recipes#show', as: 'recipe'
 

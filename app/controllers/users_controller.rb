@@ -1,6 +1,7 @@
 class UsersController < ApplicationController
   def create
     @auth_hash = request.env['omniauth.auth']
+    p @auth_hash
     @user = User.find_by(uid: @auth_hash['uid'],provider: @auth_hash['provider'])
     if @user
       session[:user_id] = @user.id
@@ -27,13 +28,14 @@ class UsersController < ApplicationController
   end
 
   def favorite
-    fav = Favorite.new(user_id: session[:user_id], uri: params[:uri])
+    fav = Favorite.new(user_id: session[:user_id], uri: params[:uri], label: params[:label],image: params[:image], source: params[:source] )
+
     if fav.save
-      flash[:success] = "Add to your favorites!"
-      redirect_to recipes_path(params[:uri])
+      flash[:success] = "Added to your favorites!"
+      redirect_to recipe_path(params[:uri])
     else
-      flash[:failure] = "Unable to favorite recipe :("
-      redirect_to recipes_path(params[:uri])
+      flash[:failure] = "Unable to favorite recipe."
+      redirect_to recipe_path(params[:uri])
     end
   end
 

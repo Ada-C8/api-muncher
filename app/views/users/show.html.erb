@@ -12,7 +12,7 @@
   <% @favorites.each do |recipe| %>
     <%= link_to recipe_path(format_uri(recipe.uri)) do %>
         <div class="card">
-          <%= image_tag recipe.image, alt:"#{recipe.label}" %>
+          <%= image_tag recipe.image ? recipe.image : 'restaurant-small.png', alt:"#{recipe.label}" %>
           <div class="card-body">
             <h2><%= recipe.label.titleize %></h2>
             <p><%=recipe.source%></p>
