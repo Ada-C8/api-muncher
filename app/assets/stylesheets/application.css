@@ -99,6 +99,21 @@ header h1 {
   background-color: rgba(15, 15, 15, 0.5);
 }
 
+.search-bar [type="text"] {
+  margin-bottom: 0.5rem;
+}
+
+.search-bar .button {
+  line-height: 0;
+  margin: 0;
+  min-width: 4.5rem;
+}
+
+.button {
+  background-color: var(--teal);
+  border-radius: 2rem;
+}
+
 .clearfix {
   content:"";
   clear:both;
@@ -116,6 +131,16 @@ header h1 {
 
   header h1 {
     background-color: unset;
+  }
+
+  nav form {
+    align-items: center;
+    display: flex;
+    justify-content: flex-end;
+  }
+
+  .search-bar [type="text"] {
+    margin: 1rem;
   }
 }
 
