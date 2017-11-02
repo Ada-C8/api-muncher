@@ -3,15 +3,15 @@ require "test_helper"
 describe RecipesController do
   describe "index" do
     it "can get a list of recipes" do
-      # VCR.use_cassette("index_action") do
-      #   get root_path
-      #   must_respond_with :success
-      #
-      #   @recipes.must_be_instance_of Array
-      #   @recipes.each do |recipe|
-      #     recipe.must_be_instance_of Recipe
-      #   end
-      # end
+      VCR.use_cassette("index_action") do
+        get root_path()
+        must_respond_with :success
+
+        @recipes.must_be_instance_of Array
+        @recipes.each do |recipe|
+          recipe.must_be_instance_of Recipe
+        end
+      end
     end
 
     it "defualts a list of recipes if a search is not done before" do
