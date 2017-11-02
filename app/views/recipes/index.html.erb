@@ -1,13 +1,22 @@
 <section>
-<h2>Search Results on Index Page</h2>
+<h2>Search Results</h2>
 <p>paginate this l8er</p>
-<article>
+
+<article class= "row">
   <% @recipes.each do |r| %>
-      <%= link_to recipe_path(r.label, uri: r.uri) do %>
-      <%= image_tag("https://fillmurray.com/300/300", alt: "recipe image") %>
-      <%= r.label %>
-      <% end %>
+    <%= link_to recipe_path(r.label, uri: r.uri) do %>
+
+    <section class="search columns large-4 small-6">
+      <%= image_tag r.image, alt: r.image %>
+      <p><%= r.label %></p>
+    </section>
+
+    <% end %>
   <% end %>
 </article>
+
+<section class= "paginate">
+  <%# will_paginate(@recipes) %>
+</section>
 
 </section>

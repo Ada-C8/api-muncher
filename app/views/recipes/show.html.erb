@@ -1,11 +1,15 @@
-<h2>show page</h2>
 
-<article>
+
+<article class = "show row">
   <% @recipe.each do |r| %>
-    <%= image_tag r.image %>
-    <p><%= r.label %></p>
-    <p><%= r.uri %></p>
-    <p>Originally from <%= r.url %></p>
+  <h2><%= r.label %></h2>
+    <section class="small-12 medium-6 columns">
+      <%= image_tag r.image %>
+    </section>
+    <section class="small-12 medium-6 columns">
+      <p><em>Originally from <%= link_to r.url %></em></p>
+    </section>
+
 
   <% end %>
 </article>

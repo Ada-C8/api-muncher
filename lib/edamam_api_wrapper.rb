@@ -13,12 +13,12 @@ class EdamamApiWrapper
     # encoded_url = URI.encode("#{url}")
     data = HTTParty.get(url)
     if data["hits"]
-      search_results = data["hits"].map do |recipe|
+      search_results = data["hits"].map do |recipe_hash|
         Recipe.new(
-          recipe["recipe"]["label"],
-          recipe["recipe"]["image"],
-          recipe["recipe"]["uri"],
-          recipe["recipe"]["url"]
+          recipe_hash["recipe"]["label"],
+          recipe_hash["recipe"]["image"],
+          uri: recipe_hash["recipe"]["uri"],
+          url: recipe_hash["recipe"]["url"]
         )
       end
       return search_results
@@ -43,8 +43,8 @@ class EdamamApiWrapper
         Recipe.new(
           recipe["label"],
           recipe["image"],
-          recipe["uri"],
-          recipe["url"]
+          uri: recipe["uri"],
+          url: recipe["url"]
 
           # recipe["ingredientLines"],
           # recipe["digest"].each do |diet|
