@@ -6,14 +6,14 @@ class RecipesController < ApplicationController
   def root; end
 
   def index
-    @recipes = EdamamApiWrapper.search(params[:q])
+    recipes = EdamamApiWrapper.search(params[:q])
     @search = params[:q].upcase
-    if @recipes.empty?
+    if recipes.empty?
       flash[:status] = :failure
       flash[:message] = "Your search for '#{@search}' didn't find anything. Please search again."
-      redirect_to root_path
+      redirect_back(fallback_location: root_path)
     else
-      #@recipes = results.paginate(:page => params[:page], per_page => 10)
+      @recipes = recipes.paginate(:page => params[:page], :per_page => 10)
     end
   end
 

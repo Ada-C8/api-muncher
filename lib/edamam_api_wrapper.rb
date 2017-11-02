@@ -11,8 +11,8 @@ class EdamamApiWrapper
   end
 
   def self.search(q, app_id=APP_ID, app_key=APP_KEY)
-    # raise ArgumentError if q == nil || q == ""
-    url = BASE_URL + "/search" + "?q=#{q}" + "&app_id=#{app_id}" + "&app_key=#{app_key}"
+  
+    url = BASE_URL + "/search" + "?q=#{q}" + "&app_id=#{app_id}" + "&app_key=#{app_key}" + "&to=30"
 
     puts "About to send request for list of channels"
     data = HTTParty.get(url)
@@ -32,7 +32,6 @@ class EdamamApiWrapper
   end
 
   def self.find_recipe(id, app_id=APP_ID, app_key=APP_KEY)
-    # raise ArgumentError if id == nil || id == ""
 
     url = BASE_URL + "/search" + BASE_URI + "#{id}" + "&app_id=#{APP_ID}" + "&app_key=#{APP_KEY}"
 

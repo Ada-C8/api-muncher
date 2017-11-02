@@ -10,7 +10,7 @@
     <%= javascript_include_tag "application", 'data-turbolinks-track' => true %>
     <%= csrf_meta_tags %>
   </head>
-
+  <% unless current_page?(root_path) %>
   <header>
     <h2>MUNCHER</h2>
     <nav>
@@ -23,13 +23,20 @@
       </div>
     </nav>
   </header>
+  <% end %>
 
   <body>
 
-    <%= yield %>
+    <% if flash[:status] %>
+      <div class="flash">
+        <%= flash[:message] %>
+      </div>
+    <% end %>
 
+    <%= yield %>
+    <footer>
+      <h5>Powered by <%= link_to "Edamam", "https://www.edamam.com/" %></h5>
+    </footer>
   </body>
-  <footer>
-    <h5>Powered by <%= link_to "Edamam", "https://www.edamam.com/" %></h5>
-  </footer>
+
 </html>

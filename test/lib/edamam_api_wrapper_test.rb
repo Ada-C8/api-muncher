@@ -32,10 +32,10 @@ describe "EdamamApiWrapper" do
 
       it "should return nil if recipe is not found" do
         VCR.use_cassette("bad recipe") do
-        result = EdamamApiWrapper.find_recipe("nope nope nope")
-        result.must_equal nil
+          result = EdamamApiWrapper.find_recipe("nope nope nope")
+          result.must_equal nil
+        end
       end
-    end
 
       it "should return nil if id is not given" do
         VCR.use_cassette("no recipe") do
