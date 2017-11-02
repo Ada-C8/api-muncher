@@ -42,22 +42,19 @@
   </header>
 
   <%= yield %>
-    <!-- <% if session[:recent_searches] %>
+    <% if session[:recent_searches] %>
     <section class="row recent-searches">
-    <h3>Recent Searches</h3>
-    <%session[:recent_searches].first(5).reverse.each do |search, image| %>
-    <%= link_to recipes_path(search: search) do %>
-    <article class="recipe-card">
-      <figure>
-        <%= image_tag image ? image : 'restaurant.png', alt:"#{search}" %>
-      </figure>
-      <p><%= search.titleize %></p>
-    </article>
-    <% end %>
-    <%end%>
+    <h3>Recent Searches: </h3>
+    <ul>
+      <%session[:recent_searches].first(8).reverse.each do |search,image| %>
+      <li>
+        <%= link_to "+#{search}", recipes_path(search: search) %>
+      </li>
+      <%end%>
+    </ul>
 
     <%end%>
-  </section> -->
+  </section>
 
   <footer>
     <div class="bg">
