@@ -1,6 +1,13 @@
-  <h1>Search Results on Index Page</h1>
-  <p>paginate this l8er</p>
-  <ul>
-    <%= @recipes %>
+<section>
+<h2>Search Results on Index Page</h2>
+<p>paginate this l8er</p>
+<article>
+  <% @recipes.each do |r| %>
+      <%= link_to recipe_path(r.label, uri: r.uri) do %>
+      <%= image_tag("https://fillmurray.com/300/300", alt: "recipe image") %>
+      <%= r.label %>
+      <% end %>
+  <% end %>
+</article>
 
-  </ul>
+</section>

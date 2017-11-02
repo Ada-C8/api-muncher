@@ -1,0 +1,11 @@
+<h2>show page</h2>
+
+<article>
+  <% @recipe.each do |r| %>
+    <%= image_tag r.image %>
+    <p><%= r.label %></p>
+    <p><%= r.uri %></p>
+    <p>Originally from <%= r.url %></p>
+
+  <% end %>
+</article>
