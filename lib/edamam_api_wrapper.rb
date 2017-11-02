@@ -41,7 +41,7 @@ class EdamamApiWrapper
     else
       recipe = create_recipe(response[0])
     end
-    # raise 
+    # raise
     return recipe
   end
 
@@ -54,6 +54,7 @@ private
     else
       if response["count"] < 1
         raise ApiError.new("Api call to Edaman failed to return any results for the search term #{response["q"]}")
+        # TODO: think about using flash vs error for this case
       end
     end
   end
