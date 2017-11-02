@@ -20,7 +20,7 @@ describe RecipiesController do
       end # VCR
     end # sucess when there are recipies
 
-    it "will return not_found when there are no recipies returned to display" do
+    it "will return not_found when there are no recipies returned to display because the search tearm has symbols or numbers in it" do
       # TODO: make a call with a bad search term that won't return any recipies. Need to figure out in my controller how to redirect to the root page if the request was bad... maybe check 'if @response' ?
       VCR.use_cassette("recipes") do
         test_params = {
@@ -31,8 +31,20 @@ describe RecipiesController do
         must_respond_with :redirect
         must_redirect_to root_path
       end # VCR
+    end # redirects when search term has a symbol in it
 
-    end # sucess with no recipies
+    it "will return not_found when there are no recipies returned to display because the search tearm was empty" do
+      VCR.use_cassette("recipes") do
+        test_params = {
+          search_term: "bread1"
+        }
+
+        get recipies_path, params: test_params
+        must_respond_with :redirect
+        must_redirect_to root_path
+        flash[:message].must_equal "Sorry, your search term can't be blank!"
+      end # VCR
+    end # redirects with empty search term
   end # index
 
   describe "show" do
@@ -59,7 +71,7 @@ describe RecipiesController do
         name = "name"
 
         get recipy_path(name), params: test_params
-        must_respond_with :not_found 
+        must_respond_with :not_found
       end # VCR
     end # not_found
   end # show
