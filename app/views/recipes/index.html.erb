@@ -1,16 +1,18 @@
-<section class="row">
-  <h1>Search / <%=params[:search] %></h1>
+
+<section class="row search-header">
+  <h1>Search /     </h1><h1>  <%=params[:search] %></h1>
 </section>
 <section class="row all-recipes">
   <% @recipes.each do |recipe| %>
-  <%= link_to recipe_path(format_uri(recipe.uri)) do %>
-  <article class="recipe-card">
-    <figure>
-      <%= image_tag recipe.image, alt:"#{recipe.label}" %>
-    </figure>
-    <p><%= recipe.label.titleize %></p>
-  </article>
-  <% end %>
+    <%= link_to recipe_path(format_uri(recipe.uri)) do %>
+        <div class="card">
+          <%= image_tag recipe.image, alt:"#{recipe.label}" %>
+          <div class="card-body">
+            <h2><%= recipe.label.titleize %></h2>
+            <p><%=recipe.source%></p>
+          </div>
+      </div>
+    <% end %>
   <% end %>
   <div class="paginate">
     <%= will_paginate(@recipes) %>

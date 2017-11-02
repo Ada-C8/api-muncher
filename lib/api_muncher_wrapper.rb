@@ -15,9 +15,9 @@ class ApiMuncherWrapper
         recipe = hash["recipe"]
         Recipe.new(recipe["label"],
         recipe["uri"],
-        image: recipe["image"] #,
-        # source: recipe["source"],
-        # url: recipe["url"],
+        image: recipe["image"] ,
+        source: recipe["source"],
+        url: recipe["url"]#,
         # yield: recipe["yield"],
         # calories: recipe["calories"],
         # labels: recipe["healthLabels"],

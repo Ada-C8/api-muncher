@@ -6,21 +6,43 @@
 
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
-  <link href="https://fonts.googleapis.com/css?family=Rozha+One|Damion|Pathway+Gothic+One" rel="stylesheet">
-  <%=favicon_link_tag 'cannabis.png', type: 'image/png'%>
+  <link href="https://fonts.googleapis.com/css?family=Rozha+One|Oswald:300,400,600|Permanent+Marker" rel="stylesheet">
+  <%#favicon_link_tag 'cannabis.png', type: 'image/png'%>
 </head>
 
 <body>
   <header>
-    <% if session[:user_id] %>
-    <%= link_to "Favorites",user_path(session[:user_id]), class: 'button' %>
-    <% else %>
-    <%= link_to "Log In",'/auth/google_oauth2', class: 'button' %>
-    <% end %>
+    <section class="logo">
+      <%= link_to root_path do %>
+      <h1 class = "letter">H</h1>
+      <h1>hungry?</h1>
+      <%end%>
+      <div class = "search">
+
+        <%= form_tag(recipes_path, :method => "get", id: "search") do %>
+        <%= text_field_tag :search, params[:search], placeholder: "🍽️  don't be hangry" %>
+        <%# submit_tag "Search", :name => nil %>
+        <% end %>
+      </div>
+    </section>
+    <section class = 'float-right'>
+      <div class="logo">
+        <% if session[:user_id] %>
+        <h3>
+          <%= link_to "Favorites",user_path(session[:user_id]) %></h3>
+          <h3>
+            <%= link_to "Logout",logout_path() %></h3>
+
+      </div>
+      <% else %>
+        <h3><%= link_to "Log In",'/auth/google_oauth2' %></h3>
+      <% end %>
+
+    </section>
   </header>
 
   <%= yield %>
-    <% if session[:recent_searches] %>
+    <!-- <% if session[:recent_searches] %>
     <section class="row recent-searches">
     <h3>Recent Searches</h3>
     <%session[:recent_searches].first(5).reverse.each do |search, image| %>
@@ -35,9 +57,12 @@
     <%end%>
 
     <%end%>
-  </section>
+  </section> -->
 
   <footer>
+    <div class="bg">
+      recipes
+    </div>
     <p>
       <%= fa_icon "plug" %> by <%=link_to "edamam", "https://www.edamam.com/" %> <%= fa_icon "bolt" %>
     </p>

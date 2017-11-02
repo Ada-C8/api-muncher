@@ -1,13 +1,16 @@
-<section class="row front-page">
-  <h1>hungry?</h1>
-  <div class = "search">
-
-    <%= form_tag(recipes_path, :method => "get", id: "search") do %>
-    <%= text_field_tag :search, params[:search], placeholder: "🍽️    Search Recipes" %>
-    <%# submit_tag "Search", :name => nil %>
-    <% end %>
-    <h5>find your vice...</h5>
+<section class="front-page">
+  <div class="row textblock">
+    <h2>hungry?</h2>
+    <h4>you came to the right place</h4>
 
   </div>
+</section>
+<section class="sub-box row">
+  <h1>Search Now</h1>
+<h3>don't be hangry</h3>
+    <%= form_tag(recipes_path, :method => "get", id: "search-front") do %>
+    <%= text_field_tag :search, params[:search], placeholder: "🍽️    Search Recipes", id:'search-front' %>
+    <%# submit_tag "Search", :name => nil %>
+    <% end %>
 
 </section>
