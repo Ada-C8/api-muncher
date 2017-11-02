@@ -1,0 +1,216 @@
+/*
+* This is a manifest file that'll be compiled into application.css, which will include all the files
+* listed below.
+*
+* Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
+* vendor/assets/stylesheets directory can be referenced here using a relative path.
+*
+* You're free to add application-wide styles to this file and they'll appear at the bottom of the
+* compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+* files in this directory. Styles in this file should be added after the last require_* statement.
+* It is generally better to create a new file per style scope.
+*
+*= require_tree .
+*= require_self
+*= require foundation_and_overrides
+
+*/
+
+/*= require foundation */
+
+/*///////////////////////////////
+GENERAL
+/////////////////////////*/
+
+
+
+
+ul {
+  list-style-type: none;
+  li a {
+    font-weight: bold;
+    color: black;
+    list-style: none;
+  }
+}
+
+li a:hover {
+  color: #74B555;
+}
+
+body {
+  background-image: url('bowl');
+  margin:0;
+  padding:0;
+  height:100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+  position: relative;
+  padding-bottom: 10rem;
+  min-height: 100%;
+}
+
+.main {
+  padding: 0 0 100px;
+  position: relative;
+}
+
+
+.search-box {
+  // box-sizing: content-box;
+  width: 900px;
+  max-width: 70%;
+  // justify-content: center;
+  background-color: white;
+  opacity: 0.7;
+  padding: 2% 4%;
+  margin: 10% 15% 5% 15%;
+  border-radius: 5em;
+  vertical-align: middle;
+
+
+  input {
+    max-width: 150px;
+    opacity: 1;
+    align-content: center;
+    // vertical-align: middle;
+  }
+
+  input#search {
+    display: inline-block;
+    max-width: 50%;
+    float: left;
+    margin-right: 2%;
+  }
+
+  input.button {
+    display: inline-block;
+    // float: right;
+    color: white;
+    font-weight: bold
+  }
+
+  input.button:hover {
+    color: white;
+  }
+}
+
+img {
+  border-radius: 3%;
+}
+
+.button {
+  background-color: #74B555;
+}
+
+.pagination {
+  width: 150px;
+  max-width: 10%;
+  display: inline-block;
+
+  font-weight: bold;
+}
+
+.pagination a.button {
+  display: inline-block;
+  float: right;
+  color: white;
+  }
+
+
+
+/*///////////////////////////////
+HERO
+/////////////////////////*/
+
+.hero {
+    font-family: Lucida;
+    font-weight: bold;
+    padding: 2%;
+    margin-bottom: 5%;
+    height: 20%;
+    max-height: 100px;
+    display: block;
+    // background-color: white;
+    // opacity: 0.4;
+    // padding: 0;
+//   /*background-image: url('https://grist.files.wordpress.com/2017/06/vegetables.jpg?w=640');
+//   background-repeat: no-repeat;
+//   background-size: cover;*/
+//   height: 300px;
+//   max-width: 100%;
+//   margin: 0;
+//   color: white;
+//   box-sizing: content-box;
+//   padding: 1% 5% 2% 5%;
+//   /*background-position: bottom;*/
+//   /*width: 100%;*/
+  h1 {
+    font-size: 400%;
+  }
+ }
+
+.hero a {
+  color: #74B555;
+  font-weight: bold;
+  vertical-align: bottom;
+  // opacity: 1;
+
+}
+/*///////////////////////////////
+SHOW
+/////////////////////////*/
+
+#show {
+// display: block;
+clear: both;
+width: 800px;
+max-width: 70%;
+margin: 5%;
+padding: 4%;
+font-weight: bold;
+margin-top: 5%;
+background-color: white;
+opacity: .7;
+border-radius: 5em;
+
+  li {
+    font-size: 1.25 rem;
+  }
+
+  a {
+    color: #74B555;
+  }
+
+  a:hover {
+    color: black;
+  }
+
+
+}
+
+.show-page#show-image {
+  align-self: center;
+  padding: 2%;
+  margin: 5%;
+}
+
+/*///////////////////////////////
+FOOTER
+/////////////////////////*/
+
+footer {
+  background-color: white;
+  // margin-top: 95%;
+  // height: 5%;
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  padding: 1rem;
+  text-align: center;
+  color: #74B555;
+  font-weight: bold;
+}
