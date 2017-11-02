@@ -30,7 +30,18 @@ describe RecipesController do
 
   describe "show" do
     it "must returns with success" do
-      get  show_recipe_path("recipe_5264be9d66d1276ce4c5f5f97260235d")
+      params = {
+        uri: "recipe_5264be9d66d1276ce4c5f5f97260235d"
+      }
+      get  show_recipe_path, params: params
+      must_respond_with :success
+    end
+
+    it "must returns with success" do
+      params = {
+        uri: "garbage"
+      }
+      get  show_recipe_path, params: params
       must_respond_with :success
     end
   end
