@@ -4,8 +4,13 @@ describe RecipesController do
   describe "index" do
     it "can get a list of recipes" do
       VCR.use_cassette("index_action") do
+        get root_path
+        must_respond_with :success
 
-
+        @recipes.must_be_instance_of Array
+        @recipes.each do |recipe|
+          recipe.must_be_instance_of Recipe
+        end
       end
     end
 
@@ -33,19 +38,19 @@ describe RecipesController do
   end
 
   describe "show" do
-    it "finds a recipe" do
-
-
+    it "finds a recipe and loads the page" do
+      VCR.use_cassette("show_action") do
+        get recipe_path( )
+        @recipe.must_be_instance_of Recipe
+        must_respond_with :success
+      end
     end
 
     it "renders a 404 if the recipe is not found" do
-
-
-    end
-
-    it "successfully loads the page" do
-
-
+      VCR.use_cassette("show_action") do
+        get recipe_path("Bogus")
+        must_respond_with :not_found
+      end
     end
   end
 end

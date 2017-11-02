@@ -6,30 +6,46 @@ class EdamamApiWrapper
   APP_ID = ENV["EDAMAM_ID"]
   APP_KEY = ENV["EDAMAM_KEY"]
 
-  def self.item_search(item_uri)
-
-    url = BASE_URL + "r=#{item_uri}" "&app_id=#{APP_ID}" + "&app_key=#{APP_KEY}"
-
-    data = HTTParty.get(url)
-
-    recipe = Recipe.new(
-      data[0]["uri"],
-      data[0]["label"],
-      image: data[0]["image"],
-      ingredients: data[0]["ingredientLines"],
-      url: data[0]["url"],
-      calories: data[0]["calories"],
-      totalNutrients: data[0]["totalNutrients"],
-      )
-
-    return recipe
-  end
-
-  def self.search(term = "thanksgiving", app_id = nil, app_key = nil)
+  def self.item_search(item_uri, app_id=nil, app_key=nil)
     app_id ||= APP_ID
     app_key ||= APP_KEY
 
-    url = BASE_URL + "q=#{term}" + "&app_id=#{APP_ID}" + "&app_key=#{APP_KEY}" + "&from=0" + "&to=5"
+    url = BASE_URL + "r=#{item_uri}" "&app_id=#{app_id}" + "&app_key=#{app_key}"
+
+    data = HTTParty.get(url)
+
+    if data[0]
+      recipe = Recipe.new(
+        data[0]["uri"],
+        data[0]["label"],
+        image: data[0]["image"],
+        ingredients: data[0]["ingredientLines"],
+        url: data[0]["url"],
+        calories: data[0]["calories"],
+        totalNutrients: data[0]["totalNutrients"],
+        )
+      return recipe
+    else
+      return nil
+    end
+  end
+
+  def self.search(term = "thanksgiving", app_id = nil, app_key = nil)
+
+    app_id ||= APP_ID
+    app_key ||= APP_KEY
+
+    # if app_id
+    #   puts "FOUND APP ID! #{app_id}"
+    # end
+    # if app_key
+    #   puts "FOUND APP KEY! #{app_key}"
+    # end
+
+
+    url = BASE_URL + "q=#{term}" + "&app_id=#{app_id}" + "&app_key=#{app_key}" + "&from=0" + "&to=5"
+
+    puts url
 
     data = HTTParty.get(url)
 
