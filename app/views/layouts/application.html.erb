@@ -10,10 +10,22 @@
     <%= javascript_include_tag "application", 'data-turbolinks-track' => true %>
     <%= csrf_meta_tags %>
   </head>
-
   <body>
-    <%= params %>
-    <%= yield %>
-
+    <header>
+      <h1>MUNCHERS</h1>
+      <%= params %>
+    </header>
+    <main>
+      <%= yield %>
+    </main>
+    <footer>
+      <div class = "wrap row small-up-1 medium-up-3">
+        <div class = "column">
+          <h3>Powered By</h3>
+          <img src="https://www.reimagine-food.com/wp-content/uploads/edamam.png", alt= "Edamam logo" />
+        </div>
+      </div>
+    </footer>
   </body>
+
 </html>

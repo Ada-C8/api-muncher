@@ -15,3 +15,13 @@
  *= require foundation_and_overrides
 
  */
+main {
+  padding: 80px 0px;
+  background-color: green;
+}
+
+
+footer {
+  background-color: yellow;
+  padding: 60px;
+}

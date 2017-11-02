@@ -1,9 +1,9 @@
 <h1>Recipes</h1>
 
 <%= form_tag recipes_path, method: :get do %>
-  <%= label_tag(:term, "Enter term to search for") %>
+  <%= label_tag(:term, "What do you feel like munching?") %>
   <%= text_field_tag(:term) %>
-  <%= submit_tag("Send") %>
+  <%= submit_tag("Send", class: "button") %>
 <% end %>
 
 
