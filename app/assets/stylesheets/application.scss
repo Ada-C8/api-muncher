@@ -333,7 +333,83 @@ footer p{
   }
 }
 
+.italic {
+    font-style:  italic;
+    text-align: center;
+}
 
+
+.recipe  {
+  font-family: 'Oswald';
+
+  img {
+    padding: 10px;
+    border: 1px solid #e6e6e6;
+  }
+  h1{
+  display: inline-block;
+  text-transform: uppercase;
+  font-family: 'Oswald';
+}
+  i {
+    margin-left: 1em;
+  }
+  ul {
+    margin-left: 0;
+  }
+
+  li {
+    display: inline;
+    margin-right: 0.5em;
+    text-transform: uppercase;
+  }
+
+  .health-labels {
+    color: $blue-gray;
+  }
+
+}
+
+.recipe-info {
+  font-family: 'Oswald';
+  text-align: center;
+
+  .button {
+    background-color: $pink;
+  }
+
+  .button:hover {
+    background-color: $blue-gray;
+  }
+
+  ul {
+    text-align: left;
+  }
+
+  table {
+    width: 80%;
+    margin: auto;
+  }
+  th {
+    text-align: center;
+  }
+
+  td:first-child {
+    text-align: left;
+    font-weight: 600;
+  }
+}
+
+.recipe-info h3 {
+  text-align: center;
+  font-family: 'Oswald';
+}
+
+.line {
+  border-top: 1px solid #e6e6e6;
+  margin-top: 2em;
+  padding-top: 1em;
+}
 //
 //   h3 {
 //     font-family: 'Pathway Gothic One';

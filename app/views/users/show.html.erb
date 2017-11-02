@@ -1,0 +1,27 @@
+<section class="row search-header">
+  <h1>Favorites</h1>
+</section>
+<% if @favorites.empty? %>
+<section class="row italic">
+  <p>
+    looks like you haven't saved any favorites...
+  </p>
+</section>
+<%else%>
+<section class="row all-recipes">
+  <% @favorites.each do |recipe| %>
+    <%= link_to recipe_path(format_uri(recipe.uri)) do %>
+        <div class="card">
+          <%= image_tag recipe.image, alt:"#{recipe.label}" %>
+          <div class="card-body">
+            <h2><%= recipe.label.titleize %></h2>
+            <p><%=recipe.source%></p>
+          </div>
+      </div>
+    <% end %>
+  <% end %>
+  <div class="paginate">
+    <%= will_paginate(@favorites) %>
+  </div>
+</section>
+<%end%>

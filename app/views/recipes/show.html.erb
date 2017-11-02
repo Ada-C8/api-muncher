@@ -1,47 +1,70 @@
 <section class="row">
-<h1><%= @recipe.label %></h1>
-<%= image_tag @recipe.image, alt:"#{@recipe.label}" %>
-<%= link_to "favorite recipe", favorite_path(format_uri(@recipe.uri)), class:'button'%>
-</section>
-<section class="row">
-<dl>
-  <dt>Yield</dt>
-  <dd><%= format_number(@recipe.yield) %></dd>
-  <dt>Calories</dt>
-  <dd><%= format_number(@recipe.calories / @recipe.yield) %> kCals</dd>
-  <dt>Source</dt>
-  <dd><%= link_to @recipe.source, @recipe.url %></dd>
-</dl>
-<h3>Ingredients</h3>
-<ul>
-  <% @recipe.ingredients.each do |line| %>
-  <li>
-    <%= line %>
-  </li>
-  <% end %>
-</ul>
-<%= link_to "Instructions", @recipe.url, class:'button'%>
+  <section class="column large-4 small-12 recipe">
+    <%= image_tag @recipe.image, alt:"#{@recipe.label}" %>
+  </section>
+  <section class="column large-8 small-12  recipe">
+    <h1><%= @recipe.label %></h1>
+    <%= link_to favorite_path(format_uri(@recipe.uri)) do%>
+    <i class="fa fa-heart fa-2x" aria-hidden="true"></i>
+    <%end%>
+    <ul>
+      <li><i class="fa fa-cutlery" aria-hidden="true"></i> <%= format_number(@recipe.yield) %></li>
+      <li><i class="fa fa-battery-full" aria-hidden="true"></i> <%= format_number(@recipe.calories / @recipe.yield) %> kCals</li>
+      <li><i class="fa fa-file-text" aria-hidden="true"></i> <%= link_to @recipe.source, @recipe.url %></li>
+    </ul>
+    <ul class = 'health-labels'>
+      <% @recipe.health_labels.each do |label| %>
+      <li>
+        + <%= label %>
+      </li>
+      <% end %>
 
-<table>
-  <tbody>
-    <% @recipe.dietary_info.each do |info| %>
-    <tr>
-      <td>
-        <%= info["label"]%>
-      </td>
-      <td>
-        <%= "#{info["total"].round(1)}#{info["unit"]}" %>
-      </td>
-      <td>
-        <%= info["daily"].round(2) %>%
-      </td>
-    </tr>
-    <% end %>
-  </tbody>
-</table>
+    </ul>
+  </section>
 </section>
-<section class="row">
-<% @recipe.health_labels.each do |label| %>
-<%= label %>
-<% end %>
+<section class="row line">
+  <section class = "column small-12 large-6 recipe-info">
+    <h3>Ingredients</h3>
+    <ul>
+      <% @recipe.ingredients.each do |line| %>
+      <li>
+        <%= line %>
+      </li>
+      <% end %>
+    </ul>
+    <%= link_to "Instructions", @recipe.url, class:'button'%>
+
+  </section>
+  <section class = "column small-12 large-6 recipe-info">
+    <h3>Nutrition</h3>
+    <table>
+      <thead>
+        <tr>
+          <th>
+          </th>
+          <th>
+            Quantity
+          </th>
+          <th>
+            Daily %
+          </th>
+        </tr>
+      </thead>
+      <tbody>
+        <% @recipe.dietary_info.first(9).each do |info| %>
+        <tr>
+          <td>
+            <%= info["label"]%>
+          </td>
+          <td>
+            <%= "#{info["total"].round(1)} #{info["unit"]}" %>
+          </td>
+          <td>
+            <%= info["daily"].round(2) %>%
+          </td>
+        </tr>
+        <% end %>
+      </tbody>
+    </table>
+  </section>
 </section>
