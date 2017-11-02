@@ -2,11 +2,11 @@ require 'edamam_api_wrapper'
 class RecipesController < ApplicationController
 
   def index
-    # @recipes = EdamamApiWrapper.search(params[:q])
+    @recipes = EdamamApiWrapper.search(:q)
   end
 
   def show
-    @recipe = EdamamApiWrapper.create_recipe(params[:recipe_uri])
+    @recipe = params[:recipe]
   end
 
   def search
@@ -14,7 +14,4 @@ class RecipesController < ApplicationController
     @recipes = EdamamApiWrapper.get_results_from_response(response)
     render search_path
   end
-
-  private
-
 end
