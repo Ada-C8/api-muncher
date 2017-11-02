@@ -28,11 +28,14 @@
 }
 
 .hero input[type="text"]{
+  line-height: 2;
   width: 100%;
 }
 
-.hero input[type="submit"]{
+.hero .button{
   float: right;
+  margin-top: 1rem;
+  width: 25%;
 }
 
 @media print, screen and (min-width: 40em) {
