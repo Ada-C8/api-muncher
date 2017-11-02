@@ -1,7 +1,16 @@
-require "test_helper"
+require 'test_helper'
 
-describe RecipesController do
-  # it "must be a real test" do
-  #   flunk "Need real tests"
-  # end
+class RecipesControllerTest < ActionDispatch::IntegrationTest
+
+  describe "index" do
+    it "can get the list of found recipes" do
+      VCR.use_cassette("index_action") do
+        get root_path
+        must_respond_with :success
+      end
+    end
+  end
+
+  
+
 end

@@ -1,0 +1,10 @@
+<section class="recipes-list">
+  <h1>Your Recipe Results</h1>
+  <ul>
+    <% @recipes.each do |recipe| %>
+      <li>
+        <%= link_to recipe.label, recipe_path(recipe.url) %>
+      </li>
+    <% end %>
+  </ul>
+</section>

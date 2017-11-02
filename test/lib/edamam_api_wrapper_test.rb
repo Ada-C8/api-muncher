@@ -2,9 +2,9 @@ require 'test_helper'
 
 describe EdamamApiWrapper do
     it "can list the found recipes" do
-      search = "chicken"
+      search_term = "chicken"
       VCR.use_cassette("hits") do
-      recipes = EdamamApiWrapper.list_recipes(search)
+      recipes = EdamamApiWrapper.list_recipes(search_term)
       recipes.must_be_instance_of Array
       recipes.length.must_be :>, 0
       recipes.each do |recipe|
