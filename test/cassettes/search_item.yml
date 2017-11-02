@@ -1,0 +1,607 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://api.edamam.com/search?r=http://www.edamam.com/ontologies/edamam.owl
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - ngx_openresty
+      Date:
+      - Thu, 02 Nov 2017 16:24:05 GMT
+      Content-Type:
+      - application/json;charset=UTF-8
+      Content-Length:
+      - '2'
+      Connection:
+      - keep-alive
+      Cache-Control:
+      - private
+      Expires:
+      - Thu, 01 Jan 1970 00:00:00 UTC
+      X-Served-By:
+      - ip-10-143-141-59/10.143.141.59
+    body:
+      encoding: UTF-8
+      string: "[]"
+    http_version: 
+  recorded_at: Thu, 02 Nov 2017 16:24:05 GMT
+- request:
+    method: get
+    uri: https://api.edamam.com/search?app_id=<EDAMAM_ID>&app_key=<EDAMAM_KEY>&r=www.google.com
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - ngx_openresty
+      Date:
+      - Thu, 02 Nov 2017 16:24:06 GMT
+      Content-Type:
+      - application/json;charset=UTF-8
+      Content-Length:
+      - '1'
+      Connection:
+      - keep-alive
+      Cache-Control:
+      - private
+      Expires:
+      - Thu, 01 Jan 1970 00:00:00 UTC
+      X-Served-By:
+      - ip-10-143-141-59/10.143.141.59
+    body:
+      encoding: UTF-8
+      string: "["
+    http_version: 
+  recorded_at: Thu, 02 Nov 2017 16:24:06 GMT
+- request:
+    method: get
+    uri: https://api.edamam.com/search?app_id=<EDAMAM_ID>&app_key=<EDAMAM_KEY>&r=
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - ngx_openresty
+      Date:
+      - Thu, 02 Nov 2017 16:24:06 GMT
+      Content-Type:
+      - application/json;charset=UTF-8
+      Content-Length:
+      - '1'
+      Connection:
+      - keep-alive
+      Cache-Control:
+      - private
+      Expires:
+      - Thu, 01 Jan 1970 00:00:00 UTC
+      X-Served-By:
+      - ip-10-143-141-59/10.143.141.59
+    body:
+      encoding: UTF-8
+      string: "["
+    http_version: 
+  recorded_at: Thu, 02 Nov 2017 16:24:06 GMT
+- request:
+    method: get
+    uri: https://api.edamam.com/search?app_id=<EDAMAM_ID>&app_key=<EDAMAM_KEY>&r=http://www.edamam.com/ontologies/edamam.owl%23recipe_8643e0c3105bcb0d3c3a417308a09c03
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - ngx_openresty
+      Date:
+      - Thu, 02 Nov 2017 16:31:32 GMT
+      Content-Type:
+      - application/json;charset=UTF-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Cache-Control:
+      - private
+      Expires:
+      - Thu, 01 Jan 1970 00:00:00 UTC
+      X-Served-By:
+      - ip-10-143-141-59/10.143.141.59
+      Vary:
+      - Accept-Encoding
+    body:
+      encoding: ASCII-8BIT
+      string: !binary |-
+        W3sKICAidXJpIiA6ICJodHRwOi8vd3d3LmVkYW1hbS5jb20vb250b2xvZ2llcy9lZGFtYW0ub3dsI3JlY2lwZV84NjQzZTBjMzEwNWJjYjBkM2MzYTQxNzMwOGEwOWMwMyIsCiAgImxhYmVsIiA6ICJDaG9jb2xhdGUgQ2x1dGNoIiwKICAiaW1hZ2UiIDogImh0dHBzOi8vd3d3LmVkYW1hbS5jb20vd2ViLWltZy9mZjAvZmYwYTAwZmFkZWNhYzI1NTU5Y2NlMmNhZGVkYzkyMjEuanBnIiwKICAic291cmNlIiA6ICJNYXJ0aGEgU3Rld2FydCIsCiAgInVybCIgOiAiaHR0cDovL3d3dy5tYXJ0aGFzdGV3YXJ0LmNvbS8zNDcwNTIvY2hvY29sYXRlLWNsdXRjaCIsCiAgInNoYXJlQXMiIDogImh0dHA6Ly93d3cuZWRhbWFtLmNvbS9yZWNpcGUvY2hvY29sYXRlLWNsdXRjaC04NjQzZTBjMzEwNWJjYjBkM2MzYTQxNzMwOGEwOWMwMy8tIiwKICAieWllbGQiIDogMTYuMCwKICAiZGlldExhYmVscyIgOiBbIF0sCiAgImhlYWx0aExhYmVscyIgOiBbICJWZWdhbiIsICJWZWdldGFyaWFuIiwgIlBlYW51dC1GcmVlIiwgIlRyZWUtTnV0LUZyZWUiLCAiQWxjb2hvbC1GcmVlIiBdLAogICJjYXV0aW9ucyIgOiBbIF0sCiAgImluZ3JlZGllbnRMaW5lcyIgOiBbICIyIHBvdW5kcyBkYXJrIGNob2NvbGF0ZSwgY2hvcHBlZCIgXSwKICAiaW5ncmVkaWVudHMiIDogWyB7CiAgICAidGV4dCIgOiAiMiBwb3VuZHMgZGFyayBjaG9jb2xhdGUsIGNob3BwZWQiLAogICAgIndlaWdodCIgOiA5MDcuMTg0NzUzNDE3OTY4OAogIH0gXSwKICAiY2Fsb3JpZXMiIDogNDM1NC40ODY4MTY0MDYyNSwKICAidG90YWxXZWlnaHQiIDogOTA3LjE4NDc1MzQxNzk2ODgsCiAgInRvdGFsTnV0cmllbnRzIiA6IHsKICAgICJFTkVSQ19LQ0FMIiA6IHsKICAgICAgImxhYmVsIiA6ICJFbmVyZ3kiLAogICAgICAicXVhbnRpdHkiIDogNDM1NC40ODY4MTY0MDYyNSwKICAgICAgInVuaXQiIDogImtjYWwiCiAgICB9LAogICAgIkZBVCIgOiB7CiAgICAgICJsYWJlbCIgOiAiRmF0IiwKICAgICAgInF1YW50aXR5IiA6IDI3Mi4xNTU0MjYwMjUzOTA2LAogICAgICAidW5pdCIgOiAiZyIKICAgIH0sCiAgICAiRkFTQVQiIDogewogICAgICAibGFiZWwiIDogIlNhdHVyYXRlZCIsCiAgICAgICJxdWFudGl0eSIgOiAxNjEuMDI1MjkzNzMxNjg5NDYsCiAgICAgICJ1bml0IiA6ICJnIgogICAgfSwKICAgICJGQU1TIiA6IHsKICAgICAgImxhYmVsIiA6ICJNb25vdW5zYXR1cmF0ZWQiLAogICAgICAicXVhbnRpdHkiIDogOTAuNDEwMDMyNTI1NjM0NzYsCiAgICAgICJ1bml0IiA6ICJnIgogICAgfSwKICAgICJGQVBVIiA6IHsKICAgICAgImxhYmVsIiA6ICJQb2x5dW5zYXR1cmF0ZWQiLAogICAgICAicXVhbnRpdHkiIDogOC43NjM0MDQ3MTgwMTc1NzcsCiAgICAgICJ1bml0IiA6ICJnIgogICAgfSwKICAgICJDSE9DREYiIDogewogICAgICAibGFiZWwiIDogIkNhcmJzIiwKICAgICAgInF1YW50aXR5IiA6IDU3OS42OTEwNTc0MzQwODIsCiAgICAgICJ1bml0IiA6ICJnIgogICAgfSwKICAgICJGSUJURyIgOiB7CiAgICAgICJsYWJlbCIgOiAiRmliZXIiLAogICAgICAicXVhbnRpdHkiIDogNTMuNTIzOTAwNDUxNjYwMTU0LAogICAgICAidW5pdCIgOiAiZyIKICAgIH0sCiAgICAiU1VHQVIiIDogewogICAgICAibGFiZWwiIDogIlN1Z2FycyIsCiAgICAgICJxdWFudGl0eSIgOiA0OTQuNDE1NjkwNjEyNzkyOTYsCiAgICAgICJ1bml0IiA6ICJnIgogICAgfSwKICAgICJQUk9DTlQiIDogewogICAgICAibGFiZWwiIDogIlByb3RlaW4iLAogICAgICAicXVhbnRpdHkiIDogMzguMTAxNzU5NjQzNTU0Njg2LAogICAgICAidW5pdCIgOiAiZyIKICAgIH0sCiAgICAiTkEiIDogewogICAgICAibGFiZWwiIDogIlNvZGl1bSIsCiAgICAgICJxdWFudGl0eSIgOiA5OS43OTAzMjI4NzU5NzY1NiwKICAgICAgInVuaXQiIDogIm1nIgogICAgfSwKICAgICJDQSIgOiB7CiAgICAgICJsYWJlbCIgOiAiQ2FsY2l1bSIsCiAgICAgICJxdWFudGl0eSIgOiAyOTAuMjk5MTIxMDkzNzUsCiAgICAgICJ1bml0IiA6ICJtZyIKICAgIH0sCiAgICAiTUciIDogewogICAgICAibGFiZWwiIDogIk1hZ25lc2l1bSIsCiAgICAgICJxdWFudGl0eSIgOiAxMDQzLjI2MjQ2NjQzMDY2NCwKICAgICAgInVuaXQiIDogIm1nIgogICAgfSwKICAgICJLIiA6IHsKICAgICAgImxhYmVsIiA6ICJQb3Rhc3NpdW0iLAogICAgICAicXVhbnRpdHkiIDogMzMxMS4yMjQzNDk5NzU1ODYsCiAgICAgICJ1bml0IiA6ICJtZyIKICAgIH0sCiAgICAiRkUiIDogewogICAgICAibGFiZWwiIDogIklyb24iLAogICAgICAicXVhbnRpdHkiIDogMjguMzk0ODgyNzgxOTgyNDIsCiAgICAgICJ1bml0IiA6ICJtZyIKICAgIH0sCiAgICAiWk4iIDogewogICAgICAibGFiZWwiIDogIlppbmMiLAogICAgICAicXVhbnRpdHkiIDogMTQuNjk2MzkzMDA1MzcxMDk0LAogICAgICAidW5pdCIgOiAibWciCiAgICB9LAogICAgIlAiIDogewogICAgICAibGFiZWwiIDogIlBob3NwaG9ydXMiLAogICAgICAicXVhbnRpdHkiIDogMTE5Ny40ODM4NzQ1MTE3MTg4LAogICAgICAidW5pdCIgOiAibWciCiAgICB9LAogICAgIlRISUEiIDogewogICAgICAibGFiZWwiIDogIlRoaWFtaW4gKEIxKSIsCiAgICAgICJxdWFudGl0eSIgOiAwLjQ5ODk1MTYxNDM3OTg4MjgsCiAgICAgICJ1bml0IiA6ICJtZyIKICAgIH0sCiAgICAiUklCRiIgOiB7CiAgICAgICJsYWJlbCIgOiAiUmlib2ZsYXZpbiAoQjIpIiwKICAgICAgInF1YW50aXR5IiA6IDAuODE2NDY2Mjc4MDc2MTcxOCwKICAgICAgInVuaXQiIDogIm1nIgogICAgfSwKICAgICJOSUEiIDogewogICAgICAibGFiZWwiIDogIk5pYWNpbiAoQjMpIiwKICAgICAgInF1YW50aXR5IiA6IDMuODczNjc4ODk3MDk0NzI2NSwKICAgICAgInVuaXQiIDogIm1nIgogICAgfSwKICAgICJWSVRCNkEiIDogewogICAgICAibGFiZWwiIDogIlZpdGFtaW4gQjYiLAogICAgICAicXVhbnRpdHkiIDogMC4zMTc1MTQ2NjM2OTYyODkwNiwKICAgICAgInVuaXQiIDogIm1nIgogICAgfSwKICAgICJGT0xERkUiIDogewogICAgICAibGFiZWwiIDogIkZvbGF0ZSBlcXVpdmFsZW50ICh0b3RhbCkiLAogICAgICAicXVhbnRpdHkiIDogMTE3LjkzNDAxNzk0NDMzNTkzLAogICAgICAidW5pdCIgOiAiwrVnIgogICAgfSwKICAgICJGT0xGRCIgOiB7CiAgICAgICJsYWJlbCIgOiAiRm9sYXRlIChmb29kKSIsCiAgICAgICJxdWFudGl0eSIgOiAxMTcuOTM0MDE3OTQ0MzM1OTMsCiAgICAgICJ1bml0IiA6ICLCtWciCiAgICB9LAogICAgIlRPQ1BIQSIgOiB7CiAgICAgICJsYWJlbCIgOiAiVml0YW1pbiBFIiwKICAgICAgInF1YW50aXR5IiA6IDIuMzU4NjgwMzU4ODg2NzE4NywKICAgICAgInVuaXQiIDogIm1nIgogICAgfSwKICAgICJWSVRLMSIgOiB7CiAgICAgICJsYWJlbCIgOiAiVml0YW1pbiBLIiwKICAgICAgInF1YW50aXR5IiA6IDUwLjgwMjM0NjE5MTQwNjI0NCwKICAgICAgInVuaXQiIDogIsK1ZyIKICAgIH0KICB9LAogICJ0b3RhbERhaWx5IiA6IHsKICAgICJFTkVSQ19LQ0FMIiA6IHsKICAgICAgImxhYmVsIiA6ICJFbmVyZ3kiLAogICAgICAicXVhbnRpdHkiIDogMjE3LjcyNDM0MDgyMDMxMjUsCiAgICAgICJ1bml0IiA6ICIlIgogICAgfSwKICAgICJGQVQiIDogewogICAgICAibGFiZWwiIDogIkZhdCIsCiAgICAgICJxdWFudGl0eSIgOiA0MTguNzAwNjU1NDIzNjc3ODYsCiAgICAgICJ1bml0IiA6ICIlIgogICAgfSwKICAgICJGQVNBVCIgOiB7CiAgICAgICJsYWJlbCIgOiAiU2F0dXJhdGVkIiwKICAgICAgInF1YW50aXR5IiA6IDgwNS4xMjY0Njg2NTg0NDczLAogICAgICAidW5pdCIgOiAiJSIKICAgIH0sCiAgICAiQ0hPQ0RGIiA6IHsKICAgICAgImxhYmVsIiA6ICJDYXJicyIsCiAgICAgICJxdWFudGl0eSIgOiAxOTMuMjMwMzUyNDc4MDI3MzYsCiAgICAgICJ1bml0IiA6ICIlIgogICAgfSwKICAgICJGSUJURyIgOiB7CiAgICAgICJsYWJlbCIgOiAiRmliZXIiLAogICAgICAicXVhbnRpdHkiIDogMjE0LjA5NTYwMTgwNjY0MDYyLAogICAgICAidW5pdCIgOiAiJSIKICAgIH0sCiAgICAiUFJPQ05UIiA6IHsKICAgICAgImxhYmVsIiA6ICJQcm90ZWluIiwKICAgICAgInF1YW50aXR5IiA6IDc2LjIwMzUxOTI4NzEwOTM3LAogICAgICAidW5pdCIgOiAiJSIKICAgIH0sCiAgICAiTkEiIDogewogICAgICAibGFiZWwiIDogIlNvZGl1bSIsCiAgICAgICJxdWFudGl0eSIgOiA0LjE1NzkzMDExOTgzMjM1NywKICAgICAgInVuaXQiIDogIiUiCiAgICB9LAogICAgIkNBIiA6IHsKICAgICAgImxhYmVsIiA6ICJDYWxjaXVtIiwKICAgICAgInF1YW50aXR5IiA6IDI5LjAyOTkxMjEwOTM3NSwKICAgICAgInVuaXQiIDogIiUiCiAgICB9LAogICAgIk1HIiA6IHsKICAgICAgImxhYmVsIiA6ICJNYWduZXNpdW0iLAogICAgICAicXVhbnRpdHkiIDogMjYwLjgxNTYxNjYwNzY2NiwKICAgICAgInVuaXQiIDogIiUiCiAgICB9LAogICAgIksiIDogewogICAgICAibGFiZWwiIDogIlBvdGFzc2l1bSIsCiAgICAgICJxdWFudGl0eSIgOiA5NC42MDY0MDk5OTkzMDI0NiwKICAgICAgInVuaXQiIDogIiUiCiAgICB9LAogICAgIkZFIiA6IHsKICAgICAgImxhYmVsIiA6ICJJcm9uIiwKICAgICAgInF1YW50aXR5IiA6IDE1Ny43NDkzNDg3ODg3OTEyMiwKICAgICAgInVuaXQiIDogIiUiCiAgICB9LAogICAgIlpOIiA6IHsKICAgICAgImxhYmVsIiA6ICJaaW5jIiwKICAgICAgInF1YW50aXR5IiA6IDk3Ljk3NTk1MzM2OTE0MDYzLAogICAgICAidW5pdCIgOiAiJSIKICAgIH0sCiAgICAiUCIgOiB7CiAgICAgICJsYWJlbCIgOiAiUGhvc3Bob3J1cyIsCiAgICAgICJxdWFudGl0eSIgOiAxNzEuMDY5MTI0OTMwMjQ1NTIsCiAgICAgICJ1bml0IiA6ICIlIgogICAgfSwKICAgICJUSElBIiA6IHsKICAgICAgImxhYmVsIiA6ICJUaGlhbWluIChCMSkiLAogICAgICAicXVhbnRpdHkiIDogMzMuMjYzNDQwOTU4NjU4ODU1LAogICAgICAidW5pdCIgOiAiJSIKICAgIH0sCiAgICAiUklCRiIgOiB7CiAgICAgICJsYWJlbCIgOiAiUmlib2ZsYXZpbiAoQjIpIiwKICAgICAgInF1YW50aXR5IiA6IDQ4LjAyNzQyODEyMjEyNzc1LAogICAgICAidW5pdCIgOiAiJSIKICAgIH0sCiAgICAiTklBIiA6IHsKICAgICAgImxhYmVsIiA6ICJOaWFjaW4gKEIzKSIsCiAgICAgICJxdWFudGl0eSIgOiAxOS4zNjgzOTQ0ODU0NzM2MzMsCiAgICAgICJ1bml0IiA6ICIlIgogICAgfSwKICAgICJWSVRCNkEiIDogewogICAgICAibGFiZWwiIDogIlZpdGFtaW4gQjYiLAogICAgICAicXVhbnRpdHkiIDogMTUuODc1NzMzMTg0ODE0NDUyLAogICAgICAidW5pdCIgOiAiJSIKICAgIH0sCiAgICAiRk9MREZFIiA6IHsKICAgICAgImxhYmVsIiA6ICJGb2xhdGUgZXF1aXZhbGVudCAodG90YWwpIiwKICAgICAgInF1YW50aXR5IiA6IDI5LjQ4MzUwNDQ4NjA4Mzk4NCwKICAgICAgInVuaXQiIDogIiUiCiAgICB9LAogICAgIlRPQ1BIQSIgOiB7CiAgICAgICJsYWJlbCIgOiAiVml0YW1pbiBFIiwKICAgICAgInF1YW50aXR5IiA6IDExLjc5MzQwMTc5NDQzMzU5NCwKICAgICAgInVuaXQiIDogIiUiCiAgICB9LAogICAgIlZJVEsxIiA6IHsKICAgICAgImxhYmVsIiA6ICJWaXRhbWluIEsiLAogICAgICAicXVhbnRpdHkiIDogNjMuNTAyOTMyNzM5MjU3OCwKICAgICAgInVuaXQiIDogIiUiCiAgICB9CiAgfSwKICAiZGlnZXN0IiA6IFsgewogICAgImxhYmVsIiA6ICJGYXQiLAogICAgInRhZyIgOiAiRkFUIiwKICAgICJzY2hlbWFPcmdUYWciIDogImZhdENvbnRlbnQiLAogICAgInRvdGFsIiA6IDI3Mi4xNTU0MjYwMjUzOTA2LAogICAgImhhc1JESSIgOiB0cnVlLAogICAgImRhaWx5IiA6IDQxOC43MDA2NTU0MjM2Nzc4NiwKICAgICJ1bml0IiA6ICJnIiwKICAgICJzdWIiIDogWyB7CiAgICAgICJsYWJlbCIgOiAiU2F0dXJhdGVkIiwKICAgICAgInRhZyIgOiAiRkFTQVQiLAogICAgICAic2NoZW1hT3JnVGFnIiA6ICJzYXR1cmF0ZWRGYXRDb250ZW50IiwKICAgICAgInRvdGFsIiA6IDE2MS4wMjUyOTM3MzE2ODk0NiwKICAgICAgImhhc1JESSIgOiB0cnVlLAogICAgICAiZGFpbHkiIDogODA1LjEyNjQ2ODY1ODQ0NzMsCiAgICAgICJ1bml0IiA6ICJnIgogICAgfSwgewogICAgICAibGFiZWwiIDogIlRyYW5zIiwKICAgICAgInRhZyIgOiAiRkFUUk4iLAogICAgICAic2NoZW1hT3JnVGFnIiA6ICJ0cmFuc0ZhdENvbnRlbnQiLAogICAgICAidG90YWwiIDogMC4wLAogICAgICAiaGFzUkRJIiA6IGZhbHNlLAogICAgICAiZGFpbHkiIDogMC4wLAogICAgICAidW5pdCIgOiAiZyIKICAgIH0sIHsKICAgICAgImxhYmVsIiA6ICJNb25vdW5zYXR1cmF0ZWQiLAogICAgICAidGFnIiA6ICJGQU1TIiwKICAgICAgInNjaGVtYU9yZ1RhZyIgOiBudWxsLAogICAgICAidG90YWwiIDogOTAuNDEwMDMyNTI1NjM0NzYsCiAgICAgICJoYXNSREkiIDogZmFsc2UsCiAgICAgICJkYWlseSIgOiAwLjAsCiAgICAgICJ1bml0IiA6ICJnIgogICAgfSwgewogICAgICAibGFiZWwiIDogIlBvbHl1bnNhdHVyYXRlZCIsCiAgICAgICJ0YWciIDogIkZBUFUiLAogICAgICAic2NoZW1hT3JnVGFnIiA6IG51bGwsCiAgICAgICJ0b3RhbCIgOiA4Ljc2MzQwNDcxODAxNzU3NywKICAgICAgImhhc1JESSIgOiBmYWxzZSwKICAgICAgImRhaWx5IiA6IDAuMCwKICAgICAgInVuaXQiIDogImciCiAgICB9IF0KICB9LCB7CiAgICAibGFiZWwiIDogIkNhcmJzIiwKICAgICJ0YWciIDogIkNIT0NERiIsCiAgICAic2NoZW1hT3JnVGFnIiA6ICJjYXJib2h5ZHJhdGVDb250ZW50IiwKICAgICJ0b3RhbCIgOiA1NzkuNjkxMDU3NDM0MDgyLAogICAgImhhc1JESSIgOiB0cnVlLAogICAgImRhaWx5IiA6IDE5My4yMzAzNTI0NzgwMjczNiwKICAgICJ1bml0IiA6ICJnIiwKICAgICJzdWIiIDogWyB7CiAgICAgICJsYWJlbCIgOiAiQ2FyYnMgKG5ldCkiLAogICAgICAidGFnIiA6ICJDSE9DREYubmV0IiwKICAgICAgInNjaGVtYU9yZ1RhZyIgOiBudWxsLAogICAgICAidG90YWwiIDogNTI2LjE2NzE1Njk4MjQyMTgsCiAgICAgICJoYXNSREkiIDogZmFsc2UsCiAgICAgICJkYWlseSIgOiAwLjAsCiAgICAgICJ1bml0IiA6ICJnIgogICAgfSwgewogICAgICAibGFiZWwiIDogIkZpYmVyIiwKICAgICAgInRhZyIgOiAiRklCVEciLAogICAgICAic2NoZW1hT3JnVGFnIiA6ICJmaWJlckNvbnRlbnQiLAogICAgICAidG90YWwiIDogNTMuNTIzOTAwNDUxNjYwMTU0LAogICAgICAiaGFzUkRJIiA6IHRydWUsCiAgICAgICJkYWlseSIgOiAyMTQuMDk1NjAxODA2NjQwNjIsCiAgICAgICJ1bml0IiA6ICJnIgogICAgfSwgewogICAgICAibGFiZWwiIDogIlN1Z2FycyIsCiAgICAgICJ0YWciIDogIlNVR0FSIiwKICAgICAgInNjaGVtYU9yZ1RhZyIgOiAic3VnYXJDb250ZW50IiwKICAgICAgInRvdGFsIiA6IDQ5NC40MTU2OTA2MTI3OTI5NiwKICAgICAgImhhc1JESSIgOiBmYWxzZSwKICAgICAgImRhaWx5IiA6IDAuMCwKICAgICAgInVuaXQiIDogImciCiAgICB9LCB7CiAgICAgICJsYWJlbCIgOiAiU3VnYXJzLCBhZGRlZCIsCiAgICAgICJ0YWciIDogIlNVR0FSLmFkZGVkIiwKICAgICAgInNjaGVtYU9yZ1RhZyIgOiBudWxsLAogICAgICAidG90YWwiIDogMC4wLAogICAgICAiaGFzUkRJIiA6IGZhbHNlLAogICAgICAiZGFpbHkiIDogMC4wLAogICAgICAidW5pdCIgOiAiZyIKICAgIH0gXQogIH0sIHsKICAgICJsYWJlbCIgOiAiUHJvdGVpbiIsCiAgICAidGFnIiA6ICJQUk9DTlQiLAogICAgInNjaGVtYU9yZ1RhZyIgOiAicHJvdGVpbkNvbnRlbnQiLAogICAgInRvdGFsIiA6IDM4LjEwMTc1OTY0MzU1NDY4NiwKICAgICJoYXNSREkiIDogdHJ1ZSwKICAgICJkYWlseSIgOiA3Ni4yMDM1MTkyODcxMDkzNywKICAgICJ1bml0IiA6ICJnIgogIH0sIHsKICAgICJsYWJlbCIgOiAiQ2hvbGVzdGVyb2wiLAogICAgInRhZyIgOiAiQ0hPTEUiLAogICAgInNjaGVtYU9yZ1RhZyIgOiAiY2hvbGVzdGVyb2xDb250ZW50IiwKICAgICJ0b3RhbCIgOiAwLjAsCiAgICAiaGFzUkRJIiA6IGZhbHNlLAogICAgImRhaWx5IiA6IDAuMCwKICAgICJ1bml0IiA6ICJtZyIKICB9LCB7CiAgICAibGFiZWwiIDogIlNvZGl1bSIsCiAgICAidGFnIiA6ICJOQSIsCiAgICAic2NoZW1hT3JnVGFnIiA6ICJzb2RpdW1Db250ZW50IiwKICAgICJ0b3RhbCIgOiA5OS43OTAzMjI4NzU5NzY1NiwKICAgICJoYXNSREkiIDogdHJ1ZSwKICAgICJkYWlseSIgOiA0LjE1NzkzMDExOTgzMjM1NywKICAgICJ1bml0IiA6ICJtZyIKICB9LCB7CiAgICAibGFiZWwiIDogIkNhbGNpdW0iLAogICAgInRhZyIgOiAiQ0EiLAogICAgInNjaGVtYU9yZ1RhZyIgOiBudWxsLAogICAgInRvdGFsIiA6IDI5MC4yOTkxMjEwOTM3NSwKICAgICJoYXNSREkiIDogdHJ1ZSwKICAgICJkYWlseSIgOiAyOS4wMjk5MTIxMDkzNzUsCiAgICAidW5pdCIgOiAibWciCiAgfSwgewogICAgImxhYmVsIiA6ICJNYWduZXNpdW0iLAogICAgInRhZyIgOiAiTUciLAogICAgInNjaGVtYU9yZ1RhZyIgOiBudWxsLAogICAgInRvdGFsIiA6IDEwNDMuMjYyNDY2NDMwNjY0LAogICAgImhhc1JESSIgOiB0cnVlLAogICAgImRhaWx5IiA6IDI2MC44MTU2MTY2MDc2NjYsCiAgICAidW5pdCIgOiAibWciCiAgfSwgewogICAgImxhYmVsIiA6ICJQb3Rhc3NpdW0iLAogICAgInRhZyIgOiAiSyIsCiAgICAic2NoZW1hT3JnVGFnIiA6IG51bGwsCiAgICAidG90YWwiIDogMzMxMS4yMjQzNDk5NzU1ODYsCiAgICAiaGFzUkRJIiA6IHRydWUsCiAgICAiZGFpbHkiIDogOTQuNjA2NDA5OTk5MzAyNDYsCiAgICAidW5pdCIgOiAibWciCiAgfSwgewogICAgImxhYmVsIiA6ICJJcm9uIiwKICAgICJ0YWciIDogIkZFIiwKICAgICJzY2hlbWFPcmdUYWciIDogbnVsbCwKICAgICJ0b3RhbCIgOiAyOC4zOTQ4ODI3ODE5ODI0MiwKICAgICJoYXNSREkiIDogdHJ1ZSwKICAgICJkYWlseSIgOiAxNTcuNzQ5MzQ4Nzg4NzkxMjIsCiAgICAidW5pdCIgOiAibWciCiAgfSwgewogICAgImxhYmVsIiA6ICJaaW5jIiwKICAgICJ0YWciIDogIlpOIiwKICAgICJzY2hlbWFPcmdUYWciIDogbnVsbCwKICAgICJ0b3RhbCIgOiAxNC42OTYzOTMwMDUzNzEwOTQsCiAgICAiaGFzUkRJIiA6IHRydWUsCiAgICAiZGFpbHkiIDogOTcuOTc1OTUzMzY5MTQwNjMsCiAgICAidW5pdCIgOiAibWciCiAgfSwgewogICAgImxhYmVsIiA6ICJQaG9zcGhvcnVzIiwKICAgICJ0YWciIDogIlAiLAogICAgInNjaGVtYU9yZ1RhZyIgOiBudWxsLAogICAgInRvdGFsIiA6IDExOTcuNDgzODc0NTExNzE4OCwKICAgICJoYXNSREkiIDogdHJ1ZSwKICAgICJkYWlseSIgOiAxNzEuMDY5MTI0OTMwMjQ1NTIsCiAgICAidW5pdCIgOiAibWciCiAgfSwgewogICAgImxhYmVsIiA6ICJWaXRhbWluIEEiLAogICAgInRhZyIgOiAiVklUQV9SQUUiLAogICAgInNjaGVtYU9yZ1RhZyIgOiBudWxsLAogICAgInRvdGFsIiA6IDAuMCwKICAgICJoYXNSREkiIDogZmFsc2UsCiAgICAiZGFpbHkiIDogMC4wLAogICAgInVuaXQiIDogIsK1ZyIKICB9LCB7CiAgICAibGFiZWwiIDogIlZpdGFtaW4gQyIsCiAgICAidGFnIiA6ICJWSVRDIiwKICAgICJzY2hlbWFPcmdUYWciIDogbnVsbCwKICAgICJ0b3RhbCIgOiAwLjAsCiAgICAiaGFzUkRJIiA6IGZhbHNlLAogICAgImRhaWx5IiA6IDAuMCwKICAgICJ1bml0IiA6ICJtZyIKICB9LCB7CiAgICAibGFiZWwiIDogIlRoaWFtaW4gKEIxKSIsCiAgICAidGFnIiA6ICJUSElBIiwKICAgICJzY2hlbWFPcmdUYWciIDogbnVsbCwKICAgICJ0b3RhbCIgOiAwLjQ5ODk1MTYxNDM3OTg4MjgsCiAgICAiaGFzUkRJIiA6IHRydWUsCiAgICAiZGFpbHkiIDogMzMuMjYzNDQwOTU4NjU4ODU1LAogICAgInVuaXQiIDogIm1nIgogIH0sIHsKICAgICJsYWJlbCIgOiAiUmlib2ZsYXZpbiAoQjIpIiwKICAgICJ0YWciIDogIlJJQkYiLAogICAgInNjaGVtYU9yZ1RhZyIgOiBudWxsLAogICAgInRvdGFsIiA6IDAuODE2NDY2Mjc4MDc2MTcxOCwKICAgICJoYXNSREkiIDogdHJ1ZSwKICAgICJkYWlseSIgOiA0OC4wMjc0MjgxMjIxMjc3NSwKICAgICJ1bml0IiA6ICJtZyIKICB9LCB7CiAgICAibGFiZWwiIDogIk5pYWNpbiAoQjMpIiwKICAgICJ0YWciIDogIk5JQSIsCiAgICAic2NoZW1hT3JnVGFnIiA6IG51bGwsCiAgICAidG90YWwiIDogMy44NzM2Nzg4OTcwOTQ3MjY1LAogICAgImhhc1JESSIgOiB0cnVlLAogICAgImRhaWx5IiA6IDE5LjM2ODM5NDQ4NTQ3MzYzMywKICAgICJ1bml0IiA6ICJtZyIKICB9LCB7CiAgICAibGFiZWwiIDogIlZpdGFtaW4gQjYiLAogICAgInRhZyIgOiAiVklUQjZBIiwKICAgICJzY2hlbWFPcmdUYWciIDogbnVsbCwKICAgICJ0b3RhbCIgOiAwLjMxNzUxNDY2MzY5NjI4OTA2LAogICAgImhhc1JESSIgOiB0cnVlLAogICAgImRhaWx5IiA6IDE1Ljg3NTczMzE4NDgxNDQ1MiwKICAgICJ1bml0IiA6ICJtZyIKICB9LCB7CiAgICAibGFiZWwiIDogIkZvbGF0ZSBlcXVpdmFsZW50ICh0b3RhbCkiLAogICAgInRhZyIgOiAiRk9MREZFIiwKICAgICJzY2hlbWFPcmdUYWciIDogbnVsbCwKICAgICJ0b3RhbCIgOiAxMTcuOTM0MDE3OTQ0MzM1OTMsCiAgICAiaGFzUkRJIiA6IHRydWUsCiAgICAiZGFpbHkiIDogMjkuNDgzNTA0NDg2MDgzOTg0LAogICAgInVuaXQiIDogIsK1ZyIKICB9LCB7CiAgICAibGFiZWwiIDogIkZvbGF0ZSAoZm9vZCkiLAogICAgInRhZyIgOiAiRk9MRkQiLAogICAgInNjaGVtYU9yZ1RhZyIgOiBudWxsLAogICAgInRvdGFsIiA6IDExNy45MzQwMTc5NDQzMzU5MywKICAgICJoYXNSREkiIDogZmFsc2UsCiAgICAiZGFpbHkiIDogMC4wLAogICAgInVuaXQiIDogIsK1ZyIKICB9LCB7CiAgICAibGFiZWwiIDogIkZvbGljIGFjaWQiLAogICAgInRhZyIgOiAiRk9MQUMiLAogICAgInNjaGVtYU9yZ1RhZyIgOiBudWxsLAogICAgInRvdGFsIiA6IDAuMCwKICAgICJoYXNSREkiIDogZmFsc2UsCiAgICAiZGFpbHkiIDogMC4wLAogICAgInVuaXQiIDogIsK1ZyIKICB9LCB7CiAgICAibGFiZWwiIDogIlZpdGFtaW4gQjEyIiwKICAgICJ0YWciIDogIlZJVEIxMiIsCiAgICAic2NoZW1hT3JnVGFnIiA6IG51bGwsCiAgICAidG90YWwiIDogMC4wLAogICAgImhhc1JESSIgOiBmYWxzZSwKICAgICJkYWlseSIgOiAwLjAsCiAgICAidW5pdCIgOiAiwrVnIgogIH0sIHsKICAgICJsYWJlbCIgOiAiVml0YW1pbiBEIiwKICAgICJ0YWciIDogIlZJVEQiLAogICAgInNjaGVtYU9yZ1RhZyIgOiBudWxsLAogICAgInRvdGFsIiA6IDAuMCwKICAgICJoYXNSREkiIDogZmFsc2UsCiAgICAiZGFpbHkiIDogMC4wLAogICAgInVuaXQiIDogIsK1ZyIKICB9LCB7CiAgICAibGFiZWwiIDogIlZpdGFtaW4gRSIsCiAgICAidGFnIiA6ICJUT0NQSEEiLAogICAgInNjaGVtYU9yZ1RhZyIgOiBudWxsLAogICAgInRvdGFsIiA6IDIuMzU4NjgwMzU4ODg2NzE4NywKICAgICJoYXNSREkiIDogdHJ1ZSwKICAgICJkYWlseSIgOiAxMS43OTM0MDE3OTQ0MzM1OTQsCiAgICAidW5pdCIgOiAibWciCiAgfSwgewogICAgImxhYmVsIiA6ICJWaXRhbWluIEsiLAogICAgInRhZyIgOiAiVklUSzEiLAogICAgInNjaGVtYU9yZ1RhZyIgOiBudWxsLAogICAgInRvdGFsIiA6IDUwLjgwMjM0NjE5MTQwNjI0NCwKICAgICJoYXNSREkiIDogdHJ1ZSwKICAgICJkYWlseSIgOiA2My41MDI5MzI3MzkyNTc4LAogICAgInVuaXQiIDogIsK1ZyIKICB9IF0KfV0=
+    http_version: 
+  recorded_at: Thu, 02 Nov 2017 16:31:32 GMT
+- request:
+    method: get
+    uri: https://api.edamam.com/search?app_id=<EDAMAM_ID>&app_key=bogus&r=http://www.edamam.com/ontologies/edamam.owl%23recipe_8643e0c3105bcb0d3c3a417308a09c03
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 401
+      message: Unauthorized
+    headers:
+      Server:
+      - ngx_openresty
+      Date:
+      - Thu, 02 Nov 2017 16:31:32 GMT
+      Content-Type:
+      - text/html
+      Content-Length:
+      - '2996'
+      Connection:
+      - keep-alive
+      Vary:
+      - Accept-Encoding
+      Etag:
+      - '"511d94d0-bb4"'
+    body:
+      encoding: ASCII-8BIT
+      string: "<!DOCTYPE html>\n<html xmlns=\"http://www.w3.org/1999/xhtml\" xml:lang=\"en\"
+        lang=\"en\">\n\n<head>\n    <title>Error 401 - Edamam</title>\n\n\t<meta http-equiv=\"Content-Type\"
+        content=\"text/html; charset=UTF-8\" />\n\t<meta http-equiv=\"Content-Language\"
+        content=\"en\" />\n\t<meta http-equiv=\"Content-Style-Type\" content=\"text/css\"
+        />\n\t\n\t<meta http-equiv=\"X-UA-Compatible\" content=\"IE=edge,chrome=1\"
+        />\n\n\t<meta name=\"viewport\" content=\"user-scalable=no, initial-scale=1.0,
+        maximum-scale=1.0, width=device-width\">\n\n\t<meta name=\"description\" content=\"Finding
+        recipes just got easier. Edamam has over 1 million recipes from more than
+        500 sites\"/>\n\t<meta name=\"keywords\" content=\"edamam, recipes, food,
+        nutritions, ingredients, calories, servings\"/>\n\n\t<meta name=\"robots\"
+        content=\"all,index,follow\" />\n\t<meta name=\"googlebot\" content=\"index,follow,noodp\"
+        />\n\t<meta name=\"msnbot\" content=\"all,index,follow\" />\n\t\n\t<meta name=\"verify-v1\"
+        content=\"Google Webmaster tools\" />\n\t<meta name=\"verify-v1\" content=\"Yahoo
+        Site Explorer\" />\n\t<meta name=\"verify-v1\" content=\"MSN Webmaster Center\"
+        />\n\t\n\t<meta name=\"SKYPE_TOOLBAR\" content=\"SKYPE_TOOLBAR_PARSER_COMPATIBLE\"
+        />\n\n\t<link type=\"image/x-icon\" rel=\"icon\" href=\"/favicon.ico\" />\n\t<link
+        type=\"image/x-icon\" rel=\"shortcut icon\" href=\"/favicon.ico\" />\n\t\n\t<link
+        rel=\"stylesheet\" type=\"text/css\" href=\"/css/general.css\" />\n\n\t<script
+        type=\"text/javascript\" src=\"/js/jquery-1.8.1.min.js\"></script>\n\t<script
+        type=\"text/javascript\" src=\"/js/general.js\"></script>\n\t<!--[if lt IE
+        9]><script type=\"text/javascript\" src=\"/js/html5shiv.js\"></script><![endif]-->\n\t<!--[if
+        IE]><script type=\"text/javascript\" src=\"/js/ie.js\"></script><![endif]-->\n\t<script
+        type=\"text/javascript\">\n\t\t/* ................. Variables */\n\t\tvar
+        totalSpaces, objectsNum, objectsSpace, minHeight;\n\n\t\t/* .................
+        Functions */\n\t\tfunction logoPosition() {\n\t\t\tvar logo = $(\"#head\").outerHTML();\n\t\t\n\t\t\tif
+        (vPortW <= 1024) {\n\t\t\t\tif ($(\"#main #head\").exists()) {\n\t\t\t\t\t$(\"#head\").remove();\n\t\t\t\t\t$(\".header-inner
+        .group-1\").prepend(logo);\n\t\t\t\t}\n\t\t\t}\n\t\t\telse {\n\t\t\t\tif ($(\".header-inner
+        #head\").exists()) {\n\t\t\t\t\t$(\"#head\").remove();\n\t\t\t\t\t$(\"#main\").prepend(logo);\n\t\t\t\t}\n\t\t\t}\n\t\t}\n\t\t\n\t\tfunction
+        elements() {\n\t\t\tminHeight = $(\"header\").height() + $(\"#head\").height()
+        + $(\"#search-box\").height() + $(\"#error-txt\").height() + $(\"footer\").height();\t\t\n\t\t\tif
+        (vPortW > 1024) {objectsNum = 8} else {objectsNum = 4}\n\t\t\tobjectsSpace
+        = objectsNum*25;\n\t\t}\n\t\t\n\t\tfunction setSpaces() {\n\t\t\ttotalSpaces
+        = vPortH - minHeight;\n\t\t\t\n\t\t\tif (vPortH > minHeight + objectsSpace)
+        {$(\"#head, #search-box, #error-txt\").css(\"margin-top\", parseInt(totalSpaces
+        / objectsNum));}\n\t\t\telse {$(\"#head, #search-box, #error-txt\").css(\"margin-top\",
+        \"40px\");}\n\t\t}\n\t\n\t\tjQuery(document).ready(function() {\n\t\t\t\n\t\t\t$(\"body\").css(\"min-height\",
+        minHeight + objectsSpace);\n\t\t\t\n\t\t\tlogoPosition(); elements(); setSpaces();\n\t\t\t\n\t\t\t$(window).resize(function()
+        {\n\t\t\t\tlogoPosition(); elements(); setSpaces();\n\t\t\t});\n\t\t\t\n\t\t});\n\t</script>\n</head>\n\n<body
+        id=\"page-404\" class=\"tmpl-main sub-error\">\n\t<div id=\"general\">\n\t\t<header
+        class=\"gradient grd-header cf\">\n\t\t\t<div class=\"header-inner\">\n\t\t\t\t<div
+        class=\"group-1\">\n\t\t\t\t\t&nbsp;\n\t\t\t\t</div><!-- /group-1 -->\n\t\t\t\t\n\t\t\t\t<div
+        class=\"group-2\">\n\t\t\t\t\t<div id=\"header-menu\">\n\t\t\t\t\t\t<ul>\n\t\t\t\t\t\t\t<li
+        class=\"bloggers\">\n\t\t\t\t\t\t\t\t<div class=\"menu-open\"><span class=\"holder\"><span
+        class=\"lbl\">For Bloggers</span></span></div>\n\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t<div
+        class=\"layout\">\n\t\t\t\t\t\t\t\t\t<div class=\"white-box\">\n\t\t\t\t\t\t\t\t\t\t<div
+        class=\"holder small-pad\">\n\t\t\t\t\t\t\t\t\t\t\t<a class=\"seal\" href=\"/seal/\">Edamam
+        Seal</a>\n\t\t\t\t\t\t\t\t\t\t\t<a class=\"widget last\" href=\"/widget/\">Nutritional
+        Widget</a>\n\t\t\t\t\t\t\t\t\t\t</div><!-- /holder -->\n\t\t\t\t\t\t\t\t\t</div><!--
+        /white-box -->\n\t\t\t\t\t\t\t\t</div><!-- /layout -->\n\t\t\t\t\t\t\t</li><!--
+        /bloggers -->\n\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t<li class=\"about\">\n\t\t\t\t\t\t\t\t<div
+        class=\"menu-open\"><span class=\"holder\"><span class=\"lbl\">About</span></span></div>\n\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t<div
+        class=\"layout\">\n\t\t\t\t\t\t\t\t\t<div class=\"white-box\">\n\t\t\t\t\t\t\t\t\t\t<div
+        class=\"holder small-pad\">\n\t\t\t\t\t\t\t\t\t\t\t<a href=\"/about/company.jsp\"
+        class=\"company\">Company</a>\n\t\t\t\t\t\t\t\t\t\t\t<a href=\"/about/media.jsp\"
+        \  class=\"media\">Media</a>\n\t\t\t\t\t\t\t\t\t\t\t<a href=\"/about/terms.jsp\"
+        \  class=\"terms\">Terms</a>\n\t\t\t\t\t\t\t\t\t\t\t<a href=\"/about/privacy.jsp\"
+        class=\"privacy last\">Privacy</a>\n\t\t\t\t\t\t\t\t\t\t</div><!-- /holder
+        -->\n\t\t\t\t\t\t\t\t\t</div><!-- /white-box -->\n\t\t\t\t\t\t\t\t</div><!--
+        /layout -->\n\t\t\t\t\t\t\t</li><!-- /about -->\n\t\t\t\t\t\t</ul>\n\t\t\t\t\t</div><!--
+        /header-menu -->\n\t\t\t\t</div><!-- /group-2 -->\n\t\t\t</div><!-- /header-inner
+        -->\n\t\t</header>\n\t\t\n\t\t<section>\n\t\t\t<div id=\"main\">\n\t\t\t\t<div
+        id=\"head\">\n\t\t\t\t\t<a id=\"site-logo\" href=\"/\">Edamam</a>\n\t\t\t\t\t<span
+        id=\"site-slogan\" class=\"txt-n12a col-666 shd-1-1-0-FFF\">Eat better!</span>\n\t\t\t\t</div><!--
+        /head -->\n\n\t\t\t\t<div id=\"error-txt\">\n\t\t\t\t\t<p class=\"txt-n20g
+        col-FF8400 align-c pl10 pr10 pb10\">Oh, no! You seem to have wandered into
+        a food desert! <br>You must be hungry...</p>\n\t\t\t\t</div><!-- /error-txt
+        -->\n\n\t\t\t\t<div id=\"search-box\">\n\t\t\t\t\t<form id=\"search-form\"
+        action=\"/recipes/\">\n\t\t\t\t\t\t<div id=\"search-line\">\n\t\t\t\t\t\t\t<div
+        class=\"holder\">\n\t\t\t\t\t\t\t\t<div class=\"inner-holder cf\">\n\t\t\t\t\t\t\t\t\t<a
+        href=\"javascript:;\" class=\"x-button\" id=\"search-field-clear-btn\">Clear</a>\n\t\t\t\t\t\t\t\t\t<div
+        class=\"field\">\n\t\t\t\t\t\t\t\t\t\t<input id=\"search-field\" value=\"\"
+        type=\"text\" class=\"l\" placeholder=\"Hungry for...\" name=\"q\">\n\t\t\t\t\t\t\t\t\t\t<div
+        id='autocomplete' class='suggestions'>\n\t\t\t\t\t\t\t\t\t\t\t<div class='box'>\n\t\t\t\t\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t\t\t</div><!--
+        /box -->\n\t\t\t\t\t\t\t\t\t\t</div><!-- /autocomplete -->\n\t\t\t\t\t\t\t\t\t</div><!--
+        /field -->\n\t\t\t\t\t\t\t\t\t<div id=\"search-btn\"><input id=\"search-button\"
+        class=\"btn\" type=\"submit\" name=\"\" value=\"\"></div>\n\t\t\t\t\t\t\t\t</div><!--
+        /inner-holder -->\n\t\t\t\t\t\t\t</div><!-- /holder -->\n\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t<a
+        href=\"javascript:;\" id=\"search-filters-key\" class=\"on\">Filters</a>\n\t\t\t\t\t\t</div><!--
+        /search-line -->\n\t\t\t\t\n\t\t\t\t\t\t<div id=\"search-filters\" class=\"cf\">\n\t\t\t\t\t\t\t<div
+        id=\"filter\">\n\t\t\t\t\t\t\t\t<div class=\"hover\">\n\t\t\t\t\t\t\t\t\t<div
+        id=\"filter-label\" rel=\"search-filters\" href=\"javascript:;\"><div class=\"inner
+        txt-n10a shd-1-1-0-FFF col-666 uppercase\"><span class=\"lbl\">refine search
+        by</span> <strong class=\"titles\">Calories and Diet</strong></div></div>\n\t\t\t\t\t\t\t\t\t<div
+        class=\"white-box\">\n\t\t\t\t\t\t\t\t\t\t<div class=\"inner small-pad\">\n\t\t\t\t\t\t\t\t\t\t\t<div
+        id=\"search-filter-groups\" class=\"cf\">\n\t\t\t\t\t\t\t\t\t\t\t\t<div id=\"search-filter-cals\"
+        class=\"filter-group lst-links\">\n\t\t\t\t\t\t\t\t\t\t\t\t\t<span class=\"lbl\">Calories</span>\n\t\t\t\t\t\t\t\t\t\t\t\t\t<ul>\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t<li
+        class=\"itm\">\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t<label for=\"calories\">Under
+        200 cal/serv</label>\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t<input type=\"checkbox\"
+        value=\"lte 200\" name=\"calories\">\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t</li>\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t<li
+        class=\"itm\">\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t<label for=\"calories\">200
+        - 400 cal/serv</label>\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t<input type=\"checkbox\"
+        value=\"gte 200, lte 400\" name=\"calories\">\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t</li>\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t<li
+        class=\"itm\">\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t<label for=\"calories\">400
+        - 600 cal/serv</label>\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t<input type=\"checkbox\"
+        value=\"gte 400, lte 600\" name=\"calories\">\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t</li>\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t<li
+        class=\"itm\">\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t<label for=\"calories\">Over
+        600 cal/serv</label>\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t<input type=\"checkbox\"
+        value=\"gte 600\" name=\"calories\">\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t</li>\n\t\t\t\t\t\t\t\t\t\t\t\t\t</ul>\n\t\t\t\t\t\t\t\t\t\t\t\t</div><!--
+        /search-filter-cals -->\n\t\t\t\t\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t\t\t\t<div
+        id=\"search-filter-diet\" class=\"filter-group lst-links\">\n\t\t\t\t\t\t\t\t\t\t\t\t\t<span
+        class=\"lbl\">Diet</span>\n\t\t\t\t\t\t\t\t\t\t\t\t\t<ul>\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t<li
+        class=\"itm\"><label>Balanced</label>    <input type=\"checkbox\" id=\"diet-balanced\"
+        \    value=\"balanced\"     name=\"diet\">\t</li>\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t<li
+        class=\"itm\"><label>Dairy-Free</label>  <input type=\"checkbox\" id=\"diet-dairy-free\"
+        \  value=\"dairy-free\"   name=\"health\"></li>\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t<li
+        class=\"itm\"><label>Gluten-Free</label> <input type=\"checkbox\" id=\"diet-gluten-free\"
+        \ value=\"gluten-free\"  name=\"health\"></li>\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t<li
+        class=\"itm\"><label>High-Fiber</label>  <input type=\"checkbox\" id=\"diet-high-fiber\"
+        \  value=\"high-fiber\"   name=\"diet\">\t</li>\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t<li
+        class=\"itm\"><label>High-Protein</label><input type=\"checkbox\" id=\"diet-high-protein\"
+        value=\"high-protein\" name=\"diet\">  </li>\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t<li
+        class=\"itm\"><label>Low-Carb</label>    <input type=\"checkbox\" id=\"diet-low-carb\"
+        \    value=\"low-carb\"     name=\"diet\">\t</li>\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t<li
+        class=\"itm\"><label>Low-Fat</label>     <input type=\"checkbox\" id=\"diet-low-fat\"
+        \     value=\"low-fat\"      name=\"diet\">\t</li>\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t<li
+        class=\"itm\"><label>Low-Sodium</label>  <input type=\"checkbox\" id=\"diet-low-sodium\"
+        \  value=\"low-sodium\"   name=\"diet\">\t</li>\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t<li
+        class=\"itm\"><label>Low-Sugar</label>   <input type=\"checkbox\" id=\"diet-low-sugar\"
+        \   value=\"low-sugar\"    name=\"health\"></li>\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t<li
+        class=\"itm\"><label>Vegan</label>       <input type=\"checkbox\" id=\"diet-vegan\"
+        \       value=\"vegan\"        name=\"health\"></li>\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t<li
+        class=\"itm\"><label>Vegetarian</label>  <input type=\"checkbox\" id=\"diet-vegetarian\"
+        \  value=\"vegetarian\"   name=\"health\"></li>\n\t\t\t\t\t\t\t\t\t\t\t\t\t</ul>\n\t\t\t\t\t\t\t\t\t\t\t\t</div><!--
+        /search-filter-diet -->\n\t\t\t\t\t\t\t\t\t\t\t</div><!-- /search-filter-groups
+        -->\n\t\t\t\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t\t\t<div id=\"search-filter-actions\"
+        class=\"btn cf\">\n\t\t\t\t\t\t\t\t\t\t\t\t<span class=\"clear-selection x-link
+        clr-link\">Clear Filters</span>\n\t\t\t\t\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t\t\t\t<span
+        id=\"set-filters\" class=\"inp-btn btn-green done-filters\"><span>Done</span></span>\n\t\t\t\t\t\t\t\t\t\t\t</div><!--
+        /search-filter-actions -->\n\t\t\t\t\t\t\t\t\t\t</div><!-- /inner -->\n\t\t\t\t\t\t\t\t\t</div><!--
+        /white-box -->\n\t\t\t\t\t\t\t\t</div><!-- /hover -->\n\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t<a
+        href=\"javascript:;\" class=\"clear-selection x-button\">Clear Filters</a>\n\t\t\t\t\t\t\t</div><!--
+        /filter -->\n\t\t\t\t\t\t</div><!-- /search-filters -->\n\t\t\t\t\t</form><!--
+        /search-form -->\n\t\t\t\t</div><!-- /search-box -->\n\t\t\t</div><!-- /main
+        -->\n\t\t</section>\n\t\t\n\t\t<footer class=\"cf bgc-F2F2F2\">\n\t\t\t<div
+        class=\"group-1\">\n\t\t\t\t<div id=\"footer-networks\">\n\t\t\t\t\t<span
+        class=\"lbl txt-n10a col-666 shd-1-1-0-FFF uppercase\">Follow us:</span>\n\t\t\t\t\t<ul>\n\t\t\t\t\t\t<li
+        class=\"pinterest\"><a target=\"_blank\" href=\"http://pinterest.com/edamam\">Pinterest</a></li>\n\t\t\t\t\t\t<li
+        class=\"facebook\"><a target=\"_blank\" href=\"http://facebook.com/Edamam\">Facebook</a></li>\n\t\t\t\t\t\t<li
+        class=\"twitter\"><a target=\"_blank\" href=\"http://twitter.com/#!/EdamamCo\">Twitter</a></li>\n\t\t\t\t\t</ul>\n\t\t\t\t</div><!--
+        /footer-networks -->\n\t\t\t</div><!-- /group-1 -->\n\t\t\t\n\t\t\t<div class=\"group-2\">\n\t\t\t\t<div
+        id=\"footer-apps\">\n\t\t\t\t\t<span class=\"lbl txt-n10a col-666 shd-1-1-0-FFF
+        uppercase\"><span>Download the Edamam </span>Apps:</span>\n\t\t\t\t\t<ul>\n\t\t\t\t\t\t<li
+        class=\"ios\"><a target=\"itunes_store\" href=\"http://itunes.apple.com/us/app/edamam/id516902296?mt=8&uo=4\">Edamam
+        for iOS</a></li>\n\t\t\t\t\t\t<li class=\"android\"><a target=\"_blank\" href=\"http://play.google.com/store/apps/details?id=com.edamam.recipesearch\">Edamam
+        for Android</a></li>\n\t\t\t\t\t</ul>\n\t\t\t\t</div><!-- /footer-apps -->\n\t\t\t</div><!--
+        /group-2 -->\n\t\t</footer>\n\t</div><!-- /general -->\n</body>\n\n</html>"
+    http_version: 
+  recorded_at: Thu, 02 Nov 2017 16:31:32 GMT
+- request:
+    method: get
+    uri: https://api.edamam.com/search?app_id=Bogus&app_key=<EDAMAM_KEY>&r=http://www.edamam.com/ontologies/edamam.owl%23recipe_8643e0c3105bcb0d3c3a417308a09c03
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 401
+      message: Unauthorized
+    headers:
+      Server:
+      - ngx_openresty
+      Date:
+      - Thu, 02 Nov 2017 16:31:33 GMT
+      Content-Type:
+      - text/html
+      Content-Length:
+      - '2996'
+      Connection:
+      - keep-alive
+      Vary:
+      - Accept-Encoding
+      Etag:
+      - '"511d94d0-bb4"'
+    body:
+      encoding: ASCII-8BIT
+      string: "<!DOCTYPE html>\n<html xmlns=\"http://www.w3.org/1999/xhtml\" xml:lang=\"en\"
+        lang=\"en\">\n\n<head>\n    <title>Error 401 - Edamam</title>\n\n\t<meta http-equiv=\"Content-Type\"
+        content=\"text/html; charset=UTF-8\" />\n\t<meta http-equiv=\"Content-Language\"
+        content=\"en\" />\n\t<meta http-equiv=\"Content-Style-Type\" content=\"text/css\"
+        />\n\t\n\t<meta http-equiv=\"X-UA-Compatible\" content=\"IE=edge,chrome=1\"
+        />\n\n\t<meta name=\"viewport\" content=\"user-scalable=no, initial-scale=1.0,
+        maximum-scale=1.0, width=device-width\">\n\n\t<meta name=\"description\" content=\"Finding
+        recipes just got easier. Edamam has over 1 million recipes from more than
+        500 sites\"/>\n\t<meta name=\"keywords\" content=\"edamam, recipes, food,
+        nutritions, ingredients, calories, servings\"/>\n\n\t<meta name=\"robots\"
+        content=\"all,index,follow\" />\n\t<meta name=\"googlebot\" content=\"index,follow,noodp\"
+        />\n\t<meta name=\"msnbot\" content=\"all,index,follow\" />\n\t\n\t<meta name=\"verify-v1\"
+        content=\"Google Webmaster tools\" />\n\t<meta name=\"verify-v1\" content=\"Yahoo
+        Site Explorer\" />\n\t<meta name=\"verify-v1\" content=\"MSN Webmaster Center\"
+        />\n\t\n\t<meta name=\"SKYPE_TOOLBAR\" content=\"SKYPE_TOOLBAR_PARSER_COMPATIBLE\"
+        />\n\n\t<link type=\"image/x-icon\" rel=\"icon\" href=\"/favicon.ico\" />\n\t<link
+        type=\"image/x-icon\" rel=\"shortcut icon\" href=\"/favicon.ico\" />\n\t\n\t<link
+        rel=\"stylesheet\" type=\"text/css\" href=\"/css/general.css\" />\n\n\t<script
+        type=\"text/javascript\" src=\"/js/jquery-1.8.1.min.js\"></script>\n\t<script
+        type=\"text/javascript\" src=\"/js/general.js\"></script>\n\t<!--[if lt IE
+        9]><script type=\"text/javascript\" src=\"/js/html5shiv.js\"></script><![endif]-->\n\t<!--[if
+        IE]><script type=\"text/javascript\" src=\"/js/ie.js\"></script><![endif]-->\n\t<script
+        type=\"text/javascript\">\n\t\t/* ................. Variables */\n\t\tvar
+        totalSpaces, objectsNum, objectsSpace, minHeight;\n\n\t\t/* .................
+        Functions */\n\t\tfunction logoPosition() {\n\t\t\tvar logo = $(\"#head\").outerHTML();\n\t\t\n\t\t\tif
+        (vPortW <= 1024) {\n\t\t\t\tif ($(\"#main #head\").exists()) {\n\t\t\t\t\t$(\"#head\").remove();\n\t\t\t\t\t$(\".header-inner
+        .group-1\").prepend(logo);\n\t\t\t\t}\n\t\t\t}\n\t\t\telse {\n\t\t\t\tif ($(\".header-inner
+        #head\").exists()) {\n\t\t\t\t\t$(\"#head\").remove();\n\t\t\t\t\t$(\"#main\").prepend(logo);\n\t\t\t\t}\n\t\t\t}\n\t\t}\n\t\t\n\t\tfunction
+        elements() {\n\t\t\tminHeight = $(\"header\").height() + $(\"#head\").height()
+        + $(\"#search-box\").height() + $(\"#error-txt\").height() + $(\"footer\").height();\t\t\n\t\t\tif
+        (vPortW > 1024) {objectsNum = 8} else {objectsNum = 4}\n\t\t\tobjectsSpace
+        = objectsNum*25;\n\t\t}\n\t\t\n\t\tfunction setSpaces() {\n\t\t\ttotalSpaces
+        = vPortH - minHeight;\n\t\t\t\n\t\t\tif (vPortH > minHeight + objectsSpace)
+        {$(\"#head, #search-box, #error-txt\").css(\"margin-top\", parseInt(totalSpaces
+        / objectsNum));}\n\t\t\telse {$(\"#head, #search-box, #error-txt\").css(\"margin-top\",
+        \"40px\");}\n\t\t}\n\t\n\t\tjQuery(document).ready(function() {\n\t\t\t\n\t\t\t$(\"body\").css(\"min-height\",
+        minHeight + objectsSpace);\n\t\t\t\n\t\t\tlogoPosition(); elements(); setSpaces();\n\t\t\t\n\t\t\t$(window).resize(function()
+        {\n\t\t\t\tlogoPosition(); elements(); setSpaces();\n\t\t\t});\n\t\t\t\n\t\t});\n\t</script>\n</head>\n\n<body
+        id=\"page-404\" class=\"tmpl-main sub-error\">\n\t<div id=\"general\">\n\t\t<header
+        class=\"gradient grd-header cf\">\n\t\t\t<div class=\"header-inner\">\n\t\t\t\t<div
+        class=\"group-1\">\n\t\t\t\t\t&nbsp;\n\t\t\t\t</div><!-- /group-1 -->\n\t\t\t\t\n\t\t\t\t<div
+        class=\"group-2\">\n\t\t\t\t\t<div id=\"header-menu\">\n\t\t\t\t\t\t<ul>\n\t\t\t\t\t\t\t<li
+        class=\"bloggers\">\n\t\t\t\t\t\t\t\t<div class=\"menu-open\"><span class=\"holder\"><span
+        class=\"lbl\">For Bloggers</span></span></div>\n\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t<div
+        class=\"layout\">\n\t\t\t\t\t\t\t\t\t<div class=\"white-box\">\n\t\t\t\t\t\t\t\t\t\t<div
+        class=\"holder small-pad\">\n\t\t\t\t\t\t\t\t\t\t\t<a class=\"seal\" href=\"/seal/\">Edamam
+        Seal</a>\n\t\t\t\t\t\t\t\t\t\t\t<a class=\"widget last\" href=\"/widget/\">Nutritional
+        Widget</a>\n\t\t\t\t\t\t\t\t\t\t</div><!-- /holder -->\n\t\t\t\t\t\t\t\t\t</div><!--
+        /white-box -->\n\t\t\t\t\t\t\t\t</div><!-- /layout -->\n\t\t\t\t\t\t\t</li><!--
+        /bloggers -->\n\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t<li class=\"about\">\n\t\t\t\t\t\t\t\t<div
+        class=\"menu-open\"><span class=\"holder\"><span class=\"lbl\">About</span></span></div>\n\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t<div
+        class=\"layout\">\n\t\t\t\t\t\t\t\t\t<div class=\"white-box\">\n\t\t\t\t\t\t\t\t\t\t<div
+        class=\"holder small-pad\">\n\t\t\t\t\t\t\t\t\t\t\t<a href=\"/about/company.jsp\"
+        class=\"company\">Company</a>\n\t\t\t\t\t\t\t\t\t\t\t<a href=\"/about/media.jsp\"
+        \  class=\"media\">Media</a>\n\t\t\t\t\t\t\t\t\t\t\t<a href=\"/about/terms.jsp\"
+        \  class=\"terms\">Terms</a>\n\t\t\t\t\t\t\t\t\t\t\t<a href=\"/about/privacy.jsp\"
+        class=\"privacy last\">Privacy</a>\n\t\t\t\t\t\t\t\t\t\t</div><!-- /holder
+        -->\n\t\t\t\t\t\t\t\t\t</div><!-- /white-box -->\n\t\t\t\t\t\t\t\t</div><!--
+        /layout -->\n\t\t\t\t\t\t\t</li><!-- /about -->\n\t\t\t\t\t\t</ul>\n\t\t\t\t\t</div><!--
+        /header-menu -->\n\t\t\t\t</div><!-- /group-2 -->\n\t\t\t</div><!-- /header-inner
+        -->\n\t\t</header>\n\t\t\n\t\t<section>\n\t\t\t<div id=\"main\">\n\t\t\t\t<div
+        id=\"head\">\n\t\t\t\t\t<a id=\"site-logo\" href=\"/\">Edamam</a>\n\t\t\t\t\t<span
+        id=\"site-slogan\" class=\"txt-n12a col-666 shd-1-1-0-FFF\">Eat better!</span>\n\t\t\t\t</div><!--
+        /head -->\n\n\t\t\t\t<div id=\"error-txt\">\n\t\t\t\t\t<p class=\"txt-n20g
+        col-FF8400 align-c pl10 pr10 pb10\">Oh, no! You seem to have wandered into
+        a food desert! <br>You must be hungry...</p>\n\t\t\t\t</div><!-- /error-txt
+        -->\n\n\t\t\t\t<div id=\"search-box\">\n\t\t\t\t\t<form id=\"search-form\"
+        action=\"/recipes/\">\n\t\t\t\t\t\t<div id=\"search-line\">\n\t\t\t\t\t\t\t<div
+        class=\"holder\">\n\t\t\t\t\t\t\t\t<div class=\"inner-holder cf\">\n\t\t\t\t\t\t\t\t\t<a
+        href=\"javascript:;\" class=\"x-button\" id=\"search-field-clear-btn\">Clear</a>\n\t\t\t\t\t\t\t\t\t<div
+        class=\"field\">\n\t\t\t\t\t\t\t\t\t\t<input id=\"search-field\" value=\"\"
+        type=\"text\" class=\"l\" placeholder=\"Hungry for...\" name=\"q\">\n\t\t\t\t\t\t\t\t\t\t<div
+        id='autocomplete' class='suggestions'>\n\t\t\t\t\t\t\t\t\t\t\t<div class='box'>\n\t\t\t\t\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t\t\t</div><!--
+        /box -->\n\t\t\t\t\t\t\t\t\t\t</div><!-- /autocomplete -->\n\t\t\t\t\t\t\t\t\t</div><!--
+        /field -->\n\t\t\t\t\t\t\t\t\t<div id=\"search-btn\"><input id=\"search-button\"
+        class=\"btn\" type=\"submit\" name=\"\" value=\"\"></div>\n\t\t\t\t\t\t\t\t</div><!--
+        /inner-holder -->\n\t\t\t\t\t\t\t</div><!-- /holder -->\n\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t<a
+        href=\"javascript:;\" id=\"search-filters-key\" class=\"on\">Filters</a>\n\t\t\t\t\t\t</div><!--
+        /search-line -->\n\t\t\t\t\n\t\t\t\t\t\t<div id=\"search-filters\" class=\"cf\">\n\t\t\t\t\t\t\t<div
+        id=\"filter\">\n\t\t\t\t\t\t\t\t<div class=\"hover\">\n\t\t\t\t\t\t\t\t\t<div
+        id=\"filter-label\" rel=\"search-filters\" href=\"javascript:;\"><div class=\"inner
+        txt-n10a shd-1-1-0-FFF col-666 uppercase\"><span class=\"lbl\">refine search
+        by</span> <strong class=\"titles\">Calories and Diet</strong></div></div>\n\t\t\t\t\t\t\t\t\t<div
+        class=\"white-box\">\n\t\t\t\t\t\t\t\t\t\t<div class=\"inner small-pad\">\n\t\t\t\t\t\t\t\t\t\t\t<div
+        id=\"search-filter-groups\" class=\"cf\">\n\t\t\t\t\t\t\t\t\t\t\t\t<div id=\"search-filter-cals\"
+        class=\"filter-group lst-links\">\n\t\t\t\t\t\t\t\t\t\t\t\t\t<span class=\"lbl\">Calories</span>\n\t\t\t\t\t\t\t\t\t\t\t\t\t<ul>\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t<li
+        class=\"itm\">\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t<label for=\"calories\">Under
+        200 cal/serv</label>\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t<input type=\"checkbox\"
+        value=\"lte 200\" name=\"calories\">\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t</li>\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t<li
+        class=\"itm\">\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t<label for=\"calories\">200
+        - 400 cal/serv</label>\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t<input type=\"checkbox\"
+        value=\"gte 200, lte 400\" name=\"calories\">\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t</li>\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t<li
+        class=\"itm\">\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t<label for=\"calories\">400
+        - 600 cal/serv</label>\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t<input type=\"checkbox\"
+        value=\"gte 400, lte 600\" name=\"calories\">\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t</li>\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t<li
+        class=\"itm\">\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t<label for=\"calories\">Over
+        600 cal/serv</label>\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t<input type=\"checkbox\"
+        value=\"gte 600\" name=\"calories\">\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t</li>\n\t\t\t\t\t\t\t\t\t\t\t\t\t</ul>\n\t\t\t\t\t\t\t\t\t\t\t\t</div><!--
+        /search-filter-cals -->\n\t\t\t\t\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t\t\t\t<div
+        id=\"search-filter-diet\" class=\"filter-group lst-links\">\n\t\t\t\t\t\t\t\t\t\t\t\t\t<span
+        class=\"lbl\">Diet</span>\n\t\t\t\t\t\t\t\t\t\t\t\t\t<ul>\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t<li
+        class=\"itm\"><label>Balanced</label>    <input type=\"checkbox\" id=\"diet-balanced\"
+        \    value=\"balanced\"     name=\"diet\">\t</li>\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t<li
+        class=\"itm\"><label>Dairy-Free</label>  <input type=\"checkbox\" id=\"diet-dairy-free\"
+        \  value=\"dairy-free\"   name=\"health\"></li>\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t<li
+        class=\"itm\"><label>Gluten-Free</label> <input type=\"checkbox\" id=\"diet-gluten-free\"
+        \ value=\"gluten-free\"  name=\"health\"></li>\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t<li
+        class=\"itm\"><label>High-Fiber</label>  <input type=\"checkbox\" id=\"diet-high-fiber\"
+        \  value=\"high-fiber\"   name=\"diet\">\t</li>\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t<li
+        class=\"itm\"><label>High-Protein</label><input type=\"checkbox\" id=\"diet-high-protein\"
+        value=\"high-protein\" name=\"diet\">  </li>\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t<li
+        class=\"itm\"><label>Low-Carb</label>    <input type=\"checkbox\" id=\"diet-low-carb\"
+        \    value=\"low-carb\"     name=\"diet\">\t</li>\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t<li
+        class=\"itm\"><label>Low-Fat</label>     <input type=\"checkbox\" id=\"diet-low-fat\"
+        \     value=\"low-fat\"      name=\"diet\">\t</li>\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t<li
+        class=\"itm\"><label>Low-Sodium</label>  <input type=\"checkbox\" id=\"diet-low-sodium\"
+        \  value=\"low-sodium\"   name=\"diet\">\t</li>\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t<li
+        class=\"itm\"><label>Low-Sugar</label>   <input type=\"checkbox\" id=\"diet-low-sugar\"
+        \   value=\"low-sugar\"    name=\"health\"></li>\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t<li
+        class=\"itm\"><label>Vegan</label>       <input type=\"checkbox\" id=\"diet-vegan\"
+        \       value=\"vegan\"        name=\"health\"></li>\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t<li
+        class=\"itm\"><label>Vegetarian</label>  <input type=\"checkbox\" id=\"diet-vegetarian\"
+        \  value=\"vegetarian\"   name=\"health\"></li>\n\t\t\t\t\t\t\t\t\t\t\t\t\t</ul>\n\t\t\t\t\t\t\t\t\t\t\t\t</div><!--
+        /search-filter-diet -->\n\t\t\t\t\t\t\t\t\t\t\t</div><!-- /search-filter-groups
+        -->\n\t\t\t\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t\t\t<div id=\"search-filter-actions\"
+        class=\"btn cf\">\n\t\t\t\t\t\t\t\t\t\t\t\t<span class=\"clear-selection x-link
+        clr-link\">Clear Filters</span>\n\t\t\t\t\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t\t\t\t<span
+        id=\"set-filters\" class=\"inp-btn btn-green done-filters\"><span>Done</span></span>\n\t\t\t\t\t\t\t\t\t\t\t</div><!--
+        /search-filter-actions -->\n\t\t\t\t\t\t\t\t\t\t</div><!-- /inner -->\n\t\t\t\t\t\t\t\t\t</div><!--
+        /white-box -->\n\t\t\t\t\t\t\t\t</div><!-- /hover -->\n\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t<a
+        href=\"javascript:;\" class=\"clear-selection x-button\">Clear Filters</a>\n\t\t\t\t\t\t\t</div><!--
+        /filter -->\n\t\t\t\t\t\t</div><!-- /search-filters -->\n\t\t\t\t\t</form><!--
+        /search-form -->\n\t\t\t\t</div><!-- /search-box -->\n\t\t\t</div><!-- /main
+        -->\n\t\t</section>\n\t\t\n\t\t<footer class=\"cf bgc-F2F2F2\">\n\t\t\t<div
+        class=\"group-1\">\n\t\t\t\t<div id=\"footer-networks\">\n\t\t\t\t\t<span
+        class=\"lbl txt-n10a col-666 shd-1-1-0-FFF uppercase\">Follow us:</span>\n\t\t\t\t\t<ul>\n\t\t\t\t\t\t<li
+        class=\"pinterest\"><a target=\"_blank\" href=\"http://pinterest.com/edamam\">Pinterest</a></li>\n\t\t\t\t\t\t<li
+        class=\"facebook\"><a target=\"_blank\" href=\"http://facebook.com/Edamam\">Facebook</a></li>\n\t\t\t\t\t\t<li
+        class=\"twitter\"><a target=\"_blank\" href=\"http://twitter.com/#!/EdamamCo\">Twitter</a></li>\n\t\t\t\t\t</ul>\n\t\t\t\t</div><!--
+        /footer-networks -->\n\t\t\t</div><!-- /group-1 -->\n\t\t\t\n\t\t\t<div class=\"group-2\">\n\t\t\t\t<div
+        id=\"footer-apps\">\n\t\t\t\t\t<span class=\"lbl txt-n10a col-666 shd-1-1-0-FFF
+        uppercase\"><span>Download the Edamam </span>Apps:</span>\n\t\t\t\t\t<ul>\n\t\t\t\t\t\t<li
+        class=\"ios\"><a target=\"itunes_store\" href=\"http://itunes.apple.com/us/app/edamam/id516902296?mt=8&uo=4\">Edamam
+        for iOS</a></li>\n\t\t\t\t\t\t<li class=\"android\"><a target=\"_blank\" href=\"http://play.google.com/store/apps/details?id=com.edamam.recipesearch\">Edamam
+        for Android</a></li>\n\t\t\t\t\t</ul>\n\t\t\t\t</div><!-- /footer-apps -->\n\t\t\t</div><!--
+        /group-2 -->\n\t\t</footer>\n\t</div><!-- /general -->\n</body>\n\n</html>"
+    http_version: 
+  recorded_at: Thu, 02 Nov 2017 16:31:33 GMT
+- request:
+    method: get
+    uri: https://api.edamam.com/search?app_id=<EDAMAM_ID>&app_key=<EDAMAM_KEY>&r=http://www.edamam.com/ontologies/edamam.owl%23recipe_1b64abcd98711785fe3fdbff2ec67554
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - ngx_openresty
+      Date:
+      - Thu, 02 Nov 2017 16:38:10 GMT
+      Content-Type:
+      - application/json;charset=UTF-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Cache-Control:
+      - private
+      Expires:
+      - Thu, 01 Jan 1970 00:00:00 UTC
+      X-Served-By:
+      - ip-10-143-141-59/10.143.141.59
+      Vary:
+      - Accept-Encoding
+    body:
+      encoding: ASCII-8BIT
+      string: !binary |-
+        W3sKICAidXJpIiA6ICJodHRwOi8vd3d3LmVkYW1hbS5jb20vb250b2xvZ2llcy9lZGFtYW0ub3dsI3JlY2lwZV8xYjY0YWJjZDk4NzExNzg1ZmUzZmRiZmYyZWM2NzU1NCIsCiAgImxhYmVsIiA6ICJGcm96ZW4gQ2hvY29sYXRlIEJhbmFuYXMiLAogICJpbWFnZSIgOiAiaHR0cHM6Ly93d3cuZWRhbWFtLmNvbS93ZWItaW1nL2E0My9hNDM1OWNmZjU5OGY5MzY0MzA1Y2IwZjNkZDBiOTgzMC5qcGciLAogICJzb3VyY2UiIDogIkVwaWN1cmlvdXMiLAogICJ1cmwiIDogImh0dHA6Ly93d3cuZXBpY3VyaW91cy5jb20vcmVjaXBlcy9mb29kL3ZpZXdzL0Zyb3plbi1DaG9jb2xhdGUtQmFuYW5hcy0yNDAwNjQiLAogICJzaGFyZUFzIiA6ICJodHRwOi8vd3d3LmVkYW1hbS5jb20vcmVjaXBlL2Zyb3plbi1jaG9jb2xhdGUtYmFuYW5hcy0xYjY0YWJjZDk4NzExNzg1ZmUzZmRiZmYyZWM2NzU1NC8tIiwKICAieWllbGQiIDogNC4wLAogICJkaWV0TGFiZWxzIiA6IFsgXSwKICAiaGVhbHRoTGFiZWxzIiA6IFsgIlZlZ2FuIiwgIlZlZ2V0YXJpYW4iLCAiUGVhbnV0LUZyZWUiLCAiQWxjb2hvbC1GcmVlIiBdLAogICJjYXV0aW9ucyIgOiBbIF0sCiAgImluZ3JlZGllbnRMaW5lcyIgOiBbICIyIHJpcGUgYnV0IGZpcm0gYmFuYW5hcyIsICI2IG91bmNlcyBkYXJrIGNob2NvbGF0ZSwgY2hvcHBlZCwgb3Igc2VtaXN3ZWV0IGNob2NvbGF0ZSBjaGlwcyIsICIyIHRhYmxlc3Bvb25zIHZlZ2V0YWJsZSBvaWwiLCAiMS8yIGN1cCBncmFub2xhLCBjaG9wcGVkIHBlY2FucyBhbmQgd2FsbnV0cywgb3Igc3ByaW5rbGVzIChvcHRpb25hbCkiIF0sCiAgImluZ3JlZGllbnRzIiA6IFsgewogICAgInRleHQiIDogIjIgcmlwZSBidXQgZmlybSBiYW5hbmFzIiwKICAgICJ3ZWlnaHQiIDogMjMxLjM5OTk5Mzg5NjQ4NDM4CiAgfSwgewogICAgInRleHQiIDogIjYgb3VuY2VzIGRhcmsgY2hvY29sYXRlLCBjaG9wcGVkLCBvciBzZW1pc3dlZXQgY2hvY29sYXRlIGNoaXBzIiwKICAgICJ3ZWlnaHQiIDogMTcwLjA5NzEzNzQ1MTE3MTg4CiAgfSwgewogICAgInRleHQiIDogIjIgdGFibGVzcG9vbnMgdmVnZXRhYmxlIG9pbCIsCiAgICAid2VpZ2h0IiA6IDI4LjAKICB9IF0sCiAgImNhbG9yaWVzIiA6IDEyNjkuOTMyMjU0MzMzNDk2LAogICJ0b3RhbFdlaWdodCIgOiA0MjkuNDk3MTMxMzQ3NjU2MjUsCiAgInRvdGFsTnV0cmllbnRzIiA6IHsKICAgICJFTkVSQ19LQ0FMIiA6IHsKICAgICAgImxhYmVsIiA6ICJFbmVyZ3kiLAogICAgICAicXVhbnRpdHkiIDogMTI2OS45MzIyNTQzMzM0OTYsCiAgICAgICJ1bml0IiA6ICJrY2FsIgogICAgfSwKICAgICJGQVQiIDogewogICAgICAibGFiZWwiIDogIkZhdCIsCiAgICAgICJxdWFudGl0eSIgOiA3OS43OTI3NjEyMTUyMDk5NiwKICAgICAgInVuaXQiIDogImciCiAgICB9LAogICAgIkZBU0FUIiA6IHsKICAgICAgImxhYmVsIiA6ICJTYXR1cmF0ZWQiLAogICAgICAicXVhbnRpdHkiIDogMzIuMjc0NDg5ODkwNzQ3MDcsCiAgICAgICJ1bml0IiA6ICJnIgogICAgfSwKICAgICJGQVRSTiIgOiB7CiAgICAgICJsYWJlbCIgOiAiVHJhbnMiLAogICAgICAicXVhbnRpdHkiIDogMC4yMTQ3NjAwMDAwMDAwMDAwMywKICAgICAgInVuaXQiIDogImciCiAgICB9LAogICAgIkZBTVMiIDogewogICAgICAibGFiZWwiIDogIk1vbm91bnNhdHVyYXRlZCIsCiAgICAgICJxdWFudGl0eSIgOiAzNy4xODM0MDg3MTY0MzA2NiwKICAgICAgInVuaXQiIDogImciCiAgICB9LAogICAgIkZBUFUiIDogewogICAgICAibGFiZWwiIDogIlBvbHl1bnNhdHVyYXRlZCIsCiAgICAgICJxdWFudGl0eSIgOiA2LjU5OTUwMDM0MzMyMjc1NCwKICAgICAgInVuaXQiIDogImciCiAgICB9LAogICAgIkNIT0NERiIgOiB7CiAgICAgICJsYWJlbCIgOiAiQ2FyYnMiLAogICAgICAicXVhbnRpdHkiIDogMTYxLjU0MzgyOTQzNzI1NTg1LAogICAgICAidW5pdCIgOiAiZyIKICAgIH0sCiAgICAiRklCVEciIDogewogICAgICAibGFiZWwiIDogIkZpYmVyIiwKICAgICAgInF1YW50aXR5IiA6IDE2LjA1MjEzMDk1MDkyNzczMywKICAgICAgInVuaXQiIDogImciCiAgICB9LAogICAgIlNVR0FSIiA6IHsKICAgICAgImxhYmVsIiA6ICJTdWdhcnMiLAogICAgICAicXVhbnRpdHkiIDogMTIxLjAwMzE1OTE2NDQyODcxLAogICAgICAidW5pdCIgOiAiZyIKICAgIH0sCiAgICAiUFJPQ05UIiA6IHsKICAgICAgImxhYmVsIiA6ICJQcm90ZWluIiwKICAgICAgInF1YW50aXR5IiA6IDkuNjY2MzM5NzA2NDIwOSwKICAgICAgInVuaXQiIDogImciCiAgICB9LAogICAgIk5BIiA6IHsKICAgICAgImxhYmVsIiA6ICJTb2RpdW0iLAogICAgICAicXVhbnRpdHkiIDogMjEuMDI0Njg1MDU4NTkzNzUsCiAgICAgICJ1bml0IiA6ICJtZyIKICAgIH0sCiAgICAiQ0EiIDogewogICAgICAibGFiZWwiIDogIkNhbGNpdW0iLAogICAgICAicXVhbnRpdHkiIDogNjYuMDAxMDgzNjc5MTk5MjEsCiAgICAgICJ1bml0IiA6ICJtZyIKICAgIH0sCiAgICAiTUciIDogewogICAgICAibGFiZWwiIDogIk1hZ25lc2l1bSIsCiAgICAgICJxdWFudGl0eSIgOiAyNTguMDg5NzA2NDIwODk4NDQsCiAgICAgICJ1bml0IiA6ICJtZyIKICAgIH0sCiAgICAiSyIgOiB7CiAgICAgICJsYWJlbCIgOiAiUG90YXNzaXVtIiwKICAgICAgInF1YW50aXR5IiA6IDE0NDkuMjY2NTI5ODQ2MTkxNCwKICAgICAgInVuaXQiIDogIm1nIgogICAgfSwKICAgICJGRSIgOiB7CiAgICAgICJsYWJlbCIgOiAiSXJvbiIsCiAgICAgICJxdWFudGl0eSIgOiA1LjkyNTY4MDM4NjM1MjUzOCwKICAgICAgInVuaXQiIDogIm1nIgogICAgfSwKICAgICJaTiIgOiB7CiAgICAgICJsYWJlbCIgOiAiWmluYyIsCiAgICAgICJxdWFudGl0eSIgOiAzLjEwMjY3MzYxNzU1MzcxMTUsCiAgICAgICJ1bml0IiA6ICJtZyIKICAgIH0sCiAgICAiUCIgOiB7CiAgICAgICJsYWJlbCIgOiAiUGhvc3Bob3J1cyIsCiAgICAgICJxdWFudGl0eSIgOiAyNzUuNDM2MjIwMDkyNzczNCwKICAgICAgInVuaXQiIDogIm1nIgogICAgfSwKICAgICJWSVRBX1JBRSIgOiB7CiAgICAgICJsYWJlbCIgOiAiVml0YW1pbiBBIiwKICAgICAgInF1YW50aXR5IiA6IDYuOTQxOTk5ODE2ODk0NTMxLAogICAgICAidW5pdCIgOiAiwrVnIgogICAgfSwKICAgICJWSVRDIiA6IHsKICAgICAgImxhYmVsIiA6ICJWaXRhbWluIEMiLAogICAgICAicXVhbnRpdHkiIDogMjAuMTMxNzk5NDY4OTk0MTQsCiAgICAgICJ1bml0IiA6ICJtZyIKICAgIH0sCiAgICAiVEhJQSIgOiB7CiAgICAgICJsYWJlbCIgOiAiVGhpYW1pbiAoQjEpIiwKICAgICAgInF1YW50aXR5IiA6IDAuMTY1Mjg3NDIzNzA2MDU0NjgsCiAgICAgICJ1bml0IiA6ICJtZyIKICAgIH0sCiAgICAiUklCRiIgOiB7CiAgICAgICJsYWJlbCIgOiAiUmlib2ZsYXZpbiAoQjIpIiwKICAgICAgInF1YW50aXR5IiA6IDAuMzIyMDA5NDE5MjUwNDg4MjYsCiAgICAgICJ1bml0IiA6ICJtZyIKICAgIH0sCiAgICAiTklBIiA6IHsKICAgICAgImxhYmVsIiA6ICJOaWFjaW4gKEIzKSIsCiAgICAgICJxdWFudGl0eSIgOiAyLjI2NTEyNDczNjMyODEyNSwKICAgICAgInVuaXQiIDogIm1nIgogICAgfSwKICAgICJWSVRCNkEiIDogewogICAgICAibGFiZWwiIDogIlZpdGFtaW4gQjYiLAogICAgICAicXVhbnRpdHkiIDogMC45MDg3NzE5NzU3MDgwMDc3LAogICAgICAidW5pdCIgOiAibWciCiAgICB9LAogICAgIkZPTERGRSIgOiB7CiAgICAgICJsYWJlbCIgOiAiRm9sYXRlIGVxdWl2YWxlbnQgKHRvdGFsKSIsCiAgICAgICJxdWFudGl0eSIgOiA2OC4zOTI2MjY2NDc5NDkyMSwKICAgICAgInVuaXQiIDogIsK1ZyIKICAgIH0sCiAgICAiRk9MRkQiIDogewogICAgICAibGFiZWwiIDogIkZvbGF0ZSAoZm9vZCkiLAogICAgICAicXVhbnRpdHkiIDogNjguMzkyNjI2NjQ3OTQ5MjEsCiAgICAgICJ1bml0IiA6ICLCtWciCiAgICB9LAogICAgIlRPQ1BIQSIgOiB7CiAgICAgICJsYWJlbCIgOiAiVml0YW1pbiBFIiwKICAgICAgInF1YW50aXR5IiA6IDYuNzc3NjUyNTUxMjY5NTMyLAogICAgICAidW5pdCIgOiAibWciCiAgICB9LAogICAgIlZJVEsxIiA6IHsKICAgICAgImxhYmVsIiA6ICJWaXRhbWluIEsiLAogICAgICAicXVhbnRpdHkiIDogMTAuNjgyNDM5NjY2NzQ4MDQ3LAogICAgICAidW5pdCIgOiAiwrVnIgogICAgfQogIH0sCiAgInRvdGFsRGFpbHkiIDogewogICAgIkVORVJDX0tDQUwiIDogewogICAgICAibGFiZWwiIDogIkVuZXJneSIsCiAgICAgICJxdWFudGl0eSIgOiA2My40OTY2MTI3MTY2NzQ4MDQsCiAgICAgICJ1bml0IiA6ICIlIgogICAgfSwKICAgICJGQVQiIDogewogICAgICAibGFiZWwiIDogIkZhdCIsCiAgICAgICJxdWFudGl0eSIgOiAxMjIuNzU4MDk0MTc3MjQ2MTEsCiAgICAgICJ1bml0IiA6ICIlIgogICAgfSwKICAgICJGQVNBVCIgOiB7CiAgICAgICJsYWJlbCIgOiAiU2F0dXJhdGVkIiwKICAgICAgInF1YW50aXR5IiA6IDE2MS4zNzI0NDk0NTM3MzUzMywKICAgICAgInVuaXQiIDogIiUiCiAgICB9LAogICAgIkNIT0NERiIgOiB7CiAgICAgICJsYWJlbCIgOiAiQ2FyYnMiLAogICAgICAicXVhbnRpdHkiIDogNTMuODQ3OTQzMTQ1NzUxOTUsCiAgICAgICJ1bml0IiA6ICIlIgogICAgfSwKICAgICJGSUJURyIgOiB7CiAgICAgICJsYWJlbCIgOiAiRmliZXIiLAogICAgICAicXVhbnRpdHkiIDogNjQuMjA4NTIzODAzNzEwOTMsCiAgICAgICJ1bml0IiA6ICIlIgogICAgfSwKICAgICJQUk9DTlQiIDogewogICAgICAibGFiZWwiIDogIlByb3RlaW4iLAogICAgICAicXVhbnRpdHkiIDogMTkuMzMyNjc5NDEyODQxOCwKICAgICAgInVuaXQiIDogIiUiCiAgICB9LAogICAgIk5BIiA6IHsKICAgICAgImxhYmVsIiA6ICJTb2RpdW0iLAogICAgICAicXVhbnRpdHkiIDogMC44NzYwMjg1NDQxMDgwNzMsCiAgICAgICJ1bml0IiA6ICIlIgogICAgfSwKICAgICJDQSIgOiB7CiAgICAgICJsYWJlbCIgOiAiQ2FsY2l1bSIsCiAgICAgICJxdWFudGl0eSIgOiA2LjYwMDEwODM2NzkxOTkyMSwKICAgICAgInVuaXQiIDogIiUiCiAgICB9LAogICAgIk1HIiA6IHsKICAgICAgImxhYmVsIiA6ICJNYWduZXNpdW0iLAogICAgICAicXVhbnRpdHkiIDogNjQuNTIyNDI2NjA1MjI0NjEsCiAgICAgICJ1bml0IiA6ICIlIgogICAgfSwKICAgICJLIiA6IHsKICAgICAgImxhYmVsIiA6ICJQb3Rhc3NpdW0iLAogICAgICAicXVhbnRpdHkiIDogNDEuNDA3NjE1MTM4NDYyNjEsCiAgICAgICJ1bml0IiA6ICIlIgogICAgfSwKICAgICJGRSIgOiB7CiAgICAgICJsYWJlbCIgOiAiSXJvbiIsCiAgICAgICJxdWFudGl0eSIgOiAzMi45MjA0NDY1OTA4NDc0MywKICAgICAgInVuaXQiIDogIiUiCiAgICB9LAogICAgIlpOIiA6IHsKICAgICAgImxhYmVsIiA6ICJaaW5jIiwKICAgICAgInF1YW50aXR5IiA6IDIwLjY4NDQ5MDc4MzY5MTQxLAogICAgICAidW5pdCIgOiAiJSIKICAgIH0sCiAgICAiUCIgOiB7CiAgICAgICJsYWJlbCIgOiAiUGhvc3Bob3J1cyIsCiAgICAgICJxdWFudGl0eSIgOiAzOS4zNDgwMzE0NDE4MjQ3NywKICAgICAgInVuaXQiIDogIiUiCiAgICB9LAogICAgIlZJVEFfUkFFIiA6IHsKICAgICAgImxhYmVsIiA6ICJWaXRhbWluIEEiLAogICAgICAicXVhbnRpdHkiIDogMC43NzEzMzMzMTI5ODgyODEyLAogICAgICAidW5pdCIgOiAiJSIKICAgIH0sCiAgICAiVklUQyIgOiB7CiAgICAgICJsYWJlbCIgOiAiVml0YW1pbiBDIiwKICAgICAgInF1YW50aXR5IiA6IDMzLjU1Mjk5OTExNDk5MDIzLAogICAgICAidW5pdCIgOiAiJSIKICAgIH0sCiAgICAiVEhJQSIgOiB7CiAgICAgICJsYWJlbCIgOiAiVGhpYW1pbiAoQjEpIiwKICAgICAgInF1YW50aXR5IiA6IDExLjAxOTE2MTU4MDQwMzY0NiwKICAgICAgInVuaXQiIDogIiUiCiAgICB9LAogICAgIlJJQkYiIDogewogICAgICAibGFiZWwiIDogIlJpYm9mbGF2aW4gKEIyKSIsCiAgICAgICJxdWFudGl0eSIgOiAxOC45NDE3MzA1NDQxNDYzNjcsCiAgICAgICJ1bml0IiA6ICIlIgogICAgfSwKICAgICJOSUEiIDogewogICAgICAibGFiZWwiIDogIk5pYWNpbiAoQjMpIiwKICAgICAgInF1YW50aXR5IiA6IDExLjMyNTYyMzY4MTY0MDYyNSwKICAgICAgInVuaXQiIDogIiUiCiAgICB9LAogICAgIlZJVEI2QSIgOiB7CiAgICAgICJsYWJlbCIgOiAiVml0YW1pbiBCNiIsCiAgICAgICJxdWFudGl0eSIgOiA0NS40Mzg1OTg3ODU0MDAzOSwKICAgICAgInVuaXQiIDogIiUiCiAgICB9LAogICAgIkZPTERGRSIgOiB7CiAgICAgICJsYWJlbCIgOiAiRm9sYXRlIGVxdWl2YWxlbnQgKHRvdGFsKSIsCiAgICAgICJxdWFudGl0eSIgOiAxNy4wOTgxNTY2NjE5ODczMDQsCiAgICAgICJ1bml0IiA6ICIlIgogICAgfSwKICAgICJUT0NQSEEiIDogewogICAgICAibGFiZWwiIDogIlZpdGFtaW4gRSIsCiAgICAgICJxdWFudGl0eSIgOiAzMy44ODgyNjI3NTYzNDc2NiwKICAgICAgInVuaXQiIDogIiUiCiAgICB9LAogICAgIlZJVEsxIiA6IHsKICAgICAgImxhYmVsIiA6ICJWaXRhbWluIEsiLAogICAgICAicXVhbnRpdHkiIDogMTMuMzUzMDQ5NTgzNDM1MDYsCiAgICAgICJ1bml0IiA6ICIlIgogICAgfQogIH0sCiAgImRpZ2VzdCIgOiBbIHsKICAgICJsYWJlbCIgOiAiRmF0IiwKICAgICJ0YWciIDogIkZBVCIsCiAgICAic2NoZW1hT3JnVGFnIiA6ICJmYXRDb250ZW50IiwKICAgICJ0b3RhbCIgOiA3OS43OTI3NjEyMTUyMDk5NiwKICAgICJoYXNSREkiIDogdHJ1ZSwKICAgICJkYWlseSIgOiAxMjIuNzU4MDk0MTc3MjQ2MTEsCiAgICAidW5pdCIgOiAiZyIsCiAgICAic3ViIiA6IFsgewogICAgICAibGFiZWwiIDogIlNhdHVyYXRlZCIsCiAgICAgICJ0YWciIDogIkZBU0FUIiwKICAgICAgInNjaGVtYU9yZ1RhZyIgOiAic2F0dXJhdGVkRmF0Q29udGVudCIsCiAgICAgICJ0b3RhbCIgOiAzMi4yNzQ0ODk4OTA3NDcwNywKICAgICAgImhhc1JESSIgOiB0cnVlLAogICAgICAiZGFpbHkiIDogMTYxLjM3MjQ0OTQ1MzczNTMzLAogICAgICAidW5pdCIgOiAiZyIKICAgIH0sIHsKICAgICAgImxhYmVsIiA6ICJUcmFucyIsCiAgICAgICJ0YWciIDogIkZBVFJOIiwKICAgICAgInNjaGVtYU9yZ1RhZyIgOiAidHJhbnNGYXRDb250ZW50IiwKICAgICAgInRvdGFsIiA6IDAuMjE0NzYwMDAwMDAwMDAwMDMsCiAgICAgICJoYXNSREkiIDogZmFsc2UsCiAgICAgICJkYWlseSIgOiAwLjAsCiAgICAgICJ1bml0IiA6ICJnIgogICAgfSwgewogICAgICAibGFiZWwiIDogIk1vbm91bnNhdHVyYXRlZCIsCiAgICAgICJ0YWciIDogIkZBTVMiLAogICAgICAic2NoZW1hT3JnVGFnIiA6IG51bGwsCiAgICAgICJ0b3RhbCIgOiAzNy4xODM0MDg3MTY0MzA2NiwKICAgICAgImhhc1JESSIgOiBmYWxzZSwKICAgICAgImRhaWx5IiA6IDAuMCwKICAgICAgInVuaXQiIDogImciCiAgICB9LCB7CiAgICAgICJsYWJlbCIgOiAiUG9seXVuc2F0dXJhdGVkIiwKICAgICAgInRhZyIgOiAiRkFQVSIsCiAgICAgICJzY2hlbWFPcmdUYWciIDogbnVsbCwKICAgICAgInRvdGFsIiA6IDYuNTk5NTAwMzQzMzIyNzU0LAogICAgICAiaGFzUkRJIiA6IGZhbHNlLAogICAgICAiZGFpbHkiIDogMC4wLAogICAgICAidW5pdCIgOiAiZyIKICAgIH0gXQogIH0sIHsKICAgICJsYWJlbCIgOiAiQ2FyYnMiLAogICAgInRhZyIgOiAiQ0hPQ0RGIiwKICAgICJzY2hlbWFPcmdUYWciIDogImNhcmJvaHlkcmF0ZUNvbnRlbnQiLAogICAgInRvdGFsIiA6IDE2MS41NDM4Mjk0MzcyNTU4NSwKICAgICJoYXNSREkiIDogdHJ1ZSwKICAgICJkYWlseSIgOiA1My44NDc5NDMxNDU3NTE5NSwKICAgICJ1bml0IiA6ICJnIiwKICAgICJzdWIiIDogWyB7CiAgICAgICJsYWJlbCIgOiAiQ2FyYnMgKG5ldCkiLAogICAgICAidGFnIiA6ICJDSE9DREYubmV0IiwKICAgICAgInNjaGVtYU9yZ1RhZyIgOiBudWxsLAogICAgICAidG90YWwiIDogMTQ1LjQ5MTY5ODQ4NjMyODEyLAogICAgICAiaGFzUkRJIiA6IGZhbHNlLAogICAgICAiZGFpbHkiIDogMC4wLAogICAgICAidW5pdCIgOiAiZyIKICAgIH0sIHsKICAgICAgImxhYmVsIiA6ICJGaWJlciIsCiAgICAgICJ0YWciIDogIkZJQlRHIiwKICAgICAgInNjaGVtYU9yZ1RhZyIgOiAiZmliZXJDb250ZW50IiwKICAgICAgInRvdGFsIiA6IDE2LjA1MjEzMDk1MDkyNzczMywKICAgICAgImhhc1JESSIgOiB0cnVlLAogICAgICAiZGFpbHkiIDogNjQuMjA4NTIzODAzNzEwOTMsCiAgICAgICJ1bml0IiA6ICJnIgogICAgfSwgewogICAgICAibGFiZWwiIDogIlN1Z2FycyIsCiAgICAgICJ0YWciIDogIlNVR0FSIiwKICAgICAgInNjaGVtYU9yZ1RhZyIgOiAic3VnYXJDb250ZW50IiwKICAgICAgInRvdGFsIiA6IDEyMS4wMDMxNTkxNjQ0Mjg3MSwKICAgICAgImhhc1JESSIgOiBmYWxzZSwKICAgICAgImRhaWx5IiA6IDAuMCwKICAgICAgInVuaXQiIDogImciCiAgICB9LCB7CiAgICAgICJsYWJlbCIgOiAiU3VnYXJzLCBhZGRlZCIsCiAgICAgICJ0YWciIDogIlNVR0FSLmFkZGVkIiwKICAgICAgInNjaGVtYU9yZ1RhZyIgOiBudWxsLAogICAgICAidG90YWwiIDogMC4wLAogICAgICAiaGFzUkRJIiA6IGZhbHNlLAogICAgICAiZGFpbHkiIDogMC4wLAogICAgICAidW5pdCIgOiAiZyIKICAgIH0gXQogIH0sIHsKICAgICJsYWJlbCIgOiAiUHJvdGVpbiIsCiAgICAidGFnIiA6ICJQUk9DTlQiLAogICAgInNjaGVtYU9yZ1RhZyIgOiAicHJvdGVpbkNvbnRlbnQiLAogICAgInRvdGFsIiA6IDkuNjY2MzM5NzA2NDIwOSwKICAgICJoYXNSREkiIDogdHJ1ZSwKICAgICJkYWlseSIgOiAxOS4zMzI2Nzk0MTI4NDE4LAogICAgInVuaXQiIDogImciCiAgfSwgewogICAgImxhYmVsIiA6ICJDaG9sZXN0ZXJvbCIsCiAgICAidGFnIiA6ICJDSE9MRSIsCiAgICAic2NoZW1hT3JnVGFnIiA6ICJjaG9sZXN0ZXJvbENvbnRlbnQiLAogICAgInRvdGFsIiA6IDAuMCwKICAgICJoYXNSREkiIDogZmFsc2UsCiAgICAiZGFpbHkiIDogMC4wLAogICAgInVuaXQiIDogIm1nIgogIH0sIHsKICAgICJsYWJlbCIgOiAiU29kaXVtIiwKICAgICJ0YWciIDogIk5BIiwKICAgICJzY2hlbWFPcmdUYWciIDogInNvZGl1bUNvbnRlbnQiLAogICAgInRvdGFsIiA6IDIxLjAyNDY4NTA1ODU5Mzc1LAogICAgImhhc1JESSIgOiB0cnVlLAogICAgImRhaWx5IiA6IDAuODc2MDI4NTQ0MTA4MDczLAogICAgInVuaXQiIDogIm1nIgogIH0sIHsKICAgICJsYWJlbCIgOiAiQ2FsY2l1bSIsCiAgICAidGFnIiA6ICJDQSIsCiAgICAic2NoZW1hT3JnVGFnIiA6IG51bGwsCiAgICAidG90YWwiIDogNjYuMDAxMDgzNjc5MTk5MjEsCiAgICAiaGFzUkRJIiA6IHRydWUsCiAgICAiZGFpbHkiIDogNi42MDAxMDgzNjc5MTk5MjEsCiAgICAidW5pdCIgOiAibWciCiAgfSwgewogICAgImxhYmVsIiA6ICJNYWduZXNpdW0iLAogICAgInRhZyIgOiAiTUciLAogICAgInNjaGVtYU9yZ1RhZyIgOiBudWxsLAogICAgInRvdGFsIiA6IDI1OC4wODk3MDY0MjA4OTg0NCwKICAgICJoYXNSREkiIDogdHJ1ZSwKICAgICJkYWlseSIgOiA2NC41MjI0MjY2MDUyMjQ2MSwKICAgICJ1bml0IiA6ICJtZyIKICB9LCB7CiAgICAibGFiZWwiIDogIlBvdGFzc2l1bSIsCiAgICAidGFnIiA6ICJLIiwKICAgICJzY2hlbWFPcmdUYWciIDogbnVsbCwKICAgICJ0b3RhbCIgOiAxNDQ5LjI2NjUyOTg0NjE5MTQsCiAgICAiaGFzUkRJIiA6IHRydWUsCiAgICAiZGFpbHkiIDogNDEuNDA3NjE1MTM4NDYyNjEsCiAgICAidW5pdCIgOiAibWciCiAgfSwgewogICAgImxhYmVsIiA6ICJJcm9uIiwKICAgICJ0YWciIDogIkZFIiwKICAgICJzY2hlbWFPcmdUYWciIDogbnVsbCwKICAgICJ0b3RhbCIgOiA1LjkyNTY4MDM4NjM1MjUzOCwKICAgICJoYXNSREkiIDogdHJ1ZSwKICAgICJkYWlseSIgOiAzMi45MjA0NDY1OTA4NDc0MywKICAgICJ1bml0IiA6ICJtZyIKICB9LCB7CiAgICAibGFiZWwiIDogIlppbmMiLAogICAgInRhZyIgOiAiWk4iLAogICAgInNjaGVtYU9yZ1RhZyIgOiBudWxsLAogICAgInRvdGFsIiA6IDMuMTAyNjczNjE3NTUzNzExNSwKICAgICJoYXNSREkiIDogdHJ1ZSwKICAgICJkYWlseSIgOiAyMC42ODQ0OTA3ODM2OTE0MSwKICAgICJ1bml0IiA6ICJtZyIKICB9LCB7CiAgICAibGFiZWwiIDogIlBob3NwaG9ydXMiLAogICAgInRhZyIgOiAiUCIsCiAgICAic2NoZW1hT3JnVGFnIiA6IG51bGwsCiAgICAidG90YWwiIDogMjc1LjQzNjIyMDA5Mjc3MzQsCiAgICAiaGFzUkRJIiA6IHRydWUsCiAgICAiZGFpbHkiIDogMzkuMzQ4MDMxNDQxODI0NzcsCiAgICAidW5pdCIgOiAibWciCiAgfSwgewogICAgImxhYmVsIiA6ICJWaXRhbWluIEEiLAogICAgInRhZyIgOiAiVklUQV9SQUUiLAogICAgInNjaGVtYU9yZ1RhZyIgOiBudWxsLAogICAgInRvdGFsIiA6IDYuOTQxOTk5ODE2ODk0NTMxLAogICAgImhhc1JESSIgOiB0cnVlLAogICAgImRhaWx5IiA6IDAuNzcxMzMzMzEyOTg4MjgxMiwKICAgICJ1bml0IiA6ICLCtWciCiAgfSwgewogICAgImxhYmVsIiA6ICJWaXRhbWluIEMiLAogICAgInRhZyIgOiAiVklUQyIsCiAgICAic2NoZW1hT3JnVGFnIiA6IG51bGwsCiAgICAidG90YWwiIDogMjAuMTMxNzk5NDY4OTk0MTQsCiAgICAiaGFzUkRJIiA6IHRydWUsCiAgICAiZGFpbHkiIDogMzMuNTUyOTk5MTE0OTkwMjMsCiAgICAidW5pdCIgOiAibWciCiAgfSwgewogICAgImxhYmVsIiA6ICJUaGlhbWluIChCMSkiLAogICAgInRhZyIgOiAiVEhJQSIsCiAgICAic2NoZW1hT3JnVGFnIiA6IG51bGwsCiAgICAidG90YWwiIDogMC4xNjUyODc0MjM3MDYwNTQ2OCwKICAgICJoYXNSREkiIDogdHJ1ZSwKICAgICJkYWlseSIgOiAxMS4wMTkxNjE1ODA0MDM2NDYsCiAgICAidW5pdCIgOiAibWciCiAgfSwgewogICAgImxhYmVsIiA6ICJSaWJvZmxhdmluIChCMikiLAogICAgInRhZyIgOiAiUklCRiIsCiAgICAic2NoZW1hT3JnVGFnIiA6IG51bGwsCiAgICAidG90YWwiIDogMC4zMjIwMDk0MTkyNTA0ODgyNiwKICAgICJoYXNSREkiIDogdHJ1ZSwKICAgICJkYWlseSIgOiAxOC45NDE3MzA1NDQxNDYzNjcsCiAgICAidW5pdCIgOiAibWciCiAgfSwgewogICAgImxhYmVsIiA6ICJOaWFjaW4gKEIzKSIsCiAgICAidGFnIiA6ICJOSUEiLAogICAgInNjaGVtYU9yZ1RhZyIgOiBudWxsLAogICAgInRvdGFsIiA6IDIuMjY1MTI0NzM2MzI4MTI1LAogICAgImhhc1JESSIgOiB0cnVlLAogICAgImRhaWx5IiA6IDExLjMyNTYyMzY4MTY0MDYyNSwKICAgICJ1bml0IiA6ICJtZyIKICB9LCB7CiAgICAibGFiZWwiIDogIlZpdGFtaW4gQjYiLAogICAgInRhZyIgOiAiVklUQjZBIiwKICAgICJzY2hlbWFPcmdUYWciIDogbnVsbCwKICAgICJ0b3RhbCIgOiAwLjkwODc3MTk3NTcwODAwNzcsCiAgICAiaGFzUkRJIiA6IHRydWUsCiAgICAiZGFpbHkiIDogNDUuNDM4NTk4Nzg1NDAwMzksCiAgICAidW5pdCIgOiAibWciCiAgfSwgewogICAgImxhYmVsIiA6ICJGb2xhdGUgZXF1aXZhbGVudCAodG90YWwpIiwKICAgICJ0YWciIDogIkZPTERGRSIsCiAgICAic2NoZW1hT3JnVGFnIiA6IG51bGwsCiAgICAidG90YWwiIDogNjguMzkyNjI2NjQ3OTQ5MjEsCiAgICAiaGFzUkRJIiA6IHRydWUsCiAgICAiZGFpbHkiIDogMTcuMDk4MTU2NjYxOTg3MzA0LAogICAgInVuaXQiIDogIsK1ZyIKICB9LCB7CiAgICAibGFiZWwiIDogIkZvbGF0ZSAoZm9vZCkiLAogICAgInRhZyIgOiAiRk9MRkQiLAogICAgInNjaGVtYU9yZ1RhZyIgOiBudWxsLAogICAgInRvdGFsIiA6IDY4LjM5MjYyNjY0Nzk0OTIxLAogICAgImhhc1JESSIgOiBmYWxzZSwKICAgICJkYWlseSIgOiAwLjAsCiAgICAidW5pdCIgOiAiwrVnIgogIH0sIHsKICAgICJsYWJlbCIgOiAiRm9saWMgYWNpZCIsCiAgICAidGFnIiA6ICJGT0xBQyIsCiAgICAic2NoZW1hT3JnVGFnIiA6IG51bGwsCiAgICAidG90YWwiIDogMC4wLAogICAgImhhc1JESSIgOiBmYWxzZSwKICAgICJkYWlseSIgOiAwLjAsCiAgICAidW5pdCIgOiAiwrVnIgogIH0sIHsKICAgICJsYWJlbCIgOiAiVml0YW1pbiBCMTIiLAogICAgInRhZyIgOiAiVklUQjEyIiwKICAgICJzY2hlbWFPcmdUYWciIDogbnVsbCwKICAgICJ0b3RhbCIgOiAwLjAsCiAgICAiaGFzUkRJIiA6IGZhbHNlLAogICAgImRhaWx5IiA6IDAuMCwKICAgICJ1bml0IiA6ICLCtWciCiAgfSwgewogICAgImxhYmVsIiA6ICJWaXRhbWluIEQiLAogICAgInRhZyIgOiAiVklURCIsCiAgICAic2NoZW1hT3JnVGFnIiA6IG51bGwsCiAgICAidG90YWwiIDogMC4wLAogICAgImhhc1JESSIgOiBmYWxzZSwKICAgICJkYWlseSIgOiAwLjAsCiAgICAidW5pdCIgOiAiwrVnIgogIH0sIHsKICAgICJsYWJlbCIgOiAiVml0YW1pbiBFIiwKICAgICJ0YWciIDogIlRPQ1BIQSIsCiAgICAic2NoZW1hT3JnVGFnIiA6IG51bGwsCiAgICAidG90YWwiIDogNi43Nzc2NTI1NTEyNjk1MzIsCiAgICAiaGFzUkRJIiA6IHRydWUsCiAgICAiZGFpbHkiIDogMzMuODg4MjYyNzU2MzQ3NjYsCiAgICAidW5pdCIgOiAibWciCiAgfSwgewogICAgImxhYmVsIiA6ICJWaXRhbWluIEsiLAogICAgInRhZyIgOiAiVklUSzEiLAogICAgInNjaGVtYU9yZ1RhZyIgOiBudWxsLAogICAgInRvdGFsIiA6IDEwLjY4MjQzOTY2Njc0ODA0NywKICAgICJoYXNSREkiIDogdHJ1ZSwKICAgICJkYWlseSIgOiAxMy4zNTMwNDk1ODM0MzUwNiwKICAgICJ1bml0IiA6ICLCtWciCiAgfSBdCn1d
+    http_version: 
+  recorded_at: Thu, 02 Nov 2017 16:38:10 GMT
+- request:
+    method: get
+    uri: https://api.edamam.com/search?app_id=<EDAMAM_ID>&app_key=<EDAMAM_KEY>&r=http://www.edamam.com/ontologies/edamam.owl%2523recipe_8643e0c3105bcb0d3c3a417308a09c03
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - ngx_openresty
+      Date:
+      - Thu, 02 Nov 2017 16:38:46 GMT
+      Content-Type:
+      - application/json;charset=UTF-8
+      Content-Length:
+      - '2'
+      Connection:
+      - keep-alive
+      Cache-Control:
+      - private
+      Expires:
+      - Thu, 01 Jan 1970 00:00:00 UTC
+      X-Served-By:
+      - ip-10-143-141-59/10.143.141.59
+    body:
+      encoding: UTF-8
+      string: "[]"
+    http_version: 
+  recorded_at: Thu, 02 Nov 2017 16:38:46 GMT
+recorded_with: VCR 3.0.3
