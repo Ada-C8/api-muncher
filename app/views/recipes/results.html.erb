@@ -1,7 +1,7 @@
 
 
 <section class="row search_bar">
-  <h1 class = "columns large-4 large-centered small-4"> MUNCHER </h1>
+  <h1 class = "columns large-4 small-4 large-centered small-centered"> MUNCHER </h1>
   <%= render partial: "layouts/search_bar" %>
 </section>
 
@@ -24,7 +24,7 @@
 </main>
 
 <nav class="row">
-  <p class="large-4 small-4 columns large-centered small-centered">
+  <p class="large-4 small-6 columns large-centered small-centered">
     <
     <%= link_to "1", get_recipes_path({q: params[:q], from: 0}) %>
     <%= link_to "2", get_recipes_path({q: params[:q], from: 10}) %>

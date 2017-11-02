@@ -1,25 +1,49 @@
+<section class="row">
+  <h1 class = "columns large-6 large-centered small-centered small-4"> MUNCHER </h1>
+  <%= render partial: "layouts/search_bar" %>
+</section>
 
-<%= render partial: "layouts/search_bar" %>
+<section class="row">
+  <h2 class="columns large-6 small-8 large-centered small-centered">
+    <%= @recipe[0]["label"] %>
+  </h1>
+</section>
 
-<h1> <%= @recipe[0]["label"] %> </h1>
-<h2> By: <%= @recipe[0]["source"]%></h2>
+<section class="row">
+  <h3 class="columns large-6 small-8 large-centered small-centered">
+    By: <%= @recipe[0]["source"]%>
+  </h2>
+</section>
 
-<p> <%= link_to 'Original Recipe', @recipe[0]["url"]%> </p>
+<section class="row">
+  <p class="columns large-4 small-4 large-centered small-centered">
+    <%= link_to 'Original Recipe', @recipe[0]["url"]%>
+  </p>
+</section>
 
-<figure>
-  <img src= "<%= @recipe[0]["image"]%>" alt = "Picture of <%= @recipe[0]["label"] %>" />
-</figure>
+<section class="row">
+  <figure class="columns large-4 small-4">
+    <img src= "<%= @recipe[0]["image"]%>" alt = "Picture of <%= @recipe[0]["label"] %>" />
+  </figure>
 
-<h3> Ingredients </h3>
-<ul>
-  <% @recipe[0]["ingredientLines"].each do |item| %>
-    <li> <%= item %> </li>
-  <% end %>
-</ul>
+  <h3> Ingredients </h3>
+  <ol>
+    <% @recipe[0]["ingredientLines"].each do |item| %>
+      <li> <%= item %> </li>
+    <% end %>
+  </ol>
+</section>
 
-<h3> Dietary Information </h3>
-<ul>
-  <% @recipe[0]["totalNutrients"].each do |item|  %>
-    <li> <%= item[1]["label"] + "  #{item[1]["quantity"]}"+item[1]["unit"] %> </li>
-  <% end %>
-</ul>
+<section id = "dietary" class="row">
+  <h3 class="columns large-6 small-8 large-centered small-centered">
+    Dietary Information
+  </h3>
+
+  <ul>
+    <% @recipe[0]["totalNutrients"].each do |item|  %>
+      <li class="columns large-3 small-3">
+        <%= item[1]["label"] + "  #{(item[1]["quantity"]).to_i}"+item[1]["unit"] %>
+      </li>
+    <% end %>
+  </ul>
+</section>
