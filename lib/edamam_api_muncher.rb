@@ -1,54 +1,55 @@
-require "HTTParty"
-require "pry"
-
+require "httparty"
+# require "pry"
+#
 class EdamamApiMuncher
   BASE_URL = "https://api.edamam.com/search?q="
   APP_ID = ENV["API_ID"]
   API_KEY = ENV["API_KEY"]
-
-
-# q=chicken&app_id=3959fd1f&app_key=d4f2a5e71269a4e586e6b5bf09346f8a
-  def self.search_resipes(food)
+#
+#
+# # q=chicken&app_id=3959fd1f&app_key=d4f2a5e71269a4e586e6b5bf09346f8a
+  def self.list_recipes(food)
     url = BASE_URL + food + "&app_id=#{APP_ID}" + "&app_key=#{API_KEY}"
     data = HTTParty.get(url)
-     = []
-    if data["channels"]
-      data["channels"].each do |channel_data|
-        channel_list << create_channel(channel_data)
-      end
-    end
-    return channel_list
+
+    # check_status(data)
+
+    # recipe_list = []
+    # if data["hits"]
+    #   data["hits"].each do |hit|
+    #     hit.each do |recipe|
+    #       recipe_list << create_recipe(recipe)
+    #     end
+    #   end
+    # end
+    # return recipe_list
   end
 
-  def self.send_msg(channel, msg)
-    puts "Sending message to channel #{channel}: #{msg}"
+  # private
 
-    url = BASE_URL + "chat.postMessage?" + "token=#{TOKEN}"
-    response = HTTParty.post(url,
-    body:  {
-      "text" => "#{msg}",
-      "channel" => "#{channel}",
-      "username" => "Roberts-Robit",
-      "icon_emoji" => ":rocket:",
-      "as_user" => "false"
-    },
-    :headers => { 'Content-Type' => 'application/x-www-form-urlencoded' })
-    return response.success?
-  end
+  # def self.check_status(response)
+  #   unless response["ok"]
+  #     raise ApiError.new("API call to slack failed: #{response["error"]}")
+  #   end
+  # end
 
-
-  private
-
-  def self.create_channel(api_params)
-      return Channel.new(
-        api_params["name"],
-        api_params["id"],
-        {
-          purpose: api_params["purpose"],
-          is_archived: api_params["is_archived"],
-          members: api_params["members"]
-        }
-      )
-    end
-
+  # def self.create_recipe(api_params)
+  #     return Recipe.new(
+  #       api_params["hits"]
+  #       {
+  #         api_params["recipe"]["uri"],
+  #         api_params["recipe"]["label"],
+  #         api_params["recipe"]["image"],
+  #         api_params["recipe"]["source"],
+  #         api_params["recipe"]["url"],
+  #         api_params["recipe"]["ingredients"]{
+  #           text: api_params["text"],
+  #           quantity: api_params["quantity"],
+  #           measure: api_params["measure"],
+  #           food: api_params["food"],
+  #           weight: api_params["weight"]
+  #         }
+  #       }
+  #     )
+  #   end
 end
