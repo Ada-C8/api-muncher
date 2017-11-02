@@ -3,8 +3,6 @@ require 'test_helper'
 describe EdamamApiWrapper do
 
   describe "self.query" do
-    #TODO
-    # not getting any results back (getting empty array)
     it "can do a query" do
       VCR.use_cassette("query") do
         query = "tofu"

@@ -19,7 +19,7 @@
         <%= "#{list_print(@recipe.healthLabels)}" %>
         <% end %>
       </p>
-      <h6>Calories <%= @recipe.calories.round(2) %></h6>
+      <h6>Calories <%= (@recipe.calories / @recipe.servings).round(2) %></h6>
       <h4>Ingredients:</h4>
       <ul>
         <% @recipe.ingredients.each do |ingredient| %>

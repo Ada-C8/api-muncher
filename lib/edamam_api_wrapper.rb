@@ -33,6 +33,7 @@ class EdamamApiWrapper
     api_params["recipe"]["label"],
     api_params["recipe"]["image"],
     api_params["recipe"]["url"],
+    api_params["recipe"]["yield"],
     api_params["recipe"]["ingredientLines"],
     {
       totalNutrients: api_params["recipe"]["totalNutrients"],
@@ -55,6 +56,7 @@ class EdamamApiWrapper
     result[0]["label"],
     result[0]["image"],
     result[0]["url"],
+    result[0]["yield"],
     result[0]["ingredientLines"],
     {
       totalNutrients: result[0]["totalNutrients"],
