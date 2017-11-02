@@ -1,56 +1,56 @@
 require 'test_helper'
 
 describe Recipe do
+  describe "initialize" do
+    it "can be instantiated with a uri, url, and label" do
+      recipe = Recipe.new("uri", "url", "label")
+      recipe.must_be_kind_of Recipe
+    end
 
-  
+    it "Requires a uri, url, and label" do
+          proc {
+            Recipe.new()
+          }.must_raise ArgumentError
+
+          proc {
+            Recipe.new("uri")
+          }.must_raise ArgumentError
+
+          proc {
+            Recipe.new("uri", "url")
+          }.must_raise ArgumentError
+
+          # Empty strings are not permitted either
+          proc {
+            Recipe.new("", "", "")
+          }.must_raise ArgumentError
+    end
+
+      it "Tracks uri, url, and label" do
+        uri = "test_uri"
+        url = "test_url"
+        label = "test_label"
+        recipe = Recipe.new(uri, url, label)
+        recipe.uri.must_equal uri
+        recipe.url.must_equal url
+        recipe.label.must_equal label
+      end
+
+      it "Tracks optional args" do
+        options = {
+          ingredients: ["test_ingredients"],
+          source: "test_source",
+          dietLabels: "test_diet_labels",
+          image: "test_image"
+        }
+
+        recipe = Recipe.new("uri", "url", "label", options)
+
+        recipe.ingredients.must_equal options[:ingredients]
+        recipe.source.must_equal options[:source]
+        recipe.diet_labels.must_equal options[:dietLabels]
+        recipe.image.must_equal options[:image]
+      end
+  end
+
 end
-
-
-
-
-# describe Channel do
-#
-#   it "Can be instantiated with a name and ID" do
-#     Channel.new("name", "id")
-#   end
-#
-#   it "Requires a name and ID" do
-#     proc {
-#       Channel.new()
-#     }.must_raise ArgumentError
-#
-#     proc {
-#       Channel.new("name")
-#     }.must_raise ArgumentError
-#
-#     # Empty strings are not permitted either
-#     proc {
-#       Channel.new("", "")
-#     }.must_raise ArgumentError
-#   end
-#
-#   it "Tracks name and ID" do
-#     name = "test_name"
-#     id = "test_id"
-#     chan = Channel.new(name, id)
-#     chan.name.must_equal name
-#     chan.id.must_equal id
-#   end
-#
-#   it "Tracks optional args" do
-#     options = {
-#       purpose: "test_purpose",
-#       is_archived: "test_archived",
-#       is_general: "test_general",
-#       members: "test_members"
-#     }
-#     chan = Channel.new("name", "id", options)
-#
-#     chan.purpose.must_equal options[:purpose]
-#     chan.is_archived.must_equal options[:is_archived]
-#     chan.is_general.must_equal options[:is_general]
-#     chan.members.must_equal options[:members]
-#   end
-#
-#
-# end

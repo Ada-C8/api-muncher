@@ -1,8 +1,8 @@
 
-<section class="large-6 large-centered columns">
+<section class="large-6 small-6 small-centered large-centered columns">
 <%= form_tag("/recipes", method: "get") do %>
   <% label_tag(:q, "Search for:") %>
   <%= text_field_tag(:q) %>
-  <%= submit_tag("Search") %>
+  <%= submit_tag("Search", class:"button") %>
 <% end %>
 </section>

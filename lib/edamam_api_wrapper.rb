@@ -46,15 +46,17 @@ class EdamamApiWrapper
       api_params["uri"],
       api_params["url"],
       api_params["label"],
-      api_params["image"],
-      api_params["ingredients"],
-      api_params["source"],
-      api_params["dietLabels"]
-      # {
-      #   purpose: api_params["purpose"],
-      #   is_archived: api_params["is_archived"],
-      #   members: api_params["members"]
-      # }
+      # api_params["image"],
+      # api_params["ingredients"],
+      # api_params["source"],
+      # api_params["dietLabels"],
+      {
+        ingredients: api_params["ingredients"],
+        source: api_params["source"],
+        dietLabels: api_params["dietLabels"],
+        image: api_params["image"]
+
+      }
     )
   end
 

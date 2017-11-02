@@ -22,10 +22,12 @@
       <main>
         <main>
         <section class="row flash">
+          <% if flash[:status] == :failure %>
           <% if flash[:message].present? %>
           <p><%= flash[:message] %></p>
         </section>
       <% end %>
+      <%end%>
     <%= yield %>
   </main>
 
