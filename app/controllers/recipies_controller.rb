@@ -8,8 +8,9 @@ class RecipiesController < ApplicationController
 
   def index
     begin
-      @recipies = EdamamApiWrapper.get_recipies(params[:search_term])
+      results = EdamamApiWrapper.get_recipies(params[:search_term])
       @search_term = params[:search_term]
+      @recipies = results.paginate(:page => params[:page], :per_page => 10)
     rescue EdamamApiWrapper::NoResultsError
       flash[:status] = :failure
       flash[:message] = "Sorry, no recipies match that serch term."
