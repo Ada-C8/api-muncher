@@ -4,12 +4,12 @@ require 'pry'
 
 class EdamamApiWrapper
 
-  BASE_URL = "https://api.edamam.com/search?q="
+  BASE_URL = "https://api.edamam.com/search"
   ID = ENV["EDAMAM_ID"]
   KEY = ENV["EDAMAM_KEY"]
 
   def self.number_of_recipes(keywords)
-    url = BASE_URL + keywords + "&app_id=#{ID}&app_key=#{KEY}"
+    url =  BASE_URL + "?q=" + keywords + "&app_id=#{ID}&app_key=#{KEY}"
     puts url
     results = HTTParty.get(url)
     if results
@@ -23,7 +23,7 @@ class EdamamApiWrapper
   def self.list_recipes(keywords, from, to)
     #example from API documentation:
     #https://api.edamam.com/search?q=chicken&app_id=${YOUR_APP_ID}&app_key=${YOUR_APP_KEY}&from=0&to=3&calories=gte%20591,%20lte%20722&health=alcohol-free
-    url = BASE_URL + keywords + "&app_id=#{ID}&app_key=#{KEY}"
+    url = BASE_URL + "?q=" +  keywords + "&app_id=#{ID}&app_key=#{KEY}" + "&from=" + from + "&to=" + to
     puts url
     results = HTTParty.get(url)
     recipes_list = []
@@ -41,8 +41,14 @@ class EdamamApiWrapper
     end
   end
 
-  def self.show_recipe(uri)
-
+  def self.show_recipe(uri_id)
+    r = "http://www.edamam.com/ontologies/edamam.owl" + uri_id
+    url = BASE_URL + "?r=" + r + "&app_id=#{ID}&app_key=#{KEY}"
+    puts url
+    if url
+      return url
+    else
+      return false
   end
 
   def next
