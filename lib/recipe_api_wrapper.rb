@@ -11,17 +11,17 @@ class RecipeApiWrapper  #THIS IS THE DATA
   APP_KEY = ENV["APP_KEY"]
 
   def self.search(food, from)
-    url = BASE_URL + "?q=(#{food})" + "&from=#{from}" "&app_id=#{APP_ID}" + "&app_key=#{APP_KEY}"
+    url = BASE_URL + "?q=#{food}" + "&from=#{from}" "&app_id=#{APP_ID}" + "&app_key=#{APP_KEY}"
 
-    response = HTTParty.get(url)
-
-    # check_status(response)
-
+    response = self.parse_response(HTTParty.get(url))
     recipe_list = []
-    if response["hits"]
+
+    if response.is_a?(Hash) && response["hits"]
       response["hits"].each do |raw_recipe|
         recipe_list << self.create_recipe(raw_recipe["recipe"])
       end
+    else
+      recipe_list = nil
     end
     return recipe_list
   end
@@ -29,11 +29,11 @@ class RecipeApiWrapper  #THIS IS THE DATA
   def self.find(id)
 
     url = BASE_URL + "?r=#{URI.encode(id)}" + "&app_id=#{APP_ID}" + "&app_key=#{APP_KEY}"
-    response = HTTParty.get(url)
+    response = self.parse_response(HTTParty.get(url))
 
     recipe = nil
 
-    if response
+    if response.is_a?(Array) && response.length > 0
       recipe = self.create_recipe(response[0])
     end
 
@@ -43,11 +43,9 @@ class RecipeApiWrapper  #THIS IS THE DATA
 
   private
 
-  # def self.check_status(response)
-  #   unless response["ok"]
-  #     raise ApiError.new("API call to Edamam failed: #{response["error"]}")
-  #   end
-  # end
+  def self.parse_response(response)
+    response.parsed_response rescue nil
+  end
 
   def self.create_recipe(raw_recipe)
     return Recipe.new(

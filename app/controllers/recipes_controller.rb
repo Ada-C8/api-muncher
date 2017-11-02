@@ -12,6 +12,10 @@ def index
   if params[:search]
     @recipes = RecipeApiWrapper.search(params[:search], @from)
     #If search doesn't return anything it will return an empty array - handle in the view sending a message about that
+    if @recipes.nil?
+      flash[:status] = "success"
+      flash[:message] = "Sorry, Edamam search engine is down."
+    end
   else
     @recipes = nil
   end

@@ -8,8 +8,7 @@
 
     <%= stylesheet_link_tag    "application" %>
     <%= javascript_include_tag "application", 'data-turbolinks-track' => true %>
-    <%= javascript_include_tag "vendor/modernizr" %>
-    <%= csrf_meta_tags %>
+      <%= csrf_meta_tags %>
   </head>
 
   <body>
@@ -27,11 +26,36 @@
     </header>
 
     <section class="main">
+      <% if flash[:message] %>
+  <section class="row flash">
+    <div>
+      <% if flash[:status] == :failure %>
+        <p class="error">
+      <% else %>
+        <p>
+      <% end %>
+        <%= flash[:message] %>
+      </p>
+      <% if flash[:details] %>
+      <ul>
+        <% flash[:details].each do |field, problems| %>
+          <% problems.each do |problem| %>
+          <li>
+            <strong><%=field %>:</strong>
+            <%= problem %>
+          </li>
+          <% end %>
+        <%end %>
+      </ul>
+      <% end %>
+    </div>
+  </section>
+  <% end %>
 
     <%= yield %>
 
     </section>
-    
+
     <footer>
       Powered by Edamam
     </footer>
