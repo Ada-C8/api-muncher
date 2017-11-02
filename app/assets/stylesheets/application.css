@@ -17,7 +17,13 @@
 
 @import url('https://fonts.googleapis.com/css?family=Fredericka+the+Great');
 
+/**************************/
+/*STYLING ACROSS ALL PAGES*/
+/**************************/
 
+.round-border {
+  border-radius: 10px;
+}
 
 /**************************/
 /********** BODY **********/
@@ -44,5 +50,9 @@ html {
 footer {
   height: 10vh;
   text-align: center;
-  background-color: white;
+  background:rgba(255,255,255, 0.5);
+}
+
+footer p {
+  padding-top: 16px;
 }

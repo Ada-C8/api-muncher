@@ -1,13 +1,21 @@
 <main>
-  <header>
-    <h1>MUNCHIES</h1>
-    <div>
-      <%= form_tag('/recipes', method: :get) do %>
-        <%= label_tag(:q, "Search for a recipe here!") %>
-        <%= text_field_tag(:q) %>
-        <%= submit_tag("Find My Recipes!") %>
-      <% end %>
-    </div>
+  <header class="row border">
+    <section class="small-12 small-centered medium-8 medium-centered large-6 large-centered columns border-bottom">
+
+      <div class="search-padding">
+        <header>
+          <h2 class="mid-font">Munchies</h2>
+        </header>
+
+        <section>
+          <%= form_tag('/recipes', method: :get) do %>
+            <%= text_field_tag(:q, nil, placeholder: 'Search for recipes here!', class:"round-border") %>
+            <%= submit_tag("Munchie!", class:"button round-border") %>
+          <% end %>
+        </section>
+      </div>
+
+    </section>
   </header>
 
   <section>
@@ -18,11 +26,13 @@
     <div class="row">
       <% if @recipes %>
         <% @recipes.each do |recipe| %>
-          <div class="small-12 large-3 columns end">
+          <div class="small-12 medium-6 large-3 columns end">
             <%= link_to recipe_path(recipe.uri_id) do %>
-              <%= image_tag(recipe.image_url) %>
+              <%= image_tag(recipe.image_url, class:"border") %>
             <% end %>
-            <%= recipe.label %>
+            <p>
+              <%= recipe.label %>
+            </p>
           </div>
         <% end %>
 
@@ -34,7 +44,7 @@
 
       <% end %>
     </div>
-    
+
     <%= will_paginate @recipes %>
 
 

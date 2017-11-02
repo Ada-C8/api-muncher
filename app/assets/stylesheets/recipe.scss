@@ -2,34 +2,54 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-/********** HOME **********/
-// .zero-margin {
-//   margin: 0 auto;
-// //   // padding: 5% 0;
-// }
+/**************************/
+/********* HOME ***********/
+/**************************/
 
-// .max-height {
-// // //   padding: 30% 0;
-//   height: 90vh;
-// }
-//
-
-.font {
-  font-family: 'Fredericka the Great', cursive;
+@media screen and (max-width: 768px) {
+  .large-font {
+    font-family: 'Fredericka the Great', cursive;
+    font-size: 3em;
+    margin: 0;
+    }
 }
 
-.search-wrapper {
-  padding: 25% 0;
+@media screen and (min-width: 769px) {
+  .large-font {
+    font-family: 'Fredericka the Great', cursive;
+    font-size: 5em;
+    margin: 0;
+    }
 }
 
 .auto-height {
   height: 90vh;
 }
 
+.search-wrapper {
+  padding: 20% 0;
+}
+
 .pagination a {
   display: inline-block;
 }
 
+/**************************/
+/********* INDEX **********/
+/**************************/
+
+.border-bottom {
+  border: 1px solid black;
+}
+
+.mid-font {
+  font-family: 'Fredericka the Great', cursive;
+}
+
+.search-padding {
+  padding: 1em;
+}
+
 .border {
-  // border: 2px solid black;
+  border: 2px solid black;
 }
