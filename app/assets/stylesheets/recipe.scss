@@ -51,5 +51,16 @@
 }
 
 .border {
-  border: 2px solid black;
+  border: 1px solid grey;
+}
+
+.same-width {
+  width: 250px;
+  padding: 10px;
+  background-color: white;
+  font-size: 1vw;
+}
+
+.align-content {
+  align-content: center;
 }

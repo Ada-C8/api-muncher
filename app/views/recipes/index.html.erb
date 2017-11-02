@@ -20,13 +20,13 @@
 
   <section>
     <header>
-      <h1>RESULTS FOR: <%= @search_request %></h1>
+      <h2 class="mid-font">RESULTS FOR: <%= @search_request %></h2>
     </header>
 
-    <div class="row">
+    <div class="row align-content">
       <% if @recipes %>
         <% @recipes.each do |recipe| %>
-          <div class="small-12 medium-6 large-3 columns end">
+          <div class="small-12 small-centered medium-6 medium-centered large-4 large-centered columns thumbnail same-width end">
             <%= link_to recipe_path(recipe.uri_id) do %>
               <%= image_tag(recipe.image_url, class:"border") %>
             <% end %>
