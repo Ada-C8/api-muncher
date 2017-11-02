@@ -29,7 +29,7 @@ describe RecipiesController do
 
         get recipies_path, params: test_params
         must_respond_with :redirect
-        must_redirect_to root_path 
+        must_redirect_to root_path
       end # VCR
 
     end # sucess with no recipies
@@ -51,6 +51,16 @@ describe RecipiesController do
 
     it "will respond with not_found if the show_recipe does not return a Recipe" do
       # TODO: Make a request with show_recipe with a bogus uri, then the controller should check if @recipe exisits, and if it doesn't it should return not_found
+
+      VCR.use_cassette("recipies") do
+        test_params = {
+          uri: "bogus_uri"
+        }
+        name = "name"
+
+        get recipy_path(name), params: test_params
+        must_respond_with :redirect
+      end # VCR
     end # not_found
   end # show
 end

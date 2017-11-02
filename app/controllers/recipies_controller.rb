@@ -26,7 +26,14 @@ class RecipiesController < ApplicationController
     # use the uri to do a search for a specific recipe from the api
     # have to encode the uri to get rid of some weird characters in it
     # will have to make another method in EdamamApiWrapper to call here!
-    @recipe = EdamamApiWrapper.show_recipe(params[:uri])
+    # TODO: redirect to 404 not found if given a bad uri
+    begin
+      @recipe = EdamamApiWrapper.show_recipe(params[:uri])
+    rescue EdamamApiWrapper::ApiError => e
+      flash[:status] = :failure
+      flash[:message] = "e.message"
+      redirect_to root_path
+    end
   end # show
 
 end
