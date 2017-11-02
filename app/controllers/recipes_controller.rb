@@ -22,7 +22,14 @@ def index
 end
 
 def show
+  render :index, status: :bad_request and return if params[:id].nil?
+  ##ONLY can use this and when doing render or redirect and ##
   @recipe = RecipeApiWrapper.find(params[:id])
+
+  if @recipe.nil?
+    render_404
+    return
+  end
 end
 
 end
