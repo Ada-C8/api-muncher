@@ -46,6 +46,7 @@
    text-align: center;
    font-family: cursive;
    border: 1px solid black;
+   margin-bottom: 5vw;
  }
  .search_bar_2 .button{
 
@@ -57,7 +58,7 @@
    size: .5vw;
  }
 
- .results ul{
+ .all_results ul{
   text-align: center;
   list-style: none;
  }
@@ -68,15 +69,17 @@
    bottom: 0;
  }
 
-.results {
-  margin-top: 5vw;
+.all_results {
+  margin-top: 10vw;
 }
 
 
 .list_result {
-  margin-top: 4vw;
+  margin-top: 5vw;
+  margin-bottom: 5vw;
+  height: 300px;
 }
 
 .recipe_title {
-  height: 70px;
+  margin-bottom: 2vw;
 }

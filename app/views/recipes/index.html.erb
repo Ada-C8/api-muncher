@@ -7,17 +7,17 @@
 </section>
 
 
-<section class="results row large-12">
+<section class="all_results row large-12">
 <ol>
   <% @recipes.each do |recipe| %>
   <article class="list_result column float-left large-4">
   <li>
     <ul>
-      <li class="recipe_title">
-        <%= link_to recipe.name, recipe_path(recipe.name, uri: recipe.uri) %>
-      </li>
       <li>
         <%= image_tag recipe.image, alt:"#{recipe.name} image" %>
+      </li>
+      <li class="recipe_title">
+        <%= link_to recipe.name, recipe_path(recipe.name, uri: recipe.uri) %>
       </li>
     </ul>
     </article>
