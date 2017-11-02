@@ -151,6 +151,7 @@ header h1 {
 footer {
   background-color: var(--grey);
   bottom: 0;
+  height: 5rem;
   left: 0;
   padding: 1rem;
   position: absolute;
