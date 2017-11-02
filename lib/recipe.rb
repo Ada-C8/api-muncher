@@ -3,11 +3,14 @@ class Recipe
 
   def initialize( title, uri, photo_uri, ingredients, options = { } )
     @title = title
-    @mini_uri = uri[EdamamApiWrapper::RECIPE_URL.length-2,uri.length]
     @photo_uri = photo_uri
     @ingredients = ingredients
     @external_url = options[:external_url]
     @source = options[:source]
+
+    uri = URI.encode(uri) if uri.include?("#")
+
+    @mini_uri = uri[EdamamApiWrapper::RECIPE_URL.length,uri.length]
   end
 
   def == (another_recipe)
