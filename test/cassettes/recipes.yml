@@ -467,4 +467,155 @@ http_interactions:
       string: "["
     http_version: 
   recorded_at: Thu, 02 Nov 2017 01:08:36 GMT
+- request:
+    method: get
+    uri: https://api.edamam.com/search?app_id=APP_ID&app_key=APP_KEY&from=10&q=
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - ngx_openresty
+      Date:
+      - Thu, 02 Nov 2017 01:45:22 GMT
+      Content-Type:
+      - application/json;charset=UTF-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Cache-Control:
+      - private
+      Expires:
+      - Thu, 01 Jan 1970 00:00:00 UTC
+      X-Served-By:
+      - ip-10-143-141-59/10.143.141.59
+      Vary:
+      - Accept-Encoding
+    body:
+      encoding: ASCII-8BIT
+      string: |-
+        {
+          "q" : "",
+          "from" : 10,
+          "to" : 20,
+          "params" : {
+            "sane" : [ ],
+            "q" : [ "" ],
+            "from" : [ "10" ],
+            "app_key" : [ "APP_KEY" ],
+            "app_id" : [ "APP_ID" ]
+          },
+          "more" : false,
+          "count" : 0,
+          "hits" : [ ]
+        }
+    http_version: 
+  recorded_at: Thu, 02 Nov 2017 01:45:23 GMT
+- request:
+    method: get
+    uri: https://api.edamam.com/search?app_id=APP_ID&app_key=APP_KEY&from=10&q=blah%20blah%20blah%20
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - ngx_openresty
+      Date:
+      - Thu, 02 Nov 2017 01:46:33 GMT
+      Content-Type:
+      - application/json;charset=UTF-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Cache-Control:
+      - private
+      Expires:
+      - Thu, 01 Jan 1970 00:00:00 UTC
+      X-Served-By:
+      - ip-10-143-141-59/10.143.141.59
+      Vary:
+      - Accept-Encoding
+    body:
+      encoding: ASCII-8BIT
+      string: |-
+        {
+          "q" : "blah blah blah ",
+          "from" : 10,
+          "to" : 20,
+          "params" : {
+            "sane" : [ ],
+            "q" : [ "blah blah blah " ],
+            "from" : [ "10" ],
+            "app_key" : [ "APP_KEY" ],
+            "app_id" : [ "APP_ID" ]
+          },
+          "more" : false,
+          "count" : 8,
+          "hits" : [ ]
+        }
+    http_version: 
+  recorded_at: Thu, 02 Nov 2017 01:46:33 GMT
+- request:
+    method: get
+    uri: https://api.edamam.com/search?app_id=APP_ID&app_key=APP_KEY&r=blah%20blah%20blah
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - ngx_openresty
+      Date:
+      - Thu, 02 Nov 2017 01:52:42 GMT
+      Content-Type:
+      - application/json;charset=UTF-8
+      Content-Length:
+      - '1'
+      Connection:
+      - keep-alive
+      Cache-Control:
+      - private
+      Expires:
+      - Thu, 01 Jan 1970 00:00:00 UTC
+      X-Served-By:
+      - ip-10-143-141-59/10.143.141.59
+    body:
+      encoding: UTF-8
+      string: "["
+    http_version: 
+  recorded_at: Thu, 02 Nov 2017 01:52:42 GMT
 recorded_with: VCR 3.0.3
