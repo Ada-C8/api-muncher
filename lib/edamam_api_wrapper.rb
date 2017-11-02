@@ -10,7 +10,7 @@ class EdamamApiWrapper
 
   # (search) takes in the params from the form on the homepage. The index controller method takes this: (params[:search]). the method below doesnt know what that is however because it is passed as the parameter, it can work with the value of what is passed.
   def self.list_recipes(search)
-    url = BASE_URL + "?q=" + search + "&app_id=" + ID + "&app_key=" + KEY + "&from=0&to=100"
+    url = BASE_URL + "?q=" + search + "&app_id=" + ID + "&app_key=" + KEY + "&from=0&to=200"
 
     data = HTTParty.get(url)
 
