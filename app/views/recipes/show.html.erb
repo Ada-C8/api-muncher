@@ -1,28 +1,33 @@
 <h2><%= @recipe.name %></h2>
+<h3>By: <%= link_to @recipe.source, @recipe.url %></h3>
 
-<img src="<%= @recipe.image %>", alt="<%= @recipe.name %>"/>
+<div class='show_info'>
+  <%= image_tag @recipe.image, class:'columns small-12 large-5' %>
 
-<ul>
-  <% @recipe.ingredients.each do |ingredient| %>
-  <li>
-    <%= ingredient %>
-  </li>
-  <% end %>
-</ul>
+  <ul class='columns small-12 large-5'>
+    <% @recipe.ingredients.each do |ingredient| %>
+    <li>
+      <%= ingredient %>
+    </li>
+    <% end %>
+  </ul>
 
 <% if @recipe.diet_labels || @recipe.health_labels %>
-<ul>
-  <% @recipe.diet_labels.each do |diet| %>
-  <li>
-    <%= diet %>
-  </li>
-  <% end %>
-  <% @recipe.health_labels.each do |health| %>
-  <li>
-    <%= health %>
-  </li>
-  <% end %>
-</ul>
-<% end %>
+<section>  
+  <h4>Dietary Labels</h4>
 
-<%= link_to "See Recipe", @recipe.url %>
+  <ul>
+    <% @recipe.diet_labels.each do |diet| %>
+    <li>
+      <%= diet %>
+    </li>
+    <% end %>
+    <% @recipe.health_labels.each do |health| %>
+    <li>
+      <%= health %>
+    </li>
+    <% end %>
+  </ul>
+</section>
+<% end %>
+</div>

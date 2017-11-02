@@ -35,6 +35,7 @@ private
       api_data["uri"],
       api_data["image"],
       api_data["url"],
+      api_data["source"],
       api_data["ingredientLines"],
       {
         diet_labels: api_data["dietLabels"],

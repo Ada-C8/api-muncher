@@ -94,15 +94,11 @@ header .input-button input.field {
 /****************/
 
 footer {
-  text-align: right;
+  text-align: center;
   /*background-color: grey;*/
 }
 footer img {
   max-height: 40px;
-}
-
-footer.root_foot {
-  text-align: left;
 }
 
 .good_bye_foot {
