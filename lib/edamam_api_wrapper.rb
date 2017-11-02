@@ -1,5 +1,5 @@
-require 'httparty'
-require 'awesome_print'
+# require 'httparty'
+# require 'awesome_print'
 # require 'dotenv/load'
 # require_relative 'recipe'
 
