@@ -1,21 +1,20 @@
 
 
 <section class="row search_bar">
-  
+  <h1 class = "columns large-4 large-centered small-4"> MUNCHER </h1>
   <%= render partial: "layouts/search_bar" %>
 </section>
 
 
 <section class="row">
-  <h1> Recipes </h1>
-  <h2> Results for "<%= params[:q] %>" </h2>
+  <h2 class="large-4 columns large-centered"> Results for "<%= params[:q] %>" </h2>
 </section>
 
 
 
-<main>
+<main class="row">
 <% @results.each do |result| %>
-<section class="columns large-3 small-8">
+<section class="columns large-3 small-8 recipe">
   <figure>
     <%= link_to(image_tag(result[:image], alt: "#{result[:label]}"), show_recipe_path(result[:uri])) %>
     <figcaption> <%= result[:label]%> </figcaption>
@@ -25,11 +24,13 @@
 </main>
 
 <nav class="row">
-  <p>  <
+  <p class="large-4 small-4 columns large-centered small-centered">
+    <
     <%= link_to "1", get_recipes_path({q: params[:q], from: 0}) %>
     <%= link_to "2", get_recipes_path({q: params[:q], from: 10}) %>
     <%= link_to "3", get_recipes_path({q: params[:q], from: 20}) %>
     <%= link_to "4", get_recipes_path({q: params[:q], from: 30}) %>
     <%= link_to "5", get_recipes_path({q: params[:q], from: 40}) %>
-    > </p>
+    >
+  </p>
 </nav>
