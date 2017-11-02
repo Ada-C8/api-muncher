@@ -46,7 +46,7 @@ describe EdamamApiWrapper do
 
 
   describe "search_item" do
-    let(:uri) { "http://www.edamam.com/ontologies/edamam.owl#recipe_8643e0c3105bcb0d3c3a417308a09c03" }
+    let(:uri) { URI.encode( "http://www.edamam.com/ontologies/edamam.owl#recipe_8643e0c3105bcb0d3c3a417308a09c03") }
 
     it "will return a recipe object" do
       VCR.use_cassette("search_item") do

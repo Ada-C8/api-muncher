@@ -12,9 +12,10 @@ class EdamamApiWrapper
 
     url = BASE_URL + "r=#{item_uri}" "&app_id=#{app_id}" + "&app_key=#{app_key}"
 
-    data = HTTParty.get(url)
+    data = parsed_response(HTTParty.get(url))
+    return nil if data.nil?
 
-    if data[0]
+    if data.class != String
       recipe = Recipe.new(
         data[0]["uri"],
         data[0]["label"],
@@ -35,17 +36,8 @@ class EdamamApiWrapper
     app_id ||= APP_ID
     app_key ||= APP_KEY
 
-    # if app_id
-    #   puts "FOUND APP ID! #{app_id}"
-    # end
-    # if app_key
-    #   puts "FOUND APP KEY! #{app_key}"
-    # end
-
 
     url = BASE_URL + "q=#{term}" + "&app_id=#{app_id}" + "&app_key=#{app_key}" + "&from=0" + "&to=5"
-
-    puts url
 
     data = HTTParty.get(url)
 
@@ -65,5 +57,11 @@ class EdamamApiWrapper
     else
       return []
     end
+  end
+
+  private
+
+  def self.parsed_response(response)
+    return response.parsed_response rescue nil
   end
 end
