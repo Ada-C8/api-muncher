@@ -5,32 +5,54 @@
   <%= render partial: "layouts/search_bar" %>
 </section>
 
+<section class="display_area">
+  <section class="row">
+    <h2 class="large-4 columns large-centered"> Results for "<%= params[:q] %>" </h2>
+  </section>
 
-<section class="row">
-  <h2 class="large-4 columns large-centered"> Results for "<%= params[:q] %>" </h2>
+  <nav class="row">
+    <p class="large-4 small-6 columns large-centered small-centered">
+      <% previous_page = params[:from].to_i %>
+      <% next_page = params[:from].to_i %>
+      <% if previous_page > 0%>
+        <% previous_page = previous_page - 10 %>
+        <% next_page = next_page + 10 %>
+      <% else %>
+        <% previous_page = 0 %>
+        <% next_page = 10 %>
+      <% end %>
+
+      <%= link_to "Previous Page",  get_recipes_path({q: params[:q], from: previous_page}), id: "left" %>
+      <%= link_to "Next Page", get_recipes_path({q: params[:q], from: next_page}), id: "right" %>
+    </p>
+  </nav>
+
+
+  <main class="row">
+  <% @results.each do |result| %>
+  <section class="columns large-3 small-8 recipe">
+    <figure>
+      <%= link_to(image_tag(result[:image], alt: "#{result[:label]}"), show_recipe_path(result[:uri])) %>
+      <figcaption> <%= result[:label]%> </figcaption>
+    </figure>
+  </section>
+  <% end %>
+  </main>
+
+  <nav class="row">
+    <p class="large-4 small-6 columns large-centered small-centered">
+      <% previous_page = params[:from].to_i %>
+      <% next_page = params[:from].to_i %>
+      <% if previous_page > 0%>
+        <% previous_page = previous_page - 10 %>
+        <% next_page = next_page + 10 %>
+      <% else %>
+        <% previous_page = 0 %>
+        <% next_page = 10 %>
+      <% end %>
+
+      <%= link_to "Previous Page",  get_recipes_path({q: params[:q], from: previous_page}), id: "left" %>
+      <%= link_to "Next Page", get_recipes_path({q: params[:q], from: next_page}), id: "right" %>
+    </p>
+  </nav>
 </section>
-
-
-
-<main class="row">
-<% @results.each do |result| %>
-<section class="columns large-3 small-8 recipe">
-  <figure>
-    <%= link_to(image_tag(result[:image], alt: "#{result[:label]}"), show_recipe_path(result[:uri])) %>
-    <figcaption> <%= result[:label]%> </figcaption>
-  </figure>
-</section>
-<% end %>
-</main>
-
-<nav class="row">
-  <p class="large-4 small-6 columns large-centered small-centered">
-    <
-    <%= link_to "1", get_recipes_path({q: params[:q], from: 0}) %>
-    <%= link_to "2", get_recipes_path({q: params[:q], from: 10}) %>
-    <%= link_to "3", get_recipes_path({q: params[:q], from: 20}) %>
-    <%= link_to "4", get_recipes_path({q: params[:q], from: 30}) %>
-    <%= link_to "5", get_recipes_path({q: params[:q], from: 40}) %>
-    >
-  </p>
-</nav>
