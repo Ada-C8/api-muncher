@@ -67,6 +67,8 @@
    text-align: center;
    position: fixed;
    bottom: 0;
+   background: beige;
+   z-index: 100;
  }
 
 .all_results {
