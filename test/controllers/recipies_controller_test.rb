@@ -28,7 +28,8 @@ describe RecipiesController do
         }
 
         get recipies_path, params: test_params
-        must_respond_with :not_found
+        must_respond_with :redirect
+        must_redirect_to root_path 
       end # VCR
 
     end # sucess with no recipies
