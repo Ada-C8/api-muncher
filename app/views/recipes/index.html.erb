@@ -8,7 +8,7 @@
 <section class="row">
     <% @recipes.each do |recipe| %>
     <article class = "columns small-10 medium-5 large-3 margin-3-col">
-      <h3><%= link_to "#{recipe.name}", recipe_path(recipe.label, uri: recipe.uri ) %></h3>
+      <h3><%= link_to "#{recipe.name}", recipe_path(recipe.name, uri: recipe.uri ) %></h3>
       <img src = "<%= recipe.image %>", alt = "<%=recipe.name %>"/>
       </article>
     <% end %>
