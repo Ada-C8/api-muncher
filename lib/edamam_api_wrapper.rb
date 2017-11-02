@@ -37,7 +37,7 @@ class EdamamApiWrapper
     app_key ||= APP_KEY
 
 
-    url = BASE_URL + "q=#{term}" + "&app_id=#{app_id}" + "&app_key=#{app_key}" + "&from=0" + "&to=5"
+    url = BASE_URL + "q=#{term}" + "&app_id=#{app_id}" + "&app_key=#{app_key}" #+ "&from=0" + "&to=5"
 
     data = HTTParty.get(url)
 
