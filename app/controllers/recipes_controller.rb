@@ -3,7 +3,6 @@ require_dependency '../../lib/recipe'
 
 class RecipesController < ApplicationController
   def home
-
   end
 
   def index
