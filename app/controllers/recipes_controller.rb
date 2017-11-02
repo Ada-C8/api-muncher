@@ -3,12 +3,20 @@ require_dependency '../../lib/recipe'
 
 class RecipesController < ApplicationController
 
-  def search
+
+  #THIS IS THE SEARCH PAGE WITH QUERY BAR
+  def index
+
   end
 
-  def index
-    @recipes = EdamamApiWrapper.find_recipes(params['keywords'])
+  #THIS DISPLAYS THE RESULTS OF WHAT WE FOUND WHEN WE DID THE SEARCH
+  def search
     @keywords = params['keywords']
+    if @keywords.empty?
+      redirect_to root_path
+    else
+      @recipes = EdamamApiWrapper.list_recipes(@keywords)
+    end
   end
 
   def show

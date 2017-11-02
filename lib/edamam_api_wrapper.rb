@@ -1,5 +1,6 @@
 require 'httparty'
 require 'awesome_print'
+require 'pry'
 
 class EdamamApiWrapper
 
@@ -13,13 +14,18 @@ class EdamamApiWrapper
     url = BASE_URL + keywords + "&app_id=#{ID}&app_key=#{KEY}"
     puts url
     results = HTTParty.get(url)
-    puts "RESULTS******************"
-    ap results
-    puts "RESULTS******************"
-    
+    # puts "RESULTS******************"
+    # ap results
+    # puts "RESULTS******************"
+    # ap results['hits'][0]
+
     recipes_list = []
     if results['hits']
+      # puts "RESULTS HITS******************"
+      # ap results['hits']
+      # i = 0
       results['hits'].each do |recipe_data|
+        # puts "HERE #{i} #{create_recipe(recipe_data)}"
         recipes_list << create_recipe(recipe_data)
       end
       return recipes_list
@@ -34,17 +40,20 @@ class EdamamApiWrapper
   private
 
   def self.create_recipe(api_params)
+    # puts "INSIDE AGAIN!"
     recipe = Recipe.new({
-        uri: api_params["recipe"]["uri"],
-        label: api_params["recipe"]["label"],
-        image: api_params["recipe"]["image"],
-        source: api_params["recipe"]["source"],
-        url: api_params["recipe"]["url"],
-        dietLabels: api_params["recipe"]["dietLabels"],
-        healthLabels: api_params["recipe"]["healthLabels"],
-        ingredientLines: api_params["recipe"]["ingredientLines"],
+        "label" => api_params["recipe"]["label"],
+        "image" => api_params["recipe"]["image"],
+        "source" => api_params["recipe"]["source"],
+        "url" => api_params["recipe"]["url"],
+        "dietLabels" => api_params["recipe"]["dietLabels"],
+        "healthLabels" => api_params["recipe"]["healthLabels"],
+        "ingredientLines" => api_params["recipe"]["ingredientLines"],
+        "uri" => api_params["recipe"]["uri"]
       }
     )
+    # puts "A RECIPE!!!!!!!!!!!!!!!!!!!!!!!!!!!!!"
+    # ap recipe
     return recipe
   end
 end

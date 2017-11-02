@@ -3,19 +3,20 @@ require 'awesome_print'
 
 class Recipe
 
-  attr_reader :uri, :label, :image, :source, :url, :dietLabels, :healthLabels, :ingredientLines
+  attr_reader :label, :uri, :image, :source, :url, :dietLabels, :healthLabels, :ingredientLines
 
-  def initialize(response)
-    raise ArgumentError if label == nil || label == "" || uri == nil || uri == ""
+  def initialize(recipes_list)
+    raise ArgumentError if recipes_list["label"] == nil || recipes_list["label"] == "" || recipes_list["uri"] == nil || recipes_list["uri"] == ""
 
-    @uri = URI.escape(response['uri'])
-    @label = response['label']
-    @image = response['image']
-    @source = response['source']
-    @url = response['url']
-    @dietLabels = response['dietLabels']
-    @healthLabels = response['healthLabels']
-    @ingredientLines = response['ingredientLines']
+    @uri = URI.escape(recipes_list['uri'])
+    # puts "URI: #{@uri}"
+    @label = recipes_list['label']
+    @image = recipes_list['image']
+    @source = recipes_list['source']
+    @url = recipes_list['url']
+    @dietLabels = recipes_list['dietLabels']
+    @healthLabels = recipes_list['healthLabels']
+    @ingredientLines = recipes_list['ingredientLines']
   end
 
 end

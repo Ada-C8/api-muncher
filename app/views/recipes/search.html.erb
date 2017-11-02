@@ -1,8 +1,11 @@
-<h1>Add keywords to search for recipes</h1>
 
-<%= form_tag recipes_index_path(@recipes), method: "post" do %>
-  <%= label_tag(:keywords, "Enter Keywords") %>
-  <%= text_field_tag(:keywords) %>
-  <%= submit_tag("Send") %>
+<% unless params[:keywords] == nil %>
+  <h1>Results for <%= @keywords %> </h1>
+<%end%>
 
-<% end %>
+<% @recipes.each do |recipe| %>
+<ul>
+  <li><%= image_tag recipe.image%></li>
+  <li>Recipe: <%=recipe.label%></li>
+</ul>
+<%end%>
