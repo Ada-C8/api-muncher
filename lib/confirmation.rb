@@ -15,13 +15,9 @@ module Confirmation
   #   end
   # end
 
-
+# NOTE: Can make the other empty methods one line like this too :)
   def empty(search_term)
-    if search_term.to_s.strip.empty?
-      return true
-    else
-      return false
-    end
+    return search_term.to_s.strip.empty?
   end
 
   def symbols(search_term)
