@@ -167,20 +167,35 @@ SHOW
 #show {
 // display: block;
 clear: both;
-width: 500px;
+width: 800px;
 max-width: 70%;
 margin: 5%;
 padding: 4%;
 font-weight: bold;
 margin-top: 5%;
-
-  image {
-    align-self: center;
-  }
+background-color: white;
+opacity: .7;
+border-radius: 5em;
 
   li {
     font-size: 1.25 rem;
   }
+
+  a {
+    color: #74B555;
+  }
+
+  a:hover {
+    color: black;
+  }
+
+
+}
+
+.show-page#show-image {
+  align-self: center;
+  padding: 2%;
+  margin: 5%;
 }
 
 /*///////////////////////////////

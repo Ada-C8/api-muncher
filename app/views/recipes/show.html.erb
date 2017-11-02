@@ -5,7 +5,13 @@
 <%= @recipe.label %>
 </h2>
 
+<div class="show-page" id="show_image">
 <%= image_tag(@recipe.image, options = {alt: @recipe.label}) %>
+</div>
+
+<div>
+<%= link_to "View Full Recipe", @recipe.url, target: "_blank" %>
+</div>
 
 <h3> Ingredients: </h3>
 <ul>
@@ -31,8 +37,5 @@
 </ul>
 </div>
 
-<div>
-<%= link_to "View Full Recipe", @recipe.url, target: "_blank" %>
-</div>
 </article>
 </section>
