@@ -10,14 +10,11 @@
 <section class="results row large-12">
 <ol>
   <% @recipes.each do |recipe| %>
-  <article class="list_result column large-4">
+  <article class="list_result column float-left large-4">
   <li>
     <ul>
-      <li>
+      <li class="recipe_title">
         <%= link_to recipe.name, recipe_path(recipe.name, uri: recipe.uri) %>
-      </li>
-      <li>
-        <%= link_to "More", recipe.link %>
       </li>
       <li>
         <%= image_tag recipe.image, alt:"#{recipe.name} image" %>

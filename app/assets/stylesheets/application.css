@@ -68,6 +68,15 @@
    bottom: 0;
  }
 
+.results {
+  margin-top: 5vw;
+}
+
+
 .list_result {
-  margin-top: 2vw;
+  margin-top: 4vw;
+}
+
+.recipe_title {
+  height: 70px;
 }
