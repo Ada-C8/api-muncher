@@ -8,9 +8,9 @@ class Recipe
     @title = title
     @uri = uri
 
-    @image = options[:image]
-    @source = options[:source]
-    @url = options[:url]
-    @ingredient_lines = options[:ingredient_lines]
+    @image = options["image"]
+    @diet_label = options["dietLabels"]
+    @url = options["url"]
+    @ingredient_lines = options["ingredientLines"]
   end
 end

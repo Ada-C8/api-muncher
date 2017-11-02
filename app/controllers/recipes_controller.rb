@@ -4,9 +4,7 @@ class RecipesController < ApplicationController
   end
 
   def results
-    r1 = Recipe.new("http://google.com/1", "First Fake data for: " + params[:q])
-    r2 = Recipe.new("http://google.com/2", "Second Fake data for " + params[:q])
-    @recipes = [r1, r2]
+    @recipes = EdamamApiMuncher.search(params[:q], params[:from], params[:to])
   end
 
   def show

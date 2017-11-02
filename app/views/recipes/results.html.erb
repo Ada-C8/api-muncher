@@ -3,8 +3,15 @@
   <ul>
     <% @recipes.each do |recipe| %>
       <li>
-        <%= recipe.title %>
+        <%= image_tag recipe.image %>,
+        <p><%= link_to recipe.title, show_path(recipe.uri) %></p>
       </li>
     <% end %>
   </ul>
+
+
+  <% if params[:from] != "0" %>
+    <%= link_to "Prev", results_path(:q => params[:q], :from => params[:from].to_i() -10, :to => params[:from]) %>
+  <%end%>
+  <%= link_to "Next", results_path(:q => params[:q], :from => params[:to], :to => params[:to].to_i() + 10) %>
   </section>
