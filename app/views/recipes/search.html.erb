@@ -2,9 +2,11 @@
   <h1>Recipes</h1>
     <ul>
       <% @recipes.each do |recipe| %>
-        <li>
-          <%= recipe["recipe"]["label"] %>
-        </li>
+        <li><%= link_to recipe.label, recipe_path(recipe.label, uri: recipe.uri) %></li>
+          <li><%= image_tag recipe.image, alt:"#{recipe.label}" %></li>
       <% end %>
     </ul>
+</section>
+<section>
+  <%= will_paginate(@recipes) %>
 </section>

@@ -9,6 +9,14 @@
   </head>
 
   <body>
+    <header>
+      <h1><%= link_to "Yum yum", root_path %></h1>
+      <%= form_tag recipes_path, method: "get", id: "search-form" do %>
+        <%= label_tag(:search, "Search") %>
+        <%= text_field_tag(:search) %>
+        <%= submit_tag("Send") %>
+      <% end %>
+    </header>
     <%= yield %>
   </body>
 </html>

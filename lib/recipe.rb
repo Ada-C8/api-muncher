@@ -1,16 +1,18 @@
-# class Channel
-#   attr_reader :name, :id, :purpose, :is_archived, :is_general, :members
-#
-#   def initialize(name, id, options={})
-#     raise ArgumentError if name == nil || name == "" || id == nil || id == ""
-#
-#     @name = name
-#     @id = id
-#
-#     # optional variables
-#     @purpose = options[:purpose]
-#     @is_archived = options[:is_archived]
-#     @is_general = options[:is_general]
-#     @members = options[:members]
-#   end
-# end
+class Recipe
+  attr_reader :uri, :label, :image, :source, :url, :ingredientLines, :dietLabels, :healthLabels
+
+  def initialize(uri, label, image, source, url, ingredientLines, dietLabels, options={})
+    raise ArgumentError if label == nil || label == "" || url == nil || url == ""
+
+    @uri = uri
+    @label = label
+    @image = image
+    @source = source
+    @url = url
+    @ingredientLines = ingredientLines
+    @dietLabels = dietLabels
+
+    # optional variables
+    @healthLabels = options[:healthLabels]
+  end
+end
