@@ -5,19 +5,22 @@
     <%= "Serves #{@recipe.servings.to_i}" %>
   </p>
   <p>
-    <%= "#{@recipe.calories.round} Calories total" %>
+    <%= "#{@recipe.calories_per_serving} Calories" %>
   </p>
-  <%= image_tag(@recipe.image, alt: @recipe.name) %>
 </section>
 
+<div class="ingredient-wrapper row">
+  <%= image_tag(@recipe.image, alt: @recipe.name, class: "columns small-12 large-5") %>
 
-<section class="row ingredients">
-  <h3>Ingredients</h3>
-  <ul>
-    <% @recipe.ingredients.each do |ingredient| %>
-    <li>
-      <%= ingredient %>
-    </li>
-    <% end %>
-  </ul>
-</section>
+  <section class="ingredients columns small-12 large-5 end">
+
+    <h3>Ingredients</h3>
+    <ul>
+      <% @recipe.ingredients.each do |ingredient| %>
+      <li>
+        <%= ingredient %>
+      </li>
+      <% end %>
+    </ul>
+  </section>
+</div>

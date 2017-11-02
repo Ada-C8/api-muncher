@@ -18,4 +18,13 @@ class Recipe
     @nutrition = options[:nutrition] # a hash of hashes
 
   end
+
+  def calories_per_serving
+    # avoid 0 division error
+    if @servings == 0 || @servings == nil
+      return @calories
+    else
+      return (@calories / @servings).round
+    end
+  end
 end

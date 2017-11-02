@@ -39,4 +39,25 @@ describe Recipe do
 
   end
 
+  describe "calories_per_serving" do
+    let(:calories) { 2240.6666667 }
+
+    it "returns calories per serving" do
+      servings = 4.0
+      recipe = Recipe.new recipe_name, uri, image, orig_url, servings: servings, calories: calories
+
+      expected_value = (calories / servings).round
+      recipe.calories_per_serving.must_equal expected_value
+    end
+
+    it "returns total calories if servings is 0 or nil" do
+      servings = 0
+
+      zero_servings = Recipe.new recipe_name, uri, image, orig_url, servings: servings, calories: calories
+      zero_servings.calories_per_serving.must_equal calories
+
+      no_servings = Recipe.new recipe_name, uri, image, orig_url, calories: calories
+      no_servings.calories_per_serving.must_equal calories
+    end
+  end
 end

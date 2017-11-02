@@ -38,6 +38,14 @@ section > div.pagination a {
 }
 
 /********************/
+/*  Recipe Show    */
+/*******************/
+
+section.info {
+  // text-align: center;
+}
+
+/********************/
 /*     Footer      */
 /*******************/
 // footer.footer {
@@ -49,7 +57,7 @@ section > div.pagination a {
   position: absolute;
   left: 0;
   right: 0;
-  bottom: 0;
+  // bottom: 0;
   margin-left: auto;
   margin-right: auto;
   width: 20rem;
