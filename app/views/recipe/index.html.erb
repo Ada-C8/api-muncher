@@ -2,43 +2,44 @@
   <h2> Results for <%=@query%> </h2>
 </section>
 
+
 <section class="row small-up-1 large-up-2">
-<% @recipes.each do |recipe| %>
-    <article class="column recipe">
-    <figure>
-      <img src="<%=recipe.image%>" class="image"/>
-      <figcaption>
-      <ul class="recipe_info">
-        <li>
-          <%uri = recipe.uri[/\_.+/]%>
-          <strong><%=link_to recipe.label, recipe_path(uri)%></strong>
-        </li>
-        <li>
-          <strong>Ingredients:</strong>
-          <ul class="sublist">
-            <%recipe.ingredients.each do |ingredient|%>
+  <% @recipes.each do |recipe| %>
+      <article class="column recipe">
+      <figure>
+        <img src="<%=recipe.image%>" class="image"/>
+        <figcaption>
+        <ul class="recipe_info">
+          <li>
+            <%uri = recipe.uri[/\_.+/]%>
+            <strong><%=link_to recipe.label,   recipe_path(uri)%></strong>
+          </li>
+          <li>
+            <strong>Ingredients:</strong>
+            <ul class="sublist">
+              <%recipe.ingredients.each do |ingredient|%>
+              <li>
+              <%=ingredient%>
+              </li>
+              <% end %>
+              </ul>
+          </li>
+          <li>
+            <strong>Dietary Information:</strong>
+              <ul class="sublist">
+            <%recipe.dietary.each do |diet_info|%>
             <li>
-            <%=ingredient%>
+              <%=diet_info%>
             </li>
             <% end %>
             </ul>
-        </li>
-        <li>
-          <strong>Dietary Information:</strong>
-            <ul class="sublist">
-          <%recipe.dietary.each do |diet_info|%>
-          <li>
-            <%=diet_info%>
           </li>
-          <% end %>
-          </ul>
-        </li>
-        <li>
-          <strong>Original recipe from <%=link_to recipe.source,   recipe.recipe_url%></strong>
-        </li>
-      </ul>
-      </figcaption>
-      </figure>
-      </article>
-<%end %>
+          <li>
+            <strong>Original recipe from <%=link_to   recipe.source,   recipe.recipe_url%></strong>
+          </li>
+        </ul>
+        </figcaption>
+        </figure>
+        </article>
+  <%end %>
 </section>

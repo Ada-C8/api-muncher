@@ -7,7 +7,7 @@ end
 
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'dotenv'
+
 gem 'httparty'
 gem 'better_errors'
 gem 'rails', '~> 5.1.4'
@@ -42,6 +42,9 @@ group :development, :test do
   # Adds support for Capybara system testing and selenium driver
   gem 'capybara', '~> 2.13'
   gem 'selenium-webdriver'
+  gem 'minitest-vcr'
+  gem 'webmock'
+  gem 'dotenv-rails'
 end
 
 group :development do

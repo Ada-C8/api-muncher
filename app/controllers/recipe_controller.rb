@@ -6,15 +6,16 @@ class RecipeController < ApplicationController
   def index
     @query = params[:query]
     @recipes = EdemamApiWrapper.list_recipes(@query)
+    if @recipes == []
+      flash.now[:status] = "failure"
+      flash.now[:message] = "No recipes could be found for #{@query}"
+      render :root
+    end
+
   end
 
   def show
-    puts params
-    puts "***********"
-    uri = params["uri"]
-    puts "I am the uri #{uri}"
-    puts "I am a class #{uri.class}"
-    @recipe = EdemamApiWrapper.find_a_recipe(uri)
+    @recipe = EdemamApiWrapper.find_a_recipe(params["uri"])
   end
 
 
