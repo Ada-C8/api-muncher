@@ -37,7 +37,7 @@ describe RecipeApiWrapper do
 
     it "Raises an error when the app id is incorrect" do
       VCR.use_cassette("recipes") do
-        food = "cheese"
+        food = "avocado"
         from = "0"
         app_id = "bogus"
 
@@ -50,7 +50,7 @@ describe RecipeApiWrapper do
 
   end # describe search
 
-  desribe "#find" do
+  describe "#find" do
     #success -- it is able to find the recipe -- numst return instance of recipe
 
 

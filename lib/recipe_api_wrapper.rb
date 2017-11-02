@@ -11,7 +11,7 @@ class RecipeApiWrapper
   end
 
   def self.search(food, from, app_id=APP_ID)
-    url = BASE_URL + "?q=#{food}" + "&from=#{from}" + "&app_id=#{APP_ID}" + "&app_key=#{APP_KEY}"
+    url = BASE_URL + "?q=#{food}" + "&from=#{from}" + "&app_id=#{app_id}" + "&app_key=#{APP_KEY}"
     response = HTTParty.get(url)
 
     check_status(response)
@@ -29,6 +29,7 @@ class RecipeApiWrapper
   def self.find(id)
     url = BASE_URL + "?r=#{URI.encode(id)}" + "&app_id=#{APP_ID}" + "&app_key=#{APP_KEY}"
     response = HTTParty.get(url)
+
     recipe = nil
     if response
       recipe = self.create_recipe(response[0])
@@ -52,7 +53,10 @@ class RecipeApiWrapper
   end
 
   def self.check_status(response)
-    unless response["ok"]
+    # puts response.code
+    # puts "response ok? #{response["ok"]}"
+    # puts "response .ok? #{response.ok?}"
+    unless response.ok? 
       raise ApiError.new("API call to Edamam failed")
     end
   end
