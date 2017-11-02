@@ -4,9 +4,14 @@ describe EdamamApiWrapper do
   describe "search" do
     it "can return an array of recipe objects" do
       VCR.use_cassette("search") do
+        recipes = EdamamApiWrapper.search("chocolate")
 
+        recipes.must_be_instance_of Array
+        recipes.length.must_be :>, 0
+        recipes.each do |r|
+          r.must_be_instance_of Recipe
+        end
       end
-
     end
 
     it "will return an empty array for a search that returns no results" do
