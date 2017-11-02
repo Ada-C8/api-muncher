@@ -9,8 +9,11 @@ class RecipesController < ApplicationController
     @from = (params[:from]) ? params[:from].to_i : 0
     @previous_from = @from - 10
     @from += 10
-
-    @recipes = EdamamApiWrapper.list_recipes(params[:q], @from )
+    if !@search.nil?
+      @recipes = EdamamApiWrapper.list_recipes(params[:q], @from )
+    else
+      @recipes = nil
+    end
   end
 
   def show

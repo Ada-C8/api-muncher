@@ -29,7 +29,10 @@ class EdamamApiWrapper
 
   def self.get_recipe(id)
     url = BASE_URL + "?r=#{ERB::Util.u(id)}" + "&app_id=#{APP_ID}&app_key=#{APP_KEY}"
-    data = HTTParty.get(url).parsed_response
+    data = parsed_response(HTTParty.get(url))
+
+    return nil if data.nil?
+    
     Recipe.new data.first["label"],
     data.first["uri"],
     data.first["image"],
@@ -39,4 +42,9 @@ class EdamamApiWrapper
     data.first["url"]
   end
 
+  private
+
+  def self.parsed_response(response)
+    return response.parsed_response rescue nil
+  end
 end
