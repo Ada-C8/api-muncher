@@ -28,6 +28,7 @@ class RecipesController < ApplicationController
   private
 
   def is_word?(input)
+    return true
     return false if !input
 
     return input.strip.match?(/^[a-zA-Z]+(\-||\s?)[a-zA-Z]+$/)

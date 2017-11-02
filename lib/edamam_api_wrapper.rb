@@ -42,7 +42,6 @@ class EdamamApiWrapper
     key ||= KEY
 
     url = BASE_URL + "r=#{uri}"
-
     response = HTTParty.get(url)
 
     if response && response[0]
@@ -51,7 +50,7 @@ class EdamamApiWrapper
   end
 
   private
-  
+
   def self.create_recipe(recipe_hash)
     # recipe = info["recipe"]
     new_recipe = Recipe.new recipe_hash["label"],
