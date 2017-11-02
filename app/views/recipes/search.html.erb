@@ -1,3 +1,7 @@
+<%= render partial: "form" %>
+
+<h2>Params:</h2>
+<%= params %>
 
 <% unless params[:keywords] == nil %>
   <h1>Results for <%= @keywords %> </h1>
@@ -5,7 +9,12 @@
 
 <% @recipes.each do |recipe| %>
 <ul>
+  <!-- <%@recipe = recipe%> -->
   <li><%= image_tag recipe.image%></li>
-  <li>Recipe: <%=recipe.label%></li>
+  <li><%#recipe.label%></li>
+  <li><%=link_to(recipe.label, recipe_show_path(recipe.find_recipe_id))%></li>
 </ul>
 <%end%>
+
+(number_of_recipes/10).times do |page|
+  link_to(page+1, recipes_search_path(params['from']))

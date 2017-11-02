@@ -8,17 +8,24 @@ class EdamamApiWrapper
   ID = ENV["EDAMAM_ID"]
   KEY = ENV["EDAMAM_KEY"]
 
-  def self.list_recipes(keywords)
+  def self.number_of_recipes(keywords)
+    url = BASE_URL + keywords + "&app_id=#{ID}&app_key=#{KEY}"
+    puts url
+    results = HTTParty.get(url)
+    if results
+      puts "NUMBER OF RECIPES: #{number_of_recipes}"
+      return results['count']
+    else
+      return []
+    end
+  end
+
+  def self.list_recipes(keywords, from, to)
     #example from API documentation:
     #https://api.edamam.com/search?q=chicken&app_id=${YOUR_APP_ID}&app_key=${YOUR_APP_KEY}&from=0&to=3&calories=gte%20591,%20lte%20722&health=alcohol-free
     url = BASE_URL + keywords + "&app_id=#{ID}&app_key=#{KEY}"
     puts url
     results = HTTParty.get(url)
-    # puts "RESULTS******************"
-    # ap results
-    # puts "RESULTS******************"
-    # ap results['hits'][0]
-
     recipes_list = []
     if results['hits']
       # puts "RESULTS HITS******************"
@@ -34,8 +41,20 @@ class EdamamApiWrapper
     end
   end
 
-  # def self.number_of_recipes(keywords)
-  # end
+  def self.show_recipe(uri)
+
+  end
+
+  def next
+  end
+
+  def previous
+
+  end
+
+
+
+
 
   private
 

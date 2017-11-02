@@ -3,7 +3,7 @@ require 'awesome_print'
 
 class Recipe
 
-  attr_reader :label, :uri, :image, :source, :url, :dietLabels, :healthLabels, :ingredientLines
+  attr_reader :label, :uri, :image, :source, :url, :dietLabels, :healthLabels, :ingredientLines, :find_recipe_id
 
   def initialize(recipes_list)
     raise ArgumentError if recipes_list["label"] == nil || recipes_list["label"] == "" || recipes_list["uri"] == nil || recipes_list["uri"] == ""
@@ -18,5 +18,14 @@ class Recipe
     @healthLabels = recipes_list['healthLabels']
     @ingredientLines = recipes_list['ingredientLines']
   end
+
+  def find_recipe_id
+    a = @uri.split('owl')
+    uri_id = a[1]
+    # puts "URI_ID: #{uri_id}"
+    return uri_id
+  end
+
+
 
 end

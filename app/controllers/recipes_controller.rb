@@ -15,11 +15,19 @@ class RecipesController < ApplicationController
     if @keywords.empty?
       redirect_to root_path
     else
-      @recipes = EdamamApiWrapper.list_recipes(@keywords)
+      #Will eventually modify list_recipes method to take 3 parameters (keywords, from, to) for receiving recipes by page.
+      @number_of_recipes = EdamamApiWrapper.find_number_of_recipes(@keywords)
+      @recipes = EdamamApiWrapper.list_recipes(@keywords, params['from'], to)
     end
   end
 
   def show
+    #@recipe = EdamamApiWrapper.show_recipe(params)
+    # @recipe = params['recipe']
+    # @uri_id = find_recipe_id(@recipe.uri)
+    @recipe = EdamamApiWrapper.show_recipe(params['id'])
+    # @recipe.id = @recipe.
+
   end
 
 end
