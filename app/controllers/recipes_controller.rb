@@ -10,7 +10,8 @@ class RecipesController < ApplicationController
       redirect_back(fallback_location: root_path)
     else
       begin
-        @recipes = EdamamApiWrapper.search(params[:q])
+        recipes = EdamamApiWrapper.search(params[:q])
+        @recipes = recipes.paginate(page: params[:page], per_page: 12)
         @search_request = params[:q]
       rescue ApiError => error
         flash[:status] = :failure

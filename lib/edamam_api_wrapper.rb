@@ -8,8 +8,8 @@ class EdamamApiWrapper
   end
 
   def self.search(q, app_id=APP_ID, app_key=APP_KEY)
-    url = BASE_URL + "?q=#{q}" + "&app_id=#{app_id}" + "&app_key=#{app_key}"
-    # + "&from=0" + "&to=1000"
+    url = BASE_URL + "?q=#{q}" + "&app_id=#{app_id}" + "&app_key=#{app_key}" +
+    "&from=0" + "&to=1000"
     response = HTTParty.get(url)
 
     unless response.code == 200 # This is for the app id and app key

@@ -1,14 +1,20 @@
-<main>
-  <section>
-    <header>
-      <h1>MUNCHIES</h1>
-    </header>
+<main class="row">
 
-    <div>
-      <%= form_tag('/recipes', method: :get) do %>
-        <%= label_tag(:q, "Search for a recipe here!") %>
-        <%= text_field_tag(:q) %>
-        <%= submit_tag("Find My Recipes!") %>
-      <% end %>
+  <section class="small-10 small-centered large-6 large-centered columns auto-height">
+    <div class="search-wrapper font">
+      <header>
+        <h1 class="font">MUNCHIES</h1>
+      </header>
+
+      <section>
+        <%= form_tag('/recipes', method: :get) do %>
+          <%= label_tag(:q, "Search for a recipe here!") %>
+          <%= text_field_tag(:q) %>
+          <%= submit_tag("Find My Recipes!") %>
+        <% end %>
+      </section>
     </div>
+
+  </section>
+
 </main>
