@@ -6,6 +6,7 @@ require "minitest/reporters"
 require 'vcr'
 require 'webmock/minitest'
 require 'simplecov'
+SimpleCov.start
 
 Minitest::Reporters.use!(
 Minitest::Reporters::SpecReporter.new,
