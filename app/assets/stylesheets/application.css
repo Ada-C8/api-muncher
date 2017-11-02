@@ -12,4 +12,26 @@
  *
  *= require_tree .
  *= require_self
+ *= require foundation_and_overrides
+
  */
+ main {
+   margin: 10vw;
+ }
+
+ nav {
+   padding-top: 2vw;
+
+ }
+
+ .search_bar {
+   margin-top: 20vw;
+   padding: 5vw;
+   border: 1px solid black;
+ }
+
+ footer {
+   text-align: center;
+   position: fixed;
+   bottom: 0;
+ }

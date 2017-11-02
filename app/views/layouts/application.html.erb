@@ -1,22 +1,30 @@
 <!DOCTYPE html>
-<html>
-<head>
-  <title>ReciPEACE</title>
-  <%= csrf_meta_tags %>
-  <link href="https://fonts.googleapis.com/css?family=Josefin+Sans" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css?family=Josefin+Sans|Pacifico" rel="stylesheet">
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-  <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
-</head>
+    <title><%= content_for?(:title) ? yield(:title) : "Untitled" %></title>
 
-<body>
-  <nav>
-    <%= link_to "Home", root_path, class:"button float-left" %>
-    <%= link_to "Login", root_path, class:"button float-right" %>
-  </nav>
-  <main>
-    <%= yield %>
-  </main>
-</body>
+    <%= stylesheet_link_tag    "application" %>
+    <%= javascript_include_tag "application", 'data-turbolinks-track' => true %>
+    <%= csrf_meta_tags %>
+  </head>
+
+  <body>
+    <nav>
+      <%= link_to "Home", root_path, class:"button small-12 large-3"%>
+      <%= link_to "Login", root_path, class:"button small-12 large-3 float-right"%>
+    </nav>
+
+    <main>
+        <%= yield %>
+    </main>
+
+    <footer class="center small-12 large-12">
+      <p>
+        Powered By Edamam
+      </p>
+    </footer>
+  </body>
 </html>
