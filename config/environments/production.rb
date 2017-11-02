@@ -10,7 +10,7 @@ Rails.application.configure do
   # Rake tasks automatically ignore this option for performance.
 
   config.enable_dependency_loading = true
-  config.eager_load_paths << Rails.root.join('lib')
+  # config.eager_load_paths << Rails.root.join('lib')
   config.eager_load = true
 
 
