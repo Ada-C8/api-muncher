@@ -9,6 +9,7 @@
 
     <%= stylesheet_link_tag    "application" %>
     <%= javascript_include_tag "application", 'data-turbolinks-track' => true %>
+    <script src="https://developer.edamam.com/attribution/badge.js"></script>
     <%= csrf_meta_tags %>
   </head>
 
@@ -26,8 +27,10 @@
       <%= debug(params) if Rails.env.development? %>
     </section>
 
-    <footer class="row footer">
-      <small>Powered by Edamam</small>
+    <footer class="footer">
+      <div class="logo-wrapper">
+        <div id="edamam-badge" data-color="transparent"></div>
+      </div>
     </footer>
   </body>
 </html>

@@ -15,3 +15,42 @@
  *= require foundation_and_overrides
 
  */
+
+
+/********************/
+/*  Recipe Index    */
+/*******************/
+main > ul li.recipe-list {
+  list-style: none;
+  p {
+    text-align: center
+  }
+
+  img {
+    display: block;
+    margin: 0 auto;
+  }
+}
+
+/* === pagination === */
+section > div.pagination a {
+  display: inline-block;
+}
+
+/********************/
+/*     Footer      */
+/*******************/
+// footer.footer {
+//   position: absolute;
+//   bottom: 0;
+//   width: 100%;
+// }
+.logo-wrapper {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin-left: auto;
+  margin-right: auto;
+  width: 20rem;
+}
