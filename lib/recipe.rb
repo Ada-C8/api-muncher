@@ -3,7 +3,6 @@ class Recipe
 
 
   def initialize(title, id, image, dietlabels, ingredients, provider, link)
-    raise ArgumentError if title == nil || title == ""
 
     @title = title
     @id = id

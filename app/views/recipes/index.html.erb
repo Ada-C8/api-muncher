@@ -15,7 +15,9 @@
     <% @recipes.each do |recipe| %>
     <li>
       <%= link_to recipe.title, recipe_path(:r => recipe.id)  %>
+      <%= image_tag recipe.image %>
     </li>
+  
     <% end %>
   </ul>
   <% if @from > 10 %>

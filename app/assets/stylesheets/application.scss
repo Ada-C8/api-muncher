@@ -24,16 +24,16 @@
 * h2 {
     font-family: 'Megrim', cursive;
 }
- html, body {
-   margin:0;
-   padding:0;
-   height:100%;
-   background-image: image-url("avo.jpeg");
-   background-position: center;
-   background-repeat: no-repeat;
-   background-size: cover;
-   background-attachment: fixed;
- }
+html, body {
+  margin:0;
+  padding:0;
+  height:100%;
+  background-image: image-url("avo.jpeg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+}
 
  #wrapper {
    font-family: 'Megrim', cursive;
@@ -63,17 +63,27 @@ section {
  a.button {
    /*display: block;*/
    text-decoration: none;
+   position: relative;
+   text-align: center;
+   font-size: 1.5em;
+   font-family: 'Megrim', cursive;
+   font-weight: bold;
+   color: gold;
+   text-shadow: 1px 1px 1px green;
  }
 
  .button {
-   background-color: #595959;
-   color: #fff;
+   color: black;
    padding: 2px 5px;
    margin: 5px 2px;
+   display: flex;
+   text-align: center;
+   justify-content: center;
  }
 
  .button:hover {
-   background-color: #333;
+   color: green;
+   font-weight: bold;
  }
 
  footer {
@@ -227,7 +237,17 @@ section {
  li {
    list-style-type: none;
    list-style-position: inside;
+   display: inline-grid;
+
  }
+
+.ingredients {
+  li {
+    list-style-type: none;
+    list-style-position: inside;
+    display: block;
+  }
+}
 
  .field_with_errors {
    display: inline-block;

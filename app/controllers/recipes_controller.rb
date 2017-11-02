@@ -1,3 +1,6 @@
+require_dependency '../../lib/edamam_api_wrapper'
+require_dependency '../../lib/recipe'
+
 class RecipesController < ApplicationController
 
   def index
@@ -8,8 +11,6 @@ class RecipesController < ApplicationController
     @from += 10
 
     @recipes = EdamamApiWrapper.list_recipes(params[:q], @from )
-
-
   end
 
   def show
