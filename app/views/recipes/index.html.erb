@@ -1,0 +1,32 @@
+<h1> RECIPE GNAWLER <span class="search"> </span> </h1>
+
+<section>
+  <%= form_tag root_path, method: "get" do %>
+  <%= label_tag(:q, "What's Good?") %>
+  <%= text_field_tag(:q) %>
+  <%= submit_tag("Search") %>
+  <% end %>
+</section>
+
+<% if @recipes != nil %>
+<section class="recipes-list">
+  <h1>Recipes</h1>
+  <ul>
+    <% @recipes.each do |recipe| %>
+    <li>
+      <%= link_to recipe.title, recipe_path(:r => recipe.id)  %>
+      <%= image_tag recipe.image %>
+    </li>
+    <% end %>
+  </ul>
+  <% if @from > 10 %>
+  <%= link_to "Previous", root_path(q: @search , from: @previous_from), class: "button" %>
+  <%end%>
+  <%= link_to "Next", root_path(q: @search , from: @from), class: "button" %>
+<% end %>
+</section>
+
+
+<footer class="footer">
+  <P> &#129299 By<%= link_to "Tanja Stroble", "https://github.com/misstonbon" %> &#x26A1 By <%= link_to "Edamam", "https://www.edamam.com/" %></P>
+</footer>

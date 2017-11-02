@@ -1,0 +1,28 @@
+
+
+<h1><%= @recipe.title %></h1>
+ <strong>by <%= @recipe.provider %></strong>
+<p><%= link_to "Go to Recipe", @recipe.link %></p>
+
+
+<section class="image">
+  <%= image_tag  @recipe.image %>
+</section>
+
+<% if @dietlabels != [] %>
+<section class="dietary">
+  <h2>Dietary Information:</h2>
+  <% @recipe.dietlabels.each do |info| %>
+  <p><%= info %> </p>
+  <%end%>
+</section>
+<%end%>
+
+<section class="ingredients">
+  <ul>
+    <h2>Ingredients:</h2>
+    <% @recipe.ingredients.each do |ingredient| %>
+    <li><%= ingredient%> </li>
+    <%end%>
+  </ul>
+</section>
