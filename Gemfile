@@ -63,6 +63,7 @@ end
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 gem 'jquery-turbolinks'
+gem 'jquery-rails'
 group :development do
   gem 'better_errors'
   gem 'pry-rails'
