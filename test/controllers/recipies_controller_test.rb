@@ -59,7 +59,7 @@ describe RecipiesController do
         name = "name"
 
         get recipy_path(name), params: test_params
-        must_respond_with :redirect
+        must_respond_with :not_found 
       end # VCR
     end # not_found
   end # show

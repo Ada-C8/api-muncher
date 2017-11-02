@@ -29,10 +29,10 @@ class RecipiesController < ApplicationController
     # TODO: redirect to 404 not found if given a bad uri
     begin
       @recipe = EdamamApiWrapper.show_recipe(params[:uri])
-    rescue EdamamApiWrapper::ApiError => e
+    rescue EdamamApiWrapper::ApiError
       flash[:status] = :failure
-      flash[:message] = "e.message"
-      redirect_to root_path
+      flash[:message] = "Error: you entered an invalid url."
+      head :not_found
     end
   end # show
 
