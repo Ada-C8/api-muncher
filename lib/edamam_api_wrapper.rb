@@ -27,16 +27,10 @@ class EdamamApiWrapper
   end
 
   def self.show_recipe(search)
-    url = BASE_URL + "?r=" + search
+    url = BASE_URL + "?r=" + (URI.encode(search))
     data = HTTParty.get(url)
 
-    # my_recipe = data[0].map do |recipe_hash|
-      Recipe.new data[0]["label"], data[0]["ingredientLines"], data[0]["image"], data[0]["url"], data[0]["source"], data[0]["uri"]
-    # end
+    Recipe.new data[0]["label"], data[0]["ingredientLines"], data[0]["image"], data[0]["url"], data[0]["source"],data[0]["ingredients"], data[0]["uri"]
+
   end
 end
-
-
-
-
-#
