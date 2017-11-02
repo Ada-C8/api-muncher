@@ -44,7 +44,6 @@ html {
     top: 0; left: 0; bottom: 0; right: 0;
     margin: auto;
     display: flex;
-    align-items: center;
 }
 
 #search-form {
@@ -62,6 +61,7 @@ html {
     text-align: center;
     top: 0; left: 0; bottom: 0; right: 0;
     margin: auto;
+    margin-top: 20rem;
 }
 
 input[type=text], input[type=text]:focus, textarea, textarea:focus {
@@ -69,11 +69,22 @@ input[type=text], input[type=text]:focus, textarea, textarea:focus {
   color: black;
   margin: 10px;
   padding: 20px;
-  border: 2px solid grey;
-  text-align: center;
-  font-weight: bolder;
+  border-bottom: 3px solid #ff6a80;
+  border-top: transparent;
+  border-left: transparent;
+  border-right: transparent;
   overflow:hidden;
   transition: .3s;
+  font-size: 6rem;
+  font-weight: 200;
+}
+
+input[type=text]:focus {
+    outline-width: 0;
+}
+
+input[type=submit] {
+  display: block;
 }
 
 .recipe-list {
