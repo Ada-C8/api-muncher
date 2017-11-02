@@ -20,7 +20,7 @@ class EdamamApiWrapper
     recipes = []
 
     # check if no results or no response
-    if data && data["count"] > 0
+    if data && data["hits"]
       data["hits"].each do |info|
       # data["hits"].length.times do |idx|
         # recipe = data["hits"][idx]["recipe"]
@@ -60,7 +60,7 @@ class EdamamApiWrapper
 
     response = HTTParty.get(url)
 
-    if response
+    if response && response[0]
       return self.create_recipe(response[0])
     end
   end
@@ -91,8 +91,11 @@ class EdamamApiWrapper
     from = valid_req[:from]
     to = valid_req[:to]
 
-    ingredient = "q=#{ingredient.gsub(" ", "+")}"
-    auth = "app_id=#{ID}&app_key=#{KEY}"
+    # guard against nil input (controller will not allow this)
+    ingredient = "" if !ingredient
+
+    ingredient = "q=#{(ingredient).gsub(" ", "+")}"
+    auth = "app_id=#{id}&app_key=#{key}"
     from = "from=#{from}"
     to = "to=#{to}"
 

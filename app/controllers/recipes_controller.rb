@@ -6,7 +6,7 @@ class RecipesController < ApplicationController
     if !is_word?(params[:ingredient])
       flash[:status] = :failure
       flash[:message] = "Not a word"
-      redirect_to root_path
+      return redirect_to root_path
     end
 
     @recipes = EdamamApiWrapper.list_recipes(params[:ingredient])
@@ -28,6 +28,8 @@ class RecipesController < ApplicationController
   private
 
   def is_word?(input)
+    return false if !input
+
     return input.strip.match?(/^[a-zA-Z]+(\-||\s?)[a-zA-Z]+$/)
   end
 end
