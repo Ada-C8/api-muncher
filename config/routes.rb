@@ -3,11 +3,15 @@ Rails.application.routes.draw do
   # root 'recipe#index'
   # get 'recipes', to: 'home#'
 
-  root 'recipes#index'
+  root "home#index"
 
-  get ':/recipes/new', to: 'recipes#new', as: 'new_recipe'
+  # get "/recipes/", to: "recipes#index", as: "recipes"
+  # resources :home
 
-  post '/recipes', to: 'recipes#create', as: 'recipes_create'
+  resources :recipes, only: [:index, :show]
+
+  # get "/recipes", to: "recipes#show"
+  # get '/recipes/:uri', to: "recipes#show", as: 'recipe'
 
   # resources :recipes
 end

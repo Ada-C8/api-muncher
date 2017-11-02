@@ -1,8 +1,12 @@
 class RecipesController < ApplicationController
   def index
-    @recipes = EdamamWrapper.list_recipes("chicken")
+    # binding.pry
+    @recipes = EdamamWrapper.list_recipes(params[:item])
   end
 
+  def show
+    @recipe = EdamamWrapper.find_recipe(id: recipe.uri)
+  end
   # def new
   #   # @channel = SlackApiWrapper.new
   #   @channel = params[:channel]

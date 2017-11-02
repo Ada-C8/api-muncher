@@ -1,10 +1,12 @@
-helo
+
 <section class="recipes-list">
-  <h1>Recipe</h1>
+  <h1>List of recipes</h1>
   <ul>
     <% @recipes.each do |recipe| %>
       <li>
-        <%= recipe["name"] %>
+        <%= link_to recipe.label, recipe_path(id) %>
+
+        <%#= link_to recipe.url, recipes_path %>
       </li>
     <% end %>
   </ul>
