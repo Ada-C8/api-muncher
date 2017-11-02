@@ -1,17 +1,30 @@
-<%= render partial: "layouts/search_bar" %>
 
-<h1> Recipes </h1>
-<h2> Results for "<%= params[:q] %>" </h2>
+
+<section class="row search_bar">
+  
+  <%= render partial: "layouts/search_bar" %>
+</section>
+
+
+<section class="row">
+  <h1> Recipes </h1>
+  <h2> Results for "<%= params[:q] %>" </h2>
+</section>
+
+
+
+<main>
 <% @results.each do |result| %>
-<section>
+<section class="columns large-3 small-8">
   <figure>
     <%= link_to(image_tag(result[:image], alt: "#{result[:label]}"), show_recipe_path(result[:uri])) %>
     <figcaption> <%= result[:label]%> </figcaption>
   </figure>
 </section>
 <% end %>
+</main>
 
-<nav>
+<nav class="row">
   <p>  <
     <%= link_to "1", get_recipes_path({q: params[:q], from: 0}) %>
     <%= link_to "2", get_recipes_path({q: params[:q], from: 10}) %>
