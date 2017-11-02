@@ -50,6 +50,8 @@ class EdamamApiWrapper
     end
   end
 
+  private
+  
   def self.create_recipe(recipe_hash)
     # recipe = info["recipe"]
     new_recipe = Recipe.new recipe_hash["label"],
@@ -65,7 +67,6 @@ class EdamamApiWrapper
                   nutrition: recipe_hash["totalNutrients"]
     return new_recipe
   end
-  # private
 
   def self.request_recipes(ingredient, id: nil, key: nil)
     id ||= ID
