@@ -19,6 +19,7 @@ module ApiMuncher
     config.load_defaults 5.1
 
     # Automatically load all code from <rails_root>/lib
+    config.eager_load_paths << Rails.root.join('lib')
     config.autoload_paths << Rails.root.join('lib')
 
     # Settings in config/environments/* take precedence over those specified here.
