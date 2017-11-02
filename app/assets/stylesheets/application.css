@@ -91,7 +91,32 @@ header {
   background-image: url('jenny-dorsey-372863.jpg');
   background-size: cover;
   background-position: center center;
-  height: 6rem;
+  min-height: 6rem;
+  text-align: center;
+}
+
+header h1 {
+  background-color: rgba(15, 15, 15, 0.5);
+}
+
+.clearfix {
+  content:"";
+  clear:both;
+  display:block;
+  height: 1rem;
+}
+
+@media print, screen and (min-width: 40em) {
+  header {
+    align-items: center;
+    display: flex;
+    justify-content: flex-end;
+    text-align: left;
+  }
+
+  header h1 {
+    background-color: unset;
+  }
 }
 
 /**********/

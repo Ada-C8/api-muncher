@@ -16,14 +16,15 @@
 <body>
   <% unless current_page?(root_path) %>
   <header>
-    <h1 class="small-12 medium-12 large-4 columns"><%= link_to "muncher", root_path %></h1>
-    <nav class="small-12 medium-12 large-4 columns">
+    <h1 class="small-12 medium-7 large-8 columns"><%= link_to "muncher", root_path %></h1>
+    <nav class="search-bar small-12 medium-5 large-4 columns">
       <%= form_tag( '/recipes') do %>
-        <%= text_field_tag :search, "", class: "small-12 medium-8 columns header-field" %>
-        <%= submit_tag "Search", class: "small-12 medium-3 columns" %>
+      <%= text_field_tag :search, "", class: "small-12 medium-8 columns header-field" %>
+      <%= submit_tag "Search", class: "small-12 medium-3 columns" %>
       <% end %>
     </nav>
-
+    <div class="clearfix">
+    </div>
   </header>
   <% end %>
 
