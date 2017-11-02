@@ -1,15 +1,24 @@
-  <section >
+<section >
 
-    <h2>Search Results</h2>
+<%= puts "NUMBER OF RESULTS IS #{@recipes.count}" %>
+<h2>Search Results</h2>
 
-    <ul class="row" >
-      <% @recipes.each do |recipe| %>
-    <li class="columns small-12 medium-6 large-3 end">
-      <%= image_tag recipe.image, class: "recipe-image" %>
-      <%= link_to recipe.name, recipes_show_path(recipe.name, uri: recipe.uri), alt: "link to a given recipe", class: "recipe-name" %>
-    </li>
-    <% end %>
+<section class="row pagination">
+  <%= will_paginate @recipes %>
+</section>
 
-    </ul>
+<ul class="row" >
+  <% @recipes.each do |recipe| %>
+  <li class="columns small-12 medium-6 large-3 end">
+    <%= image_tag recipe.image, class: "recipe-image" %>
+    <%= link_to recipe.name, recipes_show_path(recipe.name, uri: recipe.uri), alt: "link to a given recipe", class: "recipe-name" %>
+  </li>
+  <% end %>
 
-  </section>
+</ul>
+
+<section class="row pagination">
+  <%= will_paginate @recipes %>
+</section>
+
+</section>

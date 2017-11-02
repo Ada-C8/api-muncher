@@ -45,6 +45,10 @@ ul {
   clear: both;
 }
 
+section > div.pagination a {
+  display: inline-block;
+}
+
  /**
  * Footer Styles
  */

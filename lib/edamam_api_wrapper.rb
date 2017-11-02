@@ -10,7 +10,7 @@ class EdamamApiWrapper
     app_id ||= APP_ID
     app_key ||= APP_KEY
 
-    url = BASE_URL + "q=#{search_term}&app_id=#{app_id}&app_key=#{app_key}"
+    url = BASE_URL + "q=#{search_term}&app_id=#{app_id}&app_key=#{app_key}&from=0&to=100"
 
     results = HTTParty.get(url)
 

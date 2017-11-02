@@ -6,7 +6,7 @@ class RecipesController < ApplicationController
   end
 
   def index
-    @recipes = EdamamApiWrapper.query(params[:search])
+    @recipes = EdamamApiWrapper.query(params[:search]).paginate(page: params[:page], per_page: 10)
     if @recipes.length == 0
       flash[:message] = "No search results found"
       redirect_to root_path
