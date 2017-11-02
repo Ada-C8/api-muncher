@@ -32,9 +32,13 @@ font-family: "Helvetica Neue", Arial, sans-serif;
 main {
   margin: 0 auto;
   padding-top: 64px;
-  max-width: 640px;
+  max-width: 100%;
   width: 94%;
   overflow: auto;
+}
+
+ul {
+  list-style-type: none;
 }
 
 .clearfix {
