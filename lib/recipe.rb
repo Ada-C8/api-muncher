@@ -14,11 +14,11 @@ class Recipe
   end
 
   def == (another_recipe)
-    self.title == another_recipe.title
-    self.mini_uri == another_recipe.mini_uri
-    self.photo_uri == another_recipe.photo_uri
-    self.ingredients == another_recipe.ingredients
-    self.external_url == another_recipe.external_url
+    self.title == another_recipe.title &&
+    self.mini_uri == another_recipe.mini_uri &&
+    self.photo_uri == another_recipe.photo_uri &&
+    self.ingredients == another_recipe.ingredients &&
+    self.external_url == another_recipe.external_url &&
     self.source == another_recipe.source
   end
 

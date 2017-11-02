@@ -23,4 +23,26 @@ describe Recipe do
       recipe.source.must_equal "Recipe Book"
     end
   end
+
+  describe "== (equality)" do
+    it "returns true if all attributes are the same" do
+      recipe1 = Recipe.new("Title", (EdamamApiWrapper::RECIPE_URL + "URI"), "Photo URI", "Ingredients")
+
+      recipe2 = Recipe.new("Title", (EdamamApiWrapper::RECIPE_URL + "URI"), "Photo URI", "Ingredients")
+
+      (recipe1==recipe2).must_equal true
+    end
+
+    it "returns false if one attribute differs" do
+      recipe1 = Recipe.new("Title", (EdamamApiWrapper::RECIPE_URL + "URI"), "Photo URI", "Ingredients")
+
+      recipe2 = Recipe.new("Title", (EdamamApiWrapper::RECIPE_URL + "URI"), "Photo URI", "Ingredients", source: "Recipe Book")
+
+      (recipe1==recipe2).must_equal false
+
+      recipe3 = Recipe.new("Something other than Title", (EdamamApiWrapper::RECIPE_URL + "URI"), "Photo URI", "Ingredients")
+
+      (recipe1==recipe3).must_equal false
+    end
+  end #== (equality)
 end
