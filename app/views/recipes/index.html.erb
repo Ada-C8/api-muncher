@@ -1,16 +1,16 @@
-
-<section class="search_box">
-<%=form_tag(recipes_path, method: :get) %>
-<%=label_tag "Search For a Recipe" %>
-<%=text_field_tag :search %>
-<%=submit_tag 'Search' %>
+<section class="search_bar_2 column center large-12 small-12">
+  <h2>ReciPEACE</h2>
+  <%= form_tag(recipes_path, method: :get) do %>
+  <%=text_field_tag :search %>
+  <%=submit_tag "search", class:"button column small-12 float-right"%>
+  <% end %>
 </section>
 
 
-<section class="results">
+<section class="results row large-12">
 <ol>
   <% @recipes.each do |recipe| %>
-  <article class="list_result">
+  <article class="list_result column large-4">
   <li>
     <ul>
       <li>
