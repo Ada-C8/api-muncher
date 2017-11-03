@@ -28,6 +28,7 @@ class EdamamApiWrapper
       id: raw_recipe["uri"],
       url: raw_recipe["url"],
       ingredients: raw_recipe["ingredients"],
+      image_url: raw_recipe["image_url"],
       servings: raw_recipe["yield"],
       calories: raw_recipe["calories"],
       total_nutrients: raw_recipe["total_nutrients"],
