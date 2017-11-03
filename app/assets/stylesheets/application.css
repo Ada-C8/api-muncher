@@ -43,7 +43,7 @@ body a:hover {
 }
 
 .home_body {
-  background-image: image-url("food background2.jpg");
+  background-image: image-url("food_background2.jpg");
   font-family: Georgia, Arial, sans-serif;
   background-repeat: no-repeat;
 }
@@ -100,7 +100,15 @@ ul {
 
 }
 
+.recipe-details {
+  background-color: white;
+  border-radius: 20px;
+  max-width: 60%;
+}
 
+.recipe-details ul {
+  list-style-type: circle;
+}
 
 .button {
   background-color: black;

@@ -8,7 +8,7 @@ class RecipesController < ApplicationController
 
   def index
     @home_page = false
-
+    byebug
     @recipes = EdamamApiWrapper.query(params[:search]).paginate(page: params[:page], per_page: 10)
     if @recipes.length == 0
       flash[:message] = "No search results found"
