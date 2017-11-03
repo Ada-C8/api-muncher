@@ -9,7 +9,7 @@
 
 <h2>Number of Recipes: <%=@number_of_recipes%> </h2>
 
-<%if @number_of_recipes != 0 %>
+<%if @number_of_recipes != 0 || @number_of_recipes != nil%>
   <% @recipes.each do |recipe| %>
     <ul>
       <li><%=image_tag recipe.image%></li>
