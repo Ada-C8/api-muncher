@@ -35,6 +35,8 @@ gem 'jbuilder', '~> 2.5'
 
 gem 'httparty'
 gem 'awesome_print'
+gem 'foundation-rails', '6.4.1.2'
+
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
