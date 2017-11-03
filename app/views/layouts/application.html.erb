@@ -16,10 +16,10 @@
       <div class="page-header">
         <div class="row">
           <h1><%= link_to "MUNCHER", root_path %></h1>
-            <%= render partial: "search"%>
+            <%= render partial: "search" unless @disable_header_search %>
         </div>
       </div>
-      <main>
+    </header>
         <main>
         <section class="row flash">
           <% if flash[:status] == :failure %>

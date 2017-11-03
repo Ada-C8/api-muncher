@@ -39,6 +39,10 @@ gem 'jquery-rails'
 
 gem 'foundation-rails', '~> 6.3.1'
 
+gem 'will_paginate', '~> 3.1.1'
+
+gem 'simplecov', :require => false, :group => :test
+
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console

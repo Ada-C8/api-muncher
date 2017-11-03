@@ -8,49 +8,67 @@ describe Recipe do
     end
 
     it "Requires a uri, url, and label" do
-          proc {
-            Recipe.new()
-          }.must_raise ArgumentError
+      proc {
+        Recipe.new()
+      }.must_raise ArgumentError
 
-          proc {
-            Recipe.new("uri")
-          }.must_raise ArgumentError
+      proc {
+        Recipe.new("uri")
+      }.must_raise ArgumentError
 
-          proc {
-            Recipe.new("uri", "url")
-          }.must_raise ArgumentError
+      proc {
+        Recipe.new("uri", "url")
+      }.must_raise ArgumentError
 
-          # Empty strings are not permitted either
-          proc {
-            Recipe.new("", "", "")
-          }.must_raise ArgumentError
+      # Empty strings are not permitted either
+      proc {
+        Recipe.new("", "", "")
+      }.must_raise ArgumentError
     end
 
-      it "Tracks uri, url, and label" do
-        uri = "test_uri"
-        url = "test_url"
-        label = "test_label"
-        recipe = Recipe.new(uri, url, label)
-        recipe.uri.must_equal uri
-        recipe.url.must_equal url
-        recipe.label.must_equal label
-      end
+    it "Tracks uri, url, and label" do
+      uri = "test_uri"
+      url = "test_url"
+      label = "test_label"
+      recipe = Recipe.new(uri, url, label)
+      recipe.uri.must_equal uri
+      recipe.url.must_equal url
+      recipe.label.must_equal label
+    end
 
-      it "Tracks optional args" do
-        options = {
-          ingredients: ["test_ingredients"],
-          source: "test_source",
-          dietLabels: "test_diet_labels",
-          image: "test_image"
-        }
+    it "Tracks optional args" do
+      options = {
+        ingredients: [{"text" => ["test_ingredient1"]}, {"text" => ["test_ingredient2" ]}],
+        source: "test_source",
+        dietLabels: "test_diet_labels",
+        image: "test_image"
+      }
 
-        recipe = Recipe.new("uri", "url", "label", options)
+      recipe = Recipe.new("uri", "url", "label", options)
 
-        recipe.ingredients.must_equal options[:ingredients]
-        recipe.source.must_equal options[:source]
-        recipe.diet_labels.must_equal options[:dietLabels]
-        recipe.image.must_equal options[:image]
-      end
+      recipe.ingredients.must_equal [["test_ingredient1"], ["test_ingredient2"]]
+      recipe.source.must_equal options[:source]
+      recipe.diet_labels.must_equal options[:dietLabels]
+      recipe.image.must_equal options[:image]
+    end
   end
 
+  describe "ingredients" do
+    it "returns an array of ingredient text" do
+      options = {
+        ingredients: [{"text" => ["sample_ingredient_text_1"]}, {"text" => ["sample_ingredient_text_2"]}]
+      }
+      recipe = Recipe.new("uri", "url", "label", options)
+      recipe.ingredients.must_equal [["sample_ingredient_text_1"], ["sample_ingredient_text_2"]]
+    end
+  end
+
+  describe "id" do
+    it "returns the unique portion of the uri that identifies an individual recipe" do
+      uri = "http://www.edamam.com/ontologies/edamam.owl%23recipe_637913ec61d9da69eb451818c3293df2"
+
+      recipe = Recipe.new(uri, "url", "label")
+      recipe.ingredients.must_equal [["sample_ingredient_text_1"], ["sample_ingredient_text_2"]]
+    end
+  end
 end

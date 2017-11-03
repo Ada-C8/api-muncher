@@ -1,7 +1,10 @@
 require_dependency '../../lib/edamam_api_wrapper'
 require_dependency '../../lib/recipe'
+require 'will_paginate/array'
 
 class RecipesController < ApplicationController
+  before_action :disable_header_search, only: [:main]
+
   def main; end
 
   def index
@@ -11,6 +14,7 @@ class RecipesController < ApplicationController
       redirect_back(fallback_location: root_path)
     else
       @recipes = EdamamApiWrapper.search(params[:q])
+      @recipes = @recipes.paginate(:page => params[:page], :per_page => 10)
       flash[:status] = :success
       flash[:message] = "successfully searched"
     end

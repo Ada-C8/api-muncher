@@ -12,6 +12,13 @@
       </section>
   </div>
 <% end %>
+
 </section>
 
 </div>
+<div class="flickr_pagination">
+    <div class="page_info">
+      <% page_entries_info @recipes %>
+    </div>
+    <%= will_paginate @recipes, :container => false %>
+  </div>

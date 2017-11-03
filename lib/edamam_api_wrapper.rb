@@ -9,7 +9,7 @@ class EdamamApiWrapper
   end
   # https://api.edamam.com/search?q=chicken&app_id=f7b7eda5&app_key=27bec363ca9b3dd18381e83986bb5fc9
   def self.search(q, app_id=ID, app_key=KEY)
-    url = BASE_URL + "?q=#{q}" + "&app_id=#{app_id}" + "&app_key=#{app_key}"
+    url = BASE_URL + "?q=#{q}" + "&app_id=#{app_id}" + "&app_key=#{app_key}&to=100"
     data = HTTParty.get(url)
     # puts data
     puts "response code is #{data.code}"
