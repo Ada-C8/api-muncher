@@ -1,12 +1,12 @@
 require 'json/ext'
 
 class Recipe
-  attr_reader :id, :label, :url, :ingredientLines, :dietLabels, :image, :source
+  attr_reader :uri, :label, :url, :ingredientLines, :dietLabels, :image, :source
 
   def initialize(uri, label, url, options = {})
     raise ArgumentError if uri.blank? || label.blank? || url.blank?
 
-    @id = uri
+    @uri = uri
     @label = label
     @url = url
 
@@ -21,5 +21,5 @@ class Recipe
   def stringify()
     self.to_json
   end
-  
+
 end

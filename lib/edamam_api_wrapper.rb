@@ -41,4 +41,26 @@ class EdamamApiWrapper
       return [] #or return nil?
     end
   end
+
+  def self.show_recipe(uri)
+    uri = uri.gsub!(/#/, '%23')
+
+    url = BASE_URL + "r=" + uri
+
+    data = HTTParty.get(url)
+
+    options = {
+      ingredientLines: data[0]["ingredientLines"],
+      dietLabels: data[0]["dietLabels"], image: data[0]["image"],
+      source: data[0]["source"]
+    }
+
+    Recipe.new(
+      data[0]["uri"],
+      data[0]["label"],
+      data[0]["url"],
+      options
+    )
+
+  end
 end
