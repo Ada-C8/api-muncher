@@ -1,5 +1,4 @@
 <section class="recipes-index">
-  <h1>Recipes</h1>
       <% @recipes.each do |recipe| %>
         <article class="result">
           <p><%= link_to recipe.label, recipe_path(recipe.label, uri: recipe.uri) %></p>
