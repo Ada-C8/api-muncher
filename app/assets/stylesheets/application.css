@@ -16,46 +16,67 @@
 
  */
 
+ /** {
+   border: 1px black solid;
+ }*/
+
 main {
   padding: 80px 0px;
   background-color: green;
 }
 
-
 footer {
-  background-color: yellow;
+  background-color: #AFD5AA;
   padding: 60px;
 }
 
+.margin-3-col {
+  margin-left: 4.1%;
+  margin-right: 4.1%;
+}
 
- .margin-3-col {
-   margin-left: 4.1%;
-   margin-right: 4.1%;
- }
+.margin-auto {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.no_padding {
+  padding: 0;
+}
 
 .header {
-  background-color: #26413C;
+  background-color: #AFD5AA;
+  padding-bottom: 35px;
 }
 
 h1 {
   color: #1A1D1A;
+  padding: 20px 0;
 }
 
 main {
   background-color: #8AB0AB;
 }
 
+.almost-full-width {
+  width: 80%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
 .card {
-  box-shadow: 1px 1px 3px 3px grey;
-  height: 550px;
+  /*box-shadow: 1px 1px 3px 3px grey;*/
+  height: 450px;
   border-radius: 20px;
-  background-color: yellow;
+  border-color: white;
+  /*background-color: yellow;*/
   margin: 4.15%;
 }
 
 .card img {
   margin-top: 10px;
   margin-bottom: 20px;
+  border-radius: 50%;
 }
 
 .row {

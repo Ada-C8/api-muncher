@@ -11,15 +11,20 @@
     <%= csrf_meta_tags %>
   </head>
   <body>
-    <header class = 'header'>
+    <header class = 'header text-center'>
       <h1>Munchers</h1>
       <%= form_tag recipes_path, method: :get do %>
-        <%= label_tag(:term, "What do you feel like munching?") %>
-        <%= text_field_tag(:term) %>
+        <div class="search almost-full-width">
+          <%= text_field_tag(:term, nil, placeholder: "What do you feel like munching?") %>
+        </div>
         <%= submit_tag("Send", class: "button", style: "display: none;") %>
       <% end %>
     </header>
     <%= yield %>
   </body>
+  <footer>
+    <h4>Powered By</h4>
+    <img src="https://ontotext.com/wp-content/uploads/2014/07/EDAMAM-logo.png"/>
+  </footer>
 
 </html>
