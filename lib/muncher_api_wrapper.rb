@@ -1,4 +1,4 @@
-require 'HTTParty'
+
 
 class MuncherApiWrapper
   BASE_URL = "https://test-es.edamam.com/search"
