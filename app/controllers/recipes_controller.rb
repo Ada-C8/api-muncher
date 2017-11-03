@@ -1,4 +1,4 @@
-require_dependency 'EdamamApiWrapper'
+require_dependency 'edamamapiwrapper'
 
 class RecipesController < ApplicationController
 
