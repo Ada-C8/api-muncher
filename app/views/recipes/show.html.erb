@@ -1,22 +1,40 @@
-<h3><a href="<%= @recipe.url%>"target="_blank"> <%=@recipe.label %></a></h3>
-<h4>By <%= @recipe.source %></h4>
 
 
-<img src=<%= @recipe.image %>>
+<section class="one">
+
+  <div class="grid-x">
+
+    <div class="large-0 medium-1 small-0 cell"></div>
+    <div class="large-12 medium-10 small-12 cell">
+
+      <h3><a href="<%= @recipe.url%>"target="_blank"> <%=@recipe.label %></a></h3>
+      <h4>By <%= @recipe.source %></h4>
+
+      <div class="left"><img src=<%= @recipe.image %>></div>
+      <div class="right">
+        <h4>Ingredients</h4>
+        <ul class="ingredients">
+          <% @recipe.ingredients.each do |ingredient| %>
+            <li><%= ingredient["text"] %></li>
+          <% end %>
+        </ul>
+      </div>
+
+    </div>
+    <div class="large-0 medium-1 small-0 cell"></div>
+
+  </div>
+
+</section>
 
 
-
-<h3>Ingredients</h3>
-<ul>
-  <% @recipe.ingredients.each do |ingredient| %>
-    <li><%= ingredient["text"] %></li>
-  <% end %>
-</ul>
-
-
-<h3>Dietary Labels</h3>
-<ul>
-  <% @recipe.dietLabels.each do |label| %>
-  <li><%= label %></li>
-  <% end %>
-</ul>
+<section class="two">
+  <div class="bottom">
+    <h4>Dietary Labels</h4>
+    <ul>
+      <% @recipe.dietLabels.each do |label| %>
+      <li><%= label %></li>
+      <% end %>
+    </ul>
+  </div>
+</section>
