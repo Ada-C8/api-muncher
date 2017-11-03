@@ -17,7 +17,7 @@
 body {
   position: relative;
   margin: 0;
-  padding-bottom: 6rem;
+  padding-bottom: 0;
   min-height: 100%;
   min-width: 100%;
   font-family: "Helvetica Neue", Arial, sans-serif;
@@ -35,33 +35,28 @@ html {
   box-sizing: border-box;
 }
 
-#background{
-    position:absolute;
-    z-index:0;
-    background:inherit;
-    min-height:40%;
-    min-width:100%;
-    top: 0; left: 0; bottom: 0; right: 0;
-    margin: auto;
-    display: flex;
+.root-page {
+  height: 100%;
+  width: 100%;
 }
 
-#search-form {
-    position:absolute;
-    z-index:1;
+.search-form {
     display: flex;
     justify-content: center;
     width: 100%;
 }
 
-#muncher-text {
-    color:#FFB6C1;
-    font-size:20rem;
-    font-family: 'Pacifico', cursive;
-    text-align: center;
-    top: 0; left: 0; bottom: 0; right: 0;
-    margin: auto;
-    margin-top: 20rem;
+.muncher-text {
+  color:#FFB6C1;
+  font-size:22rem;
+  font-family: 'Pacifico', cursive;
+  width: 100%;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  margin: 0 0 0 0;
+  background-color: transparent;
+  text-align: center;
 }
 
 input[type=text], input[type=text]:focus, textarea, textarea:focus {
@@ -97,13 +92,110 @@ input[type=submit] {
   flex: 0 1 auto;
 }
 
-.footer {
-  position: absolute;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  padding: 1rem;
+
+
+
+
+
+header{
+      position: relative;
+      background-color: transparent;
+}
+header ul.nav{
+    overflow: hidden;
+    list-style: none;
+}
+header ul.nav li{
+    position: relative;
+      float: left;
+      width: 20%;
+}
+header ul.nav li a{
+    display: block;
+      height: 50px;
+  opacity: 0;
+      line-height: 50px;
+  text-decoration: none;
+      text-align: center;
+    cursor: default;
+      -webkit-transition: all 0.25s ease;
+    -moz-transition: all 0.25s ease;
+}
+
+@media screen and (max-width: 600px){
+    header ul.nav li{
+            float: none;
+            width: 100%;
+    }
+      header ul.nav li a{
+            height: 0;
+    }
+}
+
+/* Style for header with active class name */
+
+header.active ul.nav li a{
+      height: 120px;
+    opacity: 1;
+      line-height: 120px;
+}
+
+@media screen and (max-width: 600px){
+    header.active ul.nav li a{
+            height: 60px;
+            line-height: 60px;
+    border-bottom: 1px solid #222b2f;
+      }
+}
+
+/* Style for the plus button */
+
+button.toggle-nav{
+    position: absolute;
+  top: 50px;
+    left: calc(50% - 30px);
+    width: 60px;
+      height: 35px;
+    background-color: #38a6a6;
+  font: 400 1.2em 'Allan', serif;
+    color: #fff;
+  border: none;
+    line-height: 30px;
+    vertical-align: middle;
+      outline: none;
+    border-bottom-left-radius: 10px;
+      border-bottom-right-radius: 10px;
+      -webkit-transition: all 0.25s ease;
+      -moz-transition: all 0.25s ease;
+}
+button.toggle-nav:hover{
+    height: 50px;
+}
+button.toggle-nav span{
+      display: block;
+    -webkit-transform: rotate(90deg);
+    -moz-transform: rotate(90deg);
+    -webkit-transition: all 0.25s ease;
+    -moz-transition: all 0.25s ease;
+}
+
+/* Style for the plus button when header has active classe name */
+
+header.active button.toggle-nav{
+    top: 120px;
   background-color: transparent;
-  text-align: center;
-  color: lightgrey;
+}
+header.active button.toggle-nav span{
+      -webkit-transform: rotate(270deg);
+    -moz-transform: rotate(270deg);
+}
+
+@media screen and (max-width: 600px){
+      button.toggle-nav{
+            top: 0;
+            left: 15px;
+      }
+    header.active button.toggle-nav{
+            top: 305px;
+      }
 }

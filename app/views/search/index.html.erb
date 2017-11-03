@@ -1,13 +1,13 @@
-<div id="background">
-  <p id="muncher-text">
-    muncher
-  </p>
-
-  <section id="search-form">
+<section class="root-page">
+  <section class="search-form">
   <%= form_tag search_results_path, method: "get" do %>
     <%= text_field_tag(:ingredients)%>
     <%= hidden_field_tag(:page, 1) %>
     <%= submit_tag("Find My Next Meal") %>
   <% end %>
   </section>
-</div>
+
+  <p class="muncher-text">
+    muncher
+  </p>
+</section>

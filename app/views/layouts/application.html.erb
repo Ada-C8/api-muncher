@@ -13,14 +13,30 @@
   </head>
 
   <body>
+    <header>
+      <button class="toggle-nav">
+        <span>></span>
+      </button>
+      <ul class="nav">
+        <li class="loud"><a href="#">New Search</a></li>
+        <li class="loud"><a href="#">Powered by Edamam</a></li>
+      </ul>
+    </header>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
 
-    <section class="sidebar">
-      <%= link_to "New Search", root_path %>
-    </section>
+    <script type="text/javascript">
+    $(document).ready(function(){
+
+      var header = $('header'),
+      btn    = $('button.toggle-nav');
+
+      btn.on('click', function(){
+        header.toggleClass('active');
+      });
+
+    });
+    </script>
     <%= yield %>
 
-    <footer class="footer">
-      <p>Powered by Edamam</p>
-    </footer>
   </body>
 </html>
