@@ -18,9 +18,8 @@ class EdemamApiWrapper
   def self.list_recipes(search_term, end_url=END_URL)
     puts "Searching for #{search_term}"
     url = BASE_URL + "q=" + search_term + end_url + "&from=0&to=100&"
-    puts url
     response = HTTParty.post(url)
-    check_status(response.parsed_response)
+    check_status(response.parsed_response["hits"])
     hits = response.parsed_response["hits"]
     recipe_list = []
     if hits
@@ -37,7 +36,6 @@ class EdemamApiWrapper
     check_status(response)
     return create_recipe(response[0])
   end
-  #  http://www.edamam.com/ontologies/edamam.owl#recipe_278eaf9aa539ccfac63dbe5faf56343f
 
 
   private
@@ -53,9 +51,8 @@ class EdemamApiWrapper
     return Recipe.new(label, recipe_url, ingredients, dietary, image, source, uri)
   end
 
-  def self.check_status(response)
-    puts response.count
-    if response.count == 0
+  def self.check_status(hits)
+    if hits == []
       raise ApiError.new("API call to slack failed")
     end
   end

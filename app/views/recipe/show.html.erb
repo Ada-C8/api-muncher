@@ -1,36 +1,40 @@
 <section class="show">
-<div class="row">
-  <h1><%=@recipe.label%></h1>
-  <h3>By: <%=@recipe.source%></h3>
-</div>
+  <div class="row">
+    <h1><%=@recipe.label%></h1>
+    <h3>By: <%=@recipe.source%></h3>
+  </div>
 
-<article class="row small-up-1 medium-up-2 large-up-3">
-
-  <section class="ingredients column">
-    <strong>Ingredients:</strong>
-    <ul class="sublist">
-      <%@recipe.ingredients.each do |ingredient|%>
-      <li>
-      <%=ingredient%>
-      </li>
-      <% end %>
-    </ul>
-  </section>
-
-  <section class="image column">
-    <img src="<%=@recipe.image%>"/>
-  </section>
-
-  <section class="dietary column">
-      <strong>Dietary Information:</strong>
-        <ul class="sublist">
-        <%@recipe.dietary.each do |diet_info|%>
+  <article class="row small-up-1 medium-up-1 large-up-3 pink">
+    <section class="ingredients column text-center">
+      <strong>Ingredients:</strong>
+      <ul class="sublist">
+        <%@recipe.ingredients.each do |ingredient|%>
         <li>
-          <%=diet_info%>
+        <%=ingredient%>
         </li>
         <% end %>
       </ul>
-  </section>
-</article>
+    </section>
 
+    <section class="image column">
+      <figure>
+      <img src="<%=@recipe.image%>"/>
+        <figcaption>
+          <strong>Original recipe from <%=link_to     @recipe.source, @recipe.recipe_url,  target:   :_blank%></strong>
+          </figcaption>
+        </p>
+      </figure>
+    </section>
+
+    <section class="dietary column text-center">
+        <strong>Dietary Information:</strong>
+          <ul class="sublist">
+          <%@recipe.dietary.each do |diet_info|%>
+          <li>
+            <%=diet_info%>
+          </li>
+          <% end %>
+        </ul>
+    </section>
+  </article>
 </section>

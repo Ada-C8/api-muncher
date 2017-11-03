@@ -35,13 +35,14 @@
 .recipe_info {
   font-size: 1.2em;
   list-style: none;
+  text-align: center;
   line-height: 300%;
 }
 
 .recipe_info em {
 }
 
-.show {
+.pink {
   background-color: #ffe6e6;
   height:100%;
 }
@@ -53,17 +54,17 @@
   text-align: center;
 }
 
-.ingredients  {
+.ingredients, .dietary  {
   border-style: solid;
   border-color: Maroon;
   padding: 2%;
+  list-style: none;
 }
 
-.dietary {
-  border-style: solid;
-  border-color: Maroon;
-  padding: 2%;
+.dietary ul, .ingredients ul{
+  list-style: none;
 }
+
 
 
 .recipe{
@@ -97,7 +98,7 @@ a {
   font-weight: bold;
 }
 
-h1, h3 {
+h1, h2, h3, figcaption {
   text-align: center;
   color: Maroon
 }
@@ -111,10 +112,27 @@ h2 {
   display: inline-block;
 }
 
+.pagination .current {
+background-color:LightSeaGreen;
+}
+
 .pagination {
   text-align: center;
 }
 
 .form {
   height: 60vh;
+  font-size: 1.5em;
+  color: Maroon
+}
+
+.form label {
+  font-size: 1.5em;
+  color: Maroon
+}
+
+.form input{
+  font-size: 1.5em;
+  color: Maroon;
+  background-color: white;
 }

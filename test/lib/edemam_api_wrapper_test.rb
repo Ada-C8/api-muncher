@@ -11,14 +11,16 @@ describe EdemamApiWrapper do
         #response["message"]["text"].must_equal message
       end
     end
+
+    #it raises an argument if recipe is not in?
   end
 
   #why is this returning a fine response?
   it "Raises an ApiError when the token is bad" do
     VCR.use_cassette("recipes") do
-      proc {
-        EdemamApiWrapper.list_recipes("chicken", "bogus_token")
-      }.must_raise EdemamApiWrapper::ApiError
+       proc {
+      EdemamApiWrapper.list_recipes("chicken", "bogus_token")
+       }.must_raise EdemamApiWrapper::ApiError
     end
   end
 
@@ -31,6 +33,17 @@ describe EdemamApiWrapper do
         result.label.must_equal "Teriyaki Chicken"
       end
     end
+
+    it "Raises an ApiError when the uri is bogus" do
+      VCR.use_cassette("recipes") do
+        uri ="http://www.edamam.com/ontologies/edamam.owl%23recipe_7bf4a371c6884d809682abogus"
+        proc {
+        EdemamApiWrapper.find_a_recipe(uri)
+        }.must_raise EdemamApiWrapper::ApiError
+      end
+    end
+
+
     #check is the uri is bad?
   end
 end

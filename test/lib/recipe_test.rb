@@ -13,6 +13,7 @@ describe Recipe do
     }.must_raise ArgumentError
   end
 
+#these could be made optional
   it "Must initialize name & id properly" do
     recipe = Recipe.new("label", "recipe_url", "ingredients", "dietary", "image", "source", "uri")
     recipe.label.must_equal "label"
