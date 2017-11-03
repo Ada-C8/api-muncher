@@ -39,6 +39,8 @@ class EdamamApiWrapper
     # puts "Keys are: #{data.parsed_response.keys}"
     check_status(data)
 
+    puts "#{data.code}: #{data.message}"
+
     if data.any?
       create_recipe(data[0])
     else
@@ -57,13 +59,12 @@ class EdamamApiWrapper
   def self.create_recipe(api_params)
     return Recipe.new(
       api_params["label"],
-      api_params["url"],
       api_params["uri"],
-      api_params["image"],
-      api_params["source"],
-      api_params["ingredients"],
-      {
-        health_labels: api_params["healthLabels"]
+      { uri: api_params["url"],
+        health_labels: api_params["healthLabels"],
+        image: api_params["image"],
+        source: api_params["source"],
+        ingredients: api_params["ingredients"],
       }
     )
   end

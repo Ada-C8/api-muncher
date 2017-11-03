@@ -30,17 +30,15 @@ describe "EdamamApiWrapper" do
         end
       end
 
-      it "should return nil if recipe is not found" do
+      it "should raise ApiError if recipe is not found" do
         VCR.use_cassette("bad recipe") do
-          result = EdamamApiWrapper.find_recipe("nope nope nope")
-          result.must_equal nil
+          proc { EdamamApiWrapper.find_recipe("nope nope nope") }.must_raise EdamamApiWrapper::ApiError
         end
       end
 
-      it "should return nil if id is not given" do
+      it "should raise ApiError if id is not given" do
         VCR.use_cassette("no recipe") do
-        result = EdamamApiWrapper.find_recipe("")
-        result.must_equal nil
+        proc { EdamamApiWrapper.find_recipe("") }.must_raise EdamamApiWrapper::ApiError
         end
       end
     end

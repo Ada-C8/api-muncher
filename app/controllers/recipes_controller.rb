@@ -17,7 +17,7 @@ class RecipesController < ApplicationController
         @recipes = recipes.paginate(:page => params[:page], :per_page => 12)
       end
 
-    rescue ApiError => error
+    rescue EdamamApiWrapper::ApiError => error
       flash[:status] = :failure
       flash[:message] = "#{error}"
       redirect_back(fallback_location: root_path)
@@ -29,8 +29,7 @@ class RecipesController < ApplicationController
     # uri.gsub(/%2F/, "/")
     begin
       @recipe = EdamamApiWrapper.find_recipe(params[:id])
-    rescue ApiError => error
-      puts "IN RESCUE"
+    rescue EdamamApiWrapper::ApiError => error
       flash[:status] = :failure
       flash[:message] = "#{error}"
       redirect_back(fallback_location: root_path)

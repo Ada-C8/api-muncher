@@ -20,16 +20,14 @@ describe RecipesController do
       end
     end
 
-    #TODO: how to set bad key/id when you don't ever get this from the params?
     it "should set flash[:status] to :failure and redirect_back if given invalid data" do
-      VCR.use_cassette("apple") do
-        params = {
+      VCR.use_cassette("no_id") do
+        q = {
           q: "apple",
-          # app_id: "",
-          # app_key: ""
         }
 
-        get recipes_path, params: params
+        get recipes_path, params: q
+        flash[:status].must_equal :failure
         must_respond_with :redirect
       end
     end

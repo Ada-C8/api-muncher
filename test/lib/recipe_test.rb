@@ -3,14 +3,14 @@ require 'test_helper'
 describe "Recipe" do
   before do
     @label = "test_label"
-    @url = "www.testurl.com"
     @uri = "www.testuri_asdf1234"
-    @image = "www.testimage.jpg"
-    @source = "anders"
-    @ingredients = [{"text" => "some ingredients", "weight" => 23}]
 
     @options = {
       health_labels: "health health health",
+      url: "www.testurl.com"
+      image: "www.testimage.jpg"
+      source: "anders"
+      ingredients: [{"text" => "some ingredients", "weight" => 23}]
     }
 
     @test_recipe = Recipe.new(@label, @url, @uri, @image, @source, @ingredients, @options)
