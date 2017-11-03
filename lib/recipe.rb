@@ -10,11 +10,5 @@ class Recipe
     @ingredients = options[:ingredients]
     @nutrition= options[:nutrition]
   end
-  # def initialize(label, image, uri, url)
-  #   raise ArgumentError if label == nil || label == ""
-  #   @label = label
-  #   @image = image
-  #   @uri = uri
-  #   @url = url
-  # end
+
 end

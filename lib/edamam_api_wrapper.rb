@@ -37,7 +37,7 @@ class EdamamApiWrapper
 
     url = BASE_URL + "?" + "app_id=#{APP_ID}" + "&" + "app_key=#{APP_KEY}" + "&" + "r=" + uri
     new_url = url.sub("#", "%23")
-    puts new_url
+
     data = HTTParty.get(new_url)
     # return data
     if data
