@@ -143,6 +143,7 @@ footer p{
   padding: 10px;
 }
 
+
 .search-header {
 
   text-align: center;
@@ -326,21 +327,7 @@ footer p{
   transform: rotate(-100deg);
 }
 
-//---------- SMALL SCREEN --------------
-@media print, screen and (min-width: 20em){
-  //alignment of recipe name on small
-  #search {
-    width: 50%;
-  }
 
-  .row {
-    max-width: 90%;
-  }
-
-  .recipe .fa-heart {
-    margin-left: 0.1em;
-  }
-}
 
 //--------
 
@@ -378,4 +365,46 @@ footer p{
 a:hover .card .card-body {
   display: block;
   background-color: rgba(249,206,181,0.56);
+}
+
+
+//-----page wrappers ---------
+
+html,
+body {
+	margin:0;
+	padding:0;
+	height:100%;
+}
+#wrapper {
+	min-height:100%;
+	position:relative;
+}
+
+#content {
+  padding-bottom: 450px;
+}
+
+#footer {
+  width:100%;
+	height:450px;
+	position:absolute;
+	bottom:0;
+	left:0;
+}
+
+//---------- SMALL SCREEN --------------
+@media print, screen and (min-width: 20em){
+  //alignment of recipe name on small
+  #search {
+    width: 50%;
+  }
+
+  .row {
+    max-width: 90%;
+  }
+
+  .recipe .fa-heart {
+    margin-left: 0.1em;
+  }
 }

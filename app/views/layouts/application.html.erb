@@ -11,6 +11,10 @@
 </head>
 
 <body>
+  <div id="wrapper">
+
+  <div id="header">
+    
   <header>
     <section class="logo">
       <%= link_to root_path do %>
@@ -40,12 +44,22 @@
 
     </section>
   </header>
+
+  </div>
+
+  <div id="content">
+
   <% if flash[:failure] or flash[:success] %>
     <section class="row flash">
       <h3><%= flash[:failure] %><%= flash[:success] %></h3>
     </section>
     <% end %>
   <%= yield %>
+
+  </div>
+
+
+  <div id ="footer">
     <% if session[:recent_searches] %>
     <section class="row recent-searches">
     <h3>Recent Searches: </h3>
@@ -56,9 +70,11 @@
       </li>
       <%end%>
     </ul>
-
     <%end%>
   </section>
+
+
+
 
   <footer>
     <div class="bg">
@@ -67,5 +83,10 @@
       <%= fa_icon "plug" %> by <%=link_to "edamam", "https://www.edamam.com/" %> <%= fa_icon "bolt" %>
     </p>
   </footer>
+
+  </div>
+
+
+</div>
 </body>
 </html>
