@@ -13,6 +13,38 @@ describe EdamamApiWrapper do
       end
     end
   end
+
+  describe "get_results_from_response" do
+    it "returns an array of Recipe objects" do
+
+    end
+
+    it "renders an error message if the search returns an empty array" do
+
+    end
+  end
+
+  describe "create_recipe" do
+    it "returns a single recipe" do
+
+    end
+
+    it "renders a 404 error if recipe uri is invalid" do
+
+    end
+
+  end
+  describe "check_status" do
+    it "raises an ApiError if the response code is not 200" do
+
+    end
+  end
+
+  describe "get_recipe" do
+    it "creates a Recipe object" do
+
+    end 
+  end
 end
 #
 #   #   it "Raises an ApiError when the token is bad" do
