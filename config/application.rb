@@ -7,7 +7,6 @@ require 'rails/all'
 Bundler.require(*Rails.groups)
 
 
-config.eager_load_paths << Rails.root.join('lib')
 
 module ApiMuncher
   class Application < Rails::Application
@@ -26,6 +25,7 @@ module ApiMuncher
     # -- all .rb files in that directory are automatically loaded.
     # Automatically load all code from <rails_root>/lib
     config.autoload_paths << Rails.root.join('lib')
+    config.eager_load_paths << Rails.root.join('lib')
 
   end
 end
