@@ -1,6 +1,6 @@
 class RecipesController < ApplicationController
   def index
-     @search = params[:item]
+     @item = params[:item]
      @from = (params[:from]) ? params[:from].to_i : 0
      @previous_from = @from - 10
      @from += 10
