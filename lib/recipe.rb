@@ -1,7 +1,7 @@
 class Recipe
   attr_reader :name, :link, :image, :ingredients, :healthLabels
 
-  def initialize(name, link, image, ingredients)
+  def initialize(name, link, image, ingredients, healthLabels)
     raise ArgumentError if !valid_input?
 
     @name = name
@@ -9,6 +9,7 @@ class Recipe
     @image = image
     @ingredients = ingredients
     @healthLabels = healthLabels
+  end
 
     private
 

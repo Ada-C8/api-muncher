@@ -49,6 +49,7 @@ class EdamamApiWrapper
   #   return response.success?
   # end
   #
+
   private
 
   # def self.create_channel(api_params)
@@ -63,7 +64,7 @@ class EdamamApiWrapper
   #     )
   # end
 
-  def create_recipe(api_params)
+  def self.create_recipe(api_params)
     return Recipe.new(
       api_params["recipe"]["label"],
       api_params["recipe"]["url"],
