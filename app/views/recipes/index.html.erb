@@ -1,2 +1,9 @@
-<h1>Recipes#index</h1>
-<p>Find me in app/views/recipes/index.html.erb</p>
+<h1>Here are you results for: <%= @query %> </h2>
+<ul>
+  <% @recipes.each do |recipe| %>
+    <li>
+      <img src="<%= recipe.image %>", alt="<%= recipe.name %>"/>
+      <%= link_to recipe.name, recipe_path(recipe.name, recipe_id: recipe.id)%>
+    </li>
+  <% end %>
+</ul>
