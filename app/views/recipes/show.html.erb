@@ -1,13 +1,21 @@
-<h2>Params:</h2>
-<%= params %>
+<%= render partial: "form" %>
 
 <h2><%= @recipe.label %></h2>
-<h3>By <%=recipe.source%> </h3>
-<%=image_tag recipe.image%>
+<h3>By <%=@recipe.source%> </h3>
+<%=image_tag @recipe.image%>
 <h4>Ingredients</h4>
-<ul>
-  <li><%=recipe.ingredientLines%></li>
+
+<ul><%@recipe.ingredientLines.each do |ingredient_line|%>
+  <li><%=ingredient_line%></li>
+  <%end%>
 </ul>
-<ul>
-  <li><%=recipe.dietLabels%></li>
+
+<h4>Dietary Information</h4>
+<%if @recipe.dietLabels.length == 0%>
+  <p>No available dietary information.</p>
+<%else%>
+<ul><%@recipe.dietLabels.each do |diet_label|%>
+  <li><%=diet_label%></li>
+  <%end%>
 </ul>
+<%end%>

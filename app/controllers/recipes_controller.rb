@@ -33,13 +33,13 @@ class RecipesController < ApplicationController
     else
       @number_of_recipes = EdamamApiWrapper.find_number_of_recipes(@keywords)
       params[:this_is_not_in_the_url] = "Maybe there's another way"
-      if params['from']
+      # if params['from']
         from = params[:from]
         to = params[:to]
-      else
-        from = 0
-        to = 9
-      end
+      # else
+      #   from = 0
+      #   to = 9
+      # end
     @recipes = EdamamApiWrapper.list_recipes(@keywords, from, to)
     render :search
   end
