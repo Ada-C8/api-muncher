@@ -10,12 +10,8 @@ class Recipe
     @original_url = options[:original_url]
     @image = options[:image]
     @ingredients = options[:ingredients]
+    @dietLabels = options[:dietLabels]
 
-    {
-      original_url: api_params["recipe"]["url"],
-      image: api_params["recipe"]["image"],
-      ingredients: api_params["recipe"]["ingredientLines"],
-      dietLabels: api_params["recipes"]["dietLabels"]
-    }
+    
   end # end initialize
 end

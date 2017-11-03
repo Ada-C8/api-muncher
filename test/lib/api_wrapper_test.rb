@@ -9,16 +9,13 @@ describe ApiWrapper do
         result.length.must_be :>, 0
       end
     end
+
+    it "Raises an ApiError when token is bad" do
+      VCR.use_cassette("recipes") do
+        proc {
+          ApiWrapper.list_recipes("bogus_token").must_raise ApiWrapper::ApiError
+        }
+      end
+    end
   end
 end
-
-# it "Can get a list of channels" do
-#       VCR.use_cassette("channels") do
-#         result = SlackApiWrapper.list_channels
-#         result.must_be_kind_of Array
-#         result.length.must_be :>, 0
-#         result.each do |chan|
-#           chan.must_be_kind_of Channel
-#         end
-#       end
-#     end
