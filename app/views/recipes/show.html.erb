@@ -1,11 +1,9 @@
 <main class="recipe-page">
   <section class="page-title row">
     <h2><%= @recipe.name %></h2>
-    <h5>by <%= link_to @recipe.source, @recipe.recipe_url %></h5>
+    <h5>by <%= link_to @recipe.source, @recipe.recipe_url, target: :_blank %></h5>
   </section>
   <section class="row recipe">
-    <!-- <div class="recipe-image small-11 medium-6 columns"
-    style= "background-image: url('<%= @recipe.image_url %>');"> </div> -->
     <div class="row">
       <div class="small-12 medium-6 columns image-holder">
         <img src=<%= @recipe.image_url %> alt=<%= @recipe.name %> class="recipe-page-image" >
