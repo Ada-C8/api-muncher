@@ -1,5 +1,6 @@
 Rails.application.configure do
   config.enable_dependency_loading = true
+  config.autoload_paths << Rails.root.join('lib')
 
   # Settings specified here will take precedence over those in config/application.rb.
 
