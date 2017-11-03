@@ -22,17 +22,17 @@ describe EdamamApiWrapper do
 
     it "Will return [] for a broken request" do
       VCR.use_cassette("recipes") do
-        channels = EdamamApiWrapper.list_recipes(@bogus_search_str)
-        channels.must_be_instance_of Array
-        channels.must_equal []
+        recipes = EdamamApiWrapper.list_recipes(@bogus_search_str)
+        recipes.must_be_instance_of Array
+        recipes.must_equal []
       end
     end
 
     it "Will return [] for invalid app_id and app_key" do
       VCR.use_cassette("recipes") do
-        channels = EdamamApiWrapper.list_recipes(@search_string, "wrong_app_id", "wrong_app_key")
-        channels.must_be_instance_of Array
-        channels.must_equal []
+        recipes = EdamamApiWrapper.list_recipes(@search_string, "wrong_app_id", "wrong_app_key")
+        recipes.must_be_instance_of Array
+        recipes.must_equal []
       end
     end
   end

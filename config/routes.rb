@@ -3,7 +3,7 @@ Rails.application.routes.draw do
 
   get '/recipes/', to: 'recipes#index', as: 'recipes' #recipes_path
 
-  get '/recipes/search/', to: 'recipes#search', as: 'recipe_search'
+  get '/recipes/search', to: 'recipes#search', as: 'recipe_search'
 
   get '/recipes/:id', to: 'recipes#show', as: 'recipe' #recipe_path
 end

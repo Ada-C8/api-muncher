@@ -1,3 +1,17 @@
 <h1>Index</h1>
 
 <%= render partial: "form" %>
+
+<% if @recipes != nil %>
+    <em><p> Results for <%= params[:search] %></p></em>
+    <h2>Recipes</h2>
+    <ul>
+      <% @recipes.each do |recipe| %>
+      <li>
+        <%= recipe.label %>
+      </li>
+      <% end %>
+    </ul>
+  <%else  %>
+    <p>Search for a recipe!</p>
+<% end %>

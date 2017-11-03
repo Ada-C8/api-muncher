@@ -20,17 +20,22 @@ class EdamamApiWrapper
 
     if data["hits"]
       my_recipes = data["hits"].map do |hit|
+        hash = {
+          ingredientLines: hit["recipe"]["ingredientLines"],
+          dietLabels: hit["recipe"]["dietLabels"], image: hit["recipe"]["image"],
+          source: hit["recipe"]["source"]
+        }
+
         Recipe.new(
           hit["recipe"]["uri"],
           hit["recipe"]["label"],
           hit["recipe"]["url"],
-          hit["recipe"]["ingredientLines"],
-          hit["recipe"]["dietLabels"],
-          image: hit["recipe"]["image"],source: hit["recipe"]["source"])
+          hash
+        )
       end
       return my_recipes
     else
-      return []
+      return [] #or return nil?
     end
   end
 end
