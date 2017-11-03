@@ -1,6 +1,6 @@
 <div class="row">
-  <h1 class="small-12 medium-3 columns" id="site-name-header">gourmake</h1>
-  <div class="small-12 medium-6 large-9 columns">
+  <h1 class="small-12 large-4 columns" id="site-name-header"><%=link_to "gourmake", root_path%></h1>
+  <div class="small-12 large-8 columns" id="header-search">
     <%= form_tag(recipes_path, method: :get) do %>
     <%= text_field_tag :search %>
     <%= submit_tag 'Search' %>

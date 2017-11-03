@@ -1,17 +1,18 @@
-<section id="home-page">
-  <div class="row" id="site-home-container">
-    <h1 id="site-name-home">gourmake</h1>
-    <p>
-      Search for a fancy recipe...
-    </p>
-  </div>
-  <div class="row">
-    <div id="home-search" class="small-12 columns">
-      <%= form_tag(recipes_path, method: :get) do %>
-      <%= text_field_tag :search %>
-      <%= submit_tag 'Search' %>
-      <% end %>
+<div class="hero">
+  <section id="home-page">
+    <div class="row" id="site-home-container">
+      <h1 id="site-name-home">gourmake</h1>
+      <p>
+        Search for a fancy recipe...
+      </p>
     </div>
-  </div>
-</section>
-<img src="../../../assets/images/Cooking-Techniques_Hero.jpg" alt="cutting board">
+    <div class="row">
+      <div id="home-search" class="small-12 columns">
+        <%= form_tag(recipes_path, method: :get) do %>
+        <%= text_field_tag :search %>
+        <%= submit_tag 'Search' %>
+        <% end %>
+      </div>
+    </div>
+  </section>
+</div>
