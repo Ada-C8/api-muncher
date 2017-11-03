@@ -5,24 +5,22 @@ class Recipe
 
   attr_reader :label, :uri, :image, :source, :url, :dietLabels, :healthLabels, :ingredientLines, :find_recipe_id
 
-  def initialize(recipes_list)
-    raise ArgumentError if recipes_list["label"] == nil || recipes_list["label"] == "" || recipes_list["uri"] == nil || recipes_list["uri"] == ""
+  def initialize(api_params)
+    raise ArgumentError if api_params["label"] == nil || api_params["label"] == "" || api_params["uri"] == nil || api_params["uri"] == ""
 
-    @uri = URI.escape(recipes_list['uri'])
-    # puts "URI: #{@uri}"
-    @label = recipes_list['label']
-    @image = recipes_list['image']
-    @source = recipes_list['source']
-    @url = recipes_list['url']
-    @dietLabels = recipes_list['dietLabels']
-    @healthLabels = recipes_list['healthLabels']
-    @ingredientLines = recipes_list['ingredientLines']
+    @uri = URI.escape(api_params['uri'])
+    @label = api_params['label']
+    @image = api_params['image']
+    @source = api_params['source']
+    @url = api_params['url']
+    @dietLabels = api_params['dietLabels']
+    @healthLabels = api_params['healthLabels']
+    @ingredientLines = api_params['ingredientLines']
   end
 
   def find_recipe_id
     a = @uri.split('edamam.ow')
     uri_id = a[1]
-    # puts "URI_ID: #{uri_id}"
     return uri_id
   end
 

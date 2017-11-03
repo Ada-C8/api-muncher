@@ -1,6 +1,6 @@
-require_dependency '../../lib/edamam_api_wrapper'
-require_dependency '../../lib/recipe'
-require 'pry'
+# require_dependency '../../lib/edamam_api_wrapper'
+# require_dependency '../../lib/recipe'
+# require 'pry'
 
 class RecipesController < ApplicationController
 
