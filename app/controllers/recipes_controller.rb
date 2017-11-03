@@ -1,3 +1,4 @@
+require 'json/ext'
 require 'will_paginate/array'
 
 class RecipesController < ApplicationController
@@ -13,6 +14,9 @@ class RecipesController < ApplicationController
     elsif @recipes == nil || @recipes == ""
       return @recipes = nil
     end
+  end
+
+  def show
   end
 
 

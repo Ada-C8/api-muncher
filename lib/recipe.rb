@@ -1,3 +1,5 @@
+require 'json/ext'
+
 class Recipe
   attr_reader :id, :label, :url, :ingredientLines, :dietLabels, :image, :source
 
@@ -15,4 +17,9 @@ class Recipe
     @source = options[:source]
 
   end
+
+  def stringify()
+    self.to_json
+  end
+  
 end
