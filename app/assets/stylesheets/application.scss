@@ -95,31 +95,27 @@ input[type='text'] {
   animation: fadeIn 2s;
 }
 
-.label-main {
-  display: inline-block;
-}
-
-.options .world {
+.options p:nth-child(1) .label {
   background: #8FC1C9;
 }
 
-.options .protein {
+.options p:nth-child(2) .label {
   background: #549CCF;
 }
 
-.options .vegetables {
+.options p:nth-child(3) .label {
   background: #ADAD68;
 }
 
-.options .various {
+.options p:nth-child(4) .label {
   background: #F6C73C;
 }
 
-.options .desserts {
+.options p:nth-child(5) .label {
   background: #E7B7AD;
 }
 
-.options .drinks {
+.options p:nth-child(6) .label {
   background: #DB3E36;
 }
 

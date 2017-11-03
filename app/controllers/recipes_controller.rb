@@ -10,6 +10,7 @@ class RecipesController < ApplicationController
     @various = EdamamApiWrapper.various
     @desserts = EdamamApiWrapper.desserts
     @drinks = EdamamApiWrapper.drinks
+    @all = [@world, @protein, @vegetables, @various, @desserts, @drinks]
   end
 
   def index
