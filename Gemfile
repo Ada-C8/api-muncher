@@ -7,7 +7,7 @@ end
 
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-
+gem 'will_paginate', '~> 3.1.1'
 gem 'httparty'
 gem 'better_errors'
 gem 'rails', '~> 5.1.4'

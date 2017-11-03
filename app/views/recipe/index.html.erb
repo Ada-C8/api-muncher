@@ -35,7 +35,7 @@
             </ul>
           </li>
           <li>
-            <strong>Original recipe from <%=link_to   recipe.source,   recipe.recipe_url%></strong>
+            <strong>Original recipe from <%=link_to   recipe.source, recipe.recipe_url,  target: :_blank%></strong>
           </li>
         </ul>
         </figcaption>
@@ -43,3 +43,6 @@
         </article>
   <%end %>
 </section>
+<nav>
+    <%= will_paginate @recipes %>
+</nav>

@@ -17,7 +17,7 @@ class EdemamApiWrapper
 
   def self.list_recipes(search_term, end_url=END_URL)
     puts "Searching for #{search_term}"
-    url = BASE_URL + "q=" + search_term + end_url
+    url = BASE_URL + "q=" + search_term + end_url + "&from=0&to=100&"
     puts url
     response = HTTParty.post(url)
     check_status(response.parsed_response)

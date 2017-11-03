@@ -1,8 +1,11 @@
-
-<section class="row">
+<section class="form">
+<div class="row">
+<section class="small-5 medium-7 large-9 small-centered columns">
 <%= form_tag "/recipes", method: "get" do%>
   <%= label_tag :query, "Find your Flavor" %>
   <%= text_field_tag :query %>
   <%= submit_tag "Search"%>
 <% end %>
+</section>
+</div>
 </section>
