@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  root 'recipes#index'
+  root 'recipes#home'
 
   get '/recipes/index', to: 'recipes#index'
   get '/recipes/:id', to: 'recipes#show', as: "recipe"

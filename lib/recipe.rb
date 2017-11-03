@@ -1,9 +1,9 @@
 class Recipe
-  attr_reader :id, :title, :image, :ingredients, :dietary, :link
+  attr_reader :uri, :title, :image, :ingredients, :dietary, :link
 
-  def initialize(id, title, image, ingredients, dietary, link)
+  def initialize(uri, title, image, ingredients, dietary, link)
 
-    @id = id
+    @uri = uri
     @title = title
     @image = image
     @ingredients = ingredients
