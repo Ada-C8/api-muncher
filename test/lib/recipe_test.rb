@@ -2,7 +2,11 @@ require 'test_helper'
 
 describe "Recipe Class" do
   before do
-    @recipe = Recipe.new("name", "original_url", "ingredients", "dietLabels")
+    options = {
+      image: "http::image"
+    }
+
+    @recipe = Recipe.new("name", "original_url", "ingredients", "dietLabels", options)
   end
   describe "initialize" do
     it "Can be instanciated with name, original_url, ingredients, dietLabels" do
@@ -29,6 +33,14 @@ describe "Recipe Class" do
       @recipe.original_url.must_equal "original_url"
       @recipe.ingredientsLine.must_equal "ingredients"
       @recipe.dietLabels.must_equal "dietLabels"
+    end
+
+    it "Tracks option parameters" do
+      options = {
+        image: "http::image"
+      }
+
+      @recipe.image.must_equal options[:image]
     end
 
 
