@@ -30,3 +30,20 @@ section {
 nav {
   background-color: lightgrey;
 }
+.link{
+  text-align: center;
+}
+
+.link a {
+  text-decoration: none;
+  color: black;
+}
+
+.link a:visited {
+  text-decoration: none;
+}
+
+// ============RECIPE INDEX=============
+.recipe-list {
+  list-style-type: none;
+}

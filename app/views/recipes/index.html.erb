@@ -1,14 +1,29 @@
-<section>
-  <h3>Results for: <%= (params[:search]) %></h1>
-  <ul>
+<!-- recipe index page -->
 
-    <% @recipes.each do |recipe| %>
-      <article>
-        <li><%= link_to recipe.label, URI.encode("#{recipe_path(recipe.label)}?uri=#{recipe.uri.encode}") %></li>
-        <li><img src=<%=recipe.image%>></li>
-      </article>
-    <% end %>
+<div class="grid-x">
+  <div class="large-1 medium-1 small-3 cell"></div>
 
-  </ul>
-</section>
+  <div class="large-10 medium-10 small-6 cell">
+    <section>
+      <h3>Results for: <%= (params[:search]) %></h1>
+      <ul class="recipe-list">
+        <% @recipes.each do |recipe| %>
+          <article>
+            <li><img src=<%=recipe.image%>></li>
+
+            <li><%= link_to recipe.label, URI.encode("#{recipe_path(recipe.label)}?uri=#{recipe.uri.encode}") %></li>
+          </article>
+        <% end %>
+      </ul>
+    </section>
+  </div>
+
+  <div class="large-1 medium-1 small-3 cell"></div>
+</div>
+
+
 <%= paginate @recipes %>
+
+<!-- ----------------------------------------------- -->
+
+<!-- <%# link_to(image_tag("driver.png"), driver_path(driver.id)) %> -->
