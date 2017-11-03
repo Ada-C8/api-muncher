@@ -29,7 +29,6 @@ class EdamamApiWrapper
 
 
 
-
   def self.show_recipe(search)
     # MUST ENCODE THE SEARCH PARAMETER IN THE URL
     url = BASE_URL + "?r=" + (URI.encode(search))
