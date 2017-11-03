@@ -2,7 +2,16 @@
 <section class="row search-header">
   <h1>Search / </h1><h1>  <%=params[:search] %></h1>
 </section>
+
+<% if @recipes.empty? %>
+<section class="row italic">
+  <p>
+    sorry... we couldn't find anything for those search items
+  </p>
+</section>
+<%else%>
 <section class="row all-recipes">
+
   <% @recipes.each do |recipe| %>
     <%= link_to recipe_path(format_uri(recipe.uri)) do %>
         <div class="card">
@@ -18,3 +27,4 @@
     <%= will_paginate(@recipes) %>
   </div>
 </section>
+<% end %>

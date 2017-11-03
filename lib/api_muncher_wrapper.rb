@@ -7,8 +7,13 @@ class ApiMuncherWrapper
   APP_KEY = ENV["APP_KEY"]
   NUMBER_OF_ENTRIES = 50
 
-  def self.search_recipes(name)
+  def self.search_recipes(name, diet = nil, health = nil)
     url = BASE_URL + "?q=#{name.gsub(' ', '+')}&app_id=#{APP_ID}&app_key=#{APP_KEY}&to=#{NUMBER_OF_ENTRIES}"
+    if health
+          url += "&health=#{health}"
+    elsif diet
+          url += "&diet=#{diet}"
+    end
     data = HTTParty.get(url)
     if data["hits"]
       recipes = data["hits"].map do |hash|
