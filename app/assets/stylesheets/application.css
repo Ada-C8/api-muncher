@@ -43,7 +43,7 @@ body a:hover {
 }
 
 .home_body {
-  background-image: url("food background2.jpg");
+  background-image: asset_path("food background2.jpg");
   font-family: Georgia, Arial, sans-serif;
   background-repeat: no-repeat;
 }
