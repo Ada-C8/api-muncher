@@ -1,5 +1,12 @@
+<body>
+<div id="main-body">
+<section class="main-form large-10 small-8 small-centered large-centered columns">
 <%= form_tag("/recipes", method: "get") do %>
-  <%= label_tag :word %>
+ <%= label_tag :word, "¿Qué ingrediente quieres en tu receta?" %>
   <%= text_field_tag :word, params[:word] %>
-  <%= submit_tag("Buscar") %>
+  <%= hidden_field_tag :page, 1 %>
+  <%= submit_tag "Buscar", class: "button" %>
 <% end %>
+</section>
+</div>
+</body>

@@ -1,11 +1,26 @@
-<section >
-  <h1>Recipes</h1>
-  <ul>
-    <%# @recipes %>
-    <% @recipes.each do |recipe| %>
-      <li>
-        <%= recipe.label %>
-      </li>
+<body >
+  <h1><%= "Recetas con #{params[:word]}" %>  </h1>
+  <% @recipes.each do |recipe| %>
+  <div class="recipe-block text-center small-12 medium-6 large-4 columns end" >
+    <img src=<%= recipe.image %> />
+    <p class="recipe-name"><strong><%= link_to recipe.label, recipe_path(recipe.id) %></strong></p>
+  </div>
+  <% end %>
+
+  <% if params[:page].to_i > 1 %>
+    <%= form_tag("/recipes", method: "get") do %>
+    <%= hidden_field_tag :word, params[:word] %>
+    <%= hidden_field_tag :page, params[:page].to_i-1 %>
+    <%= submit_tag "Anterior", class: "button" %>
     <% end %>
-  </ul>
-</section>
+  <% end %>
+
+  <%= form_tag("/recipes", method: "get") do %>
+  <%= hidden_field_tag :word, params[:word] %>
+  <%= hidden_field_tag :page, params[:page].to_i+1 %>
+  <%= submit_tag "Siguiente", class: "button" %>
+  <% end %>
+
+
+
+</body>

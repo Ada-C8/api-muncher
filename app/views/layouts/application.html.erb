@@ -1,14 +1,33 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <title>ApiMuncher</title>
-    <%= csrf_meta_tags %>
+<!-- /* *****************************************************
+HERO
+****************************************************** */ -->
 
-    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+<section class="hero">
+    <div class="hero-section-text">
+      <%= link_to root_path do %>
+        <h1>!A Cocinar!</h1>
+      <% end %>
+    </div>
+  </section>
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title><%= content_for?(:title) ? yield(:title) : "Untitled" %></title>
+
+    <%= stylesheet_link_tag    "application" %>
+    <%= javascript_include_tag "application", 'data-turbolinks-track' => true %>
+    <%= csrf_meta_tags %>
   </head>
 
   <body>
+
     <%= yield %>
+
   </body>
 </html>
