@@ -2,8 +2,7 @@
 
 <%#= form_tag search_path(:query), method: "get" do %>
 <%= form_tag recipes_path, method: "get" do %>
-  <%= label_tag(:query, "Find your flavor") %>
-  <%= text_field_tag(:query, params[:query]) %>
+  <%= text_field_tag(:query, params[:query], placeholder: "Search Recipes") %>
   <%= submit_tag("Find") %>
 
 <% end %>

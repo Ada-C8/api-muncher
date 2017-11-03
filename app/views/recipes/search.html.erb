@@ -1,13 +1,16 @@
 <h3>MUNCHER</h3>
-<h4>Results for "<%= "#{params[:query]}" %>"</h4>
+<% if @recipes.present? %>
+  <h4>Results for "<%= "#{params[:query]}" %>"</h4>
 
-<section class="recipes row small-up-2 medium-up-3 large-up-4">
-<% @recipes.each do |recipe| %>
-  <article class="column">
-    <%= link_to (image_tag(recipe.image)), root_path %>
-    <p><%= link_to recipe.name, root_path %></p>
-  </article>
-<% end %>
-<% if @recipes.blank? %>
+  <section class="recipes row small-up-2 medium-up-3 large-up-4">
+  <% @recipes.each do |recipe| %>
+    <article class="column">
+      <%= link_to (image_tag(recipe.image)), recipe_path(name: recipe.name) %>
+      <p><%= link_to recipe.name, root_path %></p>
+    </article>
+  <% end %>
+  </section>
+
+<% else %>
   <h4>There are no recipes containing the term "<%= "#{params[:query]}" %>"</h4>
-</section>
+<% end %>

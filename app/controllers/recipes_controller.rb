@@ -9,6 +9,6 @@ class RecipesController < ApplicationController
   end
 
   def show
-    @recipe = Recipe.find_by()
+    @recipe = EdamamApiWrapper.show_recipe(params[:query])
   end
 end
