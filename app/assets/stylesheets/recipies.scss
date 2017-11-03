@@ -15,7 +15,6 @@
 .title {
   padding: 10px;
   text-align: center;
-  margin: 50px auto;
   font-size: 300%;
   width: 90%;
 
@@ -30,18 +29,16 @@
 
 }
 
-.muncher-search {
-  // opacity: 0.5;
-  width: 100%;
-  background: rgb(204, 204, 204); /* Fallback for older browsers without RGBA-support */
-    background: rgba(204, 204, 204, 0.5);
-
-}
+// .muncher-search {
+//   // opacity: 0.5;
+//   width: 100%;
+//   background: rgb(204, 204, 204); /* Fallback for older browsers without RGBA-support */
+//     background: rgba(204, 204, 204, 0.5);
+//
+// }
 
 .transparent {
-  background: rgb(204, 204, 204); /* Fallback for older browsers without RGBA-support */
-    background: rgba(204, 204, 204, 0.5);
-    padding: 5%;
+  background: white;
 }
 
 
