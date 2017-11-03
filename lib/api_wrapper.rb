@@ -42,11 +42,11 @@ class ApiWrapper
 
       # gets the name of the recipe
       api_params["recipe"]["label"],
+      api_params["recipe"]["url"],
+      api_params["recipe"]["ingredientLines"],
+      api_params["recipe"]["dietLabels"]
       {
-        original_url: api_params["recipe"]["url"],
         image: api_params["recipe"]["image"],
-        ingredients: api_params["recipe"]["ingredientLines"],
-        dietLabels: api_params["recipe"]["dietLabels"]
       }
     )
     return recipe
