@@ -10,7 +10,12 @@
     </div>
     <div class="row">
     <%= "Dietary Labels" %>
-  </div>
+    <ul>
+    <% @recipe.labels.each do |item| %>
+      <li><%= item %></li>
+    <% end %>
+    </ul>
+    </div>
   </div>
 
   <div class="column small-12 medium-6">

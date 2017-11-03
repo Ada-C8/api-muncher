@@ -45,7 +45,8 @@ class EdamamApiWrapper
             hit["recipe"]["image"],
             hit["recipe"]["ingredientLines"],
             external_url: hit["recipe"]["url"],
-            source: hit["recipe"]["source"]
+            source: hit["recipe"]["source"],
+            labels: hit["recipe"]["dietLabels"]
           )
         end
       end
@@ -71,7 +72,8 @@ class EdamamApiWrapper
           response[0]["image"],
           response[0]["ingredientLines"],
           external_url: response[0]["url"],
-          source: response[0]["source"]
+          source: response[0]["source"],
+          labels: response[0]["dietLabels"]
         )
       end
       return recipe

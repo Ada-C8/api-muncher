@@ -1,5 +1,5 @@
 class Recipe
-  attr_reader :title, :mini_uri, :photo_uri, :external_url, :source, :ingredients
+  attr_reader :title, :mini_uri, :photo_uri, :external_url, :source, :ingredients, :labels
 
   def initialize( title, uri, photo_uri, ingredients, options = { } )
     @title = title
@@ -7,6 +7,7 @@ class Recipe
     @ingredients = ingredients
     @external_url = options[:external_url]
     @source = options[:source]
+    @labels = options[:labels]
 
     uri = URI.encode(uri) if uri.include?("#")
 
@@ -19,7 +20,8 @@ class Recipe
     self.photo_uri == another_recipe.photo_uri &&
     self.ingredients == another_recipe.ingredients &&
     self.external_url == another_recipe.external_url &&
-    self.source == another_recipe.source
+    self.source == another_recipe.source &&
+    self.label == another_recipe.label
   end
 
 end

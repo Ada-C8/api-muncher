@@ -14,7 +14,9 @@
   <body>
     <% unless params[:action] == "home"%>
       <header class="row expanded">
-
+        <h1 class="column small-12 medium-6">Find Me the Recipe</h1>
+        <div class="column small-12 medium-6"><%= render partial: "searchform" %>
+</div>
       </header>
     <% end %>
 
