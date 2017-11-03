@@ -5,7 +5,7 @@ class RecipesController < ApplicationController
 
   def index
     @query = params[:query]
-    @recipes = EdamamApiWrapper.search(@query)
+    @recipes = EdamamApiWrapper.search(@query).paginate(:page => params[:page], :per_page => 10)
 
     if @recipes.empty?
       flash[:status] = :failure

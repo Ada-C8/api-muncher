@@ -3,7 +3,7 @@ class EdamamApiWrapper
   ID_AND_KEY = "&app_id=#{ENV["EDAMAM_ID"]}&app_key=#{ENV["EDAMAM_KEY"]}"
 
   def self.search(query)
-    url = BASE_URL + "q=" + query + ID_AND_KEY
+    url = BASE_URL + "q=" + query + ID_AND_KEY + "&to=50"
     data = HTTParty.get(url)
     recipes = []
     unless data["hits"].empty?
