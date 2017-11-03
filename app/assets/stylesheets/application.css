@@ -15,3 +15,18 @@
  *= require foundation_and_overrides
 
  */
+
+body {
+  background-color: #535b68;
+}
+.collapse-right {
+  padding-right: 0;
+}
+
+.collapse-left {
+  padding-left: 0;
+}
+
+span.footer {
+  text-align: center;
+}
