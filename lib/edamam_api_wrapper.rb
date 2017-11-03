@@ -7,11 +7,10 @@ class EdamamApiWrapper
   APP_ID = ENV["APP_ID"]
   APP_KEY = ENV["APP_KEY"]
 
-  class ApiError < StandardError
-  end
+  class ApiError < StandardError ; end
 
   def self.search(q, app_id=APP_ID, app_key=APP_KEY)
-  
+
     url = BASE_URL + "/search" + "?q=#{q}" + "&app_id=#{app_id}" + "&app_key=#{app_key}" + "&to=30"
 
     puts "About to send request for list of channels"
@@ -20,7 +19,6 @@ class EdamamApiWrapper
     # puts "Parsed response is: #{data.parsed_response}"
     # puts "Keys are: #{data.parsed_response.keys}"
     check_status(data)
-
 
     recipe_list = []
     if data["hits"]
@@ -42,11 +40,11 @@ class EdamamApiWrapper
     # puts "Keys are: #{data.parsed_response.keys}"
     check_status(data)
 
-    recipe = nil
     if data.any?
-      recipe = create_recipe(data[0])
+      create_recipe(data[0])
+    else
+      raise ApiError.new("That recipe doesn't exist, please search again")
     end
-    return recipe
   end
 
   private
