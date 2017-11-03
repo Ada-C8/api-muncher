@@ -1,2 +1,8 @@
-<h1>Recipes#root</h1>
-<p>Find me in app/views/recipes/root.html.erb</p>
+<h1>MUNCHER</h1>
+
+<%= form_tag recipes_path, method: :get do %>
+
+<%= text_field_tag :query, "" %>
+
+<%= submit_tag "Search", class: "button" %>
+<% end %>

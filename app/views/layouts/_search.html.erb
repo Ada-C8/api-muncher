@@ -1,0 +1,18 @@
+<div class='search'>
+  <h1><%= link_to "MUNCHER", root_path %></h1>
+
+  <div id='search_bar'>
+    <% if current_page?(root_path) %>
+      <p>
+        Use the search to find what you'd like
+      </p>
+    <% end %>
+
+    <%= form_tag recipes_path, method: :get do %>
+
+    <%= text_field_tag :query, "" %>
+
+    <%= submit_tag "Search", class: "button" %>
+    <% end %>
+  </div>
+</div>

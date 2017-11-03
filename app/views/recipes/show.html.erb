@@ -1,2 +1,27 @@
-<h1>Recipes#show</h1>
-<p>Find me in app/views/recipes/show.html.erb</p>
+<h1><%= link_to "#{@recipe.name}", @recipe.url %></h1>
+
+<img src="<%= @recipe.image %>", alt="<%= @recipe.name %>"/>
+<h4>Ingredients</h4>
+<ul>
+  <% @recipe.ingredients.each do |ingredient| %>
+  <li>
+    <%= ingredient %>
+  </li>
+  <% end %>
+</ul>
+
+<% if @recipe.diet || @recipe.health%>
+<h4>Dietary Information</h4>
+<ul>
+  <% @recipe.diet.each do |label| %>
+  <li>
+    <%= label %>
+  </li>
+  <% end %>
+  <% @recipe.health.each do |label| %>
+  <li>
+    <%= label %>
+  </li>
+</ul>
+<% end %>
+<% end %>
