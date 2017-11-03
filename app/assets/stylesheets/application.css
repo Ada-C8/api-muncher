@@ -72,10 +72,13 @@ nav {
 /*main*/
 
 .recipe-show li {
-  list-style: none;
   /*background-color: white;*/
   opacity: .9;
   padding: 30px 50px;
+}
+
+li {
+  list-style: none;
 }
 
 

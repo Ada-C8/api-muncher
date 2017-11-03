@@ -42,13 +42,20 @@ class RecipeApiWrapper
 
   def self.create_recipe(raw_recipe)
     return Recipe.new(
-    id: raw_recipe["uri"],
-    name: raw_recipe["label"],
-    image: raw_recipe["image"],
-    url: raw_recipe["url"],
-    ingredients: raw_recipe["ingredientLines"],
-    servings: raw_recipe["yield"],
-    total_nutrients: raw_recipe["totalNutrients"]
+    raw_recipe["uri"],
+    raw_recipe["label"],
+    raw_recipe["image"],
+    raw_recipe["url"],
+    raw_recipe["ingredientLines"],
+    raw_recipe["yield"],
+    {
+      source: raw_recipe["source"],
+      health_labels: raw_recipe["healthLabels"],
+      calories: raw_recipe["calories"],
+      fat: raw_recipe["totalNutrients"]["FAT"],
+      carbs: raw_recipe["totalNutrients"]["CHOCDF"],
+      protein: raw_recipe["totalNutrients"]["PROCNT"]
+    }
     )
   end
 
@@ -56,7 +63,7 @@ class RecipeApiWrapper
     # puts response.code
     # puts "response ok? #{response["ok"]}"
     # puts "response .ok? #{response.ok?}"
-    unless response.ok? 
+    unless response.ok?
       raise ApiError.new("API call to Edamam failed")
     end
   end
