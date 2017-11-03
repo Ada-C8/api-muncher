@@ -10,6 +10,16 @@
   <%end%>
 </ul>
 
+<h4>Health Information</h4>
+<%if @recipe.healthLabels.length == 0%>
+  <p>No available health information.</p>
+<%else%>
+  <ul><%@recipe.healthLabels.each do |health_label|%>
+    <li><%=health_label%></li>
+  <%end%>
+  </ul>
+<%end%>
+
 <h4>Dietary Information</h4>
 <%if @recipe.dietLabels.length == 0%>
   <p>No available dietary information.</p>
@@ -19,3 +29,5 @@
   <%end%>
 </ul>
 <%end%>
+
+<h4><%= link_to "Source Website", @recipe.url%> </h4>

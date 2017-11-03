@@ -32,26 +32,29 @@ class RecipesController < ApplicationController
       #add flash message maybe
     else
       @number_of_recipes = EdamamApiWrapper.find_number_of_recipes(@keywords)
-      params[:this_is_not_in_the_url] = "Maybe there's another way"
-      # if params['from']
-        from = params[:from]
-        to = params[:to]
-      # else
-      #   from = 0
-      #   to = 9
-      # end
-    @recipes = EdamamApiWrapper.list_recipes(@keywords, from, to)
-    render :search
-  end
+
+      if @number_of_recipes > 100
+        @greater_than_100 = true
+        @number_of_recipes_on_last_page = 10
+      else
+        @greater_than_100 = false
+        @number_of_recipes_on_last_page = @number_of_recipes%10
+      end
+
+      from = params[:from]
+      to = params[:to]
+      @recipes = EdamamApiWrapper.list_recipes(@keywords, from, to)
+      render :search
+    end
   end
 
   def show
-    #@recipe = EdamamApiWrapper.show_recipe(params)
-    # @recipe = params['recipe']
-    # @uri_id = find_recipe_id(@recipe.uri)
     @recipe = EdamamApiWrapper.show_recipe(params['id'])
-    # @recipe.id = @recipe.
-
   end
+
+  private
+
+  # def find_number_of_recipes_on_last_page
+
 
 end
