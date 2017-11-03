@@ -21,6 +21,8 @@
 main {
   height: 90%;
   padding-bottom: 100px;
+  font-family: 'Yantramanav', sans-serif;
+  color: black
 }
 
 // ============RecipesIndex===========
@@ -29,6 +31,7 @@ main {
 // =================NAV================
 nav {
   // background-color: #edf481;
+
 }
 .link{
   text-align: center;
@@ -41,6 +44,10 @@ nav {
 
 .link a:visited {
   text-decoration: none;
+}
+
+.blah {
+  font-family: 'Yantramanav', sans-serif;
 }
 
 // ============RECIPE INDEX=============
@@ -88,12 +95,14 @@ section ul {
 .one h3 {
   text-align: center;
   margin-bottom: 3px;
+  font-family: 'Yantramanav', sans-serif;
   // border-top: solid 0.5px;
 }
 
 .one h4 {
   text-align: center;
   margin-bottom: 3%;
+  font-family: 'Yantramanav', sans-serif;
 }
 
 .left {
@@ -130,6 +139,15 @@ section ul {
   height: 30%;
   margin-right: 50px;
   text-align: center;
+}
+
+.two h4 {
+  font-family: 'Yantramanav', sans-serif;
+  text-align: left;
+}
+
+.two ul {
+  text-align: left;
 }
 
 

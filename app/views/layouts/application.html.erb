@@ -2,6 +2,9 @@
 <html>
   <head>
     <link href="https://fonts.googleapis.com/css?family=Bungee+Shade" rel="stylesheet">
+
+    <link href="https://fonts.googleapis.com/css?family=Yantramanav:100" rel="stylesheet">
+
     <title>ApiMuncher</title>
 
     <%= csrf_meta_tags %>
@@ -18,7 +21,7 @@
       <div class="grid-x">
         <div class="large-2 medium-1 small-3 cell"></div>
 
-          <div class="large-8 medium-10 small-6 cell">
+          <div class="large-8 medium-10 small-6 cell blah">
             <h1 class="link"><%= link_to "The Guilty Carb", root_path %></h1>
             <%= form_tag recipes_path, method: :get do %>
               <%= label_tag(:search, "Find your flavor. . .") %>
