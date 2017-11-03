@@ -2,7 +2,7 @@ require "test_helper"
 
 describe Recipe do
   before do
-    @data = {
+    data = {
       "uri": "http://www.edamam.com/ontologies/edamam.owl#recipe_7bf4a371c6884d809682a72808da7dc2",
       "label": "Teriyaki Chicken",
       "image_url": "https://www.edamam.com/web-img/262/262b4353ca25074178ead2a07cdf7dc1.jpg",
@@ -27,16 +27,28 @@ describe Recipe do
       }
     }
 
-    @recipe = Recipe.new(@data[:uri], @data[:label], @data[:image_url], @data[:source], @data[:source_url], @data[:ingredient_lines], @data[:totalNutrients])
+    @recipe = Recipe.new(
+      data[:uri],
+      data[:label],
+      data[:source],
+      options = {
+        image_url: data[:image_url],
+        source_url: data[:source_url],
+        ingredient_lines: data[:ingredient_lines],
+        total_nutrients: data[:total_nutrients]
+      }
+    )
   end
 
   describe "#initialize" do
     it "can be instantiated with all instances" do
       @recipe.must_be_kind_of Recipe
       @recipe.label.must_equal "Teriyaki Chicken"
+      @recipe.uri.must_equal "http://www.edamam.com/ontologies/edamam.owl#recipe_7bf4a371c6884d809682a72808da7dc2"
+      @recipe.source.must_equal "David Lebovitz"
     end
 
-    it "requires all parameters" do
+    it "requires all required parameters" do
       proc {
         Recipe.new()
       }.must_raise ArgumentError
@@ -46,7 +58,7 @@ describe Recipe do
       }.must_raise ArgumentError
 
       proc {
-        Recipe.new("", "")
+        Recipe.new("", "", "")
       }.must_raise ArgumentError
     end
   end

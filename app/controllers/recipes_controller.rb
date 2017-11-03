@@ -1,7 +1,7 @@
 class RecipesController < ApplicationController
 
-    def home # This will give a search bar to find all recipes
-    end
+  def home # This will give a search bar to find all recipes
+  end
 
   def index # This will show all the results of the search
     if params[:q] == ""

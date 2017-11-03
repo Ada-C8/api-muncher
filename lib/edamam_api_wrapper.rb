@@ -42,8 +42,6 @@ class EdamamApiWrapper
       return recipe
     end
   end
-
-
   # Params: ID Weird edamam id number
   # Passing to API route and cannot use the entire url
   # then you would shorten it
@@ -55,11 +53,13 @@ class EdamamApiWrapper
     return Recipe.new(
     api_params["uri"],
     api_params["label"],
-    api_params["image"],
     api_params["source"],
-    api_params["url"],
-    api_params["ingredientLines"],
-    api_params["totalNutrients"]
+    options = {
+      image_url: api_params["image"],
+      source_url: api_params["url"], # source url
+      ingredient_lines: api_params["ingredientLines"],
+      total_nutrients: api_params["totalNutrients"]
+    }
   )
   end
 end

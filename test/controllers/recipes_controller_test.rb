@@ -32,6 +32,17 @@ describe RecipesController do
       flash[:status].must_equal :failure
       must_respond_with :redirect
     end
+
+    # TODO: Fix this?
+    # it "returns a failure flash if the ApiError is raised due to bad keys" do
+    #   VCR.use_cassette("bad_tokens") do
+    #     input = {
+    #       q: "chicken"
+    #     }
+    #
+    #     proc { get recipes_path, params: input }.must_raise EdamamApiWrapper::ApiError
+    #   end
+    # end
   end # Des
 
   describe "show" do
@@ -46,6 +57,7 @@ describe RecipesController do
       end
     end
 
+    # TODO: How to test a raise in ArgumentError if you rescue it
     it "returns not found when requesting a recipe that is invalid" do
       VCR.use_cassette("no_recipe") do
         get recipe_path("Not a valid uri")
