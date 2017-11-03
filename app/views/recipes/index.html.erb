@@ -1,8 +1,8 @@
 <section class="recipes-index">
       <% @recipes.each do |recipe| %>
         <article class="result">
-          <p><%= link_to recipe.label, recipe_path(recipe.label, uri: recipe.uri) %></p>
           <p class="result-thumb"><%= image_tag recipe.image, alt:"#{recipe.label}" %></p>
+          <p><%= link_to recipe.label, recipe_path(recipe.label, uri: recipe.uri) %></p>
         </article>
       <% end %>
 </section>

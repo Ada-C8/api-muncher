@@ -2,7 +2,7 @@ require_dependency '../../lib/edamam_api_wrapper'
 require_dependency '../../lib/recipe'
 
 class RecipesController < ApplicationController
-  def search_form
+  def root
     @random = ["water", "sourdough bread", "tacos", "pizza", "chocolate chip cookies", "liver", "garbage"].sample
     @all = EdamamApiWrapper.food_options
   end

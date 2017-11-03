@@ -21,7 +21,7 @@
 
 body {
   font-family: 'Josefin Sans', sans-serif;
-  color: #96989c;
+  color: #8e9095;
   text-align: center;
 }
 
@@ -77,7 +77,7 @@ input[type='text'] {
   margin: 20px 0;
 }
 
-.result p:first-child {
+.result p:last-child {
   width: 300px;
   white-space: nowrap;
   overflow: hidden;
@@ -175,9 +175,14 @@ input[type='text'] {
 
 #recipe-link {
   text-align: center;
-  background: #E8D8C5;
+  background: rgba(241, 211, 142, 0.9);
   padding: 20px 0;
   margin: 0;
+  color: #454950;
+}
+
+#recipe-link a {
+  color: rgba(0,0,0,0.4);
 }
 
 /* --------- Pagination --------- */
