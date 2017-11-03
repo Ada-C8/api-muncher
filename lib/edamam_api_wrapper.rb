@@ -40,32 +40,15 @@ class EdamamApiWrapper
     end
   end
 
-  def self.world_food
+  def self.food_options
     world = ["korean", "japanese", "indian", "thai", "taiwanese", "malaysian"]
-    return world
-  end
-
-  def self.protein
     protein = ["chickpea", "tofu", "quinoa", "lentils", "oats", "soybean", "red bean"]
-    return protein
-  end
-
-  def self.vegetables
     veg = ["asparagus", "brussel sprouts", "broccoli", "spinach", "bell pepper", "mushroom"]
-    return veg
-  end
-
-  def self.various
     various = ["breakfast", "lunch", "dinner", "easy", "quick"]
-    return various
-  end
-
-  def self.desserts
     desserts = ["brownies", "coconut cream pie", "creme brulee", "cheesecake", "ice cream"]
-    return desserts
-  end
-
-  def self.drinks
     drinks = ["sangria", "lemonade", "mocktail", "cocoa", "cocktail", "punch"]
+    all = [world, protein, veg, various, desserts, drinks]
+
+    return all
   end
 end
