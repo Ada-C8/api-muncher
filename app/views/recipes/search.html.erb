@@ -13,7 +13,6 @@
   <% @recipes.each do |recipe| %>
     <ul>
       <li><%=image_tag recipe.image%></li>
-      <li><%=recipe.label%></li>
       <li><%=link_to(recipe.label, recipe_show_path(recipe.find_recipe_id))%></li>
     </ul>
   <%end%>
