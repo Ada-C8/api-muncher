@@ -79,6 +79,15 @@ h1 a:hover {
   color: #ED9084;
 }
 
+h1 a:active {
+  color: var(--teal);
+}
+
+.button {
+  background-color: var(--teal);
+  border-radius: 2rem;
+}
+
 .right {
   float: right !important;
 }
@@ -107,11 +116,6 @@ header h1 {
   line-height: 0;
   margin: 0;
   min-width: 4.5rem;
-}
-
-.button {
-  background-color: var(--teal);
-  border-radius: 2rem;
 }
 
 .clearfix {
