@@ -1,5 +1,5 @@
 Rails.application.configure do
-  config.enable_dependency_loading = true
+  # config.enable_dependency_loading = true
 
   # Settings specified here will take precedence over those in config/application.rb.
 
