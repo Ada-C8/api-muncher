@@ -28,6 +28,7 @@ describe RecipeSearch do
         result = RecipeSearch.search('artichoke')
 
         result.must_be_kind_of Array
+        result.count.must_equal 10
         result.each { |r| r.must_be_kind_of Recipe }
       end
     end
@@ -43,8 +44,48 @@ describe RecipeSearch do
     it 'raises APIError without authentication' do
       VCR.use_cassette('not_authed') do
         proc {
+
           RecipeSearch.search('cookies')
         }.must_raise RecipeSearch::APIError
+      end
+    end
+
+    describe 'optional parameters' do
+      it 'can start on a later page with optional "page" parameter' do
+        result1, result2 = []
+        VCR.use_cassette('water1') do
+          result1 = RecipeSearch.search('water')
+        end
+        VCR.use_cassette('water2') do
+          result2 = RecipeSearch.search('water', 2)
+        end
+        result1.wont_equal result2
+      end
+
+      it 'can return a different number of options' do
+        result = []
+        VCR.use_cassette('chocolate') do
+          result = RecipeSearch.search('chocolate', 0, 5)
+        end
+        result.count.must_equal 5
+      end
+
+      describe 'more' do
+        it 'returns true if there are more results' do
+          VCR.use_cassette('chicken') do
+            result = RecipeSearch.search('chicken', 0, 10, true)
+
+            result.last.must_equal true
+          end
+        end
+
+        it 'returns false if there are no more results' do
+          VCR.use_cassette('backwards') do
+            result = RecipeSearch.search('backwards', 1, 10, true)
+
+            result.last.must_equal false
+          end
+        end
       end
     end
   end
