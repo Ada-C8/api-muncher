@@ -1,10 +1,9 @@
-<h1>Index</h1>
+<h1>Muncher</h1>
 
 <%= render partial: "form" %>
 
 <% if @recipes != nil %>
-    <em><p> Results for <%= params[:search] %></p></em>
-    <h2>Recipes</h2>
+    <h2>Recipe Results for <%= params[:search] %></h2>
     <ul>
       <% @recipes.each do |recipe| %>
       <li>
@@ -21,6 +20,4 @@
       <%= will_paginate @recipes, :container => false %>
     </div>
 
-  <%else  %>
-    <p>Search for a recipe!</p>
 <% end %>

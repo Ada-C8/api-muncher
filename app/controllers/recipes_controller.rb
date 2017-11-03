@@ -3,7 +3,7 @@ require 'will_paginate/array'
 
 class RecipesController < ApplicationController
 
-  def search
+  def home
   end
 
   def index
@@ -19,7 +19,5 @@ class RecipesController < ApplicationController
   def show
     @recipe = EdamamApiWrapper.show_recipe(params[:uri])
   end
-
-
 
 end

@@ -18,8 +18,4 @@ class Recipe
 
   end
 
-  def stringify()
-    self.to_json
-  end
-
 end
