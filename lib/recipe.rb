@@ -26,7 +26,7 @@ class Recipe
   def basic_nutrition(serving = true)
     nutrition = []
     ["ENERC_KCAL", "FAT", "FASAT", "FATRN", "CHOCDF", "FIBTG", "SUGAR", "PROCNT"].each do |nutrient|
-      nutrition << print_nutrient(nutrient) if @nutrition[nutrient]
+      (nutrition << print_nutrient(nutrient)) if @nutrition[nutrient]
     end
     nutrition
   end

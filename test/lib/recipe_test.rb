@@ -11,10 +11,10 @@ describe Recipe do
       source: "Food52",
       ingredients: [ "1 1/2 cup espresso or strong coffee", "1 1/2 to 2 cup turbinado sugar" ],
       nutrition: {
-        "ENERC_KCAL": {
-          "label": "Energy",
-          "quantity": 1414.0200000000002,
-          "unit": "kcal"
+        "ENERC_KCAL" => {
+          "label" => "Energy",
+          "quantity" => 1414.0200000000002,
+          "unit" => "kcal"
         }
       },
       servings: 4
@@ -31,10 +31,9 @@ describe Recipe do
       ]
     }
   }
+  let(:recipe) { Recipe.new(recipe_params) }
 
   it 'can be instantiated with minimum attributes' do
-    recipe = Recipe.new(recipe_params)
-
     recipe.must_be_kind_of Recipe
   end
 
@@ -55,21 +54,33 @@ describe Recipe do
 
   describe 'attributes' do
     it 'can access required attributes' do
-      recipe = Recipe.new(recipe_params)
-
+      recipe.must_respond_to :id
       recipe.must_respond_to :name
       recipe.must_respond_to :image_url
       recipe.must_respond_to :recipe_url
       recipe.must_respond_to :source
       recipe.must_respond_to :ingredients
+      recipe.must_respond_to :nutrition
+      recipe.must_respond_to :servings
     end
 
     it 'can access optional attributes' do
       recipe_params.merge(optional_params)
       recipe = Recipe.new(recipe_params)
 
-      recipe.must_respond_to :nutrition
       recipe.must_respond_to :diet_labels
+    end
+  end
+
+  describe 'nutrition info' do
+    it 'prints basic nutrition info to an array, divided by servings' do
+      result = recipe.basic_nutrition
+
+      # binding.pry
+
+      result.must_be_kind_of Array
+      result[0][0].must_equal "Energy"
+      result[0][1].must_equal "353.51 kcals"
     end
   end
 end
