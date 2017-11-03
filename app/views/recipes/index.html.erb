@@ -1,2 +1,12 @@
-<h1>Recipes#index</h1>
-<p>Find me in app/views/recipes/index.html.erb</p>
+<h1>Recipes</h1>
+
+<% if @recipes.empty? %>
+  <h4>There are no recipes matching your search.</h4>
+<% else %>
+  <% @recipes.each do |recipe| %>
+    <article>
+      <%= image_tag %>
+      <%= link_to recipe.name %>
+    </article>
+  <% end %>
+<% end %>
