@@ -1,3 +1,28 @@
-<h1>Show</h1>
+<%= render partial: "form" %>
 
-<%= @recipe.label %>
+<section>
+  <h1><%= @recipe.label %></h1>
+  <p>By <%= link_to(@recipe.source, @recipe.url) %></p>
+</section>
+
+<section>
+  <%= image_tag  @recipe.image %>
+</section>
+
+<section>
+  <h2>Ingredients</h2>
+  <% @recipe.ingredientLines.each do |line| %>
+      <li><%= line %></li>
+  <% end %>
+</section>
+
+<section>
+  <h2>Dietary Label(s)</h2>
+  <% if @recipe.dietLabels.empty? %>
+      <em><p>There are currently no dietary labels for this recipe.</p></em>
+  <% else %>
+      <% @recipe.dietLabels.each do |label| %>
+          <li><%= label %></li>
+      <% end%>
+  <% end %>
+</section>
