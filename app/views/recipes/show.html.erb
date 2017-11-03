@@ -1,1 +1,5 @@
-<h2> Details of the recipe</h2>
+<h2> <%= @recipe.title %> </h2>
+<%= image_tag @recipe.image %>
+<p> Ingredients:<%= @recipe.ingredient_lines %></p>
+<%= @recipe.url %>
+<p> Dietary Labels:<%= @recipe.diet_label %></p>
