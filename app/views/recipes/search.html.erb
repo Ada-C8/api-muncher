@@ -9,7 +9,7 @@
 
 <h2>Number of Recipes: <%=@number_of_recipes%> </h2>
 
-<%if @number_of_recipes != 0 || @number_of_recipes != nil%>
+<%if @number_of_recipes != 0 && @number_of_recipes != nil%>
   <% @recipes.each do |recipe| %>
     <ul>
       <li><%=image_tag recipe.image%></li>
@@ -29,6 +29,7 @@
     <%end%>
     <%=link_to(i+1, search_by_page_path(@keywords, (i+1)*10,((i+1)*10+(@number_of_recipes%10))))%>
   <%end%>
+
 <%else%>
   <h3>No recipes are available for those search terms</h3>
 <%end%>
