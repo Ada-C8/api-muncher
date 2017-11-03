@@ -1,0 +1,110 @@
+// Place all the styles related to the Recipies controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+/*********************/
+/**** Main on root ***/
+/*********************/
+
+/* QUESTION:
+1. how to get form_for to respond to styling
+2. how to get footer to move down (if the form_for was responding to styling then maybe it would fix this too?)
+*/
+
+
+.title {
+  padding: 10px;
+  text-align: center;
+  font-size: 300%;
+  width: 90%;
+}
+
+.search {
+  width: 100%;
+  width: 400px;
+  margin-bottom: 50px;
+  padding-bottom: 2%;
+
+}
+
+// .muncher-search {
+//   // opacity: 0.5;
+//   width: 100%;
+//   background: rgb(204, 204, 204); /* Fallback for older browsers without RGBA-support */
+//     background: rgba(204, 204, 204, 0.5);
+//
+// }
+
+.transparent {
+  background: white;
+}
+
+
+/*********************/
+/**** index page   ***/
+/*********************/
+
+.result-div {
+  display: flex;
+  justify-content: center;
+}
+
+.index-photo {
+  display: block;
+}
+
+.index-name {
+  display: block;
+}
+
+.paginate {
+  display: inline-block;
+}
+
+.pagination {
+  cursor: default;
+}
+
+  .pagination a, .pagination span, .pagination em {
+    padding: 0.2em 0.5em;
+    display: block;
+    float: left;
+    margin-right: 1px;
+  }
+
+  .pagination .disabled {
+    color: black;
+    font-weight: bold;
+   }
+
+  .pagination .current {
+    font-style: normal;
+    font-weight: bold;
+    background: #2e6ab1;
+    color: white;
+    font-weight: bold;
+  }
+
+  .pagination a {
+    text-decoration: none;
+    color: black;
+    font-weight: bold;
+  }
+
+  .pagination a:hover, .pagination a:focus {
+    color: #000044;
+    // border-color: #000044;
+  }
+
+
+  /*********************/
+  /**** Show page ***/
+  /*********************/
+
+.pic-ingredients {
+  margin-top: 5%;
+}
+
+.diet-labels {
+  margin-top: 3%;
+}
