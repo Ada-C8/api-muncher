@@ -1,13 +1,16 @@
-<section class="recipes-list">
-  <h1>Recipes</h1>
-  <ul>
-    <% @recipes.each do |recipe| %>
-      <li>
-        <%= link_to recipe.title, show_recipe_path(recipe.mini_uri) %>
-      </li>
-    <% end %>
-  </ul>
-  <nav class="row">
-    <%= will_paginate @recipes, renderer: FoundationPagination::Rails %>
-  </nav>
+<section class="row">
+  <h2 class="column small-12 text-center"><%= "Results for \"#{params[:q]}\"" %></h2>
+
+  <% @recipes.each do |recipe| %>
+  <article class="column small-12 medium-6 large-3 end">
+    <%= link_to image_tag(recipe.photo_uri, alt: "Photo of #{recipe.title}"), show_recipe_path(recipe.mini_uri)%>
+    <%= link_to recipe.title, show_recipe_path(recipe.mini_uri) %>
+  </article>
+  <% end %>
 </section>
+
+<nav class="row">
+  <div class="column small-12 text-center">
+    <%= will_paginate @recipes, renderer: FoundationPagination::Rails %>
+  </div>
+</nav>

@@ -1,2 +1,23 @@
-<h1>Recipe#show</h1>
-<h2><%= @recipe.title %></h2>
+<section class="row">
+  <h2><%= @recipe.title %></h2>
+  <h3><%= link_to @recipe.source, @recipe.external_url %>
+</section>
+
+<section class="row">
+  <div class="column small-12 medium-6">
+    <div class="row">
+      <%= image_tag(@recipe.photo_uri, alt: "Photo of #{@recipe.title}") %>
+    </div>
+    <div class="row">
+    <%= "Dietary Labels" %>
+  </div>
+  </div>
+
+  <div class="column small-12 medium-6">
+    <ul>
+      <% @recipe.ingredients.each do |ingredient| %>
+      <li><%= ingredient %></li>
+      <% end %>
+    </ul>
+  </div>
+</section>
