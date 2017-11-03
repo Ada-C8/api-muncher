@@ -15,6 +15,24 @@ describe EdamamApiWrapper do
       end
     end
 
+    it "query with bogus app_key will not work" do
+      VCR.use_cassette("query") do
+        query = "tofu"
+        results = EdamamApiWrapper.query(query, nil, "bogus")
+        results.must_be_instance_of Array
+        results.length.must_equal 0
+      end
+    end
+
+    it "query with bogus app_key will not work" do
+      VCR.use_cassette("query") do
+        query = "tofu"
+        results = EdamamApiWrapper.query(query, "bogus", nil)
+        results.must_be_instance_of Array
+        results.length.must_equal 0
+      end
+    end
+
     it "will redirect to home page if no search results" do
       VCR.use_cassette("query") do
         query = ""
