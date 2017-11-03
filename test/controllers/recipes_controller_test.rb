@@ -43,8 +43,5 @@ describe RecipesController do
       end
     end
 
-    it ""
-
-
   end
 end

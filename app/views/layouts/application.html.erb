@@ -10,12 +10,11 @@
     <%= javascript_include_tag "application", 'data-turbolinks-track' => true %>
     <%= csrf_meta_tags %>
   </head>
-
   <body>
-    <%= params %>
-    <header>
+    <header class = 'header'>
       <h1>Munchers</h1>
     </header>
+
     <%= yield %>
 
   </body>

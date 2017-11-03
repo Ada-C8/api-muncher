@@ -18,6 +18,22 @@
 
 
  .margin-3-col {
-   margin-left: 4.2%;
-   margin-right: 4.2%;
+   margin-left: 4.1%;
+   margin-right: 4.1%;
  }
+
+.header {
+  background-color: #26413C;
+}
+
+h1 {
+  color: #1A1D1A;
+}
+
+main {
+  background-color: #8AB0AB;
+}
+
+.card h3 {
+  color: 03120E;
+}
