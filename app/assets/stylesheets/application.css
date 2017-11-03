@@ -15,6 +15,25 @@
  *= require foundation_and_overrides
 
  */
+
+#site-name-home, #site-name-header {
+font-family: 'Merienda', cursive;
+color: #3EC300;
+}
+
+#site-home-container {
+  text-align: center;
+  padding: 1em;
+}
+
+#home-search {
+
+}
+
+#home-page {
+  padding-top: 15em;
+}
+
 .index-blocks {
   position: relative;
 }
@@ -35,7 +54,7 @@
   width: 100%;
   opacity: 0;
   transition: .5s ease;
-  background-color: #008CBA;
+  background-color: #FF1D15;
 }
 
 .index-blocks:hover .overlay {
@@ -46,8 +65,7 @@
   color: white;
   font-size: 20px;
   position: absolute;
-  top: 5%;
-  left: 5%;
+  padding:15px;
   width: 100%;
   height: 100%;
 }
