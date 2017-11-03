@@ -27,3 +27,42 @@
 body {
   background-image: url('http://www.wildtextures.com/wp-content/uploads/2011/11/wildtextures-wooden-chopping-board-texture-1280x853.jpg');
 }
+
+
+
+
+/* GET FOOTER TO STAY AT BOTTOM */
+
+
+html {
+  height: 100%;
+  box-sizing: border-box;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+body {
+  position: relative;
+  margin: 0;
+  padding-bottom: 6rem;
+  min-height: 100%;
+  font-family: "Helvetica Neue", Arial, sans-serif;
+}
+
+
+/**
+ * Footer Styles
+ */
+
+footer {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  padding: 1rem;
+  text-align: center;
+}
