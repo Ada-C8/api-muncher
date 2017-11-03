@@ -4,13 +4,19 @@
 
       <div class="search-padding">
         <header>
-          <h2 class="font">Munchies</h2>
+          <%= link_to root_path do %>
+            <h1 class="search-font">Munchies</h1>
+          <% end %>
         </header>
 
         <section>
           <%= form_tag('/recipes', method: :get) do %>
-            <%= text_field_tag(:q, nil, placeholder: 'Search for recipes here!', class:"round-border") %>
-            <%= submit_tag("Munchie!", class:"button round-border") %>
+            <%= text_field_tag(:q, nil, placeholder: 'Find your recipes here!') %>
+            <%= submit_tag("nom nom", class:"button") %>
+          <% end %>
+
+          <% if flash[:status].present? %>
+            <p class="<%= flash[:status] %>"><%= flash[:message] %></p>
           <% end %>
         </section>
       </div>
@@ -20,10 +26,10 @@
 
   <section class="align-center">
     <header>
-      <h2 class="results-styling">RESULTS FOR: <%= @search_request %></h2>
+      <h2 class="results-styling">RESULTS FOR: <%= @search_request.capitalize %></h2>
     </header>
 
-    <div class="row">
+    <div class="row font-resize">
       <% if @recipes %>
         <% @recipes.each do |recipe| %>
             <div class="small-12 medium-6 large-3 columns thumbnail bg-white">

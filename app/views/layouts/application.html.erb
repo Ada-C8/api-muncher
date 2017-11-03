@@ -15,10 +15,6 @@
 
     <%= yield %>
 
-    <% if flash[:status].present? %>
-      <%= flash[:message] %>
-    <% end %>
-
     <footer class="align-center">
       <p>
         Powered by <%= link_to "Edamam", "https://www.edamam.com/" %>

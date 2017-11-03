@@ -16,22 +16,31 @@
 */
 
 @import url('https://fonts.googleapis.com/css?family=Fredericka+the+Great');
+@import url('https://fonts.googleapis.com/css?family=Open+Sans');
 
 /**************************/
 /*STYLING ACROSS ALL PAGES*/
 /**************************/
 
-.round-border {
-  border-radius: 10px;
-}
-
 .align-center {
   text-align: center;
+}
+
+.button {
+  border: 1px black solid;
+  background-color: transparent;
+  color: black;
+}
+
+.button:hover {
+    background-color: #f6e112;
+    color: black;
 }
 
 /**************************/
 /********** BODY **********/
 /**************************/
+
 html {
   height: 100%;
 }
@@ -43,7 +52,8 @@ html {
    background-attachment: fixed;
    background-size: cover;
    height: 100%;
-   font-family: 'Fredericka the Great', cursive;
+  //  font-family: 'Fredericka the Great', cursive;
+  font-family: 'Open Sans', sans-serif;
  }
 
  /**************************/
@@ -57,4 +67,26 @@ footer {
 
 footer p {
   padding-top: 16px;
+}
+
+/**************************/
+/********* FLASH **********/
+/**************************/
+
+.failure {
+  border-radius: 5px;
+  background-color: #f04124;
+  padding: 8px;
+  font-family: 'Open Sans', sans-serif;
+  color: white;
+  font-size: 12px;
+}
+
+.success {
+  border-radius: 5px;
+  background-color: #a0d3e8;
+  padding: 8px;
+  font-family: 'Open Sans', sans-serif;
+  color: white;
+  font-size: 12px;
 }

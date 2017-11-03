@@ -3,13 +3,19 @@
   <section class="small-12 small-centered medium-8 medium-centered large-6 large-centered columns auto-height">
     <div class="search-wrapper">
       <header>
-        <h1 class="large-font">Munchies</h1>
+        <%= link_to root_path do %>
+          <h1 class="large-font">Munchies</h1>
+        <% end %>
       </header>
 
       <section>
         <%= form_tag('/recipes', method: :get) do %>
-          <%= text_field_tag(:q, nil, placeholder: 'Search for recipes here!', class:"round-border") %>
-          <%= submit_tag("Munchie!", class:"button") %>
+          <%= text_field_tag(:q, nil, placeholder: 'Find your recipes here!') %>
+          <%= submit_tag("nom nom", class:"button") %>
+        <% end %>
+
+        <% if flash[:status].present? %>
+          <p class="<%= flash[:status] %>"><%= flash[:message] %></p>
         <% end %>
       </section>
     </div>
