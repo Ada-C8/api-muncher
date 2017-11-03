@@ -16,6 +16,8 @@
               <%= submit_tag("nom nom", class:"button") %>
             <% end %>
 
+            <%############ FLASH ############ %>
+
             <% if flash[:status].present? %>
               <p class="<%= flash[:status] %>"><%= flash[:message] %></p>
             <% end %>
@@ -33,10 +35,10 @@
       <div class="row font-resize">
         <% if @recipes %>
           <% @recipes.each do |recipe| %>
-              <div class="small-12 medium-6 large-3 columns thumbnail bg-white end">
-              <%= link_to recipe_path(recipe.uri_id) do %>
-                <%= image_tag(recipe.image_url, class:"full-image") %>
-              <% end %>
+              <div class="small-12 medium-6 large-3 columns thumbnail bg-white image-hover end">
+                <%= link_to recipe_path(recipe.uri_id) do %>
+                  <%= image_tag(recipe.image_url, class:"full-image", alt:"SAD PANDA. NO IMAGE AVAILABLE! :(") %>
+                <% end %>
               <p class="name-styling">
                 <%= recipe.label %>
               </p>

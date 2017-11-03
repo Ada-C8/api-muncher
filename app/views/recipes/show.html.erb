@@ -28,13 +28,13 @@
     <div class="row mid-width">
 
       <div class="small-12 medium-5 large-5 columns align-center">
-        <%= image_tag(@recipe.image_url, class:"search-padding bg-white border") %>
+        <%= image_tag(@recipe.image_url, class:"search-padding bg-white border", alt:"No image available :( #{@recipe.label}") %>
       </div>
 
       <section class="small-12 medium-7 large-7 columns font search-padding">
         <header>
           <h3 class="font border-bottom"><%= @recipe.label %></h3>
-          <h5 class="font">Recipe by: <%= link_to @recipe.source, @recipe.source_url, target:"_blank", class:"search-padding" %></h5>
+          <h5 class="font">Recipe by:<%= link_to @recipe.source, @recipe.source_url, target:"_blank", class:"search-padding green" %></h5>
         </header>
         <br>
         <div>
@@ -60,8 +60,8 @@
           <h2 class="font border-bottom">Nutrition Facts</h2>
         </header>
 
-        <section>
-          <ul>
+        <section class="li-columns">
+          <ul style="list-style:none">
             <% @recipe.total_nutrients.each do |nutrient, value| %>
             <li>
               <%= value["label"] %> | <%= value["quantity"].to_i %> | <%= value["unit"] %>

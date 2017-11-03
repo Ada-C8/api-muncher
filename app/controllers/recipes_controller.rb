@@ -11,7 +11,7 @@ class RecipesController < ApplicationController
     else
       begin
         recipes = EdamamApiWrapper.search(params[:q])
-        @recipes = recipes.paginate(page: params[:page], per_page: 9)
+        @recipes = recipes.paginate(page: params[:page], per_page: 12)
         @search_request = params[:q]
       rescue ApiError => error
         flash[:status] = :failure
