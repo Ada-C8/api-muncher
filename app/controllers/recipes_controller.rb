@@ -9,7 +9,7 @@ class RecipesController < ApplicationController
       return redirect_to root_path
     end
 
-    @recipes = EdamamApiWrapper.list_recipes(params[:ingredient]).paginate page: params[:page], per_page: 10
+    @recipes = EdamamApiWrapper.list_recipes(params[:ingredient]).paginate page: params[:page], per_page: 10, previous_label: ">", next_label: "<"
     @count = EdamamApiWrapper.num_recipes(params[:ingredient])
 
     unless @recipes

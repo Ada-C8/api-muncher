@@ -16,11 +16,61 @@
 
  */
 
+$header_color: #2eb82e;
+
+ /********************/
+ /*     Fonts        */
+ /*******************/
+
+main h2, h3, h4, ul, li, a, p {
+  font-family: 'Raleway', sans-serif;
+}
+
+ /********************/
+ /*    Header       */
+ /*******************/
+
+header > h1 {
+  text-align: center;
+  a {
+    font-family: 'Montserrat Alternates', sans-serif;
+    font-size: 4rem;
+    color: white
+  }
+  a:link, a:visited {
+    color: white
+  }
+}
+
+header {
+  padding: 1rem 0;
+  background-color: $header_color;
+}
+
+/********************/
+/*     Home        */
+/*******************/
+
+#home {
+  background-image: url('kitchen.jpg');
+  background-position: center;
+  background-size: cover;
+  // padding-top: 3rem;
+
+  h1 {
+    text-align: center;
+    a {
+      font-family: 'Montserrat Alternates', sans-serif;
+      font-size: 6rem;
+    }
+  }
+}
+
 
 /********************/
 /*  Recipe Index    */
 /*******************/
-main > ul li.recipe-list {
+main ul li.recipe-list {
   list-style: none;
   p {
     text-align: center
@@ -33,8 +83,11 @@ main > ul li.recipe-list {
 }
 
 /* === pagination === */
-section > div.pagination a {
-  display: inline-block;
+section  div.pagination {
+  text-align: center;
+  a {
+    display: inline-block;
+  }
 }
 
 /********************/
@@ -48,17 +101,27 @@ section.info {
 /********************/
 /*     Footer      */
 /*******************/
-// footer.footer {
-//   position: absolute;
-//   bottom: 0;
-//   width: 100%;
-// }
-.logo-wrapper {
+
+/* == pushes footer to bottom == */
+body {
+  position: relative;
+  min-height: 100vh;
+  padding-bottom: 5rem;
+}
+
+footer {
   position: absolute;
   left: 0;
   right: 0;
-  // bottom: 0;
-  margin-left: auto;
-  margin-right: auto;
-  width: 20rem;
+  bottom: 0;
+  // background-color: $header_color;
+
+}
+
+div#edamam-badge {
+    margin-left: auto;
+    margin-right: auto;
+    width: 20rem;
+    z-index: 20;
+    padding: .75rem 0;
 }

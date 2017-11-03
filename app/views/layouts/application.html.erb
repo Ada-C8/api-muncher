@@ -6,17 +6,18 @@
 
     <title>Muncher
       <%# content_for?(:title) ? yield(:title) : "Untitled" %></title>
-
+    <link href="https://fonts.googleapis.com/css?family=Montserrat+Alternates|Raleway" rel="stylesheet">
     <%= stylesheet_link_tag    "application" %>
     <%= javascript_include_tag "application", 'data-turbolinks-track' => true %>
     <script src="https://developer.edamam.com/attribution/badge.js"></script>
     <%= csrf_meta_tags %>
   </head>
 
-  <body>
+
+  <body <%= "id=home" if params[:action] == "home" %>>
 
     <% if params[:action] != "home" %>
-      <header class="row">
+      <header class="row expanded">
         <%= render partial: '/layouts/search' %>
       </header>
     <% end %>
@@ -34,9 +35,8 @@
     </section>
 
     <footer class="footer">
-      <div class="logo-wrapper">
-        <div id="edamam-badge" data-color="transparent"></div>
-      </div>
+        <div id="edamam-badge" data-color="white"></div>
     </footer>
+
   </body>
 </html>
