@@ -4,9 +4,9 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <title><%= content_for?(:title) ? yield(:title) : "イタダキマス！" %></title>
+    <title><%= content_for?(:title) ? yield(:title) : "メンユー" %></title>
 
-    <%= stylesheet_link_tag    "application" %>
+    <%= stylesheet_link_tag "application" %>
     <%= javascript_include_tag "application", 'data-turbolinks-track' => true %>
     <%= csrf_meta_tags %>
   </head>
@@ -16,4 +16,6 @@
     <%= yield %>
 
   </body>
+  <footer>
+    <span class="footer">&copy 2017 <%= link_to "Sara Frandsen", "http://www.github.com/sarafrandsen" %> | Powered by <%= link_to "Edamam", "https://www.edamam.com/" %></span>
 </html>

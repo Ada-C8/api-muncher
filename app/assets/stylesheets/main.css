@@ -1,3 +1,6 @@
+span.title {
+  font-size: 10em;
+}
 .cool-transparent-bg {
   background-color: rgba(0,0,0,0.7);
   min-height: 100%;
@@ -5,8 +8,9 @@
 }
 
 .display-table {
-  height: 600px;
+  height: 43em;
   width: 100%;
+  display: table;
 }
 
 .search-bar {
@@ -14,9 +18,9 @@
 }
 
 .va-align {
-    display: table-cell;
-    vertical-align: middle;
-    justify-content: center;
+  display: table-cell;
+  vertical-align: middle;
+  justify-content: center;
 }
 
 .main-page {

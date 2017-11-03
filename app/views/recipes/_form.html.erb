@@ -1,5 +1,11 @@
-<%= form_tag("/search", method: "get") do %>
-  <!-- <%= label_tag(:q, "Search for:") %> -->
-  <%= text_field_tag(:q) %>
-  <%= submit_tag("検索", class: "secondary hollow button") %>
-<% end %>
+<div class="row collapse">
+  <%= form_tag("/search", method: "get") do %>
+    <!-- <%= label_tag(:q, "Search for:") %> -->
+    <div class="small-10 columns collapse-right">
+      <%= text_field_tag(:q) %>
+    </div>
+    <div class="small-2 columns collapse-left">
+      <%= submit_tag("検索", class: "secondary hollow button") %>
+    </div>
+  <% end %>
+</div>
