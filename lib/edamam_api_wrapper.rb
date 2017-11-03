@@ -11,8 +11,6 @@ class EdamamApiWrapper
 
     data = HTTParty.get(url)
     recipe_list = []
-    puts "in search"
-    puts data
     if data["hits"]
       data["hits"].each do |result|
 
