@@ -13,7 +13,8 @@ class EdamamApiWrapper
       result_recipes = data["hits"].map do |recipe_hash|
         Recipe.new recipe_hash["recipe"]["uri"], recipe_hash["recipe"]["label"], recipe_hash["recipe"]["image"],
         recipe_hash["recipe"]["source"], recipe_hash["recipe"]["url"],
-        recipe_hash["recipe"]["ingredientLines"], recipe_hash["recipe"]["dietLabels"],
+        ingredientLines: recipe_hash["recipe"]["ingredientLines"],
+        dietLabels: recipe_hash["recipe"]["dietLabels"],
         healthLabels: recipe_hash["recipe"]["healthLabels"]
       end
       return result_recipes
@@ -31,7 +32,8 @@ class EdamamApiWrapper
       result_recipes =
         Recipe.new data[0]["uri"], data[0]["label"], data[0]["image"],
         data[0]["source"], data[0]["url"],
-        data[0]["ingredientLines"], data[0]["dietLabels"],
+        ingredientLines: data[0]["ingredientLines"],
+        dietLabels: data[0]["dietLabels"],
         healthLabels: data[0]["healthLabels"]
 
       return result_recipes

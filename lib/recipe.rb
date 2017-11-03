@@ -1,7 +1,7 @@
 class Recipe
   attr_reader :uri, :label, :image, :source, :url, :ingredientLines, :dietLabels, :healthLabels
 
-  def initialize(uri, label, image, source, url, ingredientLines, dietLabels, options={})
+  def initialize(uri, label, image, source, url, options={})
     raise ArgumentError if label == nil || label == "" || url == nil || url == ""
 
     @uri = uri
@@ -9,10 +9,10 @@ class Recipe
     @image = image
     @source = source
     @url = url
-    @ingredientLines = ingredientLines
-    @dietLabels = dietLabels
 
     # optional variables
     @healthLabels = options[:healthLabels]
+    @ingredientLines = options[:ingredientLines]
+    @dietLabels = options[:dietLabels]
   end
 end
