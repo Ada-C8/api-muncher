@@ -66,6 +66,7 @@ header {
 
 
 footer {
+  color: white;
   position: absolute;
   right: 0;
   bottom: 0;
@@ -119,6 +120,20 @@ header h2 {
   background-color: white;
   font-family: courier;
   padding: 2% 10%;
+}
+
+.index-image-link {
+  height: 50px;
+  text-align: center;
+  background-color: black;
+}
+
+.index-image-link a {
+  color: white;
+}
+
+.index-images {
+  margin-bottom: 5%;
 }
 
 .show-page {

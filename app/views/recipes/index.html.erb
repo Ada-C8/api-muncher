@@ -7,7 +7,7 @@
 
   <section class="row">
     <% @recipes.each do |recipe| %>
-      <div class="small-12 medium-6 large-3 columns">
+      <div class="index-images small-12 medium-6 large-3 columns">
         <%# uri_initial = "#{recipe.uri}" %>
         <%# uri = uri_initial.gsub(/%2F/, "/") %>
         <% uri_id = recipe.uri_id %>
@@ -15,7 +15,9 @@
         <%=link_to recipe_path(uri_id) do %>
           <%= image_tag(recipe.image, alt:recipe.label) %>
         <% end %>
-        <%= link_to recipe.label, recipe_path(uri_id) %>
+        <div class="index-image-link">
+          <%= link_to recipe.label, recipe_path(uri_id) %>
+        </div>
         <%#= image_tag(recipe.image, alt:recipe.label) %>
       </div>
     <% end %>
