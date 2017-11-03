@@ -1,5 +1,6 @@
 require 'will_paginate/array'
 
+
 class RecipeController < ApplicationController
 
    def root
