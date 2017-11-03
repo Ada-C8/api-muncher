@@ -68,7 +68,7 @@ describe Recipe do
       uri = "http://www.edamam.com/ontologies/edamam.owl%23recipe_637913ec61d9da69eb451818c3293df2"
 
       recipe = Recipe.new(uri, "url", "label")
-      recipe.ingredients.must_equal [["sample_ingredient_text_1"], ["sample_ingredient_text_2"]]
+      recipe.id.must_equal "637913ec61d9da69eb451818c3293df2"
     end
   end
 end
