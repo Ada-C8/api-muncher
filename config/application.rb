@@ -9,6 +9,7 @@ Bundler.require(*Rails.groups)
 module ApiMuncher
   class Application < Rails::Application
 
+   config.autoload_paths << Rails.root.join('lib')
 
    config.generators do |g|
      # Force new test files to be generated in the minitest-spec style
@@ -25,6 +26,5 @@ module ApiMuncher
     # -- all .rb files in that directory are automatically loaded.
 
     #Automatically load all code from <rails_root>/lib
-    config.autoload_paths << Rails.root.join('lib')
   end
 end

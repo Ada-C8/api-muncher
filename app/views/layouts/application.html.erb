@@ -11,21 +11,10 @@
     <%= csrf_meta_tags %>
   </head>
   <body>
-    <header>
-      <h1>MUNCHERS</h1>
-      <%= params %>
+    <header class = 'header'>
+      <h1>Munchers</h1>
     </header>
-    <main>
-      <%= yield %>
-    </main>
-    <footer>
-      <div class = "wrap row small-up-1 medium-up-3">
-        <div class = "column">
-          <h3>Powered By</h3>
-          <img src="https://www.reimagine-food.com/wp-content/uploads/edamam.png", alt= "Edamam logo" />
-        </div>
-      </div>
-    </footer>
+    <%= yield %>
   </body>
 
 </html>
