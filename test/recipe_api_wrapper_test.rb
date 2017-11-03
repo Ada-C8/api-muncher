@@ -52,8 +52,9 @@ describe RecipeApiWrapper do
 
   describe "#find" do
 
+    #success
     it "can find and create an instance of a recipe" do #success -- it is able to find the recipe -- numst return instance of recipe
-      VCR.use_cassette("recipes") do
+      VCR.use_cassette("wrapper_test") do
         id = "http://www.edamam.com/ontologies/edamam.owl#recipe_7bf4a371c6884d809682a72808da7dc2"
         recipe = RecipeApiWrapper.find(id)
 
@@ -63,13 +64,11 @@ describe RecipeApiWrapper do
 
     #failure -- it is not able to find recipe (wrong id) -- must return nil
     it "Will raise an error when the id is not correct" do
-      VCR.use_cassette("recipes") do
+      VCR.use_cassette("wrapper_test") do
         id = "bogus id"
-
         proc {
           RecipeApiWrapper.find(id)
         }.must_raise RecipeApiWrapper::ApiError
-
       end
     end
 

@@ -101,7 +101,27 @@ li {
   list-style: none;
 }
 
+.food-title h2 {
+  margin-right: 15%;
+  margin-left: 15%;
+  margin-top: 50px;
+}
+.block_one .image {
+  margin-left: 50px;
 
+}
+
+.ingredients li {
+  margin-left: 40px;
+}
+
+.nutritional-information h3 {
+  margin-top: 20px;
+}
+
+.nutritional-information {
+  margin-left: 10%;
+}
 /*\\\\\\\\\\\\\\\\\Footer\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\*/
 
 footer {

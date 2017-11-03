@@ -12,13 +12,10 @@
   </div>
 <%end%>
 
-
-
-
 <% if !@recipes.nil? %>
 
 <nav>
-  <h2>Mangia</h2>
+  <h2><%= link_to "Mangia", root_path %></h2>
     <%= form_tag(root_path, :method => "get", id: "search-form") do %>
     <%= text_field_tag :search, @search, placeholder: "Search Recipes" %>
     <%= submit_tag "Search", class: "button success search" %>

@@ -30,15 +30,16 @@ class RecipeApiWrapper
     url = BASE_URL + "?r=#{URI.encode(id)}" + "&app_id=#{APP_ID}" + "&app_key=#{APP_KEY}"
     response = HTTParty.get(url)
 
-    check_status(response)
-
     recipe = nil
 
-    if response 
+    if response.empty?
+      raise ApiError.new("Bad request")
+    else
       recipe = self.create_recipe(response[0])
     end
 
     return recipe
+
   end
 
   private
@@ -68,11 +69,6 @@ class RecipeApiWrapper
     # puts "response .ok? #{response.ok?}"
     unless response.ok?
       raise ApiError.new("API call to Edamam failed")
-    end
-
-    if response == []
-      raise ApiError.new("API call to Edamam failed")
-
     end
   end
 
