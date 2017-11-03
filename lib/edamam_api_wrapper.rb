@@ -23,7 +23,9 @@ class EdamamApiWrapper
         ingredients: data[0]["ingredientLines"],
         url: data[0]["url"],
         calories: data[0]["calories"],
-        totalNutrients: data[0]["totalNutrients"],
+        healthLabels: data[0]["healthLabels"],
+        digest: data[0]["digest"],
+        totalNutrients: data[0]["totalNutrients"]
         )
       return recipe
     else
@@ -37,7 +39,7 @@ class EdamamApiWrapper
     app_key ||= APP_KEY
 
 
-    url = BASE_URL + "q=#{term}" + "&app_id=#{app_id}" + "&app_key=#{app_key}" #+ "&from=0" + "&to=5"
+    url = BASE_URL + "q=#{term}" + "&app_id=#{app_id}" + "&app_key=#{app_key}" + "&from=0" + "&to=100"
 
     data = HTTParty.get(url)
 

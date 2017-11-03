@@ -22,12 +22,33 @@
 
 main {
   padding: 80px 0px;
-  background-color: green;
+  background-color: #8AB0AB;
 }
 
 footer {
   background-color: #AFD5AA;
   padding: 60px;
+}
+
+footer h4{
+  display: inline-block;
+}
+
+footer img {
+  height: 80px;
+}
+
+h1 {
+  color: #1A1D1A;
+  padding: 20px 0;
+}
+
+.larger-font {
+  font-size: 1.5em;
+}
+
+.undershadow {
+  box-shadow: 0 3px #888888
 }
 
 .margin-3-col {
@@ -49,19 +70,14 @@ footer {
   padding-bottom: 35px;
 }
 
-h1 {
-  color: #1A1D1A;
-  padding: 20px 0;
-}
-
-main {
-  background-color: #8AB0AB;
-}
-
-.almost-full-width {
-  width: 80%;
+.sixty-width {
+  width: 60%;
   margin-left: auto;
   margin-right: auto;
+}
+
+.padding-top {
+  padding-top: 30px;
 }
 
 .card {

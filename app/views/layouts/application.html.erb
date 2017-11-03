@@ -14,7 +14,7 @@
     <header class = 'header text-center'>
       <h1>Munchers</h1>
       <%= form_tag recipes_path, method: :get do %>
-        <div class="search almost-full-width">
+        <div class="search sixty-width">
           <%= text_field_tag(:term, nil, placeholder: "What do you feel like munching?") %>
         </div>
         <%= submit_tag("Send", class: "button", style: "display: none;") %>
@@ -22,9 +22,8 @@
     </header>
     <%= yield %>
   </body>
-  <footer>
-    <h4>Powered By</h4>
-    <img src="https://ontotext.com/wp-content/uploads/2014/07/EDAMAM-logo.png"/>
+  <footer class="text-center">
+    <h4>Powered By Edamam</h4>
   </footer>
 
 </html>

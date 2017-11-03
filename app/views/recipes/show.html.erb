@@ -1,15 +1,25 @@
-<h2><%= @recipe.name %></h2>
-<img src="<%= @recipe.image %>", alt = "<%= @recipe.name %>">
-<h3><%= @recipe.ingredients %></h3>
-<h3><%= link_to @recipe.url %></h3>
-<h3>Calories: <%= @recipe.calories %></h3>
-<h3>Dietary Information: </h3>
-<p>
+<section class = "row margin-top padding-top text-center undershadow">
+  <h2><%= @recipe.name %></h2>
+  <h3 class = "button"><%= link_to "See full recipe", @recipe.url %></h3>
+</section>
+<section class = "row">
+  <img class = "small-10 small-offset-1 large-4 large-offset-1" src="<%= @recipe.image %>", alt = "<%= @recipe.name %>">
+  <section class = "columns small-10 large-6 text-center">
+    <h3 class = "undershadow"><%= @recipe.ingredients.length %> Ingredients</h3>
+    <ul class="no-bullet padding-top">
+      <% @recipe.ingredients.each do |ingredient| %>
+        <li class="larger-font"><%= ingredient %></li>
+      <% end %>
+    </ul>
+  </section>
+</section class = "row">
+<h3 class = "columns large-4 undershadow sixty-width">Nutrition</h3>
+<h3 class = "columns large-4 small- float-right undershadow subheader"><%= number_with_precision(@recipe.calories, precision: 2) %> calories/serving</h3>
+<table class="sixty-width">
   <% @recipe.totalNutrients.values.each do |hash|%>
-    <%= hash["label"] %> : <%= hash["quantity"] %> <%= hash["unit"] %>
+  <tr>
+    <td><%= hash["label"] %></td>
+    <td><%= number_with_precision(hash["quantity"], precision: 2) %> <%= hash["unit"] %></td>
+  </tr>
   <% end %>
-</p>
-
-<table>
-  
 </table>

@@ -12,8 +12,8 @@ class Recipe
     @url = options[:url]
     @calories = options[:calories]
     @totalNutrients = options[:totalNutrients]
-
-
+    @healthLabels = options[:healthLabels]
+    @digest = options[:digest]
   end
 
 end
