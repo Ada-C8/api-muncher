@@ -18,6 +18,12 @@
 @import url('https://fonts.googleapis.com/css?family=Amatic SC');
 @import url('https://fonts.googleapis.com/css?family=Crafty Girls');
 
+.api-muncher h1 {
+  font-size: 300%;
+  font-family: 'Amatic SC';
+  font-weight: bold;
+}
+
  footer p {
    text-align: center;
  }
@@ -38,7 +44,7 @@ main {
   font-size: 175%;
 }
 
-.api-muncher h1, h2, h3, h4, p {
+.api-muncher h2, h3, h4, p {
   font-family: 'Amatic SC';
   font-weight: bold;
   font-size: 175%;

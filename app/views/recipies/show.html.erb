@@ -1,35 +1,44 @@
-<%= render partial: "search_form" %>
-
-<section class="row text-center">
-  <h1 class="small-12 column"><%= link_to @recipe.name, @recipe.url %></h1>
-  <h3 class="small-12 large-12 column" >By: <%=@recipe.company%> </h3>
-</section>
-
-
-<div>
-  <%= image_tag @recipe.photo, alt: "Image of recipe", class: "show-photo" %>
+<div class="muncher-search">
+  <%= render partial: "search_form" %>
 </div>
 
-<article class="ingredients">
-  <h3>Ingredients</h3>
-  <ul>
-    <% @recipe.ingredients.each do |ing| %>
+<section class="row text-center">
+  <h2 class="small-12 column"><%= link_to @recipe.name, @recipe.url %></h2>
+  <h4 class="small-12 large-12 column" >By: <%=@recipe.company%> </h4>
+</section>
+
+<section class="row text-center pic-ingredients" >
+  <div class="large-5 column">
+    <%= image_tag @recipe.photo, alt: "Image of recipe", class: "show-photo" %>
+  </div>
+
+  <article class="large-4 column ingredients end">
+    <h3>Ingredients</h3>
+    <ul>
+      <% @recipe.ingredients.each do |ing| %>
       <li>
         <%= ing %>
       </li>
-    <% end %>
-  </ul>
-</article>
+      <% end %>
+    </ul>
+  </article>
+</section>
 
-
-
-<article class="diet-labels">
-  <h3>Dietary Labels</h3>
-  <ul>
-    <% @recipe.diet_labels.each do |label| %>
-      <li>
-        <%= label %>
-      </li>
-    <% end %>
-  </ul>
-</article>
+<div class="row">
+  <article class="diet-labels large-5 column large-offset-1 ">
+    <h3>Dietary Labels</h3>
+    <ul>
+      <% if @recipe.diet_labels.length > 0 %>
+        <% @recipe.diet_labels.each do |label| %>
+        <li>
+          <%= label %>
+        </li>
+        <% end %>
+      <% else %>
+        <li>
+          No dietary labels
+        </li>
+      <% end %>
+    </ul>
+  </article>
+</div>
