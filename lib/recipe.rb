@@ -1,9 +1,9 @@
 class Recipe
-  attr_reader :label, :url
+  attr_reader :label, :uri
 
-  def initialize(label, url)
+  def initialize(label, uri)
     @label = label
-    @url = url
+    @uri = uri
   end
-  
-end
+
+end 
