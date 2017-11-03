@@ -8,7 +8,7 @@ class FoodApiWrapper
   def self.find_recipes(search, token = nil)
     token ||= TOKEN
 
-    url = BASE_URL + "q=#{search}" + "&app_id=#{APP_ID}&app_key=#{token}"
+    url = BASE_URL + "q=#{search}" + "&app_id=#{APP_ID}&app_key=#{token}&from=0&to=100"
     data = HTTParty.get(url).parsed_response
 
     if data["hits"]

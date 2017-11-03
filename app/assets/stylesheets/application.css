@@ -85,3 +85,7 @@
 .recipe_title {
   margin-bottom: 2vw;
 }
+
+.pages {
+  display: inline;
+}

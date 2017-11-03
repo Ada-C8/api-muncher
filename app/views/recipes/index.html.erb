@@ -9,6 +9,7 @@
 
 
 <section class="all_results row large-12">
+
 <ol>
   <% @recipes.each do |recipe| %>
   <article class="list_result column float-left large-4">
@@ -26,3 +27,7 @@
   </li>
 </ol>
 </section>
+
+<div class="row"%>
+<%= will_paginate @recipes, class:"pages float-right" %>
+</div>
