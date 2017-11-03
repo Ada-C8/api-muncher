@@ -43,7 +43,7 @@ class UsersController < ApplicationController
     unless @user.nil?
       if @user.id.to_s == params[:id].to_s
         @user = User.find_by(id: session[:user_id])
-        @favorites = @user.favorites.paginate(:page => params[:page], :per_page => 9)
+        @favorites = @user.favorites.paginate(:page => params[:page], :per_page => 6)
       else
         flash[:failure] = "You can't view another users information"
         redirect_to root_path, status: :bad_request
