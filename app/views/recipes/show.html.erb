@@ -2,12 +2,26 @@
 
 <article class = "show row">
   <% @recipe.each do |r| %>
-  <h2><%= r.label %></h2>
     <section class="small-12 medium-6 columns">
+      <h2><%= r.label %></h2>
       <%= image_tag r.image %>
     </section>
     <section class="small-12 medium-6 columns">
-      <p><em>Originally from <%= link_to r.url %></em></p>
+      <h3>Ingredients</h3>
+      <% r.ingredients.each do |ingredient| %>
+      <ul>
+        <li><%= ingredient %></li>
+      </ul>
+      <% end %>
+      <h3>Nutrition</h3>
+      <% r.nutrition.each do |value| %>
+      <ul>
+        <li><strong><%= value["label"] %></strong>
+        <%= "#{value["daily"].round}" + "#{value["unit"]}" %>
+        </li>
+      </ul>
+      <% end %>
+      <p><em>Originally found in <%= link_to r.url %></em></p>
     </section>
 
 

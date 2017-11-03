@@ -18,7 +18,9 @@ class EdamamApiWrapper
           recipe_hash["recipe"]["label"],
           recipe_hash["recipe"]["image"],
           uri: recipe_hash["recipe"]["uri"],
-          url: recipe_hash["recipe"]["url"]
+          url: recipe_hash["recipe"]["url"],
+          ingredients: recipe_hash["recipe"]["ingredientLines"],
+          nutrition: recipe_hash["recipe"]["digest"]
         )
       end
       return search_results
@@ -35,7 +37,7 @@ class EdamamApiWrapper
 
     url = BASE_URL + "?" + "app_id=#{APP_ID}" + "&" + "app_key=#{APP_KEY}" + "&" + "r=" + uri
     new_url = url.sub("#", "%23")
-
+    puts new_url
     data = HTTParty.get(new_url)
     # return data
     if data
@@ -44,14 +46,9 @@ class EdamamApiWrapper
           recipe["label"],
           recipe["image"],
           uri: recipe["uri"],
-          url: recipe["url"]
-
-          # recipe["ingredientLines"],
-          # recipe["digest"].each do |diet|
-          #   diet["label"],
-          #   diet["daily"],
-          #   diet["unit"]
-          # end
+          url: recipe["url"],
+          ingredients: recipe["ingredientLines"],
+          nutrition: recipe["digest"]
         )
       end
       return view_results
