@@ -53,17 +53,6 @@ header {
   margin-width: 960px;
 }
 
-.flash {
-  margin-right: 5%;
-}
-
-.flash {
-  color: white;
-  font-size: 15px;
-  margin-left: 2%;
-  margin-bottom: 1%;
-}
-
 
 footer {
   color: white;
@@ -90,6 +79,7 @@ footer a:hover {
 h1  {
   font-family: Courier;
   text-align: center;
+  font-size: 75px;
   margin-top: 200px;
   margin-bottom: 50px;
 }
@@ -112,6 +102,15 @@ header h2 {
   font-weight: bold;
 }
 
+.flash {
+  color: white;
+  font-size: 17px;
+  text-align: center;
+  margin-left: 2%;
+  margin-bottom: 1%;
+  margin-right: 5%;
+}
+
 /***** INDEX PAGE *****/
 /***** SHOW PAGE *****/
 
@@ -130,6 +129,7 @@ header h2 {
 
 .index-image-link a {
   color: white;
+  padding: 1%;
 }
 
 .index-images {

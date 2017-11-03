@@ -32,6 +32,18 @@ describe RecipesController do
       end
     end
 
+    it "should set flash[:status] to :failure and redirect_back if given an empty search" do
+      VCR.use_cassette("empty_string_search") do
+        q = {
+          q: "",
+        }
+
+        get recipes_path, params: q
+        flash[:status].must_equal :failure
+        must_respond_with :redirect
+      end
+    end
+
     it "should set flash[:status] to :failure and redirect if there are no recipes" do
       VCR.use_cassette("norecipes") do
         q = {

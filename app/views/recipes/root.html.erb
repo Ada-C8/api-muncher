@@ -7,3 +7,9 @@
     <%= submit_tag("Search", class:"button")%>
   <% end %>
 </div>
+
+<% if flash[:status] %>
+  <div class="flash">
+    <%= flash[:message] %>
+  </div>
+<% end %>
