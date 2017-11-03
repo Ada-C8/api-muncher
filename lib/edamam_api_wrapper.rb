@@ -21,7 +21,7 @@ class EdamamApiWrapper
     recipes_array = []
     if response["hits"]
       response["hits"].each do |result|
-        recipes_array << self.get_recipe(result)
+        recipes_array << self.get_recipe(result["recipe"])
       end
     end
     return recipes_array
@@ -32,7 +32,7 @@ class EdamamApiWrapper
       uri = uri.split("_")[-1]
       url = BASE_URL + "r=" + BASE_URI + uri + "&app_id=#{APP_ID}" + "&app_key=#{APP_KEY}"
       response = HTTParty.get(url)
-      return url
+      return get_recipe(response[0])
     end
 
   private
@@ -43,20 +43,19 @@ class EdamamApiWrapper
   end
 
   def self.get_recipe(result)
-    result_params = result["recipe"]
     return Recipe.new(
-      result_params["uri"], # uri
-      result_params["label"], # name
-      result_params["image"], # image
-      result_params["source"], # original source
-      result_params["url"], # link to original
-      result_params["ingredientLines"], # ingredients as an array
+      result["uri"], # uri
+      result["label"], # name
+      result["image"], # image
+      result["source"], # original source
+      result["url"], # link to original
+      result["ingredientLines"], # ingredients as an array
       {
-        servings: result_params["yield"], # servings
+        servings: result["yield"], # servings
         # nutritional info
-        diet: result_params["dietLabels"], # low-fat, etc
-        health: result_params["healthLabels"], # vegetarian, etc
-        calories: result_params["calories"] # calories
+        diet: result["dietLabels"], # low-fat, etc
+        health: result["healthLabels"], # vegetarian, etc
+        calories: result["calories"] # calories
       }
     )
   end
