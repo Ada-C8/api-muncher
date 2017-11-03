@@ -1,7 +1,10 @@
 require "test_helper"
 
 describe RecipesController do
-  # it "must be a real test" do
-  #   flunk "Need real tests"
-  # end
+  describe "search method" do
+    it "can get the search page" do
+    get recipes_search_path
+    must_respond_with :success
+    end
+  end
 end

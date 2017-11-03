@@ -17,7 +17,7 @@ class EdamamApiWrapper
       puts "NUMBER OF RECIPES: #{number_of_recipes}"
       return results['count']
     else
-      return []
+      return 0
     end
   end
 
@@ -36,6 +36,7 @@ class EdamamApiWrapper
         # puts "HERE #{i} #{create_recipe(recipe_data)}"
         recipes_list << create_recipe(recipe_data)
       end
+      # puts recipes_list
       return recipes_list
     else
       return []

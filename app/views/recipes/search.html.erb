@@ -10,19 +10,19 @@
 <h2>@recipes = <%=@recipes%></h2>
 
 <h2>Number of Recipes: <%=@number_of_recipes%> </h2>
-<%(@number_of_recipes/10).times do |page| %>
-  <%= params['from'] = page*10 %>
-  <%= params['to'] = (page*10 + 9) %>
-  <%= params['keywords'] = @keywords %>
-  <%# params %>
-  <%=link_to(page+1, recipes_search_path)%>
-<%end%>
 
-  <% @recipes.each do |recipe| %>
+<% @recipes.each do |recipe| %>
   <ul>
-    <!-- <%@recipe = recipe%> -->
-    <li><%= image_tag recipe.image%></li>
-    <li><%#recipe.label%></li>
+    <li><%=image_tag recipe.image%></li>
+    <li><%=recipe.label%></li>
     <li><%=link_to(recipe.label, recipe_show_path(recipe.find_recipe_id))%></li>
   </ul>
+<%end%>
+
+<%if @number_of_recipes != 0 %>
+<%(@number_of_recipes/10).times do |page| %>
+<%=link_to(page+1, lemon_tart_path(page*10,page*10+9))%>
+
+  <!-- <%=link_to(page+1, recipes_search_path(params[:keywords], params[:from] = page*10, params[:to] = page*10+9))%> -->
+<%end%>
 <%end%>
