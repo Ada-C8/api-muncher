@@ -17,7 +17,18 @@
     </ul>
   <%end%>
 
-
+  <%if @number_of_recipes > 100%>
+    <%10.times do |page| %>
+      <%=link_to(page+1, search_by_page_path(@keywords, page*10,page*10+9, a: page*10, b: page*10+9))%>
+    <%end%>
+  <%elsif @number_of_recipes < 100 && @number_of_recipes > 10%>
+    <%i = 0%>
+    <%(@number_of_recipes/10).times do |page|%>
+      <%i += 1%>
+      <%=link_to(page+1, search_by_page_path(@keywords, page*10,page*10+9))%>
+    <%end%>
+    <%=link_to(i+1, search_by_page_path(@keywords, (i+1)*10,((i+1)*10+(@number_of_recipes%10))))%>
+  <%end%>
 
 <%else%>
   <h3>No recipes are available for those search terms</h3>
