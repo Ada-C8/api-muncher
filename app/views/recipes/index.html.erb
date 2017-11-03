@@ -1,59 +1,61 @@
 <main>
-  <header class="row">
-    <section class="small-12 small-centered medium-8 medium-centered large-6 large-centered columns border-bottom">
+  <div>
+    <header class="row opac-bg top-search-wrapper border-bottom">
+      <section class="small-12 small-centered medium-8 medium-centered large-6 large-centered columns">
 
-      <div class="search-padding">
-        <header>
-          <%= link_to root_path do %>
-            <h1 class="search-font">Munchies</h1>
-          <% end %>
-        </header>
-
-        <section>
-          <%= form_tag('/recipes', method: :get) do %>
-            <%= text_field_tag(:q, nil, placeholder: 'Find your recipes here!') %>
-            <%= submit_tag("nom nom", class:"button") %>
-          <% end %>
-
-          <% if flash[:status].present? %>
-            <p class="<%= flash[:status] %>"><%= flash[:message] %></p>
-          <% end %>
-        </section>
-      </div>
-
-    </section>
-  </header>
-
-  <section class="align-center">
-    <header>
-      <h2 class="results-styling">RESULTS FOR: <%= @search_request.capitalize %></h2>
-    </header>
-
-    <div class="row font-resize">
-      <% if @recipes %>
-        <% @recipes.each do |recipe| %>
-            <div class="small-12 medium-6 large-3 columns thumbnail bg-white">
-            <%= link_to recipe_path(recipe.uri_id) do %>
-              <%= image_tag(recipe.image_url, class:"full-image") %>
+        <div class="search-padding">
+          <header>
+            <%= link_to root_path do %>
+              <h1 class="search-font">Munchies</h1>
             <% end %>
-            <p class="name-styling">
-              <%= recipe.label %>
-            </p>
-          </div>
-        <% end %>
+          </header>
 
-      <% else %>
+          <section>
+            <%= form_tag('/recipes', method: :get) do %>
+              <%= text_field_tag(:q, nil, placeholder: 'Find your recipes here!') %>
+              <%= submit_tag("nom nom", class:"button") %>
+            <% end %>
 
-        <div>
-          <h1>There are no recipe hits for your request!</h1>
+            <% if flash[:status].present? %>
+              <p class="<%= flash[:status] %>"><%= flash[:message] %></p>
+            <% end %>
+          </section>
         </div>
 
-      <% end %>
-    </div>
-  </section>
+      </section>
+    </header>
 
-  <section class="align-center">
-    <%= will_paginate @recipes %>
-  </section>
+    <section class="align-center">
+      <header>
+        <h2 class="results-styling">RESULTS FOR: <%= @search_request.capitalize %></h2>
+      </header>
+
+      <div class="row font-resize">
+        <% if @recipes %>
+          <% @recipes.each do |recipe| %>
+              <div class="small-12 medium-6 large-3 columns thumbnail bg-white end">
+              <%= link_to recipe_path(recipe.uri_id) do %>
+                <%= image_tag(recipe.image_url, class:"full-image") %>
+              <% end %>
+              <p class="name-styling">
+                <%= recipe.label %>
+              </p>
+            </div>
+          <% end %>
+
+        <% else %>
+
+          <div>
+            <h1>There are no recipe hits for your request!</h1>
+          </div>
+
+        <% end %>
+      </div>
+    </section>
+
+    <section class="align-center">
+      <%= will_paginate @recipes %>
+    </section>
+  </div>
 
 </main>

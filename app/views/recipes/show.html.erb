@@ -1,74 +1,77 @@
 <main>
-  <div class="section-wrapper">
-    <header class="row">
-      <section class="small-12 small-centered medium-8 medium-centered large-6 large-centered columns border-bottom">
+  <header class="row opac-bg top-search-wrapper border-bottom">
+    <section class="small-12 small-centered medium-8 medium-centered large-6 large-centered columns">
 
-        <div class="search-padding">
-          <header>
-            <%= link_to root_path do %>
-              <h2 class="font">Munchies</h2>
-            <% end %>
-          </header>
+      <div class="search-padding">
+        <header>
+          <%= link_to root_path do %>
+            <h1 class="search-font">Munchies</h1>
+          <% end %>
+        </header>
 
-          <section>
-            <%= form_tag('/recipes', method: :get) do %>
-              <%= text_field_tag(:q, nil, placeholder: 'Making all your foodie dreams come true!', class:"round-border") %>
-              <%= submit_tag("Munchie!", class:"button round-border") %>
-            <% end %>
-          </section>
+        <section>
+          <%= form_tag('/recipes', method: :get) do %>
+            <%= text_field_tag(:q, nil, placeholder: 'Find your recipes here!') %>
+            <%= submit_tag("nom nom", class:"button") %>
+          <% end %>
+
+          <% if flash[:status].present? %>
+            <p class="<%= flash[:status] %>"><%= flash[:message] %></p>
+          <% end %>
+        </section>
+      </div>
+
+    </section>
+  </header>
+
+  <article class="margin-zero-auto">
+    <div class="row mid-width">
+
+      <div class="small-12 medium-5 large-5 columns align-center">
+        <%= image_tag(@recipe.image_url, class:"search-padding bg-white border") %>
+      </div>
+
+      <section class="small-12 medium-7 large-7 columns font search-padding">
+        <header>
+          <h3 class="font border-bottom"><%= @recipe.label %></h3>
+          <h5 class="font">Recipe by: <%= link_to @recipe.source, @recipe.source_url, target:"_blank", class:"search-padding" %></h5>
+        </header>
+        <br>
+        <div>
+          <h4 class="font">Ingredients</h4>
         </div>
 
+        <section class="normal-font">
+          <ul>
+            <% @recipe.ingredient_lines.each do |line| %>
+            <li>
+              <%= line %>
+            </li>
+            <% end %>
+          </ul>
+        </section>
       </section>
-    </header>
 
-    <article class="opac-bg">
-      <div class="row">
+    </div>
 
-        <div class="small-12 medium-5 large-5 columns align-center">
-          <%= image_tag(@recipe.image_url, class:"search-padding border") %>
-        </div>
+    <div class="row less-width">
+      <section class="nutrition-wrapper">
+        <header>
+          <h2 class="font border-bottom">Nutrition Facts</h2>
+        </header>
 
-        <section class="small-12 medium-7 large-7 columns font">
-          <header>
-            <h3><%= @recipe.label %></h3>
-            <h5>Recipe by: <%= link_to @recipe.source, @recipe.source_url, target:"_blank", class:"search-padding border" %></h5>
-          </header>
-
-          <div class="font">
-            <h4>Ingredients</h4>
-          </div>
-
-          <section>
-            <ul>
-              <% @recipe.ingredient_lines.each do |line| %>
-                <li>
-                  <%= line %>
-                </li>
-              <% end %>
-            </ul>
-          </section>
+        <section>
+          <ul>
+            <% @recipe.total_nutrients.each do |nutrient, value| %>
+            <li>
+              <%= value["label"] %> | <%= value["quantity"].to_i %> | <%= value["unit"] %>
+            </li>
+            <% end %>
+          </ul>
         </section>
+      </section>
+    </div>
 
-      </div>
-
-      <div class="row">
-        <section class="nutrition-wrapper">
-          <header>
-            <h2>Nutrition Facts</h2>
-          </header>
-
-          <section>
-            <ul>
-              <% @recipe.total_nutrients.each do |nutrient, value| %>
-                <li>
-                  <%= value["label"] %> | <%= value["quantity"].to_i %> | <%= value["unit"] %>
-                </li>
-              <% end %>
-            </ul>
-          </section>
-        </section>
-      </div>
-
-    </article>
-  </div>
+  </article>
+</div>
 </main>
