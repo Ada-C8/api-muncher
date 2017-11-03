@@ -29,6 +29,10 @@ body {
 font-family: "Helvetica Neue", Arial, sans-serif;
 }
 
+.home_body {
+  background-image: url("food background2.jpg");
+}
+
 main {
   margin: 0 auto;
   padding-top: 64px;

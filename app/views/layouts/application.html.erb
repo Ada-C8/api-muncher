@@ -14,7 +14,7 @@
   <%= csrf_meta_tags %>
 </head>
 
-<body class="body">
+<body class=<%= @home_page ? "home_body" : "body" %> >
   <header class="page-header row">
     <h1><%= link_to "NomNom.Com", root_path, alt: "link to home page" %></h1>
   </header>
