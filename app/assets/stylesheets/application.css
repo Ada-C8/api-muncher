@@ -88,6 +88,15 @@
    color: #fefefe;
  }
 
+ footer p {
+   padding-top: 1vw;
+ }
+
+ footer a {
+   color: white;
+ }
+
+
 .all_results {
   margin-top: 10vw;
 }
