@@ -13,6 +13,7 @@ class RecipesController < ApplicationController
 
   def show
     @recipe = RecipeSearch.find(params["id"])
+    return head :not_found unless @recipe
   end
 
   private

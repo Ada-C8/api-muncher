@@ -35,9 +35,7 @@ class RecipeSearch
 
     begin
       return nil if response.empty?
-    rescue
-      return nil
-    end
+    rescue; end
 
     new_recipe(response[0])
   end

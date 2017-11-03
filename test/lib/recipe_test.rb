@@ -76,11 +76,9 @@ describe Recipe do
     it 'prints basic nutrition info to an array, divided by servings' do
       result = recipe.basic_nutrition
 
-      # binding.pry
-
       result.must_be_kind_of Array
       result[0][0].must_equal "Energy"
-      result[0][1].must_equal "353.51 kcals"
+      result[0][1].must_equal "353.51 kcal"
     end
   end
 end
