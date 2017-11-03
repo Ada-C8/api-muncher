@@ -26,7 +26,7 @@ class RecipesController < ApplicationController
 
   def build_pages(recipes)
     @less = @page > 1
-    @more = recipes.length > PAGE_ITEMS
-    @recipes = recipes[0...PAGE_ITEMS]
+    @more = recipes.last
+    @recipes = recipes.first
   end
 end
