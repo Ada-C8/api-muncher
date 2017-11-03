@@ -1,6 +1,15 @@
 <%= render partial: "search_form" %>
-<h1><%= link_to @recipe.name, @recipe.url %></h1>
-<h3>By: <%=@recipe.company%> </h3>
+
+<section class="row text-center">
+  <h1 class="small-12 column"><%= link_to @recipe.name, @recipe.url %></h1>
+  <h3 class="small-12 large-12 column" >By: <%=@recipe.company%> </h3>
+</section>
+
+
+<div>
+  <%= image_tag @recipe.photo, alt: "Image of recipe", class: "show-photo" %>
+</div>
+
 <article class="ingredients">
   <h3>Ingredients</h3>
   <ul>
@@ -11,6 +20,9 @@
     <% end %>
   </ul>
 </article>
+
+
+
 <article class="diet-labels">
   <h3>Dietary Labels</h3>
   <ul>
@@ -20,4 +32,4 @@
       </li>
     <% end %>
   </ul>
-</ar
+</article>
