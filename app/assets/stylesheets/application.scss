@@ -35,10 +35,9 @@
 html {
   height: 100%;
 }
-
  body {
    background-color: #BED2CE;
-   background-image: url("background_image.jpg");
+   background-image: image-url("background_image.jpg");
    background-repeat: no-repeat;
    background-position: center;
    background-attachment: fixed;
