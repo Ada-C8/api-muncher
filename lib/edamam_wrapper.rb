@@ -17,7 +17,7 @@ class EdamamWrapper
     if data["hits"]
       data["hits"].each do |hit|
         # hit.each do |recipe|
-          recipe_list << create_recipe(hit["recipe"])
+          recipe_list << self.create_recipe(hit["recipe"])
       end
       return recipe_list
     end
