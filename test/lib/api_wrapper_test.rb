@@ -7,6 +7,9 @@ describe ApiWrapper do
         result = ApiWrapper.list_recipes("chicken")
         result.must_be_kind_of Array
         result.length.must_be :>, 0
+        result.each do |recipe|
+          recipe.must_be_instance_of Recipe
+        end
       end
     end
 
