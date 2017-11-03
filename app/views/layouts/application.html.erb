@@ -12,8 +12,18 @@
   </head>
 
   <body>
+    <% unless params[:action] == "home"%>
+      <header class="row expanded">
 
-    <%= yield %>
+      </header>
+    <% end %>
 
+    <main class="row">
+      <%= yield %>
+    </main>
+
+    <footer class="row">
+
+    </footer>
   </body>
 </html>
