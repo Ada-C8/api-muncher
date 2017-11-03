@@ -13,3 +13,26 @@
  *= require_tree .
  *= require_self
  */
+
+ @include foundation-xy-grid-classes(
+   $base-grid: true,
+   $margin-grid: true,
+   $padding-grid: true,
+   $block-grid: true,
+   $collapse: true,
+   $offset: true,
+   $vertical-grid: true
+ );
+
+ .grid-x {
+   max-width: 100%;
+ }
+
+ .grid-y {
+   column: 200px;
+ }
+
+.grid {
+  height: 100vh;
+  display: grid;
+}

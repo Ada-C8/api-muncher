@@ -9,15 +9,20 @@
   </head>
 
   <body>
-    
+
   <% unless controller_name == "home" %>
-      <nav>
-        <%= form_tag recipes_path, method: :get do %>
-          <%= label_tag(:search, "Ingredient") %>
-          <%= text_field_tag(:search) %>
-          <%= submit_tag("Send") %>
-        <% end %>
-      </nav>
+
+    <div class="grid-x">
+      <div class="large-8 medium-10 small-12 cell">
+          <nav>
+            <%= form_tag recipes_path, method: :get do %>
+              <%= label_tag(:search, "Ingredient") %>
+              <%= text_field_tag(:search) %>
+              <%= submit_tag("Send") %>
+            <% end %>
+          </nav>
+      </div>
+    </div>
   <% end %>
 
     <%= yield %>
