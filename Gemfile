@@ -63,6 +63,8 @@ gem 'jquery-turbolinks'
 
 gem 'foundation-rails', '6.4.1.2'
 
+gem 'will_paginate', '~> 3.1.0'
+
 group :development do
   gem 'better_errors'
   gem 'binding_of_caller'

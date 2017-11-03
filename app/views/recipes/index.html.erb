@@ -6,12 +6,22 @@
     <em><p> Results for <%= params[:search] %></p></em>
     <h2>Recipes</h2>
     <ul>
+
       <% @recipes.each do |recipe| %>
       <li>
         <%= recipe.label %>
       </li>
       <% end %>
+
     </ul>
+
+    <div class="digg_pagination">
+      <div class="page_info">
+        <%= page_entries_info @recipes%>
+      </div>
+      <%= will_paginate @recipes, :container => false %>
+    </div>
+
   <%else  %>
     <p>Search for a recipe!</p>
 <% end %>
