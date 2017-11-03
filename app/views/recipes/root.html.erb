@@ -10,7 +10,52 @@
 <h3>don't be hangry</h3>
     <%= form_tag(recipes_path, :method => "get", id: "search-front") do %>
     <%= text_field_tag :search, params[:search], placeholder: "🍽️    Search Recipes", id:'search-front' %>
+    <div class="row labels">
+        <h4>Allergies:</h4>
+      <%= label_tag :health, 'Gluten-Free' %>
+      <%= check_box_tag :health, 'Gluten-Free' %>
+      <%= label_tag :health,'Dairy-Free' %>
+      <%= check_box_tag :health, 'Dairy-Free' %>
+      <%= label_tag :health,'Eggs-Free' %>
+      <%= check_box_tag :health, 'Eggs-Free' %>
+      <%= label_tag :health,'Soy-Free' %>
+      <%= check_box_tag :health, 'Soy-Free' %>
+      <%= label_tag :health,'Wheat-Free' %>
+      <%= check_box_tag :health, 'Wheat-Free' %>
+      <%= label_tag :health,'Fish-Free' %>
+      <%= check_box_tag :health, 'Fish-Free' %>
+      <%= label_tag :health,'Shellfish-Free' %>
+      <%= check_box_tag :health, 'Shellfish-Free' %>
+      <%= label_tag :health,'Tree Nut-Free' %>
+      <%= check_box_tag :health, 'Tree Nut-Free' %>
+      <%= label_tag :health,'Peanut-Free' %>
+      <%= check_box_tag :health, 'Peanut-Free' %>
+  </div>
+  <div class="row labels">
+    <h4>Diets:</h4>
+    <%= label_tag :diet, 'Vegetarian' %>
+    <%= check_box_tag :diet, 'Vegetarian' %>
+    <%= label_tag :diet,'Vegan' %>
+    <%= check_box_tag :diet, 'Vegan' %>
+    <%= label_tag :diet,'Paleo' %>
+    <%= check_box_tag :diet, 'Paleo' %>
+    <%= label_tag :diet,'High-Fiber' %>
+    <%= check_box_tag :diet, 'High-Fiber' %>
+    <%= label_tag :diet,'High-Protein' %>
+    <%= check_box_tag :diet, 'High-Protein' %>
+    <%= label_tag :diet,'Low-Carb' %>
+    <%= check_box_tag :diet, 'Low-Carb' %>
+    <%= label_tag :diet,'Low-Fat' %>
+    <%= check_box_tag :diet, 'Low-Fat' %>
+    <%= label_tag :diet,'Low-Sugar' %>
+    <%= check_box_tag :diet, 'Low-Sugar' %>
+    <%= label_tag :diet,'Low-Sodium' %>
+    <%= check_box_tag :diet, 'Low-Sodium' %>
+    <%= label_tag :diet,'Alcohol-Free' %>
+    <%= check_box_tag :diet, 'Alcohol-Free' %>
+    <%= label_tag :diet,'Balanced' %>
+    <%= check_box_tag :diet, 'Balanced' %>
     <%# submit_tag "Search", :name => nil %>
     <% end %>
-
+    </div>
 </section>

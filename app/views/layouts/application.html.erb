@@ -14,7 +14,7 @@
   <div id="wrapper">
 
   <div id="header">
-    
+
   <header>
     <section class="logo">
       <%= link_to root_path do %>
@@ -56,10 +56,10 @@
     <% end %>
   <%= yield %>
 
-  </div>
 
 
-  <div id ="footer">
+
+
     <% if session[:recent_searches] %>
     <section class="row recent-searches">
     <h3>Recent Searches: </h3>
@@ -72,10 +72,10 @@
     </ul>
     <%end%>
   </section>
+</div>
 
 
-
-
+<div id ="footer">
   <footer>
     <div class="bg">
     </div>
