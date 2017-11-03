@@ -45,7 +45,19 @@ main {
   background-color: #8AB0AB;
 }
 
-.card h3 {
-  color: 03120E;
+.card {
+  box-shadow: 1px 1px 3px 3px grey;
+  height: 550px;
+  border-radius: 20px;
+  background-color: yellow;
+  margin: 4.15%;
+}
 
+.card img {
+  margin-top: 10px;
+  margin-bottom: 20px;
+}
+
+.row {
+  margin-bottom: 40px;
 }

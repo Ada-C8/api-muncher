@@ -13,6 +13,11 @@
   <body>
     <header class = 'header'>
       <h1>Munchers</h1>
+      <%= form_tag recipes_path, method: :get do %>
+        <%= label_tag(:term, "What do you feel like munching?") %>
+        <%= text_field_tag(:term) %>
+        <%= submit_tag("Send", class: "button", style: "display: none;") %>
+      <% end %>
     </header>
     <%= yield %>
   </body>
