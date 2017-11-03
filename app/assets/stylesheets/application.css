@@ -10,29 +10,9 @@
  * files in this directory. Styles in this file should be added after the last require_* statement.
  * It is generally better to create a new file per style scope.
  *
- *= require_tree .
+ *= require foundation
+ *= require foundation_overrides
+ *= require home
+ *= require recipes
  *= require_self
  */
-
- @include foundation-xy-grid-classes(
-   $base-grid: true,
-   $margin-grid: true,
-   $padding-grid: true,
-   $block-grid: true,
-   $collapse: true,
-   $offset: true,
-   $vertical-grid: true
- );
-
- .grid-x {
-   max-width: 100%;
- }
-
- .grid-y {
-   column: 200px;
- }
-
-.grid {
-  height: 100vh;
-  display: grid;
-}

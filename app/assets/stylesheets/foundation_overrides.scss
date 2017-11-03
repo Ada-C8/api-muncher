@@ -1,0 +1,32 @@
+.grid-x {
+  max-width: 100%;
+}
+
+.grid-y {
+  column: 200px;
+}
+// =============homepage==============
+.all-of-homepage {
+  display: fixed;
+  margin-top: 10%;
+  margin-bottom: 30%;
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+
+.all-of-homepage h1{
+  font-size: 5rem;
+}
+// ============RecipesIndex===========
+article {
+  display: inline-block;
+}
+
+section {
+  margin-top: 5%;
+}
+
+// =================NAV================
+nav {
+  background-color: lightgrey;
+}

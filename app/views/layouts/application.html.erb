@@ -1,7 +1,9 @@
 <!DOCTYPE html>
 <html>
   <head>
+    <link href="https://fonts.googleapis.com/css?family=Bungee+Shade" rel="stylesheet">
     <title>ApiMuncher</title>
+
     <%= csrf_meta_tags %>
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
@@ -10,19 +12,25 @@
 
   <body>
 
-  <% unless controller_name == "home" %>
 
-    <div class="grid-x">
-      <div class="large-8 medium-10 small-12 cell">
-          <nav>
+  <% unless controller_name == "home" %>
+    <nav>
+      <div class="grid-x">
+        <div class="large-1 medium-1 cell"></div>
+
+          <div class="large-10 medium-10 small-12 cell">
+
+            <h1>The Guilty Carb</h1>
             <%= form_tag recipes_path, method: :get do %>
               <%= label_tag(:search, "Ingredient") %>
               <%= text_field_tag(:search) %>
               <%= submit_tag("Send") %>
             <% end %>
-          </nav>
+          </div>
+        </div>
+        <div class="large-1 medium-1 cell"></div>
       </div>
-    </div>
+    </nav>
   <% end %>
 
     <%= yield %>

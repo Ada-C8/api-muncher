@@ -1,10 +1,11 @@
-@charset "UTF-8";
+
 /**
  * Foundation for Sites by ZURB
  * Version 6.4.2
  * foundation.zurb.com
  * Licensed under MIT Open Source
  */
+
 @media print, screen and (min-width: 40em) {
   .reveal, .reveal.tiny, .reveal.small, .reveal.large {
     right: auto;
@@ -5804,3 +5805,40 @@ a.thumbnail {
 
 .long-delay {
   animation-delay: 700ms !important; }
+/* line 1, /Users/marisamorris/Documents/ada developers academy/week_13/api-muncher/app/assets/stylesheets/foundation_overrides.scss */
+.grid-x {
+  max-width: 100%;
+}
+
+/* line 5, /Users/marisamorris/Documents/ada developers academy/week_13/api-muncher/app/assets/stylesheets/foundation_overrides.scss */
+.grid-y {
+  column: 200px;
+}
+
+/*.grid {
+ height: 100vh;
+ display: grid;
+}*/
+/* line 6, /Users/marisamorris/Documents/ada developers academy/week_13/api-muncher/app/assets/stylesheets/home.scss */
+h1 {
+  font-family: 'Monoton', cursive;
+}
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+
+
+
+
+
+ */
+
