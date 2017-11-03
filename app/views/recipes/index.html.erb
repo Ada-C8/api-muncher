@@ -1,16 +1,28 @@
-<h2>Results for "<%= params[:ingredient] %>"</h2>
+<% if @spanish %>
+  <h2>Recetas con <%= params[:ingredient] %></h2>
 
-<% if @recipes %>
-  <p>
-    <%= "#{number_with_delimiter(@count)} Results" %>
-  </p>
+  <% if @recipes %>
+    <%= "#{number_with_delimiter(@count)} recetas" %>
+  <% end %>
+<% else %>
+
+  <h2>Results for "<%= params[:ingredient] %>"</h2>
+
+  <% if @recipes %>
+    <p>
+      <%= "#{number_with_delimiter(@count)} Results" %>
+    </p>
+  <% end %>
 <% end %>
 
   <ul class="row recipe-list">
     <% @recipes.each do |recipe| %>
     <li class="recipe-list columns small-12 medium-6 large-3 end">
-      <%= link_to image_tag(recipe.image, alt: recipe.name), recipe_path(recipe.name, uri: recipe.uri) %>
-
+      <% if @spanish %>
+        <%= link_to image_tag(recipe.image, alt: recipe.name), lang_recipe_path(recipe.name, lang: "es", uri: recipe.uri) %>
+      <% else %>
+        <%= link_to image_tag(recipe.image, alt: recipe.name), recipe_path(recipe.name, uri: recipe.uri) %>
+      <% end %>
       <p>
         <%= link_to recipe.name, recipe_path(recipe.name, uri: recipe.uri) %>
       </p>

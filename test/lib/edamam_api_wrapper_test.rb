@@ -53,18 +53,23 @@ describe EdamamApiWrapper do
       end
     end
 
-    # it "Can return a specific number of recipes" do
-    #   VCR.use_cassette("list_recipes") do
-    #     recipes = EdamamApiWrapper.list_recipes("chicken", from: 10, to: 12)
-    #
-    #     recipes.length.must_equal 2
-    #   end
-    # end
-
     it "Returns [] if request is broken" do
       VCR.use_cassette("list_recipes") do
         bad_request = EdamamApiWrapper.list_recipes("broccoli", id: "bogus", key: "bad")
         bad_request.must_equal []
+      end
+    end
+
+    it "Can return a list of recipes in spanish" do
+      VCR.use_cassette("spanish_list_recipes") do
+        recetas = EdamamApiWrapper.list_recipes("pollo", spanish: true)
+
+        recetas.must_be_instance_of Array
+        recetas.length.must_equal 100
+
+        recetas.each do |receta|
+          receta.must_be_instance_of Recipe
+        end
       end
     end
 

@@ -2,6 +2,7 @@
 # require 'awesome_print'
 # require 'dotenv/load'
 # require_relative 'recipe'
+# require 'byebug'
 
 class EdamamApiWrapper
 
@@ -11,10 +12,9 @@ class EdamamApiWrapper
   ID = ENV["APP_ID"]
   KEY = ENV["APP_KEY"]
 
-  def self.list_recipes(ingredient, id: nil, key: nil)
-
+  def self.list_recipes(ingredient, spanish: false, id: nil, key: nil)
     # get valid from to data
-    data = self.request_recipes(ingredient, id: id, key: key)
+    data = self.request_recipes(ingredient, spanish: spanish, id: id, key: key)
 
     # return data
     recipes = []
@@ -32,16 +32,20 @@ class EdamamApiWrapper
     return recipes
   end
 
-  def self.num_recipes(ingredient, id: nil, key: nil)
-    response = self.request_recipes(ingredient, id: id, key: key)
+  def self.num_recipes(ingredient, spanish: false, id: nil, key: nil)
+    response = self.request_recipes(ingredient, spanish: spanish, id: id, key: key)
     return response["count"]
   end
 
-  def self.find_recipe(uri, id: nil, key: nil)
+  def self.find_recipe(uri, spanish: false, id: nil, key: nil)
     id ||= ID
     key ||= KEY
 
-    url = BASE_URL + "r=#{uri}"
+    if spanish
+      url = SP_URL + "r=#{uri}"
+    else
+      url = BASE_URL + "r=#{uri}"
+    end
     response = HTTParty.get(url)
     puts response
 
@@ -64,11 +68,12 @@ class EdamamApiWrapper
                   health_labels: recipe_hash["healthLabels"],
                   ingredients: recipe_hash["ingredientLines"],
                   calories: recipe_hash["calories"],
-                  nutrition: recipe_hash["totalNutrients"]
+                  nutrition: recipe_hash["totalNutrients"],
+                  daily_vals: recipe_hash["totalDaily"]
     return new_recipe
   end
 
-  def self.request_recipes(ingredient, id: nil, key: nil)
+  def self.request_recipes(ingredient, spanish: false, id: nil, key: nil)
     id ||= ID
     key ||= KEY
 
@@ -79,12 +84,19 @@ class EdamamApiWrapper
     auth = "app_id=#{id}&app_key=#{key}"
     range = "from=0&to=100"
 
-    url = BASE_URL +
-          "&" + auth +
-          "&" + ingredient +
-          "&" + range
+    if spanish
+      url = SP_URL + "&" + auth + "&" + ingredient + "&" + range
+    else
+      url = BASE_URL + "&" + auth + "&" + ingredient + "&" + range
+    end
 
     return HTTParty.get(url)
   end
 
 end
+
+# recipes = EdamamApiWrapper.list_recipes("chicken")
+# recetas = EdamamApiWrapper.list_recipes("pollo", spanish: true)
+#
+# ap recipes
+# ap recetas

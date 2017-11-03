@@ -1,5 +1,5 @@
 class Recipe
-  attr_reader :name, :uri, :image, :orig_url, :source, :servings, :calories, :diet_labels, :health_labels, :ingredients, :nutrition
+  attr_reader :name, :uri, :image, :orig_url, :source, :servings, :calories, :diet_labels, :health_labels, :ingredients, :nutrition, :daily
 
   def initialize(name, uri, image, orig_url, options = {})
     raise ArgumentError if name == nil || name == "" || uri == nil || uri == "" || image == nil || image == "" || orig_url == nil || orig_url == ""
@@ -16,6 +16,7 @@ class Recipe
     @health_labels = options[:health_labels]
     @ingredients = options[:ingredients] # this is an array
     @nutrition = options[:nutrition] # a hash of hashes
+    @daily = options[:daily_vals]
 
   end
 

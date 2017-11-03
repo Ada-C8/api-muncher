@@ -25,4 +25,50 @@
       <% end %>
     </ul>
   </section>
+
+</div>
+
+<div class="diet-info row">
+  <section class="diet-info columns small-12 large-5 end">
+    <h3>Dietary Labels</h3>
+
+    <ul>
+      <% @recipe.diet_labels.each do |label| %>
+      <li>
+        <%= label %>
+      </li>
+      <% end %>
+    </ul>
+  </section>
+
+  <section class="nutrition columns small-12 large-5 end">
+    <h4>Nutrition Info</h4>
+
+    <table>
+      <thead>
+        <tr>
+          <th>Nutrient</th>
+          <th>Amount</th>
+          <th>% Daily Value</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% @recipe.nutrition.each do |item, info| %>
+        <tr>
+          <% @size = @recipe.servings == nil || @recipe.servings == 0 ? 1 : @recipe.servings %>
+          <td><%= "#{info["label"]}" %></td>
+          <td><%= "#{(info["quantity"] / @size).round} (#{info["unit"]})" %></td>
+          <td>
+            <% if @recipe.daily[item] %>
+              <%= "#{(@recipe.daily[item]["quantity"] / @size).round}" %>
+            <% else %>
+              <%= "" %>
+            <% end %>
+          </td>
+        </tr>
+        <% end %>
+      </tbody>
+    </table>
+
+  </section>
 </div>

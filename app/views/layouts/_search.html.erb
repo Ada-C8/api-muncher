@@ -1,10 +1,35 @@
-<h1><%= link_to "Muncher", root_path %></h1>
+<%# English %>
 
-<section class="row search">
+<% if !@spanish %>
+  <p>
+    Not Spanish
+  </p>
+  <h1><%= link_to "Muncher", root_path %></h1>
+  <%= link_to "Buscar en español", lang_home_path(lang: "es") %>
 
-  <%= form_tag recipes_path, { method: :get } do %>
-    <%= label_tag :ingredient, "Find your flavor..." %>
-    <%= text_field_tag :ingredient %>
-    <%= submit_tag "Search" %>
-  <% end %>
-</section>
+
+  <section class="row search">
+
+    <%= form_tag recipes_path, { method: :get } do %>
+      <%= label_tag :ingredient, "Find your flavor..." %>
+      <%= text_field_tag :ingredient %>
+      <%= submit_tag "Search" %>
+    <% end %>
+  </section>
+
+<% else %>
+  <p>
+    Spanish
+  </p>
+  <h1><%= link_to "Muncher", root_path, lang: "es" %></h1>
+  <%= link_to "Search in English", root_path %>
+
+  <section class="row search">
+
+    <%= form_tag lang_recipes_path(lang: "es"), { method: :get } do %>
+      <%= label_tag :ingredient, "Encuentre su sabor..." %>
+      <%= text_field_tag :ingredient %>
+      <%= submit_tag "Buscar" %>
+    <% end %>
+  </section>
+<% end %>

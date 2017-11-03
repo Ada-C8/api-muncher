@@ -6,7 +6,11 @@ Rails.application.routes.draw do
 
   get 'recipes/', to: 'recipes#index', as: 'recipes'
 
+  get '/:lang', to: 'recipes#home', as: 'lang_home'
+  
+  get '/:lang/recipes/:name', to: 'recipes#show', as: 'lang_recipe'
 
+  get '/:lang/recipes/', to: 'recipes#index', as: 'lang_recipes'
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
