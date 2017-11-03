@@ -59,6 +59,7 @@ class EdamamApiWrapper
     api_params["source"],
     api_params["url"],
     api_params["ingredientLines"],
+    api_params["totalNutrients"]
   )
   end
 end

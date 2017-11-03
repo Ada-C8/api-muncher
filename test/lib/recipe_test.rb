@@ -12,10 +12,22 @@ describe Recipe do
         ["1/2 cup (125ml) mirin",
           "1/2 cup (125ml) soy sauce",
           "One 2-inch (5cm) piece of fresh ginger, peeled and grated",
-          "2-pounds (900g) boneless chicken thighs (4-8 thighs, depending on size)"]
+          "2-pounds (900g) boneless chicken thighs (4-8 thighs, depending on size)"],
+      "totalNutrients": {
+        "ENERC_KCAL": {
+            "label": "Energy",
+            "quantity": 948.5783323955536,
+            "unit": "kcal"
+        },
+        "FAT": {
+            "label": "Fat",
+            "quantity": 66.042283310318,
+            "unit": "g"
+        }
+      }
     }
 
-    @recipe = Recipe.new(@data[:uri], @data[:label], @data[:image_url], @data[:source], @data[:source_url], @data[:ingredient_lines])
+    @recipe = Recipe.new(@data[:uri], @data[:label], @data[:image_url], @data[:source], @data[:source_url], @data[:ingredient_lines], @data[:totalNutrients])
   end
 
   describe "#initialize" do

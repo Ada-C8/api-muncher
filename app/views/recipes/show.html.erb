@@ -20,19 +20,19 @@
 
   <article class="row">
 
-    <div class="small-12 large-6 columns border">
+    <div class="small-12 medium-6 large-6 columns border">
       <%= image_tag(@recipe.image_url, class:"full-image") %>
     </div>
 
-    <section class="small-12 large-6 columns border font">
-      <h2><%= @recipe.label %></h2>
-      <h3>Recipe by: <%= link_to @recipe.source, @recipe.source_url %></h3>
-    </section>
-
-    <section class="small-12 large 6-columns border">
-      <header class="font">
-        <h2>Ingredients</h2>
+    <section class="small-12 medium-6 large-6 columns font border">
+      <header>
+        <h2><%= @recipe.label %></h2>
+        <h4>Recipe by: <%= link_to @recipe.source, @recipe.source_url, target:"_blank" %></h4>
       </header>
+
+      <div class="font">
+        <h4>Ingredients</h4>
+      </div>
 
       <div>
         <ul>
@@ -45,7 +45,7 @@
       </div>
     </section>
 
-    <section class="small-12 large 6-columns border">
+    <section class="small-12 medium-6 large 6-columns border">
       <header>
         <h2>Nutrition Facts</h2>
       </header>

@@ -33,14 +33,10 @@ describe EdamamApiWrapper do
         recipe_data.must_be_kind_of Recipe
       end
     end
-    # TODO: Do we need to test if the URI is valid?
-    # it "raises an ApiError when the base uri is invalid" do
-    #   VCR.use_cassette("bad_uri") do
-    #     proc {
-    #       EdamamApiWrapper.find_recipe("Bad URI")}.must_raise EdamamApiWrapper::ApiError
-    #   end
-    # end
   end
+  
+end
+
 
   # Does something when the token is bad!
   # In order to make the call fail, we should change the KEY and the ID to maket the call fail
@@ -49,5 +45,3 @@ describe EdamamApiWrapper do
 
   # VCR.user_cassette("channels") do
   # result = SlackApiWrapper.list_channels("bogus_token")
-
-end
