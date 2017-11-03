@@ -13,18 +13,29 @@
 
 
 .title {
-  padding: 50px;
+  padding: 10px;
   text-align: center;
   margin: 50px auto;
   font-size: 300%;
-  width: 90%
+  width: 90%;
+
+
 }
 
 .search {
   width: 100%;
   width: 400px;
   margin-bottom: 50px;
-  padding: 5%;
+  padding-bottom: 2%; 
+
+}
+
+.muncher-search {
+  background-color: white;
+  // opacity: 0.5;
+  width: 100%;
+  background: rgb(204, 204, 204); /* Fallback for older browsers without RGBA-support */
+    background: rgba(204, 204, 204, 0.5);
 }
 
 
@@ -45,7 +56,6 @@
 }
 
 .pagination {
-  background: white;
   cursor: default;
 }
 
@@ -73,7 +83,6 @@
   }
 
   .pagination a:hover, .pagination a:focus {
-    background: white;
     color: #000044;
     // border-color: #000044;
   }
