@@ -1,42 +1,82 @@
 /*
- * This is a manifest file that'll be compiled into application.css, which will include all the files
- * listed below.
- *
- * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
- * vendor/assets/stylesheets directory can be referenced here using a relative path.
- *
- * You're free to add application-wide styles to this file and they'll appear at the bottom of the
- * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
- * files in this directory. Styles in this file should be added after the last require_* statement.
- * It is generally better to create a new file per style scope.
- *
- *= require_tree .
- *= require_self
- *= require foundation_and_overrides
+* This is a manifest file that'll be compiled into application.css, which will include all the files
+* listed below.
+*
+* Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
+* vendor/assets/stylesheets directory can be referenced here using a relative path.
+*
+* You're free to add application-wide styles to this file and they'll appear at the bottom of the
+* compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+* files in this directory. Styles in this file should be added after the last require_* statement.
+* It is generally better to create a new file per style scope.
+*
+*= require_tree .
+*= require_self
+*= require foundation_and_overrides
 
- */
+*/
 
- html {
+html {
   height: 100%;
   box-sizing: border-box;
 }
 
 body {
   position: relative;
+  background-color: #B85750;
   margin: 0;
   padding-bottom: 6rem;
   min-height: 100%;
-font-family: "Helvetica Neue", Arial, sans-serif;
+  font-family: Georgia, Arial, sans-serif;
+}
+
+body a {
+  color: black;
+}
+
+body a:visited {
+  color: black;
+}
+
+body a:hover {
+  color: black;
 }
 
 .home_body {
   background-image: url("food background2.jpg");
+  font-family: Georgia, Arial, sans-serif;
+  background-repeat: no-repeat;
 }
 
-small-centered a {
-margin-left: auto;
-margin-right: auto;
-float: none !important; }
+#header {
+  text-align: center;
+  color: white;
+
+}
+
+#header a {
+  color: white;
+  font-family: Arial, sans-serif;
+}
+
+# header a:visited {
+  color: white;
+}
+
+#home_page_container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+#search_bar {
+
+}
+
+#search_header {
+  text-align: center;
+}
 
 main {
   margin: 0 auto;
@@ -58,16 +98,16 @@ section > div.pagination a {
   display: inline-block;
 }
 
- /**
- * Footer Styles
- */
+/**
+* Footer Styles
+*/
 
 .footer {
   position: absolute;
   right: 0;
   bottom: 0;
   left: 0;
-  padding: 1rem;
-  background-color: #efefef;
+  padding: 0.65rem;
+  background-color: #936A4A;
   text-align: center;
 }

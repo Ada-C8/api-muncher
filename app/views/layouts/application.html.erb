@@ -15,8 +15,8 @@
 </head>
 
 <body class=<%= @home_page ? "home_body" : "body" %> >
-  <header class="small-12 small-centered columns">
-    <h1><%= link_to "NomNom.Com", root_path, alt: "link to home page" %></h1>
+  <header class="small-12 small-centered columns" id="header">
+    <h1><%= link_to "NomNom.com", root_path, alt: "link to home page" %></h1>
   </header>
   <% if flash[:message] %>
   <section class="row status <%= flash[:message] %>">
