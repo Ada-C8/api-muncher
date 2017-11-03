@@ -3,21 +3,21 @@
   <head>
     <title>ApiMuncher</title>
     <%= csrf_meta_tags %>
-
+    <link href="https://fonts.googleapis.com/css?family=Josefin+Sans:300,400,600,700" rel="stylesheet">
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
   <body>
     <header>
-      <h1><%= link_to "Yum yum", root_path %></h1>
-      <%= form_tag recipes_path, method: "get", id: "search-form" do %>
-        <%= label_tag(:search, "Search") %>
-        <%= text_field_tag(:search) %>
-        <%= submit_tag("Send") %>
+      <%= link_to image_tag('logo'), root_path, class: "logo" %>
+      <%= form_tag(recipes_path, :method => "get", id: "search-form") do %>
+        <%= text_field_tag :search, params[:search], placeholder: "search for a recipe" %>
       <% end %>
     </header>
-    <%= yield %>
+    <main>
+      <%= yield %>
+    </main>
     <footer>
       <p>
         Powered by <%= link_to "Edamam", "https://www.edamam.com/" %>

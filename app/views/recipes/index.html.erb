@@ -1,0 +1,13 @@
+<section class="recipes-main">
+  <h1>Recipes</h1>
+      <% @recipes.each do |recipe| %>
+        <article class="recipe">
+          <p><%= link_to recipe.label, recipe_path(recipe.label, uri: recipe.uri) %></p>
+          <p><%= image_tag recipe.image, alt:"#{recipe.label}" %></p>
+        </article>
+      <% end %>
+</section>
+
+<section>
+  <%= will_paginate @recipes %>
+</section>
