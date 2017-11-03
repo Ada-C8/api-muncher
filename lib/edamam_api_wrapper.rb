@@ -8,11 +8,12 @@ class EdamamApiWrapper
   ID = ENV["EDAMAM_ID"]
   KEY = ENV["EDAMAM_KEY"]
 
-  def self.number_of_recipes(keywords)
+  def self.find_number_of_recipes(keywords)
     url =  BASE_URL + "?q=" + keywords + "&app_id=#{ID}&app_key=#{KEY}"
     puts url
     results = HTTParty.get(url)
     if results
+      number_of_recipes = results['count']
       puts "NUMBER OF RECIPES: #{number_of_recipes}"
       return results['count']
     else
@@ -42,23 +43,21 @@ class EdamamApiWrapper
   end
 
   def self.show_recipe(uri_id)
-    r = "http://www.edamam.com/ontologies/edamam.owl" + uri_id
+    r = "http://www.edamam.com/ontologies/edamam.ow" + uri_id
     url = BASE_URL + "?r=" + r + "&app_id=#{ID}&app_key=#{KEY}"
     puts url
     if url
       return url
     else
       return false
+    end
   end
 
   def next
   end
 
   def previous
-
   end
-
-
 
 
 

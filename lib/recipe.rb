@@ -20,7 +20,7 @@ class Recipe
   end
 
   def find_recipe_id
-    a = @uri.split('owl')
+    a = @uri.split('edamam.ow')
     uri_id = a[1]
     # puts "URI_ID: #{uri_id}"
     return uri_id

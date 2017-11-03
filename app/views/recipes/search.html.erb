@@ -7,14 +7,18 @@
   <h1>Results for <%= @keywords %> </h1>
 <%end%>
 
-<% @recipes.each do |recipe| %>
-<ul>
-  <!-- <%@recipe = recipe%> -->
-  <li><%= image_tag recipe.image%></li>
-  <li><%#recipe.label%></li>
-  <li><%=link_to(recipe.label, recipe_show_path(recipe.find_recipe_id))%></li>
-</ul>
-<%end%>
+<%(@number_of_recipes/10).times do |page| %>
+  <%= params['from'] = page*10 %>
+  <%= params['to'] = (page*10 + 9) %>
+  <h2>Params:</h2>
+  <%= params %>
+  <%=link_to(page+1, recipes_search_path(params['from'], params['to']))%>
 
-(number_of_recipes/10).times do |page|
-  link_to(page+1, recipes_search_path(params['from']))
+  <% @recipes.each do |recipe| %>
+  <ul>
+    <!-- <%@recipe = recipe%> -->
+    <li><%= image_tag recipe.image%></li>
+    <li><%#recipe.label%></li>
+    <li><%=link_to(recipe.label, recipe_show_path(recipe.find_recipe_id))%></li>
+  </ul>
+  <%end%>
