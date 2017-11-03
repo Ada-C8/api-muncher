@@ -16,10 +16,10 @@
 
     <div class="page-buttons">
       <% if @less %>
-        <%= link_to "Prev Page", recipe_results_path(@query, page: (@page - 1)), class: "page-btn last-page" %>
+        <%= link_to "Prev Page", recipes_path(search: @query, page: (@page - 1)), class: "page-btn last-page" %>
       <% end %>
       <% if @more %>
-        <%= link_to "Next Page", recipe_results_path(@query, page: (@page + 1)), class: "page-btn next-page" %>
+        <%= link_to "Next Page", recipes_path(search: @query, page: (@page + 1)), class: "page-btn next-page" %>
       <% end %>
     </div>
 

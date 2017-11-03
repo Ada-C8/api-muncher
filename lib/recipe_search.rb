@@ -7,9 +7,10 @@ class RecipeSearch
   AUTH_URL = "app_id=#{ID}&app_key=#{KEY}"
   FIND_URL = "http://www.edamam.com/ontologies/edamam.owl%23recipe_"
 
+  # The RecipeSearch API has a 'more' value, but it seems to give inconsistent results?
   def self.search(query, page = 0, count = 10, more = false)
     from = page * count
-    to = more ? (from + count + 1) : (from + count)
+    to = from + count + (more ? 1 : 0)
     url = BASE_URL + AUTH_URL + "&q=#{query}&from=#{from}&to=#{to}"
 
     response = HTTParty.get(url)
@@ -19,7 +20,13 @@ class RecipeSearch
     response['hits'].each do |recipe|
       recipes << new_recipe(recipe['recipe'])
     end
-    recipes
+
+    if more
+      are_more = check_if_more(recipes, count)
+      return [recipes, are_more]
+    else
+      return recipes
+    end
   end
 
   def self.find(id)
@@ -33,6 +40,17 @@ class RecipeSearch
     end
 
     new_recipe(response[0])
+  end
+
+  private
+
+  def self.check_if_more(recipes, count)
+    if recipes.length < count
+      return false
+    else
+      recipes.delete_at(-1)
+      return true
+    end
   end
 
   def self.new_recipe(params)

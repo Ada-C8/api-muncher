@@ -3,10 +3,10 @@
     <h1><%= link_to "muncher", root_path %></h1>
 
     <h3>Find your flavor . . .</h3>
-    <%= form_tag( search_path(:search) ) do %>
+    <%= form_tag( recipes_path, method: :get, enforce_utf8: false ) do %>
       <%= text_field_tag :search %>
 
-      <%= submit_tag "Search", class: 'button' %>
+      <%= submit_tag "Search", name: nil, class: 'button' %>
     <% end %>
   </div>
 </section>
