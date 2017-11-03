@@ -1,5 +1,9 @@
-require "Edamam"
+# require "EdamamWrapper"
+# require "recipe"
 
-def edamam
-  @recipe = Edamam.list_recipes(params[:uri], params[:label], params[:image], params[:url], params[:calories], params[:ingredients])
+class HomeController < ApplicationController
+  def index
+
+  end
+
 end
