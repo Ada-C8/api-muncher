@@ -1,10 +1,20 @@
 <%= render partial: "search_form" %>
 <h3>Results for "<%= @search_term %>"</h3>
-<% @recipies.each do |recipe| %>
 
-    <%= image_tag recipe.photo, alt: "Image of recipe" %>
+<section class="row small-up-2 medium-up-3  large-up-4">
+  <% @recipies.each do |recipe| %>
+  <article class="column column-block text-center">
+    <%= image_tag recipe.photo, alt: "Image of recipe", class: "index-photo" %>
 
-  <%# in recipy_path(recipe.name, uri: recipe.uri) everything in the () are params passed to the show action. The first position (recipe.name) is assigned to the id: parameter automatically because it is in the first position. Then we can add more parameters, separated by commas, to be passed to the show action as well. We can't use recipe.uri as the id: because rails doesn't think an id should be formatted like the uri is. So we use recipe.name, which isn't servinf any purpose except to give us a valid rout format that can get us to the show controller action %>
-  <%= link_to recipe.name, recipy_path(recipe.name, uri: recipe.uri) %>
-  <%# use a view helper to reformat uri %>
-<% end %>
+    <%# in recipy_path(recipe.name, uri: recipe.uri) everything in the () are params passed to the show action. The first position (recipe.name) is assigned to the id: parameter automatically because it is in the first position. Then we can add more parameters, separated by commas, to be passed to the show action as well. We can't use recipe.uri as the id: because rails doesn't think an id should be formatted like the uri is. So we use recipe.name, which isn't servinf any purpose except to give us a valid rout format that can get us to the show controller action %>
+    <%= link_to recipe.name, recipy_path(recipe.name, uri: recipe.uri), class: "index-name" %>
+    <%# use a view helper to reformat uri %>
+  </article>
+  <% end %>
+</section>
+
+<section class="pagination row ">
+  <div class="small-12 small-centered medium-8 medium-centered large-5 large-centered column">
+    <%= will_paginate @recipies%>
+  </div>
+</section>

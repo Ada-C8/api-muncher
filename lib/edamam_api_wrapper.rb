@@ -23,7 +23,7 @@ class EdamamApiWrapper
     contain_symbols(search_term)
 
     # define the request url
-    url = BASE_URL + "q=" + search_term + "&app_id=" + ID + "&app_key=" + key
+    url = BASE_URL + "q=" + search_term + "&app_id=" + ID + "&app_key=" + key + "&to=1000"
 
     # send the request to the Edamam API
     response = HTTParty.get(url)

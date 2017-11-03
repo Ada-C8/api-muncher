@@ -1,4 +1,8 @@
 module Confirmation
+
+# NOTE: ****** I don't need this module anymore because I am rescuing errors in my controller instead of calling these methods in the RecipiesController! ****** 
+
+
   # NOTE: Both of these implementations of empty should return true if passed an empty sting ("") and nil (or false in the ones I changed to do that) if passed a sting with characters in it ("ddd")
   # Question: why do neither of these methods catch the error in the controller when the search term is an empty sting?
   # def empty(search_term)
@@ -15,13 +19,9 @@ module Confirmation
   #   end
   # end
 
-
+# NOTE: Can make the other empty methods one line like this too :)
   def empty(search_term)
-    if search_term.to_s.strip.empty?
-      return true
-    else
-      return false
-    end
+    return search_term.to_s.strip.empty?
   end
 
   def symbols(search_term)

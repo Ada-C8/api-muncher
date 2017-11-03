@@ -36,7 +36,7 @@ describe RecipiesController do
     it "will return not_found when there are no recipies returned to display because the search tearm was empty" do
       VCR.use_cassette("recipes") do
         test_params = {
-          search_term: "bread1"
+          search_term: ""
         }
 
         get recipies_path, params: test_params

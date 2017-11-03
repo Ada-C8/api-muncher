@@ -3,22 +3,29 @@ require_dependency '../../lib/recipe'
 
 
 class RecipiesController < ApplicationController
-  include Confirmation
   def root
   end # root
 
   def index
-    if empty(params[:search_term])
+    begin
+      results = EdamamApiWrapper.get_recipies(params[:search_term])
+      @search_term = params[:search_term]
+      @recipies = results.paginate(:page => params[:page], :per_page => 10)
+      return @recipies
+    rescue EdamamApiWrapper::NoResultsError
       flash[:status] = :failure
-      flash[:message] = "Sorry, your search term can't be blank!"
+      flash[:message] = "Sorry, no recipies match that serch term."
       redirect_to root_path
-    elsif symbols(params[:search_term])
+    rescue EdamamApiWrapper::BadSearchTermError
       flash[:status] = :failure
       flash[:message] = "Sorry, your search term can't contain numbers or letters!"
       redirect_to root_path
-    else
-      @recipies = EdamamApiWrapper.get_recipies(params[:search_term])
-      @search_term = params[:search_term]
+    rescue EdamamApiWrapper::BlankSearchError
+      flash[:status] = :failure
+      flash[:message] = "Sorry, your search term can't be blank!"
+      redirect_to root_path
+    rescue EdamamApiWrapper::ApiError
+      "Call to Edamam API failed. Status was #{response.code} #{response.message}"
     end
   end # index
 
