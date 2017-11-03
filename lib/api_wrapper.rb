@@ -18,13 +18,9 @@ class ApiWrapper
     recipes_list = []
 
     if data["hits"]
-
       # data["hits"] is an array of hashes, within each hash there are sub-hashes and sub-arrays, we need
-
       data["hits"].each do |recipe_info_hash|
-
         recipes_list << self.create_recipe(recipe_info_hash)
-
       end
     end
 
