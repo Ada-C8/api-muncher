@@ -21,14 +21,14 @@
   <h2>Mangia</h2>
     <%= form_tag(root_path, :method => "get", id: "search-form") do %>
     <%= text_field_tag :search, @search, placeholder: "Search Recipes" %>
-    <%= submit_tag "Search", class: "button success" %>
+    <%= submit_tag "Search", class: "button success search" %>
   <% end %>
 </nav>
 
 <div class="recipe-show column">
-  <ul class="small-block-grid-1 medium-block-grid-3 large-block-grid-4">
+  <ul class="small-block-grid-1 medium-block-grid-3 large-block-grid-4 large-centered">
     <% @recipes.each do |recipe| %>
-      <li><%= link_to image_tag(recipe.image), recipes_path(id: recipe.id) %>
+      <li class="text-center"><%= link_to image_tag(recipe.image), recipes_path(id: recipe.id) %>
       <%= recipe.name %></li>
     <%end %>
   </ul>
