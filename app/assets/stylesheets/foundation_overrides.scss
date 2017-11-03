@@ -12,23 +12,18 @@
   margin-bottom: 30%;
   overflow-x: hidden;
   overflow-y: auto;
+  height:90%;
 }
 
 .all-of-homepage h1{
   font-size: 5rem;
 }
 // ============RecipesIndex===========
-article {
-  display: inline-block;
-}
 
-section {
-  margin-top: 5%;
-}
 
 // =================NAV================
 nav {
-  background-color: lightgrey;
+  background-color: white;
 }
 .link{
   text-align: center;
@@ -44,6 +39,48 @@ nav {
 }
 
 // ============RECIPE INDEX=============
+article {
+  display: inline-block;
+}
+
+section {
+  margin-top: 2%;
+}
+
 .recipe-list {
   list-style-type: none;
+}
+
+.recipe-list article {
+  // margin-left: 1%;
+  // margin-right: 1%;
+  margin: 1% 1% 1% 1%;
+
+  width:20%;;
+  height: auto;
+}
+
+section h3 {
+  text-align: center;
+  margin-bottom: 2%;
+}
+
+section ul {
+  text-align: center;
+}
+
+
+.pagination {
+  text-align: center;
+}
+
+// =============FOOTER================
+.footer {
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  padding: 1rem;
+  text-align: center;
+  border-top: solid 0.5px;
 }

@@ -4453,7 +4453,7 @@ select {
     .orbit-bullets button.is-active {
       background-color: #8a8a8a; }
 
-.pagination {
+/*.pagination {
   margin-left: 0;
   margin-bottom: 1rem; }
   .pagination::before, .pagination::after {
@@ -4510,7 +4510,7 @@ select {
 .pagination-next.disabled::after {
   display: inline-block;
   margin-left: 0.5rem;
-  content: '\00bb'; }
+  content: '\00bb'; }*/
 
 .progress {
   height: 1rem;
