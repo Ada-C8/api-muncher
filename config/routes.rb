@@ -1,7 +1,9 @@
 Rails.application.routes.draw do
-  root to: 'homepage#index'
 
-  resources :homepage, only: [:index]
+  root to: 'home#index'
+
+
+  resources :home, only: [:index]
   resources :recipes, only: [:index, :show]
 
   # get 'homepage/index'

@@ -3,6 +3,7 @@ require_dependency '../../lib/recipe'
 
 
 class RecipesController < ApplicationController
+
   def index
     # @recipes = EdamamApiWrapper.list_recipes(params[:search])
 
