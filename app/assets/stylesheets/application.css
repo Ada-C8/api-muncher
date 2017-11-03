@@ -15,7 +15,7 @@
  *= require foundation_and_overrides
 
  */
-@import url('https://fonts.googleapis.com/css?family=Caveat');
+@import url('https://fonts.googleapis.com/css?family=Amatic SC');
 @import url('https://fonts.googleapis.com/css?family=Crafty Girls');
 
  footer p {
@@ -33,14 +33,24 @@ body {
 }
 
 main {
-  font-family: 'Crafty Girls';
+  font-family: 'Amatic SC';
+  font-weight: bold;
+  font-size: 175%;
 }
 
 .api-muncher h1, h2, h3, h4, p {
-  font-family: 'Crafty Girls';
+  font-family: 'Amatic SC';
+  font-weight: bold;
+  font-size: 175%;
 }
 
+a {
+  color: black;
+}
 
+a:hover {
+  color: #2811F7;
+}
 
 /* GET FOOTER TO STAY AT BOTTOM */
 
@@ -74,6 +84,8 @@ footer {
   right: 0;
   bottom: 0;
   left: 0;
-  padding: 1rem;
+  padding: 0.5rem;
   text-align: center;
+  background: rgb(204, 204, 204); /* Fallback for older browsers without RGBA-support */
+    background: rgba(204, 204, 204, 0.5);
 }

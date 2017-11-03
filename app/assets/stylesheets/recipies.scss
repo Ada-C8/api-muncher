@@ -26,22 +26,33 @@
   width: 100%;
   width: 400px;
   margin-bottom: 50px;
-  padding-bottom: 2%; 
+  padding-bottom: 2%;
 
 }
 
 .muncher-search {
-  background-color: white;
   // opacity: 0.5;
   width: 100%;
   background: rgb(204, 204, 204); /* Fallback for older browsers without RGBA-support */
     background: rgba(204, 204, 204, 0.5);
+
+}
+
+.transparent {
+  background: rgb(204, 204, 204); /* Fallback for older browsers without RGBA-support */
+    background: rgba(204, 204, 204, 0.5);
+    padding: 5%;
 }
 
 
 /*********************/
 /**** index page   ***/
 /*********************/
+
+.result-div {
+  display: flex;
+  justify-content: center;
+}
 
 .index-photo {
   display: block;
@@ -67,7 +78,8 @@
   }
 
   .pagination .disabled {
-    color: #999999;
+    color: black;
+    font-weight: bold;
    }
 
   .pagination .current {
@@ -75,11 +87,13 @@
     font-weight: bold;
     background: #2e6ab1;
     color: white;
+    font-weight: bold;
   }
 
   .pagination a {
     text-decoration: none;
-    color: #105cb6;
+    color: black;
+    font-weight: bold;
   }
 
   .pagination a:hover, .pagination a:focus {
