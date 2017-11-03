@@ -8,9 +8,9 @@ Rails.application.routes.draw do
   # get "/recipes/", to: "recipes#index", as: "recipes"
   # resources :home
 
-  resources :recipes, only: [:index, :show]
+  resources :recipes, only: [:index]
 
-  # get "/recipes", to: "recipes#show"
+  get "/recipe", to: "recipes#show", as: "recipe"
   # get '/recipes/:uri', to: "recipes#show", as: 'recipe'
 
   # resources :recipes

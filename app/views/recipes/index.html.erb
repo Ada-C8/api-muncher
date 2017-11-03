@@ -1,13 +1,23 @@
+<div class="recipe-show">
 
-<section class="recipes-list">
-  <h1>List of recipes</h1>
-  <ul>
+<% if !@recipes.nil? %>
+  <div class="list-products row small-up-1 medium-up-2 large-up-4">
     <% @recipes.each do |recipe| %>
-      <li>
-        <%= link_to recipe.label, recipe_path(id) %>
+      <div class="column">
+        <ul>
+          <li><%= link_to image_tag(recipe.image), recipe_path(id: recipe.uri) %></li>
+          <li><%= recipe.label %></li>
+        </ul>
+      </div>
+    <%end %>
+  </div>
 
-        <%#= link_to recipe.url, recipes_path %>
-      </li>
+  <div class="pagination">
+    <% if @from > 10 %>
+      <%= link_to "Previous Page", recipes_path(item: @item, from: @previous_from), class: "button" %>
     <% end %>
-  </ul>
-</section>
+
+    <%= link_to "Next Page", recipes_path(item: @item, from: @from), class: "button" %>
+  </div>
+<% end %>
+</div>
