@@ -35,7 +35,6 @@ gem 'jbuilder', '~> 2.5'
 gem 'foundation-rails', '6.4.1.2'
 gem 'httparty'
 gem 'will_paginate'
-gem 'dotenv-rails'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
@@ -46,6 +45,7 @@ group :development, :test do
   gem 'awesome_print'
   gem 'minitest-vcr'
   gem 'webmock'
+  gem 'dotenv-rails'
   gem 'will_paginate'
 end
 

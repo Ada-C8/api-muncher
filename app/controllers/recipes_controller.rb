@@ -1,3 +1,5 @@
+require_dependency 'EdamamApiWrapper'
+
 class RecipesController < ApplicationController
 
   def home # This will give a search bar to find all recipes
