@@ -5,11 +5,7 @@ require_dependency '../../lib/recipe'
 class RecipesController < ApplicationController
 
   def index
-    if params[:term] == nil or params[:term] == ""
-      @recipes = EdamamApiWrapper.search.paginate(page: params[:page], per_page: 12)
-    else
-      @recipes = EdamamApiWrapper.search(params[:term]).paginate(page: params[:page], per_page: 12)
-    end
+    @recipes = EdamamApiWrapper.search(params[:term]).paginate(page: params[:page], per_page: 12)
   end
 
   def show
