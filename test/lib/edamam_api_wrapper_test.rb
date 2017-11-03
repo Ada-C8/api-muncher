@@ -28,10 +28,14 @@ describe EdamamApiWrapper do
 
   end
 
-  # describe "show_recipe" do
-  #   it "Can show a requested recipe" do
-  #
-  #   end
-  # end
+  describe "show_recipe" do
+    it "Can show a requested recipe" do
+      VCR.use_cassette("recipes") do
+        uri = "http://www.edamam.com/ontologies/edamam.owl#recipe_7bf4a371c6884d809682a72808da7dc2"
+        recipe = EdamamApiWrapper.show_recipe(uri)
+        recipe.must_be_instance_of Recipe
+      end
+    end
+  end
 
 end
