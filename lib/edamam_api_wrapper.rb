@@ -54,8 +54,8 @@ class EdamamApiWrapper
         ingredients: api_params["ingredients"],
         source: api_params["source"],
         dietLabels: api_params["dietLabels"],
-        image: api_params["image"]
-
+        image: api_params["image"],
+        healthLaebls: api_params["healthLabels"]
       }
     )
   end

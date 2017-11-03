@@ -1,17 +1,17 @@
 <div id="recipe-info">
-   <h2><%=link_to @recipe.label, @recipe.url%></h2>
-   <h3>By: <%=@recipe.source%></h3>
+   <h3><%=link_to @recipe.label, @recipe.url%></h3>
+   <h4>By: <%=@recipe.source%></h4>
 </div>
 <div class="row">
   <!-- <section class="large-12 large-centered columns"> -->
     <section class="large-6 columns" id="recipe-show-image">
    <%=image_tag("#{@recipe.image}", alt:"#{@recipe.label}") %>
-   <h4>Dietary Labels</h4>
-   <ul>
-  <%@recipe.diet_labels.each do |label|%>
-    <li><%=label%></li>
-   <% end %>
-  </ul>
+   <!-- <h4>Dietary Labels</h4>
+   <ul> -->
+  <%#@recipe.diet_labels.each do |label|%>
+    <!-- <li><%#label%></li> -->
+   <%# end %>
+  <!-- </ul> -->
  </section>
    <section class="large-6 columns" id="ingredients">
    <h4>Ingredients</h4>
@@ -20,6 +20,16 @@
     <li><%=ingredient%></li>
    <% end %>
   </ul>
+  <h4>Dietary Labels</h4>
+  <ul>
+    <% if @recipe.diet_labels.empty? %>
+    <li>no dietary labels provided</li>
+    <% else %>
+ <%@recipe.diet_labels.each do |label|%>
+   <li><%=label%></li>
+  <% end %>
+ </ul>
+ <% end %>
   </section>
   <!-- </section> -->
 </div>

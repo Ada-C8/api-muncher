@@ -1,24 +1,19 @@
+<section>
 
-<h1 id="recipe-results"><%= "Results for #{params[:q]}" %></h1>
-<div class="row">
-<% @recipes.each do |recipe| %>
-  <section>
-    <div class = "large-3 medium-4 small-6 columns" id="recipe-result">
-    <% "#{recipe.url}" %>
-    <% "#{recipe.ingredients}"%>
-    <%=image_tag("#{recipe.image}", alt:"#{recipe.label}") %>
-    <section id= "recipe-title">
-      <%= link_to "#{recipe.label}", recipe_path("#{recipe.id}")%>
+  <h3 id="recipe-results"><%= "Results for #{params[:q]}" %></h3>
+  <div class="row">
+  <% @recipes.each do |recipe| %>
+      <div class = "small-6 medium-4 large-3 columns" id="recipe-result">
+      <% "#{recipe.url}" %>
+      <% "#{recipe.ingredients}"%>
+      <%=image_tag("#{recipe.image}", alt:"#{recipe.label}") %>
+      <section id= "recipe-title">
+        <%= link_to "#{recipe.label}", recipe_path("#{recipe.id}")%>
       </section>
+      </div>
+  <% end %>
   </div>
-<% end %>
+
+  <section><%= will_paginate @recipes %></section>
 
 </section>
-
-</div>
-<div class="flickr_pagination">
-    <div class="page_info">
-      <% page_entries_info @recipes %>
-    </div>
-    <%= will_paginate @recipes, :container => false %>
-  </div>

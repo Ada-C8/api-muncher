@@ -12,14 +12,16 @@
   </head>
 
   <body>
-    <header>
+    <%= render partial: "header" unless @disable_header_search %>
+
+    <!-- <header>
       <div class="page-header">
         <div class="row">
-          <h1><%= link_to "MUNCHER", root_path %></h1>
-            <%= render partial: "search" unless @disable_header_search %>
+          <h1><%# link_to "MUNCHER", root_path %></h1>
+            <%# render partial: "search" unless @disable_header_search %>
         </div>
       </div>
-    </header>
+    </header> -->
         <main>
         <section class="row flash">
           <% if flash[:status] == :failure %>

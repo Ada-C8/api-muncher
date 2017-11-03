@@ -1,5 +1,15 @@
-<%= form_tag("/recipes", method: "get") do %>
-  <%= label_tag(:q, "Search for:") %>
+<body class="main-page">
+<h1 id="main-header"> RECIPE MUNCHER </h1>
+<div class = "main-search row">
+  <div class="main-search-form">
+  <%= form_tag("/recipes", method: "get") do %>
+
+  <%= label_tag(:q, "Search for recipes:", id: "main-submit-search-text" ) %>
   <%= text_field_tag(:q) %>
-  <%= submit_tag("Search") %>
+  <div id = "main-submit-button">
+    <%= submit_tag("Search", class:"button")%>
+  </div>
 <% end %>
+</div>
+</div>
+</body>
