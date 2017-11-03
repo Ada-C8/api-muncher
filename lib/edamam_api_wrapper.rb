@@ -7,16 +7,32 @@ class EdamamApiWrapper
   APP_KEY = ENV["EDAMAM_KEY"]
   APP_ID = ENV["EDAMAM_ID"]
 
-  SEARCH_LENGTH = 10
+  MAX_SEARCH_LENGTH = 100 #dev api max hits/search allowed
+  MAX_API_CALLS = 5 # only 5 api calls per min allowed
   MINIMUM_BAR = %w(label uri image ingredientLines)
   RECIPE_URL = "http://www.edamam.com/ontologies/edamam.owl%23recipe_"
+
+  #BUG: Too fast for API calls. WOuld need to run through a list of app keys and ids :/
+  # def self.loop_search(query)
+  #   i = 0
+  #
+  #   total_recipes = Array.new
+  #   while i <= (MAX_API_CALLS - 1) * MAX_SEARCH_LENGTH
+  #     total_recipes += self.search(query, from: i, to: (i + MAX_SEARCH_LENGTH))
+  #     i += MAX_SEARCH_LENGTH
+  #   end
+  #
+  #   return total_recipes
+  #
+  # end
 
   def self.search(query, options = { } )
     options[:app_id] ||= APP_ID
     options[:app_key]||= APP_KEY
-    options[:hits] ||= SEARCH_LENGTH
+    options[:from] ||= 0
+    options[:to] ||= MAX_SEARCH_LENGTH
 
-    url = BASE_URL + "q=#{query}" + "&app_id=#{options[:app_id]}" + "&app_key=#{options[:app_key]}" + "&to=#{options[:hits]}"
+    url = BASE_URL + "q=#{query}" + "&app_id=#{options[:app_id]}" + "&app_key=#{options[:app_key]}" + "&from=#{options[:from]}" + "&to=#{options[:to]}"
 
     response = HTTParty.get(url)
 
