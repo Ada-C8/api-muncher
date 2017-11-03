@@ -1,10 +1,10 @@
 <main>
-  <header class="row border">
+  <header class="row">
     <section class="small-12 small-centered medium-8 medium-centered large-6 large-centered columns border-bottom">
 
       <div class="search-padding">
         <header>
-          <h2 class="mid-font">Munchies</h2>
+          <h2 class="font">Munchies</h2>
         </header>
 
         <section>
@@ -18,19 +18,19 @@
     </section>
   </header>
 
-  <section>
+  <section class="align-center">
     <header>
-      <h2 class="mid-font">RESULTS FOR: <%= @search_request %></h2>
+      <h2 class="results-styling">RESULTS FOR: <%= @search_request %></h2>
     </header>
 
-    <div class="row align-content">
+    <div class="row">
       <% if @recipes %>
         <% @recipes.each do |recipe| %>
-          <div class="small-12 small-centered medium-6 medium-centered large-4 large-centered columns thumbnail same-width end">
+            <div class="small-12 medium-6 large-3 columns thumbnail bg-white">
             <%= link_to recipe_path(recipe.uri_id) do %>
-              <%= image_tag(recipe.image_url, class:"border") %>
+              <%= image_tag(recipe.image_url, class:"full-image") %>
             <% end %>
-            <p>
+            <p class="name-styling">
               <%= recipe.label %>
             </p>
           </div>
@@ -44,9 +44,10 @@
 
       <% end %>
     </div>
-
-    <%= will_paginate @recipes %>
-
-
   </section>
+
+  <section class="align-center">
+    <%= will_paginate @recipes %>
+  </section>
+
 </main>

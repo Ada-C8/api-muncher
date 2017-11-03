@@ -25,6 +25,10 @@
   border-radius: 10px;
 }
 
+.align-center {
+  text-align: center;
+}
+
 /**************************/
 /********** BODY **********/
 /**************************/
@@ -49,7 +53,6 @@ html {
 
 footer {
   height: 10vh;
-  text-align: center;
   background:rgba(255,255,255, 0.5);
 }
 

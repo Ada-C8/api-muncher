@@ -34,33 +34,45 @@
   display: inline-block;
 }
 
+
 /**************************/
 /********* INDEX **********/
 /**************************/
 
-.border-bottom {
-  border: 1px solid black;
-}
-
-.mid-font {
+.results-styling {
   font-family: 'Fredericka the Great', cursive;
+  padding: 1em;
+  text-align: center;
 }
 
 .search-padding {
   padding: 1em;
 }
 
-.border {
+.full-image {
+  width: 100%;
+  height: auto;
   border: 1px solid grey;
 }
 
-.same-width {
-  width: 250px;
-  padding: 10px;
-  background-color: white;
-  font-size: 1vw;
+.font {
+  font-family: 'Fredericka the Great', cursive;
 }
 
-.align-content {
-  align-content: center;
+.bg-white {
+  background-color: white;
+  padding-top: 10px;
+}
+
+.name-styling {
+  margin: 0;
+  padding: 5px;
+}
+
+/**************************/
+/********** SHOW **********/
+/**************************/
+
+.border {
+  border: 2px solid green;
 }
