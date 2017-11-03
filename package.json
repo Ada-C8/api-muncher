@@ -1,5 +1,7 @@
 {
   "name": "api-muncher",
   "private": true,
-  "dependencies": {}
+  "dependencies": {
+    "circletype": "^2.0.11"
+  }
 }

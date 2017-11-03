@@ -82,16 +82,35 @@ input[type=submit] {
   display: block;
 }
 
-.recipe-list {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-}
-
 .one-recipe {
-  flex: 0 1 auto;
+  height: 350px;
+  display: inline-block;
 }
 
+.search-image, .search-image img{
+  border-radius: 50%;
+padding: 0;
+ height: 200px;
+  width: 200px;
+  
+}
+
+.search-image img:hover {
+  opacity: 0;
+}
+
+.search-image:hover {
+  background-color: black;
+}
+
+.title, .title a {
+  text-align: center;
+  width: 200px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: #ff6a80;
+}
 
 
 
@@ -156,8 +175,7 @@ button.toggle-nav{
     left: calc(50% - 30px);
     width: 60px;
       height: 35px;
-    background-color: #38a6a6;
-  font: 400 1.2em 'Allan', serif;
+    background-color: #ff6a80;
     color: #fff;
   border: none;
     line-height: 30px;
@@ -198,4 +216,19 @@ header.active button.toggle-nav span{
     header.active button.toggle-nav{
             top: 305px;
       }
+}
+
+
+
+.button, input[type=submit] {
+  flex: 1 1 auto;
+  margin: 10px;
+  padding: 20px;
+  text-align: center;
+  border: 1px solid #FF6A80;
+  color: black;
+  background-color: #FFB6C1;
+  position: relative;
+  overflow:hidden;
+  transition: .3s;
 }

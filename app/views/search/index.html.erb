@@ -1,9 +1,9 @@
 <section class="root-page">
   <section class="search-form">
   <%= form_tag search_results_path, method: "get" do %>
-    <%= text_field_tag(:ingredients)%>
+    <%= text_field_tag(:ingredients, 'Tell us what\'s at home...') %>
     <%= hidden_field_tag(:page, 1) %>
-    <%= submit_tag("Find My Next Meal") %>
+    <%= submit_tag("We'll tell you what's for dinner") %>
   <% end %>
   </section>
 
