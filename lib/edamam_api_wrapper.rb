@@ -47,8 +47,11 @@ class EdamamApiWrapper
     r = "http://www.edamam.com/ontologies/edamam.ow" + uri_id
     url = BASE_URL + "?r=" + r + "&app_id=#{ID}&app_key=#{KEY}"
     puts url
-    if url
-      return url
+    results = HTTParty.get(url)
+    puts results
+    recipe = create_recipe_for_show(results)
+    if recipe
+      return recipe
     else
       return false
     end
@@ -75,6 +78,24 @@ class EdamamApiWrapper
         "healthLabels" => api_params["recipe"]["healthLabels"],
         "ingredientLines" => api_params["recipe"]["ingredientLines"],
         "uri" => api_params["recipe"]["uri"]
+      }
+    )
+    # puts "A RECIPE!!!!!!!!!!!!!!!!!!!!!!!!!!!!!"
+    # ap recipe
+    return recipe
+  end
+
+  def self.create_recipe_for_show(api_params)
+    # puts "INSIDE AGAIN!"
+    recipe = Recipe.new({
+        "label" => api_params[0]["label"],
+        "image" => api_params[0]["image"],
+        "source" => api_params[0]["source"],
+        "url" => api_params[0]["url"],
+        "dietLabels" => api_params[0]["dietLabels"],
+        "healthLabels" => api_params[0]["healthLabels"],
+        "ingredientLines" => api_params[0]["ingredientLines"],
+        "uri" => api_params[0]["uri"]
       }
     )
     # puts "A RECIPE!!!!!!!!!!!!!!!!!!!!!!!!!!!!!"
