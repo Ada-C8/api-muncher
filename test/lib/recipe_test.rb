@@ -4,11 +4,12 @@ require 'test_helper'
 describe Recipe do
 
   it "can be created" do
-    recipe = Recipe.new "uri", "label", "image", "url", "ingredientLines"
+    recipe = Recipe.new "uri", "label", "image", "url", "servings", "ingredientLines"
     recipe.must_respond_to :name
     recipe.must_respond_to :uri
     recipe.must_respond_to :image
     recipe.must_respond_to :link
+    recipe.must_respond_to :servings
     recipe.must_respond_to :ingredients
     recipe.wont_be_nil
     recipe.name.must_equal "label"
