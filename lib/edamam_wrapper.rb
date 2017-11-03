@@ -36,7 +36,7 @@ class EdamamWrapper
 
   private
 
-  def self.create_recipe(api_params)
+  def self.create_recipe(api_params) #modifications made.
     return Recipe.new(
       api_params["uri"],
       api_params["label"],
