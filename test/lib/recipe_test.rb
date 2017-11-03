@@ -1,14 +1,33 @@
 require 'test_helper'
 
 describe "Recipe" do
-  it "can be created" do
 
-    my_recipe = Recipe.new "label", "uri", "url", "image"
+  it "can be instantiated" do
+    Recipe.new("uri", "label", "image", "url")
+  end
 
-    my_recipe.must_respond_to :label
-    my_recipe.wont_be_nil
-    my_recipe.label.must_equal "label"
-    my_recipe.id.must_equal "id"
+  it "requires a uri, label, image and url" do
+    proc {
+      Recipe.new()
+    }.must_raise ArgumentError
+
+    proc {
+      Recipe.new("uri")
+    }.must_raise ArgumentError
+
+    proc {
+      Recipe.new("", "", "", "")
+    }.must_raise ArgumentError
+  end
+
+  it "tracks params" do
+    uri  = "test_uri"
+    label = "test_label"
+    image = "test_image"
+    url = "test_url"
+    my_recipe = Recipe.new(uri, label, image, url)
+    my_recipe.uri.must_equal uri
+    my_recipe.label.must_equal label
 
   end
 end

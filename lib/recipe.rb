@@ -2,7 +2,7 @@ class Recipe
   attr_reader :uri, :label, :image, :url
 
   def initialize(uri, label, image, url)
-    # raise ArgumentError if label == nil || label == "" || uri == nil || uri == ""
+    raise ArgumentError if uri == nil || uri == "" || label == nil || label == "" || image == nil || image == "" || url == nil || url == ""
 
     @uri = uri
     @label = label
