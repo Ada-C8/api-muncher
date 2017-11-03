@@ -11,7 +11,6 @@ class Recipe
     @dietLabels = dietLabels # dietLabels is an array of strings
 
     # Options hash stuff
-
     @image = options[:image] # image is a url in string format
 
 

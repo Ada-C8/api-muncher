@@ -8,7 +8,7 @@ class ApiWrapper
   end
 
   def self.list_recipes(search)
-    url = BASE_URL +  "?q=#{search}&app_id=#{API_ID}&app_key=#{TOKEN}"
+    url = BASE_URL +  "?q=#{search}&app_id=#{API_ID}&app_key=#{TOKEN}" + "&from=0" + "&to=150"
 
     data = HTTParty.get(url)
 
@@ -24,7 +24,7 @@ class ApiWrapper
       end
     end
 
-    puts recipes_list
+    puts recipes_list.count
     return recipes_list
   end
 
@@ -44,7 +44,7 @@ class ApiWrapper
       api_params["recipe"]["label"],
       api_params["recipe"]["url"],
       api_params["recipe"]["ingredientLines"],
-      api_params["recipe"]["dietLabels"]
+      api_params["recipe"]["dietLabels"],
       {
         image: api_params["recipe"]["image"],
       }
