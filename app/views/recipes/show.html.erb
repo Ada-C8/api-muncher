@@ -1,0 +1,24 @@
+<h1>Show Page</h1>
+<ul>
+
+
+<li>
+  <%= image_tag (@recipe.image), alt: "food picture" %>
+</li>
+<li>
+  <%= @recipe.label %>
+</li>
+<li>
+  <%= @recipe.source %>
+</li>
+<li>
+  <%= @recipe.yield %>
+</li>
+</ul>
+<% @recipe.ingredients.each do |ingredient| %>
+<ul>
+  <li>
+    <%= ingredient %>
+  </li>
+</ul>
+<% end %>

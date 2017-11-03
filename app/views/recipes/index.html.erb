@@ -1,0 +1,12 @@
+<section class="recipes-list">
+  <h1>Recipe List</h1>
+  <ul>
+    <% @recipes.each do |recipe| %>
+      <li>
+        <%= image_tag recipe.image, alt: "foods" %></li>
+        <li>
+          <%= link_to recipe.label, recipe_show_path(recipe.label, uri: recipe.uri) %>
+      </li>
+    <% end %>
+  </ul>
+</section>
