@@ -1,17 +1,19 @@
-# require 'test_helper'
-#
-# describe EdamamApiWrapper do
-#   describe "search" do
-#     it "Can get a list of channels" do
-#       VCR.use_cassette("response") do
-#         result = SlackApiWrapper.search
-#         result.must_be_kind_of Array
-#         result.length.must_be :>, 0
-#         result.each do |chan|
-#           chan.must_be_kind_of Channel
-#         end
-#       end
-#     end
+require 'test_helper'
+
+describe EdamamApiWrapper do
+
+
+  describe "search" do
+    it "receives a valid response for a search" do
+      VCR.use_cassette("recipes") do
+        response = EdamamApiWrapper.search("fish")
+
+        response.length.must_be :>, 0
+        response.must_be_kind_of HTTParty::Response
+      end
+    end
+  end
+end
 #
 #   #   it "Raises an ApiError when the token is bad" do
 #   #     VCR.use_cassette("channels") do
