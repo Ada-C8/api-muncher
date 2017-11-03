@@ -246,7 +246,6 @@ DEPENDENCIES
   minitest-reporters
   minitest-vcr
   pg (~> 0.18)
-  pry
   pry-rails
   puma (~> 3.7)
   rails (~> 5.1.4)
