@@ -13,11 +13,21 @@
  *= require_tree .
  *= require_self
  *= require foundation_and_overrides
-
  */
+
+@import url('https://fonts.googleapis.com/css?family=Josefin+Sans');
+@import url('https://fonts.googleapis.com/css?family=Kaushan+Script');
+@import url('https://fonts.googleapis.com/css?family=Kaushan+Script|Pacifico');
+
  main {
    margin: 10vw;
    margin-top: 5vw;
+   font-family: 'Pacifico', cursive;
+ }
+
+ h1, h2, h3 {
+   font-family: 'Josefin Sans', sans-serif;
+   color: #40476D;
  }
 
  nav {
@@ -25,18 +35,23 @@
  }
 
  body {
-   background: beige;
+   background-color: #D1DBCC;
+   font-family: 'Pacifico', cursive;
+ }
+
+ body ol{
+   list-style: none;
  }
 
  .search_bar {
    padding: 5vw;
    border: 1px solid black;
    text-align: center;
-   font-family: cursive;
+   font-family: 'Pacifico', cursive;
  }
 
  .search_bar h1 {
-   font-family: cursive;
+   font-family: 'Pacifico', cursive;
  }
 
  .search_bar_2{
@@ -44,17 +59,18 @@
    padding: 2vw;
    padding-bottom: 0;
    text-align: center;
-   font-family: cursive;
+  font-family: 'Pacifico', cursive;
    border: 1px solid black;
    margin-bottom: 5vw;
  }
- .search_bar_2 .button{
 
+ ul, ol {
+   list-style: none;
  }
 
 
  .search_bar_2 h2{
-   font-family: cursive;
+   font-family: 'Pacifico', cursive;
    size: .5vw;
  }
 
@@ -67,12 +83,17 @@
    text-align: center;
    position: fixed;
    bottom: 0;
-   background: beige;
+   background: #40476D;
    z-index: 100;
+   color: #fefefe;
  }
 
 .all_results {
   margin-top: 10vw;
+}
+
+.all_results img{
+  border-radius: 50%;
 }
 
 

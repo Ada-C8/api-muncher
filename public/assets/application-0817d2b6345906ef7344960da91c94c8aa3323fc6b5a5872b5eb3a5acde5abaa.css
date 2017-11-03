@@ -2239,7 +2239,7 @@ a {
 }
 /* line 378, /Users/canaan/.rvm/gems/ruby-2.4.2/gems/foundation-rails-6.4.1.2/vendor/assets/scss/typography/_base.scss */
 a:hover, a:focus {
-  color: #1468a0;
+  color: #373d5e;
 }
 /* line 386, /Users/canaan/.rvm/gems/ruby-2.4.2/gems/foundation-rails-6.4.1.2/vendor/assets/scss/typography/_base.scss */
 a img {
@@ -2592,7 +2592,7 @@ ul.no-bullet, ol.no-bullet {
 }
 /* line 150, /Users/canaan/.rvm/gems/ruby-2.4.2/gems/foundation-rails-6.4.1.2/vendor/assets/scss/components/_button.scss */
 .button:hover, .button:focus {
-  background-color: #14679e;
+  background-color: #363c5d;
   color: #fefefe;
 }
 /* line 267, /Users/canaan/.rvm/gems/ruby-2.4.2/gems/foundation-rails-6.4.1.2/vendor/assets/scss/components/_button.scss */
@@ -2621,7 +2621,7 @@ ul.no-bullet, ol.no-bullet {
 }
 /* line 150, /Users/canaan/.rvm/gems/ruby-2.4.2/gems/foundation-rails-6.4.1.2/vendor/assets/scss/components/_button.scss */
 .button.primary:hover, .button.primary:focus {
-  background-color: #126195;
+  background-color: #333957;
   color: #fefefe;
 }
 /* line 277, /Users/canaan/.rvm/gems/ruby-2.4.2/gems/foundation-rails-6.4.1.2/vendor/assets/scss/components/_button.scss */
@@ -2739,8 +2739,8 @@ ul.no-bullet, ol.no-bullet {
 }
 /* line 182, /Users/canaan/.rvm/gems/ruby-2.4.2/gems/foundation-rails-6.4.1.2/vendor/assets/scss/components/_button.scss */
 .button.hollow:hover, .button.hollow:focus {
-  border-color: #0c3d5d;
-  color: #0c3d5d;
+  border-color: #202437;
+  color: #202437;
 }
 /* line 185, /Users/canaan/.rvm/gems/ruby-2.4.2/gems/foundation-rails-6.4.1.2/vendor/assets/scss/components/_button.scss */
 .button.hollow:hover.disabled, .button.hollow:hover[disabled], .button.hollow:focus.disabled, .button.hollow:focus[disabled] {
@@ -2754,8 +2754,8 @@ ul.no-bullet, ol.no-bullet {
 }
 /* line 182, /Users/canaan/.rvm/gems/ruby-2.4.2/gems/foundation-rails-6.4.1.2/vendor/assets/scss/components/_button.scss */
 .button.hollow.primary:hover, .button.hollow.primary:focus {
-  border-color: #0c3d5d;
-  color: #0c3d5d;
+  border-color: #202437;
+  color: #202437;
 }
 /* line 185, /Users/canaan/.rvm/gems/ruby-2.4.2/gems/foundation-rails-6.4.1.2/vendor/assets/scss/components/_button.scss */
 .button.hollow.primary:hover.disabled, .button.hollow.primary:hover[disabled], .button.hollow.primary:focus.disabled, .button.hollow.primary:focus[disabled] {
@@ -2837,8 +2837,8 @@ ul.no-bullet, ol.no-bullet {
 }
 /* line 182, /Users/canaan/.rvm/gems/ruby-2.4.2/gems/foundation-rails-6.4.1.2/vendor/assets/scss/components/_button.scss */
 .button.clear:hover, .button.clear:focus {
-  border-color: #0c3d5d;
-  color: #0c3d5d;
+  border-color: #202437;
+  color: #202437;
 }
 /* line 185, /Users/canaan/.rvm/gems/ruby-2.4.2/gems/foundation-rails-6.4.1.2/vendor/assets/scss/components/_button.scss */
 .button.clear:hover.disabled, .button.clear:hover[disabled], .button.clear:focus.disabled, .button.clear:focus[disabled] {
@@ -2856,8 +2856,8 @@ ul.no-bullet, ol.no-bullet {
 }
 /* line 182, /Users/canaan/.rvm/gems/ruby-2.4.2/gems/foundation-rails-6.4.1.2/vendor/assets/scss/components/_button.scss */
 .button.clear.primary:hover, .button.clear.primary:focus {
-  border-color: #0c3d5d;
-  color: #0c3d5d;
+  border-color: #202437;
+  color: #202437;
 }
 /* line 185, /Users/canaan/.rvm/gems/ruby-2.4.2/gems/foundation-rails-6.4.1.2/vendor/assets/scss/components/_button.scss */
 .button.clear.primary:hover.disabled, .button.clear.primary:hover[disabled], .button.clear.primary:focus.disabled, .button.clear.primary:focus[disabled] {
@@ -3777,7 +3777,7 @@ select[multiple] {
 }
 /* line 150, /Users/canaan/.rvm/gems/ruby-2.4.2/gems/foundation-rails-6.4.1.2/vendor/assets/scss/components/_button.scss */
 .button-group.primary .button:hover, .button-group.primary .button:focus {
-  background-color: #126195;
+  background-color: #333957;
   color: #fefefe;
 }
 /* line 212, /Users/canaan/.rvm/gems/ruby-2.4.2/gems/foundation-rails-6.4.1.2/vendor/assets/scss/components/_button-group.scss */
@@ -3878,7 +3878,7 @@ select[multiple] {
 }
 /* line 93, /Users/canaan/.rvm/gems/ruby-2.4.2/gems/foundation-rails-6.4.1.2/vendor/assets/scss/components/_callout.scss */
 .callout.primary {
-  background-color: #d7ecfa;
+  background-color: #dfe1ec;
   color: #0a0a0a;
 }
 /* line 93, /Users/canaan/.rvm/gems/ruby-2.4.2/gems/foundation-rails-6.4.1.2/vendor/assets/scss/components/_callout.scss */
@@ -5638,7 +5638,7 @@ select[multiple] {
 }
 /* line 67, /Users/canaan/.rvm/gems/ruby-2.4.2/gems/foundation-rails-6.4.1.2/vendor/assets/scss/components/_slider.scss */
 .slider-handle:hover {
-  background-color: #14679e;
+  background-color: #363c5d;
 }
 /* line 71, /Users/canaan/.rvm/gems/ruby-2.4.2/gems/foundation-rails-6.4.1.2/vendor/assets/scss/components/_slider.scss */
 .slider-handle.is-dragging {
@@ -6164,7 +6164,7 @@ table.hover:not(.unstriped) tr:nth-of-type(even):hover {
 }
 /* line 174, /Users/canaan/.rvm/gems/ruby-2.4.2/gems/foundation-rails-6.4.1.2/vendor/assets/scss/components/_tabs.scss */
 .tabs.primary > li > a:hover, .tabs.primary > li > a:focus {
-  background: #1673b1;
+  background: #464e78;
 }
 
 /* line 181, /Users/canaan/.rvm/gems/ruby-2.4.2/gems/foundation-rails-6.4.1.2/vendor/assets/scss/components/_tabs.scss */
@@ -6182,7 +6182,7 @@ table.hover:not(.unstriped) tr:nth-of-type(even):hover {
 /* line 100, /Users/canaan/.rvm/gems/ruby-2.4.2/gems/foundation-rails-6.4.1.2/vendor/assets/scss/components/_tabs.scss */
 .tabs-title > a:hover {
   background: #fefefe;
-  color: #1468a0;
+  color: #373d5e;
 }
 /* line 105, /Users/canaan/.rvm/gems/ruby-2.4.2/gems/foundation-rails-6.4.1.2/vendor/assets/scss/components/_tabs.scss */
 .tabs-title > a:focus, .tabs-title > a[aria-selected='true'] {
@@ -6232,7 +6232,7 @@ a.thumbnail {
 }
 /* line 49, /Users/canaan/.rvm/gems/ruby-2.4.2/gems/foundation-rails-6.4.1.2/vendor/assets/scss/components/_thumbnail.scss */
 a.thumbnail:hover, a.thumbnail:focus {
-  box-shadow: 0 0 6px 1px rgba(23, 121, 186, 0.5);
+  box-shadow: 0 0 6px 1px rgba(64, 71, 109, 0.5);
 }
 /* line 54, /Users/canaan/.rvm/gems/ruby-2.4.2/gems/foundation-rails-6.4.1.2/vendor/assets/scss/components/_thumbnail.scss */
 a.thumbnail image {
@@ -6491,12 +6491,22 @@ a.thumbnail image {
 
 
 
-
  */
+
+
+@import url('https://fonts.googleapis.com/css?family=Josefin+Sans');
+@import url('https://fonts.googleapis.com/css?family=Kaushan+Script');
+@import url('https://fonts.googleapis.com/css?family=Kaushan+Script|Pacifico');
 
  main {
    margin: 10vw;
    margin-top: 5vw;
+   font-family: 'Pacifico', cursive;
+ }
+
+ h1, h2, h3 {
+   font-family: 'Josefin Sans', sans-serif;
+   color: #40476D;
  }
 
  nav {
@@ -6504,18 +6514,23 @@ a.thumbnail image {
  }
 
  body {
-   background: beige;
+   background-color: #D1DBCC;
+   font-family: 'Pacifico', cursive;
+ }
+
+ body ol{
+   list-style: none;
  }
 
  .search_bar {
    padding: 5vw;
    border: 1px solid black;
    text-align: center;
-   font-family: cursive;
+   font-family: 'Pacifico', cursive;
  }
 
  .search_bar h1 {
-   font-family: cursive;
+   font-family: 'Pacifico', cursive;
  }
 
  .search_bar_2{
@@ -6523,17 +6538,18 @@ a.thumbnail image {
    padding: 2vw;
    padding-bottom: 0;
    text-align: center;
-   font-family: cursive;
+  font-family: 'Pacifico', cursive;
    border: 1px solid black;
    margin-bottom: 5vw;
  }
- .search_bar_2 .button{
 
+ ul, ol {
+   list-style: none;
  }
 
 
  .search_bar_2 h2{
-   font-family: cursive;
+   font-family: 'Pacifico', cursive;
    size: .5vw;
  }
 
@@ -6546,12 +6562,17 @@ a.thumbnail image {
    text-align: center;
    position: fixed;
    bottom: 0;
-   background: beige;
+   background: #40476D;
    z-index: 100;
+   color: #fefefe;
  }
 
 .all_results {
   margin-top: 10vw;
+}
+
+.all_results img{
+  border-radius: 50%;
 }
 
 
