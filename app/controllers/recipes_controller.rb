@@ -1,6 +1,10 @@
 class RecipesController < ApplicationController
   # TODO: pass in the proper parameter
   def index
-    @recipes = EdamamApiWrapper.list_recipes("chicken")
+    @query = params[:query] || "chocolate"
+    @recipes = EdamamApiWrapper.list_recipes(@query)
+  end
+
+  def show
   end
 end
