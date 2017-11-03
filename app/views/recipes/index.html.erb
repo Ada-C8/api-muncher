@@ -1,8 +1,9 @@
 <%= render "header" %>
 
-<h1>Results for <%=params[:search]%></h1>
-
-<ul class="row small-up-2 medium-up-3 large-up-5">
+<div class="row small-12 results">
+    <h1>Results for <%=params[:search]%></h1>
+</div>
+<ul class="row small-up-1 medium-up-3 large-up-4">
   <% @recipes.each do |recipe| %>
   <li class="column">
     <div class="index-blocks">

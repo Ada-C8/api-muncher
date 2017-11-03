@@ -32,10 +32,21 @@ color: #3EC300;
 
 #home-page {
   padding-top: 15em;
+  margin-bottom: 1em;
+}
+
+#hero {
+  height: 5em;
+  background-image: url("app/assets/images/Cooking-Techniques_Hero.jpg");
 }
 
 .index-blocks {
   position: relative;
+  margin: 20px 10px;
+}
+
+.results {
+  padding: 20px 20px;
 }
 
 .index-image {
