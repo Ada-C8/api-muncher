@@ -4,4 +4,10 @@ Rails.application.routes.draw do
   # get 'recipes', to: 'home#'
 
   root 'recipes#index'
+
+  get ':/recipes/new', to: 'recipes#new', as: 'new_recipe'
+
+  post '/recipes', to: 'recipes#create', as: 'recipes_create'
+
+  # resources :recipes
 end
