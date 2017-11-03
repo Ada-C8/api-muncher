@@ -15,23 +15,82 @@
 *= require foundation_and_overrides
 
 */
+/*General*/
+@import url('https://fonts.googleapis.com/css?family=Ubuntu');
 
 body {
-  background-image: url("https://images.unsplash.com/photo-1505935428862-770b6f24f629?auto=format&fit=crop&w=2847&q=60&ixid=dW5zcGxhc2guY29tOzs7Ozs%3D");
   background-size: 100%;
-  /*width: 50%;*/
-  /*height: 50%;*/
+  width: 100%;
+  background: url('concrete-texture.png');
+  font-family: 'Ubuntu', sans-serif;
+
 }
 
-input#search {
+/*hero */
+
+.hero {
+  padding: 80px 0px;
+  background-image: url("https://images.unsplash.com/photo-1505935428862-770b6f24f629?auto=format&fit=crop&w=2847&q=60&ixid=dW5zcGxhc2guY29tOzs7Ozs%3D");
+  background-size: 100%;
+}
+
+.hero h1 {
+  color: #A15639;
+  text-align: center;
+  font-family: 'Ubuntu', sans-serif;
+  font-size: 5em;
+  font-weight: bold;
+  background-color: white;
+  opacity: .7;
+  padding: 20px;
+  margin-top: 150px;
+}
+
+#search {
+  box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, .2);
   width: 50%;
 }
 
-.recipe-show {
-  background-color: white;
-  opacity:.9;
+.hero #search-form {
+  padding-top: 10px;
+  margin-bottom: 40px;
 }
 
-li {
+
+#search-form {
+  align-items: center;
+  display: flex;
+  justify-content: center;
+}
+
+/*NAV*/
+
+nav {
+  background-color: #758972;
+}
+
+/*main*/
+
+.recipe-show li {
   list-style: none;
+  /*background-color: white;*/
+  opacity: .9;
+  padding: 30px 50px;
+}
+
+
+/*\\\\\\\\\\\\\\\\\Footer\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\*/
+
+footer {
+  /*position: relative;*/
+  right: 0;
+  bottom: 0;
+  left: 0;
+  padding: 1rem;
+  /*background-color: #E7EAF2;*/
+  text-align: center;
+}
+
+.footer .attribution img {
+  padding-bottom: 5px;
 }

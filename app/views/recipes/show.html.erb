@@ -1,3 +1,11 @@
+<nav>
+  <h2>Mangia</h2>
+    <%= form_tag(root_path, :method => "get", id: "search-form") do %>
+    <%= text_field_tag :search, @search, placeholder: "Search Recipes" %>
+    <%= submit_tag "Search", class: "button success" %>
+  <% end %>
+</nav>
+
 <h2><%= @recipe.name %></h2>
 
 <%= image_tag("#{@recipe.image}", :alt => "#{@recipe.name} photo") %>

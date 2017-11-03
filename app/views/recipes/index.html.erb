@@ -1,26 +1,37 @@
-<!-- <div class="background-image"> -->
+
+<% if @recipes.nil? %>
+  <!-- Hero Section  -->
+  <div class="hero">
+    <h1>Mangia</h1>
+
+    <%= form_tag(root_path, :method => "get", id: "search-form") do %>
+      <%= text_field_tag :search, @search, placeholder: "Search Recipes"%>
+      <%= submit_tag "Search", class: "button success" %>
+    <% end %>
+
+  </div>
+<%end%>
 
 
-<h1>Welcome to Muncher</h1>
 
-<%= form_tag(root_path, :method => "get", id: "search-form") do %>
-  <%= text_field_tag :search, @search, placeholder: "Search Recipes" %>
-  <%= submit_tag "Search" %>
-<% end %>
-
-<div class="recipe-show">
 
 <% if !@recipes.nil? %>
-  <div class="list-products row small-up-1 medium-up-2 large-up-4">
+
+<nav>
+  <h2>Mangia</h2>
+    <%= form_tag(root_path, :method => "get", id: "search-form") do %>
+    <%= text_field_tag :search, @search, placeholder: "Search Recipes" %>
+    <%= submit_tag "Search", class: "button success" %>
+  <% end %>
+</nav>
+
+<div class="recipe-show column">
+  <ul class="small-block-grid-1 medium-block-grid-3 large-block-grid-4">
     <% @recipes.each do |recipe| %>
-      <div class="column">
-        <ul>
-          <li><%= link_to image_tag(recipe.image), recipes_path(id: recipe.id) %></li>
-          <li><%= recipe.name %></li>
-        </ul>
-      </div>
+      <li><%= link_to image_tag(recipe.image), recipes_path(id: recipe.id) %>
+      <%= recipe.name %></li>
     <%end %>
-  </div>
+  </ul>
 
   <div class="pagination">
     <% if @from > 10 %>
