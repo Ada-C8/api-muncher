@@ -1,0 +1,5 @@
+##### APPLICATION #####
+span.footer
+
+Japanese font
+font-family: 'Hiragino Mincho Pro', 'MS PMincho', serif;
