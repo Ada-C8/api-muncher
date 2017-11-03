@@ -1,1 +1,61 @@
+<p>
+  <%= form_tag(recipes_path, :method => "get", id: "search-form") do %>
+    <%= hidden_field_tag :search, @random %>
+    <%= submit_tag("I'm feeling lucky", :class=>"label") %>
+  <% end %>
+</p>
+<article class="labels options">
+  <p>
+  <% @world.each do |option| %>
+    <%= form_tag(recipes_path, :method => "get", class: "label-main") do %>
+      <%= hidden_field_tag :search, option %>
+      <%= submit_tag(option, :class=>"label world") %>
+    <% end %>
+  <% end %>
+  </p>
 
+  <p>
+  <% @protein.each do |option| %>
+    <%= form_tag(recipes_path, :method => "get", class: "label-main") do %>
+      <%= hidden_field_tag :search, option %>
+      <%= submit_tag(option, :class=>"label protein") %>
+    <% end %>
+  <% end %>
+  </p>
+
+  <p>
+  <% @vegetables.each do |option| %>
+    <%= form_tag(recipes_path, :method => "get", class: "label-main") do %>
+      <%= hidden_field_tag :search, option %>
+      <%= submit_tag(option, :class=>"label vegetables") %>
+    <% end %>
+  <% end %>
+  </p>
+
+  <p>
+  <% @various.each do |option| %>
+    <%= form_tag(recipes_path, :method => "get", class: "label-main") do %>
+      <%= hidden_field_tag :search, option %>
+      <%= submit_tag(option, :class=>"label various") %>
+    <% end %>
+  <% end %>
+  </p>
+
+  <p>
+  <% @desserts.each do |option| %>
+    <%= form_tag(recipes_path, :method => "get", class: "label-main") do %>
+      <%= hidden_field_tag :search, option %>
+      <%= submit_tag(option, :class=>"label desserts") %>
+    <% end %>
+  <% end %>
+  </p>
+
+  <p>
+  <% @drinks.each do |option| %>
+    <%= form_tag(recipes_path, :method => "get", class: "label-main") do %>
+      <%= hidden_field_tag :search, option %>
+      <%= submit_tag(option, :class=>"label drinks") %>
+    <% end %>
+  <% end %>
+  </p>
+</article>
