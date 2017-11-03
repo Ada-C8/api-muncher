@@ -6,6 +6,9 @@ require 'rails/all'
 # you've limited to :test, :development, or :production.
 Bundler.require(*Rails.groups)
 
+
+config.eager_load_paths << Rails.root.join('lib')
+
 module ApiMuncher
   class Application < Rails::Application
     config.generators do |g|
@@ -23,6 +26,6 @@ module ApiMuncher
     # -- all .rb files in that directory are automatically loaded.
     # Automatically load all code from <rails_root>/lib
     config.autoload_paths << Rails.root.join('lib')
-  
+
   end
 end
