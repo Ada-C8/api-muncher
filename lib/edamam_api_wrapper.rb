@@ -9,6 +9,22 @@ class EdamamApiWrapper
 
   # Method to list recipes.
 
-  # Method to show recipes.
+  def self.list_recipes()
+    url = BASE_URL + "" + "key=#{KEY}" + ""
+    data = HTTParty.get(url)
+    if data["recipes"]
+      return data["recipes"]
+    else
+      return []
+    end
+  end
   
+  # Method to show recipes.
+
+  def self.show_recipe()
+    url = BASE_URL + ""
+    data = HTTParty.get(url)
+
+    Recipe.new data
+  end
 end
