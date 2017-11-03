@@ -24,7 +24,7 @@ class EdamamApiWrapper
   def self.list_recipes(keywords, from, to)
     #example from API documentation:
     #https://api.edamam.com/search?q=chicken&app_id=${YOUR_APP_ID}&app_key=${YOUR_APP_KEY}&from=0&to=3&calories=gte%20591,%20lte%20722&health=alcohol-free
-    url = BASE_URL + "?q=" +  keywords + "&app_id=#{ID}&app_key=#{KEY}" + "&from=" + from + "&to=" + to
+    url = BASE_URL + "?q=" +  keywords + "&app_id=#{ID}&app_key=#{KEY}" + "&from=" + from.to_s + "&to=" + to.to_s
     puts url
     results = HTTParty.get(url)
     recipes_list = []
