@@ -9,7 +9,7 @@ class EdamamApiWrapper
 
   def self.show_recipe(search_word)
 
-    url = BASE_URL + "r=" + (URI(search_word))
+    url = BASE_URL + "r=" + (URI.encode(search_word))
 
     data = HTTParty.get(url)
 
