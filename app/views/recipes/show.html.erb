@@ -37,11 +37,11 @@
           <h5 class="font">Recipe by:<%= link_to @recipe.source, @recipe.source_url, target:"_blank", class:"search-padding green" %></h5>
         </header>
         <br>
-        <div class="li-columns">
+        <div>
           <h4 class="font">Ingredients</h4>
         </div>
 
-        <section class="normal-font">
+        <section class="normal-font li-columns">
           <ul>
             <% @recipe.ingredient_lines.each do |line| %>
             <li>
