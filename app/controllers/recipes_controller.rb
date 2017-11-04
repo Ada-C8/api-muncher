@@ -4,6 +4,17 @@ require_dependency '../../lib/recipe'
 
 class RecipesController < ApplicationController
 
+  def home
+    @recipes = EdamamApiWrapper.search("Thanksgiving").paginate(page: params[:page], per_page: 12)
+
+    if @recipes
+      flash[:status] = :success
+      flash[:result_text] = "Check out our current seasonal favorites below or search for something to munch on!"
+    end
+
+    
+  end
+
   def index
     @recipes = EdamamApiWrapper.search(params[:term]).paginate(page: params[:page], per_page: 12)
 

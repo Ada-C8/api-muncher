@@ -1,24 +1,33 @@
 require "test_helper"
 
 describe RecipesController do
+  describe "home" do
+    it "successfully opens" do
+      VCR.use_cassette("home") do
+        get root_path
+        must_respond_with :success
+      end
+    end
+  end
+
   describe "index" do
     it "responds with success with no search term" do
       VCR.use_cassette("index_action") do
-        get root_path()
+        get recipes_path()
         must_respond_with :success
       end
     end
 
     it "successfully loads page with many recipes" do
       VCR.use_cassette("index_action") do
-        get root_path("water")
+        get recipes_path("water")
         must_respond_with :success
       end
     end
 
     it "successfully loads for a bogus search" do
       VCR.use_cassette("index_action") do
-        get root_path("2.4ft")
+        get recipes_path("l24ft")
         must_respond_with :success
       end
     end
