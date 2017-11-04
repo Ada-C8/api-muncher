@@ -11,10 +11,10 @@
     <%= csrf_meta_tags %>
   </head>
   <body>
-    <header class = 'header text-center'>
+    <header class = 'header'>
       <h1>Munchers</h1>
       <%= form_tag recipes_path, method: :get do %>
-        <div class="search sixty-width">
+        <div class="search sixty-width text-center">
           <%= text_field_tag(:term, nil, placeholder: "What do you feel like munching?") %>
         </div>
         <%= submit_tag("Send", class: "button", style: "display: none;") %>
@@ -28,13 +28,11 @@
         <p><strong>Yaaaay! </strong><%= flash[:result_text] %></p>
       <% end %>
     </section>
-
-
-
-    <%= yield %>
+    <main>
+      <%= yield %>
+    </main>
+    <footer class="text-center">
+      <h4>Powered By Edamam</h4>
+    </footer>
   </body>
-  <footer class="text-center">
-    <h4>Powered By Edamam</h4>
-  </footer>
-
 </html>
