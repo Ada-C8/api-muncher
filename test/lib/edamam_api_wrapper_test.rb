@@ -10,7 +10,6 @@ describe EdamamApiWrapper do
           recipe.must_be_kind_of Recipe
         end
         response.length.must_be :>, 0
-        # There must be at least one recipe, if there 0 channels, it means that we cannot communicate with the API
       end
     end
 
@@ -33,15 +32,11 @@ describe EdamamApiWrapper do
         recipe_data.must_be_kind_of Recipe
       end
     end
+
+    it "raises an ArgumentError with a bad uri" do
+      VCR.use_cassette("bad_uri") do
+        proc { EdamamApiWrapper.find_recipe("BadURI") }.must_raise ArgumentError
+      end
+    end
   end
-  
 end
-
-
-  # Does something when the token is bad!
-  # In order to make the call fail, we should change the KEY and the ID to maket the call fail
-  # Use the same cassette as the channels to record the action
-  # Add token=TOKEN as a parameter in the APIWrapper
-
-  # VCR.user_cassette("channels") do
-  # result = SlackApiWrapper.list_channels("bogus_token")

@@ -35,7 +35,7 @@ describe Recipe do
         image_url: data[:image_url],
         source_url: data[:source_url],
         ingredient_lines: data[:ingredient_lines],
-        total_nutrients: data[:total_nutrients]
+        total_nutrients: data[:totalNutrients]
       }
     )
   end
@@ -46,6 +46,10 @@ describe Recipe do
       @recipe.label.must_equal "Teriyaki Chicken"
       @recipe.uri.must_equal "http://www.edamam.com/ontologies/edamam.owl#recipe_7bf4a371c6884d809682a72808da7dc2"
       @recipe.source.must_equal "David Lebovitz"
+      @recipe.image_url.must_equal "https://www.edamam.com/web-img/262/262b4353ca25074178ead2a07cdf7dc1.jpg"
+      @recipe.source_url.must_equal "http://www.davidlebovitz.com/2012/12/chicken-teriyaki-recipe-japanese-farm-food/"
+      @recipe.ingredient_lines.must_be_kind_of Array
+      @recipe.total_nutrients.must_be_kind_of Hash
     end
 
     it "requires all required parameters" do
@@ -61,6 +65,22 @@ describe Recipe do
         Recipe.new("", "", "")
       }.must_raise ArgumentError
     end
+
+    it "is instantiated with no options" do
+      data = {
+        "uri": "http://www.edamam.com/ontologies/edamam.owl#recipe_7bf4a371c6884d809682a72808da7dc2",
+        "label": "Teriyaki Chicken",
+        "source": "David Lebovitz"
+      }
+
+      recipe = Recipe.new(
+        data[:uri],
+        data[:label],
+        data[:source]
+      )
+
+      recipe.must_be_kind_of Recipe
+    end
   end
 
   describe "#uri_id" do
@@ -68,5 +88,4 @@ describe Recipe do
       @recipe.uri_id.must_equal "7bf4a371c6884d809682a72808da7dc2"
     end
   end
-
 end

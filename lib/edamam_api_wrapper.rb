@@ -12,7 +12,7 @@ class EdamamApiWrapper
     "&from=0" + "&to=1000"
     response = HTTParty.get(url)
 
-    unless response.code == 200 # This is for the app id and app key
+    unless response.code == 200
       raise ApiError.new("Could not fulfill your request! #{response.message}")
     end
 
@@ -26,10 +26,6 @@ class EdamamApiWrapper
     return matched_recipes
   end
 
-# %23 https://api.edamam.com/search?r=http://www.edamam.com/ontologies/edamam.owl%23recipe_637913ec61d9da69eb451818c3293df2&app_id=d2fbdaf7&app_key=6e7b5b6faead1b3deffb7fe4416542c2
-
-# http:%2F%2Fwww.edamam.com%2Fontologies%2Fedamam.owl%23recipe_7bf4a371c6884d809682a72808da7dc2"
-
   def self.find_recipe(uri_id)
     url = BASE_URL + "?r=" + BASE_URI + "#{uri_id}" + "&app_id=#{APP_ID}" + "&app_key=#{APP_KEY}"
 
@@ -42,13 +38,9 @@ class EdamamApiWrapper
       return recipe
     end
   end
-  # Params: ID Weird edamam id number
-  # Passing to API route and cannot use the entire url
-  # then you would shorten it
-  # And then use another key to reconstruct it
+
   private
 
-  # TODO: Continue to create new instance of a recipe
   def self.create_recipe(api_params)
     return Recipe.new(
     api_params["uri"],
@@ -63,5 +55,3 @@ class EdamamApiWrapper
   )
   end
 end
-
-# Wrap HTTP Party in a class and then call it in the controller
