@@ -1,8 +1,21 @@
-<h2>Find your flavor...</h2>
-<%= form_tag results_path, method: "get" do %>
-  <%= label_tag(:q, "Search for food") %>
-  <%= text_field_tag(:q) %>
-  <%= hidden_field_tag 'from', 0 %>
-  <%= hidden_field_tag 'to', 10 %>
-  <%= submit_tag("Search") %>
-<% end %>
+<main class = "row">
+
+  <section class="small-12 medium-8 large-6 columns">
+      <div class="search-wrapper">
+        <header>
+          <h1 class="large-font">Muncher</h1>
+        </header>
+
+        <section>
+          <h2>Find your flavor...</h2>
+          <%= form_tag results_path, method: "get" do %>
+            <%= label_tag(:q, "Search for food") %>
+            <%= text_field_tag(:q) %>
+            <%= hidden_field_tag 'from', 0 %>
+            <%= hidden_field_tag 'to', 10 %>
+            <%= submit_tag("Search", class:"button") %>
+          <% end %>
+        </section>
+      </div>
+    </section>
+</main>
