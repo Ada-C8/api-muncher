@@ -33,7 +33,8 @@ class RecipesController < ApplicationController
     return false if !input
 
     # return input.strip.match(/^[a-zA-Z]+(\-||\s?)[a-zA-Z]+$/)
-    return /^[a-zA-Z]+(\-||\s?)[a-zA-Z]+$/.match?(input.strip)
+    # return /^[a-zA-Z]+(\-||\s?)[a-zA-Z]+$/.match?(input.strip)
+    return /[[:alpha:]]+(\-?||[[:blank:]]*)[[:alpha:]]+/.match?(input.strip)
   end
 
   # def is_spanish

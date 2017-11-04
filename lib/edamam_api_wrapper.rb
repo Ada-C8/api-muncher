@@ -80,7 +80,8 @@ class EdamamApiWrapper
     # guard against nil input (controller will not allow this)
     ingredient = "" if !ingredient
 
-    ingredient = "q=#{(ingredient).gsub(" ", "+")}"
+    # use transliterate to covert non-ascii to ascii in url (see locale files)
+    ingredient = "q=#{(I18n.transliterate(ingredient)).gsub(" ", "+")}"
     auth = "app_id=#{id}&app_key=#{key}"
     range = "from=0&to=100"
 
