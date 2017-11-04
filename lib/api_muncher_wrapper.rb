@@ -7,12 +7,12 @@ class ApiMuncherWrapper
   APP_KEY = ENV["APP_KEY"]
   NUMBER_OF_ENTRIES = 50
 
-  def self.search_recipes(name, diet = nil, health = nil)
+  def self.search_recipes(name, options = {})
     url = BASE_URL + "?q=#{name.gsub(' ', '+')}&app_id=#{APP_ID}&app_key=#{APP_KEY}&to=#{NUMBER_OF_ENTRIES}"
-    if health
-          url += "&health=#{health}"
-    elsif diet
-          url += "&diet=#{diet}"
+    if options[:option][:health]
+          url += "&health=#{options[:option][:health].downcase}"
+    elsif options[:option][:diet]
+          url += "&diet=#{options[:option][:diet].downcase}"
     end
     data = HTTParty.get(url)
     if data["hits"]
