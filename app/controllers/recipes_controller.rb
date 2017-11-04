@@ -9,10 +9,10 @@ class RecipesController < ApplicationController
 
     if @recipes
       flash[:status] = :success
-      flash[:result_text] = "Check out our current seasonal favorites below or search for something to munch on!"
+      flash[:result_text] = "We're so happy to have you here at Munchers! Check out our current seasonal favorites below or search for something to munch on"
     end
 
-    
+
   end
 
   def index
