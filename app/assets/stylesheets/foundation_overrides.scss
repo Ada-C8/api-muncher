@@ -5,11 +5,24 @@
 .grid-y {
   column: 200px;
 }
+
+// ===================================
+
+body {
+  height: 100%;
+  // overflow: hidden;
+}
+
+.home-body {
+  // height: 100%;
+
+}
+
 // =============homepage==============
 .all-of-homepage {
   display: fixed;
   margin-top: 10%;
-  margin-bottom: 30%;
+  margin-bottom: 10%;
   overflow-x: hidden;
   overflow-y: auto;
 }
@@ -19,8 +32,8 @@
 }
 
 main {
-  height: 90%;
-  padding-bottom: 100px;
+  height: 80%;
+  margin-bottom: 20%;
   font-family: 'Yantramanav', sans-serif;
   color: black
 }
@@ -153,10 +166,13 @@ section ul {
 
 // =============FOOTER================
 .footer {
-  position: absolute;
-  padding: 1rem;
-  text-align: center;
   border-top: solid 0.5px;
+  border-bottom: solid 0.5px;
+  position: absolute;
+  text-align: center;
   width: 100%;
-  background-color: #edf481;
+  height: 50px;
+  padding: 1rem;
+  background-color: #eafffd;
+
 }
