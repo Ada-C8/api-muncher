@@ -9,6 +9,10 @@ class RecipesController < ApplicationController
 
     if params[:search]
       @recipes = RecipeApiWrapper.search(params[:search], @from)
+      if @recipes.nil?
+        flash[:status] = "success"
+        flash[:message] = "Sorry, Edamam search engine is down."
+      end
     else
       @recipes = nil
     end
@@ -16,6 +20,13 @@ class RecipesController < ApplicationController
 
   def show
     @recipe = RecipeApiWrapper.find(params[:id])
+
+
+    if @recipe.nil?
+      render_404
+      return
+    end
+
   end
 
 end
