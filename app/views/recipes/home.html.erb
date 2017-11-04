@@ -1,3 +1,20 @@
-<h1>Recipoogle</h1>
+<div class="main-content">
+  <section class="home">
 
-<%= render partial: "form" %>
+    <h1>Recipoogle</h1>
+
+    <section class="home-search">
+
+      <%= form_tag(recipes_path, :method => "get", id: "search-form") do %>
+        <div class="search-bar">
+          <%= text_field_tag :search, params[:search], placeholder: "Search Recipes", :required => 'required' %>
+        </div>
+          <%= hidden_field_tag :page, 1 %>
+          <%= submit_tag "Search", :name => nil, :style => "display: none;" %>
+      <% end %>
+
+    </section>
+
+  </section>
+
+</div>

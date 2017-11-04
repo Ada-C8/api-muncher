@@ -15,7 +15,71 @@
  *= require foundation_and_overrides
 
  */
+/*body {
+  font-family: arial,sans-serif;
+}*/
 
-h1, h2 {
+h1, h2, h3 {
   font-family: 'Roboto Slab', serif;
+  color: #3F3B38;
+}
+.main-content {
+  clear: both;
+}
+
+footer {
+  text-align: center;
+}
+
+.home h1 {
+  font-size: 4.3em;
+  text-align: center;
+  padding: 20px;
+}
+
+.results h2, a{
+  text-align: center;
+}
+
+.head-search {
+  text-align: center;
+}
+
+.pages {
+  text-align: center;
+}
+.main-content {
+  background: #CCC0B9;
+}
+
+.margin-3-col {
+  margin-left: 4.1%;
+  margin-right: 4.1%;
+}
+
+.margin-auto {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.search-bar{
+  width: 50%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.card {
+  height: 450px;
+  border-radius: 20px;
+  border-color: white;
+  margin: 4.15%;
+}
+
+.card img {
+  margin-top: 10px;
+  margin-bottom: 20px;
+}
+
+.row {
+  margin-bottom: 20px;
 }

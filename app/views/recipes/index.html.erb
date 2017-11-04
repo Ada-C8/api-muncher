@@ -1,23 +1,29 @@
-<h1>Muncher</h1>
+<section class="head-search">
+  <h2> <%= link_to("Recipoogle", root_path) %> </h2>
+  <%= render partial: "form" %>
+</section>
 
-<%= render partial: "form" %>
-
-<% if @recipes != nil %>
-    <h2>Recipe Results for <%= params[:search] %></h2>
-    <ul>
+<section class="row results">
+  <% if @recipes != nil %>
+    <h2 class="results">Recipe Results for "<%= params[:search] %>"</h2>
       <% @recipes.each do |recipe| %>
-      <li>
-        <%= image_tag recipe.image %>
-        <%= link_to recipe.label, recipe_path(recipe.label, uri: recipe.uri) %>
-      </li>
-      <% end %>
-    </ul>
 
-    <div class="digg_pagination">
-      <div class="page_info">
-        <%= page_entries_info @recipes%>
-      </div>
-      <%= will_paginate @recipes, :container => false %>
+        <article class = "columns small-10 medium-5 large-3 text-center card">
+          <%= image_tag recipe.image %>
+          <%= link_to recipe.label, recipe_path(recipe.label, uri: recipe.uri) %>
+        </article>
+
+      <% end %>
+  <% end %>
+</section>
+
+<section class="pages">
+  <div class="digg_pagination">
+
+    <div class="page_info">
+      <%= page_entries_info @recipes%>
     </div>
 
-<% end %>
+    <%= will_paginate @recipes, :container => false %>
+  </div>
+</section>
