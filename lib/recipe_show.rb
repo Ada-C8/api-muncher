@@ -1,11 +1,12 @@
 class RecipeShow
-  attr_reader :label, :orig_recipe, :ingredients, :digest
+  attr_reader :label, :url, :ingredients, :healthlabels, :image
 
-  def initialize(label, orig_recipe, ingredients, digest)
+  def initialize(label, url, ingredients, healthlabels, image)
     @label = label
-    @orig_recipe = orig_recipe
+    @url = url
     @ingredients = ingredients
-    @digest = digest
+    @healthlabels = healthlabels
+    @image = image
   end
 
 end
