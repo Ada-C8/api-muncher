@@ -15,6 +15,6 @@ class Recipe
     private
 
     def valid_input?
-      return uri == nil || uri == "" name == nil || name = "" || link == nil || link == "" || image == nil || image == "" || ingredients == nil || ingredients == "" || healthLabels == nil || healthLabels == ""
+      return uri == nil || uri == "" || name == nil || name = "" || link == nil || link == "" || image == nil || image == "" || ingredients == nil || ingredients == "" || healthLabels == nil || healthLabels == ""
     end
 end

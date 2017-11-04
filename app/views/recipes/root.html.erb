@@ -1,8 +1,8 @@
 <h3>MUNCHERY</h3>
 
 <%#= form_tag search_path(:query), method: "get" do %>
-<%= form_tag recipes_path, method: "get" do %>
-  <%= text_field_tag(:query, params[:query], placeholder: "Search Recipes") %>
+<%= form_tag search_path(:query), method: "get" do %>
+  <%= text_field_tag(:query, "", placeholder: "Search Recipes") %>
   <%= submit_tag("Find") %>
 
 <% end %>

@@ -21,15 +21,15 @@ class EdamamApiWrapper
     return recipes
   end
 
-  def self.show_recipe(id)
-    url = BASE_URL + SHOW_URL + "#{id}" + CRED_URL
+  def self.show_recipe(recipe)
+    url = BASE_URL + SHOW_URL + URI.escape("#{recipe}") + CRED_URL
     response = HTTParty.get(url)
     recipe = Recipe.new(
-      response.first["uri"]
-      response.first["label"]
-      response.first["url"]
-      response.first["image"]
-      response.first["ingredientLines"]
+      response.first["uri"],
+      response.first["label"],
+      response.first["url"],
+      response.first["image"],
+      response.first["ingredientLines"],
       response.first["healthLabels"]
     )
     return recipe
