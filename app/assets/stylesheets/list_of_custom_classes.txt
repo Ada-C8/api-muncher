@@ -1,5 +1,17 @@
 ##### APPLICATION #####
 span.footer
 
+##### MAIN #####
+span.title
+.cool-transparent-bg
+.display-table
+.search-bar
+.va-align
+.main-page
+
+
+##### SEARCH #####
+search.header
+
 Japanese font
 font-family: 'Hiragino Mincho Pro', 'MS PMincho', serif;
