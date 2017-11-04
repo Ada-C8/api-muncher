@@ -40,7 +40,6 @@ group :development, :test do
   gem 'capybara', '~> 2.13'
   gem 'selenium-webdriver'
   gem 'pry-rails'
-  gem 'httparty'
   gem 'awesome_print'
   gem 'minitest-vcr'
   gem 'webmock'
@@ -64,6 +63,8 @@ gem 'jquery-turbolinks'
 gem 'foundation-rails', '6.4.1.2'
 
 gem 'will_paginate', '~> 3.1.0'
+
+gem 'httparty'
 
 group :development do
   gem 'better_errors'
