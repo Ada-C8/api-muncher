@@ -25,6 +25,7 @@ class EdamamApiWrapper
     url = BASE_URL + SHOW_URL + "#{id}" + CRED_URL
     response = HTTParty.get(url)
     recipe = Recipe.new(
+      response.first["uri"]
       response.first["label"]
       response.first["url"]
       response.first["image"]
@@ -41,6 +42,7 @@ class EdamamApiWrapper
 
   def self.create_recipe(api_params)
     return Recipe.new(
+      api_params["recipe"]["uri"],
       api_params["recipe"]["label"],
       api_params["recipe"]["url"],
       api_params["recipe"]["image"],
