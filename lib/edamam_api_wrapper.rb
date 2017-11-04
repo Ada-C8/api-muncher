@@ -7,7 +7,7 @@ class EdamamApiWrapper
 
   def self.search_recipes(search)
     encoded_search = URI.encode("#{search}")
-    url = BASE_URL + "?q=#{encoded_search}&app_id=#{APP_ID_TOKEN}&app_key=#{APP_KEY_TOKEN}"
+    url = BASE_URL + "?q=#{encoded_search}&app_id=#{APP_ID_TOKEN}&app_key=#{APP_KEY_TOKEN}" + "&to=100"
 
 
 

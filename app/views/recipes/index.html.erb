@@ -1,7 +1,11 @@
 <section class="recipes-list">
   <h1>Recipe List</h1>
+  <%= form_tag(recipes_path, :method => "get" ) do %>
+      <%= text_field_tag :search, params[:search], placeholder: "Search More Recipes" %>
+      <%= submit_tag ("Search") %>
+  <% end %>
   <ul>
-    <% @recipes.each do |recipe| %>
+    <% @results_page.each do |recipe| %>
       <li>
         <%= image_tag recipe.image, alt: "foods" %></li>
         <li>
@@ -9,4 +13,8 @@
       </li>
     <% end %>
   </ul>
+
+    <%= will_paginate @results_page %>
+
+
 </section>

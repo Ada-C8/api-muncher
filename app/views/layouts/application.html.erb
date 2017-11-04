@@ -11,13 +11,30 @@
     <%= csrf_meta_tags %>
   </head>
 
+  <section class='flash'>
+      <% flash.each do |name, message| %>
+        <div class="<%= name %>"><%= message %></div>
+      <% end %>
+  </section>
+
   <body>
+    <header>
+     <nav>
+       <h1> Mysterious <%= link_to image_tag('cateats.png'), root_path %> Eater </h1>
+     </nav>
+     </header>
+
+  <main>
+
 
     <%= yield %>
-
-  </body>
+  </main>
 
   <footer>
     <p><em>Powered by</em><%= image_tag("https://www.edamam.com/images/logo-site-header.png") %></p>
   </footer>
+
+  </body>
+
+
 </html>
