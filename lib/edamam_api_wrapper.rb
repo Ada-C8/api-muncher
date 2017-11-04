@@ -6,7 +6,7 @@ class EdamamApiWrapper
   BASE_URL = "https://api.edamam.com/search"
   KEYS = ENV["EDAMAM_KEYS"]
   ID = ENV["EDAMAM_ID"]
-  RECIPE_URI_PREFIX = 'http://www.edamam.com/ontologies/edamam.owl#'
+  RECIPE_URI_PREFIX = 'http://www.edamam.com/ontologies/edamam.owl%23'
 
   def self.list_recipes(search_term)
     url = BASE_URL + "?q=" + search_term + "&app_id=" + ID + "&app_key=" + KEYS
@@ -16,7 +16,8 @@ class EdamamApiWrapper
         my_results = data["hits"].map do |results_hash|
           recipe_uri = URI.parse(results_hash["recipe"]["uri"])
           recipe_id = recipe_uri.fragment
-          Recipe.new results_hash["recipe"]["label"], recipe_id
+          recipe_image = URI.encode(results_hash["recipe"]["image"])
+          Recipe.new results_hash["recipe"]["label"], recipe_id, recipe_image
         end
         return my_results
       else
@@ -24,8 +25,13 @@ class EdamamApiWrapper
       end
   end
 
-  def self.show_recipes
-    url = BASE_URL + "?r=" + RECIPE_URI_PREFIX + recipe_id
+  def self.show_recipe(uri)
+    url = BASE_URL + "?app_id=" + ID + "&app_key=" + KEYS + "&r=" + RECIPE_URI_PREFIX + URI.encode(uri)
+
+    response = HTTParty.get(url)
+    orig_recipe = URI.encode(response[0]["url"])
+    RecipeShow.new response[0]["label"], orig_recipe, response[0]["ingredients"], response[0]["digest"]
+
   end
 
 end

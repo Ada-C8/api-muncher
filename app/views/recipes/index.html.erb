@@ -4,6 +4,7 @@
     <% @recipes.each do |recipe| %>
       <li>
         <%= link_to recipe.label, recipe_path(recipe.uri) %>
+        <%= image_tag recipe.image, alt: "photo of #{recipe.label}" %>
       </li>
     <% end %>
   </ul>
