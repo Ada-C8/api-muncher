@@ -8,6 +8,8 @@ class Recipe
     @label = label
     @image = image
     @url = url
+    # @healthLabels = healthLabels
+    # @ingredientLines = ingredientLines
     # @id = id
     # @ingredients = ingredients
   end

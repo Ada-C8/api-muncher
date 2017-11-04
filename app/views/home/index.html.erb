@@ -1,7 +1,9 @@
+<h2>Welcome to Muncher</h2>
+
 <div>
     <%= form_tag recipes_path, method: "get" do %>
     <%= label_tag :item, "Search for" %>
-    <%= text_field_tag :item %>
+    <%= text_field_tag :item, params[:item], placeholder: "Search Recipes" %>
     <%= submit_tag "Get Recipe" %>
     <% end %>
 </div>
