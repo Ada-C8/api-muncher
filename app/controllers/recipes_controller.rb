@@ -15,7 +15,7 @@ class RecipesController < ApplicationController
     end
   end
 
-  def show
+  def show # details page
     # Recipe r1 = Recipe.new("http://google.com/1", "First Fake data for " + params[:id])
     @recipe = EdamamApiMuncher.find(params[:id])
     if @recipe != []

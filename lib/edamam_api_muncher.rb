@@ -10,7 +10,6 @@ class EdamamApiMuncher
   def self.search(query, from, to)
     url = BASE_URL + "?q=#{query}" + "&app_id=#{APP_ID}&app_key=#{API_KEY}&from=#{from}&to=#{to}"
     data = HTTParty.get(url)
-    binding.pry
     recipes = []
     if data["hits"]
       data["hits"].each do |recipe|
@@ -40,9 +39,10 @@ class EdamamApiMuncher
         recipe["label"],
         recipe["image"],
         options = {
-          diet_label:  recipe["dietLabels"],
+          diet_labels:  recipe["dietLabels"],
           ingredient_lines: recipe["ingredientLines"],
-          url: recipe["url"]
+          url: recipe["url"],
+          source: recipe["source"]
         }
       )
   end

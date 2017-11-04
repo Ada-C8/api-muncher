@@ -1,5 +1,13 @@
-<h2> <%= @recipe.title %> </h2>
+<h3><%= @recipe.title %></h3>
 <%= image_tag @recipe.image %>
-<p> Ingredients:<%= @recipe.ingredient_lines %></p>
-<%= @recipe.url %>
-<p> Dietary Labels:<%= @recipe.diet_label %></p>
+<p>By <%= link_to @recipe.source, @recipe.url%></p>
+
+<p> Ingredients: <% @recipe.ingredient_lines.each do |ingredient| %> </p>
+  <li><%= ingredient %> </li>
+<% end %>
+
+<%if !@recipe.diet_labels.empty? %>
+  <p> Dietary Labels:<% @recipe.diet_labels.each do |diet_label| %></p>
+    <li><%= diet_label %> </li>
+  <% end %>
+<% end %>
