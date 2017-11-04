@@ -1,0 +1,60 @@
+<main>
+  <header class="row top-search-wrapper border-bottom">
+    <section class="small-12 small-centered medium-8 medium-centered large-6 large-centered columns">
+
+      <%= render partial: "form" %>
+
+    </section>
+  </header>
+
+  <article class="margin-zero-auto bg-white">
+    <div class="row mid-width padding-top">
+
+      <div class="small-12 medium-5 large-5 columns align-center padding-top">
+        <%= image_tag(@recipe.image_url, class:"padding thumbnail border", alt:"#{@recipe.label}") %>
+      </div>
+
+      <section class="small-12 medium-7 large-7 columns font more-padding">
+        <header>
+          <h3 class="font border-bottom padding-top"><%= @recipe.label %></h3>
+          <h5 class="font">Recipe by:<%= link_to @recipe.source, @recipe.source_url, target:"_blank", class:"more-padding green" %></h5>
+        </header>
+        <br>
+        <div>
+          <h4 class="font">Ingredients</h4>
+        </div>
+
+        <section class="open-sans li-columns">
+          <ul>
+            <% @recipe.ingredient_lines.each do |line| %>
+            <li>
+              <%= line %>
+            </li>
+            <% end %>
+          </ul>
+        </section>
+      </section>
+
+    </div>
+
+    <div class="row mid-width padding-bottom">
+      <section class="nutrition-wrapper">
+        <header>
+          <h2 class="font border-bottom">Nutrition Facts</h2>
+        </header>
+
+        <section class="li-columns">
+          <ul style="list-style:none">
+            <% @recipe.total_nutrients.each do |nutrient, value| %>
+            <li>
+              <%= value["label"] %> | <%= value["quantity"].to_i %> | <%= value["unit"] %>
+            </li>
+            <% end %>
+          </ul>
+        </section>
+      </section>
+    </div>
+
+  </article>
+</div>
+</main>

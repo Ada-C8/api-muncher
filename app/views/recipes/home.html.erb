@@ -1,0 +1,24 @@
+<main class="row">
+
+  <section class="small-12 small-centered medium-8 medium-centered large-6 large-centered columns auto-height">
+    <div class="search-wrapper">
+      <header>
+        <%= link_to root_path do %>
+          <h1 class="font black margin-zero" id="large-font">Munchies</h1>
+        <% end %>
+      </header>
+
+      <section>
+        <%= form_tag('/recipes', method: :get) do %>
+          <%= text_field_tag(:q, nil, placeholder: 'Find your recipes here!') %>
+          <%= submit_tag("nom nom", class:"button") %>
+        <% end %>
+
+        <% if flash[:status].present? %>
+          <p class="<%= flash[:status] %> open-sans"><%= flash[:message] %></p>
+        <% end %>
+      </section>
+    </div>
+  </section>
+
+</main>

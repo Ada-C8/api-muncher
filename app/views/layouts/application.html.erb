@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title><%= content_for?(:title) ? yield(:title) : "Munchies" %></title>
+
+    <%= stylesheet_link_tag    "application" %>
+    <%= javascript_include_tag "application", 'data-turbolinks-track' => true %>
+    <%= csrf_meta_tags %>
+  </head>
+
+  <%= favicon_link_tag asset_path('apple.png'), :rel => 'icon', :type =>  'image/png' %>
+
+  <body class="open-sans">
+
+    <%= yield %>
+
+    <footer class="align-center">
+      <p>
+        COPYRIGHT &copy; ID 2017 | Powered by <%= link_to "Edamam", "https://www.edamam.com/" %>
+      </p>
+    </footer>
+
+  </body>
+
+</html>

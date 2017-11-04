@@ -1,0 +1,45 @@
+<main>
+  <div>
+    <header class="row top-search-wrapper border-bottom margin-zero">
+      <section class="small-12 small-centered medium-8 medium-centered large-6 large-centered columns">
+
+        <%= render partial: "form" %>
+
+      </section>
+    </header>
+
+    <section class="align-center bg-white padding-bottom">
+      <header>
+        <h2 class="results-styling more-padding align-center font">RESULTS FOR: <%= @search_request.capitalize %></h2>
+      </header>
+
+      <div class="row small-font-size">
+        <% if @recipes %>
+          <% @recipes.each do |recipe| %>
+            <div class="small-12 medium-6 large-3 columns end">
+              <%= link_to recipe_path(recipe.uri_id) do %>
+                <%= image_tag(recipe.image_url, class:"border", alt: "#{recipe.label}") %>
+              <% end %>
+
+              <p class="name-styling small-font-size margin-zero truncate">
+                <%= recipe.label %>
+              </p>
+            </div>
+          <% end %>
+
+        <% else %>
+
+          <div class"align-center">
+            <h1>There are no recipe hits for your request!</h1>
+          </div>
+
+        <% end %>
+      </div>
+    </section>
+
+    <section class="align-center">
+      <%= will_paginate @recipes %>
+    </section>
+  </div>
+
+</main>
