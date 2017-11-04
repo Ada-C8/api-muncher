@@ -17,8 +17,8 @@ class RecipesController < ApplicationController
   end
 
   def show
-
     if @recipe == nil
+      #Is a flash message needed here?
       render_404
     else
       @recipe = EdamamApiWrapper.show_recipe(params[:uri])
