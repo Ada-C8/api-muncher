@@ -25,19 +25,19 @@
   </header>
 
   <article class="margin-zero-auto bg-white">
-    <div class="row mid-width">
+    <div class="row mid-width padding-top">
 
-      <div class="small-12 medium-5 large-5 columns align-center margin-top">
-        <%= image_tag(@recipe.image_url, class:"search-padding border thumbnail", alt:"No image available :( #{@recipe.label}") %>
+      <div class="small-12 medium-5 large-5 columns align-center padding-top">
+        <%= image_tag(@recipe.image_url, class:"padding thumbnail border", alt:"#{@recipe.label}") %>
       </div>
 
       <section class="small-12 medium-7 large-7 columns font search-padding">
         <header>
-          <h3 class="font border-bottom"><%= @recipe.label %></h3>
+          <h3 class="font border-bottom padding-top"><%= @recipe.label %></h3>
           <h5 class="font">Recipe by:<%= link_to @recipe.source, @recipe.source_url, target:"_blank", class:"search-padding green" %></h5>
         </header>
         <br>
-        <div>
+        <div class="li-columns">
           <h4 class="font">Ingredients</h4>
         </div>
 
@@ -54,7 +54,7 @@
 
     </div>
 
-    <div class="row mid-width">
+    <div class="row mid-width padding-bottom">
       <section class="nutrition-wrapper">
         <header>
           <h2 class="font border-bottom">Nutrition Facts</h2>

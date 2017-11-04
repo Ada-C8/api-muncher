@@ -37,9 +37,9 @@
           <% @recipes.each do |recipe| %>
               <div class="small-12 medium-6 large-3 columns end">
                 <%= link_to recipe_path(recipe.uri_id) do %>
-                  <%= image_tag(recipe.image_url, class:"thumbnail", alt:"SAD PANDA. NO IMAGE AVAILABLE! :(") %>
+                  <%= image_tag(recipe.image_url, alt: "#{recipe.label}") %>
                 <% end %>
-              <p class="name-styling">
+              <p class="name-styling truncate">
                 <%= recipe.label %>
               </p>
             </div>

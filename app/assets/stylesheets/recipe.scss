@@ -85,6 +85,12 @@ transition: all .3s ease-in-out;
   font-size: 1em;
 }
 
+.truncate {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
 .pagination {
   background:rgba(255,255,255, 0.9);
   margin: 0;
@@ -142,4 +148,12 @@ transition: all .3s ease-in-out;
 
 .padding-bottom {
   padding-bottom: 2%;
+}
+
+.padding-top {
+  padding-top: 3%;
+}
+
+.padding {
+  padding: 5px;
 }
