@@ -29,7 +29,6 @@ describe EdamamApiWrapper do
         recipe =
         "https://api.edamam.com/search?r=http://www.edamam.com/ontologies/edamam.owl%23recipe_c23d4d64e02318eef70940c6643353ad"
         recipe
-
       end
     end
   end

@@ -35,6 +35,7 @@ class EdamamApiWrapper
 end
 
 # Method to show recipes.
+# Worked through creating this with Postman and Edamam documentation, as well as, working in the console and with pry to figure out that in the end with the encoding loaded on my uri variable located in recipe.rb, that I no longer required that in my method below.  Having it in the wrong place incoded the hash wrong.  Instead of the hash properly loading as %23 it was loading as %2523 which was throwing an error.  Otherwise my method works as intended.
 
 def self.show_recipe(recipe_uri)
 
