@@ -30,3 +30,11 @@ body {
 span.footer {
   text-align: center;
 }
+
+inline-li {
+  display: inline;
+}
+
+.columns {
+  padding-left: 0;
+}
