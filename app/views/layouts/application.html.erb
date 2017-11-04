@@ -20,6 +20,17 @@
         <%= submit_tag("Send", class: "button", style: "display: none;") %>
       <% end %>
     </header>
+    <section class="text-center flash <%= flash[:status] %>">
+      <% if flash[:status] == :error || flash[:status] == "error" %>
+        <p><strong>Oh No! </strong><%= flash[:result_text] %></p>
+      <% end %>
+      <% if flash[:status] == :success || flash[:status] == "success" %>
+        <p><strong>Yaaaay! </strong><%= flash[:result_text] %></p>
+      <% end %>
+    </section>
+
+
+
     <%= yield %>
   </body>
   <footer class="text-center">

@@ -35,9 +35,9 @@ class EdamamApiWrapper
 
   def self.search(term = "thanksgiving", app_id = nil, app_key = nil)
 
-    if term == nil
+    if term == nil || term == ""
       term = "Thanksgiving"
-    end 
+    end
 
     app_id ||= APP_ID
     app_key ||= APP_KEY

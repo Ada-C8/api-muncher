@@ -30,6 +30,10 @@ footer {
   padding: 60px;
 }
 
+header {
+  margin-bottom: 20px;
+}
+
 footer h4{
   display: inline-block;
 }
@@ -97,4 +101,38 @@ h1 {
 
 .row {
   margin-bottom: 40px;
+}
+
+.flash {
+  border: 1px solid;
+  border-radius: 3px;
+  margin: auto;
+  margin-bottom: 10px;
+  max-width: 80%;
+  min-height: 50px;
+  font-size: 1.1rem;
+  display: none;
+}
+
+.success {
+  background-color: #DFF0D8;
+  background-color: #D1EDC0;
+  border-color: #D9ECCC;
+  color: #4C7D45;
+  display: block;
+}
+
+.error {
+  background-color: #F2DEDE;
+  border-color: #DDB5B5;
+  color: #AB4B4A;
+  color: #D38865;
+  background-color: #EFD2C6;
+  display: block;
+}
+
+.flash p {
+  margin-left: 10px;
+  margin-bottom: 0px;
+  line-height: 50px;
 }
