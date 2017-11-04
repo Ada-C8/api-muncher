@@ -2,10 +2,10 @@
   <header class="row top-search-wrapper border-bottom">
     <section class="small-12 small-centered medium-8 medium-centered large-6 large-centered columns">
 
-      <div class="search-padding">
+      <div class="more-padding">
         <header>
           <%= link_to root_path do %>
-            <h1 class="search-font">Munchies</h1>
+            <h1 class="search-style black font">Munchies</h1>
           <% end %>
         </header>
 
@@ -31,17 +31,17 @@
         <%= image_tag(@recipe.image_url, class:"padding thumbnail border", alt:"#{@recipe.label}") %>
       </div>
 
-      <section class="small-12 medium-7 large-7 columns font search-padding">
+      <section class="small-12 medium-7 large-7 columns font more-padding">
         <header>
           <h3 class="font border-bottom padding-top"><%= @recipe.label %></h3>
-          <h5 class="font">Recipe by:<%= link_to @recipe.source, @recipe.source_url, target:"_blank", class:"search-padding green" %></h5>
+          <h5 class="font">Recipe by:<%= link_to @recipe.source, @recipe.source_url, target:"_blank", class:"more-padding green" %></h5>
         </header>
         <br>
         <div>
           <h4 class="font">Ingredients</h4>
         </div>
 
-        <section class="normal-font li-columns">
+        <section class="open-sans li-columns">
           <ul>
             <% @recipe.ingredient_lines.each do |line| %>
             <li>

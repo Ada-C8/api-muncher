@@ -26,6 +26,30 @@
   text-align: center;
 }
 
+.more-padding {
+  padding: 1em;
+}
+
+.search-style {
+  font-size: 3em;
+}
+
+.1em-font-size {
+  font-size: 1em;
+}
+
+.border-bottom {
+  border-bottom: 1px solid black;
+}
+
+.border {
+  border: 1px solid black;
+}
+
+.margin-zero {
+  margin: 0;
+}
+
 .button {
   border: 1px black solid;
   background-color: transparent;
@@ -37,31 +61,20 @@
   color: black;
 }
 
-.search-padding {
-  padding: 1em;
-}
+/********** FONTS **********/
 
-.search-font {
-  font-family: 'Fredericka the Great', cursive;
-  font-size: 3em;
-  color: black;
+.open-sans {
+  font-family: 'Open Sans', sans-serif;
 }
 
 .font {
   font-family: 'Fredericka the Great', cursive;
 }
 
-.border-bottom {
-  border-bottom: 1px solid black;
+.black {
+  color: black;
 }
 
-.border {
-  border: 1px solid black;
-}
-//
-// .no-margin {
-//   margin: 0;
-// }
 /**************************/
 /********** BODY **********/
 /**************************/
@@ -79,7 +92,6 @@ body {
   background-size: cover;
   height: 100%;
   //  font-family: 'Fredericka the Great', cursive;
-  font-family: 'Open Sans', sans-serif;
 }
 
 /**************************/
@@ -96,6 +108,12 @@ footer p {
   margin: 0;
 }
 
+@media screen and (max-width: 320px) {
+  footer p {
+    font-size: 12px;
+  }
+}
+
 
 /**************************/
 /********* FLASH **********/
@@ -105,7 +123,6 @@ footer p {
   border-radius: 5px;
   background-color: #f04124;
   padding: 8px;
-  font-family: 'Open Sans', sans-serif;
   color: white;
   font-size: 12px;
 }
@@ -114,7 +131,6 @@ footer p {
   border-radius: 5px;
   background-color: #a0d3e8;
   padding: 8px;
-  font-family: 'Open Sans', sans-serif;
   color: white;
   font-size: 12px;
 }
