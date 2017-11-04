@@ -17,6 +17,13 @@ describe Recipe do
    recipe.must_be_kind_of Recipe
   end
 
-#TODO what fields needs to be optional 
+  it "Tracks arguments" do
+    recipe = Recipe.new("id", "label", "image", "url", "ingridientLines")
+    recipe.id.must_equal "id"
+    recipe.label.must_equal "label"
+  end
+
+
+#TODO what fields needs to be optional
 
 end
