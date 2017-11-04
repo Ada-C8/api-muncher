@@ -7,22 +7,6 @@ class EdamamApiWrapper
   KEY = ENV["EDAMAM_KEY"]
   ID = ENV["Edamam_App_ID"]
 
-  def self.show_recipe(recipe_uri)
-
-    url = BASE_URL + "r=" + (recipe_uri)
-
-    data = HTTParty.get(url)
-
-    Recipe.new data[0]["uri"],
-    data[0]["label"],
-    data[0]["image"],
-    data[0]["ingredientLines"],
-    data[0]["calories"],
-    data[0]["url"]
-
-  end
-
-
   # Method to list recipes.
   # Created method using Postman to have a better comprehension of how the api works, the information is found, as well as, working with the displayed data (hashes within hashes), utlizing the key value pair to pull only the information necessary/required for my app.  For example, I initially called 'hits', 'recipes'.  I changed it to 'hits' after viewing the JSON results and found that it is in fact called hits and I am taking the 'hits' key to pull the other key 'recipe' and with that calling for the value pair of necessary information that I need for my eventual output.
 
@@ -50,5 +34,19 @@ class EdamamApiWrapper
   end
 end
 
-
 # Method to show recipes.
+
+def self.show_recipe(recipe_uri)
+
+  url = BASE_URL + "r=" + (recipe_uri)
+
+  data = HTTParty.get(url)
+
+  Recipe.new data[0]["uri"],
+  data[0]["label"],
+  data[0]["image"],
+  data[0]["ingredientLines"],
+  data[0]["calories"],
+  data[0]["url"]
+
+end
