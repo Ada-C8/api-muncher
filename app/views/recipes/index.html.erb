@@ -3,26 +3,7 @@
     <header class="row top-search-wrapper border-bottom margin-zero">
       <section class="small-12 small-centered medium-8 medium-centered large-6 large-centered columns">
 
-        <div class="more-padding">
-          <header>
-            <%= link_to root_path do %>
-              <h1 class="search-style black font">Munchies</h1>
-            <% end %>
-          </header>
-
-          <section>
-            <%= form_tag('/recipes', method: :get) do %>
-              <%= text_field_tag(:q, nil, placeholder: 'Find your recipes here!') %>
-              <%= submit_tag("nom nom", class:"button") %>
-            <% end %>
-
-            <%############ FLASH ############ %>
-
-            <% if flash[:status].present? %>
-              <p class="<%= flash[:status] %>"><%= flash[:message] %></p>
-            <% end %>
-          </section>
-        </div>
+        <%= render partial: "form" %>
 
       </section>
     </header>
@@ -32,14 +13,15 @@
         <h2 class="results-styling more-padding align-center font">RESULTS FOR: <%= @search_request.capitalize %></h2>
       </header>
 
-      <div class="row 1em-font-size">
+      <div class="row small-font-size">
         <% if @recipes %>
           <% @recipes.each do |recipe| %>
-              <div class="small-12 medium-6 large-3 columns end">
-                <%= link_to recipe_path(recipe.uri_id) do %>
-                  <%= image_tag(recipe.image_url, class:"border", alt: "#{recipe.label}") %>
-                <% end %>
-              <p class="name-styling 1em-font-size margin-zero truncate">
+            <div class="small-12 medium-6 large-3 columns end">
+              <%= link_to recipe_path(recipe.uri_id) do %>
+                <%= image_tag(recipe.image_url, class:"border", alt: "#{recipe.label}") %>
+              <% end %>
+
+              <p class="name-styling small-font-size margin-zero truncate">
                 <%= recipe.label %>
               </p>
             </div>
