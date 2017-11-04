@@ -1,5 +1,10 @@
 ##### APPLICATION #####
 span.footer
+.inline-li
+.columns
+.result-img
+.hover
+.japanese-hover
 
 ##### MAIN #####
 span.title
@@ -11,7 +16,8 @@ span.title
 
 
 ##### SEARCH #####
-search.header
+.search-header
+.thumbnail
 
 Japanese font
 font-family: 'Hiragino Mincho Pro', 'MS PMincho', serif;
