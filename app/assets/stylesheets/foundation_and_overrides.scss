@@ -54,17 +54,3 @@
 @import 'motion-ui/motion-ui';
 @include motion-ui-transitions;
 @include motion-ui-animations;
-
-.row-listing {
-  // row of 5 columns
-  @include grid-row(5) {
-    // primary element, used for page content
-    .primary {
-      @include grid-column(1);
-    }
-    // secondary, used for blog listing
-    .secondary {
-      @include grid-column(4);
-    }
-  }
-}
