@@ -1,5 +1,5 @@
 <main>
-  <header class="row opac-bg top-search-wrapper border-bottom">
+  <header class="row top-search-wrapper border-bottom">
     <section class="small-12 small-centered medium-8 medium-centered large-6 large-centered columns">
 
       <div class="search-padding">
@@ -24,11 +24,11 @@
     </section>
   </header>
 
-  <article class="margin-zero-auto">
+  <article class="margin-zero-auto bg-white">
     <div class="row mid-width">
 
-      <div class="small-12 medium-5 large-5 columns align-center">
-        <%= image_tag(@recipe.image_url, class:"search-padding bg-white border", alt:"No image available :( #{@recipe.label}") %>
+      <div class="small-12 medium-5 large-5 columns align-center margin-top">
+        <%= image_tag(@recipe.image_url, class:"search-padding border thumbnail", alt:"No image available :( #{@recipe.label}") %>
       </div>
 
       <section class="small-12 medium-7 large-7 columns font search-padding">
@@ -54,7 +54,7 @@
 
     </div>
 
-    <div class="row less-width">
+    <div class="row mid-width">
       <section class="nutrition-wrapper">
         <header>
           <h2 class="font border-bottom">Nutrition Facts</h2>

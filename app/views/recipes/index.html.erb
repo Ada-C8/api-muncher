@@ -1,6 +1,6 @@
 <main>
   <div>
-    <header class="row opac-bg top-search-wrapper border-bottom">
+    <header class="row top-search-wrapper border-bottom">
       <section class="small-12 small-centered medium-8 medium-centered large-6 large-centered columns">
 
         <div class="search-padding">
@@ -27,7 +27,7 @@
       </section>
     </header>
 
-    <section class="align-center">
+    <section class="align-center bg-white">
       <header>
         <h2 class="results-styling">RESULTS FOR: <%= @search_request.capitalize %></h2>
       </header>
@@ -35,9 +35,9 @@
       <div class="row font-resize">
         <% if @recipes %>
           <% @recipes.each do |recipe| %>
-              <div class="small-12 medium-6 large-3 columns thumbnail bg-white image-hover end">
+              <div class="small-12 medium-6 large-3 columns end">
                 <%= link_to recipe_path(recipe.uri_id) do %>
-                  <%= image_tag(recipe.image_url, class:"full-image", alt:"SAD PANDA. NO IMAGE AVAILABLE! :(") %>
+                  <%= image_tag(recipe.image_url, class:"border", alt:"SAD PANDA. NO IMAGE AVAILABLE! :(") %>
                 <% end %>
               <p class="name-styling">
                 <%= recipe.label %>
