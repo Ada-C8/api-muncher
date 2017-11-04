@@ -24,5 +24,5 @@ describe Recipe do
     }.must_raise ArgumentError
 
   end
-  
+
 end

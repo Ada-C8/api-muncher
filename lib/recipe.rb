@@ -1,11 +1,12 @@
 class Recipe
 
-  attr_reader :name, :image_url, :url, :uri, :ingredients, :diet_labels, :health_labels, :cautions, :calories, :total_nutrients, :total_daily, :diet_label, :yield
+  attr_reader :name, :image_url, :url, :uri, :source, :ingredients, :diet_labels, :health_labels, :cautions, :calories, :total_nutrients, :total_daily, :diet_label, :yield, :digest
 
-  def initialize(name, url, uri, image, yield_num, ingredients, diet_labels, options= {})
+  def initialize(name, url, uri, source, image, yield_num, ingredients, diet_labels, options= {})
     @name= name
     @url = url
-    @uri = uri
+    @uri = URI.encode(uri)
+    @source = source
     @image_url = image
     @yield = yield_num
     @ingredients = ingredients
@@ -16,7 +17,7 @@ class Recipe
     @calories = options[:calories]
     @total_nutrients = options[:total_nutrients]
     @total_daily = options[:total_daily]
-    @diet_label = options[:digest]
+    @digest = options[:digest]
 
   end
 

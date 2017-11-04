@@ -1,3 +1,66 @@
 // Place all the styles related to the recipes controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+// "https://images.unsplash.com/photo-1466637574441-749b8f19452f?auto=format&fit=crop&w=1600&q=60&ixid=dW5zcGxhc2guY29tOzs7Ozs%3D"
+
+.recipe-header {
+  text-align: center;
+}
+
+.show-recipe {
+  text-align: center;
+}
+
+.recipe-ingredients {
+  height: 100%;
+}
+
+// .home {
+//   background-image: image-url("feast.jpg")
+// }
+
+main {
+  position: relative;
+  height: 90vh;
+}
+
+.home h1 {
+  font-family: 'Muli', sans-serif;
+  font-weight: bold;
+  color: snow;
+  text-align: center;
+}
+
+.home h4 {
+  font-style: oblique;
+  color: snow;
+  text-align: center;
+}
+
+.home {
+  position: relative;
+  margin: 0px auto;
+  top: 30%;
+  background: linear-gradient(180deg,rgba(0,0,0,0.05), black 98%);
+}
+
+.home form {
+  text-align: center;
+  margin: 0px auto;
+  max-width: 75vw;
+}
+
+.recipe-ingredients {
+  text-align: left;
+}
+
+.recipe-img-ingred {
+  max-height: 49vh;
+  overflow: scroll;
+}
+
+.nutrition {
+  max-height: 49vh;
+  overflow: scroll;
+}

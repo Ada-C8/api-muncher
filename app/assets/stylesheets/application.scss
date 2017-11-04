@@ -15,3 +15,34 @@
  *= require foundation_and_overrides
 
  */
+
+ section > div.pagination a {
+   display: inline-block;
+ }
+
+ .results ul {
+   list-style-type: none;
+ }
+
+ .results article {
+   text-align: center;
+ }
+
+ .pagination {
+   text-align: center;
+ }
+
+body {
+   background-image: image-url("feast.jpg");
+   background-repeat: no-repeat;
+   background-size: cover;
+   height: 100vh;
+ }
+
+.show-recipe, .index {
+  background-color: white;
+}
+
+.callout li {
+  overflow: scroll;
+}
