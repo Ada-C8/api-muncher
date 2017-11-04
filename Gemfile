@@ -5,6 +5,9 @@ git_source(:github) do |repo_name|
   "https://github.com/#{repo_name}.git"
 end
 
+# Foundation
+gem 'foundation-rails', '6.4.1.2'
+# Awesome Print
 gem 'awesome_print'
 # httparty
 gem 'httparty'
