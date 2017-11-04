@@ -63,13 +63,21 @@
   }
 }
 
+img:hover{
+ -moz-box-shadow: 1px 1px 5px #999;
+ -webkit-box-shadow: 1px 1px 5px #999;
+ box-shadow: 1px 1px 10px #999;
+ -webkit-transition: all .3s ease;
+transition: all .3s ease-in-out;
+}
+
 .bg-white {
   background:rgba(255,255,255, 0.9);
 }
 
 .name-styling {
   margin: 0;
-  padding: 5px;
+  padding-bottom: 10px;
   font-size: 1em;
 }
 
@@ -130,4 +138,8 @@
 
 .margin-top {
   margin-top: 5%;
+}
+
+.padding-bottom {
+  padding-bottom: 2%;
 }

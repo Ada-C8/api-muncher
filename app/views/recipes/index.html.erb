@@ -27,7 +27,7 @@
       </section>
     </header>
 
-    <section class="align-center bg-white">
+    <section class="align-center bg-white padding-bottom">
       <header>
         <h2 class="results-styling">RESULTS FOR: <%= @search_request.capitalize %></h2>
       </header>
@@ -37,7 +37,7 @@
           <% @recipes.each do |recipe| %>
               <div class="small-12 medium-6 large-3 columns end">
                 <%= link_to recipe_path(recipe.uri_id) do %>
-                  <%= image_tag(recipe.image_url, class:"border", alt:"SAD PANDA. NO IMAGE AVAILABLE! :(") %>
+                  <%= image_tag(recipe.image_url, class:"thumbnail", alt:"SAD PANDA. NO IMAGE AVAILABLE! :(") %>
                 <% end %>
               <p class="name-styling">
                 <%= recipe.label %>
@@ -47,7 +47,7 @@
 
         <% else %>
 
-          <div>
+          <div class"align-center">
             <h1>There are no recipe hits for your request!</h1>
           </div>
 
