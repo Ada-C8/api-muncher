@@ -5,7 +5,7 @@
 
   <div class="large-10 medium-10 small-6 cell">
     <section>
-      <h3>Results for: <%= (params[:search]) %></h1>
+      <h3 class="results">Results for: <%= (params[:search]) %></h1>
       <ul class="recipe-list">
 
         <% @recipes.each do |recipe| %>
@@ -14,7 +14,7 @@
             <li><%= link_to image_tag(recipe.image, alt: "food photo"), URI.encode("#{recipe_path(recipe.label)}?uri=#{recipe.uri.encode}")%></li>
 
             <li><%= link_to recipe.label, URI.encode("#{recipe_path(recipe.label)}?uri=#{recipe.uri.encode}") %></li>
-            
+
           </article>
 
         <% end %>
