@@ -40,7 +40,6 @@ group :development, :test do
   gem 'capybara', '~> 2.13'
   gem 'selenium-webdriver'
   gem 'pry-rails'
-  gem 'awesome_print'
   gem 'minitest-vcr'
   gem 'webmock'
   gem 'dotenv-rails'
@@ -53,6 +52,8 @@ group :development do
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'
+  gem 'better_errors'
+  gem 'binding_of_caller'
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
@@ -66,10 +67,7 @@ gem 'will_paginate', '~> 3.1.0'
 
 gem 'httparty'
 
-group :development do
-  gem 'better_errors'
-  gem 'binding_of_caller'
-end
+gem 'awesome_print'
 
 group :test do
   gem 'minitest-rails'
