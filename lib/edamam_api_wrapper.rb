@@ -11,9 +11,9 @@ class EdamamApiWrapper
 
     data = HTTParty.get(url)
 
-    if data["recipes"]
-      recipes = data["recipes"].map do |recipe_hash|
-        Recipe.new(name: recipe_hash["label"], image: recipe_hash["image"], source: recipe_hash["source"], url: recipe_hash["url"], ingredients: recipe_hash["ingredientLines"], nutrition: recipe_hash["totalNutrients"])
+    if data["hits"]
+      recipes = data["hits"].map do |recipe_hash|
+        Recipe.new(name: recipe_hash["recipe"]["label"], image: recipe_hash["recipe"]["image"], source: recipe_hash["recipe"]["source"], url: recipe_hash["recipe"]["url"], ingredients: recipe_hash["recipe"]["ingredientLines"], nutrition: recipe_hash["recipe"]["totalNutrients"])
       end
       return recipes
     else

@@ -5,7 +5,7 @@
 <% else %>
   <% @recipes.each do |recipe| %>
     <article>
-      <%= image_tag %>
+      <%= image_tag (recipe.image) %>
       <%= link_to recipe.name %>
     </article>
   <% end %>
