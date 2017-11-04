@@ -4,7 +4,7 @@
 </div>
 <div class="row">
   <!-- <section class="large-12 large-centered columns"> -->
-    <section class="large-6 columns" id="recipe-show-image">
+    <section class="large-6 medium-6 small-12 columns" id="recipe-show-image">
    <%=image_tag("#{@recipe.image}", alt:"#{@recipe.label}") %>
    <!-- <h4>Dietary Labels</h4>
    <ul> -->
@@ -13,23 +13,35 @@
    <%# end %>
   <!-- </ul> -->
  </section>
-   <section class="large-6 columns" id="ingredients">
+   <section class="large-6 medium-6 small-12 columns" id="ingredients">
    <h4>Ingredients</h4>
    <ul>
   <%@recipe.ingredients.each do |ingredient|%>
     <li><%=ingredient%></li>
    <% end %>
-  </ul>
-  <h4>Dietary Labels</h4>
-  <ul>
-    <% if @recipe.diet_labels.empty? %>
-    <li>no dietary labels provided</li>
-    <% else %>
- <%@recipe.diet_labels.each do |label|%>
-   <li><%=label%></li>
-  <% end %>
- </ul>
- <% end %>
+</ul>
+<h4>Health Labels</h4>
+<ul>
+  <% if @recipe.health_labels.empty? %>
+  <li>no health labels provided</li>
+  <% else %>
+<%@recipe.health_labels.each do |label|%>
+ <li><%=label%></li>
+<% end %>
+</ul>
+<% end %>
+</ul>
+<h4>Dietary Labels</h4>
+<ul>
+  <% if @recipe.diet_labels.empty? %>
+  <li>no dietary labels provided</li>
+  <% else %>
+<%@recipe.diet_labels.each do |label|%>
+ <li><%=label%></li>
+<% end %>
+</ul>
+<% end %>
+
   </section>
   <!-- </section> -->
 </div>

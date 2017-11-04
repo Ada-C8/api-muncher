@@ -14,7 +14,7 @@ class RecipesController < ApplicationController
       redirect_back(fallback_location: root_path)
     else
       @recipes = EdamamApiWrapper.search(params[:q])
-      @recipes = @recipes.paginate(:page => params[:page], :per_page => 10)
+      @recipes = @recipes.paginate(:page => params[:page], :per_page => 12)
       flash[:status] = :success
       flash[:message] = "successfully searched"
     end

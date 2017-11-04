@@ -12,30 +12,26 @@
   </head>
 
   <body>
-    <%= render partial: "header" unless @disable_header_search %>
+    <div class="content">
 
-    <!-- <header>
-      <div class="page-header">
-        <div class="row">
-          <h1><%# link_to "MUNCHER", root_path %></h1>
-            <%# render partial: "search" unless @disable_header_search %>
-        </div>
-      </div>
-    </header> -->
+    <%= render partial: "header" unless @disable_header_search %>
         <main>
         <section class="row flash">
+          <%#puts "flash status is #{flash[:status]}"%>
           <% if flash[:status] == :failure %>
           <% if flash[:message].present? %>
           <p><%= flash[:message] %></p>
+          <% end %>
+          <%end%>
         </section>
-      <% end %>
-      <%end%>
+
     <%= yield %>
   </main>
+</div>
 
-    <footer>
+    <footer class="footer">
       <p>
-        Powered by Edamam
+        Powered by <%= link_to "Edamam", "https://developer.edamam.com/"%>
       </p>
     </footer>
   </body>
