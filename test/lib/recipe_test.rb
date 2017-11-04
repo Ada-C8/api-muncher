@@ -2,7 +2,7 @@ require 'test_helper'
 
 describe Recipe do
   it "can be created" do
-    new_recipe = Recipe.new("Chicken Fritters", "recipe.com", "chicken")
+    new_recipe = Recipe.new(name: "Chicken Fritters", id: "id_value", url: "recipe.com", ingredients: "chicken")
     new_recipe.must_be_instance_of Recipe
     new_recipe.must_respond_to :name
     new_recipe.wont_be_nil
