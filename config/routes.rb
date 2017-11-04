@@ -1,13 +1,16 @@
 Rails.application.routes.draw do
 
-  root 'recipes#home'
+  scope "(:locale)", :locale => /en|es/ do
 
-  get 'recipes/:name', to: 'recipes#show', as: 'recipe'
+    root 'recipes#home'
 
-  get 'recipes/', to: 'recipes#index', as: 'recipes'
+    get 'recipes/:name', to: 'recipes#show', as: 'recipe'
+
+    get 'recipes/', to: 'recipes#index', as: 'recipes'
+  end
 
   get '/:lang', to: 'recipes#home', as: 'lang_home'
-  
+
   get '/:lang/recipes/:name', to: 'recipes#show', as: 'lang_recipe'
 
   get '/:lang/recipes/', to: 'recipes#index', as: 'lang_recipes'

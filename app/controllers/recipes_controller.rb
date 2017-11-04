@@ -1,5 +1,5 @@
 class RecipesController < ApplicationController
-  before_action :is_spanish # in App Controller
+  # before_action :is_spanish # in App Controller
 
   def home
   end

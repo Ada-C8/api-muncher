@@ -18,14 +18,18 @@
 
     <% if params[:action] != "home" %>
       <header class="row expanded">
-        <%= render partial: '/layouts/search' %>
+        <% if @spanish %>
+          <%= render partial: '/layouts/buscar' %>
+        <% else %>
+          <%= render partial: '/layouts/search' %>
+        <% end %>
       </header>
     <% end %>
 
     <%= render partial: '/layouts/flash' %>
 
     <main class="row">
-
+      <%= I18n.locale %>
       <%= yield %>
 
     </main>

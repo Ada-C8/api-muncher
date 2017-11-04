@@ -17,6 +17,11 @@
  */
 
 $header_color: #2eb82e;
+$background_color: #a9b504;
+
+body {
+  background-color: $background_color;
+}
 
  /********************/
  /*     Fonts        */
@@ -35,16 +40,18 @@ header > h1 {
   a {
     font-family: 'Montserrat Alternates', sans-serif;
     font-size: 4rem;
-    color: white
   }
   a:link, a:visited {
-    color: white
+    color: #006992;
   }
 }
 
 header {
   padding: 1rem 0;
-  background-color: $header_color;
+  // background-color: $header_color;
+  background-image: image-url('kitchen_header.jpg');
+  background-position: top;
+  background-size: cover;
 }
 
 /********************/

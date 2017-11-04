@@ -1,0 +1,22 @@
+<h2>Recetas con "<%= params[:ingredient] %>"</h2>
+
+<% if @recipes %>
+  <%= "#{number_with_delimiter(@count)} recetas." %>
+<% end %>
+
+<ul class="row recipe-list">
+  <% @recipes.each do |recipe| %>
+  <li class="recipe-list columns small-12 medium-6 large-3 end">
+    <%= link_to image_tag(recipe.image, alt: recipe.name), recipe_path(recipe.name, locale: :es, uri: recipe.uri) %>
+    <p>
+      <%= link_to recipe.name, recipe_path(recipe.name, locale: :es, uri: recipe.uri) %>
+    </p>
+  </li>
+  <% end %>
+</ul>
+
+
+<%# in section div.pagination %>
+<section class="row pagination">
+  <%= will_paginate @recipes %>
+</section>

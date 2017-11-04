@@ -11,9 +11,18 @@
   <section class="row search">
 
     <%= form_tag recipes_path, { method: :get } do %>
-      <%= label_tag :ingredient, "Find your flavor..." %>
-      <%= text_field_tag :ingredient %>
-      <%= submit_tag "Search" %>
+      <div class="row">
+        <div class="columns small-12 large-6 large-offset-3 end">
+          <%= label_tag :ingredient, "Find your flavor..." %>
+          <%= text_field_tag :ingredient, nil, placeholder: "What will I cook today?" %>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="columns small-12 large-3 large-offset-6 end">
+          <%= submit_tag "Search" %>
+        </div>
+      </div>
     <% end %>
   </section>
 
