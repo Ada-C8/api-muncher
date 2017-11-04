@@ -21,7 +21,7 @@
  }*/
 
 main {
-  padding: 100px 0px;
+  padding-bottom: 100px 0px;
 }
 
 footer {
@@ -44,6 +44,10 @@ footer img {
 h1 {
   color: #1A1D1A;
   padding: 20px 0;
+}
+
+h2 {
+  margin-bottom: 15px;
 }
 
 .larger-font {
@@ -106,7 +110,6 @@ h1 {
   border: 1px solid;
   border-radius: 3px;
   margin: auto;
-  margin-bottom: 10px;
   max-width: 80%;
   min-height: 50px;
   font-size: 1.1rem;
@@ -128,6 +131,7 @@ h1 {
   color: #D38865;
   background-color: #EFD2C6;
   display: block;
+  margin-bottom: 200px;
 }
 
 .flash p {
