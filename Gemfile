@@ -42,6 +42,7 @@ group :development, :test do
   gem 'dotenv-rails'
   gem 'minitest-vcr'
   gem 'webmock'
+  gem 'will_paginate', '~>3.0.5'
 end
 
 group :development do

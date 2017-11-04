@@ -9,7 +9,7 @@ class EdamamApiWrapper
   RECIPE_URI_PREFIX = 'http://www.edamam.com/ontologies/edamam.owl%23'
 
   def self.list_recipes(search_term)
-    url = BASE_URL + "?q=" + search_term + "&app_id=" + ID + "&app_key=" + KEYS
+    url = BASE_URL + "?q=" + search_term + "&app_id=" + ID + "&app_key=" + KEYS + "&to=50"
 
     data = HTTParty.get(url)
       if data["hits"]  #hits is an array of recipe hashes {recipe: {url: "string"}}
@@ -29,10 +29,8 @@ class EdamamApiWrapper
     url = BASE_URL + "?app_id=" + ID + "&app_key=" + KEYS + "&r=" + RECIPE_URI_PREFIX + URI.encode(uri)
 
     response = HTTParty.get(url)
-    # orig_recipe = URI.encode(response[0]["url"])
     image = URI.encode(response[0]["image"])
     RecipeShow.new response[0]["label"], response[0]["url"], response[0]["ingredientLines"], response[0]["healthLabels"], image
-
   end
 
 end
