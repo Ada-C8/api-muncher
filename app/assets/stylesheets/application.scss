@@ -27,6 +27,7 @@ body {
  text-align: left;
  background: $light-green;
  font-family: 'Cutive', serif;
+ box-sizing: border-box;
 }
 
  // title header
@@ -39,7 +40,7 @@ h1 {
   padding: 30px 0 20px 0;
   border-radius: 50px;
   background: linear-gradient(to right, $first, $second);
-  font-family: 'Cutive', serif;
+  font-family: 'Permanent Marker', cursive;
   font-size: 5em;
   text-shadow: 3px 2px 2px $black;
 }
@@ -52,8 +53,43 @@ h1 a {
 
 .home {
   text-align: center;
+  border: 1px solid black;
+  display: inline-block;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+
 }
 
+input[type="text"] {
+  width: 40%;
+  border-radius: 10px;
+  text-align: center;
+  // margin-left: 15%;
+  border-width: 0;
+  display: inline-block;
+  height: 48px;
+  margin: 0;
+  padding: 0;
+  padding-top: 15px;
+}
+
+input.home-button {
+  border-radius: 10px;
+  color: $light-green;
+  background: $first;
+  border-width: 0;
+  // padding: 10px 5px 12px 5px;
+  font-size: 1.5em;
+  margin: 0;
+  padding: 10px;
+  height: 100%;
+}
+
+input.home-button:hover::after{
+  content: "SQUAD!";
+  color: red;
+}
 //search results page
 
 .search {
@@ -68,19 +104,7 @@ h1 a {
   text-align: left;
 }
 
-input[type="text"] {
-  width: 70%;
-  border-radius: 10px;
-  text-align: center;
-  margin-left: 15%;
-  // border: 1px solid $blue;
-}
 
-input.search-button {
-  color: $light-green;
-  background: $first;
-
-}
 //show recipe details
 
 .show {

@@ -1,6 +1,7 @@
 <section class="home">
   <%= form_tag(recipes_path, :method => :get) do %>
     <%= text_field_tag :search, params[:search] %>
-    <%= submit_tag "I Wanna Munch!", :name => nil, :class => "search-button" %>
+    <em><%= submit_tag "I Wanna Munch!", :name => nil, :class => "home-button" %></em>
+
   <% end %>
 </section>

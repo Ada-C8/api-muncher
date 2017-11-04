@@ -4,8 +4,8 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <title><%= content_for?(:title) ? yield(:title) : "MUNCHSQUAD" %></title>
-    <link href="https://fonts.googleapis.com/css?family=Cutive" rel="stylesheet">
+    <title><%= content_for?(:title) ? yield(:title) : "MunchSquad" %></title>
+    <link href="https://fonts.googleapis.com/css?family=Lobster|Permanent+Marker|Roboto+Condensed" rel="stylesheet">
     <%= stylesheet_link_tag    "application" %>
     <%= javascript_include_tag "vendor/modernizr" %>
     <%= csrf_meta_tags %>
@@ -13,7 +13,7 @@
 
   <body>
     <header>
-        <h1><%= link_to "MUNCHSQUAD", root_path %></h1>
+        <h1><%= link_to "MunchSquad", root_path %></h1>
     </header>
 
     <%= yield %>
