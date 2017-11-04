@@ -5,7 +5,7 @@ describe ApiMuncherWrapper do
   describe "search" do
     it "can search recipes" do
       VCR.use_cassette("recipes") do
-        recipes = ApiMuncherWrapper.search_recipes("coffee")
+        recipes = ApiMuncherWrapper.search_recipes("coffee",options={option:{}})
         recipes.must_be_instance_of Array
         recipes.length.must_be :>, 0
         recipes.each do |recipe|
@@ -16,7 +16,7 @@ describe ApiMuncherWrapper do
 
     it "can search recipes will multiple words" do
       VCR.use_cassette("recipes") do
-        recipes = ApiMuncherWrapper.search_recipes("quinoa salad")
+        recipes = ApiMuncherWrapper.search_recipes("quinoa salad",options={option:{}})
         recipes.must_be_instance_of Array
         recipes.length.must_be :>, 0
         recipes.each do |recipe|
@@ -28,7 +28,7 @@ describe ApiMuncherWrapper do
 
     it "will return [] for a broken request" do
       VCR.use_cassette("recipes") do
-        recipes = ApiMuncherWrapper.search_recipes("")
+        recipes = ApiMuncherWrapper.search_recipes("",options={option:{}})
         recipes.must_be_instance_of Array
         recipes.must_equal []
       end
