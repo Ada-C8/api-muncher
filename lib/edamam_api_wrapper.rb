@@ -1,4 +1,5 @@
 require 'httparty'
+require 'uri'
 
 class EdamamApiWrapper
   BASE_URL = "https://api.edamam.com/search?"
@@ -20,10 +21,12 @@ class EdamamApiWrapper
     return recipes
   end
 
-  # def self.show_recipe(id)
-  #   url =
-  #
-  # end
+  def self.show_recipe(id)
+    url = BASE_URL + SHOW_URL + "#{id}" + CRED_URL
+    response = HTTParty.get(url)
+    recipe = response["hits"]
+
+  end
 
 
   # def self.list_channels
