@@ -1,0 +1,7 @@
+<h1>Recipes#search</h1>
+
+<%= form_tag recipes_path, method: :get do %>
+  <%= label_tag :query %>
+  <%= text_field_tag :query%>
+  <%= submit_tag 'Search Food' %>
+<% end %>
