@@ -1,3 +1,48 @@
 // Place all the styles related to the Recipes controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.recipe-container {
+  height: 300px;
+  margin-bottom: 30px;
+}
+
+.recipe-tile{
+  height: 250px;
+  width: 80%;
+  border: 1px #ccc solid;
+  text-align: center;
+  padding: 20px;
+  background-position: center;
+  background-size: cover;
+}
+
+.recipe-tile p{
+  margin-bottom: 0;
+}
+
+.recipe-tile h4{
+  width: 100%;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.recipe-tile img{
+  height: 50%;
+}
+
+.column, .columns {
+  padding-left: 0.9375rem;
+  padding-right: 0.9375rem;
+}
+
+.title-box{
+  background-color: #ccc;
+  margin-bottom: 30px;
+  padding: 50px 0px;
+}
+
+.button{
+  clear: both;
+}

@@ -1,0 +1,19 @@
+<h1>Recipes#index</h1>
+
+<%= params %>
+
+<% if @recipes.count > 0 %>
+  <section class="row">
+  <% @recipes.each do |recipe| %>
+    <article class="large-4 medium-6 small-12 columns end recipe-container">
+      <article class="recipe-tile">
+        <%= image_tag recipe.image, alt: recipe.name %>
+        <h4><%= recipe.name %></h4>
+        <%= link_to "More Info", recipe_path(params[:query], recipe.id), class: "button" %>
+      </article>
+    </article>
+  <% end  %>
+  </section>
+<% else  %>
+  <h2>No recipes found for "<%= params[:query] %>"</h2>
+<% end %>
