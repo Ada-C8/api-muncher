@@ -1,7 +1,7 @@
 <section class="root-page">
   <div class="search-form">
   <%= form_tag search_results_path, method: "get" do %>
-    <%= text_field_tag(:ingredients, 'What\'s in the fridge?') %>
+    <%= text_field_tag(:ingredients, 'What\'s in the fridge?', options = {:autofocus => true }) %>
     <%= hidden_field_tag(:page, 1) %>
     <%= submit_tag("Find my dinner") %>
   <% end %>

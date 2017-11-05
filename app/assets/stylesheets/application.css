@@ -14,6 +14,8 @@
 *= require_self
 */
 
+/*general styling*/
+
 body {
   position: relative;
   margin: 0;
@@ -40,17 +42,19 @@ ul {
   padding: 0;
 }
 
+/*root page search styling*/
+
 .root-page {
   height: 100%;
   width: 100%;
 }
 
 .search-form {
-    display: block;
-    text-align: center;
-    width: 80%;
-    margin-left: 10%;
-    margin-right: 10%;
+  display: block;
+  text-align: center;
+  width: 80%;
+  margin-left: 10%;
+  margin-right: 10%;
 }
 
 .muncher-text {
@@ -83,8 +87,25 @@ input[type=text], input[type=text]:focus, textarea, textarea:focus {
 }
 
 input[type=text]:focus {
-    outline-width: 0;
+  outline-width: 0;
 }
+
+.button, input[type=submit] {
+  flex: 1 1 auto;
+  margin-top: 10px;
+  padding: 20px;
+  margin-right: 40%;
+  margin-left: 40%;
+  text-align: center;
+  border: 1px solid #FF6A80;
+  color: black;
+  background-color: #FFB6C1;
+  position: relative;
+  overflow:hidden;
+  transition: .3s;
+}
+
+/*search page styling*/
 
 .recipe-list, .show {
   max-width: 70%;
@@ -103,8 +124,8 @@ input[type=text]:focus {
 
 .search-image, .search-image img, .recipe-image img{
   border-radius: 50%;
-padding: 0;
- height: 200px;
+  padding: 0;
+  height: 200px;
   width: 200px;
 
 }
@@ -113,15 +134,13 @@ padding: 0;
   opacity: .5;
 }
 
-/*.search-image:hover {
-  background-color: black;
-}*/
+/*show page styling and media screens*/
 
 .show {
   height: auto;
 }
 
-.title, .title a, .recipe-link a, input[type=submit] {
+.title, .title a, .recipe-link a, input[type=submit], .search a, .credit a {
   text-align: center;
   width: 200px;
   letter-spacing: 1px;
@@ -141,7 +160,7 @@ padding: 0;
 .recipe-image img {
   float: left;
   height: 300px;
-   width: 300px;
+  width: 300px;
 }
 
 .ingredients {
@@ -198,124 +217,114 @@ padding: 0;
   .ingredients, .health-info {
     width: 100%;
   }
-
 }
 
-header{
-      position: relative;
-      background-color: transparent;
+/* responsive header styling*/
+
+header {
+  position: relative;
+  background-color: transparent;
 }
-header ul.nav{
-    overflow: hidden;
-    list-style: none;
+
+header ul.nav {
+  overflow: hidden;
+  list-style: none;
 }
-header ul.nav li{
-    position: relative;
-      float: left;
-      width: 20%;
+
+header ul.nav li {
+  position: relative;
+  float: left;
+  width: 20%;
 }
-header ul.nav li a{
-    display: block;
-      height: 50px;
+
+header ul.nav li a {
+  display: block;
+  height: 50px;
   opacity: 0;
-      line-height: 50px;
+  line-height: 50px;
   text-decoration: none;
-      text-align: center;
-    cursor: default;
-      -webkit-transition: all 0.25s ease;
-    -moz-transition: all 0.25s ease;
+  text-align: center;
+  cursor: default;
+  -webkit-transition: all 0.25s ease;
+  -moz-transition: all 0.25s ease;
 }
 
 @media screen and (max-width: 600px){
-    header ul.nav li{
-            float: none;
-            width: 100%;
-    }
-      header ul.nav li a{
-            height: 0;
-    }
+  header ul.nav li{
+    float: none;
+    width: 100%;
+  }
+  header ul.nav li a{
+    height: 0;
+  }
 }
 
-/* Style for header with active class name */
+/* Style for header when class is toggled to active on click */
 
-header.active ul.nav li a{
-      height: 120px;
-    opacity: 1;
-      line-height: 120px;
+header.active ul.nav li a {
+  height: 100px;
+  opacity: 1;
+  line-height: 120px;
 }
 
 @media screen and (max-width: 600px){
-    header.active ul.nav li a{
-            height: 60px;
-            line-height: 60px;
+  header.active ul.nav li a{
+    height: 60px;
+    line-height: 60px;
     border-bottom: 1px solid #222b2f;
-      }
+  }
 }
 
 /* Style for the plus button */
 
-button.toggle-nav{
-    position: absolute;
+button.toggle-nav {
+  position: absolute;
   top: 50px;
-    left: calc(50% - 30px);
-    width: 60px;
-      height: 35px;
-    background-color: #ff6a80;
-    color: #fff;
+  left: calc(50% - 30px);
+  width: 60px;
+  height: 35px;
+  background-color: #ff6a80;
+  color: #fff;
   border: none;
-    line-height: 30px;
-    vertical-align: middle;
-      outline: none;
-    border-bottom-left-radius: 10px;
-      border-bottom-right-radius: 10px;
-      -webkit-transition: all 0.25s ease;
-      -moz-transition: all 0.25s ease;
-}
-button.toggle-nav:hover{
-    height: 50px;
-}
-button.toggle-nav span{
-      display: block;
-    -webkit-transform: rotate(90deg);
-    -moz-transform: rotate(90deg);
-    -webkit-transition: all 0.25s ease;
-    -moz-transition: all 0.25s ease;
+  line-height: 30px;
+  vertical-align: middle;
+  outline: none;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+  -webkit-transition: all 0.25s ease;
+  -moz-transition: all 0.25s ease;
 }
 
-/* Style for the plus button when header has active classe name */
+button.toggle-nav:hover {
+  height: 50px;
+}
+
+button.toggle-nav span {
+  display: block;
+  -webkit-transform: rotate(90deg);
+  -moz-transform: rotate(90deg);
+  -webkit-transition: all 0.25s ease;
+  -moz-transition: all 0.25s ease;
+}
+
+/* Style for the plus button when header class is toggled to active */
 
 header.active button.toggle-nav{
-    top: 120px;
+  top: 120px;
   background-color: transparent;
 }
+
 header.active button.toggle-nav span{
-      -webkit-transform: rotate(270deg);
-    -moz-transform: rotate(270deg);
+  -webkit-transform: rotate(270deg);
+  -moz-transform: rotate(270deg);
 }
 
 @media screen and (max-width: 600px){
-      button.toggle-nav{
-            top: 0;
-            left: 15px;
-      }
-    header.active button.toggle-nav{
-            top: 305px;
-      }
-}
-
-
-
-.button, input[type=submit] {
-  flex: 1 1 auto;
-  margin-top: 10px;
-  padding: 20px;
-  margin-right: 40%;
-  margin-left: 40%;
-  text-align: center;
-  border: 1px solid #FF6A80;
-  color: black;
-  background-color: #FFB6C1;
-  position: relative;
-  overflow:hidden;
-  transition: .3s;
+  button.toggle-nav{
+    top: 0;
+    left: 15px;
+  }
+  header.active button.toggle-nav{
+    top: 305px;
+  }
 }
