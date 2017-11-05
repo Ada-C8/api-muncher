@@ -193,13 +193,6 @@ main ul li.recipe-list {
   }
 }
 
-// @media print, screen and (min-width: 40em) {
-//   main ul li.recipe-list img {
-//     height: $list_height_med - 2;
-//   }
-// }
-
-
 /* === pagination === */
 section  div.pagination {
   text-align: center;
@@ -213,7 +206,38 @@ section  div.pagination {
 /*******************/
 
 section.info {
-  // text-align: center;
+  padding-top: 1rem;
+
+  h2, p {
+    text-align: center
+  }
+
+  h2 {
+    margin-bottom: 0;
+  }
+
+  p {
+    font-size: 1rem;
+  }
+}
+
+.ingredient-wrapper {
+  padding-top: 1rem;
+}
+
+div.diet-info {
+  padding-top: 2rem;
+  padding-left: 1rem;
+}
+
+.nutrition p {
+  display: inline-block;
+  font-size: 1.25rem;
+  width: 49%;
+}
+
+.nutrition p:first-of-type {
+  padding-left: 1rem;
 }
 
 /********************/

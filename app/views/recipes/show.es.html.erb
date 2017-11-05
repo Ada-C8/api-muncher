@@ -1,14 +1,20 @@
 <section class="row info">
   <h2><%= @recipe.name %></h2>
-  <small><p>By <%= link_to @recipe.source, @recipe.orig_url, target: "_blank" %></p></small>
+  <small><p>De <%= link_to @recipe.source, @recipe.orig_url, target: "_blank" %></p></small>
+  <p>
+    <%# "Serves #{@recipe.servings.to_i}" %>
+  </p>
+  <p>
+    <%# "#{@recipe.calories_per_serving} Calories" %>
+  </p>
 </section>
 
 <div class="ingredient-wrapper row">
-  <%= link_to image_tag(@recipe.image, alt: @recipe.name, class: "columns small-12 large-5"), @recipe.orig_url, target: "_blank" %>
+  <%= image_tag(@recipe.image, alt: @recipe.name, class: "columns small-12 large-5") %>
 
   <section class="ingredients columns small-12 large-5 end">
 
-    <h3>Ingredients</h3>
+    <h3>Ingredientes</h3>
     <%# @recipe.ingredients %>
     <%# @recipe.ingredients.length %>
     <ul>
@@ -25,7 +31,7 @@
 <div class="diet-info row">
   <div class="columns small-12 large-5 end">
     <section class="diet-labels">
-      <h3>Diet Labels</h3>
+      <h3>Etiquetas Dietéticas</h3>
 
       <ul>
         <% @recipe.diet_labels.each do |label| %>
@@ -37,7 +43,7 @@
     </section>
 
     <section class="health-labels">
-      <h3>Health Labels</h3>
+      <h3>Etiquetas de Salud</h3>
 
       <ul>
         <% @recipe.health_labels.each do |label| %>
@@ -50,20 +56,20 @@
   </div>
 
   <section class="nutrition columns small-12 large-5 end">
-    <h3>Nutritional Information</h4>
+    <h3>Información Nutricional</h4>
 
-    <p><%= "#{@recipe.calories_per_serving} Calories" %></p>
-    <p><%= "#{@recipe.servings.to_i} Servings" %></p>
+    <p><%= "#{@recipe.calories_per_serving} calorías" %></p>
+    <p><%= "#{@recipe.servings.to_i} porciónes" %></p>
     <details>
       <summary>
-        Amounts per serving
+        Cantidades por porción
       </summary>
       <table>
         <thead>
           <tr>
-            <th>Nutrient</th>
-            <th>Amount</th>
-            <th>% Daily Value</th>
+            <th>Nutriente</th>
+            <th>Cantidad</th>
+            <th>% del Valor Diario</th>
           </tr>
         </thead>
         <tbody>
