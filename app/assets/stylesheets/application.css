@@ -169,6 +169,8 @@ body {
   flex-wrap: wrap;
   align-items: flex-start;
   align-content: center;
+  align-items: center;
+  justify-content: center;
 }
 .recipe-photo-and-name {
   display: flex;
