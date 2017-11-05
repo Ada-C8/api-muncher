@@ -134,6 +134,10 @@ input[type=text]:focus {
   opacity: .5;
 }
 
+.none {
+  width: 100%;
+}
+
 .pages {
   display: flex;
   flex-direction: row;
@@ -160,7 +164,7 @@ input[type=text]:focus {
   color: #ff6a80;
 }
 
-.recipe-title  {
+.recipe-title, .none, .none a  {
   text-align: center;
   letter-spacing: 1px;
   text-transform: uppercase;
@@ -338,4 +342,9 @@ header.active button.toggle-nav span{
   header.active button.toggle-nav{
     top: 305px;
   }
+}
+
+
+a:hover {
+  color: #FFB6C1;
 }
