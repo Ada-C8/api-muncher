@@ -21,7 +21,7 @@ class Recipe
     self.ingredients == another_recipe.ingredients &&
     self.external_url == another_recipe.external_url &&
     self.source == another_recipe.source &&
-    self.label == another_recipe.label
+    self.labels == another_recipe.labels
   end
 
 end

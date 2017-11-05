@@ -4,6 +4,7 @@ require 'vcr'
 require 'webmock/minitest'
 require "rails/test_help"
 require "minitest/rails"
+require "minitest/skip_dsl"
 require "minitest/reporters"  # for Colorized output
 
 #  For colorful output!

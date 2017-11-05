@@ -6,12 +6,19 @@ class RecipeController < ApplicationController
     @recipes = EdamamApiWrapper.search(params["q"]).paginate(page: params[:page], per_page: 10)
 
     if @recipes.length == 0
+      flash[:status] = :failure
       flash[:message] = "No search results found"
-      redirect_to root_path
+      redirect_back fallback_location: root_path, status: :see_other
     end
   end
 
   def show
     @recipe = EdamamApiWrapper.find_recipe(params["recipe"])
+
+    unless @recipe
+      flash[:status] = :failure
+      flash[:message] = "That recipe does not exist"
+      redirect_back fallback_location: root_path, status: :see_other
+    end
   end
 end

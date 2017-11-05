@@ -2,8 +2,8 @@ require 'test_helper'
 
 describe EdamamApiWrapper do
   describe "self.loop_search" do
-    skip
     it "returns a list of 500 Recipes or less" do
+      skip
       VCR.use_cassette("wrapper_loopsearch") do
         list = EdamamApiWrapper.loop_search("chicken")
 
@@ -74,7 +74,7 @@ describe EdamamApiWrapper do
   end #self.search
 
   describe "self.find_recipe" do
-    it "returns a single Recipes" do
+    it "returns a single recipe" do
       VCR.use_cassette("wrapper_find_recipe") do
         recipe = EdamamApiWrapper.search("pineapple").first
         new_recipe = EdamamApiWrapper.find_recipe(recipe.mini_uri)
@@ -84,18 +84,17 @@ describe EdamamApiWrapper do
       end
     end
 
-    it "DO: WHAT DO I WANT IT TO RETURN- returns a blank array if no recipe is found or the request is broken" do
-      skip
+    it "returns nil if no recipe is found or the request is broken" do
       VCR.use_cassette("wrapper_find_recipe") do
         recipe = EdamamApiWrapper.find_recipe("")
-        recipe.must???
+        recipe.must_be_nil
 
         recipe = EdamamApiWrapper.search("pineapple").first
         new_recipe = EdamamApiWrapper.find_recipe(recipe.mini_uri, app_id: "BOGUS")
-        new_recipe.must???
+        new_recipe.must_be_nil
 
         new_recipe = EdamamApiWrapper.find_recipe(recipe.mini_uri, app_key: "BOGUS")
-        new_recipe.must???
+        new_recipe.must_be_nil
 
       end
     end #self.find_recipe

@@ -78,7 +78,7 @@ class EdamamApiWrapper
       end
       return recipe
     else
-      return "oops"
+      return nil
     end
   end
 
