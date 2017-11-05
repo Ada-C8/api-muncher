@@ -2,7 +2,7 @@ class RecipesController < ApplicationController
 
   def index
     if params[:query]
-      @recipes = EdamamApiWrapper.search(params[:query])
+      @recipes = EdamamApiWrapper.search(params[:query]).paginate(:page => params[:page], :per_page => 10)
     else
       redirect_to root_path
     end
@@ -16,7 +16,7 @@ class RecipesController < ApplicationController
     end
   end
 
-  def task_params
+  def recipe_params
     params.require(:recipe).permit(:query)
   end
 end

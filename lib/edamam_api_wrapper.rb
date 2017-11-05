@@ -7,7 +7,7 @@ class EdamamApiWrapper
 
   def self.search(query, token = nil)
     token ||= TOKEN
-    url = BASE_URL + "search?q=#{query}&app_id=#{APP_ID}&app_key=#{token}"
+    url = BASE_URL + "search?q=#{query}&app_id=#{APP_ID}&app_key=#{token}&from=0&to=100"
 
     data = HTTParty.get(url)
 

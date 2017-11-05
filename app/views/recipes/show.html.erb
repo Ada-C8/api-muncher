@@ -28,7 +28,7 @@
   <% @recipe.nutrition.each do |nutrient_hash| %>
   <tr>
     <td><%= nutrient_hash[1]["label"] %></td>
-    <td><%= nutrient_hash[1]["quantity"].round(0) %><%= nutrient_hash[1]["unit"] %></td>
+    <td><%= nutrient_hash[1]["quantity"].round %><%= nutrient_hash[1]["unit"] %></td>
   </tr>
   <% end %>
 </table>
