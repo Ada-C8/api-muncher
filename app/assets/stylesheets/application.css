@@ -52,7 +52,9 @@ body {
 /**********INDEX PAGE*******************/
 /**********INDEX PAGE*******************/
 
-
+.home-page-container {
+  font-family: 'Delius Unicase', cursive;
+}
 
 
 
