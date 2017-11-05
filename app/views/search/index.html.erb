@@ -1,11 +1,11 @@
 <section class="root-page">
-  <section class="search-form">
+  <div class="search-form">
   <%= form_tag search_results_path, method: "get" do %>
-    <%= text_field_tag(:ingredients, 'Tell us what\'s at home...') %>
+    <%= text_field_tag(:ingredients, 'What\'s in the fridge?') %>
     <%= hidden_field_tag(:page, 1) %>
-    <%= submit_tag("We'll tell you what's for dinner") %>
+    <%= submit_tag("Find my dinner") %>
   <% end %>
-  </section>
+  </div>
 
   <h1 class="muncher-text">
     muncher

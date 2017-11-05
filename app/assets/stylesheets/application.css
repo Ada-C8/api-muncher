@@ -37,6 +37,7 @@ html {
 
 ul {
   list-style: none;
+  padding: 0;
 }
 
 .root-page {
@@ -45,13 +46,15 @@ ul {
 }
 
 .search-form {
-    display: flex;
-    justify-content: center;
-    width: 100%;
+    display: block;
+    text-align: center;
+    width: 80%;
+    margin-left: 10%;
+    margin-right: 10%;
 }
 
 .muncher-text {
-  color:#FFB6C1;
+  color: #FFB6C1;
   font-size:22rem;
   font-family: 'Pacifico', cursive;
   width: 100%;
@@ -81,10 +84,6 @@ input[type=text], input[type=text]:focus, textarea, textarea:focus {
 
 input[type=text]:focus {
     outline-width: 0;
-}
-
-input[type=submit] {
-  display: block;
 }
 
 .recipe-list, .show {
@@ -118,7 +117,11 @@ padding: 0;
   background-color: black;
 }*/
 
-.title, .title a {
+.show {
+  height: auto;
+}
+
+.title, .title a, .recipe-link a, input[type=submit] {
   text-align: center;
   width: 200px;
   letter-spacing: 1px;
@@ -137,9 +140,11 @@ padding: 0;
 
 .recipe-image img {
   float: left;
+  height: 300px;
+   width: 300px;
 }
 
-.ingredients, .health-info {
+.ingredients {
   width: 50%;
   float: right;
   text-align: left;
@@ -149,13 +154,52 @@ padding: 0;
 .ingredients li, .health-info li {
   font-weight: lighter;
   padding: .2rem;
+  padding-left: 0;
+}
+
+.basic-recipe-info {
+  margin-top: 5%;
 }
 
 .basic-recipe-info, .extra-details {
   width: 100%;
+  height: auto;
+  display: inline-block;
 }
 
+.health-info {
+  width: 50%;
+  float: right;
+  text-align: left;
+  text-transform: uppercase;
+}
 
+.health-labels {
+  float: left;
+}
+
+.diet-labels {
+  width: 50%;
+  float: right;
+  text-align: left;
+}
+
+.recipe-link {
+  margin-bottom: 5%;
+}
+
+.extra-details h3, .ingredients h3 {
+  margin-bottom: 0;
+  padding-bottom: 0;
+  color: #ff6a80;
+}
+
+@media screen and (max-width: 600px){
+  .ingredients, .health-info {
+    width: 100%;
+  }
+
+}
 
 header{
       position: relative;
@@ -263,8 +307,10 @@ header.active button.toggle-nav span{
 
 .button, input[type=submit] {
   flex: 1 1 auto;
-  margin: 10px;
+  margin-top: 10px;
   padding: 20px;
+  margin-right: 40%;
+  margin-left: 40%;
   text-align: center;
   border: 1px solid #FF6A80;
   color: black;
