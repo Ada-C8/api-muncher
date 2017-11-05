@@ -1,5 +1,5 @@
 require "httparty"
-require 'pry'
+# require 'pry'
 
 class MuncherApiWrapper
   BASE_URL = "https://api.edamam.com/"
