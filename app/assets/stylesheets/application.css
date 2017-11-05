@@ -48,7 +48,16 @@ body {
 
 }
 
-/**********PAGE HEADER*******************/
+/**********INDEX PAGE*******************/
+/**********INDEX PAGE*******************/
+/**********INDEX PAGE*******************/
+
+
+
+
+
+
+/**********PAGE HEADER (FORM)*******************/
 
 .page-header {
   display: flex;
@@ -114,14 +123,12 @@ body {
   flex-direction: column;
   align-items: center;
   /*word-wrap: break-word;*/
-  border: 1px solid purple;
 }
 
 .recipe-photo-and-name li {
   list-style: none;
   margin: 0;
   padding: 0;
-  border: 1px dotted green;
 }
 
 .search-photo {
@@ -136,7 +143,6 @@ body {
 .recipe-name {
   font-size: 1.5em;
   list-style: none;
-  border: 1px dashed red;
   margin: 5px;
   line-height: 1em;
 }

@@ -1,8 +1,9 @@
-
-
-<h1>Muncher</h1>
-
-<%= form_tag recipes_search_path, :method => "get" do %>
-  <%= text_field_tag :keywords%>
-  <%= submit_tag "Search"%>
-<% end %>
+<header>
+  <h1>Muncher</h1>
+  <nav>
+    <%= form_tag recipes_search_path, :method => "get" do %>
+      <%= text_field_tag :keywords%>
+      <%= submit_tag "Search"%>
+    <% end %>
+  </nav>
+</header>
