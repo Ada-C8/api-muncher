@@ -12,6 +12,11 @@ class EdamamWrapper
     url = BASE_URL + "q=#{item}" + "&from=#{from}" + "&app_id=#{ID}" + "&app_key=#{KEY}"
     data = HTTParty.get(url)
     # binding.pry
+
+    unless data.ok?
+      raise ApiError.new("Call to list recipes failed")
+    end
+
     recipe_list = []
     if data["hits"]
       data["hits"].each do |hit|

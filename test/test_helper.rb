@@ -21,14 +21,16 @@ VCR.configure do |config|
     :record => :new_episodes,    # record new data when we don't have it yet
     :match_requests_on => [:method, :uri, :body] # The http method, URI and body of a request all need to match
   }
-  # Don't leave our Slack token lying around in a cassette file.
+
+  # Separate call for every piece of data to be omitted from casette.
+  config.filter_sensitive_data("<API_ID>") do
+    ENV['API_ID']
+  end
+
   config.filter_sensitive_data("<API_KEY>") do
     ENV['API_KEY']
   end
 
-  config.filter_sensitive_data("<API_ID>") do
-    ENV['API_ID']
-  end
 end
 # To add Capybara feature tests add `gem "minitest-rails-capybara"`
 # to the test group in the Gemfile and uncomment the following:
