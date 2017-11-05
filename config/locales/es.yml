@@ -1,0 +1,13 @@
+es:
+  will_paginate:
+    previous_label: "&#8592;"
+    next_label: "&#8594;"
+
+  i18n:
+    transliterate:
+      rule:
+        ñ: "n"
+        é: "e"
+        è: "e"
+        ¿: "?"
+        ¡: "!"

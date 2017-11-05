@@ -1,0 +1,88 @@
+<section class="row info">
+  <h2><%= @recipe.name %></h2>
+  <small><p>By <%= link_to @recipe.source, @recipe.orig_url, target: "_blank" %></p></small>
+</section>
+
+<div class="ingredient-wrapper row">
+  <%= link_to image_tag(@recipe.image, alt: @recipe.name, class: "columns small-12 large-5"), @recipe.orig_url, target: "_blank" %>
+
+  <section class="ingredients columns small-12 large-5 end">
+
+    <h3>Ingredients</h3>
+    <%# @recipe.ingredients %>
+    <%# @recipe.ingredients.length %>
+    <ul>
+      <% @recipe.ingredients.each do |ingredient| %>
+      <li>
+        <%= ingredient %>
+      </li>
+      <% end %>
+    </ul>
+  </section>
+
+</div>
+
+<div class="diet-info row">
+  <div class="columns small-12 large-5 end">
+    <section class="diet-labels">
+      <h3>Diet Labels</h3>
+
+      <ul>
+        <% @recipe.diet_labels.each do |label| %>
+        <li>
+          <%= label %>
+        </li>
+        <% end %>
+      </ul>
+    </section>
+
+    <section class="health-labels">
+      <h3>Health Labels</h3>
+
+      <ul>
+        <% @recipe.health_labels.each do |label| %>
+        <li>
+          <%= label %>
+        </li>
+        <% end %>
+      </ul>
+    </section>
+  </div>
+
+  <section class="nutrition columns small-12 large-5 end">
+    <h3>Nutritional Information</h4>
+
+    <p><%= "#{@recipe.calories_per_serving} Calories" %></p>
+    <p><%= "#{@recipe.servings.to_i} Servings" %></p>
+    <details>
+      <summary>
+        Amounts per serving
+      </summary>
+      <table>
+        <thead>
+          <tr>
+            <th>Nutrient</th>
+            <th class="qtys">Amount</th>
+            <th>% Daily Value</th>
+          </tr>
+        </thead>
+        <tbody>
+          <% @recipe.nutrition.each do |item, info| %>
+          <tr>
+            <% @size = @recipe.servings == nil || @recipe.servings == 0 ? 1 : @recipe.servings %>
+            <td><%= "#{info["label"]}" %></td>
+            <td class="qtys"><%= "#{(info["quantity"] / @size).round} #{info["unit"]}" %></td>
+            <td class="daily-vals">
+              <% if @recipe.daily[item] %>
+                <%= "#{(@recipe.daily[item]["quantity"] / @size).round}" %>
+              <% else %>
+                <%= "-" %>
+              <% end %>
+            </td>
+          </tr>
+          <% end %>
+        </tbody>
+      </table>
+    </details>
+  </section>
+</div>

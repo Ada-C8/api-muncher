@@ -1,0 +1,323 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ *= require foundation_and_overrides
+
+ */
+
+$header_color: #2eb82e;
+$background_color: #f5f8f9;
+$list_height: 22rem;
+$logo_color: #006992;
+
+body {
+  background-color: $background_color;
+}
+
+ /********************/
+ /*     Fonts        */
+ /*******************/
+
+main h2, h3, h4, ul, li, a, p {
+  font-family: 'Raleway', sans-serif;
+}
+
+form label {
+  font-size: 1.5rem;
+}
+
+/********************/
+/*   Flash Msgs     */
+/*******************/
+
+section.status h3 {
+  background-color: rgba(255, 255, 255, .4);
+  border-radius: 2px;
+  display: inline-block;
+  padding: 0 1rem;
+}
+
+section.failure {
+  color: red;
+}
+
+section.success {
+  color: green;
+}
+
+ /********************/
+ /*    Header       */
+ /*******************/
+
+header > section > h1 {
+  text-align: center;
+  margin-top: .25rem;
+  a {
+    font-family: 'Montserrat Alternates', sans-serif;
+    font-size: 4rem;
+  }
+  a:link, a:visited {
+    color: $logo_color;
+  }
+}
+
+header {
+  padding: 1rem 0;
+  // background-color: $header_color;
+  background-image: image-url('kitchen_header.jpg');
+  background-position: top;
+  background-size: cover;
+
+  p {
+    font-size: 1rem;
+    margin-bottom: 0;
+    // font-weight: bold;
+    color: $logo_color;
+    display: inline-block;
+    min-width: 7rem;
+    text-align: center;
+    background: rgba(255, 255, 255, .4);
+    border-radius: 2px;
+    font-weight: 300;
+  }
+
+  p:hover {
+    font-weight: bold;
+    background: rgba(255, 255, 255, .6);
+  }
+}
+
+#search-btn {
+  width: 100%;
+  height: 2.4375rem;
+  border: 2px solid $logo_color;
+  border-radius: .4rem;
+  background-color: rgba(255, 255, 255, .3);
+  color: $logo_color;
+  font-weight: bold;
+}
+
+#search-btn:hover {
+  background-color: $logo_color;
+  color: white;
+  cursor: pointer;
+}
+
+/********************/
+/*     Home        */
+/*******************/
+
+#home {
+  background-image: image-url('kitchen.jpg');
+  background-position: center;
+  background-size: cover;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  // padding-top: 3rem;
+
+   h1 {
+    text-align: center;
+    a {
+      font-family: 'Montserrat Alternates', sans-serif;
+      font-size: 3.5rem;
+      color: $logo_color;
+    }
+  }
+}
+
+@media print, screen and(min-width: 40em) {
+  #home h1 a {
+    font-size: 7rem;
+  }
+}
+
+main > div.home {
+  padding-top: 1.75rem;
+
+  h1 {
+    padding-top: 4rem;
+  }
+
+  p {
+    font-size: 1.25rem;
+    // font-weight: bold;
+    color: $logo_color;
+    display: inline-block;
+    min-width: 7rem;
+    text-align: center;
+    background: rgba(255, 255, 255, .4);
+    border-radius: 2px;
+    font-weight: 300;
+  }
+
+  p:hover {
+    font-weight: bold;
+    background: rgba(255, 255, 255, .6);
+  }
+
+  a {
+    color: $logo_color
+  }
+
+}
+
+div.lang {
+  text-align: right;
+}
+
+
+/********************/
+/*  Recipe Index    */
+/*******************/
+div.results {
+  padding-top: 1rem;
+  text-align: center;
+
+  p{
+    font-size: 1.15rem;
+  }
+}
+
+@media print, screen and (min-width: 40em) {
+  div.results p {
+    font-size: 1.5rem;
+  }
+}
+
+main ul li.recipe-list {
+  list-style: none;
+  height: $list_height;
+  padding-top: 1rem;
+  // width: auto;
+  p {
+    text-align: center;
+    padding-top: 1rem;
+  }
+
+  a:link, a:visited {
+    color: $logo_color
+  }
+
+  img {
+    display: block;
+    margin: 0 auto;
+    width: 100%;
+    height: $list_height - 5;
+    object-fit: cover;
+  }
+}
+
+/* === pagination === */
+section  div.pagination {
+  text-align: center;
+  a {
+    display: inline-block;
+  }
+
+  a:hover {
+    border-radius: 2rem;
+  }
+}
+
+.pagination .current {
+  background-color: $logo_color;
+  color: white;
+  border-radius: 2px;
+}
+
+/********************/
+/*  Recipe Show    */
+/*******************/
+
+section.info {
+  padding-top: 1rem;
+
+  h2, p {
+    text-align: center
+  }
+
+  h2 {
+    margin-bottom: 0;
+  }
+
+  p {
+    font-size: 1rem;
+  }
+}
+
+.ingredient-wrapper {
+  padding-top: 1rem;
+}
+
+div.diet-info {
+  padding-top: 2rem;
+  padding-left: 1rem;
+}
+
+.nutrition p {
+  display: inline-block;
+  font-size: 1.1rem;
+  width: 49%;
+}
+
+@media print, screen and (min-width: 40em) {
+  .nutrition p {
+    font-size: 1.25rem;
+  }
+}
+
+.nutrition p:first-of-type {
+  padding-left: 1rem;
+}
+
+td.daily-vals {
+  text-align: center;
+}
+
+td.qtys {
+  text-align: center;
+}
+
+/********************/
+/*     Footer      */
+/*******************/
+
+/* == pushes footer to bottom == */
+body {
+  position: relative;
+  min-height: 100vh;
+  padding-bottom: 5rem;
+}
+
+footer {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  // background-color: $header_color;
+
+}
+
+div#edamam-badge {
+  margin-left: auto;
+  margin-right: auto;
+  width: 20rem;
+  z-index: 20;
+  padding: .75rem 0;
+  img {
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+  }
+}
