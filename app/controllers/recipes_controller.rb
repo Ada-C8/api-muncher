@@ -9,7 +9,11 @@ class RecipesController < ApplicationController
   end
 
   def show
-    @recipe = params[:recipe]
+    if params[:uri]
+      @recipe = EdamamApiWrapper.find_recipe(params[:uri])
+    else
+      redirect_back(fallback_location: root_path)
+    end
   end
 
   def task_params
