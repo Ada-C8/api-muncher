@@ -130,9 +130,15 @@ header {
     text-align: center;
     a {
       font-family: 'Montserrat Alternates', sans-serif;
-      font-size: 7rem;
+      font-size: 5rem;
       color: $logo_color;
     }
+  }
+}
+
+@media print, screen and(min-width: 40em) {
+  #home h1 a {
+    font-size: 7rem;
   }
 }
 
