@@ -18,13 +18,13 @@ describe MuncherApiWrapper do
   #   end
   # end
 
-  it "does something when key is bad" do
-    VCR.use_cassette("searches") do
-      proc {
-      result = MuncherApiWrapper.search("term", 0, "bogus_key")
-    }.must_raise MuncherApiWrapper::ApiError
-    end
-  end
+  # it "does something when key is bad" do
+  #   VCR.use_cassette("searches") do
+  #     proc {
+  #     result = MuncherApiWrapper.search("term", 0, "bogus_key")
+  #   }.must_raise MuncherApiWrapper::ApiError
+  #   end
+  # end
 
 
 end
