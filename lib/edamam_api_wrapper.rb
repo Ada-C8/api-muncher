@@ -13,7 +13,7 @@ class EdamamApiWrapper
 
     if data["hits"]
       recipes = data["hits"].map do |recipe_hash|
-        Recipe.new(recipe_hash["recipe"]["label"], recipe_hash["recipe"]["image"], recipe_hash["recipe"]["uri"], source: recipe_hash["recipe"]["source"], url: recipe_hash["recipe"]["url"], ingredients: recipe_hash["recipe"]["ingredientLines"], nutrition: recipe_hash["recipe"]["totalNutrients"])
+        Recipe.new(recipe_hash["recipe"]["label"], recipe_hash["recipe"]["image"], recipe_hash["recipe"]["uri"], source: recipe_hash["recipe"]["source"], url: recipe_hash["recipe"]["url"], ingredients: recipe_hash["recipe"]["ingredientLines"], nutrition: recipe_hash["recipe"]["totalNutrients"], diet_labels: recipe_hash["recipe"]["dietLabels"], health_labels: recipe_hash["recipe"]["healthLabels"])
       end
       return recipes
     else
@@ -28,7 +28,7 @@ class EdamamApiWrapper
     data = HTTParty.get(url)
 
     unless data.empty?
-      recipe = Recipe.new(data[0]["label"], data[0]["image"], data[0]["uri"], source: data[0]["source"], url: data[0]["url"], ingredients: data[0]["ingredientLines"], nutrition: data[0]["totalNutrients"])
+      recipe = Recipe.new(data[0]["label"], data[0]["image"], data[0]["uri"], source: data[0]["source"], url: data[0]["url"], ingredients: data[0]["ingredientLines"], nutrition: data[0]["totalNutrients"], diet_labels: data[0]["dietLabels"], health_labels: data[0]["healthLabels"])
 
       return recipe
     else
