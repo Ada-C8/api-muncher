@@ -1,7 +1,11 @@
 <section class="home">
   <%= form_tag(recipes_path, :method => :get) do %>
     <%= text_field_tag :search, params[:search] %>
-    <em><%= submit_tag "I Wanna Munch!", :name => nil, :class => "home-button" %></em>
+    <strong><%= submit_tag "I Wanna Munch!", :name => nil, :class => "home-button" %></strong>
 
   <% end %>
 </section>
+
+<footer class = "home">
+  <%= link_to "Powered by Edamam", "https://www.edamam.com/" %>
+</footer>

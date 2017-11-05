@@ -1,23 +1,31 @@
-<section>
-<h2>Search Results</h2>
-<p>paginate this l8er</p>
 
-<article class= "row">
-  <% @recipes.each do |r| %>
-    <%= link_to recipe_path(r.label, uri: r.uri) do %>
+<article class = "search">
+  <section>
+    <h2>Search Results for <%= params[:search] %></h2>
+  </section>
 
-    <section class="search columns large-4 small-6">
-      <%= image_tag r.image, alt: r.image %>
+  <article class="row">
 
-      <p><%= r.label %></p>
+    <% @recipes.each do |r| %>
+      <section class="search column large-3 medium-4 small-12">
+      <%= link_to recipe_path(r.label, uri: r.uri) do %>
+
+        <%= image_tag r.image, alt: r.image %>
+        <p><%= r.label %></p>
+      <% end %>
     </section>
 
     <% end %>
-  <% end %>
+  </article>
+
+  <section class="paginate">
+    <p>hi!!! pagination isn't working! what's up with that???</p>
+    <%= will_paginate(@recipes) %>
+    <p>hello!!!</p>
+  </section>
+
 </article>
 
-<section class= "paginate">
-  <%# will_paginate(@recipes) %>
-</section>
-
-</section>
+<footer class= "scroll">
+  <%= link_to "Powered by Edamam", "https://www.edamam.com/" %>
+</footer>
