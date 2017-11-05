@@ -43,10 +43,17 @@ describe ApiWrapper do
     it "Raises error with bogus uri" do
 
       bogus_uri = "http://www.edamam.com/ontologies/edamam.owl%23recipe_637913ec61db451818c3293df2"
-      VCR.use_cassette("uri_testing") do
+      VCR.use_cassette("bogus_uri") do
         proc {
           ApiWrapper.find_recipe(bogus_uri)
         }.must_raise ApiWrapper::ApiError
+      end
+    end
+
+    it "returns a recipe object from valid uri" do
+      uri = "http://www.edamam.com/ontologies/edamam.owl%23recipe_637913ec61d9da69eb451818c3293df2"
+      VCR.use_cassette("valid_uri") do
+        ApiWrapper.find_recipe(uri).must_be_instance_of Recipe
       end
     end
   end
