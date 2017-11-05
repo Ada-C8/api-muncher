@@ -16,45 +16,25 @@ class EdamamApiWrapper
     return nil if data.nil?
 
     if data.class != String
-      recipe = Recipe.new(
-        data[0]["uri"],
-        data[0]["label"],
-        image: data[0]["image"],
-        ingredients: data[0]["ingredientLines"],
-        url: data[0]["url"],
-        calories: data[0]["calories"],
-        healthLabels: data[0]["healthLabels"],
-        digest: data[0]["digest"],
-        totalNutrients: data[0]["totalNutrients"]
-        )
-      return recipe
+      recipe = EdamamApiWrapper.make_recipe(data[0])
     else
       return nil
     end
   end
 
-  def self.search(term, app_id = nil, app_key = nil)
+  def self.search(term="Thanksgiving", app_id = nil, app_key = nil)
 
     app_id ||= APP_ID
     app_key ||= APP_KEY
 
 
-    url = BASE_URL + "q=#{term}" + "&app_id=#{app_id}" + "&app_key=#{app_key}" + "&from=0" + "&to=100"
+    url = BASE_URL + "q=#{term}" + "&app_id=#{app_id}" + "&app_key=#{app_key}" + "&from=0" + "&to=5"
 
     data = HTTParty.get(url)
 
     if data["hits"]
       my_recipes = data["hits"].map do |recipe_hash|
-        Recipe.new(
-        recipe_hash["recipe"]["uri"],
-        recipe_hash["recipe"]["label"],
-        image: recipe_hash["recipe"]["image"],
-        ingredients: recipe_hash["recipe"]["ingredientLines"],
-        url: recipe_hash["recipe"]["url"],
-        dietaryInfo: {
-          calories: recipe_hash["recipe"]["calories"],
-          totalNutrients: recipe_hash["recipe"]["dietaryInfo"],
-          } )
+        EdamamApiWrapper.make_recipe(recipe_hash["recipe"])
       end
     else
       return []
@@ -62,6 +42,21 @@ class EdamamApiWrapper
   end
 
   private
+
+  def self.make_recipe(rec_hash)
+    recipe = Recipe.new(
+      rec_hash["uri"],
+      rec_hash["label"],
+      image: rec_hash["image"],
+      ingredients: rec_hash["ingredientLines"],
+      url: rec_hash["url"],
+      calories: rec_hash["calories"],
+      healthLabels: rec_hash["healthLabels"],
+      digest: rec_hash["digest"],
+      totalNutrients: rec_hash["totalNutrients"]
+    )
+    return recipe
+  end
 
   def self.parsed_response(response)
     return response.parsed_response rescue nil
