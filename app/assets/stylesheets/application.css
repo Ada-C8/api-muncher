@@ -67,7 +67,7 @@ footer {
   background-color: none;
   color: Green;
   z-index: -1;
-  font-size: 2em;
+  font-size: 1.5em;
 }
 
 
@@ -131,4 +131,26 @@ footer {
 
 ul {
   list-style-type: none;
+}
+
+.show-header {
+  text-align: center;
+  margin-bottom: 1em;
+}
+
+.ingredients {
+  margin-top: 2em;
+  display: flex;
+  justify-content: center;
+}
+
+.first-row {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 2em;
+}
+
+.first-row .tags {
+  align-self: flex-start;
 }
