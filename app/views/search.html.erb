@@ -19,13 +19,13 @@
 <section class="row">
   <div class="large-11 large-offset-1 medium-11 medium-offset-1 small-12 columns"> <!-- figure out centering for small -->
     <% @recipes.each do |recipe| %>
-      <%= link_to image_tag(recipe.image, class: "results-thumbnail", alt: recipe.name), recipe_path(recipe.uri) %>
+      <%= link_to image_tag(recipe.image, class: "result-img", alt: recipe.name), recipe_path(recipe.uri) %>
     <% end %>
   </div>
 </section>
 
 <nav>
-  <%= paginate @recipes %>
+  <%#= paginate @recipes %>
 </nav>
 
 
