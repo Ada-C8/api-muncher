@@ -35,6 +35,10 @@ html {
   box-sizing: border-box;
 }
 
+ul {
+  list-style: none;
+}
+
 .root-page {
   height: 100%;
   width: 100%;
@@ -52,6 +56,7 @@ html {
   font-family: 'Pacifico', cursive;
   width: 100%;
   right: 0;
+  top: 0;
   bottom: 0;
   left: 0;
   margin: 0 0 0 0;
@@ -82,26 +87,36 @@ input[type=submit] {
   display: block;
 }
 
-.one-recipe {
-  height: 350px;
-  display: inline-block;
+.recipe-list, .show {
+  max-width: 70%;
+  margin-right: 15%;
+  margin-left: 15%;
+  margin-top: 5%;
+  text-align: center;
 }
 
-.search-image, .search-image img{
+.one-recipe {
+  height: 350px;
+  padding: 1rem;
+  display: inline-block;
+  margin: auto;
+}
+
+.search-image, .search-image img, .recipe-image img{
   border-radius: 50%;
 padding: 0;
  height: 200px;
   width: 200px;
-  
+
 }
 
 .search-image img:hover {
-  opacity: 0;
+  opacity: .5;
 }
 
-.search-image:hover {
+/*.search-image:hover {
   background-color: black;
-}
+}*/
 
 .title, .title a {
   text-align: center;
@@ -112,7 +127,33 @@ padding: 0;
   color: #ff6a80;
 }
 
+.recipe-title  {
+  text-align: center;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: #ff6a80;
+}
 
+.recipe-image img {
+  float: left;
+}
+
+.ingredients, .health-info {
+  width: 50%;
+  float: right;
+  text-align: left;
+  text-transform: uppercase;
+}
+
+.ingredients li, .health-info li {
+  font-weight: lighter;
+  padding: .2rem;
+}
+
+.basic-recipe-info, .extra-details {
+  width: 100%;
+}
 
 
 

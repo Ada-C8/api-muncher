@@ -1,29 +1,39 @@
-<span class="recipe-title"><%= @recipe.title %></span>
+<section class="show">
 
-<span class="recipe-image"><%= image_tag(@recipe.image, alt: "#{@recipe.title}") %></span>
+  <h1 class="recipe-title"><%= @recipe.title %></h1>
 
-<section class="ingredients">
-<ul class="ingredient-lines"
-  <% @recipe.ingredients.each do |line| %>
-  <li><%= line %></li>
-  <% end %>
-</ul>
+  <div class="basic-recipe-info">
+
+    <span class="recipe-image"><%= image_tag(@recipe.image, alt: "#{@recipe.title}") %></span>
+
+    <section class="ingredients">
+      <h3>Ingredients</h3>
+      <ul class="ingredient-lines">
+        <% @recipe.ingredients.each do |line| %>
+        <li><%= line %></li>
+        <% end %>
+      </ul>
+    </section>
+  </div>
+
+
+
+<div class="extra-details">
+  <section class="health-info">
+    <h3>Health & Dietary Details</h3>
+    <ul class="health-labels">
+      <% @recipe.health_labels.each do |line| %>
+      <li><%= line %></li>
+      <% end %>
+    </ul>
+
+    <ul class="diet-labels">
+      <% @recipe.diet_labels.each do |line| %>
+      <li><%= line %></li>
+      <% end %>
+    </ul>
+  </section>
+
+  <span class="recipe-link"><%= link_to "Full recipe instructions", @recipe.link, target: :_blank%></span>
 </section>
-
-
-<section class="health-info">
-<span>Health & Dietary Details</span>
-<ul class="health-labels">
-  <% @recipe.health_labels.each do |line| %>
-  <li><%= line %></li>
-  <% end %>
-</ul>
-
-<ul class="diet-labels">
-  <% @recipe.diet_labels.each do |line| %>
-  <li><%= line %></li>
-  <% end %>
-</ul>
-</section>
-
-<span class="recipe-link"><%= link_to "Full recipe instructions", @recipe.link, target: :_blank%></span>
+</div>
