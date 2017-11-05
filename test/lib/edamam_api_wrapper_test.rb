@@ -12,4 +12,14 @@ describe EdamamApiWrapper do
       end
     end
   end
+
+  it "will return an empty array for a broken request" do
+    search_term = " "
+    VCR.use_cassette("hits") do
+      recipes = EdamamApiWrapper.list_recipes(search_term)
+
+      recipes.must_be_instance_of Array
+      recipes.must_equal []
+    end
+  end
 end
