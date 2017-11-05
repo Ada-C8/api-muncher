@@ -47,7 +47,6 @@ class EdamamApiWrapper
       url = BASE_URL + "r=#{uri}"
     end
     response = HTTParty.get(url)
-    puts response
 
     if response && response[0]
       return self.create_recipe(response[0])

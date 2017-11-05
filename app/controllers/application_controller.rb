@@ -4,7 +4,8 @@ class ApplicationController < ActionController::Base
   before_action :set_locale, :is_spanish
 
   def is_spanish
-    @spanish = params[:locale] == "es" ? true : false
+    # @spanish = params[:locale] == "es" ? true : false
+    @spanish = I18n.locale == :es ? true : false
   end
 
   private
