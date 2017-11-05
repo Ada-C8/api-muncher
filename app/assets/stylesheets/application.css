@@ -98,6 +98,10 @@ body {
   flex-direction: column;
 }
 
+.results-header h4 {
+  font-family: 'Delius Unicase', cursive;
+}
+
 .results-grid {
   display: flex;
   flex-direction: row;
@@ -109,7 +113,7 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
-  word-wrap: break-word;
+  /*word-wrap: break-word;*/
   border: 1px solid purple;
 }
 
@@ -121,18 +125,20 @@ body {
 }
 
 .search-photo {
-  max-width: 100%;
-  box-sizing: border-box;
+  max-width: 300px;
+  /*box-sizing: border-box;
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   overflow: hidden;
-  word-wrap: break-word;
+  word-wrap: break-word;*/
 }
 
 .recipe-name {
   font-size: 1.5em;
   list-style: none;
   border: 1px dashed red;
+  margin: 5px;
+  line-height: 1em;
 }
 /*****PAGINATION*****/
 .pagination-container {
@@ -152,27 +158,25 @@ body {
 /*******SHOW PAGE**********/
 /*******SHOW PAGE**********/
 /*******SHOW PAGE**********/
-/*.image-and-ingredients, .health-and-dietary {
+.image-and-ingredients, .health-and-dietary {
   display: flex;
   flex-direction: row;
+  align-content: flex-start;
+  justify-content: center;
+
 }
 
 .food-image, .ingredient-list {
   margin: 2em;
+  max-width: 300px;
 }
 
 .health-container, .dietary-container {
   margin: 2em;
-}*/
 
-.image-and-ingredients {
-  margin-top: 2em;
+  /*max-width: 50%*/
 }
 
-.health-and-dietary {
-  margin-top: 2em;
-}
-
-.health-container {
-  /*margin-right: 3em;*/
+.health-container h4, .dietary-container h4 {
+  width: 300px;
 }
