@@ -1,7 +1,7 @@
 class Recipe
-  attr_reader :uri, :name, :source, :link, :image, :ingredients, :healthLabels
+  attr_reader :uri, :name, :source, :link, :image, :ingredients, :dietary
 
-  def initialize(uri, name, source, link, image, ingredients, healthLabels)
+  def initialize(uri, name, source, link, image, ingredients, dietary)
     raise ArgumentError if !valid_input?
 
     @uri = uri
@@ -10,7 +10,7 @@ class Recipe
     @link = link
     @image = image
     @ingredients = ingredients
-    @healthLabels = healthLabels
+    @dietary = dietary
   end
 
   def id
@@ -21,6 +21,6 @@ class Recipe
 
 
     def valid_input?
-      return uri == nil || uri == "" || name == nil || name = "" || source == nil || source == "" || link == nil || link == "" || image == nil || image == "" || ingredients == nil || ingredients == "" || healthLabels == nil || healthLabels == ""
+      return uri == nil || uri == "" || name == nil || name = "" || source == nil || source == "" || link == nil || link == "" || image == nil || image == "" || ingredients == nil || ingredients == "" || dietary == nil || dietary == ""
     end
 end

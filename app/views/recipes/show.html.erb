@@ -1,1 +1,15 @@
 <h4>Recipe <%= @recipe.name %></h4>
+<p>By <%= @recipe.source %></p>
+<%= image_tag(@recipe.image) %>
+<h5>Inrgedients</h5>
+<ul>
+  <% @recipe.ingredients.each do |ingredient| %>
+    <li><%= ingredient %></li>
+  <% end %>
+</ul>
+<h5>Dietary Labels</h5>
+<ul>
+  <% @recipe.dietary.each do |label| %>
+    <li><%= label %></li>
+  <% end %>
+</ul>
