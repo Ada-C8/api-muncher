@@ -127,7 +127,7 @@ describe EdamamApiWrapper do
 
     end
 
-    it "will return an empty array for a broken request" do
+    it "will return false for a broken request" do
 
       VCR.use_cassette("find_recipe") do
         search = "meyer lemon"
@@ -138,21 +138,19 @@ describe EdamamApiWrapper do
 
         recipe = EdamamApiWrapper.find_recipe(first_uri, "BOGUS_ID", "BOGUS_KEY")
 
-        recipe.must_be_instance_of Array
-        recipe.must_equal []
+        recipe.must_equal false
       end
 
     end
 
-    it "will return an empty array for a recipe that doesn't exist" do
+    it "will return false for a recipe that doesn't exist" do
 
       VCR.use_cassette("find_nonexist_recipe") do
         bogus_uri = "http://scam.bogus.com"
 
         recipe = EdamamApiWrapper.find_recipe(bogus_uri)
 
-        recipe.must_be_instance_of Array
-        recipe.must_equal []
+        recipe.must_equal false
       end
 
     end
