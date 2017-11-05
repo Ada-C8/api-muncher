@@ -16,36 +16,17 @@
 
 */
 
+// application styling
+
+$list_height: 22rem;
+
 html {
   height: 100%;
   box-sizing: border-box;
 }
 
-body {
-  position: relative;
-  background-color: #B85750;
-  margin: 0;
-  padding-bottom: 6rem;
-  min-height: 100%;
+main h1, h2, h3, h4, ul, li, a, p {
   font-family: Arial, sans-serif;
-}
-
-body a {
-  color: black;
-}
-
-body a:visited {
-  color: black;
-}
-
-body a:hover {
-  color: black;
-}
-
-.home_body {
-  background-image: image-url("food_background2.jpg");
-  font-family: Arial, sans-serif;
-  background-repeat: no-repeat;
 }
 
 #header {
@@ -67,6 +48,18 @@ body a:hover {
   color: white;
 }
 
+#search_header {
+  text-align: center;
+}
+
+// home page styling
+
+.home_body {
+  background-image: image-url("food_background2.jpg");
+  background-size: cover;
+  font-family: Arial, sans-serif;
+}
+
 #home_page_container {
   display: flex;
   justify-content: center;
@@ -74,12 +67,33 @@ body a:hover {
   text-align: center;
 }
 
-#search_bar {
+// index page styling
 
+.application_search_container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
 }
 
-#search_header {
-  text-align: center;
+body {
+  position: relative;
+  background-color: #B85750;
+  margin: 0;
+  padding-bottom: 6rem;
+  min-height: 100%;
+}
+
+body a {
+  color: black;
+}
+
+body a:visited {
+  color: black;
+}
+
+body a:hover {
+  color: black;
 }
 
 main {
@@ -92,17 +106,56 @@ main {
 
 ul {
   list-style-type: none;
+  height: $list_height;
+  padding-top: 1rem;
+  p {
+    text-align: center;
+    padding-top: 1rem;
+  }
+
+  img {
+    display: block;
+    margin: 0 auto;
+    width: 100% auto;
+    height: $list_height - 5;
+    object-fit: cover;
+  }
 }
 
-.recipe-image {
-  padding: 0.5em;
+// main ul li.recipe-list {
+//   list-style-type: none;
+//   height: $list_height;
+//   padding-top: 1rem;
+//     p {
+//       text-align: center;
+//       padding-top: 1rem;
+//     }
+//
+//     img {
+//       display: block;
+//       margin: 0 auto;
+//       width: 100%auto;
+//       height: $list_height - 5;
+//       object-fit: cover;
+//     }
+// }
+
+// pagination styling
+section > div.pagination {
+  a {
+    display: inline-block;
+  }
 }
 
-.recipe-name {
-  padding: 0.5em;
-  padding-left: 5em;
-
+.pagination {
+  text-align: center;
 }
+
+section > div.pagination .current {
+  background-color: #936A4A;
+}
+
+// show page styling
 
 .recipe-details {
   background-color: #DEB887;
@@ -121,14 +174,6 @@ ul {
 
 .clearfix {
   clear: both;
-}
-
-section > div.pagination a {
-  display: inline-block;
-}
-
-section > div.pagination .current {
-  background-color: #936A4A;
 }
 
 /**

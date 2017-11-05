@@ -18,6 +18,9 @@
 <body class=<%= @home_page ? "home_body" : "body" %> >
   <header class="small-12 small-centered columns" id="header">
     <h1><%= link_to "NomNom.com", root_path, alt: "link to home page" %></h1>
+    <% if @home_page == false %>
+    <%= render partial: '/layouts/search_bar' %>
+    <% end %>
   </header>
   <% if flash[:message] %>
   <section class="row status" id="flash">
@@ -31,10 +34,10 @@
     <%= yield %>
   </main>
 
-<script src="https://developer.edamam.com/attribution/badge.js"></script>
+  <!-- <script src="https://developer.edamam.com/attribution/badge.js"></script> -->
   <footer class="footer">
     <div id="edamam-badge">
-      <%= image_tag("https://developer.edamam.com/images/transparent", alt: "attribution image for Edamam") %>
+      <%= image_tag("transparent.png", alt: "attribution image for Edamam") %>
     </div>
   </footer>
 </body>
