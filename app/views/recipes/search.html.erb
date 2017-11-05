@@ -1,10 +1,11 @@
-<section class= "small-12 large-8 cell">
+<section>
 
 <%= render partial: "form" %>
 </section>
 
 <!-- <h2>Params:</h2>
 <%= params %> -->
+<section class="search-and-show-body">
 
 <% unless params[:keywords] == nil %>
   <h1>Results for <%= @keywords %> </h1>
@@ -22,19 +23,30 @@
   <%end%>
 </section>
 
+<section class="pagination-container">
   <%if @number_of_recipes > 100%>
     <%10.times do |page| %>
+    <div class="page-numbers">
       <%=link_to(page+1, search_by_page_path(@keywords, page*10,page*10+9))%>
+    </div>
     <%end%>
   <%elsif @number_of_recipes < 100 && @number_of_recipes > 10%>
     <%i = 0%>
     <%(@number_of_recipes/10).times do |page|%>
       <%i += 1%>
+      <div class="page-numbers">
       <%=link_to(page+1, search_by_page_path(@keywords, page*10,page*10+9))%>
+      </div>
     <%end%>
+    <div class="page-numbers">
     <%=link_to(i+1, search_by_page_path(@keywords, (i+1)*10,((i+1)*10+(@number_of_recipes%10))))%>
+    </div>
   <%end%>
+</section>
 
 <%else%>
   <h3>No recipes are available for those search terms</h3>
 <%end%>
+
+
+</section>

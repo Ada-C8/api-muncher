@@ -1,17 +1,15 @@
-<header class = "page-header row">
-  <h2 class = "grid-x">
-    <div class = "small-12 cell">
+<header class = "page-header">
+  <h2 class = "">
+    <div id = "muncher-topnav-logo">
       <%= link_to("Muncher", root_path) %>
     </div>
   </h2>
-  <nav class = "grid-x">
-    <div class="small-4 cell"></div>
-    <div class="small-4">
+  <nav class = "search-bar-nav">
+    <div class= "search-bar">
       <%= form_tag recipes_search_path, :method => "get" do %>
-      <div class = "small-2 cell"><%= text_field_tag :keywords%><div>
-      <div class = "small-2 cell"><%= submit_tag "Search", :class => "button"%><div>
-    </div>
-    <div class="small-4 cell"></div>
+      <div class = "search"><%= text_field_tag :keywords%><div>
+      <div class = "submit-button"><%= submit_tag "Search", :class => "button"%><div>
+          </div>
     <% end %>
   </nav>
 </header>

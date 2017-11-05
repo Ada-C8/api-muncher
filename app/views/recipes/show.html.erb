@@ -1,33 +1,49 @@
 <%= render partial: "form" %>
 
-<h2><%= @recipe.label %></h2>
-<h3>By <%=@recipe.source%> </h3>
-<%=image_tag @recipe.image%>
-<h4>Ingredients</h4>
+<section class="search-and-show-body">
 
-<ul><%@recipe.ingredientLines.each do |ingredient_line|%>
-  <li><%=ingredient_line%></li>
-  <%end%>
-</ul>
+  <h2><%= @recipe.label %></h2>
+  <h3>By <%=@recipe.source%> </h3>
 
-<h4>Health Information</h4>
-<%if @recipe.healthLabels.length == 0%>
-  <p>No available health information.</p>
-<%else%>
-  <ul><%@recipe.healthLabels.each do |health_label|%>
-    <li><%=health_label%></li>
-  <%end%>
-  </ul>
-<%end%>
+  <section class="image-and-ingredients grid-x grid-margin-x align-center">
+    <div class = "food-image small-6 large-6 cell">
+      <%=image_tag @recipe.image%>
+    </div>
+    <div class = "ingredient-list small-6 large-6 cell">
+      <h4>Ingredients</h4>
+      <ul><%@recipe.ingredientLines.each do |ingredient_line|%>
+        <li><%=ingredient_line%></li>
+        <%end%>
+      </ul>
+    </div>
+  </section>
 
-<h4>Dietary Information</h4>
-<%if @recipe.dietLabels.length == 0%>
-  <p>No available dietary information.</p>
-<%else%>
-<ul><%@recipe.dietLabels.each do |diet_label|%>
-  <li><%=diet_label%></li>
-  <%end%>
-</ul>
-<%end%>
+  <section class="health-and-dietary grid-x grid-margin-x align-center">
+    <div class="health-container align-center small-6 large-6 cell">
+      <h4>Health Information</h4>
+      <%if @recipe.healthLabels.length == 0%>
+        <p>No available health information.</p>
+      <%else%>
+        <ul><%@recipe.healthLabels.each do |health_label|%>
+          <li><%=health_label%></li>
+        <%end%>
+        </ul>
+      <%end%>
+    </div>
 
-<h4><%= link_to "Source Website", @recipe.url%> </h4>
+  <div class= "dietary-container small-6 large-6 cell">
+    <h4>Dietary Information</h4>
+    <%if @recipe.dietLabels.length == 0%>
+      <p>No available dietary information.</p>
+    <%else%>
+      <ul><%@recipe.dietLabels.each do |diet_label|%>
+        <li><%=diet_label%></li>
+      </ul>
+      <%end%>
+    <%end%>
+    </div>
+  </section>
+
+  <h4><%= link_to "Source Website", @recipe.url%> </h4>
+
+</section>
