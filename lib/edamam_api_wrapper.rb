@@ -23,10 +23,8 @@ class EdamamApiWrapper
   end
 
   def self.search(term="Thanksgiving", app_id = nil, app_key = nil)
-
     app_id ||= APP_ID
     app_key ||= APP_KEY
-
 
     url = BASE_URL + "q=#{term}" + "&app_id=#{app_id}" + "&app_key=#{app_key}" + "&from=0" + "&to=5"
 
