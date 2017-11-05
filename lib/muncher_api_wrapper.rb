@@ -6,9 +6,19 @@ class MuncherApiWrapper
   KEY = ENV["EDAMAM_KEY"]
   ID = ENV["EDAMAM_ID"]
 
-  def self.search(search_term, from = 0)
-    url = BASE_URL + "search?q=" + search_term + "&app_id=#{ID}" + "&app_key=#{KEY}" + "&from=#{from}"
+  class ApiError < StandardError
+  end
+
+  def self.search(search_term, from = 0, id=ID)
+    url = BASE_URL + "search?q=" + search_term + "&app_id=#{id}" + "&app_key=#{KEY}" + "&from=#{from}"
+    puts "about to send request for recipes"
     data = HTTParty.get(url)
+    puts "got response"
+    puts " status: #{data.code}: #{data.message}"
+    puts "parsed_response is #{data.parsed_response}"
+    unless data["ok"]
+      raise ApiError.new("Call to list recipes failed")
+    end
     recipes_list = []
     if data["hits"]
       data["hits"].each do |recipe_data|
