@@ -1,15 +1,30 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>ApiMuncher</title>
-    <%= csrf_meta_tags %>
+<head>
+  <title>ApiMuncher</title>
+  <%= csrf_meta_tags %>
 
-    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
-    <%= csrf_meta_tags %>
-  </head>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  <%= csrf_meta_tags %>
+</head>
 
-  <body>
+<body>
+  <div>
+    <% if flash[:status] = :failure %>
+    <section class="row status <%= flash[:status] %>">
+      <h3>
+        <%= flash[:message] %>
+      </h3>
+      <%end%>
+    </div>
     <%= yield %>
+    <footer>
+      <section class="footer">
+        <p>
+          Powered by <a href="https://www.edamam.com/">Edamam</a>
+        </p>
+      </section>
+    </footer>
   </body>
-</html>
+  </html>

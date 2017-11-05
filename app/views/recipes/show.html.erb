@@ -1,6 +1,6 @@
 <img class="green" src="<%= @recipe.image %>", alt="<%= @recipe.name %>"/>
 <h1><%= link_to "#{@recipe.name}", @recipe.url, target: :_blank  %></h1>
-
+<article>
 <h4>Ingredients</h4>
 <ul>
   <% @recipe.ingredients.each do |ingredient| %>
@@ -25,3 +25,4 @@
 </ul>
 <% end %>
 <% end %>
+</article>
