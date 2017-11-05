@@ -19,6 +19,7 @@
 $header_color: #2eb82e;
 $background_color: #a9b504;
 $list_height: 18rem;
+$logo_color: #006992;
 
 body {
   // background-color: $background_color;
@@ -36,19 +37,38 @@ form label {
   font-size: 1.5rem;
 }
 
+/********************/
+/*   Flash Msgs     */
+/*******************/
+
+section.status h3 {
+  background-color: rgba(255, 255, 255, .4);
+  border-radius: 2px;
+  display: inline-block;
+  padding: 0 1rem;
+}
+
+section.failure {
+  color: red;
+}
+
+section.success {
+  color: green;
+}
+
  /********************/
  /*    Header       */
  /*******************/
 
 header > h1 {
   text-align: center;
-  padding-top: 1rem;
+  padding-top: .25rem;
   a {
     font-family: 'Montserrat Alternates', sans-serif;
     font-size: 4rem;
   }
   a:link, a:visited {
-    color: #006992;
+    color: $logo_color;
   }
 }
 
@@ -58,20 +78,37 @@ header {
   background-image: image-url('kitchen_header.jpg');
   background-position: top;
   background-size: cover;
+
+  p {
+    font-size: 1rem;
+    // font-weight: bold;
+    color: $logo_color;
+    display: inline-block;
+    min-width: 7rem;
+    text-align: center;
+    background: rgba(255, 255, 255, .4);
+    border-radius: 2px;
+    font-weight: 300;
+  }
+
+  p:hover {
+    font-weight: bold;
+    background: rgba(255, 255, 255, .6);
+  }
 }
 
 #search-btn {
   width: 100%;
   height: 2.4375rem;
-  border: 2px solid #006992;
+  border: 2px solid $logo_color;
   border-radius: .4rem;
   background-color: rgba(255, 255, 255, .3);
-  color: #006992;
+  color: $logo_color;
   font-weight: bold;
 }
 
 #search-btn:hover {
-  background-color: #006992;
+  background-color: $logo_color;
   color: white;
   cursor: pointer;
 }
@@ -91,12 +128,43 @@ header {
     a {
       font-family: 'Montserrat Alternates', sans-serif;
       font-size: 7rem;
+      color: $logo_color
     }
   }
 }
 
 main > div.home {
-  padding-top: 4.5rem;
+  padding-top: 1.75rem;
+
+  h1 {
+    padding-top: 4rem;
+  }
+
+  p {
+    font-size: 1.25rem;
+    // font-weight: bold;
+    color: $logo_color;
+    display: inline-block;
+    min-width: 7rem;
+    text-align: center;
+    background: rgba(255, 255, 255, .4);
+    border-radius: 2px;
+    font-weight: 300;
+  }
+
+  p:hover {
+    font-weight: bold;
+    background: rgba(255, 255, 255, .6);
+  }
+
+  a {
+    color: $logo_color
+  }
+
+}
+
+div.lang {
+  text-align: right;
 }
 
 

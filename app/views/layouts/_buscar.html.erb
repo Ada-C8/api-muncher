@@ -1,6 +1,10 @@
+<div class="lang">
+  <p><%= link_to_unless I18n.locale == :en, "English", root_path(locale: :en) %></p>
+  <p><%= link_to_unless I18n.locale == :es, "Español", root_path(locale: :es) %></p>
+</div>
 
 <h1><%= link_to "Muncher", root_path %></h1>
-<%= link_to "Search in English", root_path, locale: :en %>
+<%# link_to "Search in English", root_path, locale: :en %>
 
 <section class="row search">
 

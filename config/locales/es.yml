@@ -1,7 +1,7 @@
 es:
   will_paginate:
-    previous_label: "&#8592; Precedente"
-    next_label: "Siguiente &#8594;"
+    previous_label: "&#8592;"
+    next_label: "&#8594;"
 
   i18n:
     transliterate:
