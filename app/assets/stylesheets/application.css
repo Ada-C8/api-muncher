@@ -41,7 +41,7 @@ body {
   right: 0;
   bottom: 0;
   left: 0;
-  padding: 1rem;
+  padding: 20px;
   background-color: #efefef;
   text-align: center;
 }
@@ -87,6 +87,7 @@ body {
   background-size:cover;
   display: block;
   /*height: 100%;*/
+  height: calc(100% - 40px)
   position: relative;
   padding: 200px 50px 300px 50px;
   /*padding: inherit;*/
