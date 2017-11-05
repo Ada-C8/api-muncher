@@ -3,7 +3,7 @@ require_dependency '../../lib/recipe'
 
 class RecipeController < ApplicationController
   def list_search
-    @recipes = EdamamApiWrapper.search(params["q"]).paginate(page: params[:page], per_page: 10)
+    @recipes = EdamamApiWrapper.search(params["q"]).paginate(page: params[:page], per_page: 12)
 
     if @recipes.length == 0
       flash[:status] = :failure
