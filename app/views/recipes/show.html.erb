@@ -1,36 +1,35 @@
 <% if @recipe %>
-<h1>You Gonna Eat Dat <%= @recipe.name %>?</h1>
-
-<section class="recipe_show">
-
-<h2><%=@recipe.name%></h2>
-<ul>
-  <li>
+<section class="recipe_show row">
+  <h1><%= @recipe.name %></h1>
+  <article class="recipe_show_img column center large-6 small-12">
     <%= image_tag @recipe.image, alt:"#{@recipe.name} image" %>
-  </li>
-  <li>
-    Ingredients
+  </article>
+  <article class="recipe_show_info column center large-6 small-12">
     <ul>
-      <% @recipe.ingredients.each do |line| %>
-        <li>
-          <%= line %>
-        </li>
-      <%end%>
+      <li>
+        Ingredients
+        <ul>
+          <% @recipe.ingredients.each do |line| %>
+          <li>
+            <%= line %>
+          </li>
+          <%end%>
+        </ul>
+      </li>
+      <li>
+        Dietary Info:
+        <ul>
+          <% @recipe.dietary.each do |line| %>
+          <li>
+            <%= line %>
+          </li>
+          <% end %>
+        </ul>
+      </li>
+      <li>
+        <%= link_to "More", @recipe.link %>
+      </li>
     </ul>
-  </li>
-  <li>
-    Dietary Info:
-    <ul>
-      <% @recipe.dietary.each do |line| %>
-        <li>
-          <%= line %>
-        </li>
-      <% end %>
-    </ul>
-  </li>
-  <li>
-    <%= link_to "More", @recipe.link %>
-  </li>
-</ul>
-<%end%>
+    <%end%>
+  </arcile>
 </section>

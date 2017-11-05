@@ -134,4 +134,9 @@
 
 .featured {
   margin-top: 5vw;
+  color: #40476D;
+}
+
+.featured img {
+  border-radius: 50%;
 }

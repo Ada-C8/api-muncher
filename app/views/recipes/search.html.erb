@@ -6,12 +6,10 @@
   <% end %>
 </section>
 
-<section class="featured row">
-  <article class="featured_picture column center large-6 medium-6 small-12">
+
+<div class="featured row center">
+  <article class="featured_info column center small-12">
+    <h2><%= @recipeace.name %></h2>
     <%= image_tag @recipeace.image %>
   </article>
-  <article class="featured_info column center large-6 medium-6 small-12">
-    <h2><%= @recipeace.name %></h2>
-    <%= @recipeace.ingredients %>
-  </article>
-</section>
+</div>
