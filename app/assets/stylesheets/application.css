@@ -80,3 +80,7 @@ footer.footer {
 inline-grid {
   display: inline-grid; y
 }
+
+.results-thumbnail {
+  width: 200px;
+}
