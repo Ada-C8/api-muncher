@@ -1,20 +1,25 @@
 <header class="row">
   <div class="columns small-12 small-centered inline">
-    <h1>"Menu"</h1>
+    <h1 id="menu">"Menu"</h1>
   </div>
-  <div class="columns small-12 small-centered inline">
-      <ul class="inline-li">
-        <li>CATEGORY<%#= link_to "", "path", class: "hover japanese-hover" %></li>
-        <li>CATEGORY<%#= link_to "", "path", class: "hover japanese-hover" %></li>
-        <li>CATEGORY<%#= link_to "", "path", class: "hover japanese-hover" %></li>
-        <li>CATEGORY<%#= link_to "", "path", class: "hover japanese-hover" %></li>
-        <li>CATEGORY<%#= link_to "", "path", class: "hover japanese-hover" %></li>
-      </ul>
-  </div>
+  <nav class="columns small-12 small-centered inline">
+      <p class="inline-li">
+        <%= link_to "CATEGORY", "#", class: "" %>
+        <%= link_to "CATEGORY", "#", class: "" %>
+        <%= link_to "CATEGORY", "#", class: "" %>
+        <%= link_to "CATEGORY", "#", class: "" %>
+        <%= link_to "CATEGORY", "#", class: "" %>
+        <%= link_to "CATEGORY", "#", class: "" %>
+      </p>
+  </nav>
 </header>
 
 <section class="row">
   <div class="large-11 large-offset-1 medium-11 medium-offset-1 small-12 columns"> <!-- figure out centering for small -->
+    <%= image_tag("http://via.placeholder.com/200x150", class: "result-img") %>
+    <%= image_tag("http://via.placeholder.com/200x150", class: "result-img") %>
+    <%= image_tag("http://via.placeholder.com/200x150", class: "result-img") %>
+    <%= image_tag("http://via.placeholder.com/200x150", class: "result-img") %>
     <%= image_tag("http://via.placeholder.com/200x150", class: "result-img") %>
     <%= image_tag("http://via.placeholder.com/200x150", class: "result-img") %>
     <%= image_tag("http://via.placeholder.com/200x150", class: "result-img") %>
