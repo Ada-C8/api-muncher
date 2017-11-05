@@ -11,20 +11,20 @@
 </section>
 
 
-<h2 class="peace_title"><%= link_to @recipeace.name, recipe_path(@recipeace.name, uri:
+<h2 class="featured_title"><%= link_to @recipeace.name, recipe_path(@recipeace.name, uri:
   @recipeace.uri, search_term: "peace")%></h2>
 
   <section class="featured row">
     <article class="featured_image column large-4 medium-6 small-12 center ">
-      <%= image_tag @recipeace.image%>
+      <%= link_to(image_tag(@recipeace.image), recipe_path(@recipeace.name, uri: @recipeace.uri, search_term: "peace"))%>
     </article>
-    <article class="featured_peace column large-8 medium-6 small-12">
+    <article class="featured_peace_info column large-8 medium-6 small-12">
       <ul>
         <li>
         </li>
         <li>
           <%(@recipeace.ingredients.length-1).times do |i|%>
-          <%= @recipeace.ingredients[i] %>
+          <%= @recipeace.ingredients[i] %>,
           <% end %>
           <%= @recipeace.ingredients.last %>
         </li>

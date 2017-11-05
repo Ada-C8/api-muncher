@@ -63,6 +63,10 @@ footer {
   height: 70px;
 }
 
+footer img{
+  border-radius: 0;
+}
+
 footer p {
   padding-top: 1vw;
 }
@@ -100,8 +104,14 @@ footer a {
   margin-right: 2.5vw;
 }
 
-.peace_title {
+.featured_title {
   text-align: center;
+}
+
+.featured_peace_info {
+  font-family: 'Josefin Sans', sans-serif;
+  border-left: solid 1px #40476D;
+  color: #40476D;
 }
 
 img {
@@ -164,21 +174,6 @@ img {
 }
 
 /*show page*/
-
-.recipe_show {
-  margin: 2.5vw;
-}
-
-.recipe_show_info {
-  font-family: 'Josefin Sans', sans-serif;
-
-}
-
-.recipe_show_info h4 {
-  font-family: 'Josefin Sans', sans-serif;
-  text-decoration: underline;
-}
-
 .show_h1 {
   text-decoration: underline;
   text-align: center;
@@ -187,7 +182,36 @@ img {
   padding-bottom: 2.5vw;
 }
 
-.recipe_show_img {
+.recipe_show_img img{
   margin-bottom: 5vw;
-  align-self: center;
+  align-self: right;
+  margin-right: 0;
+  padding-right: 0;
+
+}
+
+.recipe_show_img {
+  padding-bottom: 2vw;
+}
+
+.recipe_show{
+  margin: 2.5vw;
+  vertical-align: center;
+}
+
+.recipe_show_info {
+  font-family: 'Josefin Sans', sans-serif;
+  border-left: solid 1px #40476D;
+  color: #40476D;
+}
+
+.recipe_show_info h4 {
+  font-family: 'Josefin Sans', sans-serif;
+  text-decoration: underline;
+}
+
+
+
+.links {
+  padding-top: 3vw;
 }

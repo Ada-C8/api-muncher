@@ -26,14 +26,11 @@
           <% end %>
         </ul>
       </li>
-      <li>
-        <%= link_to "More", @recipe.link, class:"button"%>
-        <%= link_to "Back to \"#{@search}\" results", recipes_path(search: @search), class:"button"%>
-      </li>
-      <li>
-
-      </li>
     </ul>
     <%end%>
   </arcile>
+  <article class="links">
+    <%= link_to "More", @recipe.link, class:"button large-8 medium-12 small-12"%>
+    <%= link_to "Back to \"#{@search}\" results", recipes_path(search: @search), class:"button large-8 medium-12 small-12"%>
+  </article>
 </section>
