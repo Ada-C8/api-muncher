@@ -34,7 +34,7 @@ class ApiWrapper
     data = HTTParty.get(recipe_link)
 
     #parse the JSON data in order to get recipe details for the show page
-    if data.empty?
+    if data.code == 404
       raise ApiError.new("No recipe details for this link")
     else
       recipe_detail = self.create_recipe(data[0])
