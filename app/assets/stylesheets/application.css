@@ -28,7 +28,7 @@
 body {
   position: relative;
   /*margin: 2em;*/
-  padding-bottom: 6rem;
+  /*padding-bottom: 6rem;*/
   min-height: 100%;
 }
 
@@ -36,8 +36,7 @@ body {
  * Footer Styles
  */
 
-.footer {
-  font-family: 'Delius Unicase', cursive;
+.footer-search-and-show {
   position: absolute;
   right: 0;
   bottom: 0;
@@ -45,21 +44,72 @@ body {
   padding: 1rem;
   background-color: #efefef;
   text-align: center;
-
 }
 
-/**********INDEX PAGE*******************/
-/**********INDEX PAGE*******************/
-/**********INDEX PAGE*******************/
+.footer-index a {
+  color: white
+}
 
-.home-page-container {
+.footer-index a:hover {
+  color: red;
+}
+
+.footer-index {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  padding: 1rem;
+  background-color: #3a9e53;
+  text-align: center;
+    color: white;
+}
+
+#footer-style {
   font-family: 'Delius Unicase', cursive;
 }
 
+/**********INDEX PAGE*******************/
+/**********INDEX PAGE*******************/
+/**********INDEX PAGE*******************/
 
+#home-logo {
+  font-family: 'Delius Unicase', cursive;
+  font-size: 4em;
+  color: white;
+}
 
+.home-page-container {
+  font-family: 'Delius Unicase', cursive;
+  background-image: url(italian-cuisine.jpg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size:cover;
+  display: block;
+  /*height: 100%;*/
+  position: relative;
+  padding: 200px 50px 300px 50px;
+  /*padding: inherit;*/
+  margin: 0;
+}
+ span {
+   text-align: center;
+ }
 
+.home-page-search {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+}
+
+.home-page-search div {
+  width: 300px;
+}
 /**********PAGE HEADER (FORM)*******************/
+.page-header h1 {
+
+}
 
 .page-header {
   display: flex;
@@ -150,8 +200,12 @@ body {
 }
 /*****PAGINATION*****/
 .pagination-container {
+  position: sticky;
   display: flex;
   align-items: center;
+  padding-bottom: 6rem;
+  min-height: 200px;
+
 }
 
 .page-numbers {
@@ -176,13 +230,11 @@ body {
 
 .food-image, .ingredient-list {
   margin: 2em;
-  max-width: 300px;
+  width: 300px;
 }
 
 .health-container, .dietary-container {
   margin: 2em;
-
-  /*max-width: 50%*/
 }
 
 .health-container h4, .dietary-container h4 {

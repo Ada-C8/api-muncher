@@ -31,19 +31,25 @@
       <%end%>
     </div>
 
-  <div class= "dietary-container">
-    <h4>Dietary Information</h4>
-    <%if @recipe.dietLabels.length == 0%>
-      <p>No available dietary information.</p>
-    <%else%>
-      <ul><%@recipe.dietLabels.each do |diet_label|%>
-        <li><%=diet_label%></li>
-      </ul>
+    <div class= "dietary-container">
+      <h4>Dietary Information</h4>
+      <%if @recipe.dietLabels.length == 0%>
+        <p>No available dietary information.</p>
+      <%else%>
+        <ul><%@recipe.dietLabels.each do |diet_label|%>
+          <li><%=diet_label%></li>
+        </ul>
+        <%end%>
       <%end%>
-    <%end%>
-    </div>
+      </div>
   </section>
 
   <h4><%= link_to "Source Website", @recipe.url%> </h4>
 
 </section>
+
+<footer class="footer-search-and-show" id = "footer-style">
+  <h4>
+    Powered by <%= link_to "Edamam", "https://www.edamam.com/" %>
+  </h4>
+</footer>

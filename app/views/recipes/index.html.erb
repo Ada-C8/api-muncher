@@ -1,9 +1,19 @@
-<header .home-page-container>
-  <h1>Muncher</h1>
-  <nav>
+<header class = "home-page-container">
+  <span>
+    <h1 id = "home-logo">Muncher</h1>
+  </span>
+  <span class = "home-page-search">
+    <div>
     <%= form_tag recipes_search_path, :method => "get" do %>
       <%= text_field_tag :keywords%>
       <%= submit_tag "Search"%>
     <% end %>
-  </nav>
+    </div>
+  </span>
 </header>
+
+<footer class="footer-index" id = "footer-style">
+  <h4>
+    Powered by <%= link_to "Edamam", "https://www.edamam.com/" %>
+  </h4>
+</footer>
