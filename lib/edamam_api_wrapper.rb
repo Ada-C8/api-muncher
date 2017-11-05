@@ -25,10 +25,14 @@ class EdamamApiWrapper
   # https://api.edamam.com/search?r=http://www.edamam.com/ontologies/edamam.owl%23recipe_637913ec61d9da69eb451818c3293df2&app_id=a1c4badd&app_key=c5abe96e61c6a92d0ba6194cdf6469fb
 
   def self.show_recipe(uri)
+    # raise
+    # TODO: not currently hitting show_recipe
+
     # encoded_uri = URI.encode(uri)
     # construct the url
-    url = BASE_URL + "http://www.edamam.com/ontologies/edamam.owl%23recipe_" + "r=#{uri}" + "&app_id=" + EDAMAM_ID + "&app_key=" + EDAMAM_KEY
+    url = BASE_URL + "http://www.edamam.com/ontologies/edamam.owl#recipe_" + "r=#{uri}" + "&app_id=" + EDAMAM_ID + "&app_key=" + EDAMAM_KEY
     # make httparty request
+
     data = HTTParty.get(url).parsed_response
     # return instance of recipe
     parse_recipe(data[0])
@@ -38,12 +42,14 @@ class EdamamApiWrapper
   private
 
   def self.parse_recipe(raw_recipe)
+    # raw_recipe["uri"]
+    # => "http://www.edamam.com/ontologies/edamam.owl#recipe_8643e0c3105bcb0d3c3a417308a09c03"
     return Recipe.new(
       name: raw_recipe["label"],
       uri: raw_recipe["uri"],
       url: raw_recipe["url"],
       ingredients: raw_recipe["ingredients"],
-      image_url: raw_recipe["image_url"],
+      image: raw_recipe["image"],
       servings: raw_recipe["yield"],
       calories: raw_recipe["calories"],
       total_nutrients: raw_recipe["total_nutrients"],
