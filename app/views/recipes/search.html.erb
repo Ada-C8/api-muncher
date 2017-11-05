@@ -17,8 +17,13 @@
   <%if @number_of_recipes != 0 && @number_of_recipes != nil%>
     <% @recipes.each do |recipe| %>
       <ul class="recipe-photo-and-name">
-        <li><%=image_tag recipe.image%></li>
-        <li><%=link_to(recipe.label, recipe_show_path(recipe.find_recipe_id))%></li>
+        <li class= "search-photo">
+          <%=image_tag recipe.image%>
+          <div class = "recipe-name">
+            <%=link_to(recipe.label, recipe_show_path(recipe.find_recipe_id))%>
+          </div>
+          </li>
+        </ul>
       </ul>
   <%end%>
 </section>
