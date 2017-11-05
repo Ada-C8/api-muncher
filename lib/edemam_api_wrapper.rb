@@ -11,12 +11,7 @@ class EdemamApiWrapper
   class ApiError < StandardError
   end
 
-
-#"https://api.edamam.com/search?q=chicken&app_id=${YOUR_APP_ID}&app_key=${YOUR_APP_KEY}&"
-# https://api.edamam.com/search?r=http://www.edamam.com/ontologies/edamam.owl%23recipe_ac4795627030ca70b0795f96641350cb
-
   def self.list_recipes(search_term, end_url=END_URL)
-    puts "Searching for #{search_term}"
     url = BASE_URL + "q=" + search_term + end_url + "&from=0&to=100&"
     response = HTTParty.post(url)
     check_status(response.parsed_response["hits"])
@@ -32,6 +27,7 @@ class EdemamApiWrapper
 
   def self.find_a_recipe(uri)
     url = BASE_URL + "r=" + URI_BASE + uri + END_URL
+    puts url
     response = HTTParty.get(url).parsed_response
     check_status(response)
     return create_recipe(response[0])

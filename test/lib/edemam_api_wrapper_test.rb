@@ -8,14 +8,11 @@ describe EdemamApiWrapper do
         search_term = "chicken"
         response = EdemamApiWrapper.list_recipes(search_term)
         response.count.must_be :>, 0
-        #response["message"]["text"].must_equal message
       end
     end
 
-    #it raises an argument if recipe is not in?
+    #it raises an argument if recipe is not passed in?  that seems like testing ruby's ability to raise argument errors
   end
-
-  #why is this returning a fine response?
   it "Raises an ApiError when the token is bad" do
     VCR.use_cassette("recipes") do
        proc {
@@ -43,7 +40,6 @@ describe EdemamApiWrapper do
       end
     end
 
-
-    #check is the uri is bad?
+    #it checks is the uri is bad?
   end
 end
