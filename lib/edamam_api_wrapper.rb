@@ -1,10 +1,10 @@
 require 'httparty'
-require 'uri'
+# require 'uri'
 
 class EdamamApiWrapper
   BASE_URL = "https://api.edamam.com/search?"
   SEARCH_URL = "q="
-  SHOW_URL = "r="
+  SHOW_URL = "r=http://www.edamam.com/ontologies/edamam.owl%23recipe_"
   CRED_URL = "&app_id=#{ENV["APP_ID"]}&app_key=#{ENV["APP_KEY"]}"
 
   def self.search_recipes(search)
@@ -21,8 +21,9 @@ class EdamamApiWrapper
     return recipes
   end
 
-  def self.show_recipe(recipe)
-    url = BASE_URL + SHOW_URL + URI.escape("#{recipe}") + CRED_URL
+  def self.show_recipe(id)
+    # url = BASE_URL + SHOW_URL + URI.escape("#{recipe}") + CRED_URL
+    url = BASE_URL + SHOW_URL + "#{id}" + CRED_URL
     response = HTTParty.get(url)
     recipe = Recipe.new(
       response.first["uri"],

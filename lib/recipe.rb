@@ -12,7 +12,12 @@ class Recipe
     @healthLabels = healthLabels
   end
 
+  def id
+    return uri.split("_")[1]
+  end
+  
     private
+
 
     def valid_input?
       return uri == nil || uri == "" || name == nil || name = "" || link == nil || link == "" || image == nil || image == "" || ingredients == nil || ingredients == "" || healthLabels == nil || healthLabels == ""
