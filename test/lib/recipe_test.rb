@@ -3,9 +3,9 @@ require 'test_helper'
 describe Recipe do
 
   it "can be created" do
-    my_recipe = Recipe.new("foodie surprise", "surprise.recipe.com", "uri.surprise.recipe.com", "surprise.recipe.com/photo.png", "4", ["surprise1", "mystery1"], ["not_diet_food", "comfort_food"])
+    my_recipe = Recipe.new("foodie surprise", "surprise.recipe.com", "uri.surprise.recipe.com", "recipe.com", "surprise.recipe.com/photo.png", "4", ["surprise1", "mystery1"], ["not_diet_food", "comfort_food"])
 
-    [:name, :url, :uri, :image_url, :yield, :ingredients, :diet_labels].each do |method|
+    [:name, :url, :uri, :source, :image_url, :yield, :ingredients, :diet_labels].each do |method|
       my_recipe.must_respond_to method
     end
 
