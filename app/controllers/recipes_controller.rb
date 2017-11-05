@@ -9,6 +9,7 @@ class RecipesController < ApplicationController
   end
 
   def show
+    @recipe = params[:recipe]
   end
 
   def task_params

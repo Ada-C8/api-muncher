@@ -6,7 +6,7 @@
   <% @recipes.each do |recipe| %>
     <article>
       <%= image_tag (recipe.image) %>
-      <%= link_to recipe.name %>
+      <%= link_to recipe.name, recipe_path(recipe) %>
     </article>
   <% end %>
 <% end %>
