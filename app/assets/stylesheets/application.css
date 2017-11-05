@@ -31,13 +31,24 @@ span.footer {
   text-align: center;
 }
 
+ul.inline-li {
+  list-style-type: none;
+}
+
 ul.inline-li li {
   display: inline-block;
   text-align: center;
 }
 
+div.inline {
+  display: flex;
+  justify-content: center;
+  padding: 0;
+}
+
 .columns {
   padding-left: 0;
+  padding-right: 0:
 }
 
 .result-img {
