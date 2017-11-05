@@ -8,6 +8,12 @@ class RecipesController < ApplicationController
 
   def show
     @recipe = EdamamApiWrapper.show_recipe(params[:id])
-  end
 
+    if @recipe
+      flash[:success]
+    else
+      flash[:error] = "Recipe not found"
+      redirect_to recipes_path
+    end
+  end
 end

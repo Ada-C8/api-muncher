@@ -29,8 +29,10 @@ class EdamamApiWrapper
     url = BASE_URL + "?app_id=" + ID + "&app_key=" + KEYS + "&r=" + RECIPE_URI_PREFIX + URI.encode(uri)
 
     response = HTTParty.get(url)
-    image = URI.encode(response[0]["image"])
-    RecipeShow.new response[0]["label"], response[0]["url"], response[0]["ingredientLines"], response[0]["healthLabels"], image, response[0]["source"]
+      if response
+        image = URI.encode(response[0]["image"])
+        return RecipeShow.new response[0]["label"], response[0]["url"], response[0]["ingredientLines"], response[0]["healthLabels"], image, response[0]["source"]
+      end
   end
 
 end
