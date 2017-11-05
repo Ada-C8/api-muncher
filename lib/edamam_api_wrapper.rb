@@ -57,12 +57,14 @@ class EdamamApiWrapper
 
     r_url = BASE_URL + "search?r=#{recipe_uri}" + "&app_id=#{app_id}" + "&app_key=#{app_key}"
 
+    puts r_url
+
     #returns an array with one hash that has all the recipes's information
     response = HTTParty.get(r_url)
 
 
-    #for invalid requests, Edamam sends an html 401 error response
-    if response.body.include?("Error")
+    #for invalid requests, Edamam sends an html 401 error response if unauthorized, or a "[]" if no recipe is found
+    if response.body.include?("Error") || response.body.include?("[]")
       return []
     else
       return create_recipe(response.first)

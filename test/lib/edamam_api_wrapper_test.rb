@@ -144,6 +144,19 @@ describe EdamamApiWrapper do
 
     end
 
+    it "will return an empty array for a recipe that doesn't exist" do
+
+      VCR.use_cassette("find_nonexist_recipe") do
+        bogus_uri = "http://scam.bogus.com"
+
+        recipe = EdamamApiWrapper.find_recipe(bogus_uri)
+
+        recipe.must_be_instance_of Array
+        recipe.must_equal []
+      end
+
+    end
+
 
   end
 
