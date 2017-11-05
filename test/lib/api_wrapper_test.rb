@@ -14,8 +14,10 @@ describe ApiWrapper do
     end
 
     it "search for something that does not exist return []" do
-      
-
+      VCR.use_cassette("recipes") do
+        result = ApiWrapper.list_recipes("")
+        result.must_equal []
+      end
     end
 
     it "Raises an ApiError when token is bad" do
@@ -30,6 +32,8 @@ describe ApiWrapper do
       ensure
         # ensure that this code always runs, no matter what
         # it does not change the final value of the block
+
+        # in this case we want ensure because we may need the correct TOKEN for future tests
         ApiWrapper::TOKEN = origin_token
       end
     end
