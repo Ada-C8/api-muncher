@@ -1,1 +1,13 @@
 <h1>A lovely list of recipes</h1>
+
+<div>
+  <ul class="recipe_list">
+    <% @recipes.each do |recipe| %>
+      <li><%= link_to image_tag(recipe.image, alt: "recipe photo"), recipes_index_path(recipe.label)%></li>
+  <% end %>
+</ul>
+</div>
+
+<section class="row pagination">
+  <%= will_paginate @recipes %>
+</section>
