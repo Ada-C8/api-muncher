@@ -1,0 +1,25 @@
+<section class="row centered pink">
+  <h2> Results for <%=@query%> </h2>
+</section>
+
+
+<section class="row small-up-1 large-up-2">
+  <% @recipes.each do |recipe| %>
+      <article class="column recipe">
+      <figure>
+        <img src="<%=recipe.image%>" class="image"/>
+        <figcaption class="recipe_info">
+            <%uri = recipe.uri[/\_.+/]%>
+            <strong>
+              <%=link_to recipe.label,   recipe_path(uri)%>
+            </strong>
+            <p>
+            </p>
+        </figcaption>
+        </figure>
+        </article>
+  <%end %>
+</section>
+<nav>
+    <%= will_paginate @recipes%>
+</nav>

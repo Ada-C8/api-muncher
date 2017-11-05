@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html class="full_height">
+  <head>
+    <title>ApiMuncher</title>
+    <%= csrf_meta_tags %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body class="full_height pink">
+    <header>
+      <section class="page-header">
+        <section class="row logo">
+        <h1>
+         <%=link_to "Muncher", root_path%>
+        </h1>
+        </section>
+      </section>
+    </header>
+    <div>
+    <% if flash[:status] %>
+   <section class="row status <%= flash[:status] %>">
+     <h3>
+       <%= flash[:message] %>
+     </h3>
+     <%end%>
+    </div>
+    <%= yield %>
+    <footer>
+      <section class="page-footer">
+      <p>
+        Powered by <a href="https://www.edamam.com/">Edamam</a>
+      </p>
+      </section>
+    </footer>
+  </body>
+</html>

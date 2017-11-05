@@ -1,0 +1,138 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+
+ .page-header{
+   background-color: LightSeaGreen;
+   max-width: 100%;
+   color: Maroon;
+   text-align: center;
+   height: 30vh;
+ }
+
+.page-footer {
+  background-color: LightSeaGreen;
+  color: Maroon;
+  text-align: center;
+  max-width: 100%;
+  padding: 30px;
+  font-size: 1.5em;
+  height: 10vh;
+}
+
+.recipe_info {
+  font-size: 1.2em;
+  list-style: none;
+  text-align: center;
+  line-height: 300%;
+}
+
+.recipe_info em {
+}
+
+.pink {
+  background-color: #ffe6e6;
+  height:100%;
+}
+
+.image {
+  padding: 3%;
+  display: block;
+  margin: auto;
+  text-align: center;
+}
+
+.ingredients, .dietary  {
+  border-style: solid;
+  border-color: Maroon;
+  padding: 2%;
+  list-style: none;
+}
+
+.dietary ul, .ingredients ul{
+  list-style: none;
+}
+
+
+
+.recipe{
+  border-left: Maroon;
+  border-bottom: Maroon;
+}
+
+.recipie_info .sublist {
+  font-size: 1em;
+  color: #303030;
+  background-color: #ffe6e6;
+  list-style-position: inside;
+  padding-left: 4%;
+}
+
+a {
+  color: Maroon;
+}
+
+.page-footer p a {
+  font-weight: bold;
+  color: White;
+}
+
+.logo {
+  padding: 70px;
+}
+
+.logo h1 {
+  font-size: 4em;
+  font-weight: bold;
+}
+
+h1, h2, h3, figcaption {
+  text-align: center;
+  color: Maroon
+}
+
+h2 {
+  text-align: center;
+}
+
+.pagination a {
+  color: Maroon;
+  display: inline-block;
+}
+
+.pagination .current {
+background-color:LightSeaGreen;
+}
+
+.pagination {
+  text-align: center;
+}
+
+.form {
+  height: 60vh;
+  font-size: 1.5em;
+  color: Maroon
+}
+
+.form label {
+  font-size: 1.1em;
+  color: Maroon
+}
+
+.form input{
+  font-size: 1.1em;
+  color: Maroon;
+  background-color: white;
+}
