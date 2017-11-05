@@ -1,4 +1,4 @@
-require_dependency '../../lib/muncher_api_wrapper'
+require_dependency '../../lib/Muncher_Api_Wrapper'
 require_dependency '../../lib/recipe'
 
 class SearchesController < ApplicationController
