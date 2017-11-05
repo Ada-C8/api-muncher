@@ -1,5 +1,5 @@
 <section class="recipes-list">
-  <h1>Your Recipe Results</h1>
+  <h1>Results for <%= "\"#{params[:search_term]}\"" %></h1>
   <ul>
     <% @recipes.each do |recipe| %>
       <li>

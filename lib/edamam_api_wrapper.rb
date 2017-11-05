@@ -30,7 +30,7 @@ class EdamamApiWrapper
 
     response = HTTParty.get(url)
     image = URI.encode(response[0]["image"])
-    RecipeShow.new response[0]["label"], response[0]["url"], response[0]["ingredientLines"], response[0]["healthLabels"], image
+    RecipeShow.new response[0]["label"], response[0]["url"], response[0]["ingredientLines"], response[0]["healthLabels"], image, response[0]["source"]
   end
 
 end
