@@ -6,14 +6,13 @@
     </script>
   </div>
   <% end %>
-</section>
 
-<section class="pages">
+<div class="pages">
   <% if @page != 1 %>
   <%= link_to "previous", search_results_path(:ingredients => @keywords, :page => @page - 1), method: :get %>
   <% end %>
-  <%= link_to "New Search", root_path %>
-  <% if @all_recipes.count > 0 || @all_recipes.count < 9 %>
+  <% if @all_recipes.count > 0 %>
   <%= link_to "next",  search_results_path(:ingredients => @keywords, :page => @page + 1), method: :get %>
   <% end %>
+</div>
 </section>

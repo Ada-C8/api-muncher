@@ -134,13 +134,24 @@ input[type=text]:focus {
   opacity: .5;
 }
 
+.pages {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-right: 40%;
+  margin-left: 40%;
+  margin-top: 0;
+  margin-bottom: 10%;
+  padding: 0;
+}
+
 /*show page styling and media screens*/
 
 .show {
   height: auto;
 }
 
-.title, .title a, .recipe-link a, input[type=submit], .search a, .credit a {
+.title, .title a, .recipe-link a, input[type=submit], .search a, .credit a, .pages a, .pages {
   text-align: center;
   width: 200px;
   letter-spacing: 1px;
