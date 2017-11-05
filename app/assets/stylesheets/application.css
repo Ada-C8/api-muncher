@@ -1,4 +1,4 @@
-html {
+body.main {
   background: url("http://awesomewallpaper.files.wordpress.com/2013/01/apple_wallpaper_2_by_maxwood.jpg") no-repeat center center fixed;
   -webkit-background-size: cover;
   -moz-background-size: cover;
@@ -7,9 +7,29 @@ html {
 }
 
 body {
-  color: ghostwhite
+  color: white;
+  text-align: center;
+  background-color: darkgreen;
 }
 
 body a{
   color: ghostwhite
+}
+
+ul {
+  list-style-type: none;
+}
+
+h1 {
+  center
+}
+
+.green {
+  position: absolute;
+  left: 0px;
+  width: 300px;
+  border: 3px solid #73AD21;
+  padding: 10px;
+  background: rgba(76, 175, 80, 0.6);
+
 }
