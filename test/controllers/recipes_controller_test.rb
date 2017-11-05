@@ -6,15 +6,17 @@ describe RecipesController do
       VCR.use_cassette("home") do
         get root_path
         must_respond_with :success
+        flash[:status].must_equal :success
       end
     end
   end
 
   describe "index" do
-    it "responds with success with no search term" do
+    it "successfully loads but sends an error message for an empty search" do
       VCR.use_cassette("index_action") do
-        get recipes_path()
+        get recipes_path
         must_respond_with :success
+        flash[:status].must_equal :error
       end
     end
 
@@ -22,6 +24,7 @@ describe RecipesController do
       VCR.use_cassette("index_action") do
         get recipes_path("water")
         must_respond_with :success
+        flash[:status].must_equal :success
       end
     end
 
@@ -29,12 +32,12 @@ describe RecipesController do
       VCR.use_cassette("index_action") do
         get recipes_path("l24ft")
         must_respond_with :success
+        flash[:status].must_equal :error
       end
     end
   end
 
   describe "show" do
-
     let(:uri) {URI.encode("http://www.edamam.com/ontologies/edamam.owl#recipe_7bf4a371c6884d809682a72808da7dc2")}
 
     it "loads the show page" do
@@ -42,6 +45,7 @@ describe RecipesController do
         recipe = EdamamApiWrapper.item_search(uri)
         get recipe_path(recipe.name, uri: recipe.uri )
         must_respond_with :success
+        flash[:status].must_equal :success
       end
     end
 

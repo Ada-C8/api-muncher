@@ -7,10 +7,9 @@ class RecipesController < ApplicationController
   def home
     @recipes = EdamamApiWrapper.search("Thanksgiving").paginate(page: params[:page], per_page: 12)
 
-    if @recipes
+    if @recipes != []
       message = "We're so happy to have you here at Munchers! Check out our current seasonal favorites below or search for something to munch on"
-      success_status(message)
-      # flash[:result_text] = "We're so happy to have you here at Munchers! Check out our current seasonal favorites below or search for something to munch on"
+      status(:success, message)
     end
   end
 
@@ -18,15 +17,13 @@ class RecipesController < ApplicationController
     @recipes = EdamamApiWrapper.search(params[:term]).paginate(page: params[:page], per_page: 12)
 
     if @recipes == []
-      # flash.now[:status] = :error
       message = "Sorry! We couldn't find anything delicious flavours matching #{params[:term]} Please try a different flavor!"
-      success_status(message)
-      # flash.now[:result_text] = "Sorry! We couldn't find anything delicious flavours matching #{params[:term]} Please try a different flavor!"
+      status(:error, message)
+      puts "no recipes found"
     else
-      # flash.now[:status] = :success
+      puts "recipes found!"
       message = "Results found for #{params[:term]}"
-      success_status(message)
-      # flash.now[:result_text] = "Results found for #{params[:term]}"
+      status(:success, message)
     end
   end
 
@@ -35,9 +32,7 @@ class RecipesController < ApplicationController
 
     if @recipe
       message = "#{@recipe.name} found!"
-      success_status(message)
-      # flash.now[:status] = :success
-      # flash.now[:result_text] = "#{@recipe.name} found!"
+      status(:success, message)
     end
 
     render_404 unless @recipe
@@ -45,8 +40,8 @@ class RecipesController < ApplicationController
 
   private
 
-  def success_status(message)
-    flash[:status] = :success
+  def status(status, message)
+    flash[:status] = status
     flash[:result_text] = message
   end
 end
