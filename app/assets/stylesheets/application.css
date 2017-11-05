@@ -98,9 +98,14 @@
    color: white;
  }
 
+.result_title {
+  text-align: center;
+  text-shadow: white 2px 2px;
+  border-bottom: 2px solid white;
+}
 
 .all_results {
-  margin-top: 10vw;
+  margin-top: 5vw;
   margin-bottom: 15vw;
 }
 

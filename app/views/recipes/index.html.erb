@@ -11,6 +11,7 @@
 
 
 <section class="all_results row large-12">
+  <h1 class="result_title">Results for <%=@search%></h1>
 <ol>
   <% @recipes.each do |recipe| %>
   <article class="list_result column float-left large-4 medium-6 small-12">
@@ -20,7 +21,7 @@
         <%= image_tag recipe.image, alt:"#{recipe.name} image" %>
       </li>
       <li class="recipe_title">
-        <h2><%= link_to recipe.name, recipe_path(recipe.name, uri: recipe.uri) %></h2>
+        <h3><%= link_to recipe.name, recipe_path(recipe.name, uri: recipe.uri) %></h3>
       </li>
     </ul>
     </article>
