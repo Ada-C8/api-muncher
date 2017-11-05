@@ -5,12 +5,13 @@ class RecipesController < ApplicationController
   end
 
   def index
-    @recipes = ApiWrapper.list_recipes(params[:search])
-
-    if @recipe
-
+    @query = params[:search]
+    
+    if params[:search]
+      @recipes = ApiWrapper.list_recipes(params[:search])
     else
-
+      flash[:status] = :failure
+      flash[:message] = "Invalid search term, please search for something else"
     end
   end
 

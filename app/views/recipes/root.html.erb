@@ -2,6 +2,7 @@
 <p>Find me in app/views/main/index.html.erb</p>
 
 <h1><%= link_to "The Munchies", root_path %></h1>
+  <!-- source for form_tag stuff  http://www.rymcmahon.com/articles/2 -->
   <!-- a form element with "GET" method because by default the form_tag sends a POST request-->
   <%= form_tag recipes_path, method: "get" do %>
 
