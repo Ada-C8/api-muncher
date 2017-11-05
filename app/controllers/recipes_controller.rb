@@ -2,12 +2,11 @@ require_dependency '../../lib/edamam_api_wrapper'
 require_dependency '../../lib/recipe'
 
 class RecipesController < ApplicationController
-  # TODO: pass in the proper parameter
   def index
-    @query = params[:query] || "chocolate"
-    @recipes = EdamamApiWrapper.list_recipes(@query)
+    @recipes = EdamamApiWrapper.list_recipes(params[:query] || "chocolate")
   end
 
   def show
+    @recipe = EdamamApiWrapper.show_recipe(params[:uri])
   end
 end
