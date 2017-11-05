@@ -3,7 +3,7 @@ require 'test_helper'
 describe EdemamApiWrapper do
 
   describe "list_recipes" do
-    it "Can send find recipes" do
+    it "Can find recipes" do
       VCR.use_cassette("recipes") do
         search_term = "chicken"
         response = EdemamApiWrapper.list_recipes(search_term)
@@ -11,15 +11,16 @@ describe EdemamApiWrapper do
       end
     end
 
+    # it "Raises an ApiError when the token is bad" do
+    #   VCR.use_cassette("recipes") do
+    #      proc {
+    #     EdemamApiWrapper.list_recipes("chicken", "bogus_token")
+    #      }.must_raise EdemamApiWrapper::ApiError
+    #   end
+    # end
     #it raises an argument if recipe is not passed in?  that seems like testing ruby's ability to raise argument errors
   end
-  it "Raises an ApiError when the token is bad" do
-    VCR.use_cassette("recipes") do
-       proc {
-      EdemamApiWrapper.list_recipes("chicken", "bogus_token")
-       }.must_raise EdemamApiWrapper::ApiError
-    end
-  end
+
 
   describe "find_a_recipe" do
     it "Can find a single recipe with a uri" do
@@ -40,6 +41,5 @@ describe EdemamApiWrapper do
       end
     end
 
-    #it checks is the uri is bad?
   end
 end
