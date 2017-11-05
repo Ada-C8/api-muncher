@@ -1,15 +1,24 @@
+<section class="header row">
+  <h1 class="column">Reci-PEACE</h1>
+</section>
+
 <section class="search_bar column small-12">
-  <h1 class="center">Find Your ReciPEACE</h1>
+  <h3>reci-peace is awaits you...</h3>
   <%= form_tag(recipes_path, method: :get) do %>
   <%=text_field_tag :search %>
   <%=submit_tag "Search", class:"button column small-12"%>
   <% end %>
 </section>
 
-
-<div class="featured row center">
-  <article class="featured_info column center small-12">
-    <h2><%= @recipeace.name %></h2>
-    <%= image_tag @recipeace.image %>
+<section class="featured row">
+  <article class="featured_peace column center">
+    <ul>
+      <li>
+        <h2><%= @recipeace.name %></h2>
+      </li>
+      <li>
+        <%= image_tag @recipeace.image, class:"column large-4 small-12 center "%>
+      </li>
+    </ul>
   </article>
-</div>
+</section>

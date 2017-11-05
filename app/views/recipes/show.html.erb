@@ -1,6 +1,6 @@
 <% if @recipe %>
-<section class="recipe_show row">
   <h1><%= @recipe.name %></h1>
+<section class="recipe_show row">
   <article class="recipe_show_img column center large-6 small-12">
     <%= image_tag @recipe.image, alt:"#{@recipe.name} image" %>
   </article>
@@ -27,10 +27,11 @@
         </ul>
       </li>
       <li>
-        <%= link_to "More", @recipe.link %>
+        <%= link_to "More", @recipe.link, class:"button"%>
+        <%= link_to "Back to \"#{@search}\" results", recipes_path(search: @search), class:"button"%>
       </li>
       <li>
-        <%= link_to "Back to \"#{@search}\" results", recipes_path(search: @search)%>
+
       </li>
     </ul>
     <%end%>
