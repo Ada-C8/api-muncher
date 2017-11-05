@@ -33,6 +33,8 @@ class RecipesController < ApplicationController
     # uri = params[:id]
     # uri.gsub(/%2F/, "/")
     begin
+      @search = params[:search_term]
+      puts "SEARCH: #{@search}"
       @recipe = EdamamApiWrapper.find_recipe(params[:id])
     rescue EdamamApiWrapper::ApiError => error
       flash[:status] = :failure

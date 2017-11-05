@@ -1,4 +1,15 @@
+<%= render partial: "flash", locals: { action_name: "show-index-flash"} %>
+
+<%# if flash[:status] %>
+  <!-- <div class="show-index-flash"> -->
+    <%#= flash[:message] %>
+  <!-- </div> -->
+<%# end %>
+
+<h2><%= @search %></h2>
+
 <section class="show-page wrapper">
+
   <h3><%= @recipe.label %></h3>
   <h5>By <%= link_to @recipe.source %></h5>
 
@@ -13,8 +24,12 @@
           <strong>Health Labels</strong>
         </h6>
         <ul>
-          <% @recipe.health_labels.each do |labels| %>
-            <li><%= labels %></li>
+          <% if @recipe.health_labels.empty? %>
+            <li>No health labels provided</li>
+          <% else %>
+            <% @recipe.health_labels.each do |labels| %>
+              <li><%= labels %></li>
+            <% end %>
           <% end %>
         </ul>
       </div>

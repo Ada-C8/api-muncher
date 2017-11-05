@@ -8,8 +8,10 @@
   <% end %>
 </div>
 
-<% if flash[:status] %>
-  <div class="flash">
-    <%= flash[:message] %>
-  </div>
-<% end %>
+<%= render partial: "flash", locals: { action_name: "flash"} %>
+
+<%# if flash[:status] %>
+  <!-- <div class="flash"> -->
+    <%#= flash[:message] %>
+  <!-- </div> -->
+<%# end %>
