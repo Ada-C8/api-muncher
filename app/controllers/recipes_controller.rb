@@ -13,6 +13,7 @@ class RecipesController < ApplicationController
   end
 
   def show
+    @search = params[:search_term]
     @uri = params[:uri]
     @recipe = FoodApiWrapper.show_recipe(@uri)
     unless @recipe

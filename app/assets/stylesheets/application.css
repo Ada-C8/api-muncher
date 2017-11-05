@@ -137,6 +137,19 @@
   color: #40476D;
 }
 
-.featured img {
+img {
   border-radius: 50%;
+}
+
+.recipe_show_img {
+  margin-bottom: 5vw;
+}
+
+.recipe_show_info {
+  font-family: 'Josefin Sans', sans-serif;
+}
+
+.recipe_show_info h4 {
+  font-family: 'Josefin Sans', sans-serif;
+  text-decoration: underline;
 }
