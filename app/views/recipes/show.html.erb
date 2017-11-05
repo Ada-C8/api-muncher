@@ -3,15 +3,9 @@
    <h4>By: <%=@recipe.source%></h4>
 </div>
 <div class="row">
-  <!-- <section class="large-12 large-centered columns"> -->
     <section class="large-6 medium-6 small-12 columns" id="recipe-show-image">
    <%=image_tag("#{@recipe.image}", alt:"#{@recipe.label}") %>
-   <!-- <h4>Dietary Labels</h4>
-   <ul> -->
-  <%#@recipe.diet_labels.each do |label|%>
-    <!-- <li><%#label%></li> -->
-   <%# end %>
-  <!-- </ul> -->
+
  </section>
    <section class="large-6 medium-6 small-12 columns" id="ingredients">
    <h4>Ingredients</h4>
