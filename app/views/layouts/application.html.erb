@@ -3,10 +3,10 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <script src="https://developer.edamam.com/attribution/badge.js"></script>
 
-    <%= javascript_include_tag "application", 'data-turbolinks-track' => true %>
-    <%= favicon_link_tag 'Favicon-01.png'%>
+
+  <%= javascript_include_tag "application", 'data-turbolinks-track' => true %>
+  <%= favicon_link_tag 'Favicon-01.png'%>
 
   <title><%= content_for?(:title) ? yield(:title) : "NomNom.com" %></title>
 
@@ -31,8 +31,11 @@
     <%= yield %>
   </main>
 
+<script src="https://developer.edamam.com/attribution/badge.js"></script>
   <footer class="footer">
-      <div id="edamam-badge"></div>
+    <div id="edamam-badge">
+      <%= image_tag("https://developer.edamam.com/images/transparent", alt: "attribution image for Edamam") %>
+    </div>
   </footer>
 </body>
 
