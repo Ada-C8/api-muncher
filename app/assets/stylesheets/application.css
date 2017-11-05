@@ -33,7 +33,6 @@ h1, h2, h3{
 }
 
 h1{
-  text-decoration: underline;
   margin-bottom: 2vw;
 }
 
@@ -164,16 +163,31 @@ img {
   color: #40476D;
 }
 
+/*show page*/
 
-.recipe_show_img {
-  margin-bottom: 5vw;
+.recipe_show {
+  margin: 2.5vw;
 }
 
 .recipe_show_info {
   font-family: 'Josefin Sans', sans-serif;
+
 }
 
 .recipe_show_info h4 {
   font-family: 'Josefin Sans', sans-serif;
   text-decoration: underline;
+}
+
+.show_h1 {
+  text-decoration: underline;
+  text-align: center;
+  margin-bottom: 2.5vw;
+  text-shadow: 2px 2px white;
+  padding-bottom: 2.5vw;
+}
+
+.recipe_show_img {
+  margin-bottom: 5vw;
+  align-self: center;
 }
