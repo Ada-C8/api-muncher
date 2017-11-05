@@ -20,12 +20,26 @@ class ApiWrapper
     if data["hits"]
       # data["hits"] is an array of hashes, within each hash there are sub-hashes and sub-arrays, we need
       data["hits"].each do |recipe_info_hash|
-        recipes_list << self.create_recipe(recipe_info_hash)
+        recipes_list << self.create_recipe(recipe_info_hash["recipe"])
       end
     end
-
-    puts recipes_list.count
     return recipes_list
+  end
+
+  def self.find_recipe(uri)
+    # make a url to call on the edamam api
+
+    recipe_link = BASE_URL + "r=#{uri}&app_id=#{API_ID}&app_key=#{TOKEN}"
+
+    data = HTTParty.get(recipe_link)
+
+    #parse the JSON data in order to get recipe details for the show page
+    if data.empty?
+      raise ApiError.new("No recipe details for this link")
+    else
+      recipe_detail = self.create_recipe(data[0])
+    end
+    return recipe_detail
   end
 
   private
@@ -37,16 +51,16 @@ class ApiWrapper
   end
 
 
-  def self.create_recipe(api_params)
+  def self.create_recipe(recipe_hash)
     recipe = Recipe.new(
 
       # gets the name of the recipe
-      api_params["recipe"]["label"],
-      api_params["recipe"]["url"],
-      api_params["recipe"]["ingredientLines"],
-      api_params["recipe"]["dietLabels"],
+      recipe_hash["label"],
+      recipe_hash["url"],
+      recipe_hash["ingredientLines"],
+      recipe_hash["dietLabels"],
       {
-        image: api_params["recipe"]["image"],
+        image: recipe_hash["image"],
       }
     )
     return recipe

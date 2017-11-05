@@ -13,11 +13,24 @@ describe ApiWrapper do
       end
     end
 
+    it "search for something that does not exist return []" do
+      
+
+    end
+
     it "Raises an ApiError when token is bad" do
-      VCR.use_cassette("recipes") do
-        proc {
-          ApiWrapper.list_recipes("bogus_token").must_raise ApiWrapper::ApiError
-        }
+      begin # something which might raise an exception
+        origin_token = ApiWrapper::TOKEN
+        ApiWrapper::TOKEN = "bogus_token"
+        VCR.use_cassette("recipes") do
+          proc {
+            ApiWrapper.list_recipes("chicken")
+          }.must_raise ApiWrapper::ApiError
+        end
+      ensure
+        # ensure that this code always runs, no matter what
+        # it does not change the final value of the block
+        ApiWrapper::TOKEN = origin_token
       end
     end
   end
