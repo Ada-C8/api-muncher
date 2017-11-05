@@ -55,7 +55,7 @@ describe EdamamApiWrapper do
       end
     end
 
-    it "recipe will be empty array if individual recipe not found" do
+    it "recipe will be nil if individual recipe not found" do
       VCR.use_cassette("find_recipe") do
         uri = "http://www.edamam.com/ontologies/edamam.owl#recipe_7bf4a371c6884d809682a72808da7dc2"
         recipe = EdamamApiWrapper.find_recipe(uri)

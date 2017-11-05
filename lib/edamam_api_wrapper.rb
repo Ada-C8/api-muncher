@@ -48,24 +48,28 @@ class EdamamApiWrapper
     app_id ||= APP_ID
     app_key ||= APP_KEY
 
+    return nil if uri == nil 
+
     url = BASE_URL + "r=#{uri}&app_id=#{app_id}&app_key=#{app_key}"
     result = HTTParty.get(url)
     if result && result[0]
-    recipe = Recipe.new(
-    result[0]["uri"],
-    result[0]["label"],
-    result[0]["image"],
-    result[0]["url"],
-    result[0]["yield"],
-    result[0]["ingredientLines"],
-    {
-      totalNutrients: result[0]["totalNutrients"],
-      calories: result[0]["calories"],
-      healthLabels: result[0]["healthLabels"],
-      dietLabels: result[0]["dietLabels"]
-    }
-    )
-  end
+      Recipe.new(
+      result[0]["uri"],
+      result[0]["label"],
+      result[0]["image"],
+      result[0]["url"],
+      result[0]["yield"],
+      result[0]["ingredientLines"],
+      {
+        totalNutrients: result[0]["totalNutrients"],
+        calories: result[0]["calories"],
+        healthLabels: result[0]["healthLabels"],
+        dietLabels: result[0]["dietLabels"]
+      }
+      )
+    else
+      return nil
+    end
   end
 
 end
