@@ -1,111 +1,137 @@
 /*
- * This is a manifest file that'll be compiled into application.css, which will include all the files
- * listed below.
- *
- * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
- * vendor/assets/stylesheets directory can be referenced here using a relative path.
- *
- * You're free to add application-wide styles to this file and they'll appear at the bottom of the
- * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
- * files in this directory. Styles in this file should be added after the last require_* statement.
- * It is generally better to create a new file per style scope.
- *
- *= require_tree .
- *= require_self
- *= require foundation_and_overrides
- */
+* This is a manifest file that'll be compiled into application.css, which will include all the files
+* listed below.
+*
+* Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
+* vendor/assets/stylesheets directory can be referenced here using a relative path.
+*
+* You're free to add application-wide styles to this file and they'll appear at the bottom of the
+* compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+* files in this directory. Styles in this file should be added after the last require_* statement.
+* It is generally better to create a new file per style scope.
+*
+*= require_tree .
+*= require_self
+*= require foundation_and_overrides
+*/
 
 @import url('https://fonts.googleapis.com/css?family=Josefin+Sans');
 @import url('https://fonts.googleapis.com/css?family=Kaushan+Script');
 @import url('https://fonts.googleapis.com/css?family=Kaushan+Script|Pacifico');
 
- main {
-   position: relative;
-   margin: 10vw;
-   margin-top: 5vw;
-   font-family: 'Pacifico', cursive;
- }
+main {
+  position: relative;
+  margin: 10vw;
+  margin-top: 5vw;
+  font-family: 'Pacifico', cursive;
+}
 
- h1, h2, h3{
-   font-family: 'Pacifico', cursive;
-   color: #40476D;
-   text-overflow: ellipsis;
- }
+h1, h2, h3{
+  font-family: 'Pacifico', cursive;
+  color: #40476D;
+  text-overflow: ellipsis;
+}
 
- nav {
-   padding-top: 2vw;
- }
+h1{
+  text-decoration: underline;
+  margin-bottom: 2vw;
+}
 
- body {
-   background-color: #D1DBCC;
-   font-family: 'Pacifico', cursive;
- }
+nav {
+  padding-top: 2vw;
+}
 
- body ol{
-   list-style: none;
- }
+body {
+  background-color: #D1DBCC;
+  font-family: 'Pacifico', cursive;
+}
 
+body ol{
+  list-style: none;
+}
+
+ul, ol {
+  list-style: none;
+}
+
+
+footer {
+  position: relative;
+  text-align: center;
+  bottom: 0;
+  background: #40476D;
+  color: #fefefe;
+  height: 70px;
+}
+
+footer p {
+  padding-top: 1vw;
+}
+
+footer a {
+  color: white;
+}
+
+/*search page*/
 .header h1{
   text-align: center;
   text-decoration: none;
   font-family: 'Josefin Sans', sans-serif;
 }
 
- .search_bar {
-   padding: 5vw;
+.search_bar {
+  padding: 5vw;
 
-   text-align: center;
-   background-color: #B3C3AB;
-   font-family: 'Pacifico', cursive;
-    margin-bottom: 10vw;
- }
+  text-align: center;
+  background-color: #B3C3AB;
+  font-family: 'Pacifico', cursive;
+  margin-bottom: 10vw;
+}
 
- .search_bar h1 {
-   font-family: 'Pacifico', cursive;
- }
+.search_bar h1 {
+  font-family: 'Pacifico', cursive;
+}
 
- .search_bar_2{
-   margin-top: 0;
-   padding: 2vw;
-   padding-bottom: 0;
-   text-align: center;
-   font-family: 'Pacifico', cursive;
-   margin-bottom: 5vw;
-   background-color: #B3C3AB;
-   margin-bottom: 10vw;
- }
+.featured {
+  margin-top: 3vw;
+  color: #40476D;
+}
 
- ul, ol {
-   list-style: none;
- }
+.featured img {
+  margin-right: 2.5vw;
+}
+
+.peace_title {
+  text-align: center;
+}
+
+img {
+  border-radius: 50%;
+}
+
+/*index page*/
+.search_bar_2{
+  margin-top: 0;
+  padding: 2vw;
+  padding-bottom: 0;
+  text-align: center;
+  font-family: 'Pacifico', cursive;
+  margin-bottom: 5vw;
+  background-color: #B3C3AB;
+  margin-bottom: 10vw;
+}
 
 
- .search_bar_2 h2{
-   font-family: 'Pacifico', cursive;
-   size: .5vw;
- }
 
- .all_results ul{
+.search_bar_2 h2{
+  font-family: 'Pacifico', cursive;
+  size: .5vw;
+}
+
+.all_results ul{
   text-align: center;
   list-style: none;
- }
-
- footer {
-   position: relative;
-   text-align: center;
-   bottom: 0;
-   background: #40476D;
-   color: #fefefe;
-   height: 70px;
- }
-
- footer p {
-   padding-top: 1vw;
- }
-
- footer a {
-   color: white;
- }
+}
 
 .result_title {
   text-align: center;
@@ -138,14 +164,6 @@
   color: #40476D;
 }
 
-.featured {
-  margin-top: 3vw;
-  color: #40476D;
-}
-
-img {
-  border-radius: 50%;
-}
 
 .recipe_show_img {
   margin-bottom: 5vw;
@@ -158,9 +176,4 @@ img {
 .recipe_show_info h4 {
   font-family: 'Josefin Sans', sans-serif;
   text-decoration: underline;
-}
-
-h1{
-  text-decoration: underline;
-  margin-bottom: 2vw;
 }

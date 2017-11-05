@@ -10,15 +10,25 @@
   <% end %>
 </section>
 
-<section class="featured row">
-  <article class="featured_peace column center">
-    <ul>
-      <li>
-        <h2><%= @recipeace.name %></h2>
-      </li>
-      <li>
-        <%= image_tag @recipeace.image, class:"column large-4 small-12 center "%>
-      </li>
-    </ul>
-  </article>
-</section>
+
+<h2 class="peace_title"><%= link_to @recipeace.name, recipe_path(@recipeace.name, uri:
+  @recipeace.uri, search_term: "peace")%></h2>
+
+  <section class="featured row">
+    <article class="featured_image column large-4 medium-6 small-12 center ">
+      <%= image_tag @recipeace.image%>
+    </article>
+    <article class="featured_peace column large-8 medium-6 small-12">
+      <ul>
+        <li>
+        </li>
+        <li>
+          <%(@recipeace.ingredients.length-1).times do |i|%>
+          <%= @recipeace.ingredients[i] %>
+          <% end %>
+          <%= @recipeace.ingredients.last %>
+        </li>
+
+      </ul>
+    </article>
+  </section>
