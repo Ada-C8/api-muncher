@@ -68,7 +68,7 @@
         <thead>
           <tr>
             <th>Nutriente</th>
-            <th>Cantidad</th>
+            <th class="qtys">Cantidad</th>
             <th>% del Valor Diario</th>
           </tr>
         </thead>
@@ -77,8 +77,8 @@
           <tr>
             <% @size = @recipe.servings == nil || @recipe.servings == 0 ? 1 : @recipe.servings %>
             <td><%= "#{info["label"]}" %></td>
-            <td><%= "#{(info["quantity"] / @size).round} #{info["unit"]}" %></td>
-            <td>
+            <td class="qtys"><%= "#{(info["quantity"] / @size).round} #{info["unit"]}" %></td>
+            <td class="daily-vals">
               <% if @recipe.daily[item] %>
                 <%= "#{(@recipe.daily[item]["quantity"] / @size).round}" %>
               <% else %>

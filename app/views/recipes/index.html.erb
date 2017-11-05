@@ -1,11 +1,21 @@
+<div class="results">
+  <% if @recipes %>
 
-<h2>Results for "<%= params[:ingredient] %>"</h2>
+    <% if @count > 100 %>
+      <h2><%= number_with_delimiter(@count) %> results for "<%= params[:ingredient] %>"</h2>
+      <p>
+        Displaying the first 100
+      </p>
 
-<% if @recipes %>
-  <p>
-    <%= "#{number_with_delimiter(@count)} Results" %>
-  </p>
-<% end %>
+    <% elsif @count > 0 %>
+      <h2><%= number_with_delimiter(@count) %> results for "<%= params[:ingredient] %>"</h2>
+
+    <% else %>
+      <h2>No results for <%= params[:ingredient] %></h2>
+
+    <% end %>
+  <% end %>
+</div>
 
 <ul class="row recipe-list">
   <% @recipes.each do |recipe| %>

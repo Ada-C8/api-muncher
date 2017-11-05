@@ -1,8 +1,21 @@
-<h2>Recetas con "<%= params[:ingredient] %>"</h2>
+<div class="results">
+  <% if @recipes %>
 
-<% if @recipes %>
-  <%= "#{number_with_delimiter(@count)} recetas." %>
-<% end %>
+    <% if @count > 100 %>
+      <h2><%= number_with_delimiter(@count) %> recetas con "<%= params[:ingredient] %>"</h2>
+      <p>
+        Mostrando las primeras 100
+      </p>
+
+    <% elsif @count > 0 %>
+      <h2><%= number_with_delimiter(@count) %> recetas con "<%= params[:ingredient] %>"</h2>
+
+    <% else %>
+      <h2>Ningún receta con <%= params[:ingredient] %></h2>
+
+    <% end %>
+  <% end %>
+</div>
 
 <ul class="row recipe-list">
   <% @recipes.each do |recipe| %>

@@ -17,12 +17,12 @@
  */
 
 $header_color: #2eb82e;
-$background_color: #a9b504;
-$list_height: 18rem;
+$background_color: #f5f8f9;
+$list_height: 22rem;
 $logo_color: #006992;
 
 body {
-  // background-color: $background_color;
+  background-color: $background_color;
 }
 
  /********************/
@@ -62,7 +62,7 @@ section.success {
 
 header > h1 {
   text-align: center;
-  padding-top: .25rem;
+  margin-top: .25rem;
   a {
     font-family: 'Montserrat Alternates', sans-serif;
     font-size: 4rem;
@@ -81,6 +81,7 @@ header {
 
   p {
     font-size: 1rem;
+    margin-bottom: 0;
     // font-weight: bold;
     color: $logo_color;
     display: inline-block;
@@ -171,24 +172,34 @@ div.lang {
 /********************/
 /*  Recipe Index    */
 /*******************/
+div.results {
+  padding-top: 1rem;
+  text-align: center;
+
+  p{
+    font-size: 1.5rem;
+  }
+}
+
 main ul li.recipe-list {
   list-style: none;
-  // height: $list_height_lg;
+  height: $list_height;
   padding-top: 1rem;
   // width: auto;
   p {
     text-align: center;
     padding-top: 1rem;
-    // position: relative;
-    // bottom: 0;
+  }
 
+  a:link, a:visited {
+    color: $logo_color
   }
 
   img {
     display: block;
     margin: 0 auto;
     width: 100%;
-    height: $list_height - 2;
+    height: $list_height - 5;
     object-fit: cover;
   }
 }
@@ -199,6 +210,16 @@ section  div.pagination {
   a {
     display: inline-block;
   }
+
+  a:hover {
+    border-radius: 2rem;
+  }
+}
+
+.pagination .current {
+  background-color: $logo_color;
+  color: white;
+  border-radius: 2rem;
 }
 
 /********************/
@@ -238,6 +259,14 @@ div.diet-info {
 
 .nutrition p:first-of-type {
   padding-left: 1rem;
+}
+
+td.daily-vals {
+  text-align: center;
+}
+
+td.qtys {
+  text-align: center;
 }
 
 /********************/
