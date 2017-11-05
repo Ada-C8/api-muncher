@@ -14,7 +14,7 @@ describe Recipe do
     my_recipe.uri.must_equal "uri.surprise.recipe.com"
   end
 
-  it "requires at least seven parameters (name, url, uri, image_url, yield, ingredients, and diet labels) to be created" do
+  it "requires at least eight parameters (name, url, uri, source, image_url, yield, ingredients, and diet labels) to be created" do
     proc {
       Recipe.new
     }.must_raise ArgumentError
