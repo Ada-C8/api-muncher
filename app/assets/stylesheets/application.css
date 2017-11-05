@@ -1,0 +1,141 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ *= require foundation_and_overrides
+
+ */
+
+ /** {
+   border: 1px black solid;
+ }*/
+
+main {
+  padding-bottom: 100px 0px;
+}
+
+footer {
+  background-color: #AFD5AA;
+  padding: 60px;
+}
+
+header {
+  margin-bottom: 20px;
+}
+
+footer h4{
+  display: inline-block;
+}
+
+footer img {
+  height: 80px;
+}
+
+h1 {
+  color: #1A1D1A;
+  padding: 20px 0;
+}
+
+h2 {
+  margin-bottom: 15px;
+}
+
+.larger-font {
+  font-size: 1.5em;
+}
+
+.undershadow {
+  box-shadow: 0 3px #888888
+}
+
+.margin-3-col {
+  margin-left: 4.1%;
+  margin-right: 4.1%;
+}
+
+.margin-auto {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.no_padding {
+  padding: 0;
+}
+
+.header {
+  background-color: #AFD5AA;
+  padding-bottom: 35px;
+}
+
+.sixty-width {
+  width: 60%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.padding-top {
+  padding-top: 30px;
+}
+
+.card {
+  /*box-shadow: 1px 1px 3px 3px grey;*/
+  height: 450px;
+  border-radius: 20px;
+  border-color: white;
+  /*background-color: yellow;*/
+  margin: 4.15%;
+}
+
+.card img {
+  margin-top: 10px;
+  margin-bottom: 20px;
+  border-radius: 50%;
+}
+
+.row {
+  margin-bottom: 40px;
+}
+
+.flash {
+  border: 1px solid;
+  border-radius: 3px;
+  margin: auto;
+  max-width: 80%;
+  min-height: 50px;
+  font-size: 1.1rem;
+  display: none;
+}
+
+.success {
+  background-color: #DFF0D8;
+  background-color: #D1EDC0;
+  border-color: #D9ECCC;
+  color: #4C7D45;
+  display: block;
+}
+
+.error {
+  background-color: #F2DEDE;
+  border-color: #DDB5B5;
+  color: #AB4B4A;
+  color: #D38865;
+  background-color: #EFD2C6;
+  display: block;
+  margin-bottom: 200px;
+}
+
+.flash p {
+  margin-left: 10px;
+  margin-bottom: 0px;
+  line-height: 50px;
+}

@@ -1,0 +1,18 @@
+<section class = "row page columns small-6 small-offset-3 large-4 margin-auto">
+  <%= will_paginate @recipes, class: "text-center padding-top" %>
+</section>
+
+<section class="row">
+    <% @recipes.each do |recipe| %>
+    <article class = "columns small-10 medium-5 large-3 text-center card">
+      <%= link_to recipe_path(recipe.name, uri: recipe.uri) do %>
+      <img src = "<%= recipe.image %>", alt = "<%=recipe.name %>"/>
+      <h3 class = "card-section"><%= recipe.name %></h3>
+      <% end %>
+    </article>
+    <% end %>
+</section>
+
+<section class = "row page columns small-6 small-offset-3 large-4 margin-auto">
+  <%= will_paginate @recipes, class: "text-center padding-top" %>
+</section>

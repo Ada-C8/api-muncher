@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title><%= content_for?(:title) ? yield(:title) : "Muncher" %></title>
+
+    <%= stylesheet_link_tag    "application" %>
+    <%= javascript_include_tag "application", 'data-turbolinks-track' => true %>
+    <%= csrf_meta_tags %>
+  </head>
+  <body>
+    <header class = 'header text-center'>
+      <h1>Munchers</h1>
+      <%= form_tag recipes_path, method: :get do %>
+        <div class="search sixty-width">
+          <%= text_field_tag(:term, nil, placeholder: "What do you feel like munching?") %>
+        </div>
+        <%= submit_tag("Send", class: "button", style: "display: none;") %>
+      <% end %>
+    </header>
+    <section class="text-center flash <%= flash[:status] %>">
+      <% if flash[:status] == :error || flash[:status] == "error" %>
+        <p><strong>Oh No! </strong><%= flash[:result_text] %></p>
+      <% end %>
+      <% if flash[:status] == :success || flash[:status] == "success" %>
+        <p><strong>Yaaaay! </strong><%= flash[:result_text] %></p>
+      <% end %>
+    </section>
+    <main>
+      <%= yield %>
+    </main>
+    <footer class="text-center">
+      <h4>Powered By Edamam</h4>
+    </footer>
+  </body>
+</html>
