@@ -6,6 +6,12 @@ class RecipesController < ApplicationController
 
   def index
     @recipes = ApiWrapper.list_recipes(params[:search])
+
+    if @recipe
+
+    else
+
+    end
   end
 
   def new

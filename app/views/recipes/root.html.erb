@@ -1,0 +1,19 @@
+<h1>Main#index</h1>
+<p>Find me in app/views/main/index.html.erb</p>
+
+<h1><%= link_to "The Munchies", root_path %></h1>
+  <!-- a form element with "GET" method because by default the form_tag sends a POST request-->
+  <%= form_tag recipes_path, method: "get" do %>
+
+  <!-- a label for the input -->
+  <%= label_tag(:q, "", class: 'field') %>
+
+  <!-- a text input element, creates text field -->
+  <!-- params[:search] persists search term in the results page. For what ever reaseon, it also makes the placeholder code work. -->
+  <%= text_field_tag :search, params[:search], placeholder: "Search Recipes" %>
+
+  <!-- a submit element -->
+  <!-- "name: nil" removes the "commit=search" from url -->
+  <%= submit_tag("Search", name: nil, class: 'button') %>
+
+<% end %>
