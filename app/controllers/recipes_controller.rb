@@ -1,6 +1,7 @@
 class RecipesController < ApplicationController
 
   def search
+    @recipeace = FoodApiWrapper.find_recipes("peace").sample
   end
 
   def index

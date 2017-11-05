@@ -20,14 +20,16 @@
 @import url('https://fonts.googleapis.com/css?family=Kaushan+Script|Pacifico');
 
  main {
+   position: relative;
    margin: 10vw;
    margin-top: 5vw;
    font-family: 'Pacifico', cursive;
  }
 
- h1, h2, h3 {
-   font-family: 'Josefin Sans', sans-serif;
+ h1, h2, h3{
+   font-family: 'Pacifico', cursive;
    color: #40476D;
+   text-overflow: ellipsis;
  }
 
  nav {
@@ -80,12 +82,12 @@
  }
 
  footer {
+   position: relative;
    text-align: center;
-   position: fixed;
    bottom: 0;
    background: #40476D;
-   z-index: 100;
    color: #fefefe;
+   height: 70px;
  }
 
  footer p {
@@ -99,6 +101,7 @@
 
 .all_results {
   margin-top: 10vw;
+  margin-bottom: 15vw;
 }
 
 .all_results img{
@@ -118,4 +121,9 @@
 
 .pages {
   display: inline;
+  color: #40476D;
+}
+
+.featured {
+  margin-top: 5vw;
 }

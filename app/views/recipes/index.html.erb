@@ -13,14 +13,14 @@
 <section class="all_results row large-12">
 <ol>
   <% @recipes.each do |recipe| %>
-  <article class="list_result column float-left large-4">
+  <article class="list_result column float-left large-4 medium-6 small-12">
   <li>
     <ul>
       <li>
         <%= image_tag recipe.image, alt:"#{recipe.name} image" %>
       </li>
       <li class="recipe_title">
-        <%= link_to recipe.name, recipe_path(recipe.name, uri: recipe.uri) %>
+        <h2><%= link_to recipe.name, recipe_path(recipe.name, uri: recipe.uri) %></h2>
       </li>
     </ul>
     </article>
