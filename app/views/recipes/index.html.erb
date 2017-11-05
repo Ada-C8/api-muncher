@@ -1,0 +1,15 @@
+<% if @count %>
+  <h1 class="text-center"><%= @count %> Results for: "<%= @search %>"</h1>
+<% end %>
+<% if @count > 0 %>
+  <%= render partial: 'pagination' %>
+  <div class='recipes'>
+    <% @recipes.each do |recipe| %>
+      <article class='product-card text-center columns small-12 medium-6 large-3'>
+        <img alt="<%= recipe.name %>" src="<%= recipe.image_url %>" />
+        <h6><%= link_to recipe.name, show_recipe_path(recipe.uri.gsub(/\./, 'dotreplace')) %></h4>
+      </article>
+    <% end %>
+  </div>
+  <%= render partial: 'pagination' %>
+<% end %>
