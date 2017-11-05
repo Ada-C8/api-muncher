@@ -1,5 +1,4 @@
 require_dependency '../../lib/edamam_api_wrapper'
-require_dependency '../../lib/recipe'
 # require 'pry'
 
 class RecipesController < ApplicationController
@@ -23,7 +22,7 @@ class RecipesController < ApplicationController
     @keywords = params['keywords']
     if @keywords == ""
       redirect_to root_path
-      #add flash message maybe
+      flash[:failure] = "You did not enter any keywords. Please enter ingredient keywords into the search bar."
     else
       @number_of_recipes = EdamamApiWrapper.find_number_of_recipes(@keywords)
       from = params[:from]

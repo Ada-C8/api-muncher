@@ -1,21 +1,26 @@
-<%= render partial: "form" %>
+<section class= "small-12 large-8 cell">
 
-<h2>Params:</h2>
-<%= params %>
+<%= render partial: "form" %>
+</section>
+
+<!-- <h2>Params:</h2>
+<%= params %> -->
 
 <% unless params[:keywords] == nil %>
   <h1>Results for <%= @keywords %> </h1>
 <%end%>
 
-<h2>Number of Recipes: <%=@number_of_recipes%> </h2>
+<h3>Number of Recipes: <%=@number_of_recipes%> </h3>
 
-<%if @number_of_recipes != 0 && @number_of_recipes != nil%>
-  <% @recipes.each do |recipe| %>
-    <ul>
-      <li><%=image_tag recipe.image%></li>
-      <li><%=link_to(recipe.label, recipe_show_path(recipe.find_recipe_id))%></li>
-    </ul>
+<section class="results-grid">
+  <%if @number_of_recipes != 0 && @number_of_recipes != nil%>
+    <% @recipes.each do |recipe| %>
+      <ul class="recipe-photo-and-name">
+        <li><%=image_tag recipe.image%></li>
+        <li><%=link_to(recipe.label, recipe_show_path(recipe.find_recipe_id))%></li>
+      </ul>
   <%end%>
+</section>
 
   <%if @number_of_recipes > 100%>
     <%10.times do |page| %>

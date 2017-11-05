@@ -1,7 +1,6 @@
 # require 'httparty'
 # require 'awesome_print'
 # require 'pry'
-require_dependency '../../lib/edamam_api_wrapper'
 require_dependency '../../lib/recipe'
 
 class EdamamApiWrapper
