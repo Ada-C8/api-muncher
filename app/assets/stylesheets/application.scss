@@ -27,7 +27,7 @@ body {
   margin: 0;
   padding-bottom: 6rem;
   min-height: 100%;
-  font-family: Georgia, Arial, sans-serif;
+  font-family: Arial, sans-serif;
 }
 
 body a {
@@ -44,14 +44,13 @@ body a:hover {
 
 .home_body {
   background-image: image-url("food_background2.jpg");
-  font-family: Georgia, Arial, sans-serif;
+  font-family: Arial, sans-serif;
   background-repeat: no-repeat;
 }
 
 #header {
   text-align: center;
   color: white;
-
 }
 
 #header a {
@@ -60,6 +59,11 @@ body a:hover {
 }
 
 #header a:visited {
+  color: white;
+}
+
+#flash {
+  text-align: center;
   color: white;
 }
 

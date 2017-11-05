@@ -1,7 +1,7 @@
 
-  <div class="small-12 columns">
-    <h3><%= @recipe.name %></h3>
-  </div>
+  <section class="small-12 columns">
+    <h2><%= @recipe.name %></h2>
+  </section>
 
   <section class="small-3 medium-3 columns recipe-image">
     <%= image_tag @recipe.image, alt: "image of recipe called #{@recipe.name}"%>
@@ -9,6 +9,7 @@
 
   <section class="small-12 medium-9 columns recipe-details">
     <section >
+      <h3>Nutritional Information:</h3>
       <p><% if @recipe.dietLabels.empty? == false %>
         <%= "#{@recipe.name} is compliant with the following dietary regimes:" %>
         <%= "#{list_print(@recipe.dietLabels)}" %>
@@ -19,7 +20,7 @@
         <%= "#{list_print(@recipe.healthLabels)}" %>
         <% end %>
       </p>
-      <h6>Calories <%= (@recipe.calories / @recipe.servings).round(2) %> per serving</h6>
+      <h6>Calories: <%= (@recipe.calories / @recipe.servings).round(2) %> per serving</h6>
       <h4>Ingredients:</h4>
       <ul>
         <% @recipe.ingredients.each do |ingredient| %>

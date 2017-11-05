@@ -19,7 +19,7 @@
     <h1><%= link_to "NomNom.com", root_path, alt: "link to home page" %></h1>
   </header>
   <% if flash[:message] %>
-  <section class="row status <%= flash[:message] %>">
+  <section class="row status" id="flash">
     <h3>
       <%= flash[:message] %>
     </h3>
