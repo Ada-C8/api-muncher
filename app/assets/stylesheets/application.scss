@@ -18,9 +18,10 @@
 
 $header_color: #2eb82e;
 $background_color: #a9b504;
+$list_height: 18rem;
 
 body {
-  background-color: $background_color;
+  // background-color: $background_color;
 }
 
  /********************/
@@ -31,12 +32,17 @@ main h2, h3, h4, ul, li, a, p {
   font-family: 'Raleway', sans-serif;
 }
 
+form label {
+  font-size: 1.5rem;
+}
+
  /********************/
  /*    Header       */
  /*******************/
 
 header > h1 {
   text-align: center;
+  padding-top: 1rem;
   a {
     font-family: 'Montserrat Alternates', sans-serif;
     font-size: 4rem;
@@ -99,15 +105,32 @@ main > div.home {
 /*******************/
 main ul li.recipe-list {
   list-style: none;
+  // height: $list_height_lg;
+  padding-top: 1rem;
+  // width: auto;
   p {
-    text-align: center
+    text-align: center;
+    padding-top: 1rem;
+    // position: relative;
+    // bottom: 0;
+
   }
 
   img {
     display: block;
     margin: 0 auto;
+    width: 100%;
+    height: $list_height - 2;
+    object-fit: cover;
   }
 }
+
+// @media print, screen and (min-width: 40em) {
+//   main ul li.recipe-list img {
+//     height: $list_height_med - 2;
+//   }
+// }
+
 
 /* === pagination === */
 section  div.pagination {

@@ -1,44 +1,22 @@
-<%# English %>
 
-<% if !@spanish %>
-  <p>
-    Not Spanish
-  </p>
-  <h1><%= link_to "Muncher", root_path %></h1>
-  <%= link_to "Buscar en español", lang_home_path(lang: "es") %>
+<h1><%= link_to "Muncher", root_path %></h1>
+<%= link_to "Buscar en español", root_path, locale: :es %>
 
 
-  <section class="row search">
+<section class="row search">
 
-    <%= form_tag recipes_path, { method: :get } do %>
-      <div class="row">
-        <div class="columns small-12 large-6 large-offset-3 end">
-          <%= label_tag :ingredient, "Find your flavor..." %>
-          <%= text_field_tag :ingredient, nil, placeholder: "What will I cook today?" %>
-        </div>
+  <%= form_tag recipes_path, { method: :get } do %>
+    <div class="row">
+      <div class="columns small-12 large-6 large-offset-3 end">
+        <%# label_tag :ingredient, "Find your flavor..." %>
+        <%= text_field_tag :ingredient, nil, placeholder: "What will I cook today?" %>
       </div>
+    </div>
 
-      <div class="row">
-        <div class="columns small-12 large-2 large-offset-7 end">
-          <%= submit_tag "Search" %>
-        </div>
+    <div class="row">
+      <div class="columns small-12 large-2 large-offset-7 end">
+        <%= submit_tag "Search", id: "search-btn" %>
       </div>
-    <% end %>
-  </section>
-
-<% else %>
-  <p>
-    Spanish
-  </p>
-  <h1><%= link_to "Muncher", root_path, lang: "es" %></h1>
-  <%= link_to "Search in English", root_path %>
-
-  <section class="row search">
-
-    <%= form_tag lang_recipes_path(lang: "es"), { method: :get } do %>
-      <%= label_tag :ingredient, "Encuentre su sabor..." %>
-      <%= text_field_tag :ingredient %>
-      <%= submit_tag "Buscar" %>
-    <% end %>
-  </section>
-<% end %>
+    </div>
+  <% end %>
+</section>
