@@ -1,4 +1,3 @@
-require "httparty"
 require "uri"
 
 class EdamamWrapper
@@ -9,10 +8,7 @@ class EdamamWrapper
   class ApiError < StandardError
   end
 
-
-  # def initialize(response)
-
-  def self.list_recipes(item, from)
+  def self.list_recipes(item, from, id=ID, key=KEY)
     url = BASE_URL + "q=#{item}" + "&from=#{from}" + "&app_id=#{ID}" + "&app_key=#{KEY}"
     data = HTTParty.get(url)
     # binding.pry
@@ -49,10 +45,9 @@ class EdamamWrapper
       api_params["uri"],
       api_params["label"],
       api_params["image"],
-      api_params["url"]
-      # api_params["recipe"]["id"]
-      # api_params["recipe"]["calories"],
-      # api_params["recipe"]["ingredients"],
+      api_params["url"],
+      # api_params["healthLabels"],
+      # api_params["ingredientLines"]  
     )
   end
 

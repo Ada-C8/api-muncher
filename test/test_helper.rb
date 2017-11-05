@@ -30,6 +30,7 @@ VCR.configure do |config|
   config.filter_sensitive_data("<API_KEY>") do
     ENV['API_KEY']
   end
+
 end
 # To add Capybara feature tests add `gem "minitest-rails-capybara"`
 # to the test group in the Gemfile and uncomment the following:

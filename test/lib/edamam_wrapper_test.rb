@@ -33,6 +33,7 @@ describe EdamamWrapper do
     end
   end
 
+
   describe "find_recipe" do
     it "returns a recipe when given a valid uri" do
       VCR.use_cassette("wrapper_test") do
