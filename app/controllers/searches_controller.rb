@@ -4,12 +4,17 @@ class SearchesController < ApplicationController
   end
 
   def index
-    @recipes = MuncherApiWrapper.search(params[:search_term])["hits"]
+    if params[:from]
+      @from = params[:from].to_i
+    else
+      @from = 0
+    end
+    @recipes = MuncherApiWrapper.search(params[:search_term], @from)
   end
 
 
   def show
-    @results = MuncherApiWrapper.show(params[:uri])
+    @recipe = MuncherApiWrapper.show(params[:uri])
   end
 
 end

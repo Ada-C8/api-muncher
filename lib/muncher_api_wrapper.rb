@@ -6,22 +6,23 @@ class MuncherApiWrapper
   KEY = ENV["EDAMAM_KEY"]
   ID = ENV["EDAMAM_ID"]
 
-  def self.search(search_term)
-    url = BASE_URL + "search?q=" + search_term + "&app_id=#{ID}" + "&app_key=#{KEY}"
+  def self.search(search_term, from)
+    url = BASE_URL + "search?q=" + search_term + "&app_id=#{ID}" + "&app_key=#{KEY}" + "&from=#{from}"
     data = HTTParty.get(url)
     recipes_list = []
     if data["hits"]
       data["hits"].each do |recipe_data|
-        recipes_list << create_recipe(recipe_data)
+        recipes_list << create_recipe(recipe_data["recipe"])
       end
     end
     return recipes_list
   end
 
   def self.show(uri)
-    url = BASE_URL + "search?r=" + uri + "&app_id=#{ID}" + "&app_key=#{KEY}"
+    encoded_uri = URI.encode(uri)
+    url = BASE_URL + "search?r=#{encoded_uri}" #+ uri + "&app_id=#{ID}" + "&app_key=#{KEY}"
     data = HTTParty.get(url)
-    recipe = create_recipe()
+    return create_recipe(data[0])
     #where what is returned just for one, how to access??
   end
 
@@ -30,8 +31,8 @@ class MuncherApiWrapper
 
     def self.create_recipe(recipe_params)
       return Recipe.new(
-        recipe_params["recipe"]["label"],
-        recipe_params["recipe"]["uri"],
+        recipe_params["label"],
+        recipe_params["uri"],
         {
           image: recipe_params["image"],
           ingredients: recipe_params["ingredientLines"],

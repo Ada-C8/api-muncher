@@ -1,4 +1,37 @@
-<h1>Search for Recipe </h1>
+<header>
+  <h1> <%= link_to "NOM!", root_path %></h1>
+  <%= form_tag(searches_path, method: "get", class: "header-form") do %>
+  <%= text_field_tag(:search_term, params[:search_term], class:"field") %>
+  <%= submit_tag("NOM!", class: "nom") %>
+  <% end %>
+</header>
+
+<body>
 
 
-<%= link_to @recipes.first["recipe"]["label"], search_path(label: @recipes.first["recipe"]["label"], uri: @recipes.first["recipe"]["uri"] ) %>
+<h3>Results for "<%= params[:search_term] %>" </h3>
+<div class="row small-up-1 medium-up-2 large-up-4 recipes">
+
+  <% @recipes.each do |recipe| %>
+  <div class="column recipe">
+    <div class="elements">
+      <p><%= recipe.label.truncate(25)%></p>
+      <%= link_to image_tag(recipe.image), search_path(label: recipe.label, uri: recipe.uri, search_term: params[:search_term] ), class: "picture"%>
+    </div>
+  </div>
+      <% end %>
+</div>
+
+
+
+<section class = "nav-buttons">
+  <% if params[:from] != nil %>
+  <%= link_to "previous 10",  searches_path(search_term: params[:search_term], :from => @from-10), id: "previous"%>
+  <% end %>
+  <%= link_to "next 10", searches_path(search_term: params[:search_term], :from => @from+10), id: "next" %>
+</section>
+</body>
+
+<footer>
+<p>Powered by Edamam</p>
+</footer>

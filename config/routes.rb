@@ -4,5 +4,6 @@ Rails.application.routes.draw do
   root 'searches#root'
   get 'index', to: 'searches#index', as: 'searches'
   get 'root', to: 'searches#index'
-  get '/index/:label', to: 'searches#show', as: 'search'
+  get ':label', to: 'searches#show', as: 'search'
+  get 'show', to: 'searches#index'
 end

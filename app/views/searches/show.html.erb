@@ -1,2 +1,42 @@
-<h1>Search results:</h1>
-<%= @results %>
+<header>
+  <h1> <%= link_to "NOM!", root_path %></h1>
+  <%= form_tag(searches_path, method: "get", class: "header-form") do %>
+  <%= text_field_tag(:search_term, params[:search_term], class:"field") %>
+  <%= submit_tag("NOM!", class: "nom") %>
+  <% end %>
+</header>
+
+<body>
+  <div class="show">
+
+
+  <h2> !!!! <%= @recipe.label  %> !!!! </h2>
+  <div class="info row small-up-1 large-up-2">
+    <div class="column label-image">
+      <div class = "pic">
+
+
+        <img src="<%= @recipe.image %>" alt="">
+      </div>
+    </div>
+    <div class="column ingredients">
+
+      <h3>Ingredients</h3>
+      <% @recipe.ingredients.each do |ingredient| %>
+
+      <p> <%= ingredient %> </p>
+      <% end %>
+      <h3>Health Tags</h3>
+
+      <% @recipe.health.each do |health| %>
+      <p> <%= health %> </p>
+      <% end %>
+    </div>
+    <p class = "back"> <%= link_to "Back to All Results", searches_path(search_term: params[:search_term])%> </p>
+  </div>
+</div>
+</body>
+
+<footer>
+<p>Powered by Edamam</p>
+</footer>
