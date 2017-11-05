@@ -2,7 +2,7 @@
   <% if @recipes.empty? %>
   <h3 id="recipe-results"><%= "No results for #{params[:q]}" %></h3>
   <% else %>
-  <h3 id="recipe-results"><%= "Results for #{params[:q]}" %></h3>
+  <h3 id="recipe-results"><%= "Results for #{params[:q]} recipes" %></h3>
   <% end %>
   <div class="row">
   <% @recipes.each do |recipe| %>

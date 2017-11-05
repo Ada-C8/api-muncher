@@ -49,6 +49,7 @@ color: black;
 #recipe-info a:hover {
 opacity: 0.5;
 }
+
 // main page
 .main-search-row {
   position: relative;
@@ -59,17 +60,21 @@ opacity: 0.5;
   top: 10%;
   left: 25%;
   width: 50%;
-
 }
 
 #main-header{
 text-align: center;
 font-weight: 700;
+margin: 0;
 }
 
 #main-submit-button {
   display: block;
   text-align: center;
+}
+
+ input.button {
+  margin-top: 15px;
 }
 
 #main-submit-search-text {
@@ -78,25 +83,25 @@ font-weight: 700;
   color: white;
 }
 
+.checkbox-text {
+  color: white;
+}
+.checkboxes label, .checkboxes input {
+display: inline-block;
+margin-bottom: 0;
+}
+
+.label-check {
+  display: block;
+}
+
 // body
 .main-page {
   background-image: url("<%= image_path('background.jpeg') %>");
-  // background-image: url("../images/background.jpeg");
-  // asset link erb file
   background-size: 100% 100%;
 }
-// #ingredients h4 {
-//   text-align: center;
-// }
 
-
-// Pagination
-// .pagination {
-//   display:block;
-// }
-// .pagination {
-//   text-align: center;
-// }
+// pagination
 .pagination {
   z-index: 5000;
   text-align: center;
@@ -105,32 +110,3 @@ font-weight: 700;
 .pagination a {
   display: inline-block;
 }
-// .flickr_pagination {
-//   text-align: center;
-//   padding: 0.3em;
-//   cursor: default; }
-//   .flickr_pagination a, .flickr_pagination span, .flickr_pagination em {
-//     padding: 0.2em 0.5em; }
-//     .flickr_pagination .disabled {
-//       color: #aaaaaa; }
-//       .flickr_pagination .current {
-//         font-style: normal;
-//         font-weight: bold;
-//         color: #ff0084; }
-//         .flickr_pagination a {
-//           border: 1px solid #dddddd;
-//           color: #0063dc;
-//           text-decoration: none; }
-//           .flickr_pagination a:hover, .flickr_pagination a:focus {
-//             border-color: #003366;
-//             background: #0063dc;
-//             color: white; }
-//             .flickr_pagination .page_info {
-//               color: #aaaaaa;
-//               padding-top: 0.8em; }
-//               .flickr_pagination .previous_page, .flickr_pagination .next_page {
-//                 border-width: 2px; }
-//                 .flickr_pagination .previous_page {
-//                   margin-right: 1em; }
-//                   .flickr_pagination .next_page {
-//                     margin-left: 1em; }
