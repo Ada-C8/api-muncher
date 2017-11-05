@@ -24,7 +24,7 @@ describe "Recipe Class" do
 
       proc {
         Recipe.new("name")
-      }
+      }.must_raise ArgumentError
 
     end
 
