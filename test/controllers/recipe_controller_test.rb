@@ -60,7 +60,7 @@ describe RecipeController do
 
     end
 
-    it "flashes a failure message and renders the 404 page if the recipe does not exist" do
+    it "flashes a failure message and redirects to home page if the recipe does not exist" do
       VCR.use_cassette("show_action") do
         bad_uri = "http://nonexistinguri.com"
 
@@ -71,7 +71,7 @@ describe RecipeController do
       end
     end
 
-    it "renders 404 if no recipe uri is passed" do
+    it "redirects to root_path and flashes a failure message if no recipe uri is passed" do
       VCR.use_cassette("show_action") do
         get show_recipe_path("invalid_recipe")
 
