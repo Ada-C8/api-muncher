@@ -60,7 +60,7 @@ section.success {
  /*    Header       */
  /*******************/
 
-header > h1 {
+header > section > h1 {
   text-align: center;
   margin-top: .25rem;
   a {
@@ -122,14 +122,16 @@ header {
   background-image: image-url('kitchen.jpg');
   background-position: center;
   background-size: cover;
+  padding-left: 1rem;
+  padding-right: 1rem;
   // padding-top: 3rem;
 
-  h1 {
+   h1 {
     text-align: center;
     a {
       font-family: 'Montserrat Alternates', sans-serif;
       font-size: 7rem;
-      color: $logo_color
+      color: $logo_color;
     }
   }
 }
@@ -177,6 +179,12 @@ div.results {
   text-align: center;
 
   p{
+    font-size: 1.15rem;
+  }
+}
+
+@media print, screen and (min-width: 40em) {
+  div.results p {
     font-size: 1.5rem;
   }
 }
@@ -219,7 +227,7 @@ section  div.pagination {
 .pagination .current {
   background-color: $logo_color;
   color: white;
-  border-radius: 2rem;
+  border-radius: 2px;
 }
 
 /********************/
@@ -253,8 +261,14 @@ div.diet-info {
 
 .nutrition p {
   display: inline-block;
-  font-size: 1.25rem;
+  font-size: 1.1rem;
   width: 49%;
+}
+
+@media print, screen and (min-width: 40em) {
+  .nutrition p {
+    font-size: 1.25rem;
+  }
 }
 
 .nutrition p:first-of-type {
