@@ -1,19 +1,28 @@
-<div class="row search-header">
-  <div class="columns large-12 medium-12 small-12 x-small-12">
-    
+<header class="row">
+  <div class="columns small-1 small-centered">
+    <h1>"Menu"</h1>
   </div>
-</div>
+  <div class="columns small-1 small-centered">
+      <ul class="inline-li">
+        <li>CATEGORY<%#= link_to "", "path", class: "hover japanese-hover" %></li>
+        <li>CATEGORY<%#= link_to "", "path", class: "hover japanese-hover" %></li>
+        <li>CATEGORY<%#= link_to "", "path", class: "hover japanese-hover" %></li>
+        <li>CATEGORY<%#= link_to "", "path", class: "hover japanese-hover" %></li>
+        <li>CATEGORY<%#= link_to "", "path", class: "hover japanese-hover" %></li>
+      </ul>
+  </div>
+</header>
 
-<div class="row">
-  <div class="large-11 large-offset-1 medium-11 medium-offset-1 small-2 x-small-1 columns">
-    <%= image_tag("http://via.placeholder.com/200x150") %>
-    <%= image_tag("http://via.placeholder.com/200x150") %>
-    <%= image_tag("http://via.placeholder.com/200x150") %>
-    <%= image_tag("http://via.placeholder.com/200x150") %>
-    <%= image_tag("http://via.placeholder.com/200x150") %>
-    <%= image_tag("http://via.placeholder.com/200x150") %>
+<section class="row">
+  <div class="large-11 large-offset-1 medium-11 medium-offset-1 small-12 columns"> <!-- figure out centering for small -->
+    <%= image_tag("http://via.placeholder.com/200x150", class: "result-img") %>
+    <%= image_tag("http://via.placeholder.com/200x150", class: "result-img") %>
+    <%= image_tag("http://via.placeholder.com/200x150", class: "result-img") %>
+    <%= image_tag("http://via.placeholder.com/200x150", class: "result-img") %>
+    <%= image_tag("http://via.placeholder.com/200x150", class: "result-img") %>
+    <%= image_tag("http://via.placeholder.com/200x150", class: "result-img") %>
   </div>
-</div>
+</section>
 
 
 
@@ -22,7 +31,7 @@
   <ul>
     <%= recipe.name %>
     <li>
-      <%= link_to image_tag(recipe.image), recipe_path(recipe.uri) %>
+      <%= link_to image_tag(recipe.image, class: "thumbnail", alt: recipe.name), recipe_path(recipe.uri) %>
     </li>
   </ul>
 <% end %>
