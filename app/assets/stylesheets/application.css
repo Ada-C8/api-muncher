@@ -31,10 +31,15 @@ span.footer {
   text-align: center;
 }
 
-inline-li {
-  display: inline;
+ul.inline-li li {
+  display: inline-block;
+  text-align: center;
 }
 
 .columns {
   padding-left: 0;
+}
+
+.result-img {
+  padding-bottom: 5px;
 }
