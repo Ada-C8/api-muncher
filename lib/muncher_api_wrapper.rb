@@ -6,7 +6,7 @@ class MuncherApiWrapper
   KEY = ENV["EDAMAM_KEY"]
   ID = ENV["EDAMAM_ID"]
 
-  def self.search(search_term, from)
+  def self.search(search_term, from = 0)
     url = BASE_URL + "search?q=" + search_term + "&app_id=#{ID}" + "&app_key=#{KEY}" + "&from=#{from}"
     data = HTTParty.get(url)
     recipes_list = []

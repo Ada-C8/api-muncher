@@ -3,7 +3,7 @@ class Recipe
 
 
   def initialize(label, uri, options = {} )
-    # raise ArgumentError if name == nil || name == "" || id == nil || id == ""
+     raise ArgumentError if label == nil || label == "" || uri == nil || uri == ""
 
     @label = label
     @uri = uri
