@@ -17,9 +17,10 @@
   <body>
     <% unless params[:action] == "home"%>
       <header class="row expanded">
-        <h1 class="column small-12 medium-6"><%= link_to "Find Me the Recipe", root_path %></h1>
-        <div class="column small-12 medium-6"><%= render partial: "searchform" %>
-</div>
+        <h1 class="column small-12 large-6"><%= link_to "Find Me the Recipe", root_path %></h1>
+        <div class="column small-12 large-6">
+          <%= render partial: "searchform" %>
+        </div>
       </header>
     <% end %>
 
@@ -28,8 +29,6 @@
     <main class="row">
       <%= yield %>
     </main>
-
-    <%= render partial: "/layouts/flash" if params[:action] == "home" %>
 
     <section class="row debug">
       <%= debug(params) if ( Rails.env.development? || Rails.env.development? )%>
