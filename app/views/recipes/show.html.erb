@@ -1,14 +1,25 @@
-<h1>One single solitary recipe</h1>
+<h1 class="recipe-title"><%= @recipe.title %></h1>
 
+<div class="recipe-info">
+  <span class="recipe-image"><%= image_tag(@recipe.image, alt: "#{@recipe.title}") %></span>
 
-    <img src="<%= @recipe.image %>" alt="<%= @recipe.title %>" />
-  </section>
-  <div>
-    <h4>Ingredients</h4>
-    <ul>
+  <section class="ingredients">
+    <h3>Ingredients</h3>
+    <ul class="ingredient-info">
       <% @recipe.ingredients.each do |ingredient| %>
-        <li><%= ingredient %></li>
+      <li><%= ingredient %></li>
       <% end %>
     </ul>
-  </div>
-</section>
+  </section>
+
+  <section class="dietary">
+    <h3>Dietary Information</h3>
+    <ul class="dietary-info">
+      <%= @recipe.dietary %>
+    </ul>
+  </section>
+</div>
+
+<div class="recipe-link">
+  <%= link_to "Click to get the full recipe for #{@recipe.title} ", @recipe.link, target: :_blank%>
+</div>

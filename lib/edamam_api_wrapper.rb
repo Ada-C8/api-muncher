@@ -24,7 +24,7 @@ class EdamamApiWrapper
           recipe_hash["recipe"]["label"],
           recipe_hash["recipe"]["image"],
           recipe_hash["recipe"]["ingredientLines"],
-          recipe_hash["recipe"]["calories"],
+          recipe_hash["recipe"]["dietLabels"],
           recipe_hash["recipe"]["url"]
         )
       end
@@ -49,7 +49,7 @@ class EdamamApiWrapper
       data[0]["label"],
       data[0]["image"],
       data[0]["ingredientLines"],
-      data[0]["calories"],
+      data[0]["dietLabels"],
       data[0]["url"]
     )
   end
