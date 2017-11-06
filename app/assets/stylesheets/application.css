@@ -32,9 +32,12 @@ h1, h2, h3 {
   padding-bottom: 30px;
 }
 
+.pages-info p {
+  font-size: 1.1em;
+}
+
 .digg_pagination {
   color: #2F2A27;
-  font-size: 1.2em;
 }
 
 .digg_pagination a {
@@ -128,6 +131,10 @@ header {
   animation: fadeIn 2s;
 }
 
+.results a{
+  font-size: 1.1em;
+}
+
 .row {
   margin-bottom: 8px;
 }
@@ -167,6 +174,7 @@ header {
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
+  font-size: 1.1em;
 }
 
 .card a:hover {

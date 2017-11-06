@@ -28,9 +28,7 @@
   <section class="pages">
     <div class="digg_pagination">
 
-      <p class="pages-info">
-        <%= page_entries_info @recipes%>
-      </p>
+      <p class="pages-info"><%= page_entries_info @recipes%></p>
 
       <%= will_paginate @recipes, :container => false %>
     </div>
