@@ -1,19 +1,28 @@
 require "test_helper"
 
 describe RecipesController do
-  # it "must be a real test" do
-  #   flunk "Need real tests"
-  # end
-  describe "index" do
-    it "displays a list of recipes for a valid query" do
-      get recipes_path("chicken")
+
+  describe "search" do
+    it "can display the search form" do
+      get root_path
       must_respond_with :success
     end
+  end
 
-    it "redirects to not_found if the query is invalid" do
-      get recipes_path("as;fj;alkfjsdlfkdsa;fkjsd;fkjasfl;kjaflkjs")
-      must_respond_with :redirect
+  describe "index" do
+    it "displays a list of recipes for a valid query" do
+      VCR.use_cassette("ok_query_recipe_index") do
+        get recipes_path, params: {query: "chicken"}
+        must_respond_with :success
+      end
     end
-    
+
+    it "displays an empty index if the query yields no results" do
+      VCR.use_cassette("bad_query_recipe_index") do
+        get recipes_path, params: {query: "as;fj;alkfjsdlfkdsa;fkjsd;fkjasfl;kjaflkjs"}
+        must_respond_with :success
+      end
+    end
+
   end
 end
