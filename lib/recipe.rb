@@ -5,10 +5,11 @@ class Recipe
     # raise ArgumentError if name == nil
     @name = name
     @uri = uri #URI.encode(uri)
-    @url = url
-    @ingredients = ingredients
-    @ingredient_lines = ingredient_lines
     @image = image
+    
+    @url = options[:url]
+    @ingredients = options[:ingredients]
+    @ingredient_lines = options[:ingredient_lines]
     @servings = options[:servings]
     @calories = options[:calories]
     @total_nutrients = options[:total_nutrients]
