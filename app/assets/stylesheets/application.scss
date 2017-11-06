@@ -125,12 +125,6 @@ input[type='text'] {
 
 @keyframes fadeIn { from { opacity:0; } to { opacity:1; } }
 
-@media only screen and (min-width: 605px) and (max-width: 910px) {
-.result:last-child {
-  display: none;
-}
-}
-
 /* --------- Show --------- */
 
 .recipe-header, .recipe-info {

@@ -3,7 +3,7 @@ require_dependency '../../lib/recipe'
 
 class RecipesController < ApplicationController
   def root
-    @random = ["water", "sourdough bread", "tacos", "pizza", "chocolate chip cookies", "liver", "garbage"].sample
+    @random = ["water", "fish head", "tacos", "pizza", "chocolate chip cookies", "liver", "garbage"].sample
     @all = EdamamApiWrapper.food_options
   end
 
