@@ -2,7 +2,6 @@ require 'test_helper'
 
 describe "Recipe" do
 
-
   it "Can create an instance of a recipe." do
     recipe = Recipe.new("uri", "title", "image", "ingredients", "dietary", "link")
 
