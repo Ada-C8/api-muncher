@@ -53,7 +53,7 @@ h1, h2, h3, h4, h5{
   font-family: 'Archivo Black', sans-serif !important;
 }
 
-header{
+header, footer{
   background-color: $primary-color;
 }
 
@@ -71,4 +71,13 @@ header{
 
 #nav-form{
   margin-top: 10px;
+}
+
+footer{
+  width: 100vw;
+  position: fixed;
+  bottom: 0px;
+  text-align: center;
+  height: 50px;
+  padding-top: 10px;
 }
