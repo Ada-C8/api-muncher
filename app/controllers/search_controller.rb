@@ -19,7 +19,9 @@ class SearchController < ApplicationController
     end
 
     @all_recipes = []
-    unless @search == [] || @search.hits.count < 9
+    if @search == []
+      flash.now[:failure] = "There are no recipes matching that query"
+    else
       @search.hits.each do |recipe|
         @all_recipes << Recipe.new(recipe['recipe'])
       end
