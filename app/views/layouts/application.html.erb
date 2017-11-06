@@ -5,8 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link href="https://fonts.googleapis.com/css?family=Merienda" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro" rel="stylesheet">
-    <title><%= content_for?(:title) ? yield(:title) : "Untitled" %></title>
-
+    <title><%= content_for?(:title) ? yield(:title) : "gourmake" %></title>
+    <script src="https://developer.edamam.com/attribution/badge.js"></script>
     <%= stylesheet_link_tag    "application" %>
     <%= javascript_include_tag "application", 'data-turbolinks-track' => true %>
     <%= csrf_meta_tags %>
@@ -16,6 +16,6 @@
     <%= yield %>
   </body>
   <footer>
-    Powered by Edamam
+    <div id="edamam-badge" data-color="white"></div>
   </footer>
 </html>
