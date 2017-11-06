@@ -28,7 +28,7 @@
    text-align: center;
  }
 
- .pagination {
+ .paginate {
    text-align: center;
  }
 
@@ -37,7 +37,11 @@ body {
    background-repeat: no-repeat;
    background-size: cover;
    height: 100vh;
-  //  font-family: 'Bentham', serif;
+   font-family: 'Bentham', serif;
+ }
+
+ body h1, h2, h3, h4,h5,h6 {
+  font-family: 'Bentham', serif;
  }
 
 .show-recipe, .index {
@@ -61,6 +65,10 @@ main {
   padding: 0px 10px;
   display: inline-block;
   max-width: 45%;
+}
+
+#masthead a {
+  color: black;
 }
 
 .site-header {
@@ -95,10 +103,15 @@ h1 {
   float: right;
   display: inline-block;
   max-width: 25%;
+  margin-top: 10px;
 }
 
 #nav-search input{
   display: inline-block;
+}
+
+#nav-search {
+  vertical-align: bottom;
 }
 
 .right {

@@ -27,7 +27,7 @@ main {
   text-align: center;
 }
 
-.home h4 {
+.home p {
   font-style: oblique;
   color: snow;
   text-align: center;
@@ -65,11 +65,6 @@ main {
   text-align: center;
 }
 
-@media print, screen and (min-width: 40em) {
-  .recipe-img-ingred {
-    text-align: right;
-  }
-}
 
 .recipe:hover {
   box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.2);
@@ -97,4 +92,15 @@ main {
 
 .nutr-labels {
   padding-top: 45px;
+  text-align: left;
+}
+
+@media print, screen and (min-width: 40em) {
+  .recipe-img-ingred {
+    text-align: right;
+  }
+
+  .nutrition {
+    text-align: center;
+  }
 }
