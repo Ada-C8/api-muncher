@@ -12,14 +12,18 @@ class EdamamApiWrapper
   MINIMUM_BAR = %w(label uri image ingredientLines)
   RECIPE_URL = "http://www.edamam.com/ontologies/edamam.owl%23recipe_"
 
+  DIET_LABELS = %w(balanced high-protein high-fiber low-fat low-carb low-sodium)
 
-  def self.search(query, options = { } )
+
+  def self.search(query, diet = nil, options = { } )
     options[:app_id] ||= APP_ID
     options[:app_key]||= APP_KEY
     options[:from] ||= 0
     options[:to] ||= MAX_SEARCH_LENGTH
 
     url = BASE_URL + "q=#{query}" + "&app_id=#{options[:app_id]}" + "&app_key=#{options[:app_key]}" + "&from=#{options[:from]}" + "&to=#{options[:to]}"
+
+    url = url + "&diet=#{diet}" if diet
 
     response = HTTParty.get(url)
 

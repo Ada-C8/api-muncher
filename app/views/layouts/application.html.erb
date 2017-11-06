@@ -24,6 +24,7 @@
         </div>
       </header>
     <% end %>
+    <%= params %>
 
     <%= render partial: "/layouts/flash" unless params[:action] == "home" %>
 
@@ -37,7 +38,6 @@
         <%= yield %>
       </main>
     <% end %>
-
 
 
     <footer class="row expanded">

@@ -1,33 +1,26 @@
 require 'test_helper'
 
 describe EdamamApiWrapper do
-  describe "self.loop_search" do
-    it "returns a list of 500 Recipes or less" do
-      skip
-      VCR.use_cassette("wrapper_loopsearch") do
-        list = EdamamApiWrapper.loop_search("chicken")
-
-        list.must_be_instance_of Array
-        list.length.must_equal 500
-        list.each do |recipe|
-          recipe.must_be_instance_of Recipe
-        end
-
-        list = EdamamApiWrapper.loop_search("tripe")
-
-        list.must_be_instance_of Array
-        list.length.must_equal :>, 0
-        list.each do |recipe|
-          recipe.must_be_instance_of Recipe
-        end
-      end
-    end
-  end #self.loop_search
-
   describe "self.search" do
     it "returns a list of Recipes" do
       VCR.use_cassette("wrapper_search") do
         recipes = EdamamApiWrapper.search("pineapple")
+
+        recipes.must_be_instance_of Array
+        recipes.length.must_be :>, 0
+        recipes.each do |recipe|
+          recipe.must_be_instance_of Recipe
+        end
+
+        recipes = EdamamApiWrapper.search("pineapple", "low-fat")
+
+        recipes.must_be_instance_of Array
+        recipes.length.must_be :>, 0
+        recipes.each do |recipe|
+          recipe.must_be_instance_of Recipe
+        end
+
+        recipes = EdamamApiWrapper.search("", "low-fat")
 
         recipes.must_be_instance_of Array
         recipes.length.must_be :>, 0
@@ -39,17 +32,18 @@ describe EdamamApiWrapper do
 
     it "returns a blank array if no recipes are found or the request is broken" do
       VCR.use_cassette("wrapper_search") do
+
         recipes = EdamamApiWrapper.search("")
 
         recipes.must_be_instance_of Array
         recipes.must_equal []
 
-        recipes = EdamamApiWrapper.search("chicken", app_id: "")
+        recipes = EdamamApiWrapper.search("chicken", "low-fat", app_id: "")
 
         recipes.must_be_instance_of Array
         recipes.must_equal []
 
-        recipes = EdamamApiWrapper.search("chicken", app_key: "")
+        recipes = EdamamApiWrapper.search("chicken", "low-fat", app_key: "")
 
         recipes.must_be_instance_of Array
         recipes.must_equal []
@@ -64,10 +58,10 @@ describe EdamamApiWrapper do
         recipes = EdamamApiWrapper.search("chicken and soysauce")
         recipes.length.must_be :<=, EdamamApiWrapper::MAX_SEARCH_LENGTH
 
-        recipes = EdamamApiWrapper.search("chicken", to: 4)
+        recipes = EdamamApiWrapper.search("chicken", "low-fat", to: 4)
         recipes.length.must_equal 4
 
-        recipes = EdamamApiWrapper.search("chicken", from: 15, to: 20)
+        recipes = EdamamApiWrapper.search("chicken", "low-fat", from: 15, to: 20)
         recipes.length.must_equal 5
       end
     end
