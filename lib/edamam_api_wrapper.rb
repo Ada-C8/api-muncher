@@ -48,7 +48,7 @@ class EdamamApiWrapper
   private
 
   def self.check_status(response)
-    unless response["ok"]
+    unless response
       raise ApiError.new("API call to Edamam failed: #{response["error"]}")
     end
   end
