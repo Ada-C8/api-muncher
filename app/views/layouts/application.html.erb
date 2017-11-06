@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title><%= content_for?(:title) ? yield(:title) : "ReciPeace" %></title>
+
+  <link href="https://fonts.googleapis.com/css?family=Josefin+Sans" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Josefin+Sans|Pacifico" rel="stylesheet">
+  <%= stylesheet_link_tag    "application" %>
+  <%= javascript_include_tag "application", 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+</head>
+
+<body>
+  <nav>
+    <%= link_to "Home", root_path, class:"button small-12 large-12"%>
+  </nav>
+
+  <main class="center">
+    <%= yield %>
+  </main>
+
+  <footer class="center small-12 large-12">
+    <p>
+      Powered By <a href="https://www.edamam.com/"><img src="assets/edamam-8efa3fda66cbc7de9fe4e0262a03ca3ae0cb09f9aecc840988d75d1c929b0277.png", alt="Edamam", width="60px" />
+      </p>
+    </footer>
+  </body>
+  </html>
