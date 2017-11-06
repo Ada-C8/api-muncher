@@ -7,7 +7,6 @@ class RecipesController < ApplicationController
   end
 
   def show
-    # raise
     # TODO: currently does not hit this controller action
     @recipe = EdamamApiWrapper.show_recipe(params[:uri])
   end
