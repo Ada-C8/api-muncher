@@ -1,0 +1,37 @@
+<div class="index-background">
+
+  <header>
+    <section class="head-search">
+      <h2><%= link_to("Recipoogle", root_path, class: "head-search") %>
+      <%= render partial: "form" %></h2>
+    </section>
+  </header>
+
+
+  <section class="row results">
+    <% if @recipes != nil %>
+        <h2 class="results">Recipe Results for "<%= params[:search] %>"</h2>
+
+        <% @recipes.each do |recipe| %>
+
+          <article class = "columns small-10 large-3 card">
+            <%= link_to recipe_path(recipe.label, uri: recipe.uri) do %>
+              <%= image_tag recipe.image %>
+              <p><%= recipe.label %></p>
+            <% end %>
+          </article>
+
+        <% end %>
+    <% end %>
+  </section>
+
+  <section class="pages">
+    <div class="digg_pagination">
+
+      <p class="pages-info"><%= page_entries_info @recipes%></p>
+
+      <%= will_paginate @recipes, :container => false %>
+    </div>
+  </section>
+
+</div>

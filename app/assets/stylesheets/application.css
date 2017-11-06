@@ -1,0 +1,312 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ *= require foundation_and_overrides
+
+*/
+
+
+/*GENERAL STYLING*/
+body {
+  background-color: #130C0A;
+}
+
+h1, h2, h3 {
+  font-family: 'Roboto Slab', serif;
+  color: #3F3B38;
+}
+
+.pages {
+  text-align: center;
+  padding-bottom: 30px;
+}
+
+.pages-info p {
+  font-size: 1.1em;
+}
+
+.digg_pagination {
+  color: #2F2A27;
+}
+
+.digg_pagination a {
+  color: #2F2A27;
+}
+
+.digg_pagination a:hover {
+  color: #FF9A8D;
+  font-size: 1.27em;
+}
+
+/*SEARCH FORM*/
+
+.search-bar{
+  width: 45%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+input[type='text'] {
+  border-radius: 10px;
+  padding-left: 15px;
+  margin-top: 18px;
+  /*-webkit-box-shadow: 0px 7px 14px -4px rgba(0,0,0,0.75);*/
+  /*-moz-box-shadow: 0px 7px 14px -4px rgba(0,0,0,0.75);*/
+  box-shadow: 0px 3px 10px -4px rgba(0,0,0,0.4);
+}
+
+/*SEARCH FORM HEADER*/
+header {
+  background: #CCC0B9;
+}
+
+.head-search {
+  padding-top: 30px;
+  padding-bottom: 15px;
+  text-align: center;
+}
+
+.head-search a {
+  padding: 20px;
+  margin-bottom: 10px;
+  font-size: 2em;
+  color: #654236;
+}
+
+
+/*HOME PAGE*/
+
+.home-content {
+  /*background: #CCC0B9;*/
+  padding-top: 150px;
+  height: 100%;
+  padding-bottom: 600px;
+  clear: both;
+}
+
+.home h1 {
+  font-size: 6em;
+  text-align: center;
+  padding: 15px;
+  /*color: #81726A;
+  color: #5E534E;*/
+  color: #6A5E57;
+}
+
+.home-img {
+  background-image: url(https://images.pexels.com/photos/54455/cook-food-kitchen-eat-54455.jpeg?w=1260&h=750&dpr=2&auto=compress&cs=tinysrgb);
+  background-position: left;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 350px;
+  width: 100%;
+}
+
+
+/*INDEX PAGE*/
+
+.index-background {
+  background-color: #E8E5E3;
+}
+
+.results h2, a{
+  text-align: center;
+}
+
+.results h2 {
+  padding-top: 40px;
+  /*color: #EFB0A1;*/
+  color: #FF9A8D;
+  animation: fadeIn 2s;
+}
+
+.results a{
+  font-size: 1.1em;
+}
+
+.row {
+  margin-bottom: 8px;
+}
+
+.recipes-index {
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.card {
+  height: 360px;
+  border-radius: 10px;
+  border-color: white;
+  margin: 4%;
+  -moz-box-shadow: 0 0 5px #fff;
+  -webkit-box-shadow: 0 0 5px #fff;
+  box-shadow: 0px 0px 5px #fff;
+}
+
+.card img {
+  width: 400px;
+  height: 300px;
+  border-radius: 10px;
+  padding-top: 8px;
+}
+
+.columns:last-child:not(:first-child) {
+  float: left;
+  /*display: table;
+  vertical-align: middle;*/
+}
+
+.card a {
+  font-weight: bold;
+  padding-top: 5px;
+  color: #2F2A27;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  font-size: 1.1em;
+}
+
+.card a:hover {
+  color: #FF9A8D;
+  font-size: 1.2em;
+}
+
+/*SHOW PAGE*/
+
+.show-background {
+  background-color: #E8E5E3;
+  padding-bottom: 50px;
+}
+
+.recipe-title {
+  text-align: center;
+  vertical-align: middle;
+  padding-top: 30px;
+}
+
+.recipe-tite p, a {
+  font-size: 1.2em;
+  font-weight: bold;
+  color: #2F2A27;
+}
+
+.recipe-img {
+  text-align: center;
+  vertical-align: middle;
+}
+
+.recipe-img img {
+  border-radius: 20px;
+  border: solid #FF9A8D;
+}
+
+.ingredients {
+  padding: 20px;
+  list-style: none;
+  text-align: center;
+}
+
+.dietLabels h3, li, p {
+  text-align: center;
+  vertical-align: middle;
+  list-style: none;
+}
+
+.recipe-box {
+  background: white;
+  border-radius: 20px;
+  border: solid #FF9A8D;
+  width: 500px;
+  padding: 20px;
+  margin-top: 30px;
+  margin-left: 32%;
+  margin-bottom: 30px;
+}
+
+/*FOR FOOTER TO STAY AT BOTTOM*/
+
+html {
+  height: 100%;
+  box-sizing: border-box;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+body {
+  position: relative;
+  margin: 0;
+  padding-bottom: 6rem;
+  min-height: 100%;
+  font-family: "Helvetica Neue", Arial, sans-serif;
+}
+
+/* Footer Styles */
+
+footer {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  padding: .04rem;
+  /*background-color: #efefef;*/
+  background-color: #9CD261;
+  background-color: #86C93F;
+  text-align: center;
+}
+
+footer p {
+  padding-top: 20px;
+}
+
+footer a {
+  color: #3B3431;
+  font-size: 1.1em;
+  font-weight: bold;
+}
+
+footer a:hover {
+  color: #6A5E57;
+  font-size: 1.2em;
+}
+
+/*OTHER SYTLING*/
+@keyframes fadeIn { from { opacity:0; } to { opacity:1; } }
+
+@media print, screen and (max-width: 500px) {
+
+  .home h1 {
+    font-weight: 500;
+    font-size: 3.5rem;
+    padding: 10px;
+    /*font-size: 1.3em;*/
+  }
+
+  .home-img {
+    background-position: center center;
+  }
+
+  input[type='text'] {
+      border-radius: 10px;
+      padding-left: 15px;
+      margin-top: 1px;
+  }
+
+  .search-bar{
+    width: 77%;
+  }
+}
