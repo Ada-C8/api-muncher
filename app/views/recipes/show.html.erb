@@ -1,5 +1,9 @@
 <h2 class="recipe-title"><%= @recipe.title %></h2>
 
+  <section class="recipe-link">
+    <%= link_to "Click to get the full recipe for #{@recipe.title} ", @recipe.link, target: :_blank%>
+  </section>
+
   <section class="recipe-image">
     <div class="show-recipe-pic">
       <%= image_tag(@recipe.image, alt: "#{@recipe.title}") %>
@@ -25,7 +29,3 @@
       </ul>
     </div>
   </section>
-
-<section class="recipe-link">
-  <%= link_to "Click to get the full recipe for #{@recipe.title} ", @recipe.link, target: :_blank%>
-</section>
