@@ -42,6 +42,7 @@ p.inline-li a {
   text-align: center;
   margin: 0 10px;
   letter-spacing: 2px;
+  font-size: 1.25em;
 }
 
 div.inline {
@@ -74,6 +75,12 @@ h1#menu {
 }
 
 footer.footer {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  padding: 1rem;
+  background-color: #efefef;
   text-align: center;
 }
 
@@ -84,47 +91,47 @@ inline-grid {
 .results-thumbnail {
   width: 200px;
 }
-/* breakfast */
-.hover-nav:hover span.breakfast span{
+/* vegetarian */
+.hover-nav:hover span.vegetarian span{
   display: none;
 }
 
-.hover-nav:hover span.breakfast:after{
-  content: 'Breakfasts';
+.hover-nav:hover span.vegetarian:after{
+  content: 'Vegetarian';
 }
 
-/* lunch */
-.hover-nav:hover span.lunch span{
+/* beef */
+.hover-nav:hover span.beef span{
   display: none;
 }
 
-.hover-nav:hover span.lunch:after{
-  content: 'Lunches';
+.hover-nav:hover span.beef:after{
+  content: 'Beef';
 }
 
-/* dinner */
-.hover-nav:hover span.dinner span{
+/* pork */
+.hover-nav:hover span.pork span{
   display: none;
 }
 
-.hover-nav:hover span.dinner:after{
-  content: 'Dinners';
+.hover-nav:hover span.pork:after{
+  content: 'Pork';
 }
 
-/* dessert */
-.hover-nav:hover span.dessert span{
+/* chicken */
+.hover-nav:hover span.chicken span{
   display: none;
 }
 
-.hover-nav:hover span.dessert:after{
-  content: 'Desserts';
+.hover-nav:hover span.chicken:after{
+  content: 'Chicken';
 }
 
-/* snacks */
-.hover-nav:hover span.snacks span{
+/* fish */
+.hover-nav:hover span.fish span{
   display: none;
 }
 
-.hover-nav:hover span.snacks:after{
-  content: 'Snacks';
+.hover-nav:hover span.fish:after{
+  content: 'Fish';
 }
