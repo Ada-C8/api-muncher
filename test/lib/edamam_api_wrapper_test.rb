@@ -2,6 +2,15 @@ require 'test_helper'
 
 describe EdamamApiWrapper do
 
+  describe "get_search_url" do
+    it "returns the complete url of the search request path" do
+      VCR.use_cassette("recipes") do
+        url = EdamamApiWrapper.get_search_url("fish", 0, 9)
+
+        url.must_equal "https://api.edamam.com/search?q=fish&from=0&to=9&app_id=#{ENV["APP_ID"]}&app_key=#{ENV["APP_KEY"]}"
+      end
+    end
+  end
 
   describe "search" do
     it "receives a valid response for a search" do
@@ -29,7 +38,7 @@ describe EdamamApiWrapper do
 
     end
 
-    it "renders a 404 error if recipe uri is invalid" do
+    it "raises an error if recipe uri is invalid" do
 
     end
 

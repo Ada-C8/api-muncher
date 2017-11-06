@@ -7,7 +7,7 @@ class Recipe
     if @uri == "" || @name == ""
       raise ArgumentError
     end
-    #options
+    #additional arguments
     @image = options[:image]
     @source = options[:source]
     @url = options[:url]
