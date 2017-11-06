@@ -11,9 +11,11 @@
     <%= csrf_meta_tags %>
   </head>
 
-  <% if !@homepage.nil? %>
+  <% if !@not_found.nil? %>
+  <body class="not-found">
+  <% elsif !@homepage.nil? %>
   <body class="homepage">
-  <% else %>
+  <% else  %>
   <body>
   <% end %>
 
@@ -23,7 +25,7 @@
           <h2><%= link_to(t(:site_name), root_path) %></h2>
         </div>
 
-        <% if @homepage.nil? || @homepage == false  %>
+        <% if @homepage.nil? && @not_found.nil?  %>
           <div id="nav-form" class="large-4 medium-7 small-12 float-right row columns">
 
             <%= form_tag recipes_path, method: :get do %>
