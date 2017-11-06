@@ -44,6 +44,7 @@ describe "show_recipe" do
 
       recipe.must_be_instance_of Recipe
       recipe.label.must_equal all_chicken[0].label
+      
     end
   end
   # negative test

@@ -3,9 +3,13 @@ class MuncherWrapper
   TOKEN_KEY = ENV["APP_KEY"]
   TOKEN_ID = ENV["APP_ID"]
 
+  class ApiError < StandardError ; end
+
   def self.find_recipe(search, app_id=TOKEN_ID, app_key=TOKEN_KEY)
     url = BASE_URL + "search?" + "app_id=#{app_id}" + "&app_key=#{app_key}" + "&q=#{search}" + "&to=1000"
-    response = HTTParty.get(url).parsed_response
+    response = HTTParty.get(url)
+
+    check_status(response)
 
     recipes = []
     if response["hits"]
@@ -26,7 +30,8 @@ class MuncherWrapper
   def self.show_recipe(uri)
     url = BASE_URL + "search?" + "app_id=#{TOKEN_ID}" + "&app_key=#{TOKEN_KEY}" + "&r=#{uri}"
 
-    response = HTTParty.get(url).parsed_response
+    response = HTTParty.get(url)
+    check_status(response)
     unless response.empty?
       label = response[0]["label"]
       uri = response[0]["uri"]
@@ -42,7 +47,15 @@ class MuncherWrapper
       recipe = Recipe.new(label, uri, options)
       return recipe
     else
+      ApiError.new("That recipe doesn't exist, please search again")
       return nil
+    end
+  end
+
+  private
+  def self.check_status(response)
+    unless response.code == 200
+      raise ApiError.new("API call to Edamam failed: #{response.code}: #{response.message}")
     end
   end
 
