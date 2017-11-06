@@ -1,3 +1,5 @@
+require 'base64'
+
 class ApiWrapper
   BASE_URL = "https://api.edamam.com/search"
   API_ID = ENV["APPLICATION_ID"]
@@ -27,23 +29,30 @@ class ApiWrapper
   end
 
   def self.find_recipe(uri)
+
+    puts "!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!"
+    puts uri
+
     # make a url to call on the edamam api
-
     recipe_link = BASE_URL + "?r=#{uri}&app_id=#{API_ID}&app_key=#{TOKEN}"
-
-
+    puts "this is the recipe link #{recipe_link}"
+puts "!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!"
+puts "this is the uri #{uri}"
     # https://api.edamam.com/search
     # https://api.edamam.com/search?q=chicken&app_id=${YOUR_APP_ID}&app_key=${YOUR_APP_KEY}&from=0&to=3&calories=gte%20591,%20lte%20722&health=alcohol-free
 
     data = HTTParty.get(recipe_link)
 
+
+
+
     #parse the JSON data in order to get recipe details for the show page
-    if data.empty?
-      raise ApiError.new("No recipe details for this link")
-    else
-      recipe_detail = self.create_recipe(data[0])
-    end
-    return recipe_detail
+    # if data.empty?
+    #   raise ApiError.new("No recipe details for this link")
+    # else
+    #   recipe_detail = self.create_recipe(data[0])
+    # end
+    # return recipe_detail
   end
 
   private
@@ -63,6 +72,7 @@ class ApiWrapper
       recipe_hash["url"],
       recipe_hash["ingredientLines"],
       recipe_hash["dietLabels"],
+      recipe_hash["uri"],
       {
         image: recipe_hash["image"],
       }

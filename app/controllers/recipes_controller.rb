@@ -23,5 +23,6 @@ class RecipesController < ApplicationController
   end
 
   def show
+    @recipe = ApiWrapper.find_recipe(params[:id])
   end
 end

@@ -1,18 +1,36 @@
+require 'base64'
+
 class Recipe
-  attr_reader :name, :original_url, :image, :ingredientsLine, :dietLabels, :image
+  attr_reader :id, :name, :url, :image, :ingredientsLine, :dietLabels, :uri, :image
 
   # the hard parameters are the required bits to create an instance. The options hash is for data that is nice to have an not required
-  def initialize( name, original_url, ingredientsLine, dietLabels, options = {} )
-    raise ArgumentError if name == nil || name == "" || original_url == nil || original_url == "" || ingredientsLine == nil || ingredientsLine == "" || dietLabels == nil || dietLabels == ""
+  def initialize( name, url, ingredientsLine, dietLabels, uri, options = {} )
+    raise ArgumentError if name == nil || name == "" || url == nil || url == "" || ingredientsLine == nil || ingredientsLine == "" || dietLabels == nil || dietLabels == ""
 
+    @id = create_id(uri)
     @name = name # name is a string
-    @original_url = original_url # original_url is a string
+    @url = url # url is a string
     @ingredientsLine = ingredientsLine # ingredientsLine is array of strings
     @dietLabels = dietLabels # dietLabels is an array of strings
+    @uri = uri
 
     # Options hash stuff
     @image = options[:image] # image is a url in string format
 
 
   end # end initialize
+
+  private
+
+
+  def create_id(uri)
+    puts "---CREATE_ID: #{uri}"
+    uri = URI.encode(uri)
+    puts "---ENCODED URI: #{uri}"
+
+    return uri
+  end
+
+
+
 end
