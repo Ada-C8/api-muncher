@@ -1,16 +1,8 @@
-
-<div class="panel callout radius">
-  <h5>This is a callout panel.</h5>
-  <p>It's a little ostentatious, but useful for important content.</p>
-</div>
-
-<%= params %>
-
 <div class="row">
 
 <% if @recipes.count > 0 %>
   <section class="large-12 columns">
-    <h4>Results For "<%= params[:query] %>"</h4>
+    <h4 class="text-center">Results For "<%= params[:query] %>"</h4>
   </section>
   <section id="recipes-container" class="row">
   <% @recipes.each do |recipe| %>
@@ -27,8 +19,8 @@
   <%= will_paginate @recipes %>
   </section>
 <% else  %>
-  <div class="large-12 columns">
-    <h2>No recipes found for "<%= params[:query] %>"</h2>
+  <div class="no-recipe large-12 large-centered columns">
+    <h2 class="text-center">No recipes found for "<%= params[:query] %>"</h2>
   </div>
 <% end %>
 

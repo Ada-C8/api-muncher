@@ -1,10 +1,10 @@
-<section id="main-form-container" class="row">
+<section class="row centered-form-container">
 
-  <section id="main-form" class="large-6 large-centered medium-10 medium-centered columns">
+  <section class="centered-form large-6 large-centered medium-10 medium-centered columns">
     <h1><%= t(:site_name) %></h1>
     <%= form_tag recipes_path, method: :get do %>
     <p>Make and Munch on a Recipe Today</p>
-    <%= text_field_tag :query%>
+    <%= text_field_tag :query, nil, placeholder: "Examples: Cheese, Matcha Snickerdoodles, Chicken and Soy Sauce"%>
     <%= submit_tag 'Search Food', class: "button" %>
     <% end %>
   </section>

@@ -1,12 +1,12 @@
-<h1>Recipes#show</h1>
-
-<%= params %>
-
 <section class="row">
   <article class=" title-box large-12 columns">
-    <h1><%= @recipe.name %></h1>
+    <h1 class="text-center"><%= @recipe.name %></h1>
+    <hr>
   </article>
 
+  <article class="large-6 columns show-image-container">
+    <%= image_tag @recipe.image, alt: @recipe.name %>
+  </article>
   <article class="large-6 columns">
     <h3>Recipe By: <%= @recipe.source %></h3>
     <%= link_to(" View Recipe", @recipe.url, class: "button")%>
@@ -15,9 +15,6 @@
     <%= display_array_attributes(@recipe.ingredients) %>
   </article>
 
-  <article class="large-6 columns">
-    <%= image_tag @recipe.image, alt: @recipe.name %>
-  </article>
 
 </section>
 

@@ -46,25 +46,35 @@
 }
 
 .title-box{
-  background-color: #ccc;
-  margin-bottom: 30px;
-  padding: 50px 0px;
+  margin-top: 25px;
 }
 
 .button{
   clear: both;
 }
 
-#main-form-container{
+.centered-form-container{
   height: 100vh;
 }
 
-#main-form{
+.centered-form{
   margin-top: 30vh;
   text-align: center;
   color: white;
 }
 
+.no-recipe{
+  margin-top: 35vh;
+}
+
+.show-image-container{
+  height: 450px;
+  text-align: center;
+}
+
+.show-image-container img{
+  height: inherit;
+}
 /* PAGINATION CSS */
 .disabled{
   display: none;
