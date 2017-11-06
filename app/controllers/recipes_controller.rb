@@ -4,16 +4,13 @@ class RecipesController < ApplicationController
   end
 
   def index
-    # if invalid, route back to search render 404
     if params[:query].blank?
       # flash[err] query iz blank
       redirect_to root_path
     else
-      # check the string, dsiplay all recipes if valid
       query = params[:query]
-      # search using API Wrapper
       @recipes = EdamamApiWrapper.search(query).paginate(page: params[:page], per_page: 10)
-      #will_paginate includes a params called page
+      #will_paginate includes a params key called page
     end
   end
 

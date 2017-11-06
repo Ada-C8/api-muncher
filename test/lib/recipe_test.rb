@@ -11,7 +11,11 @@ describe Recipe do
     new_recipe.ingredients.must_equal "chicken"
   end
 
-  it "returns an error if invalid parameters are passed" do
-    proc { Recipe.new }.must_raise
+  it "returns an error if no parameters are passed" do
+    proc { Recipe.new }.must_raise ArgumentError
+  end
+
+  it "returns an error if not all required parameters are passed" do
+    proc { Recipe.new(name: "Chicken")}.must_raise ArgumentError
   end
 end
