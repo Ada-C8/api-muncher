@@ -1,5 +1,5 @@
 <% if @recipe %>
-  <h1 class="show_h1"><%= @recipe.name %></h1>
+<h1 class="show_h1"><%= @recipe.name %></h1>
 <section class="recipe_show row">
   <article class="recipe_show_img column center large-6 medium-6 small-12">
     <%= image_tag @recipe.image, alt:"#{@recipe.name} image" %>
@@ -27,10 +27,12 @@
         </ul>
       </li>
     </ul>
-    <%end%>
   </arcile>
   <article class="links">
     <%= link_to "More", @recipe.link, class:"button large-8 medium-12 small-12"%>
     <%= link_to "Back to \"#{@search}\" results", recipes_path(search: @search), class:"button large-8 medium-12 small-12"%>
   </article>
 </section>
+<%else%>
+ <h2>Recipe Not Found</h2>
+<%end%>
