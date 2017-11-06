@@ -1,7 +1,12 @@
-<h1>Recipes#search</h1>
+<section id="main-form-container" class="row">
 
-<%= form_tag recipes_path, method: :get do %>
-  <%= label_tag :query %>
-  <%= text_field_tag :query%>
-  <%= submit_tag 'Search Food' %>
-<% end %>
+  <section id="main-form" class="large-6 large-centered medium-10 medium-centered columns">
+    <h1><%= t(:site_name) %></h1>
+    <%= form_tag recipes_path, method: :get do %>
+    <%= label_tag "Make and Munch on a Recipe Today:" %>
+    <%= text_field_tag :query%>
+    <%= submit_tag 'Search Food', class: "button" %>
+    <% end %>
+  </section>
+
+</section>
