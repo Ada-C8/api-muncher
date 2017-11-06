@@ -84,3 +84,47 @@ inline-grid {
 .results-thumbnail {
   width: 200px;
 }
+/* breakfast */
+.hover-nav:hover span.breakfast span{
+  display: none;
+}
+
+.hover-nav:hover span.breakfast:after{
+  content: 'Breakfasts';
+}
+
+/* lunch */
+.hover-nav:hover span.lunch span{
+  display: none;
+}
+
+.hover-nav:hover span.lunch:after{
+  content: 'Lunches';
+}
+
+/* dinner */
+.hover-nav:hover span.dinner span{
+  display: none;
+}
+
+.hover-nav:hover span.dinner:after{
+  content: 'Dinners';
+}
+
+/* dessert */
+.hover-nav:hover span.dessert span{
+  display: none;
+}
+
+.hover-nav:hover span.dessert:after{
+  content: 'Desserts';
+}
+
+/* snacks */
+.hover-nav:hover span.snacks span{
+  display: none;
+}
+
+.hover-nav:hover span.snacks:after{
+  content: 'Snacks';
+}
