@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <%# favicon_link_tag 'favicon.ico' %>
+    <!-- add file app/assets/images/:file -->
+
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Muncher</title>
+
+    <%= stylesheet_link_tag    "application" %>
+    <%= javascript_include_tag "application", 'data-turbolinks-track' => true %>
+    <%= csrf_meta_tags %>
+  </head>
+
+  <body>
+    <header>
+      <% unless current_page?(root_path) %>
+      <%= render 'layouts/search' %>
+      <% end %>
+    </header>
+    <div class='<%= 'root' if current_page?(root_path) %>'>
+    <% if flash[:message] %>
+      <section class="row status <%= flash[:status] %>">
+        <h3><%= flash[:status] == :failure ? "A problem occurred: " : "" %><%= flash[:message] %></h3>
+
+      </section>
+      <% end %>
+
+    <%= yield %>
+
+    <footer class="column small-12">
+      <p>
+        Powered by <%= image_tag "https://corehealth.global/images/default-source/meetwilo-screenshots/edamam-logo.png?sfvrsn=10" %>
+      </p>
+    </footer>
+    </div>
+  </body>
+</html>

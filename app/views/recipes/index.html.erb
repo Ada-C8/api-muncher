@@ -1,0 +1,14 @@
+<h2>Results for "<%= @query %>"</h2>
+
+  <% @recipes.each do |recipe| %>
+    <div class="columns small-12 medium-6 large-3 index_image">
+      <%= link_to recipe_path(recipe_id: recipe.id) do%>
+        <%= image_tag recipe.image %>
+      <% end %>
+      <p>
+        <%= link_to recipe.name, recipe_path(recipe_id: recipe.id) %>
+      </p>
+    </div>
+  <% end %>
+
+<!-- <% link_to "Next"  -->

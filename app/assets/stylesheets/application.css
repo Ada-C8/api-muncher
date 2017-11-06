@@ -1,0 +1,106 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ *= require foundation_and_overrides
+
+*/
+
+@import url('https://fonts.googleapis.com/css?family=Cabin+Sketch');
+
+/****************/
+/*ROOT and HEADER*/
+/****************/
+
+
+body, html {
+  height: 100%;
+}
+
+h1 {
+  font-family: 'Cabin Sketch', cursive;
+}
+
+h1 a {
+  color: white;
+}
+
+h1 a:hover {
+  color: rgb(247, 245, 236);
+}
+
+.root h1 {
+  font-family: 'Cabin Sketch', cursive;
+  font-size: 9rem;
+  text-align: center;
+  padding-top: 7rem;
+}
+
+.search {
+  background-image: url("https://gatherr.ca/wp-content/uploads/2016/05/Food-Tips-Front-Page.jpg");
+  background-size: cover;
+  margin: 0 auto;
+}
+
+.root {
+  background-image: url("https://gatherr.ca/wp-content/uploads/2016/05/Food-Tips-Front-Page.jpg");
+  background-size: cover;
+  height: 100%
+}
+
+.search p {
+  color: white;
+  font-size: 1.5rem;
+}
+
+.root #search_bar {
+  padding: 0 30%;
+  text-align: center;
+}
+
+header h1 {
+  padding-left: 1rem;
+}
+
+header .search {
+  display: flex;
+  justify-content: space-between;
+}
+
+header #search_bar {
+  width: 50%;
+  padding-top: 1rem;
+}
+
+header .input-button input.field {
+  width: 70%;
+  float: left;
+  margin: 0 1rem;
+  clear: both;
+}
+
+/****************/
+/*FOOTER*/
+/****************/
+
+footer {
+  text-align: center;
+  /*background-color: grey;*/
+}
+footer img {
+  max-height: 40px;
+}
+
+.good_bye_foot {
+  height: 90%
+}

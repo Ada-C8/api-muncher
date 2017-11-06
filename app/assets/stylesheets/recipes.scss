@@ -1,0 +1,55 @@
+// Place all the styles related to the Recipes controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+// ***********
+// INDEX
+// ***********
+
+.index_image {
+  padding: 1rem;
+  // position: relative;
+  text-align: center;
+}
+.index_image a {
+  color: black;
+}
+.index_image a:hover {
+  color: black;
+  text-decoration: underline;
+}
+
+h2, h3 {
+  text-align: center;
+}
+
+.show_info {
+  padding: 0 5%;
+}
+// .index_image {
+//   // width: 90%
+// }
+//
+// .image_name {
+//   margin: 0;
+//   position: absolute;
+//   top: 0;
+//   bottom: 0;
+//   left: 0;
+//   right: 0;
+//   width: 90%;
+//   background: rgba(4, 41, 64, 0.3);
+//   color: #fff;
+//   visibility: hidden;
+//   opacity: 0;
+//   padding-top: 3rem;
+//   text-align: center;
+//
+//   /* transition effect. not necessary */
+//   transition: opacity .2s, visibility .2s;
+// }
+
+// .index_image:hover .image_name{
+//   visibility: visible;
+//   opacity: 1;
+// }
