@@ -1,4 +1,5 @@
 require 'test_helper'
+require_relative '../helpers/fake_response'
 
 describe EdamamApiWrapper do
 
@@ -44,20 +45,24 @@ describe EdamamApiWrapper do
   end
 
   describe "create_recipe" do
-    it "returns a single recipe" do
+    it "returns a single recipe using the uri as an id" do
       VCR.use_cassette("recipes") do
+        # uri for tuna confit
+        uri = "http://www.edamam.com/ontologies/edamam.owl#recipe_f6f7b9562cd7bf5950058ce8bc189c26"
+
+        tuna_confit = EdamamApiWrapper.create_recipe(uri)
+
+        tuna_confit.name.must_equal "Tuna Confit"
       end
     end
-
-    it "raises an error if recipe uri is invalid" do
-      VCR.use_cassette("recipes") do
-      end
-    end
-
   end
   describe "check_status" do
     it "raises an ApiError if the response code is not 200" do
       VCR.use_cassette("recipes") do
+        # created a helper class in test/helpers because idk how to fake response codes
+        response = FakeResponse.new(400)
+
+        proc { EdamamApiWrapper.check_status(response) }.must_raise EdamamApiWrapper::ApiError
       end
     end
   end
@@ -65,6 +70,7 @@ describe EdamamApiWrapper do
   describe "get_recipe" do
     it "creates a Recipe object" do
       VCR.use_cassette("recipes") do
+        
       end
     end
   end

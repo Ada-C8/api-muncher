@@ -1,5 +1,4 @@
 require 'test_helper'
-
 describe Recipe do
 
   it "Can be instantiated with required fields" do
