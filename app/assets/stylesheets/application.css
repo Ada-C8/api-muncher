@@ -1,0 +1,77 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ *= require foundation_and_overrides
+
+ */
+$row_height: 22em;
+
+html {
+  height: 100%;
+  box-sizing: border-box;
+}
+
+body {
+  max-width: 96%;
+  min-height: 100%;
+  padding-bottom: 6rem;
+  margin: 0;
+  position: relative;
+  background-color: #F2F3D9;
+}
+
+main {
+  margin: 0 auto;
+  padding-top: 64px;
+  max-width: 100%;
+  width: 94%;
+  overflow: auto;
+}
+
+
+ul {
+  list-style: none;
+  height: $row_height;
+  padding-top: 1rem;
+}
+ul p {
+  padding-top: 1rem;
+  text-align: center;
+}
+
+ul img {
+  margin: 0 auto;
+  width: 100% auto;
+  display: block;
+  height: $row_height - 5;
+  object-fit: cover;
+}
+
+.indexhead {
+  text-align: center;
+  font-family: 'Courier New'
+}
+
+.pagination {
+  display: inline-block;
+  text-align: center;
+}
+
+footer {
+  padding-top: 1vw;
+}
+
+.diettag {
+  padding-top: 1vw;
+}

@@ -1,0 +1,53 @@
+
+<%= form_tag(recipes_path, :method => "get" ) do %>
+    <%= text_field_tag :search, params[:search], placeholder: "Search More Recipes" %>
+    <%= submit_tag ("Search") %>
+<% end %>
+
+<h1 class="h1_show"><%= @recipe.label %></h1>
+  Brought to you by: <%= @recipe.source %>
+  <ul>
+    <li>
+      Servings: <%= @recipe.yield %>
+    </li>
+    <li>
+      <%= link_to "Link to Original Recipe", @recipe.url, class:"button"%>
+    </li>
+  </ul>
+
+<section class="show row">
+  <article class="image column center large-6 medium-6 small-12">
+    <%= image_tag (@recipe.image), alt: "food picture" %>
+  </article>
+  <article class="info column center large-6 medium-6 small-12">
+    <ul>
+      <li>
+        <h4>Ingredient List</h4>
+      </li>
+
+        <ul>
+          <% @recipe.ingredients.each do |ingredient| %>
+            <li>
+              <%= ingredient %>
+            </li>
+            <% end %>
+        </ul>
+        <li>
+        </li>
+        <li>
+
+          <h4 class="diettag">Dietary Information:</h4>
+          <ul>
+          <% @recipe.dietlabels.each do |diet| %>
+            <li>
+              <%= diet %>
+            </li>
+            <% end %>
+          </ul>
+      </li>
+
+
+</ul>
+
+</article>
+</section>

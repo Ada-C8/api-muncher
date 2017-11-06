@@ -1,0 +1,32 @@
+<div class="row">
+<section class="search column center large-12 small-12">
+ <%= form_tag(recipes_path, :method => "get" ) do %>
+      <%= text_field_tag :search, params[:search], placeholder: "Search More Recipes" %>
+      <%= submit_tag ("Search") %>
+  <% end %>
+</section>
+</div>
+
+<section class="results row large-12">
+  <h2 class="indexhead"><%= params[:search].capitalize%> Recipe List</h2>
+
+<ul class="row recipe-list">
+    <% @results_page.each do |recipe| %>
+    <article class="results_list column float-left large-4 medium-6 small-12">
+    <li>
+        <%= image_tag recipe.image, alt: "foods" %>
+        <p>
+          <%= link_to recipe.label, recipe_show_path(recipe.label, uri: recipe.uri) %>
+       </p>
+     </li>
+   </article>
+    <% end %>
+</ul>
+</div>
+
+<section class="row">
+    <%= will_paginate @results_page, class:"pages float-right" %>
+</section>
+
+
+</section>
