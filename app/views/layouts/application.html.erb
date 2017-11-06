@@ -33,6 +33,12 @@
         <% end %>
       </nav>
     </header>
+    <% if flash[:message] %>
+      <section class="row status <%= flash[:status] %>">
+        <h3><%= flash[:status] == :failure ? "A problem occurred: " : "" %><%= flash[:message] %></h3>
+
+      </section>
+      <% end %>
 
     <%= yield %>
 

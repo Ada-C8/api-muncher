@@ -24,5 +24,9 @@ class RecipesController < ApplicationController
 
   def show
     @recipe = ApiWrapper.find_recipe(params[:id])
+
+    unless @recipe
+      head :not_found
+    end
   end
 end

@@ -1,27 +1,26 @@
 <div class="main">
-    <section class="center">
-      <h3>
-        <%= @recipe.name %>
-      </h3>
-      <h4>By: <%= link_to @recipe.source, @recipe.url %></h4>
-    </section>
+  <section class="center">
+    <h3>
+      <%= @recipe.name %>
+    </h3>
+    <h4>By: <%= link_to @recipe.source, @recipe.url %></h4>
+  </section>
 
 
-    <section class="row">
-      <div class="columns small-12 large-4">
-        <%= image_tag("#{@recipe.image}", :alt => "#{@recipe.name} photo", class: "full_image") %>
+  <section class="row">
+    <div class="columns small-12 large-4">
+      <%= image_tag("#{@recipe.image}", :alt => "#{@recipe.name} photo", class: "full_image") %>
 
-      </div>
-      <div class="columns small-12 large-8">
+    </div>
+    <div class="columns small-12 large-8">
 
       Ingredients
       <ul>
-
-      <% @recipe.ingredientsLine.each do |ingredient| %>
-        <li>
-          <%= ingredient %>
-        </li>
-      <% end %>
+        <% @recipe.ingredientsLine.each do |ingredient| %>
+          <li>
+            <%= ingredient %>
+          </li>
+        <% end %>
       </ul>
 
       Dietary Labels
@@ -30,7 +29,7 @@
           <li>
             <%= labels %>
           </li>
-          <% end %>
+        <% end %>
       </ul>
     </div>
   </section>

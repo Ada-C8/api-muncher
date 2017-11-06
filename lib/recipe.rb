@@ -25,10 +25,7 @@ class Recipe
 
 
   def create_id(uri)
-    puts "---CREATE_ID: #{uri}"
     uri = URI.encode(uri, /\W/)
-    puts "---ENCODED URI: #{uri}"
-
     return uri
   end
 
