@@ -8,7 +8,7 @@ class RecipesController < ApplicationController
   end
 
   #THIS DISPLAYS THE RESULTS OF WHAT WE FOUND WHEN WE DID THE SEARCH
-  def search
+  def search #recipes_search_path
       @keywords = params['keywords']
       if @keywords.nil?
         redirect_to root_path
@@ -18,7 +18,7 @@ class RecipesController < ApplicationController
       end
   end
 
-  def search_by_page
+  def search_by_page #search_by_page_path
     @keywords = params['keywords']
     if @keywords == ""
       redirect_to root_path

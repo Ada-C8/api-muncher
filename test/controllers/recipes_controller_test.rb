@@ -12,22 +12,21 @@ require "test_helper"
     end
 
     describe "search" do
-      it "can get the initial search page (recipes 1-10)" do
-        keywords = "lemon chicken"
+      it "can get the initial search results page" do
+        @keywords = "lemon chicken"
         VCR.use_cassette("recipes") do
-          get recipes_search_path, params: keywords
+          get recipes_search_path params:{keywords: "lemon chicken"}
           must_respond_with :success
         end
       end
 
-      it "returns success when recipes match the search term(s) and page parameters are provided" do
+      it "redirects to the home page if the user enters "
+    end
+
+    describe "search by page (i.e. pagination)" do
+      it "returns success when passed a keyword and recipe numbers (from, to)" do
         VCR.use_cassette("recipes") do
-          @keywords = "lemon chicken"
-          get recipes_search_path, params: @keywords
-          # params[:keywords] = "lemon chicken"
-          # params[:from] = 30
-          # params[:to] = 39
-          get search_by_page_path(keywords: @keywords, from: 30, to: 39)
+          get recipes_search_path params:{keywords: "lemon chicken", from: 30, to: 39}
           must_respond_with :success
         end
       end
