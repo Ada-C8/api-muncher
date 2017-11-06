@@ -5,6 +5,8 @@ git_source(:github) do |repo_name|
   "https://github.com/#{repo_name}.git"
 end
 
+# Paginate
+gem 'will_paginate'
 # Foundation
 gem 'foundation-rails', '6.4.1.2'
 # Awesome Print

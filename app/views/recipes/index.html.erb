@@ -13,6 +13,7 @@
       </article>
     </article>
   <% end  %>
+  <%= will_paginate @recipes %>
   </section>
 <% else  %>
   <h2>No recipes found for "<%= params[:query] %>"</h2>

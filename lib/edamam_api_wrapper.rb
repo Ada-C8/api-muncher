@@ -11,7 +11,7 @@ class EdamamApiWrapper
     app_key ||= APP_KEY
     app_id ||= APP_ID
     query = URI.encode(query)
-    url = BASE_URL + "search?app_key=#{app_key}" + "&app_id=#{app_id}" + "&q=#{query}"
+    url = BASE_URL + "search?app_key=#{app_key}" + "&app_id=#{app_id}" + "&q=#{query}" + "&from=0&to=100"
 
     data = HTTParty.get(url)
 
