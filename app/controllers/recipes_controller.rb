@@ -1,3 +1,5 @@
+require_dependency '../../lib/edamam_api_wrapper'
+require_dependency '../../lib/recipe'
 require 'edamam_api_wrapper'
 class RecipesController < ApplicationController
   def show
