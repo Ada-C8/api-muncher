@@ -1,0 +1,13 @@
+<main class = "small-10 small-centered columns">
+  <section class = "home small-12 small-centered columns search">
+    <section class = "welcome-text">
+      <h1>Welcome to Savor</h1>
+      <p>recipes and nutritional information at your fingertips</p>
+    </section>
+    <%= form_tag(recipe_results_path, :method => "get", id: "nav-search", class: "input-group") do %>
+      <%= text_field_tag :search, params[:search], placeholder: "Search Recipes", class: "input-group-field" %>
+      <%= submit_tag "Search", :name => nil, class: "input-group-button" %>
+    <% end %>
+  </section>
+
+</main>

@@ -1,0 +1,131 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ *= require foundation_and_overrides
+
+ */
+
+ section > div.pagination a {
+   display: inline-block;
+ }
+
+ .results ul {
+   list-style-type: none;
+ }
+
+ .results article {
+   text-align: center;
+ }
+
+ .paginate {
+   text-align: center;
+ }
+
+body {
+   background-image: image-url("feast.jpg");
+   background-repeat: no-repeat;
+   background-size: cover;
+   height: 100vh;
+   font-family: 'Bentham', serif;
+ }
+
+ body h1, h2, h3, h4,h5,h6 {
+  font-family: 'Bentham', serif;
+ }
+
+.show-recipe, .index {
+  background-color: white;
+}
+
+// button:hover {
+// 	background: rgba(0,0,0,0);
+// 	color: #3a7999;
+// 	box-shadow: inset 0 0 0 3px #3a7999;
+// }
+
+main {
+  margin: 0px auto;
+}
+
+
+#masthead {
+  font-family: 'Bentham', serif;
+  color: black;
+  padding: 0px 10px;
+  display: inline-block;
+  max-width: 45%;
+}
+
+#masthead a {
+  color: black;
+}
+
+.site-header {
+  background-color: #f4f4f4;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 9999;
+  transition: all 0.3s linear;
+}
+
+.site-header, footer {
+  background-color: #f4f4f4;
+  z-index:5;
+}
+
+footer {
+  height: 7%;
+}
+
+h1 {
+  font-size: 2.5em;
+  margin-bottom: 0px;
+}
+
+// .paginate, ul {
+//   text-align: center;
+// }
+
+#search-bar {
+  float: right;
+  display: inline-block;
+  max-width: 25%;
+  margin-top: 10px;
+}
+
+#nav-search input{
+  display: inline-block;
+}
+
+#nav-search {
+  vertical-align: bottom;
+}
+
+.right {
+  float: right;
+}
+
+.index h3{
+  text-align: left;
+}
+
+.recipe-ingredients ul{
+  margin-bottom: 0px;
+}
+
+.edamam-badge {
+  z-index:10;
+}

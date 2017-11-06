@@ -1,0 +1,106 @@
+// Place all the styles related to the recipes controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+// "https://images.unsplash.com/photo-1466637574441-749b8f19452f?auto=format&fit=crop&w=1600&q=60&ixid=dW5zcGxhc2guY29tOzs7Ozs%3D"
+
+.recipe-header {
+  text-align: center;
+}
+
+.recipe-ingredients {
+  height: 100%;
+}
+
+main {
+  position: relative;
+  height: 95vh;
+  // background-image: image-url("feast.jpg");
+  overflow: scroll;
+  padding-top: 10%;
+}
+
+.home h1 {
+  font-family: 'Bentham', serif;
+  font-weight: bold;
+  color: snow;
+  text-align: center;
+}
+
+.home p {
+  font-style: oblique;
+  color: snow;
+  text-align: center;
+}
+
+.home {
+  position: relative;
+  margin: 0px auto;
+  top: 30%;
+  background-image: linear-gradient(rgba(34,34,34,0.3), rgba(34,34,34,0.9));
+  height: 100%;
+  // background: linear-gradient(180deg,rgba(0,0,0,0.05), black 98%);
+}
+
+.home form {
+  text-align: center;
+  margin: 0px auto;
+  max-width: 75vw;
+}
+
+.recipe-ingredients {
+  max-height: 49vh;
+  overflow: scroll;
+  text-align: left;
+}
+
+.recipe-img-ingred {
+  text-align: center;
+}
+
+.nutrition {
+  max-height: 49%;
+  // overflow: scroll;
+  padding: 10px 10px 0px 0px;
+  text-align: center;
+}
+
+
+.recipe:hover {
+  box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.2);
+}
+
+.paginate h3 {
+  padding-left: 10px;
+}
+
+.recipe img {
+  padding-top: 5px;
+}
+
+.nutritional p{
+  margin-bottom: 0px;
+}
+
+.nutritional, .nutr-labels {
+  display: inline-block;
+  vertical-align: top;
+  margin: 0px auto;
+  padding-top: 5px;
+  text-align: left;
+}
+
+.nutr-labels {
+  padding-top: 45px;
+  text-align: left;
+}
+
+@media print, screen and (min-width: 40em) {
+  .recipe-img-ingred {
+    text-align: right;
+  }
+
+  .nutrition {
+    text-align: center;
+  }
+}

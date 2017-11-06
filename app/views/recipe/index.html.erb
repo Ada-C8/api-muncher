@@ -1,0 +1,31 @@
+<main class = "small-10 small-centered columns index">
+  <section class = "results paginate">
+    <% if @recipes.empty?%>
+    <h4>Sorry, there are no recipes matching your search</h4>
+    <% else %>
+    <div class="row align-center paginate" data-equalizer data-equalize-on="medium" id="test-eq">
+      <h3> Results for: <%= params[:search] %> </h3>
+      <ul>
+        <% @recipes.each do |recipe|%>
+        <div class="recipe small-12 medium-6 large-3 columns" data-equalizer-watch>
+          <li>
+            <article>
+              <%= image_tag recipe.image_url, alt: "Picture of #{recipe.name}"%>
+              <p>
+                <%= link_to recipe.name, show_recipe_path(recipe.name, uri: recipe.uri), alt: "link to show recipe page"%>
+              </p>
+            </article>
+          </li>
+        </div>
+
+        <% end %>
+      </ul>
+
+    </div>
+    <% end %>
+    <section class = "row pagination">
+      <%= will_paginate @recipes %>
+    </section>
+  </section>
+
+</main>

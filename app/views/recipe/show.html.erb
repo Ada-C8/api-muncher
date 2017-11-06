@@ -1,0 +1,69 @@
+<main class = "small-10 small-centered columns show-recipe">
+  <section class = "recipe-header row small-12">
+      <h1><%= @recipe.name %></h1>
+      <h4><%= link_to "From: #{@recipe.source}", @recipe.url, alt: "Original recipe link",target: :_blank %></h4>
+  </section>
+
+  <article class= "row recipe-img-ingred" data-equalizer data-equalize-on="medium">
+    <section class = "recipe-img small-12 medium-6 columns" data-equalizer-watch>
+      <%= image_tag @recipe.image_url, alt: "Picture of #{@recipe.name}"%>
+    </section>
+
+    <section class = "recipe-ingredients small-12 medium-6 columns" data-equalizer-watch>
+      <h5>
+        Serves: <%=@recipe.yield.to_i%> people
+      </h5>
+      <h5> Ingredients: </h5>
+      <%@recipe.ingredients.each do |ingredient|%>
+      <ul>
+        <li>
+          <%=ingredient%>
+        </li>
+      </ul>
+      <% end %>
+    </section>
+
+  </article>
+
+  <section class = "row align-center nutrition">
+    <section class = "small-12 medium-5 small-centered nutritional columns">
+      <h3>Nutrition Facts:</h3>
+      <p>
+        Calories: <strong><%= (@recipe.calories).round(2)%></strong>
+      </p>
+      <% nutr_labels= ["FAT", "FASAT", "FAPU", "FAMS", "CHOCDF", "PROCNT", "NA", "FIBTG", "CHOLE"] %>
+      <% nutr_labels.each do |n_label|%>
+        <% if @recipe.total_nutrients[n_label] && @recipe.total_daily[n_label]%>
+          <p>
+            <%= @recipe.total_nutrients[n_label]["label"]%>: <strong><%= "#{(@recipe.total_nutrients[n_label]["quantity"]).round(2)}#{@recipe.total_nutrients[n_label]["unit"]}"%></strong>
+            <strong><%= "(#{(@recipe.total_daily[n_label]["quantity"]).round(2)}#{@recipe.total_daily[n_label]["unit"]})"%></strong>
+          </p>
+        <% elsif @recipe.total_nutrients[n_label] && !(@recipe.total_daily[n_label]) %>
+          <p>
+            <%= @recipe.total_nutrients[n_label]["label"]%>: <strong><%= "#{(@recipe.total_nutrients[n_label]["quantity"]).round(2)}#{@recipe.total_nutrients[n_label]["unit"]}"%></strong>
+          </p>
+        <% else %>
+          <% next %>
+        <% end %>
+      <% end %>
+
+    </section>
+    <section class = "small-12 medium-5 small-centered nutr-labels columns">
+      <p>
+        <strong>Cautions: </strong>
+        <%= print_results(@recipe.cautions)%>
+      </p>
+      <p>
+        <strong>Health Labels: </strong>
+        <%= print_results(@recipe.health_labels) %>
+      </p>
+      <p>
+        <strong>Diet Labels: </strong>
+        <%= print_results(@recipe.diet_labels)%>
+      </p>
+
+    </section>
+
+  </section>
+
+</main>
