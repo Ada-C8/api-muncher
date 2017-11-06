@@ -1,7 +1,10 @@
-<section class="head-search">
-  <h2> <%= link_to("Recipoogle", root_path) %> </h2>
-  <%= render partial: "form" %>
-</section>
+<header>
+  <section class="head-search">
+    <h2><%= link_to("Recipoogle", root_path, class: "head-search") %>
+    <%= render partial: "form" %></h2>
+  </section>
+</header>
+
 
 <section class="row results">
   <% if @recipes != nil %>

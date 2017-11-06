@@ -39,21 +39,28 @@ h1, h2, h3 {
 input[type='text'] {
   border-radius: 10px;
   padding-left: 15px;
+  margin-top: 18px;
   /*-webkit-box-shadow: 0px 7px 14px -4px rgba(0,0,0,0.75);*/
   /*-moz-box-shadow: 0px 7px 14px -4px rgba(0,0,0,0.75);*/
   box-shadow: 0px 3px 10px -4px rgba(0,0,0,0.4);
 }
 
 /*SEARCH FORM HEADER*/
+header {
+  background: #CCC0B9;
+}
 
 .head-search {
   padding-top: 30px;
+  padding-bottom: 2px;
   text-align: center;
 }
 
-.head-search h2, a {
-  padding: 10px;
+.head-search a {
+  padding: 20px;
+  margin-bottom: 10px;
   font-size: 2em;
+  color: #654236;
 }
 
 
