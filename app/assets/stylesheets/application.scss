@@ -1,0 +1,191 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+
+ */
+
+@import url('foundation');
+
+/* --------- General --------- */
+
+body {
+  font-family: 'Josefin Sans', sans-serif;
+  color: #8e9095;
+  text-align: center;
+}
+
+a {
+  color: #C9A289;
+}
+
+ul {
+  list-style: none;
+}
+
+li {
+  padding: 3px 0;
+}
+
+h1, h2, h3, h4, h5 {
+  color: #454950;
+  letter-spacing: -0.02em;
+}
+
+main {
+  margin: 75px 0;
+}
+
+/* --------- Header --------- */
+
+.logo img {
+  width: 150px;
+  height: auto;
+  margin: 50px 0;
+}
+
+#search-form {
+  width: 50%;
+  min-width: 350px;
+  margin: 0 auto;
+}
+
+input[type='text'] {
+  border-radius: 25px;
+  padding-left: 15px;
+}
+
+/* --------- Index --------- */
+
+.recipes-index {
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.result {
+  display: inline-block;
+  margin: 20px 0;
+}
+
+.result p:last-child {
+  width: 300px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.result-thumb {
+  width: 300px;
+  height: 300px;
+  display: inline-block;
+  background: #E5EFF9;
+}
+
+.result-thumb img {
+  animation: fadeIn 2s;
+}
+
+$colors: #8FC1C9, #549CCF, #ADAD68, #F6C73C, #E7B7AD, #DB3E36;
+
+@for $i from 1 through length($colors) {
+  .options p:nth-child(#{$i}) .label {
+    background: nth($colors, $i)
+  }
+}
+
+.options p {
+  margin-bottom: 0;
+}
+
+@keyframes fadeIn { from { opacity:0; } to { opacity:1; } }
+
+@media only screen and (max-width: 460px) {
+.options {
+  padding: 0 14%;
+}
+}
+
+/* --------- Show --------- */
+
+.recipe-header, .recipe-info {
+  margin: 0 auto;
+  max-width: 600px;
+}
+
+.recipe-header {
+  background: #E5EFF9;
+}
+
+.recipe-header h4 {
+  padding: 0 5px;
+  font-weight: 500;
+}
+
+.recipe-header p {
+  margin-bottom: 0;
+}
+
+.recipe-info {
+  background: #F7F7F7;
+  padding: 50px 0 0;
+  text-align: left;
+}
+
+.recipe-info section {
+  padding: 15px;
+}
+
+.recipe-info section:nth-child(2) {
+  text-align: center;
+}
+
+.label {
+  background: rgba(150,152,156,0.4);
+  border-radius: 3px;
+  padding-top: 0.5rem;
+  margin: 0.5em 0;
+  border-width: 0;
+}
+
+#recipe-link {
+  text-align: center;
+  background: rgba(241, 211, 142, 0.9);
+  padding: 20px 0;
+  margin: 0;
+  color: #454950;
+}
+
+#recipe-link a {
+  color: rgba(0,0,0,0.4);
+}
+
+/* --------- Pagination --------- */
+
+.pagination {
+  margin-top: 30px;
+}
+
+.pagination a {
+  display: inline-block;
+}
+
+.pagination .current {
+  background: rgba(255,255,255,0);
+  color: #0a0a0a;
+  border-bottom: 2px solid;
+}
+
+.pagination a:hover {
+  color: rgba(0,0,0,0.4);
+  background: rgba(255,255,255,0);
+}

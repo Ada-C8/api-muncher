@@ -1,0 +1,37 @@
+<section class="grid-x align-middle recipe-header">
+  <section class="auto cell"><%= image_tag @recipe.image, alt:"#{@recipe.label}" %></section>
+
+  <section class="auto cell">
+    <p><small><%= link_to @recipe.source, "#{@recipe.url}" %></small></p>
+    <h4><%= @recipe.label %></h4>
+  </section>
+</section>
+
+<section class="grid-x recipe-info">
+  <article class="cell">
+
+    <section>
+      <h5>Ingredients</h5>
+      <ul>
+        <% @recipe.ingredientLines.each do |ingredient| %>
+        <li>
+          <%= ingredient %>
+        </li>
+        <% end %>
+      </ul>
+    </section>
+
+    <section>
+      <p class="labels"><% @recipe.healthLabels.each do |label| %>
+        <span class="label"><%= label %></span>
+        <% end %>
+      </p>
+      <p class="labels"><% @recipe.dietLabels.each do |label| %>
+        <%= label %>
+        <% end %>
+      </p>
+    </section>
+
+    <p id="recipe-link">Read the full recipe at <%= link_to @recipe.source, "#{@recipe.url}" %></p>
+  </article>
+</section>

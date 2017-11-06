@@ -1,0 +1,15 @@
+<p>
+  <%= form_tag(recipes_path, :method => "get", id: "search-form") do %>
+    <%= hidden_field_tag :search, @random %>
+    <%= submit_tag("I'm feeling lucky", :class=>"label") %>
+  <% end %>
+</p>
+<article class="labels options">
+  <% @all.each do |group| %>
+    <p>
+      <% group.each do |option| %>
+        <%= link_to option, recipes_path(search: option), :class=>"label" %>
+      <% end %>
+    </p>
+  <% end %>
+</article>
