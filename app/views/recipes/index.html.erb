@@ -7,11 +7,13 @@
 </section>
 
 <section class="recipe-list row">
-  <div class="small-2 medium-4 columns">
+
     <% @recipes.each do |recipe| %>
+      <div class="small-2 medium-4 columns">
         <%= link_to recipe.name, recipe_path(uri: recipe.uri) %>
         <%= image_tag recipe.image %>
+      </div>
     <% end %>
-  </div>
+
 
 </section>
