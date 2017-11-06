@@ -19,15 +19,60 @@ $cameopink: rgba(225, 187, 201, 1);
 // $feature-font: 'Shrikhand', cursive;
 // $copy-font: 'PT Sans Narrow', sans-serif;
 // $comment-font: 'Amatic SC', cursive;
+#bg-header {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -100;
+
+  /* Preserve aspet ratio */
+  min-width: 100%;
+  height: 200px;
+}
+
+#header-search {
+  margin-top: 25px;
+}
+
+header {
+  height: 200px;
+}
+
+header h1 {
+  padding-top: 20px;
+  margin: 0;
+}
 
 main {
+  height: 100%;
   padding-bottom: 80px;
+}
+
+.debug {
+  height: 100%;
+  padding-bottom: 80px;
+}
+
+#bg-footer {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  z-index: -100;
+  min-width: 100%;
+  height: 100px;
+}
+
+#footer-text {
+  // padding-bottom: 30px;
 }
 
 footer {
   position: absolute;
+  // bottom: 0;
+  // left: 0;
   height: 50px;
   width: 100%;
+  color: white;
 }
 
 h3, h4, h5, h6 {
