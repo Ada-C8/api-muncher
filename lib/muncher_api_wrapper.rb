@@ -13,7 +13,7 @@ class MuncherApiWrapper
 
     data = HTTParty.get(url)
     status(data)
-
+    # binding.pry
     recipe_list = []
     if data["hits"]
       data["hits"].each do |recipe_array|

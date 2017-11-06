@@ -23,10 +23,17 @@ HERO
     <%= stylesheet_link_tag    "application" %>
     <%= javascript_include_tag "application", 'data-turbolinks-track' => true %>
     <%= csrf_meta_tags %>
+
   </head>
 
   <body>
+    <%###############  FLASH MESSAGES #################### %>
+      <section class="row status">
+        <% if flash[:status] == :not_found %>
 
+        <h1>  <%= flash[:message]%> </h1>
+        <% end %>
+      </section>
     <%= yield %>
 
   </body>

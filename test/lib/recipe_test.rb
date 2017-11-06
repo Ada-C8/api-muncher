@@ -13,12 +13,12 @@ describe Recipe do
   end
 
   it "Can be initialize with all the fields" do
-   recipe = Recipe.new("id", "label", "image", "url", "ingridientLines")
+   recipe = Recipe.new("id", "label", "image", "url", "ingridientLines", "dietLabels")
    recipe.must_be_kind_of Recipe
   end
 
   it "Tracks arguments" do
-    recipe = Recipe.new("id", "label", "image", "url", "ingridientLines")
+    recipe = Recipe.new("id", "label", "image", "url", "ingridientLines", "dietLabels")
     recipe.id.must_equal "id"
     recipe.label.must_equal "label"
   end

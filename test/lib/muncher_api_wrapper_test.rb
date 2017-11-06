@@ -31,15 +31,15 @@ describe MuncherApiWrapper do
     #TODO make a test when the page is invalid like ("arroz", 0), I have that information in the yml
   end
 
-  describe "find_recipes" do
-    it "can show one recipe" do
-      VCR.use_cassette("one_recipe") do
-        uri = " 54d578f9ae75221df8cdd217f9ca964c"
-        result = MuncherApiWrapper.one_recipe(uri)
-        result.must_be_kind_of Recipe
-      end
-    end
-  end
+  # describe "find_recipes" do
+  #   it "can show one recipe" do
+  #     VCR.use_cassette("one_recipe") do
+  #       uri = " 54d578f9ae75221df8cdd217f9ca964c"
+  #       result = MuncherApiWrapper.one_recipe(uri)
+  #       result.must_be_kind_of Recipe
+  #     end
+  #   end
+  # end
 
 end
 
