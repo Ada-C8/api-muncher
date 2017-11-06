@@ -25,33 +25,47 @@ describe EdamamApiWrapper do
 
   describe "get_results_from_response" do
     it "returns an array of Recipe objects" do
+      VCR.use_cassette("recipes") do
+        response = EdamamApiWrapper.search("fish", 0, 9)
 
+        arr = EdamamApiWrapper.get_results_from_response(response)
+
+        arr.must_be_kind_of Array
+      end
     end
 
-    it "renders an error message if the search returns an empty array" do
+    it "returns an empty array if there are no search results" do
+      VCR.use_cassette("recipes") do
+        response = {"hits"=>[]}
 
+        EdamamApiWrapper.get_results_from_response(response).must_equal []
+      end
     end
   end
 
   describe "create_recipe" do
     it "returns a single recipe" do
-
+      VCR.use_cassette("recipes") do
+      end
     end
 
     it "raises an error if recipe uri is invalid" do
-
+      VCR.use_cassette("recipes") do
+      end
     end
 
   end
   describe "check_status" do
     it "raises an ApiError if the response code is not 200" do
-
+      VCR.use_cassette("recipes") do
+      end
     end
   end
 
   describe "get_recipe" do
     it "creates a Recipe object" do
-
+      VCR.use_cassette("recipes") do
+      end
     end
   end
 end

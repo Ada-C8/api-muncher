@@ -17,7 +17,13 @@ class RecipesController < ApplicationController
     response = EdamamApiWrapper.search(params[:q], from, to)
     @recipes = EdamamApiWrapper.get_results_from_response(response)
 
+    # pagination and no results
     count = response["count"]
+    if count == 0
+      flash[:status] = :failure
+      flash[:result_text] = "No results to display."
+    end
+
     if @page*10 <= count
       @next_page = "/search?q=#{params[:q]}&page=#{@page+1}"
     end

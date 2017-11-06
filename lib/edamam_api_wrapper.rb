@@ -1,8 +1,9 @@
 require "httparty"
-class ApiError < StandardError
-end
 
 class EdamamApiWrapper
+  class ApiError < StandardError
+  end
+
   BASE_URL = "https://api.edamam.com/search?"
   BASE_URI = "http://www.edamam.com/ontologies/edamam.owl%23recipe_"
   APP_ID = ENV["APP_ID"]

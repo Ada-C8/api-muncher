@@ -12,6 +12,12 @@
   </div>
 </section>
 
+<% if flash[:result_text] %>
+  <section class="row status <%= flash[:status] %>">
+    <h3><%= flash[:status] == :failure ? "A problem occurred: " : "" %><%= flash[:result_text] %></h3>
+  </section>
+<% end %>
+
 <nav>
   <% if @previous_page %>
     <%= link_to 'previous', @previous_page %>
