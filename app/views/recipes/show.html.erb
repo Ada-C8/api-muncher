@@ -1,39 +1,37 @@
-<h1>Recipes#show</h1>
-<p>Find me in app/views/recipes/show.html.erb</p>
+<div class="main">
+    <section class="center">
+      <h3>
+        <%= @recipe.name %>
+      </h3>
+      <h4>By: <%= link_to @recipe.source, @recipe.url %></h4>
+    </section>
 
 
-<h3>
-  <%= @recipe.name %>
-</h3>
-<h4>By: <%= link_to @recipe.source, @recipe.url %></h4>
+    <section class="row">
+      <div class="columns small-12 large-4">
+        <%= image_tag("#{@recipe.image}", :alt => "#{@recipe.name} photo", class: "full_image") %>
 
+      </div>
+      <div class="columns small-12 large-8">
 
-<section class="row">
-  <div class="columns small-12 large-4">
-    <%= image_tag("#{@recipe.image}", :alt => "#{@recipe.name} photo") %>
+      Ingredients
+      <ul>
 
-  </div>
-  <div class="columns small-12 large-8">
-
-  Ingredients
-  <ul>
-
-  <% @recipe.ingredientsLine.each do |ingredient| %>
-    <li>
-      <%= ingredient %>
-    </li>
-  <% end %>
-  </ul>
-  </div>
-</section>
-
-<section>
-  Dietary Labels
-  <ul>
-    <% @recipe.dietLabels.each do |labels| %>
-      <li>
-        <%= labels %>
-      </li>
+      <% @recipe.ingredientsLine.each do |ingredient| %>
+        <li>
+          <%= ingredient %>
+        </li>
       <% end %>
-  </ul>
-</section>
+      </ul>
+
+      Dietary Labels
+      <ul>
+        <% @recipe.dietLabels.each do |labels| %>
+          <li>
+            <%= labels %>
+          </li>
+          <% end %>
+      </ul>
+    </div>
+  </section>
+</div>
