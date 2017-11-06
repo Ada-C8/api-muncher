@@ -24,7 +24,9 @@
 
         <form action="<%= recipes_search_path %>" method="get" class="main-search">
           <%= text_field_tag :query %>
-          <%= submit_tag 'Search', name: nil, class: 'button' %>
+          <%= button_tag :submit, name: nil, class: 'button' do %>
+            <i class='fa fa-search'></i> Search
+          <% end %>
         </form>
       </div>
     </main>

@@ -14,12 +14,18 @@
   </head>
 
   <body>
-    <header class='header'>
-      <h2><%= link_to "MUNCHER", root_path %></h2>
-      <form action="<%= recipes_search_path %>" method="get">
-        <%= text_field_tag :query %>
-        <%= submit_tag 'Search', name: nil %>
-      </form>
+    <header class='main-header'>
+      <div class="header-wrap">
+        <h2 class="mini-heading">
+          <%= link_to "MUNCHER", root_path %>
+        </h2>
+        <form action="<%= recipes_search_path %>" method="get"  class='mini-search'>
+          <%= text_field_tag :query %>
+          <%= button_tag :submit, name: nil, class: 'button' do %>
+            <i class='fa fa-search'></i>
+          <% end %>
+        </form>
+      </div>
     </header>
 
     <main class='main'>
