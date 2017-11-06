@@ -51,6 +51,7 @@ group :development, :test do
   gem 'better_errors'
   gem 'pry-rails'
   gem 'binding_of_caller'
+  gem 'test_helper'
 end
 
 group :development do
