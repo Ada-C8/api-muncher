@@ -11,12 +11,14 @@ class RecipesController < ApplicationController
     @recipes = EdamamApiWrapper.search_recipes(params[:search]).paginate(:page => params[:page], :per_page => 9)
 
     if @recipes.empty?
-      flash[:error] = "Sorry, there are no results for #{params[:search]}"
+      flash[:status] = :error
+      flash[:result] = "Sorry, there are no results for #{params[:search]}"
       redirect_to root_path
     end
   end
 
   def show
     @recipe = EdamamApiWrapper.recipe_details(params[:uri])
+    render_404 unless @recipe
   end
 end
