@@ -22,6 +22,7 @@ require "test_helper"
       it "redirects to the home page if the user enters nothing as a keyword" do
         get recipes_search_path params:{keywords: ""}
         must_redirect_to root_path
+        flash[:failure].must_equal "You did not enter any keywords. Please enter ingredient keywords into the search bar."
       end
     end
 
