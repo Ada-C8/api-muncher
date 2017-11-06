@@ -11,20 +11,16 @@ class EdamamApiWrapper
 
   def self.find_number_of_recipes(keywords)
     url =  BASE_URL + "?q=" + keywords + "&app_id=#{ID}&app_key=#{KEY}"
-    puts url
+    # puts url
     results = HTTParty.get(url)
-    if results
       number_of_recipes = results['count']
-      puts "NUMBER OF RECIPES: #{number_of_recipes}"
+      # puts "NUMBER OF RECIPES: #{number_of_recipes}"
       return results['count']
-    else
-      return 0
-    end
   end
 
   def self.list_recipes(keywords, from, to)
     url = BASE_URL + "?q=" +  keywords + "&app_id=#{ID}&app_key=#{KEY}" + "&from=" + from.to_s + "&to=" + to.to_s
-    puts url
+    # puts url
     results = HTTParty.get(url)
     recipes_list = []
     if results['hits']
@@ -41,9 +37,9 @@ class EdamamApiWrapper
   def self.show_recipe(uri_id)
     r = "http://www.edamam.com/ontologies/edamam.ow" + uri_id
     url = BASE_URL + "?r=" + r + "&app_id=#{ID}&app_key=#{KEY}"
-    puts url
+    # puts url
     results = HTTParty.get(url)
-    puts results
+    # puts results
     recipe = create_recipe_for_show(results)
     if recipe
       return recipe
