@@ -1,0 +1,48 @@
+<table>
+  <tr>
+    <th>
+      Result
+    </th>
+    <th>
+      Recipe Name
+    </th>
+    <th>
+      URL
+    </th>
+    <th>
+      recipe info
+    </th>
+  </tr>
+  <% !(@from) ? (i = 1) : (i = @from) %>
+  <% @recipes.each do |recipe| %>
+  <tr>
+    <td>
+      <%= i %>
+    </td>
+    <td>
+      <%= format_length(recipe.name) %>
+    </td>
+    <td>
+      <%= link_to "off site link", recipe.link %>
+    </td>
+    <td>
+      <%= link_to "recipe info", show_recipe_path(recipe.uri) %>
+    </td>
+  </tr>
+  <% i += 1 %>
+  <% end %>
+</table>
+<%= @pages %>
+<% if @current_page <= 1 %>
+<%= "current page #{@current_page}" %>
+<% p = @current_page + 1 %>
+<%= link_to "page #{p}", pages_path(p, query: params["query"], to:"#{p*10}", from: "#{(p*10)-10}", pages: @pages) %>
+<% else %>
+<% p = @current_page - 1%>
+<%= link_to "page #{p}", pages_path(p, query: params["query"], to:"#{p*10}", from: "#{(p*10)-10}", pages: @pages) %>
+<%= "current page #{@current_page}" %>
+<% if (@current_page + 1) <= @pages %>
+<% p = @current_page + 1 %>
+<%= link_to "page #{p}", pages_path(p, query: params["query"], to:"#{p*10}", from: "#{(p*10)-10}", pages: @pages) %>
+<% end %>
+<% end %>

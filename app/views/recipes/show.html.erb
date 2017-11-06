@@ -1,0 +1,71 @@
+<section class = row>
+  <div class="panel small-12 columns">
+    <% if @user %>
+    <% if @user.included_in_favorites?(@recipe.uri) %>
+    <%= link_to "★", remove_from_favorites_path(@recipe.uri), method: :delete, data: {confirm: "are you sure you want to unfave #{@recipe.name.downcase}?"}, class:"float right faved" %>
+    <% else %>
+    <%= link_to "★", add_to_favorites_path(@recipe.uri), method: :post, class:"float right fav" %>
+    <% end %>
+    <% else %>
+    <%= link_to "★", add_to_favorites_path(@recipe.uri), method: :post, class:"float right fav" %>
+    <% end %>
+    <section class="row recipes">
+    <%= image_tag(@recipe.image, class: "clearing-thumbs", class: "small-4 columns")%>
+    <%= link_to "#{format_length(@recipe.name)}", @recipe.link, class: "small-6 columns", target: :_blank, alt: "original recipe" %>
+  </section>
+</div>
+</section>
+<hr />
+<section class="row">
+  <div class="small-12 medium-5 columns">
+  <h3>Ingredients</h3>
+  <table>
+    <th>
+      Item
+    </th>
+    <th>
+      Ingredient
+    </th>
+    <% i = 1 %>
+  <% @recipe.ingredients.each do |ingredient| %>
+  <tr>
+    <td>
+      <%= i %>
+    </td>
+    <td>
+    <%= ingredient["text"] %>
+  </td>
+  </tr>
+  <% i += 1 %>
+  <% end %>
+  </table>
+  <hr />
+  </div>
+<div class="small-12 medium-5 columns">
+<h3>Nutritional Info</h3>
+<table>
+  <tr>
+    <th>
+      Label
+    </th>
+    <th>
+      Quantity
+    </th>
+    <th>
+      Unit
+    </th>
+  </tr>
+<% @recipe.dietary_information.each do |info| %>
+<tr>
+  <% info[1].each do |k, v | %>
+  <td>
+    <%= v %>
+  </td>
+  <% end %>
+</tr>
+<% end %>
+</table>
+<hr />
+</div>
+
+</section>
