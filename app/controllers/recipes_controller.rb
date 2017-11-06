@@ -9,8 +9,9 @@ class RecipesController < ApplicationController
 
   #THIS DISPLAYS THE RESULTS OF WHAT WE FOUND WHEN WE DID THE SEARCH
   def search #recipes_search_path
+      #binding.pry
       @keywords = params['keywords']
-      if @keywords.nil?
+      if @keywords.blank?
         redirect_to root_path
       else
         @number_of_recipes = EdamamApiWrapper.find_number_of_recipes(@keywords)

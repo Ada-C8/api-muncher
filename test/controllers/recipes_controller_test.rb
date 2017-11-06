@@ -13,14 +13,16 @@ require "test_helper"
 
     describe "search" do
       it "can get the initial search results page" do
-        @keywords = "lemon chicken"
         VCR.use_cassette("recipes") do
           get recipes_search_path params:{keywords: "lemon chicken"}
           must_respond_with :success
         end
       end
 
-      it "redirects to the home page if the user enters "
+      it "redirects to the home page if the user enters nothing as a keyword" do
+        get recipes_search_path params:{keywords: ""}
+        must_redirect_to root_path
+      end
     end
 
     describe "search by page (i.e. pagination)" do
