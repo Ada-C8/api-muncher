@@ -13,7 +13,7 @@
 
   <body>
     <header>
-      <h1>NOM NOM NOM!</h1>
+        <%= link_to image_tag('Nom.png'), root_path, class: "logo" %>
         <%= form_tag(recipes_index_path, :method => "get", id: "search-form") do %>
         <%= text_field_tag :search_word, params[:search_word], placeholder: "Search Recipes" %>
         <%= submit_tag "Gimme the Recipes!", :name => nil %>

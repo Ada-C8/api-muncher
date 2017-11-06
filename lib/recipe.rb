@@ -12,5 +12,3 @@ class Recipe
 
   end
 end
-
-# Per instructions MUST include recipe name, link to original recipe that links in new tab (how the do this?), recipe ingredients, and the dietary information.  There must also be an image.
