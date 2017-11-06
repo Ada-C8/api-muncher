@@ -9,8 +9,11 @@ class EdamamApiWrapper
   def self.list_recipes(search_term)
 
     url = BASE_URL + "q=#{search_term}" + "&app_id=" + EDAMAM_ID + "&app_key=" + EDAMAM_KEY + "&to=100"
-
+    raise
     data = HTTParty.get(url)
+
+    check_status(data)
+
     recipe_list = []
     if data["hits"]
       data["hits"].each do |result|
@@ -35,12 +38,20 @@ class EdamamApiWrapper
     # make httparty request
 
     data = HTTParty.get(url).parsed_response
+
+    check_status(data)
     # return instance of recipe
     parse_recipe(data[0])
 
   end
 
   private
+
+  def self.check_status(response)
+    unless response["ok"]
+      raise ApiError.new("API call to Edamam failed: #{response["error"]}")
+    end
+  end
 
 
   def self.parse_recipe(raw_recipe)
