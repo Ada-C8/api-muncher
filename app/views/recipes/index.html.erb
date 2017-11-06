@@ -6,6 +6,7 @@
 <section class="row results">
   <% if @recipes != nil %>
     <h2 class="results">Recipe Results for "<%= params[:search] %>"</h2>
+
       <% @recipes.each do |recipe| %>
 
         <article class = "columns small-10 medium-5 large-3 text-center card">
