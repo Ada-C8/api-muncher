@@ -40,7 +40,7 @@ body{
   background-repeat: no-repeat;
 }
 
-a:link.button, a:visited.button, h2 a:link, h2 a:visited{
+a:link.button, a:visited.button, h2 a:link, h2 a:visited, footer a:link, footer a:visited{
   color: white;
 }
 
@@ -57,8 +57,13 @@ header{
   background-color: $primary-color;
 }
 
+#site-title{
+  margin-top: 1rem;
+}
+
 #site-title h2{
   display: inline;
+  font-size: 1.8rem;
 }
 
 .button{
