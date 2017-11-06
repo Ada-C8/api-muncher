@@ -1,0 +1,41 @@
+
+<% if @recipes.nil? %>
+  <!-- Hero Section  -->
+  <div class="hero">
+    <h1>Mangia</h1>
+
+    <%= form_tag(root_path, :method => "get", id: "search-form") do %>
+      <%= text_field_tag :search, @search, placeholder: "Search Recipes"%>
+      <%= submit_tag "Search", class: "button success" %>
+    <% end %>
+
+  </div>
+<%end%>
+
+<% if !@recipes.nil? %>
+
+<nav>
+  <h2><%= link_to "Mangia", root_path %></h2>
+    <%= form_tag(root_path, :method => "get", id: "search-form") do %>
+    <%= text_field_tag :search, @search, placeholder: "Search Recipes" %>
+    <%= submit_tag "Search", class: "button success search" %>
+  <% end %>
+</nav>
+
+<div class="recipe-show column">
+  <ul class="small-block-grid-1 medium-block-grid-3 large-block-grid-4 large-centered">
+    <% @recipes.each do |recipe| %>
+      <li class="text-center"><%= link_to image_tag(recipe.image), recipes_path(id: recipe.id) %>
+      <%= recipe.name %></li>
+    <%end %>
+  </ul>
+
+  <div class="pagination">
+    <% if @from > 10 %>
+      <%= link_to "Previous Page", root_path(search: @search, from: @previous_from), class: "button" %>
+    <% end %>
+
+    <%= link_to "Next Page", root_path(search: @search, from: @from), class: "button" %>
+  </div>
+<% end %>
+</div>
