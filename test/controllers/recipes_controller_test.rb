@@ -21,6 +21,9 @@ describe RecipesController do
       VCR.use_cassette("bad_query_recipe_index") do
         get recipes_path, params: {query: "as;fj;alkfjsdlfkdsa;fkjsd;fkjasfl;kjaflkjs"}
         must_respond_with :success
+
+        get recipes_path, params: {query: ""}
+        must_respond_with :redirect
       end
     end
   end
@@ -41,5 +44,5 @@ describe RecipesController do
       end
     end
   end
-  
+
 end
