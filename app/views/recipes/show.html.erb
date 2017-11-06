@@ -1,0 +1,44 @@
+<h2 class="recipe-label">
+  <%= @recipe.label %>
+</h2>
+
+<h3 class="recipe-source">
+  By <%= link_to @recipe.source, @recipe.url, target: :_blank %>
+</h3>
+
+<section class="row recipe-info">
+  <div class="small-12 columns recipe-main">
+    <div class='row'>
+      <figure class="small-12 medium-6 columns">
+        <img class="recipe-image" src="<%= @recipe.image %>" alt="picture of <%= @recipe.label%>">
+      </figure>
+
+      <article class="small-12 medium-6 columns recipe-parts">
+        <div class="recipe-ingreds">
+          <h3>Ingredients</h3>
+          <ul>
+            <% @recipe.ingredients.each do |ingredient|%>
+              <li><%= ingredient['text'] %></li>
+            <% end %>
+          </ul>
+        </div>
+        <div class="recipe-diet">
+          <h3>Dietary Labels</h3>
+          <% if @recipe.dietLabels.length < 1 %>
+            <p>No dietary labels</p>
+          <% else %>
+          <ul>
+            <% @recipe.dietLabels.each do |label|%>
+              <li>
+                <span class="label">
+                  <%= label %>
+                </span>
+              </li>
+            <% end %>
+          </ul>
+          <% end %>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>

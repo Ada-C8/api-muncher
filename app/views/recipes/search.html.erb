@@ -1,0 +1,35 @@
+<h2 class="page-title">
+  Search Results
+</h2>
+
+<% unless @results == nil %>
+  <h3 class="page-sub">
+    Results for <span class="orange-hilight">'<%= @query %>'</span>
+  </h3>
+
+  <section class="row search-results">
+    <% @results.each do |hit| %>
+      <article class="small-12 medium-4 large-3 columns search-result">
+        <% params[:uri] = hit['recipe']['uri'][/recipe_\w*/] %>
+        <%= link_to recipe_path(params[:uri]) do %>
+          <span class="result-image">
+            <img src="<%= hit['recipe']['image']%>" alt="<%= hit['recipe']['label']%> image">
+          </span>
+          <br />
+          <span class="result-label">
+            <%= hit['recipe']['label'] %>
+          </span>
+        <% end %>
+      </article>
+    <% end %>
+  </section>
+
+  <section class="search-pages">
+    <%= paginate @results %>
+  </section>
+<% else %>
+
+  <h2 class="page-sub">
+    No results for <%= @query %>
+  </h2>
+<% end %>

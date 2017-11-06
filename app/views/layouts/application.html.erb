@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title><%= content_for?(:title) ? yield(:title) : "API Muncher" %></title>
+
+    <%= stylesheet_link_tag    "application" %>
+    <%= javascript_include_tag "application", 'data-turbolinks-track' => true %>
+    <%= csrf_meta_tags %>
+    <%= favicon_link_tag 'cheeseburger.ico' %>
+    <script src="https://developer.edamam.com/attribution/badge.js"></script>
+  </head>
+
+  <body>
+    <header class='main-header'>
+      <div class="header-wrap">
+        <h2 class="mini-heading">
+          <%= link_to "MUNCHER", root_path %>
+        </h2>
+        <form action="<%= recipes_search_path %>" method="get"  class='mini-search'>
+          <%= text_field_tag :query %>
+          <%= button_tag :submit, name: nil, class: 'button' do %>
+            <i class='fa fa-search'></i>
+          <% end %>
+        </form>
+      </div>
+    </header>
+
+    <main class='main'>
+      <%= yield %>
+    </main>
+
+    <footer class='footer'>
+      <p>Copyright &copy; 2017 Kee Nam</p>
+      <div id="edamam-badge" data-color="light"></div>
+    </footer>
+
+  </body>
+</html>
