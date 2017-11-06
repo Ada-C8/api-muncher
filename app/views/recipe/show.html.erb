@@ -1,7 +1,7 @@
 <section class="row">
   <div class="columns small-12 text-center">
     <h2><%= @recipe.title %></h2>
-    <h3><%= link_to "from #{@recipe.source}", @recipe.external_url %>
+    <h3><%= link_to "from #{@recipe.source}", @recipe.external_url, target: :_blank %>
     </h3>
   </div>
 </section>
