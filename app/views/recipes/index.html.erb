@@ -1,16 +1,14 @@
-<div>
-  <section class="recipes-list">
-        <% @recipes.each do |recipe| %>
-          <article class="recipe-links">
-            <%= link_to recipe_path(recipe.uri) do %>
-            <p class="recipe-pic"><%= image_tag recipe.image, alt:"#{recipe.title}" %></p>
-            <p><%= recipe.title %></p>
-            <% end %>
-          </article>
-        <% end %>
-  </section>
+<section class="recipes-list">
+  <% @recipes.each do |recipe| %>
+  <article class="recipe-links">
+    <%= link_to recipe_path(recipe.uri) do %>
+    <p class="recipe-pic"><%= image_tag recipe.image, alt:"#{recipe.title}" %></p>
+    <p><%= recipe.title %></p>
+    <% end %>
+  </article>
+  <% end %>
+</section>
 
-  <section class="pagination">
-    <%= will_paginate @recipes %>
-  </section>
-</div>
+<section class="pagination">
+  <%= will_paginate @recipes %>
+</section>

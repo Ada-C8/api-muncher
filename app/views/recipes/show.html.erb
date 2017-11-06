@@ -5,27 +5,21 @@
   </section>
 
   <section class="recipe-image">
-    <div class="show-recipe-pic">
       <%= image_tag(@recipe.image, alt: "#{@recipe.title}") %>
-    </div>
   </section>
 
   <section class="ingredients">
-    <div class="ingredient-info">
       <h3>Ingredients</h3>
         <ul>
         <% @recipe.ingredients.each do |ingredient| %>
         <li><%= ingredient %></li>
         <% end %>
       </ul>
-    </div>
   </section>
 
   <section class="dietary">
-    <div class="dietary-info">
       <h3>Dietary Information</h3>
       <ul>
         <%= @recipe.dietary %>
       </ul>
-    </div>
   </section>
