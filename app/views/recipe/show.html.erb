@@ -26,10 +26,10 @@
   </article>
 
   <section class = "row align-center nutrition">
-    <section class = "small-12 medium-5 small-centered nutritional left columns">
+    <section class = "small-12 medium-5 small-centered nutritional columns">
       <h3>Nutrition Facts:</h3>
       <p>
-        Calories: <%= (@recipe.calories).round(2)%>
+        Calories: <strong><%= (@recipe.calories).round(2)%></strong>
       </p>
       <% nutr_labels= ["FAT", "FASAT", "FAPU", "FAMS", "CHOCDF", "PROCNT", "NA", "FIBTG", "CHOLE"] %>
       <% nutr_labels.each do |n_label|%>
