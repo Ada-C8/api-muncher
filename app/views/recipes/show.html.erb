@@ -1,1 +1,17 @@
 <%#= link_to @recipe.name, @recipe.url %>
+
+<h2><%= @recipe.name %></h2>
+
+<%= image_tag @recipe.image %>
+
+Find the original recipe at: <%= link_to @recipe.url, target: :_blank %>
+
+<h4>Ingredients</h4>
+
+<%# TODO: ingredientLines is an array %>
+<%= @recipe.ingredients_lines %>
+
+<%= @recipe.calories %>
+
+<%# TODO: totalNutrients is a hash of hashes %>
+<%= @recipe.total_nutrients %>
