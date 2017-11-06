@@ -18,6 +18,9 @@
 
 
 /*GENERAL STYLING*/
+body {
+  background-color: #130C0A;
+}
 
 h1, h2, h3 {
   font-family: 'Roboto Slab', serif;
@@ -68,20 +71,40 @@ header {
 
 .home-content {
   /*background: #CCC0B9;*/
-  padding-top: 65px;
+  padding-top: 150px;
+  height: 100%;
+  padding-bottom: 600px;
   clear: both;
 }
 
 .home h1 {
-  font-size: 4.3em;
+  font-size: 6em;
   text-align: center;
-  padding: 20px;
+  padding: 15px;
+  /*color: #81726A;
+  color: #5E534E;*/
+  color: #6A5E57;
 }
 
+.home-img {
+  background-image: url(background.jpg);
+  background-position: left;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 350px;
+  width: 100%;
+}
 /*INDEX PAGE*/
 
 .results h2, a{
   text-align: center;
+}
+
+.results h2 {
+  padding-top: 40px;
+  /*color: #EFB0A1;*/
+  color: #FF9A8D;
+  animation: fadeIn 2s;
 }
 
 .card p:last-child {
@@ -157,7 +180,9 @@ footer {
   bottom: 0;
   left: 0;
   padding: .04rem;
-  background-color: #efefef;
+  /*background-color: #efefef;*/
+  background-color: #9CD261;
+  background-color: #86C93F;
   text-align: center;
 }
 
@@ -165,14 +190,38 @@ footer p {
   padding-top: 20px;
 }
 
-@media print, screen and (max-width: 500px) {
-.home h1 {
-  font-weight: 500;
-  font-size: 3rem;
-  /*font-size: 1.3em;*/
+footer a {
+  color: #3B3431;
+  font-weight: bold;
 }
 
-.search-bar{
-  width: 77%;
+footer a:hover {
+  color: #6A5E57;
 }
+
+/*OTHER SYTLING*/
+@keyframes fadeIn { from { opacity:0; } to { opacity:1; } }
+
+@media print, screen and (max-width: 500px) {
+
+  .home h1 {
+    font-weight: 500;
+    font-size: 3.5rem;
+    padding: 10px;
+    /*font-size: 1.3em;*/
+  }
+
+  .home-img {
+    background-position: center center;
+  }
+
+  input[type='text'] {
+      border-radius: 10px;
+      padding-left: 15px;
+      margin-top: 1px;
+  }
+
+  .search-bar{
+    width: 77%;
+  }
 }
