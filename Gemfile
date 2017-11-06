@@ -42,6 +42,8 @@ group :development, :test do
   gem 'capybara', '~> 2.13'
   gem 'selenium-webdriver'
   gem 'dotenv-rails'
+  gem 'minitest-vcr'
+  gem 'webmock'
 end
 
 group :development do
@@ -58,6 +60,7 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 gem 'jquery-turbolinks'
 gem 'foundation-rails'
+
 group :development do
   gem 'better_errors'
   gem 'pry-rails'
