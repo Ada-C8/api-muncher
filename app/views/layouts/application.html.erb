@@ -24,7 +24,7 @@
         </div>
       </header>
     <% end %>
-    <%= params %>
+    <%= params if Rails.env.development? %>
 
     <%= render partial: "/layouts/flash" unless params[:action] == "home" %>
 
