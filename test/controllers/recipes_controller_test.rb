@@ -17,9 +17,11 @@ describe RecipesController do
     it "should redirect to root if no results" do
       VCR.use_cassette("index_action") do
         get recipes_path, params: {search: "jfhskfjhdksfjheuy"}
+        flash[:result].must_equal "Sorry, there are no results for jfhskfjhdksfjheuy"
         must_redirect_to root_path
 
         get recipes_path, params: {search: ""}
+        flash[:status].must_equal :error
         must_redirect_to root_path
       end
     end
