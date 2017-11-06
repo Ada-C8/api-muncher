@@ -17,8 +17,9 @@ describe Recipe do
     end
   end
 
-  it "must have all the required parameters" do
+  it "must have at least 5 parameters" do
     proc{Recipe.new}.must_raise ArgumentError
-    proc{Recipe.new "only one"}.must_raise ArgumentError
+    proc{Recipe.new("only one")}.must_raise ArgumentError
+    proc{Recipe.new("one", "two", "three", "four")}.must_raise ArgumentError
   end
 end
