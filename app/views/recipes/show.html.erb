@@ -10,6 +10,9 @@
     <li>
       Servings: <%= @recipe.yield %>
     </li>
+    <li>
+      <%= link_to "Link to Original Recipe", @recipe.url, class:"button"%>
+    </li>
   </ul>
 
 <section class="show row">
