@@ -23,7 +23,6 @@ ul {
 
 
 .green {
-  position: absolute;
   left: 0px;
   width: 300px;
   padding: 10px;
@@ -31,16 +30,41 @@ ul {
   box-shadow:0px 0px 7px #000000;
 }
 
+.ingredients, .dietary  {
+  border-style: none;
+  padding: 2%;
+  list-style: none;
+}
 
+.article {
+  text-align: center;
+}
 
-article {
-  display: inline-block;
-  width: 40%;
-  border-style: solid;
-  border-radius: 9%;
-  margin: 4%;
-  text-align: left;
-  color: lightseagreen;
-  background-color: rgba(250,235,215,.3);
+.dietary ul, .ingredients ul{
+  list-style: none;
+}
 
+h4 {
+  color: pink;
+  text-decoration: underline;
+}
+
+p a {
+  color: lightgreen;
+}
+
+.footer {
+  text-align: center;
+  max-width: 100%;
+  padding: 5px;
+  font-size: 1.5em;
+  height: 10vh;
+  font-weight: bold;
+  min-height: 100%;
+  position: bottom: 0;
+}
+
+.name a{
+  color: pink;
+  font-size: 1.5em;
 }

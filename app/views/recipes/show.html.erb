@@ -1,18 +1,21 @@
-<img class="green" src="<%= @recipe.image %>", alt="<%= @recipe.name %>"/>
 <h1><%= link_to "#{@recipe.name}", @recipe.url, target: :_blank  %></h1>
-<article>
+<img class="green" src="<%= @recipe.image %>", alt="<%= @recipe.name %>"/>
+<article class="row small-up-1 medium-up-1 large-up-3 pink">
+  <section class="ingredients column text-center">
 <h4>Ingredients</h4>
-<ul>
+<ul class="sublist">
   <% @recipe.ingredients.each do |ingredient| %>
   <li>
     <%= ingredient %>
   </li>
   <% end %>
 </ul>
+  </section>
 
 <% if @recipe.diet || @recipe.health%>
+ <section class="dietary column text-center">
 <h4>Dietary Information</h4>
-<ul>
+<ul class="sublist">
   <% @recipe.diet.each do |label| %>
   <li>
     <%= label %>
@@ -25,4 +28,6 @@
 </ul>
 <% end %>
 <% end %>
+</section>
 </article>
+</section>

@@ -1,10 +1,12 @@
-<h1>Here are you results for: <%= @query %> </h2>
+<h1>Here are you results for: "<%= @query %>" </h1>
 <ul>
   <% @recipes.each do |recipe| %>
-    <li>
-      <img src="<%= recipe.image %>", alt="<%= recipe.name %>"/>
+  <li>
+    <div class=name>
       <%= link_to recipe.name, recipe_path(recipe.name, recipe_id: recipe.id)%>
-    </li>
+    </div>
+    <img src="<%= recipe.image %>", alt="<%= recipe.name %>"/>
+  </li>
   <% end %>
 </ul>
 
