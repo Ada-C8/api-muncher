@@ -17,7 +17,34 @@
   <body>
   <% end %>
 
-    <%= yield %>
+    <header>
+      <nav class="row">
+        <div id="site-title" class="large-8 medium-5 small-12 columns">
+          <h2><%= link_to(t(:site_name), root_path) %></h2>
+        </div>
+
+        <% if @homepage.nil? || @homepage == false  %>
+          <div id="nav-form" class="large-4 medium-7 small-12 float-right row columns">
+
+            <%= form_tag recipes_path, method: :get do %>
+              <div class="large-8 small-7 columns">
+                <%= text_field_tag :query%>
+              </div>
+
+              <div class="large-4 small-5 columns">
+                <%= submit_tag 'Search Recipes', class: "button" %>
+              </div>
+            <% end %>
+
+          </div>
+        <% end %>
+
+      </nav>
+    </header>
+
+    <main>
+      <%= yield %>
+    </main>
 
   </body>
 </html>
