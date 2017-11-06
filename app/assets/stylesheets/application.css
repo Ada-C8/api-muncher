@@ -23,6 +23,10 @@
    background-color: #03be05;
  }
 
+ h1.logo {
+    margin-top: 0;
+ }
+
  h1.logo a {
     color: white;
  }
@@ -42,10 +46,40 @@
    text-align: left;
  }
 
+ section.information {
+   margin-left: 1em;
+ }
+
 section.recipe-details img {
   border: 1px solid #ddd;
   border-radius: 4px;
   padding: .5em;
+}
+
+div.recipe-index {
+  text-align: center;
+}
+
+h2.recipe-index {
+  padding: 1em;
+  margin-left: 2em;
+}
+
+article.recipe {
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  display: inline-block;
+  padding: 1em;
+  margin: 1em;
+  text-align: center;
+}
+
+article.recipe a, article.recipe img {
+  display: block;
+}
+
+article.recipe a {
+  padding-top: .5em;
 }
 
 footer {

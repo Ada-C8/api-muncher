@@ -12,7 +12,7 @@
   </head>
 
   <body>
-    <header class="row">
+    <header>
       <h1 class="logo"><%= link_to "Muncher", root_path %></h1>
       <%= form_tag recipes_path, method: :get do %>
       <%= text_field_tag :query, params[:query], placeholder: "Search Recipes" %>
