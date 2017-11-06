@@ -14,21 +14,20 @@
  *= require_self
  *= require foundation_and_overrides
 
- */
-/*body {
-  font-family: arial,sans-serif;
-}*/
+*/
+
+
+/*GENERAL STYLING*/
 
 h1, h2, h3 {
   font-family: 'Roboto Slab', serif;
   color: #3F3B38;
 }
-.main-content {
-  clear: both;
-}
 
-footer {
-  text-align: center;
+.home-content {
+  /*background: #CCC0B9;*/
+  padding-top: 65px;
+  clear: both;
 }
 
 .home h1 {
@@ -48,9 +47,6 @@ footer {
 .pages {
   text-align: center;
 }
-.main-content {
-  background: #CCC0B9;
-}
 
 .margin-3-col {
   margin-left: 4.1%;
@@ -62,10 +58,26 @@ footer {
   margin-right: auto;
 }
 
+.recipes-index {
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+
+/*SEARCH FORM*/
+
 .search-bar{
-  width: 50%;
+  width: 45%;
   margin-left: auto;
   margin-right: auto;
+}
+
+input[type='text'] {
+  border-radius: 10px;
+  padding-left: 15px;
+  /*-webkit-box-shadow: 0px 7px 14px -4px rgba(0,0,0,0.75);*/
+  /*-moz-box-shadow: 0px 7px 14px -4px rgba(0,0,0,0.75);*/
+  box-shadow: 0px 3px 10px -4px rgba(0,0,0,0.4);
 }
 
 .card {
@@ -105,27 +117,49 @@ body {
   font-family: "Helvetica Neue", Arial, sans-serif;
 }
 
-.demo {
-  margin: 0 auto;
-  padding-top: 64px;
-  max-width: 640px;
-  width: 94%;
-}
-
-.demo h1 {
-  margin-top: 0;
-}
-
-/**
- * Footer Styles
- */
+/* Footer Styles */
 
 footer {
   position: absolute;
   right: 0;
   bottom: 0;
   left: 0;
-  padding: 1rem;
+  padding: .04rem;
   background-color: #efefef;
   text-align: center;
+}
+
+footer p {
+  padding-top: 20px;
+}
+
+@media print, screen and (max-width: 500px) {
+.home h1 {
+  font-weight: 500;
+  font-size: 3rem;
+  /*font-size: 1.3em;*/
+}
+
+.search-bar{
+  width: 77%;
+}
+
+.column, .columns {
+    padding-right: 0.9375rem;
+    padding-left: 0.9375rem;
+}
+
+.column:last-child:not(:first-child), .columns:last-child:not(:first-child) {
+    float: right;
+}
+}
+
+@media print, screen and (min-width: 64em) {
+.large-4 {
+  width: 33.33333%;
+}
+.large-6 {
+  width: 50%;
+
+}
 }
