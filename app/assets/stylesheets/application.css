@@ -60,7 +60,7 @@ p a {
   color: lightgreen;
 }
 
-.footer {
+.footer2{
   text-align: center;
   max-width: 100%;
   padding: 5px;
@@ -71,7 +71,16 @@ p a {
   position: bottom: 0;
 }
 
-.name a{
+.footer {
+position: absolute;
+right: 0;
+bottom: 0;
+left: 0;
+padding: 1rem;
+text-align: center;
+}
+
+.name a {
   color: pink;
   font-size: 1.5em;
 }
