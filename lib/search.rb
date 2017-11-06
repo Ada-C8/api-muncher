@@ -1,5 +1,5 @@
 class Search
-  attr_reader :query, :hits
+  attr_reader :query, :hits, :page
 
   def initialize(response)
     @query = response['q']
