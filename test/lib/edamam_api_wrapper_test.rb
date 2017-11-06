@@ -70,7 +70,9 @@ describe EdamamApiWrapper do
   describe "get_recipe" do
     it "creates a Recipe object" do
       VCR.use_cassette("recipes") do
-        
+        response = EdamamApiWrapper.get_search_url("fish", 0, 9)
+
+        EdamamApiWrapper.get_recipe(response).must_be_kind_of Recipe
       end
     end
   end

@@ -2,7 +2,7 @@ class Recipe
   attr_reader :uri, :name, :image, :source, :url, :servings, :diet, :health, :ingredients, :calories
 
   def initialize(uri, name, options={})
-    @uri = uri.split("_")[-1]
+    @uri = uri
     @name = name
     if @uri == "" || @name == ""
       raise ArgumentError
