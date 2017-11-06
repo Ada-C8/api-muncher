@@ -1,0 +1,46 @@
+<section class="row recipe-title">
+  <h1><%= @recipe.name %></h1>
+
+  <p>Source: <%= link_to @recipe.source, @recipe.url, target: :_blank %></p>
+</section>
+
+
+<section class="row recipe-details">
+  <section class="columns small-12 medium-6">
+    <%= image_tag @recipe.image %>
+  </section>
+  <section class="columns small-12 medium-6 ingredients">
+    <h3>Ingredients</h3>
+    <ul>
+      <% @recipe.ingredients.each do |ingredient| %>
+      <li><%= ingredient %></li>
+      <% end %>
+    </ul>
+  </section>
+</section>
+
+<section class="row information">
+  <h4>Dietary Information</h4>
+  <ul>
+    <% @recipe.diet_labels.each do |diet| %>
+    <li><%= diet %></li>
+    <% end %>
+  </ul>
+
+  <h4>Allergen Information</h4>
+  <ul>
+    <% @recipe.health_labels.each do |health| %>
+    <li><%= health %></li>
+    <% end %>
+  </ul<>
+
+  <h4>Nutrition Information</h4>
+  <table>
+    <% @recipe.nutrition.each do |nutrient_hash| %>
+    <tr>
+      <td><%= nutrient_hash[1]["label"] %></td>
+      <td><%= nutrient_hash[1]["quantity"].round %><%= nutrient_hash[1]["unit"] %></td>
+    </tr>
+    <% end %>
+  </table>
+</section>

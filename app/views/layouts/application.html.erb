@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title><%= content_for?(:title) ? yield(:title) : "Muncher Recipe Search" %></title>
+
+    <%= stylesheet_link_tag    "application" %>
+    <%= javascript_include_tag "vendor/modernizr" %>
+    <%= csrf_meta_tags %>
+  </head>
+
+  <body>
+    <header>
+      <h1 class="logo"><%= link_to "Muncher", root_path %></h1>
+      <%= form_tag recipes_path, method: :get do %>
+      <%= text_field_tag :query, params[:query], placeholder: "Search Recipes" %>
+      <%= submit_tag "Search", name: nil %>
+      <% end %>
+    </header>
+
+
+    <%= yield %>
+    <%= javascript_include_tag "application" %>
+    <footer>
+      <p class="columns small-6">
+        &copy 2017
+      </p>
+      <p class="columns small-6">
+        Powered by <img src="../assets/Edamam_logo_full_RGB.png" alt="Edamam logo">
+      </p>
+    </footer>
+  </body>
+</html>

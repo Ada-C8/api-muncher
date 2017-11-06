@@ -1,0 +1,98 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ *= require foundation_and_overrides
+
+ */
+
+ @import url('foundation');
+
+ header {
+   text-align: center;
+   background-color: #03be05;
+ }
+
+ h1.logo {
+    margin-top: 0;
+ }
+
+ h1.logo a {
+    color: white;
+ }
+
+ header form {
+   width: 12em;
+   margin: 0 auto;
+   padding-bottom: 1em;
+ }
+
+ section {
+   text-align: center;
+   padding: 2em;
+ }
+
+ section.information, section.ingredients {
+   text-align: left;
+ }
+
+ section.information {
+   margin-left: 1em;
+ }
+
+section.recipe-details img {
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  padding: .5em;
+}
+
+div.recipe-index {
+  text-align: center;
+}
+
+h2.recipe-index {
+  padding: 1em;
+  margin-left: 2em;
+}
+
+article.recipe {
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  display: inline-block;
+  padding: 1em;
+  margin: 1em;
+  text-align: center;
+}
+
+article.recipe a, article.recipe img {
+  display: block;
+}
+
+article.recipe a {
+  padding-top: .5em;
+}
+
+footer {
+  position: relative;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  padding: 1rem;
+  background-color: #efefef;
+  text-align: left;
+  height: 4em;
+}
+
+footer img {
+  height: 2em;
+}
