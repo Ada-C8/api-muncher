@@ -3,7 +3,7 @@ class Recipe
 
   def initialize(uri, title, image, ingredients, dietary, link)
 
-    @uri = URI.encode(uri)
+    @uri = uri.split("_").last
     @title = title
     @image = image
     @ingredients = ingredients

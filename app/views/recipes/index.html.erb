@@ -3,7 +3,7 @@
 <div>
   <ul class="recipe_list">
     <% @recipes.each do |recipe| %>
-      <li><%= link_to image_tag(recipe.image, alt: "recipe photo"), recipe_path(recipe.link)%></li>
+      <li><%= link_to image_tag(recipe.image, alt: "recipe photo"), recipe_path(recipe.uri)%></li>
   <% end %>
 </ul>
 </div>
