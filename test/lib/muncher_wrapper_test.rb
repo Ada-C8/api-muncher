@@ -25,8 +25,9 @@ describe MuncherWrapper do
 
     it "doesn't work if you enter bad tokens" do
       VCR.use_cassette("recipes") do
-        recipes = MuncherWrapper.find_recipe("chicken", "bad_id", "bad_key")
-        recipes.must_equal []
+        proc {
+          MuncherWrapper.find_recipe("chicken", "bad_id", "bad_key")
+        }.must_raise MuncherWrapper::ApiError
       end
     end
   end
@@ -44,7 +45,7 @@ describe "show_recipe" do
 
       recipe.must_be_instance_of Recipe
       recipe.label.must_equal all_chicken[0].label
-      
+
     end
   end
   # negative test
