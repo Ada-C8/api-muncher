@@ -28,7 +28,7 @@ class EdamamApiWrapper
   def self.show_recipe(uri)
   #  encode_uri = URI.encode("#{uri}")
     # uri = @recipe.uri
-    # what data structure is uri stored as? class object param...
+    
 
     url = BASE_URL + "?r=#{uri}&app_id=#{APP_ID_TOKEN}&app_key=#{APP_KEY_TOKEN}"
 

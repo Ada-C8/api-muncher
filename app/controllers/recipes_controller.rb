@@ -1,5 +1,5 @@
-require_dependency '/../lib/edamam_api_wrapper'
-require_dependency '/../lib/recipe'
+require_dependency '../../lib/edamam_api_wrapper'
+require_dependency '../../lib/recipe'
 
 class RecipesController < ApplicationController
 
@@ -16,27 +16,13 @@ class RecipesController < ApplicationController
     end
   end
 
-  # def new
-  #   @recipes = EdamamApiWrapper.search_recipes(search)
-  #   @recipes.each do |recipe|
-  #
-  #    if recipe.uri == params["recipe"]
-  #      @recipe = recipe
-  #    end
-  #  end
-  # end
-
   def show
     @recipe = EdamamApiWrapper.show_recipe(params[:uri])
-
+    if @recipe.nil?
+      flash[:result_text] = "This recipe is mysteriously gone."
+      render_404
+    end
   end
-
-
-
-
-
-
-
 
 
 end
