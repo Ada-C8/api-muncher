@@ -87,9 +87,11 @@ body {
   background-size:cover;
   display: block;
   /*height: 100%;*/
-  height: calc(100% - 40px)
+  /*height: calc(100% - 40px)*/
   position: relative;
-  padding: 200px 50px 300px 50px;
+  padding: 300px 50px 300px 50px;
+  width: 100%;
+  min-height: 100%;
   /*padding: inherit;*/
   margin: 0;
 }
@@ -105,7 +107,7 @@ body {
 }
 
 .home-page-search div {
-  width: 300px;
+  width: 400px;
 }
 /**********PAGE HEADER (FORM)*******************/
 .page-header h1 {
@@ -170,7 +172,7 @@ body {
   flex-wrap: wrap;
   align-items: flex-start;
   align-content: center;
-  align-items: center;
+  /*align-items: center;*/
   justify-content: center;
 }
 .recipe-photo-and-name {
@@ -203,7 +205,6 @@ body {
 }
 /*****PAGINATION*****/
 .pagination-container {
-  position: sticky;
   display: flex;
   align-items: center;
   padding-bottom: 6rem;
