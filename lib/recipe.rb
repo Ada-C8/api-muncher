@@ -1,5 +1,5 @@
 class Recipe
-  attr_reader :name, :uri, :image, :url, :servings, :ingredients, :calories
+  attr_reader :name, :uri, :image, :url, :servings, :ingredients, :ingredient_lines, :calories, :total_nutrients, :health_labels, :diet_labels
 
   def initialize(name:, uri:, image:, **options)
     # raise ArgumentError if name == nil
@@ -7,7 +7,7 @@ class Recipe
     @uri = uri #URI.encode(uri)
     @url = url
     @ingredients = ingredients
-    @ingredients_lines = ingredient_lines
+    @ingredient_lines = ingredient_lines
     @image = image
     @servings = options[:servings]
     @calories = options[:calories]

@@ -68,7 +68,7 @@ class EdamamApiWrapper
       total_nutrients: raw_recipe["totalNutrients"],
       health_labels: raw_recipe["healthLabels"],
       diet_labels: raw_recipe["dietLabels"],
-      ingredients_lines: raw_recipe["ingredientsLines"]
+      ingredient_lines: raw_recipe["ingredientLines"]
     )
   end
 end
