@@ -1,0 +1,86 @@
+body.main {
+  background: url("http://awesomewallpaper.files.wordpress.com/2013/01/apple_wallpaper_2_by_maxwood.jpg") no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+body {
+  color: white;
+  text-align: center;
+  background-color: darkgreen;
+  text-shadow: 2px 2px 4px #000000;
+}
+body {
+background: url("https://cdn.wallpapersafari.com/72/24/UBTF1M.jpg") no-repeat center center fixed;
+-webkit-background-size: cover;
+-moz-background-size: cover;
+-o-background-size: cover;
+background-size: cover;
+}
+
+body a{
+  color: ghostwhite
+}
+
+ul {
+  list-style-type: none;
+}
+
+
+.green {
+  left: 0px;
+  width: 300px;
+  padding: 10px;
+  background: rgba(76, 175, 80, 0.3);
+  box-shadow:0px 0px 7px #000000;
+}
+
+.ingredients, .dietary  {
+  border-style: none;
+  padding: 2%;
+  list-style: none;
+}
+
+.article {
+  text-align: center;
+}
+
+.dietary ul, .ingredients ul{
+  list-style: none;
+}
+
+h4 {
+  color: pink;
+  text-decoration: underline;
+}
+
+p a {
+  color: lightgreen;
+}
+
+.footer2{
+  text-align: center;
+  max-width: 100%;
+  padding: 5px;
+  font-size: 1.5em;
+  height: 10vh;
+  font-weight: bold;
+  min-height: 100%;
+  position: bottom: 0;
+}
+
+.footer {
+position: absolute;
+right: 0;
+bottom: 0;
+left: 0;
+padding: 1rem;
+text-align: center;
+}
+
+.name a {
+  color: pink;
+  font-size: 1.5em;
+}

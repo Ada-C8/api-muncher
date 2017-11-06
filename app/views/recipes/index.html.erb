@@ -1,0 +1,20 @@
+<h1>Here are you results for: "<%= @query %>" </h1>
+<ul>
+  <% @recipes.each do |recipe| %>
+  <li>
+    <div class=name>
+      <%= link_to recipe.name, recipe_path(recipe.name, recipe_id: recipe.id)%>
+    </div>
+    <img src="<%= recipe.image %>", alt="<%= recipe.name %>"/>
+  </li>
+  <% end %>
+</ul>
+
+<%= will_paginate @recipes %>
+
+
+  <section class="footer2">
+    <p>
+      Powered by <a href="https://www.edamam.com/">Edamam</a>
+    </p>
+  </section>

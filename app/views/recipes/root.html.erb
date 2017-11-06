@@ -1,0 +1,16 @@
+<body class=main><h1>APPLEbite</h1>
+
+<%= form_tag recipes_path, method: :get do %>
+
+<%= text_field_tag :query, "" %>
+
+<%= submit_tag "Search", class: "button" %>
+<% end %>
+</body>
+<footer>
+  <section class="footer">
+    <p>
+      Powered by <a href="https://www.edamam.com/">Edamam</a>
+    </p>
+  </section>
+</footer>
