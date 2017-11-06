@@ -8,25 +8,20 @@
   text-align: center;
 }
 
-.show-recipe {
-  text-align: center;
-}
-
 .recipe-ingredients {
   height: 100%;
 }
 
-// .home {
-//   background-image: image-url("feast.jpg")
-// }
-
 main {
   position: relative;
-  height: 90vh;
+  height: 95vh;
+  // background-image: image-url("feast.jpg");
+  overflow: scroll;
+  padding-top: 10%;
 }
 
 .home h1 {
-  font-family: 'Muli', sans-serif;
+  font-family: 'Bentham', serif;
   font-weight: bold;
   color: snow;
   text-align: center;
@@ -42,7 +37,9 @@ main {
   position: relative;
   margin: 0px auto;
   top: 30%;
-  background: linear-gradient(180deg,rgba(0,0,0,0.05), black 98%);
+  background-image: linear-gradient(rgba(34,34,34,0.3), rgba(34,34,34,0.9));
+  height: 100%;
+  // background: linear-gradient(180deg,rgba(0,0,0,0.05), black 98%);
 }
 
 .home form {
@@ -52,15 +49,52 @@ main {
 }
 
 .recipe-ingredients {
+  max-height: 49vh;
+  overflow: scroll;
   text-align: left;
 }
 
 .recipe-img-ingred {
-  max-height: 49vh;
-  overflow: scroll;
+  text-align: center;
 }
 
 .nutrition {
-  max-height: 49vh;
-  overflow: scroll;
+  max-height: 49%;
+  // overflow: scroll;
+  padding: 10px 10px 0px 0px;
+  text-align: center;
+}
+
+@media print, screen and (min-width: 40em) {
+  .recipe-img-ingred {
+    text-align: right;
+  }
+}
+
+.recipe:hover {
+  box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.2);
+}
+
+.paginate h3 {
+  padding-left: 10px;
+}
+
+.recipe img {
+  padding-top: 5px;
+}
+
+.nutritional p{
+  margin-bottom: 0px;
+}
+
+.nutritional, .nutr-labels {
+  display: inline-block;
+  vertical-align: top;
+  margin: 0px auto;
+  padding-top: 5px;
+  text-align: left;
+}
+
+.nutr-labels {
+  padding-top: 45px;
 }

@@ -1,12 +1,13 @@
-<main class = "index">
-  <section class = "results">
+<main class = "small-10 small-centered columns index">
+  <section class = "results paginate">
     <% if @recipes.empty?%>
     <h4>Sorry, there are no recipes matching your search</h4>
     <% else %>
-    <div class="row" data-equalizer data-equalize-on="medium" id="test-eq">
+    <div class="row paginate" data-equalizer data-equalize-on="medium" id="test-eq">
+      <h3> Results for: <%= params[:search] %> </h3>
       <ul>
         <% @recipes.each do |recipe|%>
-        <div class="callout small-12 medium-6 large-3 columns" data-equalizer-watch>
+        <div class="recipe small-12 medium-6 large-3 columns" data-equalizer-watch>
           <li>
             <article>
               <%= image_tag recipe.image_url, alt: "Picture of #{recipe.name}"%>

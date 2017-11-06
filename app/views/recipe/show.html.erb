@@ -1,4 +1,4 @@
-<main class = "show-recipe">
+<main class = "small-10 small-centered columns show-recipe">
   <section class = "recipe-header row small-12">
       <h1><%= @recipe.name %></h1>
       <h4><%= link_to "From: #{@recipe.source}", @recipe.url, alt: "Original recipe link",target: :_blank %></h4>
@@ -25,16 +25,13 @@
 
   </article>
 
-  <section class = "row nutrition">
-    <h3>Nutrition Facts:</h3>
-    <section class = "nutritional left">
+  <section class = "row align-center nutrition">
+    <section class = "small-12 medium-5 small-centered nutritional left columns">
+      <h3>Nutrition Facts:</h3>
       <p>
         Calories: <%= (@recipe.calories).round(2)%>
       </p>
       <% nutr_labels= ["FAT", "FASAT", "FAPU", "FAMS", "CHOCDF", "PROCNT", "NA", "FIBTG", "CHOLE"] %>
-      <!-- <p>
-        Total Fat: <strong><%= "#{(@recipe.total_nutrients["FAT"]["quantity"]).round(2)}#{@recipe.total_nutrients["FAT"]["unit"]} (#{(@recipe.total_daily["FAT"]["quantity"]).round(2)}#{@recipe.total_nutrients["FAT"]["unit"]})" %></strong>
-      </p> -->
       <% nutr_labels.each do |n_label|%>
         <% if @recipe.total_nutrients[n_label] && @recipe.total_daily[n_label]%>
           <p>
@@ -51,24 +48,20 @@
       <% end %>
 
     </section>
-    <!-- <section>
-      Digest: <%= @recipe.digest%>
-    </section>
-    <section>
-      Total Nutrients: <%= @recipe.total_nutrients %>
-    </section>
-    <section>
-      Total Daily: <%= @recipe.total_daily%>
-    </section> -->
-    <section>
-      Cautions: <%= print_results(@recipe.cautions)%>
+    <section class = "small-12 medium-5 small-centered nutr-labels columns">
+      <p>
+        <strong>Cautions: </strong>
+        <%= print_results(@recipe.cautions)%>
+      </p>
+      <p>
+        <strong>Health Labels: </strong>
+        <%= print_results(@recipe.health_labels) %>
+      </p>
+      <p>
+        <strong>Diet Labels: </strong>
+        <%= print_results(@recipe.diet_labels)%>
+      </p>
 
-    </section>
-    <section>
-      Health Labels: <%= print_results(@recipe.health_labels) %>
-    </section>
-    <section>
-      Diet Labels: <%= print_results(@recipe.diet_labels)%>
     </section>
 
   </section>

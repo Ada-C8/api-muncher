@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <script src="https://developer.edamam.com/attribution/badge.js"></script>
     <title><%= content_for?(:title) ? yield(:title) : "Savor" %></title>
-    <link href="https://fonts.googleapis.com/css?family=Muli" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Bentham" rel="stylesheet">
 
     <%= stylesheet_link_tag    "application" %>
     <%= javascript_include_tag "application", 'data-turbolinks-track' => true %>
@@ -13,17 +13,20 @@
   </head>
 
   <body>
-    <header>
-      <h1><%= link_to "Savor", root_path, alt: "link to Muncher home page"%></h1>
-      <!-- <section class = "search bar">
-        <%= form_tag(recipe_results_path, :method => "get", id: "search-form") do %>
+    <header class = "site-header">
+      <h1 id= "masthead"><%= link_to "savor", root_path, alt: "link to Muncher home page"%></h1>
+      <section class="small-5 columns right" id = "search-bar">
+        <%= form_tag(recipe_results_path, :method => "get", id: "nav-search") do %>
         <%= text_field_tag :search, params[:search], placeholder: "Search Recipes" %>
         <%= submit_tag "Search", :name => nil %>
         <% end %>
-      </section> -->
+      </section>
     </header>
 
-    <%= yield %>
+    <section class = "row align-center">
+      <%= yield %>
+
+    </section>
 
     <footer>
       <div id="edamam-badge" data-color="transparent"></div>
