@@ -1,0 +1,208 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ *= require foundation_and_overrides
+
+ */
+$first: #66A182;
+$second: #AEF78E;
+$light-green: #CAFFB9;
+$blue: #2E4057;
+$black: #3E4E50;
+
+
+body {
+ margin: 0;
+ padding: 0;
+ text-align: left;
+ background: linear-gradient(to right, $first, $second);
+ box-sizing: border-box;
+ font-family: 'Roboto', sans-serif;
+ color: $blue;
+}
+
+.status {
+  height: 50px;
+  text-align: center;
+  color: $blue;
+  position: relative;
+
+}
+
+.pagination a {
+  display: inline-block;
+  color: $second;
+}
+
+.pagination a:hover {
+  color: rgba(243, 243, 243, 0.6);
+  background: none;
+}
+
+.pagination .current {
+  background: $first;
+}
+
+.paginate {
+  text-align: center;
+  margin-top: 1em;
+}
+
+h2, h3 {
+  font-family: 'Permanent Marker', cursive;
+}
+ // title header
+
+h1 {
+  text-align: center;
+  margin: 20px;
+  margin-bottom: 20px;
+  padding: 30px 0 20px 0;
+  font-family: 'Permanent Marker', cursive;
+  font-size: 5em;
+  text-shadow: 3px 2px 2px $black;
+}
+
+h1 a {
+  color: $light-green;
+}
+
+//home page
+
+.home {
+  text-align: center;
+  display: inline-block;
+  margin: 0;
+  padding: 0;
+  height: 10%;
+  width: 100%;
+  font-family: 'Roboto', sans-serif;
+  padding-top: 5%;
+}
+
+input[type="text"], input[type="text"]:focus {
+  color: $blue;
+  margin: 0;
+  padding: 0;
+  font-size: 1.25em;
+  width: 40%;
+  text-align: center;
+  border-width: 0;
+  display: inline-block;
+  background: none;
+  box-shadow: none;
+  box-shadow: 0 1px 0 $first;
+}
+
+input[type="text"]:focus{
+  box-shadow: 0 1px 0 $second;
+}
+
+input.home-button {
+  font-family: 'Permanent Marker', cursive;
+  letter-spacing: 3px;
+  border-radius: 5px;
+  color: $light-green;
+  background: $first;
+  border-width: 0;
+  padding: 5px 5px 10px 5px;
+  font-size: 1.5em;
+  margin: 0 0 0 10px;
+  height: 100%;
+  box-shadow: 2px 2px 2px $blue;
+}
+
+input.home-button:hover{
+  box-shadow: 2px 2px 10px $blue;
+}
+
+//search results page
+
+.search {
+  height: auto;
+  text-align: center;
+  padding: 20px;
+}
+
+.search img {
+  height: auto;
+  border: 1px solid $light-green;
+  width: 100%;
+  text-align: left;
+}
+
+.search a:hover {
+  opacity: 0.5;
+}
+
+//show recipe details
+.show h2 {
+  padding-top: 20px;
+}
+.show img {
+  border: 1px solid $light-green;
+  width: 100%;
+  margin-bottom: 50px;
+}
+.show table {
+  border-radius: 10px;
+  width: 100%;
+}
+table tr:nth-child(even) {
+  background: $light-green;
+}
+table tr:nth-child(odd) {
+  background: $second;
+}
+table tr td {
+  color: $blue;
+  letter-spacing: 3px;
+  padding-left: 5%;
+}
+table tr h3 {
+  color: $blue;
+  letter-spacing: 3px;
+  padding-left: 3%;
+}
+h2, h3 {
+  color: $blue;
+  letter-spacing: 3px;
+}
+.ingredients {
+  background: $light-green;
+  border-radius: 10px;
+}
+
+
+//footers :(
+footer a {
+  font-style: italic;
+  text-align: center;
+  margin-top: 30px;
+  height: 30px;
+  color: $light-green;
+  background: linear-gradient(to right, $blue, $second, $first, $second, $blue );
+}
+footer.home a {
+  margin: 0;
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+footer.scroll a {
+  margin-bottom: 0;
+  position: relative;
+  display: block;
+}

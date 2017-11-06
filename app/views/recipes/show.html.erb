@@ -1,0 +1,42 @@
+
+
+<article class = "show row">
+
+    <% @recipe.each do |r| %>
+    <section class="ingredients small-12 large-6 column">
+      <h2><%= r.label %></h2>
+      <p><em>Originally found in <%= link_to r.url %></em></p>
+      <%= image_tag r.image %>
+
+      <h3>Ingredients</h3>
+        <% r.ingredients.each do |ingredient| %>
+        <ul>
+          <li><%= ingredient %></li>
+        </ul>
+        <% end %>
+  </section>
+
+  <section class="nutrition small-12 large-6 column">
+    <table>
+      <thead>
+        <tr>
+          <th><h3>Nutrition</h3></th>
+        </tr>
+      </thead>
+      <tbody>
+        <% r.nutrition.each do |value| %>
+        <tr>
+          <td><strong><%= value["label"] %></strong>
+          <%= "#{value["daily"].round}" + "#{value["unit"]}" %></td>
+        </tr>
+        <% end %>
+      </tbody>
+    </table>
+  </section>
+    <% end %>
+</article>
+
+
+  <footer class="scroll">
+    <%= link_to "Powered by Edamam", "https://www.edamam.com/" %>
+  </footer>
