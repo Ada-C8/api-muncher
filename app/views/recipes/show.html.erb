@@ -1,37 +1,39 @@
 <div class="show-background">
+  <header>
+    <section class="head-search">
+      <h2><%= link_to("Recipoogle", root_path, class: "head-search") %>
+      <%= render partial: "form" %></h2>
+    </section>
+  </header>
 
-<header>
-  <section class="head-search">
-    <h2><%= link_to("Recipoogle", root_path, class: "head-search") %>
-    <%= render partial: "form" %></h2>
-  </section>
-</header>
+  <div class="recipe-box">
+    <section class="recipe-title">
+      <h1><%= @recipe.label %></h1>
+      <p>By <%= link_to(@recipe.source, @recipe.url) %></p>
+    </section>
 
-<section>
-  <h1><%= @recipe.label %></h1>
-  <p>By <%= link_to(@recipe.source, @recipe.url) %></p>
-</section>
+    <section class="recipe-img">
+      <%= image_tag  @recipe.image %>
+    </section>
 
-<section>
-  <%= image_tag  @recipe.image %>
-</section>
+    <section class="dietLabels">
+      <h3>Dietary Label(s)</h3>
+      <% if @recipe.dietLabels.empty? %>
+          <em><p>There are currently no dietary labels for this recipe.</p></em>
+      <% else %>
+          <% @recipe.dietLabels.each do |label| %>
+              <li><%= label %></li>
+          <% end%>
+      <% end %>
+    </section>
 
-<section>
-  <h2>Ingredients</h2>
-  <% @recipe.ingredientLines.each do |line| %>
-      <li><%= line %></li>
-  <% end %>
-</section>
+    <section class="ingredients">
+      <h2>Ingredients</h2>
+      <% @recipe.ingredientLines.each do |line| %>
+          <li><%= line %></li>
+      <% end %>
+    </section>
+  </div>
 
-<section>
-  <h2>Dietary Label(s)</h2>
-  <% if @recipe.dietLabels.empty? %>
-      <em><p>There are currently no dietary labels for this recipe.</p></em>
-  <% else %>
-      <% @recipe.dietLabels.each do |label| %>
-          <li><%= label %></li>
-      <% end%>
-  <% end %>
-</section>
 
 </div>

@@ -178,6 +178,52 @@ header {
 
 .show-background {
   background-color: #E8E5E3;
+  padding-bottom: 50px;
+}
+
+.recipe-title {
+  text-align: center;
+  vertical-align: middle;
+  padding-top: 30px;
+}
+
+.recipe-tite p, a {
+  font-size: 1.2em;
+  font-weight: bold;
+  color: #2F2A27;
+}
+
+.recipe-img {
+  text-align: center;
+  vertical-align: middle;
+}
+
+.recipe-img img {
+  border-radius: 20px;
+  border: solid #FF9A8D;
+}
+
+.ingredients {
+  padding: 20px;
+  list-style: none;
+  text-align: center;
+}
+
+.dietLabels h3, li, p {
+  text-align: center;
+  vertical-align: middle;
+  list-style: none;
+}
+
+.recipe-box {
+  background: white;
+  border-radius: 20px;
+  border: solid #FF9A8D;
+  width: 500px;
+  padding: 20px;
+  margin-top: 30px;
+  margin-left: 32%;
+  margin-bottom: 30px;
 }
 
 /*FOR FOOTER TO STAY AT BOTTOM*/
