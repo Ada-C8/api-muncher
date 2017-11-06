@@ -20,8 +20,8 @@ class RecipesController < ApplicationController
   def show
     @recipe = EdamamApiWrapper.search(params[:id])[0]
     if @recipe.blank?
-      # flash[err] query iz blank
-      redirect_to root_path
+      @not_found = true
+      render_404
     end
   end
 end
