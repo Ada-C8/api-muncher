@@ -3,10 +3,10 @@ require 'test_helper'
 describe Recipe do
 
   it "Can be instantiated with required fields" do
-    Recipe.new("uri", "name", "image", "source", "url", "ingredients")
+    Recipe.new("uri", "name")
   end
 
-  it "Requires a name, image, source, url, and ingredients" do
+  it "Requires a uri and name" do
     proc {
       Recipe.new()
     }.must_raise ArgumentError
@@ -22,32 +22,33 @@ describe Recipe do
   end
 
   it "Tracks uri, name, image, source, url, and ingredients" do
-    uri = "test_uri"
+    uri = "testuri"
     name = "test_name"
-    image = "test_image"
-    source = "test_source"
-    url = "test_url"
-    ingredients = "test_ingredients"
 
-    recipe = Recipe.new(uri, name, image, source, url, ingredients)
+    recipe = Recipe.new(uri, name)
 
     recipe.uri.must_equal uri
     recipe.name.must_equal name
-    recipe.image.must_equal image
-    recipe.source.must_equal source
-    recipe.url.must_equal url
-    recipe.ingredients.must_equal ingredients
   end
 
-  it "Tracks optional args" do
+  it "Tracks additional args" do
     options = {
+      image: "test_image",
+      source: "test_source",
+      url: "test_url",
+      ingredients: "test_ingredients",
       servings: "test_servings",
       diet: "test_diet",
       health: "test_health",
       calories: "test_calories"
     }
-    recipe = Recipe.new("name", "image", "source", "url", "ingredients", options)
 
+    recipe = Recipe.new("uri", "name", options)
+
+    recipe.image.must_equal options[:image]
+    recipe.source.must_equal options[:source]
+    recipe.url.must_equal options[:url]
+    recipe.ingredients.must_equal options[:ingredients]
     recipe.servings.must_equal options[:servings]
     recipe.diet.must_equal options[:diet]
     recipe.health.must_equal options[:health]

@@ -6,7 +6,7 @@ describe EdamamApiWrapper do
   describe "search" do
     it "receives a valid response for a search" do
       VCR.use_cassette("recipes") do
-        response = EdamamApiWrapper.search("fish")
+        response = EdamamApiWrapper.search("fish", 0, 9)
 
         response.length.must_be :>, 0
         response.must_be_kind_of HTTParty::Response
@@ -43,7 +43,7 @@ describe EdamamApiWrapper do
   describe "get_recipe" do
     it "creates a Recipe object" do
 
-    end 
+    end
   end
 end
 #

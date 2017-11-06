@@ -49,11 +49,11 @@ class EdamamApiWrapper
     return Recipe.new(
       result["uri"], # uri
       result["label"], # name
-      result["image"], # image
-      result["source"], # original source
-      result["url"], # link to original
-      result["ingredientLines"], # ingredients as an array
       {
+        image: result["image"], # image
+        source: result["source"], # original source
+        url: result["url"], # link to original
+        ingredients: result["ingredients"], # ingredients as an array
         servings: result["yield"], # servings
         # nutritional info
         diet: result["dietLabels"], # low-fat, etc
