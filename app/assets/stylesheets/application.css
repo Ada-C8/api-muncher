@@ -52,7 +52,7 @@ footer.footer {
 /*------------------------ MAIN PAGE ------------------------*/
 main.main-main {
   height: 600px;
-  background: image-url('food-1050x701.jpg');
+  background-image: url('food-1050x701.jpg');
   background-size: cover;
   background-repeat: no-repeat;
 }
