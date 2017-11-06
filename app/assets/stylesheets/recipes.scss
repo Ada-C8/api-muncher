@@ -2,6 +2,10 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+#recipes-container{
+  margin: auto;
+}
+
 .recipe-container {
   height: 300px;
   margin-bottom: 30px;
@@ -15,6 +19,7 @@
   padding: 20px;
   background-position: center;
   background-size: cover;
+  margin: auto;
 }
 
 .recipe-tile p{
@@ -54,5 +59,28 @@
 #main-form{
   margin-top: 30vh;
   text-align: center;
+  color: white;
+}
+
+/* PAGINATION CSS */
+.disabled{
+  display: none;
+}
+
+.pagination em, .pagination a{
+  display: inline-block;
+}
+
+.pagination a{
+  color: #af5d0a;
+}
+
+.pagination{
+  clear: both;
+  text-align: center;
+}
+
+.pagination .current{
+  background: #af5d0a;
   color: white;
 }
