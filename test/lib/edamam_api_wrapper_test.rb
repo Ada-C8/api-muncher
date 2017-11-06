@@ -77,7 +77,7 @@ describe EdamamApiWrapper do
     it "returns a single recipe" do
       VCR.use_cassette("wrapper_find_recipe") do
         recipe = EdamamApiWrapper.search("pineapple").first
-        new_recipe = EdamamApiWrapper.find_recipe(recipe.mini_uri)
+        new_recipe = EdamamApiWrapper.find_recipe(recipe.uri_hash)
 
         new_recipe.must_be_instance_of Recipe
         new_recipe.must_equal recipe
@@ -90,10 +90,10 @@ describe EdamamApiWrapper do
         recipe.must_be_nil
 
         recipe = EdamamApiWrapper.search("pineapple").first
-        new_recipe = EdamamApiWrapper.find_recipe(recipe.mini_uri, app_id: "BOGUS")
+        new_recipe = EdamamApiWrapper.find_recipe(recipe.uri_hash, app_id: "BOGUS")
         new_recipe.must_be_nil
 
-        new_recipe = EdamamApiWrapper.find_recipe(recipe.mini_uri, app_key: "BOGUS")
+        new_recipe = EdamamApiWrapper.find_recipe(recipe.uri_hash, app_key: "BOGUS")
         new_recipe.must_be_nil
 
       end

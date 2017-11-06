@@ -12,7 +12,7 @@ describe Recipe do
     it "Must initialize title, uri, photo_uri and ingredients properly" do
       recipe = Recipe.new("Title", (EdamamApiWrapper::RECIPE_URL + "URI"), "Photo URI", "Ingredients")
       recipe.title.must_equal "Title"
-      recipe.mini_uri.must_equal "URI"
+      recipe.uri_hash.must_equal "URI"
       recipe.photo_uri.must_equal "Photo URI"
       recipe.ingredients.must_equal "Ingredients"
     end

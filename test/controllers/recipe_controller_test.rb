@@ -21,16 +21,16 @@ describe RecipeController do
   describe "SHOW" do
     it "should display a recipe if the uri exists" do
       VCR.use_cassette("recipecontroller_show") do
-        a_recipe_mini_uri = "637913ec61d9da69eb451818c3293df2" #First result when searching api for chicken
-        get show_recipe_path(a_recipe_mini_uri)
+        a_recipe_uri_hash = "637913ec61d9da69eb451818c3293df2" #First result when searching api for chicken
+        get show_recipe_path(a_recipe_uri_hash)
         must_respond_with :success
       end
     end
 
     it "WHAT SHOULD IT DO IF IT DOESNT" do
       VCR.use_cassette("recipecontroller_show") do
-        a_recipe_mini_uri = "BOGUS"
-        get show_recipe_path(a_recipe_mini_uri)
+        a_recipe_uri_hash = "BOGUS"
+        get show_recipe_path(a_recipe_uri_hash)
         flash[:status].must_equal :failure
         must_respond_with :see_other
       end
