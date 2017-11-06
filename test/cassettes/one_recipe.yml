@@ -1,0 +1,81 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://test-es.edamam.com/search?app_id=<EDAMAN_ID>&app_key=<EDAMAN_KEY>&r=http://www.edamam.com/ontologies/edamam.owl%23recipe_54d578f9ae75221df8cdd217f9ca964c
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - ngx_openresty
+      Date:
+      - Mon, 06 Nov 2017 03:56:57 GMT
+      Content-Type:
+      - application/json;charset=UTF-8
+      Content-Length:
+      - '2'
+      Connection:
+      - keep-alive
+      Cache-Control:
+      - private
+      Expires:
+      - Thu, 01 Jan 1970 00:00:00 UTC
+      X-Served-By:
+      - ip-10-69-175-250/10.69.175.250
+    body:
+      encoding: UTF-8
+      string: "[]"
+    http_version: 
+  recorded_at: Mon, 06 Nov 2017 03:56:57 GMT
+- request:
+    method: get
+    uri: https://test-es.edamam.com/search?app_id=<EDAMAN_ID>&app_key=<EDAMAN_KEY>&r=http://www.edamam.com/ontologies/edamam.owl%23recipe_%2054d578f9ae75221df8cdd217f9ca964c
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - ngx_openresty
+      Date:
+      - Mon, 06 Nov 2017 03:57:14 GMT
+      Content-Type:
+      - application/json;charset=UTF-8
+      Content-Length:
+      - '2'
+      Connection:
+      - keep-alive
+      Cache-Control:
+      - private
+      Expires:
+      - Thu, 01 Jan 1970 00:00:00 UTC
+      X-Served-By:
+      - ip-10-69-175-250/10.69.175.250
+    body:
+      encoding: UTF-8
+      string: "[]"
+    http_version: 
+  recorded_at: Mon, 06 Nov 2017 03:57:14 GMT
+recorded_with: VCR 3.0.3

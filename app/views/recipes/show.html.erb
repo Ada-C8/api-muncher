@@ -1,2 +1,41 @@
 <h1> <%= @recipe.label %> </h1>
-<%= @recipe.ingridientLines %>
+
+<img src=<%= @recipe.image %>
+
+<h3> Ingredientes </h3>
+<ol>
+  <% @recipe.ingredientLines.each do |line| %>
+  <li>
+    <%= line %>
+  </li>
+  <% end %>
+</ol>
+
+
+
+<h3> Información Nutricional </h3>
+
+<% if @recipe.dietLabels == [] %>
+  <p> Información nutricinal no suministrada.</p>
+<% else %>
+  <% @recipe.dietLabels.each do |information|  %>
+    <% if information == "balanced" %>
+      <p> Balanceado </p>
+    <% elsif information == "High-Protein"%>
+      <p> Rico en Proteínas </p>
+    <% elsif information == "High-Fiber"%>
+      <p> Rico en Fibra </p>
+    <% elsif information == "Low-Fat"%>
+      <p> Bajo en grasas </p>
+    <% elsif information == "Low-Carb"%>
+      <p> Bajo en Carbohidratos </p>
+    <% elsif information == "low-sodium"%>
+      <p> Bajo en Sodio </p>
+    <% end %>
+  <% end %>
+<%end%>
+
+
+<%= @recipe.dietLabels %>
+
+<p><%= link_to "Detalles de esta receta", @recipe.url, :target => "_blank" %></p>
