@@ -6,11 +6,7 @@ class RecipesController < ApplicationController
   def index
     if params[:search_word]
 
-      @recipes = EdamamApiWrapper.list_recipes(params[:search_word])
-
-      @recipes = WillPaginate::Collection.create(params[:page] || 1, 10, @recipes.length) do |pager|
-        pager.replace @recipes
-      end
+      @recipes = EdamamApiWrapper.list_recipes(params[:search_word]).paginate(:page => params[:page], :per_page => 9)
     end
   end
 
