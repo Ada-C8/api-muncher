@@ -3,11 +3,8 @@ require 'test_helper'
 describe Recipe do
   it "Can be initialized with required parameters" do
     uri = "test_uri"
-    label = "test_label"
-    recipe = Recipe.new(uri, label)
-
+    recipe = Recipe.new(uri)
     recipe.uri.must_equal uri
-    recipe.label.must_equal label
   end
 
   it "Cannot be initialized with invalid parameters" do
@@ -16,16 +13,13 @@ describe Recipe do
     }.must_raise ArgumentError
 
     proc {
-      Recipe.new("uri")
-    }.must_raise ArgumentError
-
-    proc {
-      Recipe.new("", "")
+      Recipe.new("")
     }.must_raise ArgumentError
   end
 
   it "Tracks all optional arguments" do
     options = {
+      label: "test_label",
       image: "test_image",
       source: "test_source",
       url: "test_url",
@@ -38,8 +32,9 @@ describe Recipe do
       dietLabels: "test_dietLabels",
       healthLabels: "test_healthLabels"
     }
-    recipe = Recipe.new("uri", "label", options)
+    recipe = Recipe.new("uri", options)
 
+    recipe.label.must_equal options[:label]
     recipe.image.must_equal options[:image]
     recipe.source.must_equal options[:source]
     recipe.url.must_equal options[:url]

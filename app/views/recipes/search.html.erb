@@ -2,28 +2,34 @@
   Search Results
 </h1>
 
-<h2 class="page-sub">
-  Results for <%= @query %>
-</h2>
+<% unless @results == nil %>
+  <h2 class="page-sub">
+    Results for <%= @query %>
+  </h2>
 
-<section class="search-results">
-  <% @results.each do |hit| %>
+  <section class="search-results">
+    <% @results.each do |hit| %>
 
-    <article class="search-result">
-      <% params[:uri] = hit['recipe']['uri'][/recipe_\w*/] %>
-      <%= link_to recipe_path(params[:uri]) do %>
-        <span class="result-image">
-          <img src="<%= hit['recipe']['image']%>" alt="<%= hit['recipe']['label']%> image">
-        </span>
-        <span class="result-label">
-          <%= hit['recipe']['label'] %>
-        </span>
-      <% end %>
-    </article>
+      <article class="search-result">
+        <% params[:uri] = hit['recipe']['uri'][/recipe_\w*/] %>
+        <%= link_to recipe_path(params[:uri]) do %>
+          <span class="result-image">
+            <img src="<%= hit['recipe']['image']%>" alt="<%= hit['recipe']['label']%> image">
+          </span>
+          <span class="result-label">
+            <%= hit['recipe']['label'] %>
+          </span>
+        <% end %>
+      </article>
+    <% end %>
+  </section>
 
-  <% end %>
-</section>
+  <section class="search-pages">
+    <%= paginate @results %>
+  </section>
+<% else %>
 
-<section class="search-pages">
-  <%= paginate @results %>
-</section>
+  <h2 class="page-sub">
+    No results for <%= @query %>
+  </h2>
+<% end %>

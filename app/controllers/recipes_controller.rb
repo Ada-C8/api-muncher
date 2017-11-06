@@ -10,14 +10,17 @@ class RecipesController < ApplicationController
   def search
     @query = params[:query]
     @results = EdamamApiWrapper.search_recipes(@query)
-    @results = Kaminari.paginate_array(@results).page(params[:page]).per(10)
-
-    return @results
+    if @results['hits'] != []
+      @results = @results['hits']
+      @results = Kaminari.paginate_array(@results).page(params[:page]).per(10)
+      return @results
+    else
+      return @results = nil
+    end
   end
 
   def show
     @recipe_uri = params[:uri]
     @recipe = EdamamApiWrapper.show_recipe(@recipe_uri)
-    @recipe = @recipe[0]
   end
 end
