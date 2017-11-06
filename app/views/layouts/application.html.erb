@@ -17,7 +17,6 @@
     <%= render partial: "header" unless @disable_header_search %>
         <main>
         <section class="row flash">
-          <%#puts "flash status is #{flash[:status]}"%>
           <% if flash[:status] == :failure %>
           <% if flash[:message].present? %>
           <p><%= flash[:message] %></p>

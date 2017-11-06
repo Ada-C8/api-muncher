@@ -7,28 +7,19 @@ class EdamamApiWrapper
 
   class ApiError < StandardError
   end
-  # https://api.edamam.com/search?q=chicken&app_id=f7b7eda5&app_key=27bec363ca9b3dd18381e83986bb5fc9
+
   def self.search(q, options = {}, app_id=ID, app_key=KEY)
     @url = BASE_URL + "?q=#{q}" + "&app_id=#{app_id}" + "&app_key=#{app_key}&to=100"
-    # &health=label options
     if options.keys.count > 0
-      # if options[0]
       options.each do |key, value|
-        # |key, value|
         unless options[key].empty?
-          # options[key].length.times do
           value.each do |value|
-          @url << "&#{key.to_s}=#{value}"
-          # @url << "&health=#{option}"
-        end
+            @url << "&#{key.to_s}=#{value}"
+          end
         end
       end
     end
-    puts "URL used #{@url}"
     data = HTTParty.get(@url)
-    # puts data
-    puts "response code is #{data.code}"
-    puts "response message is #{data.message}"
 
     check_status(data)
     recipes = []
@@ -40,14 +31,11 @@ class EdamamApiWrapper
     return recipes
   end
 
-  #http://www.edamam.com/ontologies/edamam.owl%23recipe_637913ec61d9da69eb451818c3293df2
   def self.find_recipe(id)
-
     url = BASE_URL + "?r=" + BASE_URI + "#{id}" + "&app_id=#{ID}" + "&app_key=#{KEY}"
 
     data = HTTParty.get(url)
-    # data is an array
-    # recipe_result
+
     check_status(data)
     unless data.empty?
       return create_recipe(data[0])

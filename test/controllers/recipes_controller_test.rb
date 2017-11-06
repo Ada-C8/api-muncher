@@ -1,4 +1,6 @@
 require "test_helper"
+require_dependency '../../lib/edamam_api_wrapper'
+require_dependency '../../lib/recipe'
 
 describe RecipesController do
 
@@ -18,6 +20,27 @@ describe RecipesController do
         get recipes_path("chicken")
         flash[:status].must_equal :success
         flash[:message].must_equal "successfully searched"
+      end
+    end
+
+    it "must return success flash message and relevant recipes if given a search term and health filters" do
+      VCR.use_cassette("recipes_search_with_filters") do
+        search = {
+          q: "cookies",
+          vegan: "1",
+          peanut_free: "1",
+          tree_nut_free: "1",
+          vegetarian: "1",
+          alcohol_free: "1",
+          low_fat: "1",
+          sugar_conscious: "1"
+        }
+
+        get recipes_path, params: search
+
+        flash[:status].must_equal :success
+        flash[:message].must_equal "successfully searched"
+
       end
     end
   end

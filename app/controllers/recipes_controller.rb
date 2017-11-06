@@ -13,17 +13,8 @@ class RecipesController < ApplicationController
       flash[:message] = "You must enter a search term"
       redirect_back(fallback_location: root_path)
     else
-      # health_search = []
-      # if params[:peanut_free] == "1"
-      #   health_search << "peanut-free"
-      # end
-      # if params[:tree_nut_free] == "1"
-      #   health_search << "tree-nut-free"
-      # end
-      # health_search = health_selections
-      puts "health and diet selections #{health_diet_selections}"
-      @recipes = EdamamApiWrapper.search(params[:q], health_diet_selections)
-      @recipes = @recipes.paginate(:page => params[:page], :per_page => 12)
+      @recipes_results = EdamamApiWrapper.search(params[:q], health_diet_selections)
+      @recipes = @recipes_results.paginate(:page => params[:page], :per_page => 12)
       flash[:status] = :success
       flash[:message] = "successfully searched"
     end

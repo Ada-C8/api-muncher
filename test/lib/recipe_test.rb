@@ -41,7 +41,8 @@ describe Recipe do
         ingredients: [{"text" => ["test_ingredient1"]}, {"text" => ["test_ingredient2" ]}],
         source: "test_source",
         dietLabels: "test_diet_labels",
-        image: "test_image"
+        image: "test_image",
+        healthLabels: "health_labels"
       }
 
       recipe = Recipe.new("uri", "url", "label", options)
@@ -50,6 +51,8 @@ describe Recipe do
       recipe.source.must_equal options[:source]
       recipe.diet_labels.must_equal options[:dietLabels]
       recipe.image.must_equal options[:image]
+      recipe.health_labels.must_equal options[:healthLabels]
+
     end
   end
 
