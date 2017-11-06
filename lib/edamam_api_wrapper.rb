@@ -8,7 +8,7 @@ class EdamamApiWrapper
 
   def self.list_recipes(search_term)
 
-    url = BASE_URL + "q=#{search_term}" + "&app_id=" + EDAMAM_ID + "&app_key=" + EDAMAM_KEY
+    url = BASE_URL + "q=#{search_term}" + "&app_id=" + EDAMAM_ID + "&app_key=" + EDAMAM_KEY + "&to=100"
 
     data = HTTParty.get(url)
     recipe_list = []
@@ -25,12 +25,13 @@ class EdamamApiWrapper
   # https://api.edamam.com/search?r=http://www.edamam.com/ontologies/edamam.owl%23recipe_637913ec61d9da69eb451818c3293df2&app_id=a1c4badd&app_key=c5abe96e61c6a92d0ba6194cdf6469fb
 
   def self.show_recipe(uri)
-    # raise
+    raise
     # TODO: not currently hitting show_recipe
 
-    # encoded_uri = URI.encode(uri)
+    encoded_uri = URI.encode(uri)
     # construct the url
-    url = BASE_URL + "http://www.edamam.com/ontologies/edamam.owl#recipe_" + "r=#{uri}" + "&app_id=" + EDAMAM_ID + "&app_key=" + EDAMAM_KEY
+
+    url = BASE_URL + "http://www.edamam.com/ontologies/edamam.owl#recipe_" + "r=" + encoded_uri + "&app_id=" + EDAMAM_ID + "&app_key=" + EDAMAM_KEY
     # make httparty request
 
     data = HTTParty.get(url).parsed_response
@@ -40,6 +41,7 @@ class EdamamApiWrapper
   end
 
   private
+
 
   def self.parse_recipe(raw_recipe)
     # raw_recipe["uri"]
