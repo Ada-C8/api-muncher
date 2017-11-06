@@ -1,0 +1,49 @@
+<%= form_tag("/recipes", method: "get") do %>
+  <%= label_tag(:q, "Search for recipes:", id: "main-submit-search-text" ) %>
+  <%= text_field_tag(:q) %>
+  <div class="checkboxes row">
+    <div class="large-4 medium-4 small-6 columns label-check">
+        <%= check_box_tag(:peanut_free) %>
+        <%= label_tag(:peanut_free, "Peanut-Free", class: "checkbox-text") %>
+    </div>
+    <div class="large-4 medium-4 small-6 columns label-check">
+      <%= check_box_tag(:tree_nut_free) %>
+      <%= label_tag(:tree_nut_free, "Tree-Nut-Free", class: "checkbox-text") %>
+    </div>
+    <div class="large-4 medium-4 small-6 columns label-check">
+      <%= check_box_tag(:alcohol_free) %>
+      <%= label_tag(:alcohol_free, "Alcohol-Free", class: "checkbox-text") %>
+    </div>
+    <div class="large-4 medium-4 small-6 columns label-check">
+      <%= check_box_tag(:vegan) %>
+      <%= label_tag(:vegan, "Vegan", class: "checkbox-text") %>
+    </div>
+    <div class="large-4 medium-4 small-6 columns label-check">
+      <%= check_box_tag(:vegetarian) %>
+      <%= label_tag(:vegetarian, "Vegetarian", class: "checkbox-text") %>
+    </div>
+    <div class="large-4 medium-4 small-6 columns label-check">
+      <%= check_box_tag(:balanced) %>
+      <%= label_tag(:balanced, "Balanced", class: "checkbox-text") %>
+    </div>
+    <div class="large-4 medium-4 small-6 columns label-check">
+      <%= check_box_tag(:high_protein) %>
+      <%= label_tag(:high_protein, "High-Protein", class: "checkbox-text") %>
+    </div>
+    <div class="large-4 medium-4 small-6 columns label-check">
+      <%= check_box_tag(:low_fat) %>
+      <%= label_tag(:low_fat, "Low-Fat", class: "checkbox-text") %>
+    </div>
+    <div class="large-4 medium-4 small-6 columns label-check">
+      <%= check_box_tag(:low_carb) %>
+      <%= label_tag(:low_carb, "Low-Carb", class: "checkbox-text") %>
+    </div>
+    <div class="large-4 medium-4 small-6 columns label-check">
+      <%= check_box_tag(:sugar_conscious) %>
+      <%= label_tag(:sugar_conscious, "Sugar-Conscious", class: "checkbox-text") %>
+    </div>
+  </div>
+  <div id = "main-submit-button">
+    <%= submit_tag("Search", class:"button")%>
+  </div>
+  <% end %>

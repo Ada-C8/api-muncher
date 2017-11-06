@@ -1,0 +1,22 @@
+<section>
+  <% if @recipes.empty? %>
+  <h3 id="recipe-results"><%= "No results for #{params[:q]}" %></h3>
+  <% else %>
+  <h3 id="recipe-results"><%= "Results for #{params[:q]} recipes" %></h3>
+  <% end %>
+  <div class="row">
+  <% @recipes.each do |recipe| %>
+      <div class = "large-3 medium-4 small-6 columns" id="recipe-result">
+      <% "#{recipe.url}" %>
+      <% "#{recipe.ingredients}"%>
+      <%=image_tag("#{recipe.image}", alt:"#{recipe.label}") %>
+      <section id= "recipe-title">
+        <%= link_to "#{recipe.label}", recipe_path("#{recipe.id}")%>
+      </section>
+      </div>
+  <% end %>
+  </div>
+
+  <section><%= will_paginate @recipes %></section>
+
+</section>

@@ -1,0 +1,112 @@
+// Place all the styles related to the Recipes controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+// index page
+
+#recipe-title {
+  text-align: center;
+}
+
+#recipe-results {
+  text-align: center;
+  padding: 1%;
+}
+
+#recipe-result {
+  padding-bottom: 3%;
+  height: 350px;
+}
+
+// show page
+
+#recipe-info {
+  text-align: center;
+}
+
+#recipe-show-image {
+  text-align: center;
+}
+
+#ingredients ul li {
+  list-style-type: none;
+  font-weight: 300;
+  padding: 0;
+  margin: 0;
+}
+
+#ingredients ul {
+padding: 0;
+margin: 0;
+}
+
+#recipe-info a{
+text-align: center;
+font-weight: 500;
+color: black;
+}
+
+#recipe-info a:hover {
+opacity: 0.5;
+}
+
+// main page
+.main-search-row {
+  position: relative;
+}
+.main-search-form {
+  position: absolute;
+  z-index: 500;
+  top: 10%;
+  left: 25%;
+  width: 50%;
+}
+
+#main-header{
+text-align: center;
+font-weight: 700;
+margin: 0;
+}
+
+#main-submit-button {
+  display: block;
+  text-align: center;
+}
+
+ input.button {
+  margin-top: 15px;
+}
+
+#main-submit-search-text {
+  font-size: 1.5rem;
+  font-weight: bolder;
+  color: white;
+}
+
+.checkbox-text {
+  color: white;
+}
+.checkboxes label, .checkboxes input {
+display: inline-block;
+margin-bottom: 0;
+}
+
+.label-check {
+  display: block;
+}
+
+// body
+.main-page {
+  background-image: url("<%= image_path('background.jpeg') %>");
+  background-size: 100% 100%;
+}
+
+// pagination
+.pagination {
+  z-index: 5000;
+  text-align: center;
+
+}
+.pagination a {
+  display: inline-block;
+}

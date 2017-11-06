@@ -1,0 +1,59 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ *= require foundation_and_overrides
+
+ */
+
+ html {
+     position: relative;
+     min-height: 100%;
+ }
+
+ main {
+   margin-left: 5%;
+   margin-right: 5%;
+ }
+
+// footer
+
+.content {
+  min-height: calc(100vh - 50px);
+}
+.footer {
+  height: 30px;
+  text-align: center;
+}
+
+/*header*/
+
+.page-header {
+  background-image: url("<%= image_path('cutting_board.jpg')%>");
+  background-size: cover;
+}
+
+#main-header a{
+text-align: center;
+font-weight: 700;
+color: black;
+}
+
+#main-header a:hover {
+color: black;
+opacity: 0.5;
+}
+.header-search {
+  width: 50%;
+  margin: auto;
+}

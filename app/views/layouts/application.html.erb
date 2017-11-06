@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title><%= content_for?(:title) ? yield(:title) : "Untitled" %></title>
+
+    <%= stylesheet_link_tag    "application" %>
+    <%= javascript_include_tag "application", 'data-turbolinks-track' => true %>
+    <%= csrf_meta_tags %>
+  </head>
+
+  <body>
+    <div class="content">
+
+    <%= render partial: "header" unless @disable_header_search %>
+        <main>
+        <section class="row flash">
+          <% if flash[:status] == :failure %>
+          <% if flash[:message].present? %>
+          <p><%= flash[:message] %></p>
+          <% end %>
+          <%end%>
+        </section>
+
+    <%= yield %>
+  </main>
+</div>
+
+    <footer class="footer">
+      <p>
+        Powered by <%= link_to "Edamam", "https://developer.edamam.com/"%>
+      </p>
+    </footer>
+  </body>
+
+</html>
