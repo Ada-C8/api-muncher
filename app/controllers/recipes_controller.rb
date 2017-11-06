@@ -11,7 +11,8 @@ class RecipesController < ApplicationController
       # check the string, dsiplay all recipes if valid
       query = params[:query]
       # search using API Wrapper
-      @recipes = EdamamApiWrapper.search(query)
+      @recipes = EdamamApiWrapper.search(query).paginate(page: params[:page], per_page: 10)
+      #will_paginate includes a params called page
     end
   end
 
