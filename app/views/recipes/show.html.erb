@@ -1,10 +1,8 @@
-<%#= link_to @recipe.name, @recipe.url %>
-
 <h2><%= @recipe.name %></h2>
 
 <%= image_tag @recipe.image %>
 
-Find the original recipe at: <%= link_to @recipe.url, target: :_blank %>
+<p>Find the original recipe at: <%= link_to @recipe.url, target: :_blank %></p>
 
 <h4>Ingredients</h4>
 

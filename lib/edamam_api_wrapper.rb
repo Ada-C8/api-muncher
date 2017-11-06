@@ -25,10 +25,9 @@ class EdamamApiWrapper
     return recipe_list
   end
 
-  # https://api.edamam.com/search?r=http://www.edamam.com/ontologies/edamam.owl%23recipe_637913ec61d9da69eb451818c3293df2&app_id=a1c4badd&app_key=c5abe96e61c6a92d0ba6194cdf6469fb
+  # https://api.edamam.com/search?r=http://www.edamam.com/ontologies/edamam.owl%23recipe_637913ec61d9da69eb451818c3293df2
 
   def self.show_recipe(uri)
-    raise
     # TODO: not currently hitting show_recipe
 
     encoded_uri = URI.encode(uri)
@@ -49,7 +48,7 @@ class EdamamApiWrapper
 
   def self.check_status(response)
     unless response
-      raise ApiError.new("API call to Edamam failed: #{response["error"]}")
+      raise ApiError.new("API call to Edamam failed")
     end
   end
 

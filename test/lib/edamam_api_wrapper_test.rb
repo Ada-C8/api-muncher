@@ -25,11 +25,17 @@ describe EdamamApiWrapper do
   describe "show_recipe" do
     it "show recipe for cooresponding uri" do
       VCR.use_cassette("recipes") do
+        uri = "http://www.edamam.com/ontologies/edamam.owl%23recipe_637913ec61d9da69eb451818c3293df2"
+        result = EdamamApiWrapper.show_recipe(uri)
+        result.must_be_kind_of Recipe
       end
     end
 
     it "Raises an error when wrong bad uri" do
       VCR.use_cassette("recipes") do
+        proc {
+          EdamamApiWrapper.show_recipe("bad_token")
+        }
       end
     end
   end
