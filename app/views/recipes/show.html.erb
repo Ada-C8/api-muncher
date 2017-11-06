@@ -1,7 +1,11 @@
-<section class="head-search">
-  <%= link_to("Recipoogle", root_path, class: "head-search") %>
-  <%= render partial: "form" %>
-</section>
+<div class="show-background">
+
+<header>
+  <section class="head-search">
+    <h2><%= link_to("Recipoogle", root_path, class: "head-search") %>
+    <%= render partial: "form" %></h2>
+  </section>
+</header>
 
 <section>
   <h1><%= @recipe.label %></h1>
@@ -29,3 +33,5 @@
       <% end%>
   <% end %>
 </section>
+
+</div>

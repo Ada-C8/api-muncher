@@ -29,6 +29,21 @@ h1, h2, h3 {
 
 .pages {
   text-align: center;
+  padding-bottom: 30px;
+}
+
+.digg_pagination {
+  color: #2F2A27;
+  font-size: 1.2em;
+}
+
+.digg_pagination a {
+  color: #2F2A27;
+}
+
+.digg_pagination a:hover {
+  color: #FF9A8D;
+  font-size: 1.27em;
 }
 
 /*SEARCH FORM*/
@@ -55,7 +70,7 @@ header {
 
 .head-search {
   padding-top: 30px;
-  padding-bottom: 2px;
+  padding-bottom: 15px;
   text-align: center;
 }
 
@@ -94,7 +109,13 @@ header {
   height: 350px;
   width: 100%;
 }
+
+
 /*INDEX PAGE*/
+
+.index-background {
+  background-color: #E8E5E3;
+}
 
 .results h2, a{
   text-align: center;
@@ -107,25 +128,8 @@ header {
   animation: fadeIn 2s;
 }
 
-.card p:last-child {
-  width: 300px;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-}
-
 .row {
-  margin-bottom: 10px;
-}
-
-.margin-3-col {
-  margin-left: 2.1%;
-  margin-right: 2.1%;
-}
-
-.margin-auto {
-  margin-left: auto;
-  margin-right: auto;
+  margin-bottom: 8px;
 }
 
 .recipes-index {
@@ -134,22 +138,47 @@ header {
 }
 
 .card {
-  height: 450px;
-  border-radius: 20px;
+  height: 360px;
+  border-radius: 10px;
   border-color: white;
-  margin: 4.15%;
+  margin: 4%;
+  -moz-box-shadow: 0 0 5px #fff;
+  -webkit-box-shadow: 0 0 5px #fff;
+  box-shadow: 0px 0px 5px #fff;
 }
 
 .card img {
   width: 400px;
   height: 300px;
+  border-radius: 10px;
+  padding-top: 8px;
 }
 
-.card {
+.columns:last-child:not(:first-child) {
   float: left;
+  /*display: table;
+  vertical-align: middle;*/
 }
 
+.card a {
+  font-weight: bold;
+  padding-top: 5px;
+  color: #2F2A27;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
 
+.card a:hover {
+  color: #FF9A8D;
+  font-size: 1.2em;
+}
+
+/*SHOW PAGE*/
+
+.show-background {
+  background-color: #E8E5E3;
+}
 
 /*FOR FOOTER TO STAY AT BOTTOM*/
 
@@ -192,11 +221,13 @@ footer p {
 
 footer a {
   color: #3B3431;
+  font-size: 1.1em;
   font-weight: bold;
 }
 
 footer a:hover {
   color: #6A5E57;
+  font-size: 1.2em;
 }
 
 /*OTHER SYTLING*/
