@@ -24,7 +24,7 @@ class EdamamApiWrapper
     if response.success?
       return response
     else
-      return [ ]
+      return []
     end
   end
 
