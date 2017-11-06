@@ -45,19 +45,20 @@ describe RecipesController do
   end
 
   describe "#show" do
-    #HELP
+
     it "shows a recipe page" do
       VCR.use_cassette("recipes") do
-        id = "http://www.edamam.com/ontologies/edamam.owl%23recipe_7bf4a371c6884d809682a72808da7dc2"
-        get recipe_path(id)
+        uri = "http://www.edamam.com/ontologies/edamam.owl#recipe_7bf4a371c6884d809682a72808da7dc2"
+        get recipe_path(id: "recipe_label", uri: uri )
         must_respond_with :success
       end
     end
 
     it "renders 404 if the recipe page is not found" do
       VCR.use_cassette("recipes") do
-        invalid_id = "7bf4a371c6884d809682a72808da7dc2"
-        get recipe_path(invalid_id)
+        invalid_uri = "7bf4a371c6884d809682a72808da7dc2"
+
+        get recipe_path(id: "recipe_label", uri: invalid_uri)
 
         must_respond_with :missing
       end

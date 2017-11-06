@@ -43,11 +43,20 @@ class EdamamApiWrapper
   end
 
   def self.show_recipe(uri)
-    uri = uri.gsub!(/#/, '%23')
+    uri = uri.gsub!(/#/, '%23') if uri.include?('#')
 
     url = BASE_URL + "r=" + uri
 
     data = HTTParty.get(url)
+
+    #This is for bad array if uri is invalid
+    if data.body == '['
+      return nil
+    end
+
+    if data[0] == nil
+      return nil
+    end
 
     options = {
       ingredientLines: data[0]["ingredientLines"],
