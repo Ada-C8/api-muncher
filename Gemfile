@@ -73,4 +73,4 @@ group :test do
 end
 
 gem 'kaminari'
-ruby '2.4.0
+ruby '2.4.0'
