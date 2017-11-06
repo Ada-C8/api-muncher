@@ -1,0 +1,141 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ *= require foundation_and_overrides
+
+ */
+
+body {
+  background-color: #C6CCCB;
+  color: #83898D;
+}
+
+.collapse-right {
+  padding-right: 0;
+}
+
+.collapse-left {
+  padding-left: 0;
+}
+
+span.footer {
+  text-align: center;
+}
+
+ul.inline-li {
+  list-style-type: none;
+}
+
+p.inline-li a {
+  display: inline-block;
+  text-align: center;
+  margin: 0 10px;
+  letter-spacing: 2px;
+  font-size: 1.25em;
+}
+
+div.inline {
+  display: flex;
+  justify-content: center;
+  padding: 0;
+}
+
+nav.inline {
+  display: flex;
+  justify-content: center;
+  padding: 0;
+}
+
+.columns {
+  padding-left: 0;
+  padding-right: 0;
+}
+
+.result-img {
+  padding: 10px;
+  width: 200px;
+}
+h1#menu {
+  margin-top: .2em;
+  margin-bottom: .75em;
+  font-size: 5em;
+  text-align: center;
+  letter-spacing: 5px;
+}
+
+footer.footer {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  padding: 1rem;
+  background-color: #efefef;
+  text-align: center;
+}
+
+inline-grid {
+  display: inline-grid;
+}
+
+.results-thumbnail {
+  width: 200px;
+}
+/* vegetarian */
+.hover-nav:hover span.vegetarian span{
+  display: none;
+}
+
+.hover-nav:hover span.vegetarian:after{
+  content: 'Vegetarian';
+}
+
+/* beef */
+.hover-nav:hover span.beef span{
+  display: none;
+}
+
+.hover-nav:hover span.beef:after{
+  content: 'Beef';
+}
+
+/* pork */
+.hover-nav:hover span.pork span{
+  display: none;
+}
+
+.hover-nav:hover span.pork:after{
+  content: 'Pork';
+}
+
+/* chicken */
+.hover-nav:hover span.chicken span{
+  display: none;
+}
+
+.hover-nav:hover span.chicken:after{
+  content: 'Chicken';
+}
+
+/* fish */
+.hover-nav:hover span.fish span{
+  display: none;
+}
+
+.hover-nav:hover span.fish:after{
+  content: 'Fish';
+}
+
+.page {
+  font-size: 2em;
+}

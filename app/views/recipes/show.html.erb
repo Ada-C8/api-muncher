@@ -1,0 +1,53 @@
+<header class="row">
+  <% render partial: 'header' %>
+</header>
+<section class="row">
+  <div class="medium-4 medium-offset-2 columns">
+    <h2><%= @recipe.name %><br>
+    <small><%= link_to @recipe.source, @recipe.url %></small></h2>
+    <%= image_tag(@recipe.image) %>
+  </div>
+  <div class="medium-6 columns">
+    <ul>
+      <li><h3>Ingredients:</h3>
+        <% @recipe.ingredients.each do |i| %>
+          <ul>
+            <li><%= i %></li>
+          </ul>
+        <% end %>
+      </li>
+    </ul>
+  </div>
+</section>
+<article class="row">
+  <div class="columns medium-6 offset-medium-6">
+    <% @recipe.diet.each do |d| %>
+      <ul class="inline-li inline">
+        <li><%= d %></li>
+      </ul>
+    <% end %>
+    <% @recipe.health.each do |h| %>
+      <ul class="inline-li inline">
+        <li><%= h %></li>
+      </ul>
+    <% end %>
+  </div>
+</article>
+
+<!-- <span>Results</span>
+<ul>
+  <li><%= @recipe.name %></li>
+  <li><%= @recipe.image %></li>
+  <li><%= @recipe.source %></li>
+  <li><%= @recipe.url %></li>
+  <li><% @recipe.diet.each do |d| %>
+    <ul>
+      <li><%= d %></li>
+    </ul>
+  <% end %></li>
+  <li><% @recipe.health.each do |h| %>
+    <ul>
+      <li><%= h %></li>
+    </ul>
+  <% end %></li>
+</ul> -->
