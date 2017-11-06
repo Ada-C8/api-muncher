@@ -16,6 +16,51 @@
 
  */
 
+/* --------------------------- */
+/* -------- All Around ------- */
+/* --------------------------- */
+
 * {
   font-family: 'Special Elite', cursive !important;
+}
+
+body {
+  color: black;
+  text-align: center;
+}
+
+h1, h2, h3, h4, h5 {
+  color: #33a57b;
+  letter-spacing: -0.02em;
+}
+
+main {
+  margin: 75px 0;
+}
+
+a {
+  color: #33a57b;
+}
+
+ul {
+  list-style: none;
+}
+
+li {
+  padding: 3px 0;
+}
+
+/* --------------------------- */
+/* ------ Header/Search ------ */
+/* --------------------------- */
+
+#search-form {
+  width: 50%;
+  min-width: 250px;
+  margin: 0 auto;
+}
+
+input[type='text'] {
+  border-radius: 75px;
+  padding-left: 15px;
 }

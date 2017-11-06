@@ -17,8 +17,7 @@ class RecipesController < ApplicationController
   def show
 
     @recipe = EdamamApiWrapper.show_recipe(params[:id])
+    render_404 unless @recipe
 
   end
 end
-
-# Thoughts, do I want to do flash messages for errors and successes?  Perhaps if I have time it may be worth doing.
