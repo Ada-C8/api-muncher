@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
     <title><%= content_for?(:title) ? yield(:title) : "Untitled" %></title>
+    <%= favicon_link_tag 'recipoogle_icon.png' %>
 
     <link href="https://fonts.googleapis.com/css?family=Roboto+Slab" rel="stylesheet">
 
@@ -20,7 +21,9 @@
     </main>
 
     <footer>
-      <%= link_to("Powered by Edamam ", "https://developer.edamam.com/edamam-recipe-api") %></h4>
+      <p>
+        <%= link_to("Powered by Edamam ", "https://developer.edamam.com/edamam-recipe-api") %>
+      </p>
     </footer>
 
   </body>
