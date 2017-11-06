@@ -1,5 +1,4 @@
 require "httparty"
-require 'recipe' # ask why this didn't happen automatically
 class ApiError < StandardError
 end
 
