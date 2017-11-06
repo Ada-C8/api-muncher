@@ -46,13 +46,13 @@ puts "this is the uri #{uri}"
 
 
 
-    #parse the JSON data in order to get recipe details for the show page
-    # if data.empty?
-    #   raise ApiError.new("No recipe details for this link")
-    # else
-    #   recipe_detail = self.create_recipe(data[0])
-    # end
-    # return recipe_detail
+    # parse the JSON data in order to get recipe details for the show page
+    if data.empty?
+      raise ApiError.new("No recipe details for this link")
+    else
+      recipe_detail = self.create_recipe(data[0])
+    end
+    return recipe_detail
   end
 
   private
@@ -73,6 +73,7 @@ puts "this is the uri #{uri}"
       recipe_hash["ingredientLines"],
       recipe_hash["dietLabels"],
       recipe_hash["uri"],
+      recipe_hash["source"],
       {
         image: recipe_hash["image"],
       }
