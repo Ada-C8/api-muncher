@@ -1,22 +1,20 @@
 class Recipe
-  attr_reader :title, :mini_uri, :photo_uri, :external_url, :source, :ingredients, :labels
+  attr_reader :title, :uri_hash, :photo_uri, :external_url, :source, :ingredients, :labels
 
   def initialize( title, uri, photo_uri, ingredients, options = { } )
     @title = title
+    @uri_hash = uri.split("_").last
     @photo_uri = photo_uri
     @ingredients = ingredients
     @external_url = options[:external_url]
     @source = options[:source]
     @labels = options[:labels]
 
-    uri = URI.encode(uri) if uri.include?("#")
-
-    @mini_uri = uri[EdamamApiWrapper::RECIPE_URL.length,uri.length]
   end
 
   def == (another_recipe)
     self.title == another_recipe.title &&
-    self.mini_uri == another_recipe.mini_uri &&
+    self.uri_hash == another_recipe.uri_hash &&
     self.photo_uri == another_recipe.photo_uri &&
     self.ingredients == another_recipe.ingredients &&
     self.external_url == another_recipe.external_url &&
