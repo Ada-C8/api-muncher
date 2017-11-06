@@ -9,8 +9,8 @@
 
 <ul>
   <% @recipes.each do |recipe| %>
-      <%= link_to recipe.name, recipe_path(recipe.uri) %>
-      <%= image_tag recipe.image %>
+    <p><%= link_to recipe.name, recipe_path(recipe.uri) %></p>    
+    <%= image_tag recipe.image %>
   <% end %>
 </ul>
 
