@@ -2,6 +2,8 @@ ENV["RAILS_ENV"] = "test"
 require File.expand_path("../../config/environment", __FILE__)
 require "rails/test_help"
 require "minitest/rails"
+require 'vcr'
+require 'webmock/minitest'
 require "minitest/reporters"  # for Colorized output
 
 #  For colorful output!
@@ -10,6 +12,22 @@ Minitest::Reporters.use!(
   ENV,
   Minitest.backtrace_filter
 )
+
+VCR.configure do |config|
+  config.cassette_library_dir = 'test/cassettes'
+  config.hook_into :webmock
+  config.default_cassette_options = {
+    :record => :new_episodes,
+    :match_requests_on => [:method, :uri, :body]
+  }
+  # Don't leave our Slack token lying around in a cassette file.
+  config.filter_sensitive_data("<EDAMAM_ID>") do
+    ENV["EDAMAM_ID"]
+  end
+  config.filter_sensitive_data("<EDAMAM_KEY>") do
+    ENV["EDAMAM_KEY"]
+  end
+end
 
 
 # To add Capybara feature tests add `gem "minitest-rails-capybara"`

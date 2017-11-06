@@ -7,7 +7,7 @@ class EdamamApiWrapper
 
   def self.search_recipes(search)
     url = BASE_URL + "?q=" + search + "&app_id=#{ID}&app_key=#{TOKEN}&to=50"
-    data = HTTParty.get(url)
+    data = HTTParty.get(url).parsed_response
 
     if data["hits"]
       result_recipes = data["hits"].map do |recipe_hash|
@@ -25,8 +25,8 @@ class EdamamApiWrapper
 
   def self.recipe_details(uri)
     uri = uri.gsub! '#', '%23'
-    url = BASE_URL + "?r=" + uri
-    data = HTTParty.get(url)
+    url = BASE_URL + "?r=" + uri + "&app_id=#{ID}&app_key=#{TOKEN}"
+    data = HTTParty.get(url).parsed_response
 
     if data[0]
       result_recipes =
@@ -35,10 +35,9 @@ class EdamamApiWrapper
         ingredientLines: data[0]["ingredientLines"],
         dietLabels: data[0]["dietLabels"],
         healthLabels: data[0]["healthLabels"]
-
       return result_recipes
     else
-      return []
+      return nil
     end
   end
 
