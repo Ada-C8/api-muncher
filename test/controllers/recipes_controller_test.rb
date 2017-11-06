@@ -7,4 +7,8 @@ describe RecipesController do
   describe 'show' do
 
   end
+
+  describe 'search' do
+    
+  end
 end

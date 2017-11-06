@@ -1,32 +1,7 @@
 <%#= render partial: "form2" %>
 
 <header class="row">
-  <div class="columns small-12 small-centered inline">
-    <h1 id="menu"><%= link_to '"MENU"', root_path %></h1>
-  </div>
-  <nav class="columns small-12 small-centered inline">
-      <p class="inline-li hover-nav">
-        <%= link_to "#" do %>
-          <span class="breakfast"><span>朝ごはん</span></span>
-        <% end %>
-
-        <%= link_to "#" do %>
-          <span class="lunch"><span>昼ごはん</span></span>
-        <% end %>
-
-        <%= link_to "#" do %>
-          <span class="dinner"><span>晩ごはん</span></span>
-        <% end %>
-
-        <%= link_to "#" do %>
-          <span class="dessert"><span>デザート</span></span>
-        <% end %>
-
-        <%= link_to "#" do %>
-          <span class="snacks"><span>おやつ</span></span>
-        <% end %>
-      </p>
-  </nav>
+  <%= render partial: 'header' %>
 </header>
 
 <section class="row">
@@ -38,7 +13,12 @@
 </section>
 
 <nav>
-  <%#= paginate @recipes %>
+  <% if @previous_page %>
+    <%= link_to 'previous', @previous_page %>
+  <% end %>
+  <% if @next_page %>
+    <%= link_to 'next', @next_page %>
+  <% end %>
 </nav>
 
 

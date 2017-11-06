@@ -8,8 +8,12 @@ class EdamamApiWrapper
   APP_ID = ENV["APP_ID"]
   APP_KEY = ENV["APP_KEY"]
 
-  def self.search(q)
-    url = BASE_URL + "q=#{q}" + "&app_id=#{APP_ID}" + "&app_key=#{APP_KEY}"
+  def self.get_search_url(q, from, to)
+    return BASE_URL + "q=#{q}&from=#{from}&to=#{to}" + "&app_id=#{APP_ID}" + "&app_key=#{APP_KEY}"
+  end
+
+  def self.search(q, from, to)
+    url = self.get_search_url(q, from, to)
     response = HTTParty.get(url)
     check_status(response)
     return response
