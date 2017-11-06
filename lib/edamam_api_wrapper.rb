@@ -54,7 +54,7 @@ class EdamamApiWrapper
         image: result["image"], # image
         source: result["source"], # original source
         url: result["url"], # link to original
-        ingredients: result["ingredients"], # ingredients as an array
+        ingredients: result["ingredientLines"], # ingredients as an array
         servings: result["yield"], # servings
         # nutritional info
         diet: result["dietLabels"], # low-fat, etc
