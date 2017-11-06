@@ -14,6 +14,7 @@ class RecipesController < ApplicationController
     # made in the recipes_helper
     from, to = RecipesHelper.get_from_and_to(@page)
 
+    # search results
     response = EdamamApiWrapper.search(params[:q], from, to)
     @recipes = EdamamApiWrapper.get_results_from_response(response)
 
