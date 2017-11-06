@@ -8,7 +8,7 @@ class EdamamApiWrapper
 
   def self.list_recipes(search_term)
 
-    url = BASE_URL + "q=#{search_term}" + "&app_id=" + EDAMAM_ID + "&app_key=" + EDAMAM_KEY + "&to=100"
+    url = BASE_URL + "q=#{search_term}" + "&app_id=" + EDAMAM_ID + "&app_key=" + EDAMAM_KEY
 
     data = HTTParty.get(url)
 
