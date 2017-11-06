@@ -13,7 +13,7 @@ class EdamamApiWrapper
 
   def self.list_recipes(search_word)
     # The url I defined/created by using Postman to fully read the get function and how it worked.
-    url = BASE_URL + "q=#{search_word}" + "&app_id=#{ID}" + "&app_key=#{KEY}&to=50"
+    url = BASE_URL + "q=#{search_word}" + "&app_id=#{ID}" + "&app_key=#{KEY}&to=100"
 
     data = HTTParty.get(url)
 
