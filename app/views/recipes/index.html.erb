@@ -1,17 +1,17 @@
-<section class="recipe-list">
-  <h3>Recipe</h3>
-
+<section class="search">
     <%= form_tag(root_path, method: :get) do %>
       <%= label_tag(:query, "Search for:") %>
-      <%= text_field_tag(:query) %>
-      <%= submit_tag("Search") %>
+      <%= text_field_tag(:searchbar) %>
+      <%= submit_tag("Search", class: "button search") %>
     <% end %>
+</section>
 
-<ul>
-  <% @recipes.each do |recipe| %>
-    <p><%= link_to recipe.name, recipe_path(recipe.uri) %></p>    
-    <%= image_tag recipe.image %>
-  <% end %>
-</ul>
+<section class="recipe-list row">
+  <div class="small-2 medium-4 columns">
+    <% @recipes.each do |recipe| %>
+        <%= link_to recipe.name, recipe_path(uri: recipe.uri) %>
+        <%= image_tag recipe.image %>
+    <% end %>
+  </div>
 
 </section>
