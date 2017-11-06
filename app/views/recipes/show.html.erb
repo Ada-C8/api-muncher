@@ -4,16 +4,19 @@
 <div class='show_info'>
   <%= image_tag @recipe.image, class:'columns small-12 large-5' %>
 
-  <ul class='columns small-12 large-5'>
-    <% @recipe.ingredients.each do |ingredient| %>
-    <li>
-      <%= ingredient %>
-    </li>
-    <% end %>
-  </ul>
+  <section class='columns small-12 large-6'>
+    <h4>Ingredients</h4>
+    <ul>
+      <% @recipe.ingredients.each do |ingredient| %>
+      <li>
+        <%= ingredient %>
+      </li>
+      <% end %>
+    </ul>
+  </section>
 
 <% if @recipe.diet_labels || @recipe.health_labels %>
-<section>  
+<section class='columns small-12'>
   <h4>Dietary Labels</h4>
 
   <ul>

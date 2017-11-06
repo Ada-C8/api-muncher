@@ -7,8 +7,9 @@ class RecipesController < ApplicationController
   end
 
   def index
+    @from = params[:from] ? params[:from] : 0
     @query = params[:query]
-    @recipes = EdamamApiWrapper.search(@query)
+    @recipes = EdamamApiWrapper.search(@query, from)
 
     if @query[/[^A-Za-z0-9_ -]+/]
       flash[:status] = :failure

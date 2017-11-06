@@ -2,10 +2,10 @@ class EdamamApiWrapper
   BASE_URL = "https://api.edamam.com/search?"
   ID_AND_KEY = "&app_id=#{ENV["EDAMAM_ID"]}&app_key=#{ENV["EDAMAM_KEY"]}"
 
-  def self.search(query)
+  def self.search(query, from = 0)
     recipes = []
     unless query[/[^A-Za-z0-9_ -]+/]
-      url = BASE_URL + "q=" + query + ID_AND_KEY
+      url = BASE_URL + "q=" + query + ID_AND_KEY + paginate(from)
       data = HTTParty.get(url)
       unless data["hits"].empty?
         data["hits"].each do |hit_data|
@@ -43,6 +43,14 @@ private
       }
     )
     return recipe
+  end
+
+  def self.paginate(from)
+    if from == 0
+      return ""
+    else
+      return "&from=#{from}"
+    end
   end
 
 
