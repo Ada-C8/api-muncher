@@ -11,7 +11,11 @@
     <%= csrf_meta_tags %>
   </head>
 
+  <% if !@homepage.nil? %>
+  <body class="homepage">
+  <% else %>
   <body>
+  <% end %>
 
     <%= yield %>
 

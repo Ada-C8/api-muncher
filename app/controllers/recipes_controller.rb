@@ -1,5 +1,6 @@
 class RecipesController < ApplicationController
   def search
+    @homepage = true
   end
 
   def index

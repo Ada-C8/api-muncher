@@ -3,7 +3,7 @@
   <section id="main-form" class="large-6 large-centered medium-10 medium-centered columns">
     <h1><%= t(:site_name) %></h1>
     <%= form_tag recipes_path, method: :get do %>
-    <%= label_tag "Make and Munch on a Recipe Today:" %>
+    <p>Make and Munch on a Recipe Today</p>
     <%= text_field_tag :query%>
     <%= submit_tag 'Search Food', class: "button" %>
     <% end %>

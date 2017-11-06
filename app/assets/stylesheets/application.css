@@ -20,6 +20,17 @@
 
 @import url('https://fonts.googleapis.com/css?family=Archivo+Black');
 
+body{
+  background-color: #ffe6c4;
+}
+
+.homepage{
+  background-image: url("background_image.jpg");
+  background-position: center;
+  background-size:cover;
+  background-repeat: no-repeat;
+}
+
 p, li{
   font-family: 'Libre Franklin', sans-serif !important;
   border-radius: 10px !important;
