@@ -9,21 +9,24 @@
     <%= stylesheet_link_tag    "application" %>
     <%= javascript_include_tag "application", 'data-turbolinks-track' => true %>
     <%= csrf_meta_tags %>
+    <%= favicon_link_tag 'cheeseburger.ico' %>
     <script src="https://developer.edamam.com/attribution/badge.js"></script>
   </head>
   <body>
     <main class="main-main">
-      <h1 class="main-title">
-        MUNCHER
-      </h1>
-      <h2 class="main-sub">
-        Find your flavor...
-      </h2>
+      <div class="main-main-wrapper">
+        <h1 class="main-title">
+          MUNCHER
+        </h1>
+        <h2 class="main-sub">
+          Find your flavor...
+        </h2>
 
-      <form action="<%= recipes_search_path %>" method="get" class="main-search">
-        <%= text_field_tag :query %>
-        <%= submit_tag 'Search', name: nil %>
-      </form>
+        <form action="<%= recipes_search_path %>" method="get" class="main-search">
+          <%= text_field_tag :query %>
+          <%= submit_tag 'Search', name: nil, class: 'button' %>
+        </form>
+      </div>
     </main>
 
     <footer class='footer'>
