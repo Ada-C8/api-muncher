@@ -33,8 +33,7 @@ class RecipesController < ApplicationController
     # uri = params[:id]
     # uri.gsub(/%2F/, "/")
     begin
-      @search = params[:search_term]
-      puts "SEARCH: #{@search}"
+      @search = params[:search_term] #not working - how do I pass this param in properly?
       @recipe = EdamamApiWrapper.find_recipe(params[:id])
     rescue EdamamApiWrapper::ApiError => error
       flash[:status] = :failure
