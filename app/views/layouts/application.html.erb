@@ -12,23 +12,22 @@
   </head>
 
   <body>
-    <header>
-      <h1><%= link_to "Muncher", root_path %></h1>
-      <%= params %>
+    <header class="row">
+      <h1 class="logo"><%= link_to "Muncher", root_path %></h1>
+      <%= form_tag recipes_path, method: :get do %>
+      <%= text_field_tag :query, params[:query], placeholder: "Search Recipes" %>
+      <%= submit_tag "Search", name: nil %>
+      <% end %>
     </header>
-    <h2>Find a Recipe!</h2>
-    <%= form_tag recipes_path, method: :get do %>
-    <%= text_field_tag :query, params[:query], placeholder: "Search Recipes" %>
-    <%= submit_tag "Search", name: nil %>
-    <% end %>
+
 
     <%= yield %>
     <%= javascript_include_tag "application" %>
     <footer>
-      <p>
+      <p class="columns small-6">
         &copy 2017
       </p>
-      <p>
+      <p class="columns small-6">
         Powered by <img src="../assets/Edamam_logo_full_RGB.png" alt="Edamam logo">
       </p>
     </footer>
