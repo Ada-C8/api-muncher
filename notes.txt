@@ -1,0 +1,400 @@
+<header class=top-bar>
+  <div class="top-bar-left">
+    <h2 id="main-title">Especially Recipes</h2>
+  </div>
+
+    <div class="top-bar-right">
+      <div class=menu>
+        <%= form_tag search_path, method: "get" do %>
+        <p>
+          <%= text_field_tag(:search_term, @search_term)%><%= submit_tag("SEARCH", class: "button") %>
+        </p>
+        <% end %>
+      </div>
+    </div>
+</header>
+
+
+
+
+
+<div class="top-bar-left" >
+  <h3 id="main-title">Especially Recipes</h3>
+</div>
+<div class="top-bar-right">
+  <ul class="menu row">
+    <div class="small-12 medium-6 large-6 column">
+    <%= form_tag search_path, method: "get" do %>
+    <li><%#= label_tag(:search, "Enter Search Term")%><%= text_field_tag(:search_term, @search_term)%><%= submit_tag("SEARCH", class: "button") %></li>
+    <% end %>
+    </div>
+  </ul>
+</div>
+    <
+    <%= render 'layouts/header' %>
+
+
+    <div class="row-column">
+      <h3 id="main-link"><%= link_to @result[0]["label"], @result[0]["shareAs"], :target => "_blank" %></h3>
+    </div>
+    a
+
+    <div class="row">
+
+      <div class="small-12 medium-4 large-5 columns">
+        <div class="ingedients">
+          <h4 class="ingredients">Ingredients</h4>
+          <ul>
+            <% @result[0]["ingredientLines"].each do |ingredient| %>
+            <li class="ingredients"><%= ingredient %></li>
+            <% end %>
+          </ul>
+        </div>
+      </div>
+
+      <div class="small-12 medium-4 large-2 columns">
+        <figure>
+          <img src="<%= @result[0]["image"] %>">
+          <figcaption>
+            Source: <%= @result[0]["source"] %>
+          </figcaption>
+        </figure>
+      </div>
+
+
+      <div class="small-12 medium-4 large-5 columns">
+        <div class="ingedients">
+          <h4 class="ingredients">Dietary Information</h4>
+          <ul class="ingredients">
+            <li>Yield: <%= @result[0]["yield"] %></li>
+            <li>Calories(all servings): <%= @result[0]["calories"] %></li>
+            <% @result[0]["dietLabels"].each do |label| %>
+            <li class="ingredients"><%= label %></li>
+            <% end %>
+            <% @result[0]["healthLabels"].each do |label| %>
+            <li class="ingredients"><%= label %></li>
+            <% end %>
+          </ul>
+        </div>
+      </div>
+
+    </div>
+
+
+
+
+    !-- <li class="pagination-previous disabled">Previous</li> -->
+    <li class="current"><span class="show-for-sr">You're on page</span>1</li>
+    <li class="current"><%= link_to "2", search_path(search_term: @search_term, from: 10)%></li>
+    <li class="current"><%= link_to "3", search_path(search_term: @search_term, from: 20)%></li>
+    <li class="current"><%= link_to "4", search_path(search_term: @search_term, from: 30)%></li>
+    <li class="current"><%= link_to "5", search_path(search_term: @search_term, from: 40)%></li>
+    <li class="current"><%= link_to "6", search_path(search_term: @search_term, from: 50)%></li>
+    <li class="current"><%= link_to "7", search_path(search_term: @search_term, from: 60)%></li>
+    <li class="current"><%= link_to "8", search_path(search_term: @search_term, from: 70)%></li>
+    <li class="current"><%= link_to "9", search_path(search_term: @search_term, from: 80)%></li>
+
+    # def display_recipe
+    #   @short_uri = @uri.split('#')[1]
+    # end
+    # No route matches [GET] "/recipes/
+    #
+    # http:%2F%2Fwww.edamam.com %2F ontologies%2Fedamam.owl %23recipe_57d41c954296c7332ee57e3f6bc6f99a"
+
+    # not encoded URI
+    # ("http://www.edamam.com/ontologies/edamam.owl  # recipe_57d41c954296c7332ee57e3f6bc6f99a")
+    # routes match URI
+    # "/recipes/http:%2F%2Fwww.edamam.com%2Fontologies%2Fedamam.owl %23 [recipe_57d41c954296c7332ee57e3f6bc6f99a"]
+    # encoded URI
+    # http://www.edamam.com/ontologies/edamam.owl    %23 recipe_57d41c954296c7332ee57e3f6bc6f99a
+
+
+    # Returns information about a specific recipe based on its ID ie. -r=http://www.edamam.com/ontologies/edamam.owl%23recipe_637913ec61d9da69eb451818c3293df2 This or the q parameter are required
+
+    # ingredientLines
+
+    # => [{"recipe"=>
+    #    {"uri"=>
+    #      "http://www.edamam.com/ontologies/edamam.owl#recipe_57d41c954296c7332ee57e3f6bc6f99a",
+    #     "label"=>"Baked Eggs",
+    #     "image"=>
+    #      "https://www.edamam.com/web-img/7c0/7c06d6352abacc41e169a954ebc3740e.jpg",
+    #     "source"=>"Leite's Culinaria",
+    #     "url"=>
+    #      "http://leitesculinaria.com/96610/recipes-baked-eggs.html",
+    #     "shareAs"=>
+    #      "http://www.edamam.com/recipe/baked-eggs-57d41c954296c7332ee57e3f6bc6f99a/eggs",
+    #     "yield"=>6.0,
+    #     "dietLabels"=>
+    #      ["Low-Carb", "Low-Sodium"],
+    #     "healthLabels"=>
+    #      ["Peanut-Free",
+    #       "Tree-Nut-Free",
+    #       "Soy-Free",
+    #       "Fish-Free",
+    #       "Shellfish-Free"],
+    #     "cautions"=>[],
+    #     "ingredientLines"=>
+    #      ["Vegetable oil or butter, for the muffin tin",
+    #       "6 large eggs (choose eggs of a very similar size)",
+    #       "2 tablespoons chopped, slightly undercooked bacon (figure 2 slices)",
+
+<div class="row">
+  <div class="column">
+    <div class="card">
+
+      <div class="card-divider">
+        <h3><%= link_to @result[0]["label"], @result[0]["shareAs"], :target => "_blank" %></h3>
+      </div>
+
+      <div class="card-section" id="left">
+        <img src="<%= @result[0]["image"] %>">
+      </div>
+
+      <div class="card-section" id="right">
+        <h4>Ingredients</h4>
+        <% @result[0]["ingredientLines"].each do |ingredient| %>
+        <ul>
+          <li><%= ingredient %></li>
+          <% end %>
+          <li><%= @result[0]["source"] %></li>
+        </ul>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<!--
+<div class="row" >
+  <div class="small-12">
+    <%#= page_entries_info @results %>
+    <%#= will_paginate @results %>
+  </div>
+</div> -->
+
+
+<!-- http://localhost:3000/recipes/search?utf8=%E2%9C%93&search_term=cheese&commit=SEARCH -->
+
+
+
+
+
+
+
+
+
+
+<h1>This is the Show Page</h1>
+
+<% test_uri = result.short_uri %>
+<%= test_uri %>
+
+Class: <%= result.class %>
+<%= result.inspect %>
+
+<%= form_tag recipe_path(result), method: "get" do %>
+<%= hidden_field_tag :uri, result.uri %>
+<%= submit_tag(result.label) %>
+<% end %>
+
+
+
+<h3><%= result.class %></h3>
+<h3>Index: <%= index %></h3>
+<h3><%= result.uri %> </h3>
+<h3><%= result.uri.class %></h3>
+
+
+INDEX STUFF THAT WORKS:
+
+<% @results.each_with_index do |result, index| %>
+
+<h3><%= link_to result.label, recipe_path(result.short_uri) %></h3>
+
+<h3><%= result.source %></h3>
+
+<img src="<%= result.image %>" >
+<% end %>
+
+
+<!-- results (hits) is an array, so here you're going through each piece of the array,
+recipe is the key to a hash,
+label, source etc. are keys in the inner hash -->
+<!-- recipe GET    /recipes/:id(.:format)      recipes#show -->
+<!-- <h3><%#= <h3><%= result["recipe"]["label"] %></h3>@results.parsed_response["hits"][0]["recipe"]["label"] %></h3>
+<h3><%#= @results.parsed_response.class %></h3>
+<h3><%#= @results.parsed_response["hits"].class %></h3>
+<h3><%#= @results.parsed_response["hits"][0]["recipe"]["source"] %></h3>
+
+<img src="<%#= @results.parsed_response["hits"][0]["recipe"]["image"] %>" >
+results is now an array  -->
+<!--
+{ "q" : "cheese", "from" : 0, "to" : 5,
+_______________
+"params" : { "sane" : [ ], "q" : [ "cheese" ], "from" : [ "0" ], "to" : [ "5" ]},
+___________________
+"more" : true, "count" : 122033, "hits" : [ {
+"recipe" : {
+"uri" : "http://www.edamam.com/ontologies/edamam.owl#recipe_421df807e21c65c842ec62870604aed3",
+"label" : "Three-Cheese Grilled Cheese",
+"image" : "https://www.edamam.com/web-img/01d/01dd082e4d080d5b9bb56e205c768190.jpg",
+"source" : "Leite's Culinaria",
+"url" : "http://leitesculinaria.com/83135/recipes-three-cheese-grilled-cheese.html",
+"shareAs" : "http://www.edamam.com/recipe/three-cheese-grilled-cheese-421df807e21c65c842ec62870604aed3/cheese",
+"yield" : 4.0,
+"dietLabels" : [ "Low-Carb" ],
+"healthLabels" : [ "Egg-Free", "Peanut-Free", "Tree-Nut-Free", "Soy-Free", "Fish-Free", "Shellfish-Free" ],
+"cautions" : [ ],
+"ingredientLines" : [ "8 slices baguette, cut on the diagonal (each about 1/3 inch thick and 3 inches from end to end)", "1 cup packed, shredded whole-milk mozzarella", "4 teaspoons fresh thyme, minced (optional)", "8 tablespoons freshly grated Parmesan", "4 tablespoons crumbled goat cheese", "4 thin slices smoked ham", "4 tablespoons (2 ounces) butter" ],
+"ingredients" : [ {
+"text" : "8 slices baguette, cut on the diagonal (each about 1/3 inch thick and 3 inches from end to end)",
+"quantity" : 8.0,
+"measure" : "slice",
+"food" : "baguette, cut",
+"weight" : 80.0
+}, {
+"text" : "1 cup packed, shredded whole-milk mozzarella",
+"quantity" : 1.0,
+"measure" : "cup",
+"food" : "packed, shredded whole-milk mozzarella",
+"weight" : 112.0
+}, {
+"text" : "8 tablespoons freshly grated Parmesan",
+"quantity" : 8.0,
+"measure" : "tablespoon",
+"food" : "freshly grated Parmesan",
+"weight" : 113.44000244140625
+}, {
+"text" : "4 tablespoons crumbled goat cheese",
+"quantity" : 4.0,
+"measure" : "tablespoon",
+"food" : "crumbled goat cheese",
+"weight" : 45.648929595947266
+}, {
+"text" : "4 thin slices smoked ham",
+"quantity" : 4.0,
+"measure" : "slice",
+"food" : "smoked ham",
+"weight" : 52.0
+}, {
+"text" : "4 tablespoons (2 ounces) butter",
+"quantity" : 4.0,
+"measure" : "tablespoon",
+"food" : "butter",
+"weight" : 56.69904708862305
+} ],
+"calories" : 1588.7701513290406,
+"totalWeight" : 459.78797912597656,
+"totalNutrients" : {
+"ENERC_KCAL" : {
+"label" : "Energy",
+"quantity" : 1588.7701513290406,
+"unit" : "kcal"
+}, -->
+
+
+
+
+
+
+
+
+
+Class: Recipe #<Recipe:0x007fd864648220 @label="Simple Spring Salad Recipe", @source="101 Cookbooks", @image="https://www.edamam.com/web-img/06b/06b84307cd559b1c610c560109df8ee0.jpg", @uri="http://www.edamam.com/ontologies/edamam.owl#recipe_8a0784ba05fc62b1aabe462f277425a2", @url="http://www.101cookbooks.com/archives/a-simple-spring-salad-recipe.html", @shareAs="http://www.edamam.com/recipe/simple-spring-salad-recipe-8a0784ba05fc62b1aabe462f277425a2/salad", @ingredientLines=["1 and 1/2 orange, juice only", "1/2 lemon, juice only", "1/2 small red onion, chopped", "1/4 cup extra virgin olive oil", "1/8 teaspoon fine grain salt", "4 big handfuls of salad greens, washed and dried", "1/2 cup walnut halves, toasted", "1/3 cup black olives, (the wrinkly, oily ones), pitted"]>
+<td>
+  <%= form_for Vote.new do |f| %>
+  <%= f.hidden_field :work_id, value: work.id %>
+  <%= f.hidden_field :user_id, value: session[:logged_in_user] %>
+  <%= f.submit class: "button"%>
+  <% end %>
+</td>
+<%= form_tag search_path, method: "get" do %>
+  <%= label_tag(:search, "Enter Search Term") %>
+  <%= text_field_tag(:search_term) %>
+  <%= submit_tag("SEARCH") %>
+<% end %>
+
+
+
+
+=> #<HTTParty::Response:0x7fafd5d48a50 parsed_response=[{"uri"=>"http://www.edamam.com/ontologies/edamam.owl#recipe_57d41c954296c7332ee57e3f6bc6f99a", "label"=>"Baked Eggs", "image"=>"https://www.edamam.com/web-img/7c0/7c06d6352abacc41e169a954ebc3740e.jpg", "source"=>"Leite's Culinaria", "url"=>"http://leitesculinaria.com/96610/recipes-baked-eggs.html", "shareAs"=>"http://www.edamam.com/recipe/baked-eggs-57d41c954296c7332ee57e3f6bc6f99a/-", "yield"=>6.0, "dietLabels"=>["Low-Carb", "Low-Sodium"], "healthLabels"=>["Peanut-Free", "Tree-Nut-Free", "Soy-Free", "Fish-Free", "Shellfish-Free"], "cautions"=>[], "ingredientLines"=>["Vegetable oil or butter, for the muffin tin", "6 large eggs (choose eggs of a very similar size)", "2 tablespoons chopped, slightly undercooked bacon (figure 2 slices)", "1/4 cup grated Parmesan (optional)", "Salt and freshly ground black pepper, to taste"], "ingredients"=>[{"text"=>"Vegetable oil or butter, for the muffin tin", "quantity"=>0.0, "measure"=>nil, "food"=>"Vegetable oil or butter", "weight"=>4.274870217132568}, {"text"=>"6 large eggs (choose eggs of a very similar size)", "quantity"=>6.0, "measure"=>"<unit>", "food"=>"large eggs", "weight"=>300.0}, {"text"=>"2 tablespoons chopped, slightly undercooked bacon (figure 2 slices)", "quantity"=>2.0, "measure"=>"tablespoon", "food"=>"bacon", "weight"=>14.328692436218262}, {"text"=>"Salt and freshly ground black pepper, to taste", "quantity"=>0.0, "measure"=>nil, "food"=>"Salt", "weight"=>1.8859721546173096}, {"text"=>"Salt and freshly ground black pepper, to taste", "quantity"=>0.0, "measure"=>nil, "food"=>"freshly ground black pepper", "weight"=>0.9429860773086548}], "calories"=>528.9073952325267, "totalWeight"=>320.11947449308, "totalNutrients"=>{"ENERC_KCAL"=>{"label"=>"Energy", "quantity"=>528.9073952325267, "unit"=>"kcal"}, "FAT"=>{"label"=>"Fat", "quantity"=>38.522669591187864, "unit"=>"g"}, "FASAT"=>{"label"=>"Saturated", "quantity"=>11.574606112353218, "unit"=>"g"}, "FATRN"=>{"label"=>"Trans", "quantity"=>0.16584541550557708, "unit"=>"g"}, "FAMS"=>{"label"=>"Monounsaturated", "quantity"=>16.5[2] pry(main)> @result = ApiMuncherWrapper.show_recipe("http://www.edamam.com/ontologies/edamam.owl#recipe_57d41c954296c7332ee57e3f6bc6f99a")
+Searching for specific recipe
+=> #<HTTParty::Response:0x7fafd5c5b250 parsed_response=[{"uri"=>"http://www.edamam.com/ontologies/edamam.owl#recipe_57d41c954296c7332ee57e3f6bc6f99a", "label"=>"Baked Eggs", "image"=>"https://www.edamam.com/web-img/7c0/7c06d6352abacc41e169a954ebc3740e.jpg", "source"=>"Leite's Culinaria", "url"=>"http://leitesculinaria.com/96610/recipes-baked-eggs.html", "shareAs"=>"http://www.edamam.com/recipe/baked-eggs-57d41c954296c7332ee57e3f6bc6f99a/-", "yield"=>6.0, "dietLabels"=>["Low-Carb", "Low-Sodium"], "healthLabels"=>["Peanut-Free", "Tree-Nut-Free", "Soy-Free", "Fish-Free", "Shellfish-Free"], "cautions"=>[], "ingredientLines"=>["Vegetable oil or butter, for the muffin tin", "6 large eggs (choose eggs of a very similar size)", "2 tablespoons chopped, slightly undercooked bacon (figure 2 slices)", "1/4 cup grated Parmesan (optional)", "Salt and freshly ground black pepper, to taste"], "ingredients"=>[{"text"=>"Vegetable oil or butter, for the muffin tin", "quantity"=>0.0, "measure"=>nil, "food"=>"Vegetable oil or butter", "weight"=>4.274870217132568}, {"text"=>"6 large eggs (choose eggs of a very similar size)", "quantity"=>6.0, "measure"=>"<unit>", "food"=>"large eggs", "weight"=>300.0}, {"text"=>"2 tablespoons chopped, slightly undercooked bacon (figure 2 slices)", "quantity"=>2.0, "measure"=>"tablespoon", "food"=>"bacon", "weight"=>14.328692436218262}, {"text"=>"Salt and freshly ground black pepper, to taste", "quantity"=>0.0, "measure"=>nil, "food"=>"Salt", "weight"=>1.8859721546173096}, {"text"=>"Salt and freshly ground black pepper, to taste", "quantity"=>0.0, "measure"=>nil, "food"=>"freshly ground black pepper", "weight"=>0.9429860773086548}], "calories"=>528.9073952325267, "totalWeight"=>320.11947449308, "totalNutrients"=>{"ENERC_KCAL"=>{"label"=>"Energy", "quantity"=>528.9073952325267, "unit"=>"kcal"}, "FAT"=>{"label"=>"Fat", "quantity"=>38.522669591187864, "unit"=>"g"}, "FASAT"=>{"label"=>"Saturated", "quantity"=>11.574606112353218, "unit"=>"g"}, "FATRN"=>{"label"=>"Trans", "quantity"=>0.16584541550557708, "unit"=>"g"}, "FAMS"=>{"label"=>"Monounsaturated", "quantity"=>16.5[3] pry(main)> @result.class
+=> HTTParty::Response
+[4] pry(main)> @result.count
+=> 1
+
+Parsed Response is an array which contains a hash
+Label
+Image
+Source
+URL
+shareAs
+yield
+dietLabels (array)
+healthLabels (array)
+cautions
+ingredientLines
+
+[5] pry(main)> @result.parsed_response
+=> [{"uri"=>
+   "http://www.edamam.com/ontologies/edamam.owl#recipe_57d41c954296c7332ee57e3f6bc6f99a",
+  "label"=>"Baked Eggs",
+  "image"=>
+   "https://www.edamam.com/web-img/7c0/7c06d6352abacc41e169a954ebc3740e.jpg",
+  "source"=>"Leite's Culinaria",
+  "url"=>
+   "http://leitesculinaria.com/96610/recipes-baked-eggs.html",
+  "shareAs"=>
+   "http://www.edamam.com/recipe/baked-eggs-57d41c954296c7332ee57e3f6bc6f99a/-",
+  "yield"=>6.0,
+  "dietLabels"=>
+   ["Low-Carb", "Low-Sodium"],
+  "healthLabels"=>
+   ["Peanut-Free",
+    "Tree-Nut-Free",
+    "Soy-Free",
+    "Fish-Free",
+    "Shellfish-Free"],
+  "cautions"=>[],
+  "ingredientLines"=>
+   ["Vegetable oil or butter, for the muffin tin",
+    "6 large eggs (choose eggs of a very similar size)",
+    "2 tablespoons chopped, slightly undercooked bacon (figure 2 slices)",
+    "1/4 cup grated Parmesan (optional)",
+    "Salt and freshly ground black pepper, to taste"],
+  "ingredients"=>
+   [{"text"=>
+      "Vegetable oil or butter, for the muffin tin",
+     "quantity"=>0.0,
+     "measure"=>nil,
+     "food"=>"Vegetable oil or butter",
+     "weight"=>4.274870217132568},
+    {"text"=>
+      "6 large eggs (choose eggs of a very similar size)",
+     "quantity"=>6.0,
+     "measure"=>"<unit>",
+     "food"=>"large eggs",
+     "weight"=>300.0},
+    {"text"=>
+      "2 tablespoons chopped, slightly undercooked bacon (figure 2 slices)",
+     "quantity"=>2.0,
+     "measure"=>"tablespoon",
+     "food"=>"bacon",
+     "weight"=>14.328692436218262},
+    {"text"=>
+      "Salt and freshly ground black pepper, to taste",
+     "quantity"=>0.0,
+     "measure"=>nil,
+     "food"=>"Salt",
+     "weight"=>1.8859721546173096},
+    {"text"=>
+      "Salt and freshly ground black pepper, to taste",
+     "quantity"=>0.0,
+     "measure"=>nil,
+     "food"=>"freshly ground black pepper",
+     "weight"=>0.9429860773086548}],
+  "calories"=>528.9073952325267,
+  "totalWeight"=>320.11947449308,
+  "totalNutrients"=>

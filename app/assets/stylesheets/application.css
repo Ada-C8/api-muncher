@@ -1,0 +1,199 @@
+/*
+* This is a manifest file that'll be compiled into application.css, which will include all the files
+* listed below.
+*
+* Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
+* vendor/assets/stylesheets directory can be referenced here using a relative path.
+*
+* You're free to add application-wide styles to this file and they'll appear at the bottom of the
+* compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+* files in this directory. Styles in this file should be added after the last require_* statement.
+* It is generally better to create a new file per style scope.
+*
+*= require_tree .
+*= require_self
+*= require foundation_and_overrides
+
+*/
+
+@import url('https://fonts.googleapis.com/css?family=Courgette');
+
+body {
+  background-color:
+  #150b02;
+}
+
+a {
+  text-align: center;
+  color: #fdbc6a;
+}
+
+h3 {
+  text-align: center;
+  color: #fdbc6a;
+}
+/*header */
+
+header {
+  background-color: #7b644f;
+}
+
+h2#main-title {
+  font-family: 'Courgette', cursive;
+  text-align: left;
+}
+
+h6 {
+  text-align: center;
+}
+
+
+#search_form {
+  /*border: 3px solid red;*/
+}
+
+#text_input {
+  /*border: 6px solid blue;*/
+  margin-left: 20%;
+  margin-top: 10px;
+  width: 50%;
+  float: left;
+  clear: left;
+}
+
+#submit_button {
+  /*border: 3px solid green;*/
+  margin-top: 10px;
+  float: right;
+  clear: right;
+}
+
+
+
+/*main search page */
+
+h1#main-title {
+  font-family: 'Courgette', cursive;
+  text-align: center;
+}
+
+.hero-section {
+  background-color: #671d01;
+  background: url("https://images.pexels.com/photos/54455/cook-food-kitchen-eat-54455.jpeg?w=1260&h=750&dpr=2&auto=compress&cs=tinysrgb") 50% no-repeat;
+  background-size: cover;
+  height: 100vh;
+  text-align: center;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  /*-webkit-align-items: center;
+  -ms-flex-align: center;
+  align-items: center;*/
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+}
+
+.hero-section .hero-section-text {
+  color: #fefefe;
+  padding-top: 30px;
+}
+
+.hero-section .hero-section-text h1 {
+  font-family: 'Courgette', cursive;
+}
+
+.hero-section .recipe-search {
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 0;
+  width: 35%;
+}
+
+.flash-status {
+  color: red;
+}
+
+/*search results page */
+
+.card {
+  text-align: center;
+}
+
+.card-divider {
+  margin-left: 0px;
+  margin-right: 0px;
+}
+
+.card h6 {
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+}
+
+.pagination {
+  margin-top: 1rem;
+}
+
+
+/*show page */
+
+
+#mainlink {
+  color: #fdbc6a;
+  margin-bottom: 5%;
+  margin-top: 5px;
+  text-align: center;
+}
+
+.ingredients {
+  color: #fdbc6a;
+}
+
+figure img {
+  margin-left: 15%;
+  margin-right: auto;
+}
+
+figure figcaption {
+  color: #fdbc6a;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+}
+/*footer*/
+
+.stick {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+}
+
+header, nav, footer {
+  flex-shrink: 0;
+}
+
+main {
+  flex: 1 0 auto; /* Use 1 0 auto instead of just 1 for backwards compatibility with other browsers */
+}
+
+.footer-bottom {
+  background-color: #0b0300;
+  padding: 1rem 0;
+}
+
+.footer-bottom p {
+  color: #fdbc6a;
+  clear: left;
+  float: left;
+  margin-bottom: 0;
+  width: 50%;
+}
+
+#edamam-badge {
+  border: 4px solid green;
+  height: auto;
+  clear: right;
+  float: right;
+  width: 30%;
+}

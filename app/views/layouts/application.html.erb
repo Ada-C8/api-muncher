@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <script src="https://developer.edamam.com/attribution/badge.js"></script>
+
+  <title><%= content_for?(:title) ? yield(:title) : "Especially Recipes" %></title>
+  <!-- <title><%#= full_title(yield(:title)) %> </title> -->
+  <%= stylesheet_link_tag    "application" %>
+  <%= javascript_include_tag "application", 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+</head>
+
+
+<div class="stick">
+
+  <body>
+  <% if flash[:result_text] or flash[:messages] %>
+  <section class="row status <%= flash[:status] %>">
+    <h3 class="flash-status"><%= flash[:status] == :failure ? "A problem occurred: " : "" %><%= flash[:result_text] %></h3>
+    <% if flash[:messages] %>
+    <ul>
+      <% flash[:messages].each do |name, problems| %>
+      <% problems.each do |problem| %>
+      <li><%= name %>: <%= problem %></li>
+      <% end %>
+      <% end %>
+    </ul>
+    <% end %>
+  </section>
+  <% end %>
+
+
+
+    <main>
+      <%= yield %>
+    </main>
+    <%= render 'layouts/footer' %>
+  </body>
+</div>
+
+</html>
+
+
+
+
+<!-- <div class="stick">
+<footer>My Footer</footer>
+</div>
+</div> -->
+<!--
+
+<footer>
+<div class="sticky-footer-css">
+<div class="row expanded flex-dir-column">
+<div class="columns sticky-footer-css-body text-center">
+<p>Body Content</p>
+</div>
+
+<div class="columns shrink footer text-center">
+
+<p>Footer</p>
+</div>
+
+</div>
+</div>
+</footer> -->

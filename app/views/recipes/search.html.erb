@@ -1,0 +1,42 @@
+<% provide(:title, "Search Results") %>
+<%= render 'layouts/header' %>
+
+<nav>
+
+  <ul class="pagination text-center" role="navigation" aria-label="Pagination">
+
+    <% if @from > 10 %>
+    <li id="next"><%= link_to "Previous Page", search_path(search_term: @search_term, from: @previous) %></li>
+    <% end %>
+
+    <% (1..9).each do |i| %>
+    <li class="current"><%= link_to "#{i}", search_path(search_term: @search_term,  from: i * 10)%></li>
+    <% end %>
+
+    <% if @from < 90 %>
+    <li id="next"><%= link_to "Next Page", search_path(search_term: @search_term, from: @from)%></li>
+    <% end %>
+  </ul>
+
+</nav>
+
+
+<div class="row small-up-1 medium-up-3">
+
+  <% @results.each_with_index do |result, index| %>
+
+  <div class="column">
+    <div class="card">
+      <div class="card-divider">
+        <h6><%= link_to result.label.truncate(25), recipe_path(result.short_uri) %></h6>
+      </div>
+      <div class="card-section">
+        <img src="<%= result.image %>">
+      </div>
+      <div class="card-section">
+        <p>Source: <%= result.source %></p>
+      </div>
+    </div>
+  </div>
+  <% end %>
+</div>

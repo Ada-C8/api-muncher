@@ -1,0 +1,49 @@
+<% provide(:title, "Show Recipe") %>
+<%= render 'layouts/header' %>
+
+
+
+<h3 class="row-column" id="mainlink"><%= link_to @result.label, @result.shareAs, :target => "_blank" %></h3>
+
+
+
+<div class="row">
+
+  <div class="small-12 medium-4 large-5 columns">
+    <div class="ingredients">
+      <h4>Ingredients</h4>
+      <ul>
+        <% @result.ingredientLines.each do |ingredient| %>
+        <li><%= ingredient %></li>
+        <% end %>
+      </ul>
+    </div>
+  </div>
+
+  <div class="small-12 medium-4 large-2 columns">
+    <figure>
+      <img src="<%= @result.image %>">
+      <figcaption class:"ingredients">
+        Source: <%= @result.source %>
+      </figcaption>
+    </figure>
+  </div>
+
+
+  <div class="small-12 medium-4 large-5 columns">
+    <div class="ingredients">
+      <h4>Dietary Information</h4>
+      <ul>
+        <li>Yield: <%= @result.amount %> Servings</li>
+        <li>Total Calories: <%= @result.calories %></li>
+        <% @result.dietLabels.each do |label| %>
+        <li><%= label %></li>
+        <% end %>
+        <% @result.healthLabels.each do |label| %>
+        <li><%= label %></li>
+        <% end %>
+      </ul>
+    </div>
+  </div>
+
+</div>
