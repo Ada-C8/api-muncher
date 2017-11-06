@@ -1,0 +1,11 @@
+
+<div class="row centered-form-container">
+  <section class="centered-form large-6 large-centered medium-10 medium-centered columns">
+    <h1>Uh-oh! You've Hit A 404 Error</h1>
+    <p>We can't find that recipe, please search for another:</p>
+    <%= form_tag recipes_path, method: :get do %>
+    <%= text_field_tag :query%>
+    <%= submit_tag 'Search Food', class: "button" %>
+    <% end %>
+  </section>
+</div>

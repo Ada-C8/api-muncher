@@ -1,0 +1,31 @@
+<section class="row">
+  <article class=" title-box large-12 columns">
+    <h1 class="text-center"><%= @recipe.name %></h1>
+    <hr>
+  </article>
+
+  <article class="large-6 columns show-image-container">
+    <%= image_tag @recipe.image, alt: @recipe.name %>
+  </article>
+  <article class="large-6 columns">
+    <h3>Recipe By: <%= @recipe.source %></h3>
+    <%= link_to(" View Recipe", @recipe.url, class: "button")%>
+    <p>Yield: <%= @recipe.yield %></p>
+    <h3>Ingredients:</h3>
+    <%= display_array_attributes(@recipe.ingredients) %>
+  </article>
+
+
+</section>
+
+<section class="row">
+  <article class="large-6 columns">
+    <h3>Dietary Information</h3>
+    <%= display_array_attributes(@recipe.dietary_info) %>
+  </article>
+
+  <article class="large-6 columns">
+    <h3>Health Information</h3>
+    <%= display_array_attributes(@recipe.health_info) %>
+  </article>
+</section>

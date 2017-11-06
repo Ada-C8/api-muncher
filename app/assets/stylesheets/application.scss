@@ -1,0 +1,96 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ *= require foundation_and_overrides
+
+ */
+
+@import url('https://fonts.googleapis.com/css?family=Libre+Franklin');
+
+@import url('https://fonts.googleapis.com/css?family=Archivo+Black');
+
+$primary-color: #e59647;
+$secondary-color: #ffe6c4;
+$button-color: #af5d0a;
+$button-hover-color: #773f07;
+
+main *, .button{
+  border-radius: 5px !important;
+}
+
+body{
+  background-color: $secondary-color;
+}
+
+.homepage, .not-found{
+  background-position: center;
+  background-size:cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+
+.homepage{
+  background-image: url("background_image.jpg");
+}
+
+.not-found{
+  background-image: url("error_background.jpg");
+}
+
+a:link.button, a:visited.button, h2 a:link, h2 a:visited, footer a:link, footer a:visited{
+  color: white;
+}
+
+p, li{
+  font-family: 'Libre Franklin', sans-serif !important;
+  border-radius: 10px !important;
+}
+
+h1, h2, h3, h4, h5{
+  font-family: 'Archivo Black', sans-serif !important;
+}
+
+header, footer{
+  background-color: $primary-color;
+}
+
+#site-title{
+  margin-top: 1rem;
+}
+
+#site-title h2{
+  padding-left: 1rem;
+  font-size: 1.8rem;
+}
+
+.button{
+  background-color: $button-color;
+}
+
+.button:hover{
+  background-color: $button-hover-color;
+}
+
+#nav-form{
+  margin-top: 10px;
+}
+
+footer{
+  width: 100vw;
+  position: fixed;
+  bottom: 0px;
+  text-align: center;
+  height: 50px;
+  padding-top: 10px;
+}

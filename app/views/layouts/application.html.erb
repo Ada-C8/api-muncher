@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title><%= t(:site_name) %></title>
+
+    <%= stylesheet_link_tag    "application" %>
+    <%= javascript_include_tag "application", 'data-turbolinks-track' => true %>
+    <%= csrf_meta_tags %>
+  </head>
+
+  <% if !@not_found.nil? %>
+  <body class="not-found">
+  <% elsif !@homepage.nil? %>
+  <body class="homepage">
+  <% else  %>
+  <body>
+  <% end %>
+
+    <header>
+      <nav class="row">
+        <div id="site-title" class="large-7 medium-5 small-12 columns">
+          <h2><%= link_to(t(:site_name), root_path) %></h2>
+        </div>
+
+        <% if @homepage.nil? && @not_found.nil?  %>
+          <div id="nav-form" class="large-5 medium-7 small-12 float-right row columns">
+
+            <%= form_tag recipes_path, method: :get do %>
+              <div class="large-8 small-7 columns">
+                <%= text_field_tag :query%>
+              </div>
+
+              <div class="large-4 small-5 columns">
+                <%= submit_tag 'Search Recipes', class: "button" %>
+              </div>
+            <% end %>
+
+          </div>
+        <% end %>
+
+      </nav>
+    </header>
+
+    <main>
+      <%= yield %>
+    </main>
+
+    <footer>
+      <div class="row">
+        <section class="large-12 columns">
+          Powered by <a href="https://www.edamam.com/">Edamam</a> |
+          &copy; <%= Date.today.year %> Isaac Del Rosario</p>
+      </section>
+    </footer>
+
+  </body>
+</html>

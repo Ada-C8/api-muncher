@@ -1,0 +1,27 @@
+<div class="row">
+
+<% if @recipes.count > 0 %>
+  <section class="large-12 columns">
+    <h4 class="text-center">Results For "<%= params[:query] %>"</h4>
+  </section>
+  <section id="recipes-container" class="row">
+  <% @recipes.each do |recipe| %>
+    <article class="large-4 medium-6 small-12 columns end recipe-container">
+      <article class="recipe-tile">
+        <%= image_tag recipe.image, alt: recipe.name %>
+        <h4><%= recipe.name %></h4>
+        <p>Source: <%= recipe.source %></p>
+        <%= link_to "More Info", recipe_path(recipe.id), class: "button" %>
+      </article>
+    </article>
+  <% end  %>
+
+  <%= will_paginate @recipes %>
+  </section>
+<% else  %>
+  <div class="no-recipe large-12 large-centered columns">
+    <h2 class="text-center">No recipes found for "<%= params[:query] %>"</h2>
+  </div>
+<% end %>
+
+</div>
