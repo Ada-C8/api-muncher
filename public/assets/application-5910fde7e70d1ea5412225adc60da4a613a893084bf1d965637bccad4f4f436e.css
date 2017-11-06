@@ -68,6 +68,7 @@ p a {
   height: 10vh;
   font-weight: bold;
   min-height: 100%;
+  position: bottom: 0;
 }
 
 .footer {
