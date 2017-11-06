@@ -1,24 +1,31 @@
-<h1 class="recipe-title"><%= @recipe.title %></h1>
+<h2 class="recipe-title"><%= @recipe.title %></h2>
 
-  <span class="recipe-image"><%= image_tag(@recipe.image, alt: "#{@recipe.title}") %></span>
+  <section class="recipe-image">
+    <div class="show-recipe-pic">
+      <%= image_tag(@recipe.image, alt: "#{@recipe.title}") %>
+    </div>
+  </section>
 
   <section class="ingredients">
-    <h3>Ingredients</h3>
-    <ul class="ingredient-info">
-      <% @recipe.ingredients.each do |ingredient| %>
-      <li><%= ingredient %></li>
-      <% end %>
-    </ul>
+    <div class="ingredient-info">
+      <h3>Ingredients</h3>
+        <ul>
+        <% @recipe.ingredients.each do |ingredient| %>
+        <li><%= ingredient %></li>
+        <% end %>
+      </ul>
+    </div>
   </section>
 
   <section class="dietary">
-    <h3>Dietary Information</h3>
-    <ul class="dietary-info">
-      <%= @recipe.dietary %>
-    </ul>
+    <div class="dietary-info">
+      <h3>Dietary Information</h3>
+      <ul>
+        <%= @recipe.dietary %>
+      </ul>
+    </div>
   </section>
-</div>
 
-<div class="recipe-link">
+<section class="recipe-link">
   <%= link_to "Click to get the full recipe for #{@recipe.title} ", @recipe.link, target: :_blank%>
-</div>
+</section>

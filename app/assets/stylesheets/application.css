@@ -1,20 +1,20 @@
 /*
- * This is a manifest file that'll be compiled into application.css, which will include all the files
- * listed below.
- *
- * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
- * vendor/assets/stylesheets directory can be referenced here using a relative path.
- *
- * You're free to add application-wide styles to this file and they'll appear at the bottom of the
- * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
- * files in this directory. Styles in this file should be added after the last require_* statement.
- * It is generally better to create a new file per style scope.
- *
- *= require_tree .
- *= require_self
- *= require foundation_and_overrides
+* This is a manifest file that'll be compiled into application.css, which will include all the files
+* listed below.
+*
+* Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
+* vendor/assets/stylesheets directory can be referenced here using a relative path.
+*
+* You're free to add application-wide styles to this file and they'll appear at the bottom of the
+* compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+* files in this directory. Styles in this file should be added after the last require_* statement.
+* It is generally better to create a new file per style scope.
+*
+*= require_tree .
+*= require_self
+*= require foundation_and_overrides
 
- */
+*/
 
 /* --------------------------- */
 /* -------- All Around ------- */
@@ -63,4 +63,72 @@ li {
 input[type='text'] {
   border-radius: 75px;
   padding-left: 15px;
+}
+
+/* --------------------------- */
+/* ------- Pagination -------- */
+/* --------------------------- */
+
+
+
+/* --------------------------- */
+/* ---------- Footer --------- */
+/* --------------------------- */
+
+.footer {
+  position: bottom;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  padding: 1rem;
+  background-color: black;
+  text-align: center;
+  color: white;
+}
+
+/* --------------------------- */
+/* ---------- Index ---------- */
+/* --------------------------- */
+
+.recipes-list {
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.recipe-links {
+  display: inline-block;
+  margin: 30px 0;
+}
+
+.recipe-links p:last-child {
+  width: 300px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.recipe-pic {
+  border: 6px solid black;
+  display: inline-block;
+  width: 300px;
+  height: 300px;
+}
+
+/* --------------------------- */
+/* ---------- Show ----------- */
+/* --------------------------- */
+
+
+.recipe-link {
+  text-align: center;
+  padding: 20px 0;
+  margin: 0;
+  color: #454950;
+}
+
+.recipe-image {
+  border: 6px solid black;
+  display: inline-block;
+  width: 300px;
+  height: 300px;
 }
