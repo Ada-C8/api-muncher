@@ -1,5 +1,5 @@
 require "httparty"
-require 'pry'
+# require "pry"
 
 class EdamamApiWrapper
   BASE_URL = "https://api.edamam.com/search?"
