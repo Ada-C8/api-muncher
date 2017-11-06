@@ -1,4 +1,7 @@
-<div class="row">
+<header class="row">
+  <% render partial: 'header' %>
+</header>
+<section class="row">
   <div class="medium-4 medium-offset-2 columns">
     <h2><%= @recipe.name %><br>
     <small><%= link_to @recipe.source, @recipe.url %></small></h2>
@@ -15,8 +18,8 @@
       </li>
     </ul>
   </div>
-</div>
-<div class="row">
+</section>
+<article class="row">
   <div class="columns medium-6 offset-medium-6">
     <% @recipe.diet.each do |d| %>
       <ul class="inline-li inline">
@@ -29,7 +32,7 @@
       </ul>
     <% end %>
   </div>
-</div>
+</article>
 
 <!-- <span>Results</span>
 <ul>
