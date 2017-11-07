@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>ApiMuncher</title>
+    <%= csrf_meta_tags %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <link href="https://fonts.googleapis.com/css?family=Rozha+One" rel="stylesheet">
+  </head>
+
+  <body class="row">
+
+    <header class="row">
+
+      <h1 class="small-12 medium-12 medium-text-center column"> <%= link_to "Recettes Muncher", root_path %></h1>
+
+
+      <section class="menu clearfix">
+        <% if session[:user_id] %>
+          <div class="menu-dropdown right">
+
+            <section class="menu-dropbtn">
+              <div id="bar1"></div>
+              <div id="bar2"></div>
+              <div id="bar3"></div>
+            </section>
+            <div class="menu-dropdown-content ">
+            <%= link_to("Log out", logout_path, method: :post, class: "button") %>
+            <%= link_to("My Favorites", favorites_path, class: "button") %>
+            </div>
+          </div>
+        <% else %>
+          <div class="menu-dropdown right">
+
+            <button id="login-button">LOGIN</button>
+            <div class="menu-dropdown-content">
+            <%= link_to("GitHub", github_login_path(:provider => "github"), class: "button") %>
+            <%= link_to("Google", google_login_path(:provider => "google_oauth2"), class: "button") %>
+            <%= link_to("Facebook", facebook_login_path(:provider => "facebook"), class: "button") %>
+            </div>
+          </div>
+        <% end %>
+      </section>
+
+
+
+
+    </header>
+
+    <main class="row">
+      <img src="/images/pinapples.jpeg" alt="pinapples" class="bckg-image small-12 column">
+      <section class="flash <%= flash[:status] %>">
+          <p><%= flash[:message] %></p>
+          <ul>
+            <% if flash[:details] %>
+              <% flash[:details].each do |field, problems| %>
+                <% problems.each do |problem| %>
+                  <li> <strong><%= field.capitalize %> </strong> <%= problem %></li>
+                  <% end %>
+                <% end %>
+              <% end %>
+          </ul>
+        </section>
+
+        <section class="search-bar">
+
+          <%= form_tag recettes_path, method: "get" do %>
+            <section class="small-12 medium-8 small-centered columns">
+              <%= text_field_tag(:item) %>
+            </section>
+            <br>
+            <% if session[:user_id] %>
+
+              <section id="recent-search" class="small-12 medium-8 small-centered column">
+                <span>Your recent search: </span>
+                <% unless User.find_by(id: session[:user_id]) == nil || User.find_by(id: session[:user_id]).recent_search == [] %>
+                  <% User.find_by(id: session[:user_id]).recent_search.each do |term|%>
+                    <% unless term == nil %>
+                      <span><%= link_to term.capitalize, recettes_path(:item => term) %>,</span>
+                      <% end %>
+                    <% end %>
+                  <% end %>
+              </section>
+
+
+
+
+              <section class="so-dropdown">
+                <section class="so-dropbtn">More options:
+                  <div class="so-dropdown-content">
+                    <section class="diet-options small-12 medium-8 small-center column">
+                      <p>Diet options:</p>
+                        <div class="left">
+                          <%= check_box_tag :balanced, :balanced %><%= label_tag :balanced %>
+                        </div>
+
+                      <div class="left">
+                        <%= check_box_tag :"high-protein", :"high-protein" %><%= label_tag :"high-protein" %>
+                      </div>
+
+                      <div class="left">
+                        <%= check_box_tag :"low-fat", :"low-fat" %><%= label_tag :"low-fat" %>
+                      </div>
+
+                      <div class="left">
+                        <%= check_box_tag :"low-carb", :"low-carb" %><%= label_tag :"low-carb" %>
+                      </div>
+                      <div class="spacer">
+                      </div>
+
+                    </section>
+                    <br>
+                    <section class="diet-restrictions small-12 medium-8 small-center column">
+                      <p>Diet restrictions:</p>
+                      <div class="left">
+                        <%= check_box_tag :vegan, :vegan %><%= label_tag :vegan %>
+                      </div>
+
+                      <div class="left">
+                        <%= check_box_tag :vegetarian, :vegetarian %><%= label_tag :vegetarian %>
+                      </div>
+
+                      <div class="left">
+                        <%= check_box_tag :"low-sugar", :"low-sugar" %><%= label_tag :"low-sugar" %>
+                      </div>
+
+                      <div class="left">
+                        <%= check_box_tag :"peanut-free", :"peanut-free" %><%= label_tag :"peanut-free" %>
+                      </div>
+
+                      <div class="left">
+                        <%= check_box_tag :"tree-nut-free", :"tree-nut-free" %><%= label_tag :"tree-nut-free" %>
+                      </div>
+
+                      <div class="left">
+                        <%= check_box_tag :"alcohol-free", :"alcohol-free" %><%= label_tag :"alcohol-free" %>
+                      </div>
+                      <div class="spacer">
+                      </div>
+
+                    </section>
+                 </div>
+
+             </section>
+
+            </section>
+
+            <% end %>
+
+            <%#= submit_tag("Search") %>
+
+          <% end %>
+        </section>
+
+
+
+        <%= yield %>
+    </main>
+    <div class="footer">Api provided by Edamam.</div>
+  </body>
+</html>

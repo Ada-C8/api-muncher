@@ -1,0 +1,54 @@
+// Place all the styles related to the Recettes controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+ul article.recipe-box.columns {
+  background-color: rgba(255, 255, 255, 0.8);
+  width: 250px;
+  height: 300px;
+  margin: 10px;
+  border-radius: 10px;
+  float: left;
+  padding-left: 0;
+  padding-right: 0;
+}
+.columns:last-child:not(:first-child) {
+     float: left;
+}
+
+
+
+
+
+
+//
+// .medium-up-3 > .column:nth-of-type(3n+1), .medium-up-3 > .columns:nth-of-type(3n+1) {
+//     clear: none;
+// }
+// .small-up-1 > .column:nth-of-type(1n+1), .small-up-1 > .columns:nth-of-type(1n+1) {
+//     clear: none;
+// }
+ul li {
+  list-style: none;
+}
+ul li img {
+  // height: 150px;
+  width: 100%;
+  clip: rect(250px,250px,150px,250px);
+  border-radius: 10px 10px 0 0;
+
+  margin-right: auto;
+  margin-left: auto;
+}
+
+section.pagination {
+
+  padding-top: 20px;
+  padding-bottom: 20px;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.search-results {
+  padding-left: 35px;
+}

@@ -1,0 +1,13 @@
+<h1>Your favorites</h1>
+
+<% if @user.my_favorites.empty? %>
+  <p>No favorites yet!</p>
+<% else %>
+  <ul class="row small-up-1 medium-up-3">
+    <% @user.my_favorites.each do |favorites_array| %>
+      <article class="recipe-box columns">
+        <li><img src="<%= favorites_array[2] %>" alt="<%= favorites_array[0] %>"></li>
+        <li><h4><%= link_to(favorites_array[0], recette_path() + "?uri=#{URI.encode(favorites_array[1])}") %></h4>/li>
+      </article>
+    <% end %>
+<% end %>

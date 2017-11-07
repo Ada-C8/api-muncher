@@ -1,0 +1,26 @@
+
+<% unless params[:item] == nil %>
+  <section class="search-results small-12 medium-12">
+    <h5>Results for "<%= params[:item].capitalize %>"</h5>
+  </section>
+<% end %>
+
+
+<section class="result-pagination small-12 medium-12 column">
+  <%= will_paginate @recipes %>
+</section>
+
+<ul class="medium-center row">
+  <% if @recipes.count > 0 %>
+    <% @recipes.each do |recipe| %>
+      <article class="recipe-box small-12 medium-6 large-4 columns">
+        <li><img src="<%= recipe.image %>" alt="<%= recipe.title %>"></li>
+        <li><h4><%= link_to recipe.title, recette_path() + "?uri=#{URI.encode(recipe.uri)}" %></h4></li>
+      </article>
+    <% end %>
+  <% end %>
+</ul>
+
+<section class="result-pagination small-12 medium-12 column">
+  <%= will_paginate @recipes %>
+</section>

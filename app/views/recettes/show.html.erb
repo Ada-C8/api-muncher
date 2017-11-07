@@ -1,0 +1,94 @@
+<h1><%=@recipe.title%></h1>
+<% unless @recipe.source == nil %>
+  <p>By <%=@recipe.source%></p>
+<% end %>
+
+<img src="<%= @recipe.image %>" alt="<%= @recipe.title %>">
+<%= link_to "See the original recipe", @recipe.url, class: "button" %>
+<% if session[:user_id] %>
+  <% found = false %>
+  <% User.find_by(id: session[:user_id]).my_favorites.each do |favorite_array| %>
+    <% if favorite_array[0] == @recipe.title %>
+      <% found = true %>
+    <% end %>
+  <% end %>
+  <% if found == false %>
+    <%= link_to "Add to favorites", favorite_path(session[:user_id]) + "?image=#{@recipe.image}" + "&title=#{@recipe.title}" + "&uri=#{URI.encode(@recipe.uri)}", class: "button" %>
+  <% else %>
+    <%= link_to "Remove from favorites", favorite_path(session[:user_id]) + "?image=#{@recipe.image}" + "&title=#{@recipe.title}" + "&uri=#{URI.encode(@recipe.uri)}", class: "button" %>
+  <% end %>
+<% end %>
+
+<h4><%= @recipe.calories %></h4>
+
+<h4>Dietary Labels:</h4>
+<% if @recipe.diet_labels == nil && @recipe.health_labels == nil %>
+  No labels
+<% else %>
+  <% count = 0 %>
+  <% @recipe.diet_labels.each do |label| %>
+    <% count += 1 %>
+    <% unless @recipe.health_labels == nil && count == @recipe.diet_labels.length %>
+      <span><%= label %>,</span>
+    <% else %>
+      <span><%= label %></span>
+    <% end %>
+  <% end %>
+  <% count = 0 %>
+  <% @recipe.health_labels.each do |label| %>
+    <% count += 1 %>
+    <% unless count == @recipe.health_labels.length %>
+      <span><%= label %>,</span>
+    <% else %>
+      <span><%= label %></span>
+    <% end %>
+  <% end %>
+<% end %>
+
+<% unless @recipe.allergies == nil %>
+  <h4>Allergy concerns:</h4>
+  <% count = 0 %>
+  <% @recipe.allergies.each do |allergy| %>
+    <% count += 1 %>
+    <% unless count == @recipe.allergies.length %>
+      <span><%= allergy %>,</span>
+    <% else %>
+      <span><%= allergy %></span>
+    <% end %>
+  <% end %>
+<% end %>
+
+<h3>Ingredients</h3>
+<ul>
+  <% @recipe.ingredients.each do |ingredient| %>
+  <li><%= ingredient %></li>
+  <% end %>
+</ul>
+
+<h3>Nutrients</h3>
+
+<table>
+  <tr>
+    <th>Nutrient</th>
+    <th>Amount</th>
+    <th>Daily need</th>
+  </tr>
+  <% @recipe.nutrients.each do |nutrient_hash| %>
+    <% unless nutrient_hash["total"].to_i == 0 %>
+      <tr>
+        <th><%= nutrient_hash["label"] %></th>
+        <th><%= nutrient_hash["total"].to_i.to_s %><%= nutrient_hash["unit"] %></th>
+          <% found = false %>
+          <% @recipe.dailyneed.each do |dailyneed_hash| %>
+            <% if dailyneed_hash[1]["label"] == nutrient_hash["label"] %>
+              <% found = true %>
+              <th><%= dailyneed_hash[1]["quantity"].to_i.to_s %><%= dailyneed_hash[1]["unit"] %></th>
+            <% end %>
+          <% end %>
+          <% if found == false %>
+            <th>N/A</th>
+          <% end %>
+      </tr>
+    <% end %>
+  <% end %>
+</table>
