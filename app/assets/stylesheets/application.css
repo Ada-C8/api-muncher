@@ -30,7 +30,8 @@ body {
 }
 
 body.home {
-  background-image: url(./images/chocmint.jpg) no-repeat fixed center;
+  background-image: url(chocmint.jpg);
+  background-position: 20% 90%;
   background-size: cover;
   background-repeat: no-repeat;
   overflow: hidden;
@@ -90,13 +91,24 @@ input[type='text'] {
   bottom: 0;
   left: 0;
   padding: 1rem;
-  background-color: black;
+  background-color: #281305;
   text-align: center;
   color: white;
 }
 
 main {
   min-height: 40vh;
+}
+
+p.copyright a {
+  color: #70bc0d;
+}
+p.copyright {
+  color: white;
+}
+
+p.edamam {
+  color: white;
 }
 
 /* --------------------------- */
