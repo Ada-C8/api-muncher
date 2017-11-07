@@ -14,8 +14,78 @@
  *= require_self
  *= require foundation_and_overrides
 
+
  */
 
 body {
-  background-image: url("../assets/waffle.jpg");
+   /*background-image: url("https://images.unsplash.com/photo-1454944338482-a69bb95894af?auto=format&fit=crop&w=1504&q=60&ixid=dW5zcGxhc2guY29tOzs7Ozs%3D");
+   background-repeat: no-repeat;*/
+   /*background-size: cover;*/
+   background-color: #FFFFFF;
+   height: 100vh;
+   width: 100vw;
+   background-attachment: fixed;
+   font-size: 1.5em;
+   text-align: center;
+   font-family: 'Sumana', serif;
+ }
+
+ /*.button {
+   text-align: center;
+   border-radius: 10px;
+   padding: 20px;
+   background-color: orange;
+ }*/
+
+ h1{
+   font-family: 'Pacifico', cursive;
+   color: #36558F;
+ }
+
+h2, h3 {
+  font-family: 'Sumana', serif;
+
+  color: #564256;
+}
+
+h3 {
+  color: #3891A6;
+}
+
+p a {
+   color: #564256;
+  }
+
+ h3 a {
+   color: #A40E4C;
+ }
+
+p a:hover {
+  color: #E76D83;
+}
+
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+#attribution {
+  background-color: #23375c;
+  width: 80%;
+  margin-left: 10%;
+}
+
+.search-text {
+  text-align: center;
+}
+
+input#item {
+  border-radius: 15px;
+}
+
+.button {
+  border-radius: 10px;
+  padding: 10px;
+  background-color: #7FDBFF;
 }
