@@ -1,6 +1,12 @@
-show details
+<h2><%= @recipe.label %></h2>
 
-    <h3><%= @recipe.label %></h3>
-    <h3><%= @recipe.image %></h3>
-    <!-- <h3><%#= @recipe.healthLabels %></h3>
-    <h3><%#= @recipe.ingredientLines %></h3> -->
+<p><img src="<%= @recipe.image %>" alt="food image"></p>
+<h3><%= link_to( "Original Recipe", @recipe.url ) %></h3>
+<h3>Ingredients</h3>
+  <% @recipe.ingredients.each do |ingredient| %>
+    <p><%= ingredient %></p>
+  <% end %>
+<h3>Dietary Labels</h3>
+  <% @recipe.diet_labels.each do |diet| %>
+    <p><%= diet %></p>
+  <% end %>

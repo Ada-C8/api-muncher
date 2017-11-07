@@ -46,8 +46,8 @@ class EdamamWrapper
       api_params["label"],
       api_params["image"],
       api_params["url"],
-      # api_params["healthLabels"],
-      # api_params["ingredientLines"]  
+      api_params["ingredientLines"],
+      api_params["dietLabels"]
     )
   end
 
