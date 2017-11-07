@@ -20,6 +20,10 @@ body {
   margin: 0 auto;
   width: 700px;
 }
+
+a {
+  color: #CC6699;
+}
  .search {
    margin: 0 auto;
    /*text-align: center;*/
