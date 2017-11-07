@@ -1,0 +1,30 @@
+<h2><%= @recipe.name %></h2>
+
+<%= image_tag @recipe.image %>
+
+<p>Find the original recipe at: <%= link_to @recipe.url, @recipe.url, target: :_blank %></p>
+
+<h4>Ingredients</h4>
+<% @recipe.ingredient_lines.each do |ingredient_line| %>
+  <li><%= ingredient_line %></li>
+<% end %>
+
+
+
+
+<h4>Calories:</h4>
+<%= @recipe.calories.round(0) %> calories
+
+<h4>Dietary Information</h4>
+
+<% if @recipe.diet_labels %>
+  <% @recipe.diet_labels.each do |label| %>
+    <li><%= label %></li>
+  <% end %>
+<% end %>
+
+<% if @recipe.health_labels %>
+  <% @recipe.health_labels.each do |label| %>
+    <li><%= label %></li>
+  <% end %>
+<% end %>

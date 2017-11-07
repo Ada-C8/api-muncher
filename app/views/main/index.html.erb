@@ -1,0 +1,16 @@
+<section class="search">
+    <%= form_tag(recipes_path, method: :get) do %>
+      <%= label_tag(:query, "Search for:") %>
+      <%= text_field_tag(:searchbar) %>
+      <%= submit_tag("Search", class: "button search") %>
+    <% end %>
+</section>
+
+<section class="recipe-list row">
+    <% @recipes.each do |recipe| %>
+      <div class="small-2 medium-4 columns">
+        <%= link_to recipe.name, recipe_path(uri: recipe.uri) %>
+        <%= image_tag recipe.image %>
+      </div>
+    <% end %>
+</section>
