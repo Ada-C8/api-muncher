@@ -1,15 +1,20 @@
+<section class="content" >
 <h1> <%= @recipe.label %> </h1>
 
-<img src=<%= @recipe.image %>
-
-<h3> Ingredientes </h3>
-<ol>
+<div class="small-12 medium-6 large-4 columns end" >
+<img src=<%= @recipe.image %> >
+</div>
+<h3>Ingredientes </h3>
+<div class="small-12 medium-8 large-6 columns " >
+<ul>
   <% @recipe.ingredientLines.each do |line| %>
   <li>
     <%= line %>
   </li>
   <% end %>
-</ol>
+</ul>
+</div>
+
 
 
 
@@ -35,7 +40,5 @@
   <% end %>
 <%end%>
 
-
-<%= @recipe.dietLabels %>
-
 <p><%= link_to "Detalles de esta receta", @recipe.url, :target => "_blank" %></p>
+<section>
