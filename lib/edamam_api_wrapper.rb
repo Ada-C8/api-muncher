@@ -43,15 +43,19 @@ class EdamamApiWrapper
     url = BASE_URL + "r=" + RECIPE_URL + (recipe_uri)
 
     data = HTTParty.get(url)
-
-    Recipe.new(
-      data[0]["uri"],
-      data[0]["label"],
-      data[0]["image"],
-      data[0]["ingredientLines"],
-      data[0]["dietLabels"],
-      data[0]["url"]
-    )
+    if data[0]
+      single_recipe =
+      Recipe.new(
+        data[0]["uri"],
+        data[0]["label"],
+        data[0]["image"],
+        data[0]["ingredientLines"],
+        data[0]["dietLabels"],
+        data[0]["url"]
+      )
+      return single_recipe
+    else
+      return nil
+    end
   end
-
 end
