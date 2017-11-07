@@ -2,6 +2,7 @@ class EdamamApiWrapper
   BASE_URL = "https://api.edamam.com/search?"
   EDAMAM_KEY = ENV["EDAMAM_KEY"]
   EDAMAM_ID = ENV["EDAMAM_ID"]
+  BASE_URI = "r=http://www.edamam.com/ontologies/edamam.owl%23recipe_"
 
   class ApiError < StandardError
   end
@@ -33,7 +34,7 @@ class EdamamApiWrapper
     encoded_uri = URI.encode(uri)
     # construct the url
 
-    url = BASE_URL + "http://www.edamam.com/ontologies/edamam.owl#recipe_" + "r=" + encoded_uri + "&app_id=" + EDAMAM_ID + "&app_key=" + EDAMAM_KEY
+    url = BASE_URL + BASE_URI + encoded_uri + "&app_id=" + EDAMAM_ID + "&app_key=" + EDAMAM_KEY
     # make httparty request
 
     data = HTTParty.get(url).parsed_response
@@ -58,7 +59,7 @@ class EdamamApiWrapper
     # => "http://www.edamam.com/ontologies/edamam.owl#recipe_8643e0c3105bcb0d3c3a417308a09c03"
     return Recipe.new(
       name: raw_recipe["label"],
-      uri: raw_recipe["uri"],
+      uri: raw_recipe["uri"][-32..-1],
       url: raw_recipe["url"],
       ingredients: raw_recipe["ingredients"],
       image: raw_recipe["image"],
