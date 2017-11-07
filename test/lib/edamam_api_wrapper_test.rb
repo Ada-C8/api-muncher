@@ -18,6 +18,14 @@ describe EdamamApiWrapper do
         recipes.must_equal []
       end
     end
+
+    it "Will return an empty array if gibberish is provided." do
+      VCR.use_cassette("recipes") do
+        search = "cjldksjafajfgjhakgj"
+        recipes = EdamamApiWrapper.list_recipes(search)
+        recipes.must_equal []
+      end
+    end
   end
 
   describe "self.show_recipe" do

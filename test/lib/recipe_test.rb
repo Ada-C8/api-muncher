@@ -18,4 +18,9 @@ describe "Recipe" do
     recipe.dietary.must_equal "dietary"
     recipe.link.must_equal "link"
   end
+
+  it "Must have 6 parameters." do
+    proc{Recipe.new}.must_raise ArgumentError
+    proc{Recipe.new("uri", "title", "image", "ingredients", "dietary")}.must_raise ArgumentError
+  end
 end

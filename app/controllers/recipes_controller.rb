@@ -4,9 +4,11 @@ require_dependency '../../lib/recipe'
 class RecipesController < ApplicationController
 
   def index
-    if params[:search_word]
 
-      @recipes = EdamamApiWrapper.list_recipes(params[:search_word]).paginate(:page => params[:page], :per_page => 9)
+    @recipes = EdamamApiWrapper.list_recipes(params[:search_word]).paginate(:page => params[:page], :per_page => 9)
+
+    if @recipes.empty?
+      redirect_to root_path
     end
   end
 
