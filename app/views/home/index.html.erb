@@ -1,0 +1,16 @@
+<div id="main-image">
+  <img src="https://www.foodiesfeed.com/wp-content/uploads/2017/07/woman-pouring-sugar-over-her-waffle.jpg">
+</div>
+
+  <h1>GRUB</h1>
+  <div class="row">
+      <%= form_tag(recipes_path, :method => "get", id: "search-form") do %>
+        <div class="small-7 small-centered medium-5 medium-centered large-4 large-centered columns">
+          <%= label_tag :item, "Find the Flavor ....", class: "search-heading", class: "search-heading" %>
+          <%= text_field_tag :item, params[:item], placeholder: "Search Recipes", class: "search-text"%>
+        </div>
+        <div "small-3 medium-2 large-1 columns">
+          <%= submit_tag "Get Recipe", class: "button" %>
+        </div>
+      <% end %>
+    </div>
