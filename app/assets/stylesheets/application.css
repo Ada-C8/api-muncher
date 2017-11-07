@@ -15,7 +15,12 @@
  */
 
 footer {
-  position: absolute;
-  background-color: yellow;
+  position: relative;
+  bottom: 0;
+  background-color: #540032;
   text-align: center;
+}
+
+footer p {
+  color: white;
 }

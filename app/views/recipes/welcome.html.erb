@@ -1,6 +1,1 @@
-<h1>This is a recipe finder application</h1>
-<%= form_tag(recipes_path, method: :get) do %>
-  <%= label_tag(:search_term, "Enter Ingredient") %>
-  <%= text_field_tag(:search_term) %>
-  <%= submit_tag('Find recipes') %>
-<% end %>
+  <%= render partial: 'form' %>

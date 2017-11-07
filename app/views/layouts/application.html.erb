@@ -8,11 +8,16 @@
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
-  <body>
-    <%= yield %>
-  </body>
+  <header class="small-12 columns">
+      <h1>API Muncher</h1>
+  </header>
 
-  <footer class="small-12 columns" >
-  <p>Powered by Edamam</p>
-  </footer>
+    <body>
+
+      <%= yield %>
+    </body>
+
+    <footer class="small-12 columns" >
+    <p>Powered by Edamam</p>
+    </footer>
 </html>
