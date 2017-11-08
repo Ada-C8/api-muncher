@@ -21,9 +21,9 @@ describe Recipe do
     proc { Recipe.new("") }.must_raise ArgumentError
   end
 
-  it "tracks all the arguments" do
+  it "tracks all the arguments and id" do
     recipe_data = {
-      uri: "test uri",
+      uri: "test_uri",
       name: "test name",
       source: "test source",
       link: "test link",
@@ -41,5 +41,7 @@ describe Recipe do
     recipe.image.must_equal recipe_data[:image]
     recipe.ingredients.must_equal recipe_data[:ingredients]
     recipe.dietary.must_equal recipe_data[:dietary]
+
+    recipe.id.must_equal "uri"
   end
 end

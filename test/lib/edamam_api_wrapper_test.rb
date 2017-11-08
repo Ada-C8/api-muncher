@@ -13,13 +13,11 @@ describe EdamamApiWrapper do
       end
     end
 
-    # raises ArgumentError instead
-    
-    # it "raises an ApiError when the credentials are bad" do
-    #   VCR.use_cassette("no recipes") do
-    #     proc { EdamamApiWrapper.search_recipes("fish", "invalid_app_id", "invalid_app_key") }.must_raise EdamamApiWrapper::ApiError
-    #   end
-    # end
+    it "raises an ApiError when the credentials are bad" do
+      VCR.use_cassette("no recipes") do
+        proc { EdamamApiWrapper.search_recipes("fish", "invalid_app_id", "invalid_app_key") }.must_raise EdamamApiWrapper::ApiError
+      end
+    end
   end
 
   describe "show_recipe" do
@@ -28,13 +26,6 @@ describe EdamamApiWrapper do
         uri = "637913ec61d9da69eb451818c3293df2"
         recipe = EdamamApiWrapper.show_recipe(uri)
         recipe.must_be_kind_of Recipe
-      end
-    end
-
-    it "raises an ApiError when invalid id" do
-      VCR.use_cassette("not_found") do
-        uri = "invalid_id"
-        proc { EdamamApiWrapper.show_recipe(uri) }.must_raise EdamamApiWrapper::ApiError
       end
     end
   end

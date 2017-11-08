@@ -5,13 +5,15 @@ class EdamamApiWrapper
   BASE_URL = "https://api.edamam.com/search?"
   SEARCH_URL = "q="
   SHOW_URL = "r=http://www.edamam.com/ontologies/edamam.owl%23recipe_"
-  CRED_URL = "&app_id=#{ENV["APP_ID"]}&app_key=#{ENV["APP_KEY"]}"
+  TOKEN_ID = ENV["APP_ID"]
+  TOKEN_KEY = ENV["APP_KEY"]
+  CRED_URL = "&app_id=#{TOKEN_ID}&app_key=#{TOKEN_KEY}"
   NUMBER_URL = "&from=0&to=900"
 
   class ApiError < StandardError; end
 
-  def self.search_recipes(search)
-    url = BASE_URL + SEARCH_URL + "#{search}" + CRED_URL + NUMBER_URL
+  def self.search_recipes(search, token_id=TOKEN_ID, token_key=TOKEN_KEY)
+    url = BASE_URL + SEARCH_URL + "#{search}" + "&app_id=#{token_id}&app_key=#{token_key}" + NUMBER_URL
     response = HTTParty.get(url)
 
     check_status(response)
@@ -36,8 +38,6 @@ class EdamamApiWrapper
     if response.present?
       recipe = create_recipe(response[0])
       return recipe
-    else
-      raise ApiError.new("Recipe does not exist")
     end
   end
 
