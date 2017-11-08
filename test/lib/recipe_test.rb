@@ -22,5 +22,8 @@ describe Recipe do
       Recipe.new "test", "test", "test", "test", "test", "test"
     }.must_raise ArgumentError
 
+    proc {
+      Recipe.new 1, 1, 1, 1, 1, 1
+    }.must_raise ArgumentError
   end
 end

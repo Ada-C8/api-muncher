@@ -17,7 +17,7 @@ class EdamamApiWrapper
     # instantiating a new recipe for every hit hash in the data hash.
     # hits is an array and each index is a hash. recipe is the key and value is another hash.
 
-    if data["hits"]
+    if data["hits"].any?
       my_hits = data["hits"].map do |hit_hash|
         Recipe.new hit_hash["recipe"]["label"], hit_hash["recipe"]["dietLabels"], hit_hash["recipe"]["image"], hit_hash["recipe"]["url"], hit_hash["recipe"]["source"], hit_hash["recipe"]["ingredients"], hit_hash["recipe"]["uri"]
       end
@@ -35,7 +35,10 @@ class EdamamApiWrapper
 
     data = HTTParty.get(url)
 
-    Recipe.new data[0]["label"], data[0]["dietLabels"], data[0]["image"], data[0]["url"], data[0]["source"],data[0]["ingredients"], data[0]["uri"]
-
+    # if data.instance_of? Array
+      Recipe.new data[0]["label"], data[0]["dietLabels"], data[0]["image"], data[0]["url"], data[0]["source"],data[0]["ingredients"], data[0]["uri"]
+    # else
+    #   return nil
+    # end
   end
 end
