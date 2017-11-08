@@ -9,18 +9,21 @@
   <% end %>
 
   <% if params[:page].to_i > 1 %>
-    <%= form_tag("/recipes", method: "get") do %>
-    <%= hidden_field_tag :word, params[:word] %>
-    <%= hidden_field_tag :page, params[:page].to_i-1 %>
-    <%= submit_tag "Anterior", class: "button" %>
-    <% end %>
-  <% end %>
+  <%= render :partial => "form", :locals =>
+  { :before_or_after => "Anterior", :k => -1} %>
+  <%end%>
 
-  <%= form_tag("/recipes", method: "get") do %>
-  <%= hidden_field_tag :word, params[:word] %>
-  <%= hidden_field_tag :page, params[:page].to_i+1 %>
-  <%= submit_tag "Siguiente", class: "button" %>
-  <% end %>
+  <% if @count >= (params[:page].to_i)*10 %>
+  <%= render :partial => "form", :locals =>
+  { :before_or_after => "Siguiente", :k => +1} %>
+  <%end%>
+
+
+
+
+
+
+
 
 </content>
 

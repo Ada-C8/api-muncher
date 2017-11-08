@@ -4,8 +4,11 @@ require_dependency '../../lib/recipe'
 
 class RecipesController < ApplicationController
   def index
-    @recipes = MuncherApiWrapper.find_recipes(params[:word], params[:page])
-    if @recipes == []
+
+    @recipes_count = MuncherApiWrapper.find_recipes(params[:word], params[:page])
+    @recipes = @recipes_count[0]
+    @count = @recipes_count[1]
+    if @recipes == [ ]
       flash[:status] =  :not_found
       flash[:message] = "No hay recetas con la palabra #{params[:word]}"
       redirect_back fallback_location: root_path

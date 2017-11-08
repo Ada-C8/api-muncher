@@ -14,16 +14,18 @@ describe MuncherApiWrapper do
       end
     end
 
-    # it "Fails when there is not internet" do
-    #   VCR.use_cassette("no_network_connection") do
-    #     result = MuncherApiWrapper.find_recipes('queso', 1)
-    #   end
-    # end
-
     it "Raises an error when token is bad" do
       VCR.use_cassette("recipes") do
         proc {
           MuncherApiWrapper.find_recipes("arroz", 1, "bad_id", "bad_token")
+        }.must_raise MuncherApiWrapper::ApiError
+      end
+    end
+
+    it "Raises an error when page is bad" do
+      VCR.use_cassette("recipes") do
+        proc {
+          MuncherApiWrapper.find_recipes("arroz", 0)
         }.must_raise MuncherApiWrapper::ApiError
       end
     end
@@ -35,17 +37,19 @@ describe MuncherApiWrapper do
     it "can show one recipe" do
       VCR.use_cassette("one_recipe") do
         # uri = "54d578f9ae75221df8cdd217f9ca964c"
-        
+        uri = "6893cc673c96d3f26910052de21f2d89"
         result = MuncherApiWrapper.one_recipe(uri)
         result.must_be_kind_of Recipe
       end
     end
+    # it "raises an error recipe with given id doesn't exist" do
+    #   VCR.use_cassette("bad_id") do
+    #     uri = "54d578f9ae75221df8cdd217"
+    #     proc {
+    #       MuncherApiWrapper.one_recipe(uri)
+    #     }.must_raise MuncherApiWrapper::ApiError
+    #   end
+    # end
   end
 
 end
-
-
-# VCR.use_cassette("find_recipe") do
-#         valid_uri = "637913ec61d9da69eb451818c3293df2"
-#         result = EdamamApiWrapper.find_recipe(valid_uri)
-#         result.must_be_kind_of Recipe

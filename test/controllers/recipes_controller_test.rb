@@ -26,6 +26,7 @@ describe RecipesController do
         get recipes_path, params: search
         flash[:status].must_equal :not_found
         flash[:message].must_equal "No hay recetas con la palabra qw"
+        must_redirect_to root_path
       end
     end
   end
