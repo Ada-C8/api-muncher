@@ -1,0 +1,21 @@
+<%= render partial: "header" %>
+
+<% if @recipes.present? %>
+
+  <section class="recipes row small-up-2 medium-up-3 large-up-4">
+    <h4 class="text-center">Results for "<%= "#{params[:query]}" %>"</h4>
+  <% @recipes.each do |recipe| %>
+    <article class="column">
+      <%= link_to (image_tag(recipe.image)), recipe_path(recipe.id) %>
+      <p><%= link_to recipe.name, recipe_path(recipe.id) %></p>
+    </article>
+  <% end %>
+  </section>
+
+<% else %>
+  <h4>There are no recipes containing the term "<%= "#{params[:query]}" %>"</h4>
+<% end %>
+
+<section class="text-center">
+  <%= will_paginate @recipes %>
+</section>
