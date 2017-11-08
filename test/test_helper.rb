@@ -1,6 +1,16 @@
-require File.expand_path('../../config/environment', __FILE__)
+require 'simplecov'
+SimpleCov.start
+ENV["RAILS_ENV"] = "test"
+require File.expand_path("../../config/environment", __FILE__)
+require "rails/test_help"
 require "minitest/rails"
-require 'rails/test_help'
+require 'simplecov'
+SimpleCov.start
+
+
+require File.expand_path('../../config/environment', __FILE__)
+# require "minitest/rails"
+# require 'rails/test_help'
 require 'vcr'
 require 'webmock/minitest'
 

@@ -1,0 +1,93 @@
+{
+  "MiniTest": {
+    "coverage": {
+      "/Users/marisamorris/Documents/ada developers academy/week_13/api-muncher/app/helpers/application_helper.rb": [
+        1,
+        null
+      ],
+      "/Users/marisamorris/Documents/ada developers academy/week_13/api-muncher/app/helpers/home_helper.rb": [
+        1,
+        null
+      ],
+      "/Users/marisamorris/Documents/ada developers academy/week_13/api-muncher/app/helpers/homepage_helper.rb": [
+        1,
+        null
+      ],
+      "/Users/marisamorris/Documents/ada developers academy/week_13/api-muncher/app/helpers/recipes_helper.rb": [
+        1,
+        null
+      ],
+      "/Users/marisamorris/Documents/ada developers academy/week_13/api-muncher/lib/edamam_api_wrapper.rb": [
+        1,
+        null,
+        1,
+        null,
+        null,
+        null,
+        1,
+        1,
+        1,
+        null,
+        null,
+        1,
+        2,
+        null,
+        2,
+        null,
+        null,
+        null,
+        null,
+        2,
+        2,
+        100,
+        null,
+        2,
+        null,
+        0,
+        null,
+        null,
+        null,
+        null,
+        null,
+        1,
+        null,
+        1,
+        null,
+        1,
+        null,
+        1,
+        null,
+        null,
+        null
+      ],
+      "/Users/marisamorris/Documents/ada developers academy/week_13/api-muncher/lib/recipe.rb": [
+        1,
+        1,
+        null,
+        1,
+        null,
+        101,
+        101,
+        101,
+        101,
+        101,
+        101,
+        101,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null
+      ]
+    },
+    "timestamp": 1510109853
+  }
+}

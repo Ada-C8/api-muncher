@@ -35,6 +35,5 @@ describe EdamamApiWrapper do
         recipe.must_be_instance_of Recipe
       end
     end
-
   end
 end
