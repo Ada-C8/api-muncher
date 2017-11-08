@@ -1,0 +1,36 @@
+<div class="main">
+  <section class="center">
+    <h3>
+      <%= @recipe.name %>
+    </h3>
+    <h4>By: <%= link_to @recipe.source, @recipe.url, target: :_blank %></h4>
+  </section>
+
+
+  <section class="row">
+    <div class="columns small-12 large-4">
+      <%= image_tag("#{@recipe.image}", :alt => "#{@recipe.name} photo", class: "full_image") %>
+
+    </div>
+    <div class="columns small-12 large-8">
+
+      Ingredients
+      <ul>
+        <% @recipe.ingredientsLine.each do |ingredient| %>
+          <li>
+            <%= ingredient %>
+          </li>
+        <% end %>
+      </ul>
+
+      Dietary Labels
+      <ul>
+        <% @recipe.dietLabels.each do |labels| %>
+          <li>
+            <%= labels %>
+          </li>
+        <% end %>
+      </ul>
+    </div>
+  </section>
+</div>

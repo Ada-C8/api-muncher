@@ -1,0 +1,18 @@
+<section class="main">
+  <div >
+    <h3>Results for <%= @query %> </h3>
+    <div class="row">
+
+        <% @recipes.each do |recipe| %>
+        <div class="columns small-12 large-3">
+        <%= link_to (image_tag (recipe.image)), recipe_path(recipe.id) %>
+        <%= link_to recipe.name, recipe_path(recipe.id) %>
+        </div>
+        <% end %>
+    </div>
+  </div>
+</section>
+
+<div class="paginate">
+  <%= will_paginate @recipes %>
+</div>
