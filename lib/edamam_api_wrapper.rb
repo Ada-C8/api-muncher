@@ -17,21 +17,17 @@ class EdamamApiWrapper
 
     data = HTTParty.get(url)
 
-    if data["hits"]
-      recipe_data = data ["hits"].map do |recipe_hash|
-        Recipe.new(
-          recipe_hash["recipe"]["uri"],
-          recipe_hash["recipe"]["label"],
-          recipe_hash["recipe"]["image"],
-          recipe_hash["recipe"]["ingredientLines"],
-          recipe_hash["recipe"]["dietLabels"],
-          recipe_hash["recipe"]["url"]
-        )
-      end
-      return recipe_data
-    else
-      return []
+    recipe_data = data ["hits"].map do |recipe_hash|
+      Recipe.new(
+        recipe_hash["recipe"]["uri"],
+        recipe_hash["recipe"]["label"],
+        recipe_hash["recipe"]["image"],
+        recipe_hash["recipe"]["ingredientLines"],
+        recipe_hash["recipe"]["dietLabels"],
+        recipe_hash["recipe"]["url"]
+      )
     end
+    return recipe_data
   end
 
 
@@ -41,6 +37,8 @@ class EdamamApiWrapper
   def self.show_recipe(recipe_uri)
 
     url = BASE_URL + "r=" + RECIPE_URL + (recipe_uri)
+
+    puts url
 
     data = HTTParty.get(url)
     if data[0]

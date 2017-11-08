@@ -20,6 +20,14 @@ describe RecipesController do
         must_redirect_to root_path
       end
     end
+
+    it "Should redirect to root path if search word is provided." do
+      VCR.use_cassette("recipes") do
+        get recipes_index_path
+        must_redirect_to root_path
+      end
+    end
+
   end
 
   describe "Show" do

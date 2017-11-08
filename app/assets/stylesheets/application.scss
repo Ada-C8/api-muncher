@@ -31,7 +31,7 @@ body {
 
 body.home {
   background-image: image-url("chocmint.jpg");
-  background-position: 20% 90%;
+  background-position: 20% 35%;
   background-size: cover;
   background-repeat: no-repeat;
   overflow: hidden;
@@ -96,18 +96,18 @@ input[type='text'] {
 /* --------------------------- */
 
 .footer {
-  position: bottom;
+  position: fixed;
   right: 0;
   bottom: 0;
   left: 0;
   padding: 1rem;
-  background-color: #281305;
+  background-color: #261509;
   text-align: center;
   color: white;
 }
 
 main {
-  min-height: 40vh;
+  margin-bottom: 10em;
 }
 
 p.copyright a {

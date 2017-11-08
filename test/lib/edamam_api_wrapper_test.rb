@@ -31,7 +31,7 @@ describe EdamamApiWrapper do
   describe "self.show_recipe" do
     it "Can retrieve a recipe." do
       VCR.use_cassette("recipes") do
-        good_uri = "https://api.edamam.com/search?r=http://www.edamam.com/ontologies/edamam.owl%23recipe_c23d4d64e02318eef70940c6643353ad"
+        good_uri = "c23d4d64e02318eef70940c6643353ad"
         recipe = EdamamApiWrapper.show_recipe(good_uri)
         recipe.title.must_equal "Pimento Cheese"
         recipe.wont_be_nil
@@ -40,7 +40,7 @@ describe EdamamApiWrapper do
 
     it "Returns nil for an invalid uri" do
       VCR.use_cassette('recipes') do
-        invalid_uri = "http://www.edamam.com/ontologies/edamam.owl%23invalidmadeupuri"
+        invalid_uri = "notarealthing"
         recipe = EdamamApiWrapper.show_recipe(invalid_uri)
         recipe.must_be_nil
       end
