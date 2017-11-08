@@ -1,0 +1,4 @@
+<%= form_tag recipes_path, method: "get" do %>
+<%= text_field_tag(:query, "", placeholder: "Search Recipes") %>
+<%= submit_tag("Search", class: "button search") %>
+<% end %>

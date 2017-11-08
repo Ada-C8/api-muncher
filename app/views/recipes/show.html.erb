@@ -1,15 +1,27 @@
-<h4>Recipe <%= @recipe.name %></h4>
-<p>By <%= @recipe.source %></p>
-<%= image_tag(@recipe.image) %>
-<h5>Inrgedients</h5>
-<ul>
-  <% @recipe.ingredients.each do |ingredient| %>
-    <li><%= ingredient %></li>
-  <% end %>
-</ul>
-<h5>Dietary Labels</h5>
-<ul>
-  <% @recipe.dietary.each do |label| %>
-    <li><%= label %></li>
-  <% end %>
-</ul>
+<%= render partial: "header" %>
+
+<article class="show row">
+  <section class="text-center">
+    <h4>Recipe <%= link_to @recipe.name, @recipe.link, target:"_blank" %></h4>
+    <p>By <%= @recipe.source %></p>
+  </section>
+
+  <div class="text-center medium-6 small-12 columns">
+    <%= image_tag(@recipe.image) %>
+  </div>
+  <div class="medium-6 small-12 columns">
+    <h5>Inrgedients</h5>
+    <ul>
+      <% @recipe.ingredients.each do |ingredient| %>
+      <li><%= ingredient %></li>
+      <% end %>
+    </ul>
+    <h5>Dietary Labels</h5>
+    <ul>
+      <% @recipe.dietary.each do |label| %>
+      <li><%= label %></li>
+      <% end %>
+    </ul>
+  </div>
+
+</article>

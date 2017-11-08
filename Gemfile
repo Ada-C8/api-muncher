@@ -36,6 +36,7 @@ gem 'jbuilder', '~> 2.5'
 gem 'httparty'
 # gem 'uri'
 gem 'foundation-rails', '~> 6.3.1'
+gem 'will_paginate', '~> 3.1', '>= 3.1.6'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
@@ -45,6 +46,9 @@ group :development, :test do
   gem 'selenium-webdriver'
 
   gem 'dotenv-rails'
+
+  gem 'minitest-vcr'
+  gem 'webmock'
 end
 
 group :development do
