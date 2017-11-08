@@ -43,6 +43,8 @@ GEM
     ansi (1.5.0)
     arel (8.0.0)
     bindex (0.5.0)
+    binding_of_caller (0.7.3)
+      debug_inspector (>= 0.0.1)
     builder (3.2.3)
     byebug (9.1.0)
     capybara (2.15.4)
@@ -63,6 +65,7 @@ GEM
     coffee-script-source (1.12.2)
     concurrent-ruby (1.0.5)
     crass (1.0.2)
+    debug_inspector (0.0.3)
     docile (1.1.5)
     dotenv (2.2.1)
     dotenv-rails (2.2.1)
@@ -202,6 +205,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  binding_of_caller
   byebug
   capybara (~> 2.13)
   coffee-rails (~> 4.2)

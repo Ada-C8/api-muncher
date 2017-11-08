@@ -36,6 +36,7 @@ class RecipeApiWrapper
 
   def self.recipe_details(uri)
     url = BASE_URL + "?app_id=#{APP_ID}"+ "&app_key=#{APP_KEY}" + "&r=http://www.edamam.com/ontologies/edamam.owl%23#{uri}"
-    @response = HTTParty.get(url)
+    response = HTTParty.get(url)
+    return response
   end
 end

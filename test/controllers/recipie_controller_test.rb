@@ -26,22 +26,24 @@ describe RecipesController do
       get  get_recipes_path, params: params
       must_respond_with :success
     end
+
+    it "message is dispalyed if query is blank" do
+      params = {
+        from: 0
+      }
+      get  get_recipes_path, params: params
+      must_respond_with :success
+    end
   end
 
   describe "show" do
     it "must returns with success" do
-      params = {
-        uri: "recipe_5264be9d66d1276ce4c5f5f97260235d"
-      }
-      get  show_recipe_path, params: params
+      get show_recipe_path("recipe_5264be9d66d1276ce4c5f5f97260235d")
       must_respond_with :success
     end
 
-    it "must returns with success" do
-      params = {
-        uri: "garbage"
-      }
-      get  show_recipe_path, params: params
+    it "must returns with success for bad query" do
+      get  show_recipe_path("garbage")
       must_respond_with :success
     end
   end

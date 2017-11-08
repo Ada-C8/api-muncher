@@ -4,7 +4,8 @@
 </section>
 
 
-<% if @recipe == [] %>
+<% if @recipe == [] || @recipe == nil %>
+
   <section class ="display_area">
     <h2>
       We couldn't find that recipe ID. Please search for a new recipe.
