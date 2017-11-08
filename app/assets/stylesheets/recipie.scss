@@ -1,0 +1,68 @@
+// Place all the styles related to the recipie controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+body{
+  background-color: mediumpurple;
+}
+
+.index{
+  margin-top: 20%;
+}
+
+.columns input{
+  float: right;
+}
+
+.recipe{
+  padding: 10px;
+}
+
+figure{
+  margin: 10px;
+  padding: 5px;
+}
+
+#dietary{
+  padding:10px;
+}
+
+.info {
+  margin-left: 10%;
+}
+
+.search_bar{
+  padding: 10px;
+  color: white;
+}
+
+.display_area{
+  background-color: white;
+  padding-top: 10px;
+}
+
+#left{
+  float: left;
+  padding: 10px;
+}
+
+#right{
+  float: right;
+  padding: 10px;
+}
+
+span {
+  font-size: 1.25rem;
+}
+
+.show{
+  margin-right: 20px;
+}
+
+form label{
+  color: white;
+}
+
+#edamam-badge{
+  padding: 5px;
+}

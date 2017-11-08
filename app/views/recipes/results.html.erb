@@ -1,0 +1,65 @@
+
+
+<section class="row search_bar">
+  <h1 class = "columns large-4 small-4 large-centered small-centered"> MUNCHER </h1>
+  <%= render partial: "layouts/search_bar" %>
+</section>
+
+<section class="display_area">
+  <section class="row">
+    <h2 class="large-4 columns large-centered"> Results for "<%= params[:q] %>" </h2>
+  </section>
+
+  <% if @results != [] %>
+    <nav class="row">
+      <p class="large-4 small-6 columns large-centered small-centered">
+        <% previous_page = params[:from].to_i %>
+        <% next_page = params[:from].to_i %>
+        <% if previous_page > 0%>
+          <% previous_page = previous_page - 10 %>
+          <% next_page = next_page + 10 %>
+        <% else %>
+          <% previous_page = 0 %>
+          <% next_page = 10 %>
+        <% end %>
+
+        <%= link_to "Previous Page",  get_recipes_path({q: params[:q], from: previous_page}), id: "left" %>
+        <%= link_to "Next Page", get_recipes_path({q: params[:q], from: next_page}), id: "right" %>
+      </p>
+    </nav>
+
+
+    <main class="row">
+    <% @results.each do |result| %>
+    <section class="columns large-3 small-8 recipe">
+      <figure>
+        <%= link_to(image_tag(result[:image], alt: "#{result[:label]}"), show_recipe_path(result[:uri])) %>
+        <figcaption> <%= result[:label]%> </figcaption>
+      </figure>
+    </section>
+    <% end %>
+    </main>
+
+    <nav class="row">
+      <p class="large-4 small-6 columns large-centered small-centered">
+        <% previous_page = params[:from].to_i %>
+        <% next_page = params[:from].to_i %>
+        <% if previous_page > 0%>
+          <% previous_page = previous_page - 10 %>
+          <% next_page = next_page + 10 %>
+        <% else %>
+          <% previous_page = 0 %>
+          <% next_page = 10 %>
+        <% end %>
+
+        <%= link_to "Previous Page",  get_recipes_path({q: params[:q], from: previous_page}), id: "left" %>
+        <%= link_to "Next Page", get_recipes_path({q: params[:q], from: next_page}), id: "right" %>
+      </p>
+    </nav>
+  <% else %>
+    <h3>
+      There were no results found for: <%= params[:q] %>.
+      Please make another search
+    </h3>
+  <% end %>
+</section>
