@@ -29,7 +29,7 @@ HERO
   <body>
     <%###############  FLASH MESSAGES #################### %>
       <section class="row status">
-        <% if flash[:status] == :not_found %>
+        <% if flash[:status] %>
 
         <h1>  <%= flash[:message]%> </h1>
         <% end %>
