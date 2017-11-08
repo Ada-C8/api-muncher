@@ -4,8 +4,7 @@
 </section>
 
 
-<% if @recipe == [] || @recipe == nil %>
-
+<% if @recipe.length == 0 %>
   <section class ="display_area">
     <h2>
       We couldn't find that recipe ID. Please search for a new recipe.
@@ -13,7 +12,6 @@
   </section>
 
 <% else %>
-
   <section class ="display_area">
     <section class="row">
       <h2 class="columns large-4 small-6 large-centered small-centered">
