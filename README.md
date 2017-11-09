@@ -1,3 +1,13 @@
+# Welcome to hungry?
+This site uses the Edamam API to search recipes and was built using Ruby on Rails along with HTML&CSS/Foundations. A user can log in using their google account to save favorites.  
+
+![Full screen front](./assets/full-screen-front.png)  
+![Full Screen Search](./assets/full-screen-search.png)  
+![favorites](./assets/favorites.png)  
+![Small Screen](./assets/small-screen-front.png)  
+![Small Screen Recipe](./assets/small-screen-recipe.png)
+
+
 # Recipe API Consumer
 
 ## Purpose
