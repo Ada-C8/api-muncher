@@ -34,7 +34,15 @@ describe EdamamApiWrapper do
         recipe.must_be_instance_of Recipe
       end
     end
- 
+
+    it "Should only be able to search for a string" do
+      VCR.use_cassette("recipes") do
+        uri = 1
+        proc   {
+          recipe = EdamamApiWrapper.show_recipe(uri)
+        }.must_raise ArgumentError
+      end
+    end
 
   end
 end

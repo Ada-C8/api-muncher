@@ -30,15 +30,13 @@ class EdamamApiWrapper
 
 
   def self.show_recipe(search)
+    raise ArgumentError if search.class != String
+
     # MUST ENCODE THE SEARCH PARAMETER IN THE URL
     url = BASE_URL + "?r=" + (URI.encode(search))
 
     data = HTTParty.get(url)
 
-    # if data.instance_of? Array
-      Recipe.new data[0]["label"], data[0]["dietLabels"], data[0]["image"], data[0]["url"], data[0]["source"],data[0]["ingredients"], data[0]["uri"]
-    # else
-    #   return nil
-    # end
+    Recipe.new data[0]["label"], data[0]["dietLabels"], data[0]["image"], data[0]["url"], data[0]["source"],data[0]["ingredients"], data[0]["uri"]
   end
 end
