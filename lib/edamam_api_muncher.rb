@@ -21,14 +21,13 @@ class EdamamApiMuncher
 
   def self.find(id)
     url = BASE_URL + "?r=" + RECIPE_URI_PREFIX + "#{id}" + "&app_id=#{APP_ID}&app_key=#{API_KEY}"
-    puts "Requesting recipe #{id}"
-    puts "url is #{url}"
+    # puts "Requesting recipe #{id}"
+    # puts "url is #{url}"
     data = HTTParty.get(url)
     unless data.empty?
-      return create_recipe(data[0])
-    else
-      return nil
+      return self.create_recipe(data[0])
     end
+    return
   end
 
   private
