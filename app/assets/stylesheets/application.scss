@@ -1,0 +1,196 @@
+/*
+* This is a manifest file that'll be compiled into application.css, which will include all the files
+* listed below.
+*
+* Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
+* vendor/assets/stylesheets directory can be referenced here using a relative path.
+*
+* You're free to add application-wide styles to this file and they'll appear at the bottom of the
+* compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+* files in this directory. Styles in this file should be added after the last require_* statement.
+* It is generally better to create a new file per style scope.
+*
+*= require_tree .
+*= require_self
+*= require foundation_and_overrides
+
+*/
+
+// application styling
+
+$list_height: 22rem;
+
+html {
+  height: 100%;
+  box-sizing: border-box;
+}
+
+main h1, h2, h3, h4, ul, li, a, p {
+  font-family: Arial, sans-serif;
+}
+
+#header {
+  text-align: center;
+  color: white;
+}
+
+#header a {
+  color: white;
+  font-family: Arial, sans-serif;
+}
+
+#header a:visited {
+  color: white;
+}
+
+#flash {
+  text-align: center;
+  color: white;
+}
+
+#search_header {
+  text-align: center;
+}
+
+// home page styling
+
+.home_body {
+  background-image: image-url("food_background2.jpg");
+  background-size: cover;
+  font-family: Arial, sans-serif;
+}
+
+#home_page_container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+// index page styling
+
+.application_search_container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+body {
+  position: relative;
+  background-color: #B85750;
+  margin: 0;
+  padding-bottom: 6rem;
+  min-height: 100%;
+  max-width: 96%;
+}
+
+body a {
+  color: black;
+}
+
+body a:visited {
+  color: black;
+}
+
+body a:hover {
+  color: black;
+}
+
+main {
+  margin: 0 auto;
+  padding-top: 64px;
+  max-width: 100%;
+  width: 94%;
+  overflow: auto;
+}
+
+ul {
+  list-style-type: none;
+  height: $list_height;
+  padding-top: 1rem;
+  p {
+    width: 100%;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    text-align: center;
+    padding-top: 1rem;
+  }
+
+  img {
+    display: block;
+    margin: 0 auto;
+    width: 100% auto;
+    height: $list_height - 5;
+    object-fit: cover;
+  }
+}
+
+// main ul li.recipe-list {
+//   list-style-type: none;
+//   height: $list_height;
+//   padding-top: 1rem;
+//     p {
+//       text-align: center;
+//       padding-top: 1rem;
+//     }
+//
+//     img {
+//       display: block;
+//       margin: 0 auto;
+//       width: 100%auto;
+//       height: $list_height - 5;
+//       object-fit: cover;
+//     }
+// }
+
+// pagination styling
+section > div.pagination {
+  a {
+    display: inline-block;
+  }
+}
+
+.pagination {
+  text-align: center;
+}
+
+section > div.pagination .current {
+  background-color: #936A4A;
+}
+
+// show page styling
+
+.recipe-details {
+  background-color: #DEB887;
+  border-radius: 20px;
+  max-width: 60%;
+}
+
+.recipe-details ul {
+  list-style-type: circle;
+}
+
+.button {
+  background-color: #936A4A;
+  border-radius: 20px;
+}
+
+.clearfix {
+  clear: both;
+}
+
+/**
+* Footer Styles
+*/
+
+.footer {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  padding: 0.65rem;
+  background-color: #936A4A;
+  text-align: center;
+}

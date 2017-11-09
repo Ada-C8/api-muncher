@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+
+  <%= javascript_include_tag "application", 'data-turbolinks-track' => true %>
+  <%= favicon_link_tag 'Favicon-01.png'%>
+
+  <title><%= content_for?(:title) ? yield(:title) : "NomNom.com" %></title>
+
+  <%= stylesheet_link_tag    "application" %>
+
+  <%= csrf_meta_tags %>
+</head>
+
+<body class=<%= @home_page ? "home_body" : "body" %> >
+  <header class="small-12 small-centered columns" id="header">
+    <h1><%= link_to "NomNom.com", root_path, alt: "link to home page" %></h1>
+    <% if @home_page == false %>
+    <%= render partial: '/layouts/search_bar' %>
+    <% end %>
+  </header>
+  <% if flash[:message] %>
+  <section class="row status" id="flash">
+    <h3>
+      <%= flash[:message] %>
+    </h3>
+  </section>
+  <% end %>
+
+  <main id="main-content">
+    <%= yield %>
+  </main>
+
+  <!-- <script src="https://developer.edamam.com/attribution/badge.js"></script> -->
+  <footer class="footer">
+    <div id="edamam-badge">
+      <%= image_tag("transparent.png", alt: "attribution image for Edamam") %>
+    </div>
+  </footer>
+</body>
+
+</html>

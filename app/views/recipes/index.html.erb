@@ -1,0 +1,30 @@
+<section class="row search-header" >
+  <h3>Search Results for <%= params[:search].titleize %></h3>
+</section>
+
+<section class="row pagination">
+  <%= will_paginate @recipes %>
+</section>
+
+<div class="row">
+
+<ul class="row recipe-list" >
+  <% @recipes.each do |recipe| %>
+  <li class="columns small-12 medium-6 large-3 end">
+    <%= link_to image_tag(recipe.image, class: "recipe-image"), recipes_show_path(recipe.name, uri: recipe.uri), alt: "link to a given recipe" %>
+    <p>
+      <%= link_to recipe.name, recipes_show_path(recipe.name, uri: recipe.uri), alt: "link to a given recipe", class: "recipe-name" %>
+    </p>
+  </li>
+  <% end %>
+</ul>
+</div>
+
+<section class="row small-12 pagination" id="bottom_paginate">
+  <%= will_paginate @recipes %>
+</section>
+
+
+<div class="clearfix">
+
+</div>
