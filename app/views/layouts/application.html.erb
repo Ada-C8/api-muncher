@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>ApiMuncher</title>
+    <%= csrf_meta_tags %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <script src="https://developer.edamam.com/attribution/badge.js"></script>
+  </head>
+
+  <body>
+    <%= yield %>
+  </body>
+
+  <footer class="row">
+    <div class="large-4 small-4 small-centered columns large-centered" id="edamam-badge" data-color="white"></div>
+  </footer>
+</html>

@@ -1,0 +1,62 @@
+<section class="row search_bar">
+  <h1 class = "columns large-6 large-centered small-centered small-4"> MUNCHER </h1>
+  <%= render partial: "layouts/search_bar" %>
+</section>
+
+
+<% if @recipe.length == 0 %>
+  <section class ="display_area">
+    <h2>
+      We couldn't find that recipe ID. Please search for a new recipe.
+    </h2>
+  </section>
+
+<% else %>
+  <section class ="display_area">
+    <section class="row">
+      <h2 class="columns large-4 small-6 large-centered small-centered">
+        <%= @recipe[0]["label"] %>
+      </h1>
+    </section>
+
+    <section class="row">
+      <h3 class="columns large-6 small-6 large-centered small-centered">
+        By: <%= @recipe[0]["source"]%>
+        <span> (<%= link_to 'Original Recipe', @recipe[0]["url"]%>) </span>
+      </h2>
+    </section>
+
+    <section class="row">
+      <p class="columns large-4 small-4 large-centered small-centered">
+
+      </p>
+    </section>
+
+    <section class="row">
+      <figure class="columns large-4 small-4 info show">
+        <img src= "<%= @recipe[0]["image"]%>" alt = "Picture of <%= @recipe[0]["label"] %>" />
+      </figure>
+
+      <h3 class="info"> Ingredients </h3>
+      <ol class="info">
+        <% @recipe[0]["ingredientLines"].each do |item| %>
+          <li> <%= item %> </li>
+        <% end %>
+      </ol>
+    </section>
+
+    <section id = "dietary" class="row">
+      <h3 class="columns large-6 small-8 large-centered small-centered">
+        Dietary Information
+      </h3>
+
+      <ul>
+        <% @recipe[0]["totalNutrients"].each do |item|  %>
+          <li class="columns large-3 small-3">
+            <%= item[1]["label"] + "  #{(item[1]["quantity"]).to_i}"+item[1]["unit"] %>
+          </li>
+        <% end %>
+      </ul>
+    </section>
+  </section>
+<% end %>

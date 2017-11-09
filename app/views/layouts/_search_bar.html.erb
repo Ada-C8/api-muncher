@@ -1,0 +1,8 @@
+
+<%= form_tag("/recipes/results", method: "get",
+  class: "columns large-centered small-centered large-6 small-4") do %>
+     <%= label_tag(:q, "Find Your Flavor...") %>
+     <%= text_field_tag(:q) %>
+     <%= hidden_field_tag(name = "from", value = 0)%>
+     <%= submit_tag("Search") %>
+<% end %>
