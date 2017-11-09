@@ -14,7 +14,6 @@ class MuncherApiWrapper
     data = HTTParty.get(url)
     amount = data["count"]
     status(data)
-    # binding.pry
     recipe_list = []
     if data["hits"]
       data["hits"].each do |recipe_array|
@@ -27,12 +26,12 @@ class MuncherApiWrapper
   def self.one_recipe(id)
     url = BASE_URL + "?r=http://www.edamam.com/ontologies/edamam.owl%23recipe_" + "#{id}" + "&app_id=#{ID}" + "&app_key=#{KEY}"
     data = HTTParty.get(url)
-      status(data)
-      if data.empty?
-        raise ApiError.new("Not information available for that recipe")
-      else
-        return create_recipe(data[0])
-      end
+    status(data)
+    if data.empty?
+      return []
+    else
+      return create_recipe(data[0])
+    end
   end
 
   private
@@ -44,12 +43,11 @@ class MuncherApiWrapper
     api_params["url"],
     api_params["ingredientLines"],
     api_params["dietLabels"]
-    #TODO poner algo de dietary information api_params["recipe"]["uri"],
     )
   end
 
   def self.status(data)
-    unless data.code == 200
+    if data.code == 401
       raise ApiError.new("Find recipes failed: #{data.message}")
     end
   end
