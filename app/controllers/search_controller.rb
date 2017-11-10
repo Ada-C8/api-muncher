@@ -2,11 +2,14 @@ class SearchController < ApplicationController
 
   def index
 
-
   end
 
   def create
-    @keywords = params['ingredients']
+    if params['ingredients']
+      @keywords = params['ingredients']
+    else
+      redirect_to root_path
+    end
 
     if (params[:page].to_i == 1 || params[:page].to_i == 0)
       @search = EdamamApiWrapper.find_recipes(@keywords)
@@ -19,17 +22,18 @@ class SearchController < ApplicationController
     end
 
     @all_recipes = []
-    if @search == []
-      flash.now[:failure] = "There are no recipes matching that query"
-    else
-      @search.hits.each do |recipe|
-        @all_recipes << Recipe.new(recipe['recipe'])
-      end
+    @search.hits.each do |recipe|
+      @all_recipes << Recipe.new(recipe['recipe'])
     end
   end
 
   def show_recipe
     response = EdamamApiWrapper.show_recipe(params['uri'])
-    @recipe = Recipe.new(response[0])
+    if response != nil
+      @recipe = Recipe.new(response[0])
+    else
+      flash.now[:failure] = "There are no recipes matching that query"
+      redirect_back(fallback_location: root_path)
+    end
   end
 end

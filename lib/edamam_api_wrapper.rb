@@ -21,10 +21,12 @@ class EdamamApiWrapper
     url = BASE_URL + 'r=' + "#{uri}" + "&app_id=#{ID}" + "&app_key=#{KEY}"
 
     response = HTTParty.get(url)
-    if response.success?
+    if response.count == 0
+      return nil
+    elsif response.success?
       return response
     else
-      return []
+      return nil
     end
   end
 

@@ -19,6 +19,9 @@ VCR.configure do |config|
   config.filter_sensitive_data("<EDAMAM_KEY>") do
     ENV['EDAMAM_KEY']
   end
+  config.filter_sensitive_data("<EDAMAM_ID>") do
+    ENV['EDAMAM_ID']
+  end
 end
 
 #  For colorful output!
