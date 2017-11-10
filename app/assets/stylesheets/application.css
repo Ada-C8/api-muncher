@@ -94,9 +94,20 @@ p {
   float: right;
 }
 
-img {
-  margin-left: 19%;
+.recipe-img {
+  margin-left: 12%;
   margin-top: 4%;
+  float: left;
+}
+
+.pagination {
+  text-align: center;
+
+}
+.pagination a {
+  display: inline-block;
+  color: #1B3448;
+  font-family: 'Kaushan Script', cursive;
 }
 
 footer {
