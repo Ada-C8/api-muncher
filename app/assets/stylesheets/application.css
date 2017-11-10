@@ -19,8 +19,7 @@ header {
   text-align: center;
   padding-bottom: 2.5%;
   margin-bottom: 2%;
-  border-bottom: #192B37;
-  box-shadow: 0px 0px 20px lightgrey;
+  box-shadow: 0px 0px 20px #1B3448;
 }
 
 h1 {
@@ -90,14 +89,11 @@ p {
   text-decoration: underline;
 }
 
-.details {
-  float: right;
-}
-
-.recipe-img {
-  margin-left: 12%;
-  margin-top: 4%;
-  float: left;
+article {
+  width: 40%;
+  display: inline-block;
+  vertical-align: middle;
+  padding-left: 20%;
 }
 
 .pagination {
@@ -112,13 +108,13 @@ p {
 
 footer {
   position: relative;
-  bottom: 0;
   background-color: #1B3448;
   text-align: center;
   padding-top: 1.4%;
+  padding-bottom: 1.4%;
 }
 
-footer p {
+footer a {
   color: #EAEBEF;
   font-family: 'Kaushan Script', cursive;
   font-size: 1.3em;
