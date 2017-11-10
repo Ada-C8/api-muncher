@@ -1,0 +1,5 @@
+<%= form_tag("/recipes", method: "get") do %>
+<%= hidden_field_tag :word, params[:word] %>
+<%= hidden_field_tag :page, params[:page].to_i+k %>
+<%= submit_tag before_or_after, class: "button" %>
+<% end %>

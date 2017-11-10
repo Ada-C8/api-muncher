@@ -1,0 +1,27 @@
+<body >
+<section class="all_recipes" >
+  <% if @count > 0 %>
+  <h1><strong><%= "Recetas con #{params[:word]}" %> </strong> </h1>
+  <% end %>
+  <% @recipes.each do |recipe| %>
+  <div class="recipe-block text-center small-12 medium-6 large-4 columns end" >
+    <img src=<%= recipe.image %> />
+    <p class="recipe-name"><strong><%= link_to recipe.label, recipe_path(recipe.id) %></strong></p>
+  </div>
+  <% end %>
+<div class="12 columns " >
+  <% if params[:page].to_i > 1 %>
+  <%= render :partial => "form", :locals =>
+  { :before_or_after => "Anterior", :k => -1} %>
+  <%end%>
+
+  <% if @count >= (params[:page].to_i)*10 %>
+  <%= render :partial => "form", :locals =>
+  { :before_or_after => "Siguiente", :k => +1} %>
+  <%end%>
+</div>
+</section>
+
+
+
+</body>

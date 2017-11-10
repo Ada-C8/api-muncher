@@ -1,0 +1,46 @@
+<!-- /* *****************************************************
+HERO
+****************************************************** */ -->
+
+<section class="hero">
+    <div class="hero-section-text">
+      <%= link_to root_path do %>
+        <h1><strong> <div id="main_title"> ¡A Cocinar!</div></strong></h1>
+      <% end %>
+    </div>
+  </section>
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title><%= content_for?(:title) ? yield(:title) : "Untitled" %></title>
+
+    <%= stylesheet_link_tag    "application" %>
+    <%= javascript_include_tag "application", 'data-turbolinks-track' => true %>
+    <%= csrf_meta_tags %>
+
+  </head>
+
+  <body>
+    <%###############  FLASH MESSAGES #################### %>
+
+        <% if flash[:status] == :not_found %>
+        <section id="not_found">
+        <%= flash[:message]%>
+        <% end %>
+      </section>
+    <%= yield %>
+
+  </body>
+
+  <%###############  FLASH MESSAGES ####################  %>
+
+  <footer>
+    Información suministrada por <strong> Edamam <strong>
+  </footer>
+</html>
