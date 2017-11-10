@@ -59,6 +59,39 @@ describe RecipesController do
 # Test that using paging params gives different results (or at least that it works)
 # What if the paging parameters are invalid (negative number, etc)?
 # What if the paging parameters take you past the end of the available search results?
+
+    it "should return 12 recipes when per_page is set to 12" do
+      VCR.use_cassette("paginate_12") do
+        q = {
+          q: "pasta"
+        }
+
+        get recipes_path, params: q
+
+      end
+    end
+
+    it "should return 0 recipes when per_page is set to a negative number" do
+      VCR.use_cassette("paginate_negative") do
+        q = {
+          q: "pasta"
+        }
+
+        get recipes_path, params: q
+
+      end
+    end
+
+    t "should return all recipes when per_page is set to a number that is larger than the number of recipe results" do
+      VCR.use_cassette("paginate_big_num") do
+        q = {
+          q: "pasta"
+        }
+
+        get recipes_path, params: q
+
+      end
+    end
   end
 
   describe "show" do
