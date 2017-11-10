@@ -11,21 +11,21 @@
     <%= csrf_meta_tags %>
   </head>
   <% unless current_page?(root_path) %>
-  <header>
-    <h2><%= link_to "MUNCHER", root_path %></h2>
-    <nav>
-      <div class="nav-search-box">
-        <%= form_tag("/recipes", method: "get") do %>
-          <%= label_tag(:q, "Search Recipes:") %>
-          <%= text_field_tag(:q) %>
-          <%= submit_tag("Search", class:"button")%>
-        <% end %>
-      </div>
-    </nav>
-  </header>
-  <% end %>
 
   <body>
+    <header>
+      <h2><%= link_to "MUNCHER", root_path %></h2>
+      <nav>
+        <div class="nav-search-box">
+          <%= form_tag("/recipes", method: "get") do %>
+            <%= label_tag(:q, "Search Recipes:") %>
+            <%= text_field_tag(:q) %>
+            <%= submit_tag("Search", class:"button")%>
+          <% end %>
+        </div>
+      </nav>
+    </header>
+    <% end %>
     <%= yield %>
     <footer>
       <h5>Powered by <%= link_to "Edamam", "https://www.edamam.com/" %></h5>

@@ -22,26 +22,35 @@ describe "EdamamApiWrapper" do
       end
     end
 
-    describe "#self.find_recipe" do
-      it "should return a Recipe object" do
-        VCR.use_cassette("specific recipe") do
-          result = EdamamApiWrapper.find_recipe("b1957a6a4025b25f6da6aef1fad452d4")
-          result.must_be_instance_of Recipe
-        end
-      end
+    # What if the search term yields 0 results? Something like "fkljadlfjaljfaljfalkdjf" would probably do
 
-      it "should raise ApiError if recipe is not found" do
-        VCR.use_cassette("bad recipe") do
-          proc { EdamamApiWrapper.find_recipe("nope nope nope") }.must_raise EdamamApiWrapper::ApiError
-        end
-      end
+    it "should return an empty array if search term yields 0 results" do
+      VCR.use_cassette("no_search_results") do
+        result = EdamamApiWrapper.search("asdfasfasdfasdf")
 
-      it "should raise ApiError if id is not given" do
-        VCR.use_cassette("no recipe") do
-        proc { EdamamApiWrapper.find_recipe("") }.must_raise EdamamApiWrapper::ApiError
-        end
+        result.must_equal []
+      end
+    end
+  end
+
+  describe "#self.find_recipe" do
+    it "should return a Recipe object" do
+      VCR.use_cassette("specific recipe") do
+        result = EdamamApiWrapper.find_recipe("b1957a6a4025b25f6da6aef1fad452d4")
+        result.must_be_instance_of Recipe
       end
     end
 
+    it "should raise ApiError if recipe is not found" do
+      VCR.use_cassette("bad recipe") do
+        proc { EdamamApiWrapper.find_recipe("nope nope nope") }.must_raise EdamamApiWrapper::ApiError
+      end
+    end
+
+    it "should raise ApiError if id is not given" do
+      VCR.use_cassette("no recipe") do
+      proc { EdamamApiWrapper.find_recipe("") }.must_raise EdamamApiWrapper::ApiError
+      end
+    end
   end
 end

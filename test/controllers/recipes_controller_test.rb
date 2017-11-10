@@ -55,6 +55,10 @@ describe RecipesController do
         must_respond_with :redirect
       end
     end
+
+# Test that using paging params gives different results (or at least that it works)
+# What if the paging parameters are invalid (negative number, etc)?
+# What if the paging parameters take you past the end of the available search results?
   end
 
   describe "show" do
