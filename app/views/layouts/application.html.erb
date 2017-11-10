@@ -5,7 +5,7 @@ HERO
 <section class="hero">
     <div class="hero-section-text">
       <%= link_to root_path do %>
-        <h1>!A Cocinar!</h1>
+        <h1><strong> <div id="main_title"> ¡A Cocinar!</div></strong></h1>
       <% end %>
     </div>
   </section>
@@ -28,13 +28,19 @@ HERO
 
   <body>
     <%###############  FLASH MESSAGES #################### %>
-      <section class="row status">
-        <% if flash[:status] %>
 
-        <h1>  <%= flash[:message]%> </h1>
+        <% if flash[:status] == :not_found %>
+        <section id="not_found">
+        <%= flash[:message]%>
         <% end %>
       </section>
     <%= yield %>
 
   </body>
+
+  <%###############  FLASH MESSAGES ####################  %>
+
+  <footer>
+    Información suministrada por <strong> Edamam <strong>
+  </footer>
 </html>

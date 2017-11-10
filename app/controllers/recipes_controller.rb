@@ -19,9 +19,6 @@ class RecipesController < ApplicationController
     end
 
     if params[:page].to_i < 1
-      # flash[:status] =  :not_found
-      # flash[:message] = "No hay información disponible en esta página"
-      #redirect_back fallback_location: root_path
       head :not_found
     end
   end

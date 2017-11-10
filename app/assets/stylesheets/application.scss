@@ -3,6 +3,25 @@
  *= require foundation_and_overrides
  *= require_self
 */
+/* *****************************************************
+HTML
+****************************************************** */
+html {
+  height: 100%;
+  box-sizing: border-box;
+
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Lucida Bright';
+  color: #ff773d;
+}
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
 
 /* *****************************************************
 HERO
@@ -10,33 +29,78 @@ HERO
 
 .hero h1 {
   padding-top: 125px;
-  //  font-family: 'STARWARS';
+  font-family:  'comic sans';
   font-size: 7em;
-  opacity: 1;
 }
+
+
 
 
 .hero {
   background-image: url('https://static.pexels.com/photos/8717/food-pot-kitchen-cooking.jpg');
   background-size: cover;
-  // opacity: 0.5;
-  height: 350px;
+  background-position: center center;
   text-align: center;
-  background-attachment: fixed;
-  background-position: center;
-  background-repeat: no-repeat;
+  height: 340px;
 
-  .hero-section-text a {
-    // color: #ffb57c;
-    color: #fffce8;
-    text-shadow: 1px 1px 2px black;
-    opacity: 0.5;
-  }
 }
+  // .hero-section-text a {
+  //   color: #f9cfac;
+  //   text-shadow: 1px 1px 2px black;
+  // }
+  #main_title{
+    color: #f9cfac;
+  }
+
 
 /* *****************************************************
 BODY
 ****************************************************** */
+
+
+body {
+  position: relative;
+  margin: 0;
+  padding-bottom: 6rem;
+  min-height: 100%;
+  font-family: 'Lucida Bright';
+}
+
+
 .content {
-  padding: 5%;
+  margin: 0 auto 22% auto;
+  padding-top: 95px;
+  max-width: 950px;
+  width: 94%;
+}
+
+/* *****************************************************
+FLASH
+****************************************************** */
+
+#not_found {
+  // font-family: "arial-black";
+  border-radius: 5px;
+  background-color: pink;
+  padding: 20px 25px;
+  font-size: 1em;
+  min-width: 100%;
+}
+
+
+
+
+/* *****************************************************
+FOOTER
+****************************************************** */
+
+
+footer {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  padding: 1rem;
+  background-color: #ffdbcc;
+  text-align: center;
 }
