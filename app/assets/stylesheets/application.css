@@ -34,11 +34,20 @@ h2 {
   font-family: 'Kaushan Script', cursive;
   text-align: center;
   color: #1B3448;
-  margin-bottom: 2%;
+  margin-bottom: 1%;
+}
+
+h3 {
+  font-family: 'Kaushan Script', cursive;
+  color: #1B3448;
+  text-align: center;
 }
 
 ul {
   list-style-type: none;
+  font-family: 'Kaushan Script', cursive;
+  color: #1B3448;
+  text-align: center;
 }
 
 li {
@@ -52,7 +61,17 @@ li a {
   color: #1B3448;
 }
 
+label {
+  font-size: 1.8em;
+  text-align: center;
+  color: #1B3448;
+}
 
+.search {
+  margin-left: 15%;
+  background-color: white;
+  border-radius: 1%;
+}
 
 .home {
   background-image: url("/assets/home.png");
@@ -60,6 +79,24 @@ li a {
   background-size: cover;
   background-repeat: no-repeat;
   height: 750px;
+  font-family: 'Kaushan Script', cursive;
+}
+
+p {
+  font-family: 'Kaushan Script', cursive;
+  font-size: 1.3em;
+  color: #1B3448;
+  text-align: center;
+  text-decoration: underline;
+}
+
+.details {
+  float: right;
+}
+
+img {
+  margin-left: 19%;
+  margin-top: 4%;
 }
 
 footer {

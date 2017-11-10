@@ -3,6 +3,7 @@
 
 <%= image_tag @recipe.image, alt: "photo of #{@recipe.label}" %>
 
+<section class="details small-6">
 <p> Ingredients </p>
 <% @recipe.ingredients.each do |ingredient| %>
   <ul>
@@ -18,3 +19,4 @@
 <% end %>
 
 <p>Find the original recipe <a href= "<%= @recipe.url %>" target="_blank"><strong>here</strong></a></p>
+</section>
