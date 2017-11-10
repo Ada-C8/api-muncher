@@ -1,5 +1,5 @@
 
-<h1> <%= @recipe.label %> </h1>
+<div id="title_one">  <h1> <%= @recipe.label %> </h1> </div>
 <section class="content" >
 <div class="small-12 medium-6 large-4 columns end" >
 <img src=<%= @recipe.image %> >
@@ -41,4 +41,5 @@
 <%end%>
 
 <p><%= link_to "Detalles de esta receta", @recipe.url, :target => "_blank" %></p>
+
 <section>

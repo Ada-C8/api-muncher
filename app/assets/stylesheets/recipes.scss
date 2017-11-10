@@ -4,4 +4,50 @@
 img {
     width:  300px;
     height: 300px;
+    border: 1px solid;
+    margin-bottom: 30px;
+    margin-top: 0;
+
+}
+
+.all_recipes {
+  text-align: center;
+    margin: 0 auto 22% auto;
+    padding-top: 115px;
+    max-width: 1150px;
+    width: 94%;
+
+}
+
+h1 {
+  padding-bottom: 5%;
+}
+
+.recipe-name {
+  padding-top: 5%;
+  padding-bottom: 25%;
+
+}
+
+.recipe-name a {
+  color: #7a2401;
+}
+
+.product-block {
+}
+
+ul {
+  list-style-type: none;
+}
+
+#title_one {
+  text-align: center;
+  padding-top: 5%;
+}
+
+.content {
+    margin: 0 auto 22% auto;
+    padding-top: 115px;
+    max-width: 1150px;
+    width: 94%;
 }
