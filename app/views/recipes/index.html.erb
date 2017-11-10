@@ -1,0 +1,27 @@
+<!-- recipe index page -->
+
+<div class="grid-x">
+  <div class="large-1 medium-1 small-3 cell"></div>
+
+  <div class="large-10 medium-10 small-6 cell">
+    <section>
+      <h3 class="results">Results for: <%= (params[:search]) %></h1>
+      <ul class="recipe-list">
+
+        <% @recipes.each do |recipe| %>
+          <article>
+
+            <li><%= link_to image_tag(recipe.image, alt: "food photo"), URI.encode("#{recipe_path(recipe.label)}?uri=#{recipe.uri.encode}")%></li>
+
+            <li><%= link_to recipe.label, URI.encode("#{recipe_path(recipe.label)}?uri=#{recipe.uri.encode}") %></li>
+
+          </article>
+
+        <% end %>
+      </ul>
+      <%= paginate @recipes %>
+    </section>
+  </div>
+
+  <div class="large-1 medium-1 small-3 cell"></div>
+</div>

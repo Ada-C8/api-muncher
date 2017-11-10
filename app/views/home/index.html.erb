@@ -1,0 +1,29 @@
+<!-- (:search) is the param that is referenced in the recipe index controller that the user is giving the browser. -->
+
+<!-- HOME PAGE -->
+
+<body home-body>
+    <section class="all-of-homepage">
+      <div class="grid-x">
+        <div class="large-2 medium-1 small-1cell"></div>
+          <div class="large-8 medium-10 small-10 cell">
+            <h1>The Guilty Carb</h1>
+          </div>
+        </div>
+      <div class="large-2 medium-1 small-1 cell"></div>
+
+    <div class="grid-x">
+      <div class="large-2 medium-1 small-1 cell"></div>
+
+      <div class="large-8 medium-10 small-10 cell">
+        <%= form_tag recipes_path, method: :get do %>
+          <%= label_tag(:search, "Find your flavor...") %>
+          <%= text_field_tag(:search) %>
+          <%= submit_tag("Send") %>
+        <% end %>
+      </div>
+
+      <div class="large-2 cell medium-1 small-1"></div>
+    </div>
+  </section>
+</body>
