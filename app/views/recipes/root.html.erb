@@ -4,9 +4,8 @@
       <h1>MUNCHER</h1>
       <div class="small-4 medium-6 cell small-centered columns">
         <%= form_tag recipes_path, method: "get" do %>
-          <%= label_tag(:search_term, "Enter search term here") %>
           <%= text_field_tag(:search_term) %>
-          <%= submit_tag "submit", class: "button"%>
+          <%= submit_tag "submit", class: "button submit"%>
         <% end %>
       </div>
     </div>

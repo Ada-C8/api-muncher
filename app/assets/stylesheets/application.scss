@@ -16,14 +16,16 @@
 
  */
 
-// alt images http://bufferblog.wpengine.netdna-cdn.com/wp-content/uploads/2014/05/1443725_58313555.jpg
 
 @import url('https://fonts.googleapis.com/css?family=Muli');
 
 /* *****************************************************
                       STORED VARIABLES
 ****************************************************** */
-$primary-grey: #9c9999;
+$primary-grey: #B8BCC6;
+$primary-dark-blue: #001D4A;
+$primary-teal: #005182;
+$primary-light-blue: #9AB8E3;
 $primary-offwhite: #fbf7f4;
 $primary-font: 'Muli', sans-serif;
 
@@ -42,6 +44,7 @@ html, body {
 
 body {
   position:relative; /*REQUIRED Sets up positioning for your footer*/
+  background-color: $primary-grey;
 }
 
 
@@ -50,30 +53,39 @@ body {
 ****************************************************** */
 
 
-div.darken-overlay  {
-  width: 100%;
-  background-color: rgba(0, 0, 0, 0.5);
-  height: 100%;
-  padding-top: 10vh
-}
-
+// div.darken-overlay  {
+//   width: 100%;
+//   background-color: rgba(0, 0, 0, 0.5);
+//   height: 100%;
+//   padding-top: 10vh
+// }
 
 div.root {
-  background: url('https://static.pexels.com/photos/372851/pexels-photo-372851.jpeg') no-repeat center center;
-  background-size: cover;
-  background-attachment: fixed;
-  width: 100%;
-  height: 100%;
-  max-height: 100%;
+  // https://static.pexels.com/photos/372851/pexels-photo-372851.jpeg
 
+  background: url('https://intuitivedigital.com/wp-content/uploads/2015/04/blueberries-1024x682.jpg') no-repeat center center;
+  background-size: cover;
+  width: 100%;
+  height: 100vh;
 }
 
 .root {
   h1, p, label {
     color: $primary-offwhite;
   }
+  h1 {
+    font-size: 8vmax;
+  }
 }
 
+.button {
+  background-color: $primary-dark-blue;
+
+}
+.button:hover{
+  background-color: $primary-dark-blue;
+  color: $primary-light-blue;
+}
 
  // E5FCC2   9DE0AD   45ADA8   547980   594F4F
 
@@ -81,32 +93,14 @@ div.root {
                       FOOTER
 ****************************************************** */
 
-// footer {
-//   position: absolute;
-//   bottom: 0;
-//   width: 100%;
-//   height: 3em;
-//   background-color: #E5FCC2;
-//   div {
-//     padding: 0;
-//     height: 3em;
-//   }
-//   #credit {
-//     line-height: 3em;
-//     margin: 0;
-//   }
-// }
-
-
 
 #sticky {
   width:100%;
-  height:8vh;
-  padding-top:2vh;
-  background:#E5FCC2;
-  // color:white;
+  height:4vmax;
+  padding-top:.5vmax;
+  background:$primary-dark-blue;
   font-weight:bold;
-  font-size:2.5vh;
+  font-size:2vmax;
   text-align:center;
   position:fixed;    /*Here's what sticks it*/
   bottom:0;          /*to the bottom of the window*/
@@ -114,4 +108,49 @@ div.root {
 }
 p#sticky {
   margin: 0;
+  color: $primary-light-blue;
 }
+
+/* *****************************************************
+                            NAV
+****************************************************** */
+.nav {
+  font-size: 6vmax;
+  text-align: center;
+  margin-bottom: 0px;
+}
+.nav-main {
+  font-size: 8vmax;
+  text-align: center;
+  margin-bottom: 0px;
+}
+nav {
+  background-image:
+  // https://static.pexels.com/photos/583838/pexels-photo-583838.jpeg
+  // http://bufferblog.wpengine.netdna-cdn.com/wp-content/uploads/2014/05/1443725_58313555.jpg
+  // http://auspacenergy.com.au/wp-content/uploads/hc42xxu_wog-veeterzy.jpg
+   url("https://intuitivedigital.com/wp-content/uploads/2015/04/blueberries-1024x682.jpg");
+
+  background-size: cover;
+  // height: 100vh;
+  background-position: 45%;
+  a {
+    color: white;
+
+  }
+  a:hover {
+    color: white;
+  }
+}
+
+// .search {
+//   /*text-align: center;*/
+//   margin: auto;
+//   max-width: 400px;
+//   /*padding-left: 250px;
+//   padding-right: 250px;*/
+//   /*width: 200px;*/
+// }
+// .submit {
+//   text-align: center;
+// }
