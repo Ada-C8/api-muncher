@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title><%= content_for?(:title) ? yield(:title) : "Muncher" %></title>
+
+    <%= stylesheet_link_tag    "application" %>
+    <%= javascript_include_tag "application", 'data-turbolinks-track' => true %>
+    <%= csrf_meta_tags %>
+  </head>
+  <% unless current_page?(root_path) %>
+
+  <body>
+    <header>
+      <h2><%= link_to "MUNCHER", root_path %></h2>
+      <nav>
+        <div class="nav-search-box">
+          <%= form_tag("/recipes", method: "get") do %>
+            <%= label_tag(:q, "Search Recipes:") %>
+            <%= text_field_tag(:q) %>
+            <%= submit_tag("Search", class:"button")%>
+          <% end %>
+        </div>
+      </nav>
+    </header>
+    <% end %>
+    <%= yield %>
+    <footer>
+      <h5>Powered by <%= link_to "Edamam", "https://www.edamam.com/" %></h5>
+    </footer>
+  </body>
+
+</html>

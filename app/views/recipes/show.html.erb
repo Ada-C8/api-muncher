@@ -1,0 +1,61 @@
+<%= render partial: "flash", locals: { action_name: "show-index-flash"} %>
+
+<%# if flash[:status] %>
+  <!-- <div class="show-index-flash"> -->
+    <%#= flash[:message] %>
+  <!-- </div> -->
+<%# end %>
+
+<h2><%= @search %></h2>
+
+<section class="show-page wrapper">
+
+  <h3><%= @recipe.label %></h3>
+  <h5>By <%= link_to @recipe.source, @recipe.url, target: :_blank %></h5>
+
+  <section class="row">
+    <section class="small-12 medium-6 large-6 columns">
+      <div class="show-image ">
+        <%= image_tag(@recipe.image, alt:@recipe.label) %>
+      </div>
+
+      <div class="health-labels">
+        <h6>
+          <strong>Health Labels</strong>
+        </h6>
+        <ul>
+          <% if @recipe.health_labels.empty? %>
+            <li>No health labels provided</li>
+          <% else %>
+            <% @recipe.health_labels.each do |labels| %>
+              <li><%= labels %></li>
+            <% end %>
+          <% end %>
+        </ul>
+      </div>
+    </section>
+
+    <section class="small-12 medium-6 large-6 columns">
+      <h6><strong>Ingredients</strong></h6>
+      <ul>
+        <% @recipe.ingredients_text.each do |ingred| %>
+          <li><%= ingred %></li>
+        <% end %>
+      </ul>
+    </section>
+  </section>
+
+<!--
+  <section>
+    <h6 class="health-labels">
+      <strong>Health Labels</strong>
+    </h6>
+    <ul>
+      <% @recipe.health_labels.each do |labels| %>
+        <li><%= labels %></li>
+      <% end %>
+    </ul>
+  </section>
+  <%#= link_to "Back to Search page", root_path %>
+</section>
+-->

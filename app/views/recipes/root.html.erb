@@ -1,0 +1,17 @@
+<h1>MUNCHER</h1>
+
+<div class="search-box">
+  <%= form_tag("/recipes", method: "get") do %>
+    <%= label_tag(:q, "Search Recipes:") %>
+    <%= text_field_tag(:q) %>
+    <%= submit_tag("Search", class:"button")%>
+  <% end %>
+</div>
+
+<%= render partial: "flash", locals: { action_name: "flash"} %>
+
+<%# if flash[:status] %>
+  <!-- <div class="flash"> -->
+    <%#= flash[:message] %>
+  <!-- </div> -->
+<%# end %>

@@ -1,0 +1,202 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ *= require foundation_and_overrides
+
+ */
+
+.column:last-child:not(:first-child), .columns:last-child:not(:first-child) {
+  float: left;
+}
+
+body {
+  font-family: Courier;
+  color: white;
+  background-image: image-url("trees.jpg");
+  padding-bottom: 60px;
+  position: relative;
+}
+
+header {
+  height: 200px;
+}
+
+
+header h2 {
+  font-family: Courier;
+  text-align: center;
+  margin-top: 2%;
+}
+
+header h2 a {
+  color: white;
+}
+
+header h2 a:hover {
+  color: pink;
+}
+
+.nav-search-box {
+  max-width: 500px;
+  margin: auto;
+}
+
+.nav-search-box label {
+  color: white;
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.button {
+  color: white;
+  float: right;
+}
+
+/*TODO*/
+.wrapper {
+  margin-width: 960px;
+}
+
+footer {
+  color: white;
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  padding: 1rem;
+  text-align: center;
+  width:100%;
+  height:60px;   /* Height of the footer */
+}
+
+footer a {
+  color: white;
+}
+
+footer a:hover {
+  color: pink;
+}
+
+/***** ROOT PAGE *****/
+
+h1  {
+  font-family: Courier;
+  text-align: center;
+  font-size: 75px;
+  margin-top: 200px;
+  margin-bottom: 50px;
+}
+
+.search-box {
+  max-width: 750px;
+  margin: auto;
+  margin-bottom: 13%;
+}
+
+.search-box label {
+  color: white;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.flash {
+  color: white;
+  font-size: 17px;
+  text-align: center;
+  margin-left: 2%;
+  margin-bottom: 1%;
+  margin-right: 5%;
+}
+
+/***** INDEX PAGE *****/
+/***** SHOW PAGE *****/
+
+
+.index-page {
+  background-color: white;
+  font-family: courier;
+  padding: 2% 10%;
+}
+
+.index-image-link {
+  height: 50px;
+  text-align: center;
+  background-color: black;
+}
+
+.index-image-link a {
+  color: white;
+  padding: 1%;
+}
+
+.index-images {
+  margin-bottom: 3%;
+}
+
+.show-page {
+  background-color: white;
+  font-family: courier;
+  color: black;
+  padding: 5% 10%;
+}
+
+.show-index-flash {
+  color: white;
+  margin-left: 3%;
+  margin-bottom: 2%;
+}
+
+h3, h5, h6 {
+  font-family: courier;
+}
+
+h3 {
+  color: black;
+  margin-top: 1%;
+  margin-bottom: 3%;
+}
+
+h5 {
+  margin: 2% 0;
+}
+
+.show-page h3 {
+  text-align: center;
+}
+
+.show-page h5 {
+  text-align: center;
+  margin-bottom: 5%;
+}
+
+.show-image {
+  text-align: center;
+  padding: 0;
+}
+
+.health-labels {
+  text-align: left;
+  margin-top: 10%;
+  margin-left: 20%;
+}
+
+.pagination {
+  margin-top: 3%;
+  margin-bottom: 0;
+  text-align: center;
+}
+
+.pagination a {
+  display: inline-block;
+}
