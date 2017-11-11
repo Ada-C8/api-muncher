@@ -9,10 +9,10 @@ class Recipe
     @uri = uri
     @image = image
 
-    @diet_labels = options["diet_labels"]
-    @source = options["source"]
-    @url = options["url"]
-    @ingredient_lines = options["ingredient_lines"]
+    @diet_labels = options[:diet_labels]
+    @source = options[:source]
+    @url = options[:url]
+    @ingredient_lines = options[:ingredient_lines]
   end
 
    def id

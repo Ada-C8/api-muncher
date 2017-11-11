@@ -6,7 +6,7 @@
   <li><%= ingredient %> </li>
 <% end %>
 
-<%if !@recipe.diet_labels.empty? %>
+<%if @recipe.diet_labels && !@recipe.diet_labels.empty? %>
   <p> Dietary Labels:<% @recipe.diet_labels.each do |diet_label| %></p>
     <li><%= diet_label %> </li>
   <% end %>

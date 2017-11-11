@@ -1,3 +1,6 @@
+require_dependency '../../lib/edamam_api_muncher'
+require_dependency '../../lib/recipe'
+
 class RecipesController < ApplicationController
 
   def index # Main page that we search for food
@@ -16,9 +19,8 @@ class RecipesController < ApplicationController
   end
 
   def show # details page
-    # Recipe r1 = Recipe.new("http://google.com/1", "First Fake data for " + params[:id])
     @recipe = EdamamApiMuncher.find(params[:id])
-    if @recipe != []
+    if @recipe
       flash[:status] = :success
       flash[:message] = "Success, recipe has been found"
     else
