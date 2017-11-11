@@ -40,6 +40,11 @@ html, body {
   font-family: $primary-font;
 }
 
+body {
+  position:relative; /*REQUIRED Sets up positioning for your footer*/
+}
+
+
 /* *****************************************************
                       Root Page
 ****************************************************** */
@@ -67,24 +72,43 @@ div.root {
 }
 
 
-
+ // E5FCC2   9DE0AD   45ADA8   547980   594F4F
 
 /* *****************************************************
                       FOOTER
 ****************************************************** */
 
-footer {
-  position: absolute;
-  bottom: 0;
-  width: 100%;
-  height: 3em;
-  background-color: $primary-grey;
-  div {
-    padding: 0;
-    height: 3em;
-  }
-  #credit {
-    line-height: 3em;
-    margin: 0;
-  }
+// footer {
+//   position: absolute;
+//   bottom: 0;
+//   width: 100%;
+//   height: 3em;
+//   background-color: #E5FCC2;
+//   div {
+//     padding: 0;
+//     height: 3em;
+//   }
+//   #credit {
+//     line-height: 3em;
+//     margin: 0;
+//   }
+// }
+
+
+
+#sticky {
+  width:100%;
+  height:10vh;
+  padding-top:3vh;
+  background:#E5FCC2;
+  // color:white;
+  font-weight:bold;
+  font-size:3vh;
+  text-align:center;
+  position:fixed;    /*Here's what sticks it*/
+  bottom:0;          /*to the bottom of the window*/
+  left:0;            /*and to the left of the window.*/
+}
+p#sticky {
+  margin: 0;
 }
