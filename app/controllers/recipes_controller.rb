@@ -1,11 +1,20 @@
+require_dependency '../../lib/edamam_api_wrapper'
+require_dependency '../../lib/recipe'
+
 class RecipesController < ApplicationController
-  def root
-    # I don't think this needs anything currently.
+  def root ;
   end
 
   def index
     @recipes = EdamamApiWrapper.list_recipes(params[:search_term])
     @search_term = params[:search_term]
+
+    # if results.empty?
+      # flash[:status] = :failure
+      # flash[:message] = "Sorry, your search term '#{params[:search_term]}' didn't match any recipes. Please try again."
+      # redirect_to root_path
+    # else
+
   end
 
   def show
