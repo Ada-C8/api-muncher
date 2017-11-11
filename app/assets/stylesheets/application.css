@@ -1,0 +1,350 @@
+/*
+* This is a manifest file that'll be compiled into application.css, which will include all the files
+* listed below.
+*
+* Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
+* vendor/assets/stylesheets directory can be referenced here using a relative path.
+*
+* You're free to add application-wide styles to this file and they'll appear at the bottom of the
+* compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+* files in this directory. Styles in this file should be added after the last require_* statement.
+* It is generally better to create a new file per style scope.
+*
+*= require_tree .
+*= require_self
+*/
+
+/*general styling*/
+
+body {
+  position: relative;
+  margin: 0;
+  padding-bottom: 0;
+  min-height: 100%;
+  min-width: 100%;
+  font-family: "Helvetica Neue", Arial, sans-serif;
+  background-color: #ffd0b6;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+html {
+  height: 100%;
+  box-sizing: border-box;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+}
+
+/*root page search styling*/
+
+.root-page {
+  height: 100%;
+  width: 100%;
+}
+
+.search-form {
+  display: block;
+  text-align: center;
+  width: 80%;
+  margin-left: 10%;
+  margin-right: 10%;
+}
+
+.muncher-text {
+  color: #FFB6C1;
+  font-size:22rem;
+  font-family: 'Pacifico', cursive;
+  width: 100%;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  margin: 0 0 0 0;
+  background-color: transparent;
+  text-align: center;
+}
+
+input[type=text], input[type=text]:focus, textarea, textarea:focus {
+  background-color: transparent;
+  color: black;
+  margin: 10px;
+  padding: 20px;
+  border-bottom: 3px solid #ff6a80;
+  border-top: transparent;
+  border-left: transparent;
+  border-right: transparent;
+  overflow:hidden;
+  transition: .3s;
+  font-size: 6rem;
+  font-weight: 200;
+}
+
+input[type=text]:focus {
+  outline-width: 0;
+}
+
+.button, input[type=submit] {
+  flex: 1 1 auto;
+  margin-top: 10px;
+  padding: 20px;
+  margin-right: 40%;
+  margin-left: 40%;
+  text-align: center;
+  border: 1px solid #FF6A80;
+  color: black;
+  background-color: #FFB6C1;
+  position: relative;
+  overflow:hidden;
+  transition: .3s;
+}
+
+/*search page styling*/
+
+.recipe-list, .show {
+  max-width: 70%;
+  margin-right: 15%;
+  margin-left: 15%;
+  margin-top: 5%;
+  text-align: center;
+}
+
+.one-recipe {
+  height: 350px;
+  padding: 1rem;
+  display: inline-block;
+  margin: auto;
+}
+
+.search-image, .search-image img, .recipe-image img{
+  border-radius: 50%;
+  padding: 0;
+  height: 200px;
+  width: 200px;
+
+}
+
+.search-image img:hover {
+  opacity: .5;
+}
+
+.none {
+  width: 100%;
+}
+
+.pages {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-right: 40%;
+  margin-left: 40%;
+  margin-top: 0;
+  margin-bottom: 10%;
+  padding: 0;
+}
+
+/*show page styling and media screens*/
+
+.show {
+  height: auto;
+}
+
+.title, .title a, .recipe-link a, input[type=submit], .search a, .credit a, .pages a, .pages {
+  text-align: center;
+  width: 200px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: #ff6a80;
+}
+
+.recipe-title, .none, .none a  {
+  text-align: center;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: #ff6a80;
+}
+
+.recipe-image img {
+  float: left;
+  height: 300px;
+  width: 300px;
+}
+
+.ingredients {
+  width: 50%;
+  float: right;
+  text-align: left;
+  text-transform: uppercase;
+}
+
+.ingredients li, .health-info li {
+  font-weight: lighter;
+  padding: .2rem;
+  padding-left: 0;
+}
+
+.basic-recipe-info {
+  margin-top: 5%;
+}
+
+.basic-recipe-info, .extra-details {
+  width: 100%;
+  height: auto;
+  display: inline-block;
+}
+
+.health-info {
+  width: 50%;
+  float: right;
+  text-align: left;
+  text-transform: uppercase;
+}
+
+.health-labels {
+  float: left;
+}
+
+.diet-labels {
+  width: 50%;
+  float: right;
+  text-align: left;
+}
+
+.recipe-link {
+  margin-bottom: 5%;
+}
+
+.extra-details h3, .ingredients h3 {
+  margin-bottom: 0;
+  padding-bottom: 0;
+  color: #ff6a80;
+}
+
+@media screen and (max-width: 600px){
+  .ingredients, .health-info {
+    width: 100%;
+  }
+}
+
+/* responsive header styling*/
+
+header {
+  position: relative;
+  background-color: transparent;
+}
+
+header ul.nav {
+  overflow: hidden;
+  list-style: none;
+}
+
+header ul.nav li {
+  position: relative;
+  float: left;
+  width: 20%;
+}
+
+header ul.nav li a {
+  display: block;
+  height: 50px;
+  opacity: 0;
+  line-height: 50px;
+  text-decoration: none;
+  text-align: center;
+  cursor: default;
+  -webkit-transition: all 0.25s ease;
+  -moz-transition: all 0.25s ease;
+}
+
+@media screen and (max-width: 600px){
+  header ul.nav li{
+    float: none;
+    width: 100%;
+  }
+  header ul.nav li a{
+    height: 0;
+  }
+}
+
+/* Style for header when class is toggled to active on click */
+
+header.active ul.nav li a {
+  height: 100px;
+  opacity: 1;
+  line-height: 120px;
+}
+
+@media screen and (max-width: 600px){
+  header.active ul.nav li a{
+    height: 60px;
+    line-height: 60px;
+    border-bottom: 1px solid #222b2f;
+  }
+}
+
+/* Style for the plus button */
+
+button.toggle-nav {
+  position: absolute;
+  top: 50px;
+  left: calc(50% - 30px);
+  width: 60px;
+  height: 35px;
+  background-color: #ff6a80;
+  color: #fff;
+  border: none;
+  line-height: 30px;
+  vertical-align: middle;
+  outline: none;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+  -webkit-transition: all 0.25s ease;
+  -moz-transition: all 0.25s ease;
+}
+
+button.toggle-nav:hover {
+  height: 50px;
+}
+
+button.toggle-nav span {
+  display: block;
+  -webkit-transform: rotate(90deg);
+  -moz-transform: rotate(90deg);
+  -webkit-transition: all 0.25s ease;
+  -moz-transition: all 0.25s ease;
+}
+
+/* Style for the plus button when header class is toggled to active */
+
+header.active button.toggle-nav{
+  top: 120px;
+  background-color: transparent;
+}
+
+header.active button.toggle-nav span{
+  -webkit-transform: rotate(270deg);
+  -moz-transform: rotate(270deg);
+}
+
+@media screen and (max-width: 600px){
+  button.toggle-nav{
+    top: 0;
+    left: 15px;
+  }
+  header.active button.toggle-nav{
+    top: 305px;
+  }
+}
+
+
+a:hover {
+  color: #FFB6C1;
+}

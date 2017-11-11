@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>ApiMuncher</title>
+    <%= csrf_meta_tags %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+
+      <link rel="icon" href="https://t3.ftcdn.net/jpg/01/67/21/46/500_F_167214679_uMWihNxfdKFk4Z0imTql7KYuW8r37i3r.jpg">
+
+      <link href="https://fonts.googleapis.com/css?family=Pacifico" rel="stylesheet">
+  </head>
+
+  <body>
+    <header>
+      <button class="toggle-nav">
+        <span>></span>
+      </button>
+      <ul class="nav">
+        <li class="search"><%= link_to "New Search", root_path %></a></li>
+        <li class="credit"><a href="https://www.edamam.com/">Powered by Edamam</a></li>
+      </ul>
+    </header>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+
+    <script type="text/javascript">
+    $(document).ready(function(){
+
+      var header = $('header'),
+      btn    = $('button.toggle-nav');
+
+      btn.on('click', function(){
+        header.toggleClass('active');
+      });
+
+    });
+    </script>
+    <%= yield %>
+
+  </body>
+</html>

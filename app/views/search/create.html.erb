@@ -1,0 +1,23 @@
+<section class="recipe-list">
+  <% if @all_recipes.count == 0 %>
+  <h1 class="none">No recipes available<br />
+  <%= link_to "New Search", root_path %></h1>
+  <% end %>
+
+  <% @all_recipes.each do |recipe| %>
+  <div class="one-recipe row">
+    <div class= "search-image small 5-columns large 3-columns"> <%= image_tag(recipe.image) %> </div>
+    <p class="title"><%= link_to "#{recipe.title}", show_recipe_path(recipe.title, uri: recipe.uri) %></p>
+    </script>
+  </div>
+  <% end %>
+
+<div class="pages">
+  <% if @page != 1 %>
+  <%= link_to "previous", search_results_path(:ingredients => @keywords, :page => @page - 1), method: :get %>
+  <% end %>
+  <% if @all_recipes.count > 0 %>
+  <%= link_to "next",  search_results_path(:ingredients => @keywords, :page => @page + 1), method: :get %>
+  <% end %>
+</div>
+</section>
