@@ -1,8 +1,8 @@
-require_dependency '../../lib/edamam_api_wrapper'
-require_dependency '../../lib/recipe'
+# require_dependency '../../lib/edamam_api_wrapper'
+# require_dependency '../../lib/recipe'
 
 class RecipesController < ApplicationController
-  def root ;
+  def root
   end
 
   def index

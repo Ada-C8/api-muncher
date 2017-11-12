@@ -23,9 +23,10 @@ describe "recipe" do
   it "tracks label and uri" do
     label = "test_label"
     uri = "test_uri"
+    # binding.pry
     recipe = Recipe.new(label,uri)
     recipe.label.must_equal label
-    recipe.uri.must_equal uri
+    recipe.uri.must_equal uri.split('_')[-1]
   end
 
   it "tracks optional arguments" do

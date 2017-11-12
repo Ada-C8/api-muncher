@@ -2,8 +2,8 @@ require "test_helper"
 
 describe EdamamApiWrapper do
   before do
-    @uri_good = "http://www.edamam.com/ontologies/edamam.owl#23recipe_637913ec61d9da69eb451818c3293df2"
-    @uri_bad = "http://www.edamam.com/ontologies/edamam.owl#23recipe_637913ec61d9da69eb451818"
+    @uri_good = "637913ec61d9da69eb451818c3293df2"
+    @uri_bad = "637913ec61d9da69eb451818"
   end
 
   describe "list_recipes" do
