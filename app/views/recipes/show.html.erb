@@ -1,7 +1,7 @@
 <section>
   <%= render partial: "header" %>
   <div class="recipe_detail">
-    <h3><%= link_to @recipe.title, @recipe.title %></h3>
+    <h3><%= link_to @recipe.title, @recipe.url %></h3>
     <%= image_tag @recipe.image %>
     <h4>By: <%= link_to @recipe.source, @recipe.url%></h4>
   </div>
