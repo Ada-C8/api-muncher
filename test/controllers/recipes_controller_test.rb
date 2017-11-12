@@ -9,10 +9,10 @@ describe RecipesController do
   end
 
   describe "index" do
-    it "" do
-      VCR.use_cassette("recipes") do
+    it "show idex for a search term" do
+      VCR.use_cassette("yogurt") do
         test_params = {
-          search_term: "cheese"
+          search_term: "yogurt"
         }
         get recipes_path, params: test_params
         must_respond_with :success
