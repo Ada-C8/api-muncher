@@ -5,18 +5,21 @@ class EdamamApiWrapper
   ID = ENV["EDAMAM_ID"]
   KEY = ENV["EDAMAM_KEY"]
 
+  # Raised when API request fails
   class ApiError < StandardError
   end
-
+  # Raised when the search term returns no results
   class NoResultsError < StandardError
   end
-
+  # Raised when the search_term contains symbols or numbers
   class BadSearchTermError < StandardError
   end
-
+  # Raised when the search_term is empty
   class BlankSearchError < StandardError
   end
 
+# Method to make an api call to Edamam to get all the recipies that match a search term.
+# get_recipies returns instances of Recipies that are created using data from the api response
   def self.get_recipies(search_term, key=KEY)
     # check that the search term only contains letters and spaces before requesting info from the API
     empty_search_term(search_term)
@@ -33,7 +36,7 @@ class EdamamApiWrapper
 
     # if the API call was a success
     if response.code == 200
-      # if there are search results then create an instance of Recipe for each "hit"
+      # if there are search results then create an instance of Recipe for each recipe "hit"
       if response["count"] > 0
         response["hits"].each do |recipe_data|
           recipies_returned << create_recipe(recipe_data)
@@ -47,6 +50,8 @@ class EdamamApiWrapper
     return recipies_returned
   end # get_recipies
 
+# method makes an api request for a single recipe that matches the provided uri in the api request
+# show_recipe returns a single instance of Recipe that is made from data returned in the api response
   def self.show_recipe(uri, key=KEY)
     begin
       # encode the uri from the show controller
@@ -69,7 +74,7 @@ class EdamamApiWrapper
         raise ApiError.new("Call to Edamam API failed. Status was #{response.code} #{response.message}")
       end
 
-    # NOTE: HTTParty parses the json, which, in the case where the uri is bogus, will throw a JSON::ParserError. So, I need to have this rescue block to catch this to make the "bad uri" test pass
+    # NOTE: HTTParty parses the json, which, in the case where the uri is invalid, will throw a JSON::ParserError. So, I need to have this rescue block to catch the error raised when Edamam is sent an invalid uri
     rescue JSON::ParserError => e
       raise ApiError.new("Call to Edamam API failed. Exception message: #{e.message}")
     end # rescue
@@ -110,7 +115,7 @@ class EdamamApiWrapper
 
 # this method picks out the data from the response in self.get_recipies that is needed to create and instance of Recipe.
 # NOTE: Since I am making a new API call for the show page I don't really need to set the optional attributes when I am creating an instance of Recipe that will only be seen on the index page...
-# QUESTION: Did I need to make a new API call for the show page? Could I have just accessed an instance of recipe if I had made Recipe a model? But do I want to store the results of every API request (that seems like a lot of data to store needlessly since the show page won't be shown for most of the instances of Recipe...)? What is the best way to do this???
+# QUESTION: Did I need to make a new API call for the show page? Could I have just passed more data in the link_to params from the instance of that recipe I had already created from the get_recipies method? What is the best way to do this???
   def self.create_recipe(api_hits)
     return Recipe.new(
     api_hits["recipe"]["label"],
