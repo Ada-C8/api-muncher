@@ -14,9 +14,10 @@
         <% end %>
       </ul>
 
-      <h4> Dietary Labels: </h4>
+
       <ul>
         <%if @recipe.diet_labels && !@recipe.diet_labels.empty? %>
+          <h4> Dietary Labels: </h4>
           <% @recipe.diet_labels.each do |diet_label| %>
             <li><%= diet_label %> </li>
           <% end %>

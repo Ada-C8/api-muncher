@@ -24,10 +24,10 @@
   background-size: 78%;
 }
 
-#home_header a{
+#home_header, a{
   text-align: center;
   font-weight: 700;
-  font-family: inherit;
+  font-family: cursive;
   font-style: oblique;
   color: white;
   margin-bottom: 5%;
@@ -77,8 +77,13 @@
 #header_text {
   color: white;
   text-align: center;
-  /*font-weight: bold;*/
-  /*margin-bottom: 2%;*/
+  font-family: cursive;
+  margin-top: 5%;
+  margin-bottom: 3%;
+}
+
+#header_text a:hover{
+  color: olive;
 }
 
 .header_search {

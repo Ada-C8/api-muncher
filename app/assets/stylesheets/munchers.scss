@@ -9,18 +9,29 @@
 //     color: black;
 //     }
 /*********** results **************/
-#recipe_title a{
+.header_top{
+  margin-top: 0;
+}
+
+#recipe_title {
   font-family: sans-serif;
   text-align: center;
   font: brown;
   padding-bottom: 5%;
-
 }
 
-#recipe-results a{
+#recipe_title a{
+  color: blue;
+}
+
+#recipe_title a:hover{
+  color: lightblue;
+}
+
+#recipe_results{
+  // width: 50%;
   text-align: center;
-  // padding: 1%;
-  padding-bottom: 5%;
+  padding: 1%;
   font: brown;
   font-family: cursive;
 }
@@ -30,36 +41,58 @@
   height: 350px;
 }
 
+.results_page {
+  margin-bottom: .1%;
+}
+
 #pagination {
   margin-top: 5%;
   text-align: center;
-  color: brown;
+  margin-bottom: -25%;
+}
+
+#pagination a {
+  color: navy;
+  padding: 5%;
+}
+
+#pagination a:hover{
+  color: lightblue;
 }
 
 /*********** show page **************/
 
-#recipe-detail {
-  text-align: center;
-}
-
 #ingredients ul li {
   list-style-type: none;
   font-weight: 300;
-  padding: 0;
+  padding: 1%;
   margin: 0;
 }
 
 #ingredients ul {
-padding: 0;
+padding: 2%;
 margin: 0;
 }
 
-#recipe-detail a{
+#ingredients {
+  text-align: center;
+  clear: both;
+  margin-top: 5%;
+  margin-left: 25%;
+  margin-bottom: -25%;
+}
+.recipe_detail{
+  text-align: center;
+  margin-top: 5%;
+}
+.recipe_detail a{
 text-align: center;
 font-weight: 500;
-color: black;
+color: brown;
+font-family: sans-serif;
 }
 
-#recipe-info a:hover {
+.recipe_detail a:hover {
 opacity: 0.5;
+color: orange;
 }
