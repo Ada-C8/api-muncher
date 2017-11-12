@@ -147,7 +147,9 @@ nav {
 ****************************************************** */
 .result {
   text-align: center;
-  margin: 2vmax;
+  margin-top: 2vmax;
+  margin-top: 1.75vmax;
+  color: white;
 }
 
 div.column {
@@ -157,19 +159,27 @@ div.column {
 div.show-box {
   display: block;
   text-align: center;
-  margin: 15px auto;
+  margin: 1vmax auto;
   // border: white 5px solid;
   padding: 1vmax;
   background-color: white;
+  max-width: 100%;
   p {
     padding-top: 1vmax;
     margin: 0;
-    font-size: 1em;
+    font-size: 1.1em;
   }
   a {
     color:$primary-teal;
+    display: inline-block;
+    width: 85%;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    border-bottom: white solid .10em;
   }
   a:hover {
     border-bottom: $primary-teal solid .10em;
   }
+
 }

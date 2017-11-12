@@ -18,7 +18,7 @@
         <h1 class="nav-main"><%= link_to "MUNCHER", root_path %></h1>
         <div class="small-4 medium-6 cell small-centered columns">
           <%= form_tag recipes_path, method: "get" do %>
-          <%= text_field_tag(:search) %>
+          <%= text_field_tag(:search_term) %>
           <%= submit_tag("Search", class: "button nav-button submit")%>
         </div>
         <% end %>
