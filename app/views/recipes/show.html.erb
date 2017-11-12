@@ -1,0 +1,28 @@
+<section>
+  <div class="row show">
+    <div class="result showhead">
+      <h2><%= @recipe.label%></h2>
+      <h4>By: <%= link_to "#{@recipe.source}", @recipe.url%></h4>
+    </div>
+
+    <div class="medium-6 medium-push-6 columns picture">
+      <% unless @recipe.ingredientLines == [] %>
+        <%= render partial: "list", locals: {
+          list_obj: @recipe.ingredientLines, list_title: "Ingredients"
+        } %>
+      <% end %>
+
+      <% unless @recipe.dietLabels == [] %>
+        <%= render partial: "list", locals: {
+          list_obj: @recipe.dietLabels, list_title: "Dietary Labels"
+        } %>
+      <% end %>
+    </div>
+
+    <div class="medium-6 medium-pull-6 columns lists">
+      <div>
+        <%= image_tag "#{@recipe.image}", alt:"image"%>
+      </div>
+    </div>
+  </div>
+</section>

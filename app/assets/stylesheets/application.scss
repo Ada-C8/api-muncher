@@ -1,0 +1,214 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ *= require foundation_and_overrides
+
+ */
+
+
+@import url('https://fonts.googleapis.com/css?family=Muli');
+
+/* *****************************************************
+                      STORED VARIABLES
+****************************************************** */
+$primary-grey: #B8BCC6;
+$primary-dark-blue: #001D4A;
+$primary-teal: #005182;
+$primary-light-blue: #9AB8E3;
+$primary-offwhite: #fbf7f4;
+$primary-font: 'Muli', sans-serif;
+
+
+
+body, h1, h2, h3, h4, h5 {
+  font-family: $primary-font
+}
+
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  font-family: $primary-font;
+}
+
+body {
+  position:relative; /*REQUIRED Sets up positioning for your footer*/
+  background-color: $primary-offwhite;
+}
+
+
+/* *****************************************************
+                      Root Page
+****************************************************** */
+
+
+// div.darken-overlay  {
+//   width: 100%;
+//   background-color: rgba(0, 0, 0, 0.5);
+//   height: 100%;
+//   padding-top: 10vh
+// }
+
+div.root {
+  // https://static.pexels.com/photos/372851/pexels-photo-372851.jpeg
+
+  background: url('https://intuitivedigital.com/wp-content/uploads/2015/04/blueberries-1024x682.jpg') no-repeat center center;
+  background-size: cover;
+  width: 100%;
+  height: 100vh;
+}
+
+.root {
+  h1, p, label {
+    color: $primary-offwhite;
+  }
+  h1 {
+    font-size: 8vmax;
+    margin: 0;
+  }
+}
+
+.button {
+  background-color: $primary-dark-blue;
+
+}
+.button:hover{
+  background-color: $primary-dark-blue;
+  color: $primary-light-blue;
+}
+
+ // E5FCC2   9DE0AD   45ADA8   547980   594F4F
+
+/* *****************************************************
+                      FOOTER
+****************************************************** */
+
+footer.pad {
+  padding-top: 5vmax;
+}
+
+#sticky {
+  width:100%;
+  height:4vmax;
+  padding-top:.5vmax;
+  background:$primary-dark-blue;
+  font-weight:bold;
+  font-size:2vmax;
+  text-align:center;
+  position:fixed;    /*Here's what sticks it*/
+  bottom:0;          /*to the bottom of the window*/
+  left:0;            /*and to the left of the window.*/
+}
+p#sticky {
+  margin: 0;
+  color: $primary-light-blue;
+}
+
+/* *****************************************************
+                            NAV
+****************************************************** */
+.nav {
+  font-size: 6vmax;
+  text-align: center;
+  margin-bottom: 0px;
+}
+
+.nav-main {
+  font-size: 8vmax;
+  text-align: center;
+  margin-bottom: 0px;
+}
+
+nav {
+  background-image: url("https://intuitivedigital.com/wp-content/uploads/2015/04/blueberries-1024x682.jpg");
+  background-size: cover;
+  background-position: 45%;
+  a {
+    color: $primary-offwhite;
+  }
+  a:hover {
+    color: $primary-offwhite;
+  }
+}
+
+/* *****************************************************
+                          INDEX
+****************************************************** */
+.result {
+  text-align: center;
+  margin-top: 2vmax;
+  margin-top: 1.75vmax;
+  color: $primary-dark-blue;
+}
+
+div.column {
+  display: flex;
+  align-items: center;
+}
+
+div.show-box {
+  border: solid .1em $primary-light-blue;
+  display: block;
+  text-align: center;
+  margin: 1vmax auto;
+  // border: white 5px solid;
+  padding: 1vmax;
+  background-color: white;
+  max-width: 100%;
+  p {
+    padding-top: 1vmax;
+    margin: 0;
+    font-size: 1.1em;
+  }
+  a {
+    color:$primary-teal;
+    display: inline-block;
+    width: 85%;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    border-bottom: white solid .10em;
+  }
+  a:hover {
+    border-bottom: $primary-teal solid .10em;
+  }
+}
+
+/* *****************************************************
+                          SHOW
+****************************************************** */
+
+.showhead {
+  margin: 2vmax;
+  text-align: center;
+}
+
+.picture img {
+  display:block;
+  margin:auto;
+}
+
+.lists {
+  padding: 2em;
+}
+
+.show {
+  color: $primary-dark-blue;
+  a {
+    color:$primary-teal;
+  }
+  a:hover {
+    border-bottom: $primary-teal solid .07em;
+  }
+}
