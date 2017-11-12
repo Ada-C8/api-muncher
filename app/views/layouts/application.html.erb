@@ -26,13 +26,13 @@
     </nav>
   <% end %>
 
-
   <body>
 
     <%= yield %>
 
   </body>
-  <footer>
+
+  <footer class="<%= current_page?(root_path)? '' : 'pad' %>">
     <div class= "row text-center">
       <p id="sticky">
         <span>Powered by Edamam</span>

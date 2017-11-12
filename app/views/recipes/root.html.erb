@@ -2,10 +2,10 @@
   <div class="darken-overlay">
     <div class= "row text-center">
       <h1>MUNCHER</h1>
-      <div class="small-4 medium-6 cell small-centered columns">
+      <div class="small-4 medium-6 cell small-centered columns text-center">
         <%= form_tag recipes_path, method: "get" do %>
           <%= text_field_tag(:search_term) %>
-          <%= submit_tag "submit", class: "button submit"%>
+          <%= submit_tag "Search", class: "button nav-button submit"%>
         <% end %>
       </div>
     </div>
