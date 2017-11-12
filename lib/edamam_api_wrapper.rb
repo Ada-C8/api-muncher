@@ -7,6 +7,7 @@ class EdamamApiWrapper
   BASE_URI = "?r=http://www.edamam.com/ontologies/edamam.owl%23recipe_"
   Q = "?q="
   R = "?r="
+  NUM = "&from=0&to=100"
 
   class ApiError < StandardError
   end
@@ -78,7 +79,7 @@ private
   end
 
   def self.build_url(search_term, key, type=Q)
-    return BASE_URL + type + search_term + "&app_id=" + APP_ID + "&app_key=" + key
+    return BASE_URL + type + search_term + "&app_id=" + APP_ID + "&app_key=" + key + NUM
   end
 
   def self.uri_regex(uri)
