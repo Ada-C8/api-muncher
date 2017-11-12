@@ -1,13 +1,27 @@
-<h3><%= @recipe.title %></h3>
-<%= image_tag @recipe.image %>
-<p>By <%= link_to @recipe.source, @recipe.url%></p>
+<section>
+  <%= render partial: "header" %>
+  <div class="recipe_detail">
+    <h3><%= link_to @recipe.title, @recipe.title %></h3>
+    <%= image_tag @recipe.image %>
+    <h4>By: <%= link_to @recipe.source, @recipe.url%></h4>
+  </div>
+  <div class="row">
+    <section class="large-6 medium-6 small-12 columns" id="ingredients">
+      <h4> Ingredients: </h4>
+      <ul>
+        <% @recipe.ingredient_lines.each do |ingredient| %>
+          <li><%= ingredient %> </li>
+        <% end %>
+      </ul>
 
-<p> Ingredients: <% @recipe.ingredient_lines.each do |ingredient| %> </p>
-  <li><%= ingredient %> </li>
-<% end %>
-
-<%if @recipe.diet_labels && !@recipe.diet_labels.empty? %>
-  <p> Dietary Labels:<% @recipe.diet_labels.each do |diet_label| %></p>
-    <li><%= diet_label %> </li>
-  <% end %>
-<% end %>
+      <h4> Dietary Labels: </h4>
+      <ul>
+        <%if @recipe.diet_labels && !@recipe.diet_labels.empty? %>
+          <% @recipe.diet_labels.each do |diet_label| %>
+            <li><%= diet_label %> </li>
+          <% end %>
+      </ul>
+      <% end %>
+    </section>
+  </div>
+</section>

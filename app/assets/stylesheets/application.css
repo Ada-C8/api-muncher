@@ -16,8 +16,85 @@
 
  */
 
+/********************** HOME PAGE ***************/
+.home_page{
+  margin-top: 8%;
+  background-image:
+    url("https://static.pexels.com/photos/54455/cook-food-kitchen-eat-54455.jpeg");
+  background-size: 78%;
+}
+
+#home_header a{
+  text-align: center;
+  font-weight: 700;
+  font-family: inherit;
+  font-style: oblique;
+  color: white;
+  margin-bottom: 5%;
+}
+
+.home_search_row {
+  position: relative;
+}
+
+.home_search_form {
+  position: absolute;
+  z-index: 500;
+  top: 10%;
+  left: 25%;
+  width: 50%;
+}
+
+/********************** FORM ***************/
  .button {
+   display: block;
+   text-align: center;
    border: 1px black solid;
-   background-color: transparent;
+   border-radius: .5em ;
+   background-color: beige;
    color: black;
+   margin: auto;
+   margin-top: 5%;
+   margin-bottom: 5%;
  }
+.button:hover {
+  background-color: olive;
+}
+
+.search_form {
+  width: 50%;
+  margin: auto;
+}
+
+
+/********************** HEADER ***************/
+.header_page {
+  background-image:
+    url("https://lauzonflooring.com/wp-content/uploads/2014/06/yellow-birch-hardwood-flooring-dark-brown-kenya-essential-lauzon.jpg");
+  background-size: 50%;
+}
+
+#header_text {
+  color: white;
+  text-align: center;
+  /*font-weight: bold;*/
+  /*margin-bottom: 2%;*/
+}
+
+.header_search {
+  width: 50%;
+  margin: auto;
+}
+
+/********************** FOOTER ***************/
+.footer {
+  color: olive;
+  text-align: center;
+  margin-top: 35%;
+  height: 10vh;
+  /*background:rgba(255,255,255, 0.5);*/
+}
+
+.footer_link {
+  color: olive;
+}

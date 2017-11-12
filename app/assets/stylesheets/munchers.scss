@@ -2,9 +2,64 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-.large-font {
-    font-family: 'Fredericka the Great', cursive;
-    font-size: 3em;
-    margin: 0;
-    color: black;
-    }
+// .large-font {
+//     font-family: 'Fredericka the Great', cursive;
+//     font-size: 3em;
+//     margin: 0;
+//     color: black;
+//     }
+/*********** results **************/
+#recipe_title a{
+  font-family: sans-serif;
+  text-align: center;
+  font: brown;
+  padding-bottom: 5%;
+
+}
+
+#recipe-results a{
+  text-align: center;
+  // padding: 1%;
+  padding-bottom: 5%;
+  font: brown;
+  font-family: cursive;
+}
+
+#recipe-result {
+  padding-bottom: 3%;
+  height: 350px;
+}
+
+#pagination {
+  margin-top: 5%;
+  text-align: center;
+  color: brown;
+}
+
+/*********** show page **************/
+
+#recipe-detail {
+  text-align: center;
+}
+
+#ingredients ul li {
+  list-style-type: none;
+  font-weight: 300;
+  padding: 0;
+  margin: 0;
+}
+
+#ingredients ul {
+padding: 0;
+margin: 0;
+}
+
+#recipe-detail a{
+text-align: center;
+font-weight: 500;
+color: black;
+}
+
+#recipe-info a:hover {
+opacity: 0.5;
+}
