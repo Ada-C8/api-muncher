@@ -44,7 +44,7 @@ html, body {
 
 body {
   position:relative; /*REQUIRED Sets up positioning for your footer*/
-  background-color: $primary-light-blue;
+  background-color: $primary-offwhite;
 }
 
 
@@ -135,10 +135,10 @@ nav {
   background-size: cover;
   background-position: 45%;
   a {
-    color: white;
+    color: $primary-offwhite;
   }
   a:hover {
-    color: white;
+    color: $primary-offwhite;
   }
 }
 
@@ -149,14 +149,16 @@ nav {
   text-align: center;
   margin-top: 2vmax;
   margin-top: 1.75vmax;
-  color: white;
+  color: $primary-dark-blue;
 }
 
 div.column {
   display: flex;
   align-items: center;
 }
+
 div.show-box {
+  border: solid .1em $primary-light-blue;
   display: block;
   text-align: center;
   margin: 1vmax auto;
@@ -181,5 +183,32 @@ div.show-box {
   a:hover {
     border-bottom: $primary-teal solid .10em;
   }
+}
 
+/* *****************************************************
+                          SHOW
+****************************************************** */
+
+.showhead {
+  margin: 2vmax;
+  text-align: center;
+}
+
+.picture img {
+  display:block;
+  margin:auto;
+}
+
+.lists {
+  padding: 2em;
+}
+
+.show {
+  color: $primary-dark-blue;
+  a {
+    color:$primary-teal;
+  }
+  a:hover {
+    border-bottom: $primary-teal solid .07em;
+  }
 }
