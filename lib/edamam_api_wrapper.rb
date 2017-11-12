@@ -29,9 +29,6 @@ class EdamamApiWrapper
   end
 
   def self.show_recipe(uri, key=APP_KEY, type=R)
-
-    # uri = uri_regex(uri)
-    # url = build_url(uri, key, type)
     url = BASE_URL + BASE_URI + uri + "&app_id=" + APP_ID + "&app_key=" + key
 
     response = HTTParty.get(url)
@@ -42,7 +39,7 @@ class EdamamApiWrapper
     else
       recipe = create_recipe(response[0])
     end
-    # raise
+
     return recipe
   end
 
@@ -82,7 +79,7 @@ private
     return BASE_URL + type + search_term + "&app_id=" + APP_ID + "&app_key=" + key + NUM
   end
 
-  def self.uri_regex(uri)
-    return uri.sub(/[#]{1}/, '%')
-  end
+  # def self.uri_regex(uri)
+  #   return uri.sub(/[#]{1}/, '%')
+  # end
 end
