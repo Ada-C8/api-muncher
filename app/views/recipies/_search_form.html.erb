@@ -1,3 +1,5 @@
+<%#form to get search_term from the user to send to Edamam. Params of this form are sent to the RecipiesController index action %>
+
 <h1 class="small-6 small-centered column title">MUNCHER</h1>
 <%= form_tag recipies_path, method: :get, class: "small-6 small-centered column search" do  %>
   <%= label_tag(:search_term, "Search for recipies including...") %>
