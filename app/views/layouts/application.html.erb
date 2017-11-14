@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title><%= content_for?(:title) ? yield(:title) : "Untitled" %></title>
+
+    <%= stylesheet_link_tag    "application" %>
+    <%= javascript_include_tag "application", 'data-turbolinks-track' => true %>
+    <%= csrf_meta_tags %>
+  </head>
+
+  <body>
+    <%= yield %>
+
+    <footer class="footer">
+     <p>
+      &copy; <%= link_to "Sairagul Abdukhalieva", "https://github.com/sairagula", class: "footer_link" %> | Powered by <%= link_to "Edamam", "https://developer.edamam.com/", class: "footer_link" %>
+
+     </p>
+    </footer>
+
+  </body>
+</html>

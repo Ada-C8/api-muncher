@@ -1,0 +1,98 @@
+// Place all the styles related to the Munchers controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+// .large-font {
+//     font-family: 'Fredericka the Great', cursive;
+//     font-size: 3em;
+//     margin: 0;
+//     color: black;
+//     }
+/*********** results **************/
+.header_top{
+  margin-top: 0;
+}
+
+#recipe_title {
+  font-family: sans-serif;
+  text-align: center;
+  font: brown;
+  padding-bottom: 5%;
+}
+
+#recipe_title a{
+  color: blue;
+}
+
+#recipe_title a:hover{
+  color: lightblue;
+}
+
+#recipe_results{
+  // width: 50%;
+  text-align: center;
+  padding: 1%;
+  font: brown;
+  font-family: cursive;
+}
+
+#recipe-result {
+  padding-bottom: 3%;
+  height: 350px;
+}
+
+.results_page {
+  margin-bottom: .1%;
+}
+
+#pagination {
+  margin-top: 5%;
+  text-align: center;
+  margin-bottom: -25%;
+}
+
+#pagination a {
+  color: navy;
+  padding: 5%;
+}
+
+#pagination a:hover{
+  color: lightblue;
+}
+
+/*********** show page **************/
+
+#ingredients ul li {
+  list-style-type: none;
+  font-weight: 300;
+  padding: 1%;
+  margin: 0;
+}
+
+#ingredients ul {
+padding: 2%;
+margin: 0;
+}
+
+#ingredients {
+  text-align: center;
+  clear: both;
+  margin-top: 5%;
+  margin-left: 25%;
+  margin-bottom: -25%;
+}
+.recipe_detail{
+  text-align: center;
+  margin-top: 5%;
+}
+.recipe_detail a{
+text-align: center;
+font-weight: 500;
+color: brown;
+font-family: sans-serif;
+}
+
+.recipe_detail a:hover {
+opacity: 0.5;
+color: orange;
+}

@@ -1,0 +1,22 @@
+<body id="results_page">
+  <div class="header_top"><%= render partial: "header" %></div>
+  <h3 id="recipe_results">
+    <%= "Recipes for #{params[:q]}" %>
+  </h3>
+  <div class="row">
+    <% @recipes.each do |recipe| %>
+    <div class = "large-3 medium-4 small-6 columns" id="recipe_result">
+      <%= image_tag(recipe.image) %>
+      <section id="recipe_title">
+        <%= link_to recipe.title, show_path(recipe.id) %>
+      </section>
+    </div>
+    <% end %>
+  </div>
+  <h4 id="pagination">
+    <% if params[:from] != "0" %>
+      <%= link_to "Prev", results_path(:q => params[:q], :from => params[:from].to_i() -10, :to => params[:from]) %>
+    <% end %>
+    <%= link_to "Next", results_path(:q => params[:q], :from => params[:to], :to => params[:to].to_i() + 10) %>
+  </h4>
+</body>
