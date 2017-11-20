@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>ApiMuncher</title>
+    <%= csrf_meta_tags %>
+    <link href="https://fonts.googleapis.com/css?family=Carter+One|Delius+Unicase|Merienda+One|Mystery+Quest|Oleo+Script+Swash+Caps" rel="stylesheet">
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+    <% if flash[:failure] %>
+      <section class = "row status success">
+        <% flash.each do |name, message| %>
+          <h3><%= message %></h3>
+        <% end %>
+      </section>
+    <% end  %>
+
+    <%= yield %>
+  </body>
+</html>

@@ -1,0 +1,63 @@
+<section>
+
+<%= render partial: "form" %>
+</section>
+
+<!-- <h2>Params:</h2>
+<%= params %> -->
+<section class="search-and-show-body">
+
+<section class = "results-header">
+  <% unless params[:keywords] == nil %>
+    <h4>results for "<%= @keywords %>" </h4>
+  <%end%>
+</section>
+<!-- <h5>Number of Recipes: <%=@number_of_recipes%> </h5> -->
+
+<section class="results-grid">
+  <%if @number_of_recipes != 0 && @number_of_recipes != nil%>
+    <% @recipes.each do |recipe| %>
+      <ul class="recipe-photo-and-name">
+        <li class= "search-photo">
+          <%=image_tag recipe.image%>
+          <div class = "recipe-name">
+            <%=link_to(recipe.label, recipe_show_path(recipe.find_recipe_id))%>
+          </div>
+          </li>
+        </ul>
+      </ul>
+  <%end%>
+</section>
+
+<section class="pagination-container">
+  <%if @number_of_recipes > 100%>
+    <%10.times do |page| %>
+    <div class="page-numbers">
+      <%=link_to(page+1, search_by_page_path(@keywords, page*10,page*10+9))%>
+    </div>
+    <%end%>
+  <%elsif @number_of_recipes < 100 && @number_of_recipes > 10%>
+    <%i = 0%>
+    <%(@number_of_recipes/10).times do |page|%>
+      <%i += 1%>
+      <div class="page-numbers">
+      <%=link_to(page+1, search_by_page_path(@keywords, page*10,page*10+9))%>
+      </div>
+    <%end%>
+    <div class="page-numbers">
+    <%=link_to(i+1, search_by_page_path(@keywords, (i+1)*10,((i+1)*10+(@number_of_recipes%10))))%>
+    </div>
+  <%end%>
+</section>
+
+<%else%>
+  <h3>No recipes are available for those search terms</h3>
+<%end%>
+
+</section>
+
+<footer class="footer-search-and-show" id = "footer-style">
+  <h4>
+    Powered by <%= link_to "Edamam", "https://www.edamam.com/" %>
+  </h4>
+</footer>

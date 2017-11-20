@@ -1,0 +1,257 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+
+ html {
+  height: 100%;
+  box-sizing: border-box;
+}
+
+/**,
+*:before,
+*:after {
+  box-sizing: inherit;
+}*/
+
+body {
+  position: relative;
+  /*margin: 2em;*/
+  /*padding-bottom: 6rem;*/
+  min-height: 100%;
+  height: 100%
+}
+
+/**
+ * Footer Styles
+ */
+
+.footer-search-and-show {
+  position: relative;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  padding: 20px;
+  background-color: #efefef;
+  text-align: center;
+}
+
+.footer-index a {
+  color: white
+}
+
+.footer-index a:hover {
+  color: red;
+}
+
+.footer-index {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  padding: 1rem;
+  background-color: #3a9e53;
+  text-align: center;
+    color: white;
+}
+
+#footer-style {
+  font-family: 'Delius Unicase', cursive;
+}
+
+/**********INDEX PAGE*******************/
+/**********INDEX PAGE*******************/
+/**********INDEX PAGE*******************/
+
+#home-logo {
+  font-family: 'Delius Unicase', cursive;
+  font-size: 4em;
+  color: white;
+}
+
+.home-page-container {
+  font-family: 'Delius Unicase', cursive;
+  background-image: url(italian-cuisine.jpg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size:cover;
+  display: block;
+  /*height: 100%;*/
+  /*height: calc(100% - 40px)*/
+  position: relative;
+  padding: 300px 50px 300px 50px;
+  width: 100%;
+  min-height: 100%;
+  /*padding: inherit;*/
+  margin: 0;
+}
+
+/*@media only screen and (max-device-width: 400px) {
+  .home-page-container {
+    background = url('https://www.freepik.com/free-vector/set-of-colorful-food-icon-vector-illustration_1225565.htm');
+    z-index: 10;
+    background-image: transparent;
+    width: auto;
+    height: auto;
+  }
+}*/
+ span {
+   text-align: center;
+ }
+
+.home-page-search {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+}
+
+.home-page-search div {
+  width: 400px;
+}
+/**********PAGE HEADER (FORM)*******************/
+.page-header h1 {
+
+}
+
+.page-header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  overflow: hidden;
+   max-width: 100%;
+  padding-top: 50px;
+  padding-bottom: 55px;
+   /*background-color: #B2DFDB;*/
+  background-image: url(cutting-board-header.png);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size:cover;
+   /*border-bottom: 1px solid #EEEEEE;*/
+   /*margin-bottom: 10px;
+
+}
+
+.page-header h2 {
+  /*text-align: center;
+  margin: 25px auto 40px auto;*/
+}
+
+.page-header h2 a {
+  color: white;
+  /*padding-right: 25px;
+  margin-right: 15px;*/
+}
+
+.search-bar {
+  display: flex;
+}
+
+#muncher-topnav-logo {
+  font-family: 'Delius Unicase', cursive;
+}
+
+/*******SEARCH PAGE**********/
+/*******SEARCH PAGE**********/
+/*******SEARCH PAGE**********/
+
+.search-and-show-body {
+  margin: 2em;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.results-header h4 {
+  font-family: 'Delius Unicase', cursive;
+}
+
+.results-grid {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  align-content: center;
+  /*align-items: center;*/
+  justify-content: center;
+}
+.recipe-photo-and-name {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  /*word-wrap: break-word;*/
+}
+
+.recipe-photo-and-name li {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.search-photo {
+  max-width: 300px;
+  /*box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  overflow: hidden;
+  word-wrap: break-word;*/
+}
+
+.recipe-name {
+  font-size: 1.5em;
+  list-style: none;
+  margin: 5px;
+  line-height: 1em;
+}
+/*****PAGINATION*****/
+.pagination-container {
+  display: flex;
+  align-items: center;
+  padding-bottom: 6rem;
+  min-height: 200px;
+
+}
+
+.page-numbers {
+  margin-left: 1em;
+  margin-right: 1em;
+}
+
+.page-numbers:hover {
+  color: orange;
+}
+
+/*******SHOW PAGE**********/
+/*******SHOW PAGE**********/
+/*******SHOW PAGE**********/
+.image-and-ingredients, .health-and-dietary {
+  display: flex;
+  flex-direction: row;
+  align-content: flex-start;
+  justify-content: center;
+
+}
+
+.food-image, .ingredient-list {
+  margin: 2em;
+  width: 300px;
+}
+
+.health-container, .dietary-container {
+  margin: 2em;
+}
+
+.health-container h4, .dietary-container h4 {
+  width: 300px;
+}
