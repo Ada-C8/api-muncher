@@ -1,6 +1,5 @@
 # wrapper class to make instances of Recipe fromm the data in the API response
-
-
+# storing the data in 
 
 class Recipe
   attr_reader :name, :id, :photo, :ingredients, :diet_labels, :uri, :company, :url

@@ -1,0 +1,32 @@
+
+- when you are using an Api there are 3 tricky things:
+    1. figuring out what endpoint you need to get the data you want
+    2. How to parse the response to get out what you want
+    3. error handling
+
+Things to look over how they work:
+............. 1. flash ................
+    ** how does flash work **
+- each user has a different flash hash
+- How does rails keep this straight?
+    ~ cookies!
+- Flash is a particular type of cookie
+    ~ rails says "here is some data" to the browser, "take it and send it back to me next time you make a request"
+    ~ rails encrypts and decrypts the flash so the user can't do anything with it
+    ~ flash is secure!
+    ~ if you disable cookies then the browser won't send the flash back
+        * this will often break a website if you do this
+- This helps us start looking at login functionality
+
+- use flash to display one time messages to the user
+
+
+..........................2. Pagination..........................
+..........................3. why I handle the 'rescue EdamamApiWrapper::ApiError' error differently in my index action then the the other custom error classes I created..........................
+..........................4. How StandardError works..........................
+..........................5. HTTParty..........................
+- HTTParty you can integrate into other things, like a rails app
+    * get it into a ruby program/rails and then do ruby things with it!
+> JSON.parse(response.body)
+    # what httparty is doing in the background
+    # we shouldn't ever need to do this cause we're using httparty

@@ -8,7 +8,7 @@ class RecipiesController < ApplicationController
 
   def index
     begin
-      # get_recipies will return a list of recipe instances that match the provided search_term
+      # get_recipies will make an API call and then return a list of Recipe instances that match the provided search_term and were generated using the API response data
       results = EdamamApiWrapper.get_recipies(params[:search_term])
       # the search term comes from the form_tag on the root page
       @search_term = params[:search_term]
@@ -32,7 +32,9 @@ class RecipiesController < ApplicationController
       redirect_to root_path
       # rescue an error in get_recipies where the api call fails, for example if the url is bogus
     rescue EdamamApiWrapper::ApiError
-      "Call to Edamam API failed. Status was #{response.code} #{response.message}"
+      flash[:status] = :failure
+      flash[:message] = "Call to Edamam API failed."
+      head :not_found
     end
   end # index
 
