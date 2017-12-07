@@ -27,7 +27,7 @@ class RecipeApiWrapper  #THIS IS THE DATA
   end
 
   def self.find(id)
-
+    # Need to pass the URI encoded because of the special characters in the URI.
     url = BASE_URL + "?r=#{URI.encode(id)}" + "&app_id=#{APP_ID}" + "&app_key=#{APP_KEY}"
     response = self.parse_response(HTTParty.get(url))
 

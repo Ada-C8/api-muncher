@@ -38,7 +38,7 @@ li a:hover {
   color: #74B555;
 }
 
-body {
+html {
   background-image: url('https://images.unsplash.com/photo-1445847562439-f251c3799ea5?auto=format&fit=crop&w=1532&q=60&ixid=dW5zcGxhc2guY29tOzs7Ozs%3D');
   margin:0;
   padding:0;
@@ -133,20 +133,7 @@ HERO
     height: 20%;
     max-height: 100px;
     display: block;
-    // background-color: white;
-    // opacity: 0.4;
-    // padding: 0;
-//   /*background-image: url('https://grist.files.wordpress.com/2017/06/vegetables.jpg?w=640');
-//   background-repeat: no-repeat;
-//   background-size: cover;*/
-//   height: 300px;
-//   max-width: 100%;
-//   margin: 0;
-//   color: white;
-//   box-sizing: content-box;
-//   padding: 1% 5% 2% 5%;
-//   /*background-position: bottom;*/
-//   /*width: 100%;*/
+
   h1 {
     font-size: 400%;
   }

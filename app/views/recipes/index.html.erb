@@ -1,11 +1,11 @@
 
 
 <div class="search-box">
-<h4> Welcome to Recipe Monster!  Type in a food item to search recipes: </h4>
-<%= form_tag(root_path, method: "get", id: "search-form") do %>
-  <%= text_field_tag :search, @search, placeholder: "Search Recipes" %>
-  <%= submit_tag "Search", class: "button" %>
-<%end%>
+  <h4> Welcome to Recipe Monster!  Type in a food item to search recipes: </h4>
+  <%= form_tag(root_path, method: "get", id: "search-form") do %>
+    <%= text_field_tag :search, @search, placeholder: "Search Recipes" %>
+    <%= submit_tag "Search", class: "button" %>
+  <%end%>
 </div>
 
 <% if @recipes != nil %>

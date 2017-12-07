@@ -23,13 +23,5 @@ class Recipe  #This is like a Model
 
 
 
-  # def self.get_weather(state, city)
-  #   response = get("/api/#{ENV["wunderground_key"]}/conditions/q/#{state}/#{city}.json")
-  #   if response.success?
-  #     new(response)
-  #   else
-  #     raise response.response
-  #   end
-  # end
 
 end
