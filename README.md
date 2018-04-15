@@ -1,11 +1,15 @@
 # Recipe API Consumer
 
-## Purpose
+## Summary 
+I built this web application as a class assignment at Ada Developers Academy. This was our first assignment where we consumemed an API in a web application. This web application allows a user to search for recipies that contain a specific search term. For this assignment I also learned how to use the VCR gem to decrease the number of API calls made in my tests. The VCR gem captures the results of a real API call in your tests, saves the response to a file, and the next time the tests run it replays this API call instead of making a new API call. Please see my live version of [api-muncher](https://api-muncher-tv.herokuapp.com)
+
+
+### Purpose
 Create a web application that will display recipes based on a search term. We will utilize an API from Edamam called the [Recipe Search API](https://developer.edamam.com/edamam-recipe-api).
 
 This is an individual, [stage 2](https://github.com/Ada-Developers-Academy/pedagogy/blob/master/rule-of-three.md) project.
 
-## Learning Goals:
+### Learning Goals:
 - Configure an API for consumption
 - Create authenticated API requests using HTTParty
 - Consume JSON responses from an API
@@ -13,7 +17,7 @@ This is an individual, [stage 2](https://github.com/Ada-Developers-Academy/pedag
 - Separate API logic from application logic
 
 
-### Baseline
+#### Baseline
 Before you start writing _any_ code:
 
 - Explore the API documentation to become familiar with the request(s) you can make
@@ -28,7 +32,7 @@ Once you've explored the API docs, this project:
 - Deploy your completed app to Heroku
 
 
-### Detailed Requirements  
+#### Detailed Requirements  
 **Search**:  
 - The user shall type in a search term that will:
   - Make a request to the API using the search term
@@ -52,11 +56,11 @@ Once you've explored the API docs, this project:
 - You must also create tests for your API Wrapper & any classes as well as controller tests using VCR
 - Your site must have a **responsive** look and feel, use semantic HTML as well as any grid formatting using Zurb Foundation
 
-### Important Notes:
+#### Important Notes:
 - Using this API as a developer limits the number of API calls in a month to 5000. This means that we must try to minimize API calls for testing purposes as much as possible, to ensure you do not exceed this number of API calls in the one week of development we have.
 
 
-### Optionals:
+#### Optionals:
 - Keep track of most recent search terms and allow user's to return to those searches
 - Implement an OAuth strategy using Google
   - Allow users to save recipes to a "favorites" section that they can return to
@@ -67,7 +71,7 @@ Once you've explored the API docs, this project:
 	-  Etc
 
 
-### Wireframes:
+#### Wireframes:
 You have creative control over the design and layout of this project. Below are optional wireframes you may use. It is not a requirement that you do.
 
 **Homepage:**
