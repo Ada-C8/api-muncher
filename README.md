@@ -1,8 +1,10 @@
 # Recipe API Consumer
 
 ## Summary 
-I built this web application as a class assignment at Ada Developers Academy. This was our first assignment where we consumemed an API in a web application. This web application allows a user to search for recipies that contain a specific search term. For this assignment I also learned how to use the VCR gem to decrease the number of API calls made in my tests. The VCR gem captures the results of a real API call in your tests, saves the response to a file, and the next time the tests run it replays this API call instead of making a new API call. Checkout my live version of [api-muncher](https://api-muncher-tv.herokuapp.com)!
+I built this web application as a class assignment at Ada Developers Academy. This was our first assignment where we consumemed an API in a web application. This web application allows a user to search for recipies that contain a specific search term. For this assignment I also learned how to use the VCR gem to decrease the number of API calls made in my tests. The VCR gem captures the results of a real API call in your tests, saves the response to a file, and the next time the tests run it replays this API call instead of making a new API call. 
 
+Checkout the [live site](https://api-muncher-tv.herokuapp.com) or [video demo](https://drive.google.com/file/d/1HYvu5nlgCaM3EHfu2JKSoJIAdhsTrMk9/view?usp=sharing) of api-muncher! 
+  
 ## Assignment specifications 
 ### Purpose
 Create a web application that will display recipes based on a search term. We will utilize an API from Edamam called the [Recipe Search API](https://developer.edamam.com/edamam-recipe-api).
