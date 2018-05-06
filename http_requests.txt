@@ -1,0 +1,77 @@
+# to get all recipies for 'chicked'
+https://api.edamam.com/search?q=chicken&app_id=<ID>&app_key=<key>
+
+# to get the results for a specific recipe
+https://api.edamam.com/search?r=http://www.edamam.com/ontologies/edamam.owl%23recipe_637913ec61d9da69eb451818c3293df2&app_id=<ID>&app_key=<key>
+# I think this is how you would access the uri, which is what I'll use as an id:
+response["hits"][0]["recipe"]["uri"]
+
+# to access the recipe name
+response["hits"][0]["recipe"]["label"]
+....
+or if you do pr = response.parsed_response
+....
+pr["hits"][0]["recipe"]["label"]
+~ this returns:
+ => "Teriyaki Chicken"
+
+
+# to access a photo for the list view:
+  response["hits"][0]["recipe"]["image"]
+  ...
+  OR
+  ....
+  pr["hits"][0]["recipe"]["image"]
+  ~ This returns:
+  => "https://www.edamam.com/web-img/262/262b4353ca25074178ead2a07cdf7dc1.jpg"
+
+
+  # link to the origional recipe
+  response["hits"][0]["recipe"]["url"]
+  pr["hits"][0]["recipe"]["url"]
+  ~ this returns
+  => "http://www.davidlebovitz.com/2012/12/chicken-teriyaki-recipe-japanese-farm-food/"
+
+  # list of ingredient
+  response["hits"][0]["recipe"]["ingredients"]
+  pr["hits"][0]["recipe"]["ingredients"]
+  ~ This returns the following:
+  => [{"text"=>"1/2 cup (125ml) mirin", "weight"=>122.99850463867188}, {"text"=>"1/2 cup (125ml) soy sauce", "weight"=>134.72775268554688}, {"text"=>"One 2-inch (5cm) piece of fresh ginger, peeled and grated", "weight"=>15.0}, {"text"=>"2-pounds (900g) boneless chicken thighs (4-8 thighs, depending on size)", "weight"=>907.1847534179688}]
+
+  # a list of dietary information
+  response["hits"][0]["recipe"]["dietLabels"]
+  pr["hits"][0]["recipe"]["dietLabels"]
+  ~ this returns:
+  => ["Low-Carb"]
+
+
+# to access the status code:
+response.response
+~ this returns:
+=> #<Net::HTTPOK 200 OK readbody=true>
+# NOTE: still need to figure out how to actually use this response code in my app (.include? doesn't work on it )
+
+# what happens when I send a bogus search:
+> response = HTTParty.get("https://api.edamam.com/search?q=xcd&app_id=1657f821&app_key=5e2753dc1cca131a7850f3ab9335984d")
+> => #<HTTParty::Response:0x7f940a80a7a0 parsed_response={"q"=>"xcd", "from"=>0, "to"=>10, "params"=>{"sane"=>[], "q"=>["xcd"], "app_key"=>["5e2753dc1cca131a7850f3ab9335984d"], "app_id"=>["1657f821"]}, "more"=>false, "count"=>0, "hits"=>[]}, @response=#<Net::HTTPOK 200 OK readbody=true>, @headers={"server"=>["ngx_openresty"], "date"=>["Tue, 31 Oct 2017 04:05:16 GMT"], "content-type"=>["application/json;charset=UTF-8"], "transfer-encoding"=>["chunked"], "connection"=>["close"], "cache-control"=>["private"], "expires"=>["Thu, 01 Jan 1970 00:00:00 UTC"], "x-served-by"=>["ip-10-143-141-59/10.143.141.59"], "vary"=>["Accept-Encoding"]}>
+2.4.0 :031 >
+
+# QUESTION: could I use the "more" or "count" keys to determine if there were any search results instead of the status code? When there are results they have the following values:
+> {"q"=>"chicken", "from"=>0, "to"=>10, "params"=>{"sane"=>[], "q"=>["chicken"], "app_key"=>["5e2753dc1cca131a7850f3ab9335984d"], "app_id"=>["1657f821"]}, "more"=>true, "count"=>88393, "hits"=>[{"recipe"=>{"uri"=>"http:/
+
+################## single recipe ######################
+# to get the results for a specific recipe
+https://api.edamam.com/search?r=http://www.edamam.com/ontologies/edamam.owl%23recipe_637913ec61d9da69eb451818c3293df2&app_id=<ID>&app_key=<key>
+# I think this is how you would access the uri, which is what I'll use as an id:
+response["hits"][0]["recipe"]["uri"]
+
+# to get the label
+r[0]["label"] (where r is the response)
+
+# r[0]["image"]
+
+#  r[0]["uri"]
+
+....
+ect
+....
