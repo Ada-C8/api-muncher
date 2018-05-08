@@ -8,4 +8,4 @@ https://recipe-monster.herokuapp.com/
 
 rails test
 
-[Homepage Screenshot](docs/HomeScreenShot.png)
+![Homepage Screenshot](docs/HomeScreenShot.png)
