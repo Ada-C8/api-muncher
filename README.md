@@ -2,25 +2,10 @@
 
 https://recipe-monster.herokuapp.com/
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+* Ruby version: 2.4.0
 
-Things you may want to cover:
+* How to run the test suite:
 
-* Ruby version
+rails test
 
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+[Homepage Screenshot](docs/HomeScreenShot.png)
