@@ -4,8 +4,8 @@ https://recipe-monster.herokuapp.com/
 
 ![Homepage Screenshot](docs/HomeScreenShot.png)
 ![Search Results Screenshot](docs/SearchResultsScreenShot.png)
+![Pagination Screenshot](docs/PaginationScreenShot.png)
 ![Recipe Page Screenshot](docs/RecipeScreenShot.png)
-![Pagination Screenshot](docs/RecipeScreenShot.png)
 
 * Ruby version: 2.4.0
 * Rails version: 5.1.4
