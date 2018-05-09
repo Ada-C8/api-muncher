@@ -1,5 +1,13 @@
 <section class="row">
-  <h2 class="column small-12 text-center"><%= "Results for \"#{params[:q]}\"" %></h2>
+  <h2 class="column small-12 text-center">
+    <% if params[:q].length >0 && params[:diet]%>
+    <%= "Results for \"#{params[:q]}\" with \"#{params[:diet]}\"" %>
+    <% elsif params[:q].length >0 %>
+    <%= "Results for \"#{params[:q]}\"" %>
+    <% elsif params[:diet].length >0 %>
+    <%= "Results for \"#{params[:diet]}\"" %>
+    <% end %>
+  </h2>
 
   <% @recipes.each do |recipe| %>
   <article class="column small-12 medium-6 large-3 end">

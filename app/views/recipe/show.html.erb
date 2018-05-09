@@ -17,7 +17,7 @@
         <h5><%= "Dietary Labels" %></h5>
         <ul class="menu float-right">
         <% @recipe.labels.each do |item| #Doesn't matter, Api only gives us one anyway :/ %>
-          <li><%= item %></li>
+          <li><%= link_to item, recipes_path(q: "", diet: item.downcase) %></li>
         <% end %>
       </ul>
         <% end %>
