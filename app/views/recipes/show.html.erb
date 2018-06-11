@@ -1,0 +1,52 @@
+<%= render "header" %>
+
+<div class="show-background">
+
+
+  <div class="row show-header">
+    <h2><%= @recipe.label %></h2>
+  </div>
+
+
+  <div class="row first-row">
+    <img src="<%=@recipe.image%>" alt="<%=@recipe.label%>" class="small-8 medium-4 columns">
+    <div class="small-12 medium-4 columns tags">
+      <% if @recipe.diet_labels.length > 0 %>
+      <h3>Diet Tags:</h3>
+      <ul>
+        <% @recipe.diet_labels.each do |label| %>
+        <li>
+          <%=label%>
+        </li>
+        <%end%>
+      </ul>
+      <% end %>
+      <% if @recipe.health_labels.length > 0 %>
+      <h3>Health Tags:</h3>
+      <ul>
+        <% @recipe.health_labels.each do |label| %>
+        <li>
+          <%=label%>
+        </li>
+        <%end%>
+      </ul>
+      <%end%>
+    </div>
+  </div>
+
+  <div class="row ingredients">
+    <div class="small-12 medium-4 columns">
+      <h3>Ingredients</h3>
+      <ul>
+        <% @recipe.ingredients.each do |ingredient| %>
+        <li>
+          <%=ingredient%>
+        </li>
+        <% end %>
+      </ul>
+    </div>
+    <div class="small-12 medium-6 columns source">
+      <h3>See Full Recipe at <%=link_to @recipe.source, @recipe.url, target: :_blank%></h3>
+    </div>
+  </div>
+</div>

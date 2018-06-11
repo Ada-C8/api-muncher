@@ -1,0 +1,193 @@
+/*zx
+* This is a manifest file that'll be compiled into application.css, which will include all the files
+* listed below.
+*
+* Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
+* vendor/assets/stylesheets directory can be referenced here using a relative path.
+*
+* You're free to add application-wide styles to this file and they'll appear at the bottom of the
+* compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+* files in this directory. Styles in this file should be added after the last require_* statement.
+* It is generally better to create a new file per style scope.
+*
+*= require_tree .
+*= require_self
+*= require foundation_and_overrides
+
+*/
+
+html {
+  height: 100%;
+}
+
+body {
+  height: 90%;
+}
+
+#site-name-home, #site-name-header a {
+  font-family: 'Merienda', cursive;
+  color: #3EC300;
+  font-size: 1.4em;
+}
+
+#site-name-header a:hover {
+  color: #226D00;
+}
+
+#site-name-home {
+  font-size: 5em;
+}
+
+#site-home-container {
+  text-align: center;
+  margin-top: 2em;
+  padding: 1em;
+}
+
+#home-text {
+  color: #FF1D15;
+  font-size: 2em;
+}
+
+#home-search {
+ padding-bottom: 10em;
+}
+
+#header-search {
+  padding-top: 1em;
+}
+
+#home-page {
+  padding-top: 10em;
+  margin-bottom: 1em;
+}
+
+.hero {
+  
+  background-image: url("lukas-blazek-261682.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+  height: 100%;
+  width: 100%;
+}
+
+.header-box {
+  padding: 2em 0;
+}
+
+footer {
+  width: 100%;
+  margin: 0;
+  padding-top: 1vw;
+  text-align: center;
+  background-color: none;
+  color: Green;
+  z-index: -1;
+  font-size: 1.5em;
+}
+
+
+.index-blocks {
+  position: relative;
+  margin: 20px 10px;
+}
+
+.results {
+  padding: 20px 20px;
+}
+
+.results h2 {
+  font-family: 'Source Sans Pro', sans-serif;
+  color: #FF1D15;
+}
+
+.index-image {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 100%;
+  width: 100%;
+  opacity: 0;
+  transition: .5s ease;
+  background-color: #FF1D15;
+}
+
+.index-blocks:hover .overlay {
+  opacity: 1;
+}
+
+.recipe-name a {
+  color: white;
+  font-size: 30px;
+  position: absolute;
+  padding:15px;
+  width: 100%;
+  height: 100%;
+  font-family: 'Source Sans Pro', sans-serif;
+}
+
+.paginate {
+  text-align: center;
+}
+
+.paginate a {
+  display: inline-block;
+}
+
+.pagination .current {
+  background: #3EC300;
+}
+
+ul {
+  list-style-type: none;
+}
+
+.ingredients ul {
+  list-style-type: disc;
+}
+
+a {
+  color: #3EC300;
+}
+
+.source a:hover {
+  color: #226D00;
+}
+
+.show-header {
+  text-align: center;
+  margin-bottom: 1.5em;
+  color: #FF1D15;
+}
+
+.show-background {
+  background-color: #E8EAEC;
+  padding: 1em;
+}
+
+.ingredients {
+  margin-top: 2em;
+  display: flex;
+  justify-content: center;
+}
+
+.first-row {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 2em;
+}
+
+.first-row .tags {
+  align-self: flex-start;
+}

@@ -1,0 +1,22 @@
+<%= render "header" %>
+
+<div class="row small-12 results">
+    <h2>Results for "<%=params[:search]%>"</h2>
+</div>
+<hr />
+<ul class="row small-up-2 medium-up-3 large-up-4">
+  <% @recipes.each do |recipe| %>
+  <li class="column">
+    <div class="index-blocks">
+      <img src="<%=recipe.image%>" alt="<%=recipe.label%>" class="index-image">
+      <div class="overlay">
+        <div class="recipe-name"><%=link_to recipe.label, recipe_path() + "?search=#{params[:search]}" + "&url=#{URI.encode(recipe.url)}" %></div>
+      </div>
+    </div>
+  </li>
+  <% end %>
+</ul>
+
+<div class="paginate">
+  <%= will_paginate(@recipes) %>
+</div>
