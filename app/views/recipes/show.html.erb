@@ -1,0 +1,49 @@
+<main class="recipe-page">
+  <section class="page-title row">
+    <h2><%= @recipe.name %></h2>
+    <h5>by <%= link_to @recipe.source, @recipe.recipe_url, target: :_blank %></h5>
+  </section>
+  <section class="row recipe">
+    <div class="row">
+      <div class="small-12 medium-6 columns image-holder">
+        <img src=<%= @recipe.image_url %> alt=<%= @recipe.name %> class="recipe-page-image" >
+      </div>
+      <div class="ingredients small-12 medium-6 columns">
+        <h3>Ingredients</h3>
+        <ul>
+          <% @recipe.ingredients.each do |ingredient| %>
+          <li>
+            <%= ingredient %>
+          </li>
+          <% end %>
+        </ul>
+        <h5><em>Makes <%= @recipe.servings.to_i %> servings</em></h5>
+      </div>
+    </div>
+    <div class="row">
+      <div class="nutrition small-12 medium-6 columns end table-holder">
+        <table>
+          <thead>
+            <tr>
+              <th colspan="2">
+                <h3>Nutrition Per Serving</h3><br />
+              </th>
+            </tr>
+          </thead>
+          <tbody>
+            <% @recipe.basic_nutrition.each do |nutrient| %>
+            <tr>
+              <th>
+                <%= (["Trans", "Saturated", "Fiber", "Sugars"].include?nutrient[0]) ? ("<small>#{nutrient[0]}</small>".html_safe) : (nutrient[0]) %>
+              </th>
+              <td>
+                <%= nutrient[1] %>
+              </td>
+            </tr>
+            <% end %>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+</main>

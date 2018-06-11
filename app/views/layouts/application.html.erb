@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title><%= content_for?(:title) ? yield(:title) : "muncher" %></title>
+
+  <%= favicon_link_tag 'groceries.ico' %>
+  <%= stylesheet_link_tag    "application" %>
+  <%= javascript_include_tag "application", 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+  <link href="https://fonts.googleapis.com/css?family=Cabin+Sketch|Raleway:400,700" rel="stylesheet">
+</head>
+
+<body>
+  <% unless current_page?(root_path) %>
+  <header>
+    <h1 class="small-12 medium-7 large-8 columns"><%= link_to "muncher", root_path %></h1>
+    <nav class="search-bar small-12 medium-5 large-4 columns">
+      <%= form_tag( recipes_path, method: :get, enforce_utf8: false ) do %>
+        <%= text_field_tag :search, "", class: "small-12 medium-8 columns header-field" %>
+
+        <%= submit_tag "Search", name: nil, class: 'small-12 medium-3 columns button' %>
+      <% end %>
+    </nav>
+    <div class="clearfix">
+    </div>
+  </header>
+  <% end %>
+
+  <%= yield %>
+
+  <footer>
+    <p class="credit api-credit">
+      Made by Kate Spitzer | Powered by Edamam | <%= link_to "Attributions", attributions_path %>
+    </p>
+  </footer>
+</body>
+</html>
