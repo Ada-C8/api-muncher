@@ -1,0 +1,25 @@
+// Place all the styles related to the Search controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+.root {
+  height: 100vw;
+  width: 100%;
+  background-size: cover;
+  background-image: url(https://thumb9.shutterstock.com/display_pic_with_logo/917573/511465222/stock-vector-traditional-thanksgiving-dinner-table-closeup-top-view-on-classic-thanksgiving-eating-holiday-511465222.jpg)
+}
+
+.search {
+  position: fixed;
+  width: 100%;
+  top: 50%;
+  left: 20%;
+}
+
+.field {
+  width: 55%;
+  height: 3vw;
+}
+
+.submit {}
