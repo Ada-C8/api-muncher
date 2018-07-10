@@ -1,0 +1,41 @@
+<section class="row">
+
+  <article class="column" id="show">
+    <h2>
+      <%= @recipe.label %>
+    </h2>
+
+  <div class="show-page" id="show_image">
+    <%= image_tag(@recipe.image, options = {alt: @recipe.label}) %>
+  </div>
+
+  <div>
+    <%= link_to "View Full Recipe", @recipe.url, target: "_blank" %>
+  </div>
+
+  <h3> Ingredients: </h3>
+  <ul>
+    <% @recipe.ingredients.each do |ingredient| %>
+      <li>
+      <%= ingredient %>
+      </li>
+    <%end%>
+  </ul>
+
+  <div class="show">
+    <h3> Dietary Information: </h3>
+    <ul>
+      <% @recipe.total_nutrients.each do |info| %>
+        <%if info != nil%>
+        <li>
+        <%="#{info["label"]}: #{info["quantity"].round(0)}#{info["unit"]}" %>
+        </li>
+        <%else%>
+        No information available.
+        <%end%>
+      <%end%>
+    </ul>
+  </div>
+
+</article>
+</section>
