@@ -1,0 +1,16 @@
+<section class="recipes-list">
+  <h2>Results for <%= "\"#{params[:search_term]}\"" %></h2>
+
+<div class="row">
+  <ul>
+    <% @recipes.each do |recipe| %>
+      <li class="small-6 medium-4 large-3 columns">
+        <%= image_tag recipe.image, alt: "photo of #{recipe.label}" %>
+        <%= link_to recipe.label, recipe_path(recipe.uri) %>
+      </li>
+    <% end %>
+  </ul>
+</div>
+
+  <%= will_paginate @recipes %>
+</section>

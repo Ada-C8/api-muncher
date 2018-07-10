@@ -1,0 +1,26 @@
+<h2><%= @recipe.label %></h2>
+<h3>By <%= @recipe.source %></h3>
+
+<section class="details small-12 columns">
+  <article>
+    <%= image_tag @recipe.image, alt: "photo of #{@recipe.label}" %>
+  </article>
+
+  <article>
+    <p> Ingredients </p>
+      <% @recipe.ingredients.each do |ingredient| %>
+        <ul>
+          <%= ingredient %>
+        </ul>
+      <% end %>
+
+    <p> Dietary Information </p>
+      <% @recipe.healthlabels.each do |label| %>
+        <ul>
+          <%= label %>
+        </ul>
+      <% end %>
+
+      <p>Find the original recipe <a href= "<%= @recipe.url %>" target="_blank"><strong>here</strong></a></p>
+    </article>
+</section>

@@ -1,0 +1,121 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+
+header {
+  background-color: #1B3448;
+  text-align: center;
+  padding-bottom: 2.5%;
+  margin-bottom: 2%;
+  box-shadow: 0px 0px 20px #1B3448;
+}
+
+h1 {
+  color: #EAEBEF;
+  font-family: 'Kaushan Script', cursive;
+  font-size: 5em;
+  padding-top: 2.5%;
+}
+
+h2 {
+  font-family: 'Kaushan Script', cursive;
+  text-align: center;
+  color: #1B3448;
+  margin-bottom: 1%;
+}
+
+h3 {
+  font-family: 'Kaushan Script', cursive;
+  color: #1B3448;
+  text-align: center;
+}
+
+ul {
+  list-style-type: none;
+  font-family: 'Kaushan Script', cursive;
+  color: #1B3448;
+  text-align: center;
+}
+
+li {
+  font-family: 'Kaushan Script', cursive;
+  font-size: 1.2em;
+  text-align: center;
+  padding-bottom: 2.5%;
+}
+
+li a {
+  color: #1B3448;
+}
+
+label {
+  font-size: 1.8em;
+  text-align: center;
+  color: #1B3448;
+}
+
+.search {
+  margin-left: 15%;
+  background-color: white;
+  border-radius: 1%;
+}
+
+.home {
+  background-image: url("/assets/home.png");
+  background-position: 50% 50%;
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 750px;
+  font-family: 'Kaushan Script', cursive;
+}
+
+p {
+  font-family: 'Kaushan Script', cursive;
+  font-size: 1.3em;
+  color: #1B3448;
+  text-align: center;
+  text-decoration: underline;
+}
+
+article {
+  width: 40%;
+  display: inline-block;
+  vertical-align: middle;
+  padding-left: 20%;
+}
+
+.pagination {
+  text-align: center;
+
+}
+.pagination a {
+  display: inline-block;
+  color: #1B3448;
+  font-family: 'Kaushan Script', cursive;
+}
+
+footer {
+  position: relative;
+  background-color: #1B3448;
+  text-align: center;
+  padding-top: 1.4%;
+  padding-bottom: 1.4%;
+}
+
+footer a {
+  color: #EAEBEF;
+  font-family: 'Kaushan Script', cursive;
+  font-size: 1.3em;
+}
