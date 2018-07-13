@@ -1,0 +1,29 @@
+<section class="row">
+  <h2 class="column small-12 text-center">
+    <% if params[:q].length >0 && params[:diet]%>
+    <%= "Results for \"#{params[:q]}\" with \"#{params[:diet]}\"" %>
+    <% elsif params[:q].length >0 %>
+    <%= "Results for \"#{params[:q]}\"" %>
+    <% elsif params[:diet].length >0 %>
+    <%= "Results for \"#{params[:diet]}\"" %>
+    <% end %>
+  </h2>
+
+  <% @recipes.each do |recipe| %>
+  <article class="column small-12 medium-6 large-3 end">
+    <div class="row">
+    <%= link_to image_tag(recipe.photo_uri, alt: "Photo of #{recipe.title}", class: "radius"), show_recipe_path(recipe.uri_hash)%>
+    </div>
+    <div class="row">
+    <h4 class="text-center"><%= link_to recipe.title, show_recipe_path(recipe.uri_hash) %></h4>
+    <p class="text-center"><%= link_to "from #{recipe.source}", recipe.source %></p>
+    </div>
+  </article>
+  <% end %>
+</section>
+
+<nav class="row">
+  <div class="column small-12 text-center" id="pages">
+    <%= will_paginate @recipes, renderer: FoundationPagination::Rails %>
+  </div>
+</nav>

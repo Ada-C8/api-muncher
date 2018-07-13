@@ -1,0 +1,15 @@
+<section class="column small-12">
+<%= form_tag(recipes_path, method: "get", class: "input-group") do %>
+    <%= text_field_tag(:q, nil, placeholder: "What's for dinner?", class: "input-group-field") %>
+    <%= submit_tag("Let's do this!", class: "button input-group-button") %>
+  </section>
+  <section class="column small-offset-1 small-10 end">
+  <% if params[:action] == "home" %>
+    Pick one (optional):
+    <% EdamamApiWrapper::DIET_LABELS.each do |label| %>
+    <%= radio_button_tag(:diet, label) %>
+    <%= label_tag("diet_#{label}".to_s, "#{label.capitalize}") %>
+    <% end %>
+  <% end %>
+  </section>
+<% end %>

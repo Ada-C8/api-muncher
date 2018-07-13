@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title><%= content_for?(:title) ? yield(:title) : "Untitled" %></title>
+
+    <%= stylesheet_link_tag    "application" %>
+    <%= javascript_include_tag "application", 'data-turbolinks-track' => true %>
+    <%= csrf_meta_tags %>
+
+    <link href="https://fonts.googleapis.com/css?family=Amatic+SC|PT+Sans+Narrow|Shrikhand" rel="stylesheet">
+
+  </head>
+
+  <body>
+    <% unless params[:action] == "home"%>
+      <header class="row expanded">
+        <h1 class="column small-12 large-7 text-center"><%= link_to "Find Me the Recipe", root_path %></h1>
+        <%= image_tag("bg_header.png", id: "bg-header", alt: "Header Background") %>
+        <div class="column small-12 large-4 end" id="header-search">
+          <%= render partial: "searchform" %>
+        </div>
+      </header>
+    <% end %>
+    <%= params if Rails.env.development? %>
+
+    <%= render partial: "/layouts/flash" unless params[:action] == "home" %>
+
+    <% if params[:action] == "home" %>
+      <main class="row expanded" id="home">
+        <%= yield %>
+        <%= render partial: "/layouts/flash" %>
+      </main>
+    <% else %>
+      <main class="row">
+        <%= yield %>
+      </main>
+    <% end %>
+
+
+    <footer class="row expanded">
+      <div class="column small-12 text-center" id="footer-text">
+        Copyright 2017. Powered by <%= link_to image_tag("edamam_logo.png", alt: "Edamam Logo"), "https://www.edamam.com/" %>
+      </div>
+      <%= image_tag("bg_footer.png", id: "bg-footer", alt: "Footer Background") %>
+    </footer>
+  </body>
+</html>

@@ -1,0 +1,36 @@
+<section class="row">
+  <div class="columns small-12 text-center">
+    <h2><%= @recipe.title %></h2>
+    <h3><%= link_to "from #{@recipe.source}", @recipe.external_url, target: :_blank %>
+    </h3>
+  </div>
+</section>
+
+<section class="row">
+  <div class="columns small-12 medium-6 large-6">
+    <div class="row">
+      <div class="columns small-12 large-7 large-push-5">
+        <%= image_tag(@recipe.photo_uri, alt: "Photo of #{@recipe.title}", class: "radius") %>
+      </div>
+      <div class="columns small-12 large-5 large-pull-7 text-right">
+        <% if  @recipe.labels.length > 0 %>
+        <h5><%= "Dietary Labels" %></h5>
+        <ul class="menu float-right">
+        <% @recipe.labels.each do |item| #Doesn't matter, Api only gives us one anyway :/ %>
+          <li><%= link_to item, recipes_path(q: "", diet: item.downcase) %></li>
+        <% end %>
+      </ul>
+        <% end %>
+      </div>
+    </div>
+  </div>
+
+  <div class="columns small-12 medium-6">
+    <h5><%= "Ingredients" %></h5>
+    <ul>
+      <% @recipe.ingredients.each do |ingredient| %>
+      <li><%= ingredient %></li>
+      <% end %>
+    </ul>
+  </div>
+</section>
